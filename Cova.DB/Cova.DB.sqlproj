@@ -65,6 +65,12 @@
   <ItemGroup>
     <Build Include="Tables\Paciente.sql" />
     <Build Include="Tables\Profesional.sql" />
+    <Build Include="Tables\Medico.sql" />
+    <Build Include="Tables\Enfermero.sql" />
+    <Build Include="Tables\Domicilio.sql" />
+    <Build Include="Tables\Vacuna.sql" />
+    <Build Include="Tables\Laboratorio.sql" />
+    <Build Include="Tables\CoberturaMedica.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />
