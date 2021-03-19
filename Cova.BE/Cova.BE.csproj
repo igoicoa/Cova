@@ -47,6 +47,7 @@
     <Compile Include="BEEnfermero.cs" />
     <Compile Include="BELaboratorio.cs" />
     <Compile Include="BEVacuna.cs" />
+    <Compile Include="BEVacunaAplicada.cs" />
     <Compile Include="Especialidad.cs" />
     <Compile Include="BEMedico.cs" />
     <Compile Include="BEPaciente.cs" />

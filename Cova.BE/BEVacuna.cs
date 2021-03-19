@@ -13,6 +13,7 @@ namespace Cova.BE
         public string Descripcion { get; set; }
         public string Prospecto { get; set; }
         public string Contraindicaciones { get; set; }
+        public int CantidadDosis { get; set; }
         public DateTime FechaElaboracion { get; set; }
         public DateTime FechaVencimiento { get; set; }
         public int Stock { get; set; }
