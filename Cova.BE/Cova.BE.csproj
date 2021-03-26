@@ -42,13 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BEAdministrador.cs" />
+    <Compile Include="BECentroVacunacion.cs" />
     <Compile Include="BECoberturaMedica.cs" />
     <Compile Include="BEDomicilio.cs" />
     <Compile Include="BEEnfermero.cs" />
     <Compile Include="BELaboratorio.cs" />
+    <Compile Include="BERangoHorario.cs" />
+    <Compile Include="BETurno.cs" />
     <Compile Include="BEVacuna.cs" />
     <Compile Include="BEVacunaAplicada.cs" />
-    <Compile Include="Especialidad.cs" />
+    <Compile Include="Enum\DiasSemana.cs" />
+    <Compile Include="Enum\Especialidad.cs" />
     <Compile Include="BEMedico.cs" />
     <Compile Include="BEPaciente.cs" />
     <Compile Include="BEProfesional.cs" />

@@ -17,7 +17,8 @@ namespace Cova.BE
         public BEDomicilio Domicilio { get; set; }
         public BECoberturaMedica CoberturaMedica { get; set; }
         public IList<BEVacunaAplicada> VacunasAplicadas { get; set; }
-        public IList<BEVacuna> VacunasRecetadas { get; set; }
+        public IList<BETurno> turnosAsignados { get; set; }
+        public IList<BEVacuna> VacunasSugeridas { get; set; }
 
     }
 }

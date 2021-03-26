@@ -23,5 +23,10 @@ namespace Cova.BL
         {
             throw new NotImplementedException();
         }
+
+        public bool recetarVacuna(BEProfesional profesional, BEPaciente pacienteAVacunar, BEVacuna vacunaAAplicar)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

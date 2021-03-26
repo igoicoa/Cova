@@ -15,7 +15,7 @@ namespace Cova.DAL
             return this.connection.ConnectionString;
         }
 
-        public string TestConnection()
+        public string testearConexion()
         {
             connection.Open();
             if (connection.State == ConnectionState.Open)
@@ -30,7 +30,6 @@ namespace Cova.DAL
             }
         }
 
-        //Leo un escalar
         public int leerEscalar(string consulta)
         {
             int respuesta;
@@ -52,15 +51,28 @@ namespace Cova.DAL
             return respuesta;
         }
 
-        public DataSet obtenerDataSet(string Consulta_SQL)
+        public DataSet obtenerDataSet(string Consulta_SQL, Hashtable hdatos)
         {
             DataSet dataSet = new DataSet();
             try
             {
                 using (connection)
                 {
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter(Consulta_SQL, connection);
-                    dataAdapter.Fill(dataSet);
+                    using (SqlCommand cmd = connection.CreateCommand())
+                    {
+                        cmd.CommandText = Consulta_SQL;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        if ((hdatos != null))
+                        {
+                            foreach (string dato in hdatos.Keys)
+                            {
+                                cmd.Parameters.AddWithValue(dato, hdatos[dato]);
+                            }
+                        }
+                        connection.Open();
+                        SqlDataAdapter dataAdapter = new SqlDataAdapter(Consulta_SQL, connection);
+                        dataAdapter.Fill(dataSet);
+                    }
                 }
             }
             catch (Exception ex)
@@ -74,7 +86,7 @@ namespace Cova.DAL
             return dataSet;
         }
 
-        public bool Escribir(string Consulta_SQL, Hashtable hdatos)
+        public bool escribir(string Consulta_SQL, Hashtable hdatos)
         {
             try
             {
@@ -90,7 +102,6 @@ namespace Cova.DAL
                 {
                     foreach (string dato in hdatos.Keys)
                     {
-                        //cargo los parametros del Stored Procedure que le estoy pasando con la Hash
                         cmd.Parameters.AddWithValue(dato, hdatos[dato]);
                     }
                 }
@@ -107,7 +118,10 @@ namespace Cova.DAL
             }
 
             finally
-            { connection.Close(); }
+            { 
+                connection.Close(); 
+            }
         }
+
     }
 }
