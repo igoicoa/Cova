@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cova.BE
 {
-    public class BEProfesional
+    public class BEProfesional : BEUsuario
     {
         public long ProfesionalId { get; set; }
         public string Apellido { get; set; }

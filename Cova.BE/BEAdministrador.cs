@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cova.BE
 {
-    public class BEAdministrador
+    public class BEAdministrador : BEUsuario
     {
         public int MyProperty { get; set; }
     }

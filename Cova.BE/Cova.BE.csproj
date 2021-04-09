@@ -49,6 +49,7 @@
     <Compile Include="BELaboratorio.cs" />
     <Compile Include="BERangoHorario.cs" />
     <Compile Include="BETurno.cs" />
+    <Compile Include="BEUsuario.cs" />
     <Compile Include="BEVacuna.cs" />
     <Compile Include="BEVacunaAplicada.cs" />
     <Compile Include="Enum\DiasSemana.cs" />

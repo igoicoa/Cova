@@ -44,12 +44,17 @@
     <Compile Include="BLCentroVacunacion.cs" />
     <Compile Include="BLPaciente.cs" />
     <Compile Include="BLProfesional.cs" />
+    <Compile Include="BLUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cova.BE\Cova.BE.csproj">
       <Project>{2a51aeed-ba94-4eab-b45e-504135f79a83}</Project>
       <Name>Cova.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cova.MPP\Cova.MPP.csproj">
+      <Project>{63dc98c3-6600-48d4-8690-e613c3222e5c}</Project>
+      <Name>Cova.MPP</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
