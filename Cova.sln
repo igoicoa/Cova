@@ -15,6 +15,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Cova.DB", "Cova.DB\Cova.DB.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cova.MPP", "Cova.MPP\Cova.MPP.csproj", "{63DC98C3-6600-48D4-8690-E613C3222E5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cova.Common", "Cova.Common\Cova.Common.csproj", "{BC43FEB2-C54E-4D4E-B491-A8820ED31031}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{63DC98C3-6600-48D4-8690-E613C3222E5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63DC98C3-6600-48D4-8690-E613C3222E5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63DC98C3-6600-48D4-8690-E613C3222E5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC43FEB2-C54E-4D4E-B491-A8820ED31031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC43FEB2-C54E-4D4E-B491-A8820ED31031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC43FEB2-C54E-4D4E-B491-A8820ED31031}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC43FEB2-C54E-4D4E-B491-A8820ED31031}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
