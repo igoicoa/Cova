@@ -21,5 +21,12 @@ namespace Cova.BL
             return claveCorrecta;
         }
 
+        public bool cambiarPassword(BEUsuario usuario, string nuevoPassword)
+        {
+            MPPUsuario MPPUsuario = new MPPUsuario();
+            string claveNuevaEncriptada = HashHelper.Hash256(nuevoPassword);
+            return MPPUsuario.ActualizarPassword(usuario.Usuario, claveNuevaEncriptada);
+        }
+
     }
 }

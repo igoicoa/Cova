@@ -6,14 +6,14 @@ namespace Cova.Common.Encriptacion
 {
     public static class HashHelper
     {
-        public static string HashMD5(string input)
+        public static string HashMD5(string password)
         {
-            return GenerarHash(input, new MD5CryptoServiceProvider());
+            return GenerarHash(password, new MD5CryptoServiceProvider());
         }
 
-        public static string Hash256(string input)
+        public static string Hash256(string password)
         {
-            return GenerarHash(input, new SHA256CryptoServiceProvider());
+            return GenerarHash(password, new SHA256CryptoServiceProvider());
         }
 
         private static string GenerarHash(string input, HashAlgorithm algorithm)

@@ -13,5 +13,10 @@ namespace Cova.MPP
         {
             return new BEUsuario();
         }
+
+        public bool ActualizarPassword(string usuario, string claveNuevaEncriptada)
+        {
+            return true;
+        }
     }
 }
