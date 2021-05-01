@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Cova.Common.Encriptacion
+namespace Cova.Servicios.Encriptacion
 {
     public static class HashHelper
     {

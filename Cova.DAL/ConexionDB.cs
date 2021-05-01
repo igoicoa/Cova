@@ -35,7 +35,7 @@ namespace Cova.DAL
             int respuesta;
             connection.Open();
             SqlCommand command = new SqlCommand(consulta, connection);
-            command.CommandType = CommandType.Text;
+            command.CommandType = CommandType.StoredProcedure;
             try
             {
                 using (connection)

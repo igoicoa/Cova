@@ -15,7 +15,7 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Cova.DB", "Cova.DB\Cova.DB.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cova.MPP", "Cova.MPP\Cova.MPP.csproj", "{63DC98C3-6600-48D4-8690-E613C3222E5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cova.Common", "Cova.Common\Cova.Common.csproj", "{BC43FEB2-C54E-4D4E-B491-A8820ED31031}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cova.Servicios", "Cova.Common\Cova.Servicios.csproj", "{BC43FEB2-C54E-4D4E-B491-A8820ED31031}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cova.Test", "Cova.Test\Cova.Test.csproj", "{A3E32E06-7486-4799-9F2B-F23865100E27}"
 EndProject

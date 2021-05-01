@@ -2,13 +2,13 @@
 using System.Text;
 using Cova.BE;
 using Cova.MPP;
-using Cova.Common.Encriptacion;
+using Cova.Servicios.Encriptacion;
 
 namespace Cova.BL
 {
     public class BLUsuario
     {
-        public bool loguin(BEUsuario usuarioALoguearse)
+        public bool login(BEUsuario usuarioALoguearse)
         {
             bool claveCorrecta = false;
             MPPUsuario MPPUsuario = new MPPUsuario();

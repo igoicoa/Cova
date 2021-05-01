@@ -44,6 +44,13 @@
     <Compile Include="Encriptacion\EncriptacionSimetricaHelper.cs" />
     <Compile Include="Encriptacion\HashHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sesion\Sesion.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cova.BE\Cova.BE.csproj">
+      <Project>{2a51aeed-ba94-4eab-b45e-504135f79a83}</Project>
+      <Name>Cova.BE</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,12 +8,6 @@ namespace Cova.Test
     [TestClass]
     public class UsuarioTest
     {
-        [TestMethod]
-        public void UsuarioPuedeLoguearse()
-        {
-
-            
-        }
 
         [TestMethod]
         public void UsuarioPuedeCambiarPassword()
