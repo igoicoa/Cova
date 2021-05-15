@@ -16,5 +16,11 @@ namespace Cova.UI
         {
             InitializeComponent();
         }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoginForm loginfrm = new LoginForm();
+            loginfrm.Show();
+        }
     }
 }

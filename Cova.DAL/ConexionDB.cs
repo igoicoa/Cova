@@ -7,7 +7,7 @@ namespace Cova.DAL
 {
     public class ConexionDB
     {
-        private SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=Cova;Integrated Security=True");
+        private SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Cova;Integrated Security=True");
         private SqlTransaction transaccion;
 
         public string obtenerStringConexion()
@@ -60,6 +60,7 @@ namespace Cova.DAL
                 {
                     using (SqlCommand cmd = connection.CreateCommand())
                     {
+                        connection.Open();
                         cmd.CommandText = Consulta_SQL;
                         cmd.CommandType = CommandType.StoredProcedure;
                         if ((hdatos != null))
@@ -69,9 +70,10 @@ namespace Cova.DAL
                                 cmd.Parameters.AddWithValue(dato, hdatos[dato]);
                             }
                         }
-                        connection.Open();
-                        SqlDataAdapter dataAdapter = new SqlDataAdapter(Consulta_SQL, connection);
-                        dataAdapter.Fill(dataSet);
+                        using (SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd))
+                        {
+                            dataAdapter.Fill(dataSet);
+                        }
                     }
                 }
             }

@@ -8,8 +8,9 @@ namespace Cova.BE
 {
     public class BEUsuario
     {
+        public long UsuarioID { get; set; }
         public string Usuario { get; set; }
         public string Password { get; set; }
-        public DateTime UltimoLogin { get; set; }
+        public DateTime? UltimoLogin { get; set; }
     }
 }

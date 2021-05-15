@@ -12,7 +12,7 @@ namespace Cova.BL
         {
             bool claveCorrecta = false;
             MPPUsuario MPPUsuario = new MPPUsuario();
-            string claveEncriptada = HashHelper.Hash256(usuarioALoguearse.Password);
+            string claveEncriptada = HashHelper.HashMD5(usuarioALoguearse.Password);
             BEUsuario usuario = new BEUsuario();
             usuario = MPPUsuario.obtenerUsuario(usuarioALoguearse);
             if (usuario.Password == claveEncriptada)

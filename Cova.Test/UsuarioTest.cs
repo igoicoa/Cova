@@ -8,6 +8,44 @@ namespace Cova.Test
     [TestClass]
     public class UsuarioTest
     {
+        [TestMethod]
+        public void usuarioPuedeLoguearse()
+        {
+            BEUsuario usuario = new BEUsuario();
+            BLUsuario usuarioBL = new BLUsuario();
+
+            usuario.Usuario = "TestUser";
+            usuario.Password = "TestPwd";
+
+            bool resultado = usuarioBL.login(usuario);
+            Assert.IsTrue(resultado);
+        }
+
+        [TestMethod]
+        public void usuarioNoPuedeLoguearseConPasswordIncorrecto()
+        {
+            BEUsuario usuario = new BEUsuario();
+            BLUsuario usuarioBL = new BLUsuario();
+
+            usuario.Usuario = "TestUser";
+            usuario.Password = "PwdIncorrecto";
+
+            bool resultado = usuarioBL.login(usuario);
+            Assert.IsFalse(resultado);
+        }
+
+        [TestMethod]
+        public void usuarioNoPuedeLoguearseSiNoExiste()
+        {
+            BEUsuario usuario = new BEUsuario();
+            BLUsuario usuarioBL = new BLUsuario();
+
+            usuario.Usuario = "UserInexistente";
+            usuario.Password = "PwdInexistente";
+
+            bool resultado = usuarioBL.login(usuario);
+            Assert.IsFalse(resultado);
+        }
 
         [TestMethod]
         public void UsuarioPuedeCambiarPassword()

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -78,6 +87,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cova.BE\Cova.BE.csproj">
+      <Project>{2a51aeed-ba94-4eab-b45e-504135f79a83}</Project>
+      <Name>Cova.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cova.BL\Cova.BL.csproj">
+      <Project>{fe7b2201-a15b-49ff-89f3-e37c223b4a41}</Project>
+      <Name>Cova.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cova.Common\Cova.Servicios.csproj">
+      <Project>{bc43feb2-c54e-4d4e-b491-a8820ed31031}</Project>
+      <Name>Cova.Servicios</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

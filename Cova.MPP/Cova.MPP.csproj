@@ -49,6 +49,10 @@
       <Project>{2a51aeed-ba94-4eab-b45e-504135f79a83}</Project>
       <Name>Cova.BE</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cova.DAL\Cova.DAL.csproj">
+      <Project>{408188d1-89ce-4ce6-9cd1-aed8974519da}</Project>
+      <Name>Cova.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
