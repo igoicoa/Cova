@@ -27,5 +27,25 @@ namespace Cova.UI
         {
 
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bloquerarPaswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pacienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
