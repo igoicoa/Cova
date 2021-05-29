@@ -1,5 +1,6 @@
 ﻿using System;
 using Cova.BE;
+using Cova.BE.Permisos;
 
 namespace Cova.Servicios.Sesion
 {
@@ -9,6 +10,7 @@ namespace Cova.Servicios.Sesion
 
         public BEUsuario Usuario { get; set; }
         public DateTime FechaLogueo { get; set; }
+        public ComponentePermiso Permisos { get; set; }
 
         public static Sesion GetInstance
         {

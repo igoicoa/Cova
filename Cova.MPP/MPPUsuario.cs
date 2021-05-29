@@ -12,7 +12,7 @@ namespace Cova.MPP
 {
     public class MPPUsuario
     {
-        public BEUsuario obtenerUsuario(BEUsuario usuarioALoguearse)
+        public BEUsuario ObtenerUsuario(BEUsuario usuarioALoguearse)
         {
             BEUsuario usuario = new BEUsuario();
             DataSet usuarioDS;

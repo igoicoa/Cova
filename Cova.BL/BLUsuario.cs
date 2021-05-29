@@ -8,20 +8,20 @@ namespace Cova.BL
 {
     public class BLUsuario
     {
-        public bool login(BEUsuario usuarioALoguearse)
+        public bool Login(BEUsuario usuarioALoguearse)
         {
             bool claveCorrecta = false;
             MPPUsuario MPPUsuario = new MPPUsuario();
             string claveEncriptada = HashHelper.HashMD5(usuarioALoguearse.Password);
             BEUsuario usuario = new BEUsuario();
-            usuario = MPPUsuario.obtenerUsuario(usuarioALoguearse);
+            usuario = MPPUsuario.ObtenerUsuario(usuarioALoguearse);
             if (usuario.Password == claveEncriptada)
                 claveCorrecta = true;
 
             return claveCorrecta;
         }
 
-        public bool cambiarPassword(BEUsuario usuario, string nuevoPassword)
+        public bool CambiarPassword(BEUsuario usuario, string nuevoPassword)
         {
             MPPUsuario MPPUsuario = new MPPUsuario();
             string claveNuevaEncriptada = HashHelper.Hash256(nuevoPassword);

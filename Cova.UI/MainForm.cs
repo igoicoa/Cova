@@ -22,5 +22,10 @@ namespace Cova.UI
             LoginForm loginfrm = new LoginForm();
             loginfrm.Show();
         }
+
+        private void profesionalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
