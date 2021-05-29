@@ -30,7 +30,7 @@ namespace Cova.UI
 
             usuario.Usuario = nombreUsuario;
             usuario.Password = password;
-            if(usuarioBL.login(usuario))
+            if(usuarioBL.Login(usuario))
             {
                 Sesion.Login(usuario);
                 MessageBox.Show("Usuario logueado correctamente");
