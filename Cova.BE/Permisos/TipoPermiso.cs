@@ -36,11 +36,21 @@ namespace Cova.BE.Permisos
         RegistrarTurno,
         CancelarTurno,
         VerMisTurnos,
-        Historialurnos
+        HistorialTurnos,
 
         AdministrarCoberturaMedica,
+        CrearCoberturaMedica,
+        ModificarCoberturaMedica,
+
         AdministrarHistoriaClinica,
-        AdministrarReceta,
+        CrearHistoriaClinica,
+        ModificarHistoriaClinica,
+        VerHistoriaClinica,
+
+        AdministrarReceta_Certificado,
+        CrearReceta_Certificado,
+        ModificarReceta_Certificado,
+        VerReceta_Certificado,
 
         //Seguridad
         RealizarBackup,
@@ -51,6 +61,10 @@ namespace Cova.BE.Permisos
         CambiarIdioma,
         MisDatos,
         ModificarDatos,
+        Permisos,
+        CrearPermisos,
+        ModificarPermisos,
+        AsignarPermisos,
 
         //Informacion
         Contacto,

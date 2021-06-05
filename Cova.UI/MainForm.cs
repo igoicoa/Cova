@@ -42,13 +42,46 @@ namespace Cova.UI
             this.verVacunasToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.VerVacunas);
 
             this.administrarTurnosToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.AdministrarTurnos);
+            this.calendarioDeTurnosToolStripMenuItem1.Enabled = Sesion.TienePermiso(TipoPermiso.CalendarioDeTurnos);
+            this.verCalendarioDePacientesToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.VerCalendarioMisPacientes);
+            this.registrarTurnoToolStripMenuItem1.Enabled = Sesion.TienePermiso(TipoPermiso.RegistrarTurno);
+            this.cancelarTurnoToolStripMenuItem1.Enabled = Sesion.TienePermiso(TipoPermiso.CancelarTurno);
+            this.verMisTurnosToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.VerMisTurnos);
+            this.historialDeTurnosToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.HistorialTurnos);
+            
+            this.administrarCoberturaMedicaToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.AdministrarCoberturaMedica);
+            this.crearCoberturaMedicaToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.CrearCoberturaMedica);
+            this.modificarCoberturaMedicaToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.ModificarCoberturaMedica);
+            
+            this.administrarHistoriaClinicaToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.AdministrarHistoriaClinica);
+            this.crearHistoriaClinicaToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.CrearHistoriaClinica);
+            this.modificarHistoriaClinicaToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.ModificarHistoriaClinica);
+            this.verHistoriaClinicaToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.VerHistoriaClinica);
 
+            this.administrarRecetaCertificadoToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.AdministrarReceta_Certificado);
 
+            this.crearRecetaCertificadoToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.CrearReceta_Certificado);
+            this.modificarRecetaCertificadoToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.ModificarReceta_Certificado);
+            this.verRecetasCertificadosToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.VerReceta_Certificado);
 
             //Menu Seguridad
+            this.realizarBackupToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.RealizarBackup);
+            this.bitacoraToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.Bitacora);
+            this.realizarRestoreToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.RealizarRestore);
+            this.bloquerarPaswordToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.BloquearPassword);
+            this.cambiarContraseñaToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.CambiarPassword);
+            this.cambiarIdiomaToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.CambiarIdioma);
+            this.misDatosToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.MisDatos);
+            this.modificarDatosToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.ModificarDatos);
+            this.permisosToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.Permisos);
+            this.crearPermisosToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.CrearPermisos);
+            this.modificarPermisosToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.ModificarPermisos);
+            this.asignarPermisosToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.AsignarPermisos);
+
 
             //Menu Informacion
-
+            this.contactoToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.Contacto);
+            this.novedadesToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.Novedades);
         }
 
         private void profesionalesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,6 +105,11 @@ namespace Cova.UI
         }
 
         private void pacienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
         {
 
         }
