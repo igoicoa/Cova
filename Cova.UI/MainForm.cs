@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Cova.Servicios.Sesion;
+using Cova.BE.Permisos;
 
 namespace Cova.UI
 {
@@ -15,12 +17,38 @@ namespace Cova.UI
         public MainForm()
         {
             InitializeComponent();
+            MostrarComponentes();
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoginForm loginfrm = new LoginForm();
             loginfrm.Show();
+        }
+
+        private void MostrarComponentes()
+        {
+            //Menu Administrar
+            this.administrarToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.Administrar);
+            this.administrarCuentaToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.AdministrarCuenta);
+            this.crearCuentaToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.CrearCuenta);
+            this.modificarCuentaToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.ModificarCuenta);
+            this.verUsuariosToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.VerUsuarios);
+
+            this.administrarVacunasToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.AdministrarVacunas);
+            this.calendarioDeVacunaciónToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.CalendarioVacunacion);
+            this.crearVacunasToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.CrearVacunas);
+            this.modificarVacunasToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.ModificarVacunas);
+            this.verVacunasToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.VerVacunas);
+
+            this.administrarTurnosToolStripMenuItem.Enabled = Sesion.TienePermiso(TipoPermiso.AdministrarTurnos);
+
+
+
+            //Menu Seguridad
+
+            //Menu Informacion
+
         }
 
         private void profesionalesToolStripMenuItem_Click(object sender, EventArgs e)

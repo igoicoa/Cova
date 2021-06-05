@@ -1,8 +1,9 @@
 ﻿CREATE TABLE [dbo].[Usuario]
 (
-	[UsuarioID]		BIGINT			NOT NULL	IDENTITY(1,1)
+	[UsuarioID]		    BIGINT			NOT NULL	IDENTITY(1,1)
 		CONSTRAINT	[PK_UsuarioID]	PRIMARY KEY CLUSTERED,
-    [Usuario]		VARCHAR(30)		NOT NULL,
-    [Password]		VARCHAR(50)		NOT NULL, 
-    [UltimoLogin]   DATETIME        NULL
+    [Usuario]		    VARCHAR(30)		NOT NULL,
+    [Password]		    VARCHAR(50)		NOT NULL, 
+    [UltimoLogin]       DATETIME        NULL,
+    [FamiliaPermiso]    INT             NULL
 )

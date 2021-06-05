@@ -60,6 +60,7 @@
     <Compile Include="Permisos\ComponentePermiso.cs" />
     <Compile Include="Permisos\FamiliaPermisos.cs" />
     <Compile Include="Permisos\Permiso.cs" />
+    <Compile Include="Permisos\TipoPermiso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,8 +1,8 @@
-﻿-- =============================================
+﻿-- ================================================================
 -- Author:		Cova
 -- Create date: 15/05/2021
 -- Description:	Obtiene un usuario a partir de su nombre de usuario
--- =============================================
+-- ================================================================
 CREATE PROCEDURE s_ObtenerUsuario 
 	@NombreUsuario varchar(30)
 AS

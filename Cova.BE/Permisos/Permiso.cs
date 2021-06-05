@@ -8,6 +8,20 @@ namespace Cova.BE.Permisos
 {
     public class Permiso : ComponentePermiso
     {
+        public override void AgregarPermiso(ComponentePermiso p)
+        {
+            throw new NotImplementedException();
+        }
 
+        public override void EliminarPermiso(ComponentePermiso p)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override IList<ComponentePermiso> ObtenerHijos()
+        {
+            throw new NotImplementedException();
+        }
+        
     }
 }

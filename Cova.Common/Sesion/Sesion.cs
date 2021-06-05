@@ -1,6 +1,7 @@
 ﻿using System;
 using Cova.BE;
 using Cova.BE.Permisos;
+using Cova.MPP;
 
 namespace Cova.Servicios.Sesion
 {
@@ -29,11 +30,17 @@ namespace Cova.Servicios.Sesion
                 _sesion = new Sesion();
                 _sesion.Usuario = usuario;
                 _sesion.FechaLogueo = DateTime.Now;
+                _sesion.CargarPermisos();
             }
             else
             {
                 throw new Exception("Ya hay una sesion iniciada");
             }
+        }
+
+        public static bool TienePermiso(TipoPermiso administrar)
+        {
+            return true;
         }
 
         public static void Logout()
@@ -46,6 +53,12 @@ namespace Cova.Servicios.Sesion
             {
                 throw new Exception("No hay sesion inicializada");
             }
+        }
+
+        private void CargarPermisos()
+        {
+            MPPPermiso mPPPermiso = new MPPPermiso();
+            this.Permisos = mPPPermiso.ObtenerPermisosUsuario(this.Usuario.UsuarioID);
         }
 
     }
