@@ -8,6 +8,11 @@ namespace Cova.BE.Permisos
 {
     public class Permiso : ComponentePermiso
     {
+        public Permiso(TipoPermiso tipoPermiso) : base(tipoPermiso)
+        {
+
+        }
+
         public override void AgregarPermiso(ComponentePermiso p)
         {
             throw new NotImplementedException();
@@ -21,6 +26,11 @@ namespace Cova.BE.Permisos
         public override IList<ComponentePermiso> ObtenerHijos()
         {
             throw new NotImplementedException();
+        }
+
+        public override bool TienePermiso(TipoPermiso tipoPermiso)
+        {
+            return tipoPermiso == this.TipoPermiso;
         }
         
     }

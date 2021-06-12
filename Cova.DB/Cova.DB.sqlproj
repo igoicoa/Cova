@@ -78,6 +78,11 @@
     <Build Include="Tables\Permiso.sql" />
     <Build Include="StoredProcedures\s_ObtenerFamiliaPermisoUsuario.sql" />
     <Build Include="StoredProcedures\s_ObtenerFamiliaPermisosMaster.sql" />
+    <Build Include="StoredProcedures\s_CrearProfesionalMedico.sql" />
+    <Build Include="StoredProcedures\s_CrearProfesionalEnfermero.sql" />
+    <Build Include="StoredProcedures\s_CrearPaciente.sql" />
+    <Build Include="StoredProcedures\s_AgregarPermisosProfesionalMedico.sql" />
+    <Build Include="Tables\UsuarioPermiso.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />

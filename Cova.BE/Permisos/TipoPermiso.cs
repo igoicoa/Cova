@@ -8,6 +8,9 @@ namespace Cova.BE.Permisos
 {
     public enum TipoPermiso
     {
+        //Permiso root
+        Raiz,
+
         //FamiliaPermisos
         Inicio,
         Administrar,

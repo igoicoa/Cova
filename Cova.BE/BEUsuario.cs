@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Cova.BE.Permisos;
 
 namespace Cova.BE
 {
@@ -12,5 +9,6 @@ namespace Cova.BE
         public string Usuario { get; set; }
         public string Password { get; set; }
         public DateTime? UltimoLogin { get; set; }
+        public ComponentePermiso Permisos { get; set; }
     }
 }

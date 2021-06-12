@@ -10,6 +10,10 @@
     [DomicilioId]       bigint          NULL
         CONSTRAINT [FK_Profesional_DomicilioId]
 			FOREIGN KEY REFERENCES [dbo].[Domicilio](DomicilioId)
-        INDEX [idx_DomicilioId]
+        INDEX [idx_DomicilioId], 
+    [UsuarioID] BIGINT NOT NULL
+        CONSTRAINT [FK_Profesional_UsuarioId]
+			FOREIGN KEY REFERENCES [dbo].[Usuario](UsuarioId)
+        INDEX [idx_UsuarioId]
         
 )

@@ -10,7 +10,7 @@ namespace Cova.BE.Permisos
     {
         private IList<ComponentePermiso> _hijos;
 
-        public FamiliaPermisos()
+        public FamiliaPermisos(TipoPermiso tipoPermiso) : base(tipoPermiso)
         {
             _hijos = new List<ComponentePermiso>();
         }
@@ -30,6 +30,18 @@ namespace Cova.BE.Permisos
         public override IList<ComponentePermiso> ObtenerHijos()
         {
             return _hijos.ToArray();
+        }
+
+        public override bool TienePermiso(TipoPermiso tipoPermiso)
+        {
+            bool tienePermiso = false;
+            foreach (ComponentePermiso permiso in this._hijos)
+            {
+                tienePermiso = permiso.TienePermiso(tipoPermiso);
+                if (tienePermiso)
+                    return tienePermiso;
+            }
+            return tienePermiso;
         }
 
     }

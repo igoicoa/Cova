@@ -11,8 +11,7 @@ namespace Cova.Servicios.Sesion
 
         public BEUsuario Usuario { get; set; }
         public DateTime FechaLogueo { get; set; }
-        public ComponentePermiso Permisos { get; set; }
-
+        
         public static Sesion GetInstance
         {
             get
@@ -38,9 +37,16 @@ namespace Cova.Servicios.Sesion
             }
         }
 
-        public static bool TienePermiso(TipoPermiso administrar)
+        public static bool TienePermiso(TipoPermiso tipoPermiso)
         {
-            return true;
+            if (_sesion.Usuario.Permisos.TienePermiso(tipoPermiso))
+            {
+                return true;
+            }
+            else 
+            { 
+                return false;
+            }
         }
 
         public static void Logout()
@@ -58,7 +64,7 @@ namespace Cova.Servicios.Sesion
         private void CargarPermisos()
         {
             MPPPermiso mPPPermiso = new MPPPermiso();
-            this.Permisos = mPPPermiso.ObtenerPermisosUsuario(this.Usuario.UsuarioID);
+            this.Usuario.Permisos = mPPPermiso.ObtenerPermisosUsuario(this.Usuario.UsuarioID);
         }
 
     }
