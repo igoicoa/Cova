@@ -77,6 +77,7 @@
             this.Controls.Add(this.tv_PermisosMaster);
             this.Name = "AsignarPermisos";
             this.Text = "Asignar Permisos";
+            this.Load += new System.EventHandler(this.AsignarPermisos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -16,5 +16,10 @@ namespace Cova.UI
         {
             InitializeComponent();
         }
+
+        private void AsignarPermisos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
