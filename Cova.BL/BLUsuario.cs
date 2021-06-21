@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Text;
+using System.Collections.Generic;
 using Cova.BE;
 using Cova.MPP;
 using Cova.Servicios.Encriptacion;
+using Cova.BE.Permisos;
 
 namespace Cova.BL
 {
@@ -11,10 +12,10 @@ namespace Cova.BL
         public bool Login(ref BEUsuario usuarioALoguearse)
         {
             bool claveCorrecta = false;
-            MPPUsuario MPPUsuario = new MPPUsuario();
+            MPPUsuario mPPUsuario = new MPPUsuario();
             string claveEncriptada = HashHelper.HashMD5(usuarioALoguearse.Password);
-            BEUsuario usuario = new BEUsuario();
-            usuario = MPPUsuario.ObtenerUsuario(usuarioALoguearse);
+            BEUsuario usuario;
+            usuario = mPPUsuario.ObtenerUsuario(usuarioALoguearse);
             if (usuario.Password == claveEncriptada)
             {
                 usuarioALoguearse.UsuarioID = usuario.UsuarioID;
@@ -27,10 +28,21 @@ namespace Cova.BL
 
         public bool CambiarPassword(BEUsuario usuario, string nuevoPassword)
         {
-            MPPUsuario MPPUsuario = new MPPUsuario();
+            MPPUsuario mPPUsuario = new MPPUsuario();
             string claveNuevaEncriptada = HashHelper.Hash256(nuevoPassword);
-            return MPPUsuario.ActualizarPassword(usuario.Usuario, claveNuevaEncriptada);
+            return mPPUsuario.ActualizarPassword(usuario.Usuario, claveNuevaEncriptada);
         }
 
+        public ComponentePermiso ObtenerPermisosUsuario(long usuarioID)
+        {
+            MPPPermiso mPPPermiso = new MPPPermiso();
+            return mPPPermiso.ObtenerPermisosUsuario(usuarioID);
+        }
+
+        public IList<BEUsuario> BuscarUsuarios(string nombreABuscar, string ApellidoABuscar)
+        {
+            MPPUsuario mPPUsuario = new MPPUsuario();
+            return mPPUsuario.BuscarUsuarios(nombreABuscar, ApellidoABuscar);
+        }
     }
 }

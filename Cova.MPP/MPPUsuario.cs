@@ -43,6 +43,56 @@ namespace Cova.MPP
             return usuario;
         }
 
+        public IList<BEUsuario> BuscarUsuarios(string nombreABuscar, string apellidoABuscar)
+        {
+            List<BEUsuario> usuarios = new List<BEUsuario>();
+            DataSet usuariosDS;
+            DataTable usuariosT;
+            Hashtable datosUsuario = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_BuscarUsuario";
+                datosUsuario.Add("@NombreABuscar", nombreABuscar);
+                datosUsuario.Add("@ApellidoABuscar", apellidoABuscar);
+                usuariosDS = conexionBDD.obtenerDataSet(strSQL, datosUsuario);
+                usuariosT = usuariosDS.Tables[0];
+                if (usuariosT.Rows.Count > 0)
+                {
+                    foreach (DataRow fila in usuariosT.Rows)
+                    {
+                        if(Convert.ToString(fila["TipoUsuario"]) == "Paciente")
+                        {
+                            BEPaciente paciente = new BEPaciente();
+                            paciente.Apellido = Convert.ToString(fila["Apellido"]);
+                            paciente.Nombre = Convert.ToString(fila["Nombre"]);
+                            paciente.Email = Convert.ToString(fila["Email"]);
+                            paciente.Usuario = Convert.ToString(fila["Usuario"]);
+                            paciente.UsuarioID = Convert.ToInt64(fila["UsuarioID"]);
+
+                            usuarios.Add(paciente);
+                        } 
+                        else if(Convert.ToString(fila["TipoUsuario"]) == "Medico")
+                        {
+                            BEProfesional profesional = new BEProfesional();
+                            profesional.Apellido = Convert.ToString(fila["Apellido"]);
+                            profesional.Nombre = Convert.ToString(fila["Nombre"]);
+                            profesional.Email = Convert.ToString(fila["Email"]);
+                            profesional.Usuario = Convert.ToString(fila["Usuario"]);
+                            profesional.UsuarioID = Convert.ToInt64(fila["UsuarioID"]);
+
+                            usuarios.Add(profesional);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return usuarios;
+        }
+
         public bool ActualizarPassword(string usuario, string claveNuevaEncriptada)
         {
             return true;

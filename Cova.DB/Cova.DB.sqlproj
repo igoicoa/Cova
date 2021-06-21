@@ -79,6 +79,8 @@
     <Build Include="StoredProcedures\s_CrearPaciente.sql" />
     <Build Include="StoredProcedures\s_AgregarPermisosProfesionalMedico.sql" />
     <Build Include="Tables\UsuarioPermiso.sql" />
+    <Build Include="StoredProcedures\s_AgregarPermisosPaciente.sql" />
+    <Build Include="StoredProcedures\s_BuscarUsuario.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />

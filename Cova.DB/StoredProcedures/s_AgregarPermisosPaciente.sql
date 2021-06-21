@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[s_AgregarPermisosProfesionalMedico]
+﻿CREATE PROCEDURE [dbo].[s_AgregarPermisosPaciente]
 	@IdUsuario		BIGINT
 
 AS
@@ -11,27 +11,17 @@ BEGIN
 	(@IdUsuario, 3),
 	(@IdUsuario, 4),
 	(@IdUsuario, 5),
-	(@IdUsuario, 6),
 	(@IdUsuario, 11),
 	(@IdUsuario, 12),
 	(@IdUsuario, 15),
-	(@IdUsuario, 16),
 	(@IdUsuario, 17),
-	(@IdUsuario, 18),
 	(@IdUsuario, 19),
 	(@IdUsuario, 20),
 	(@IdUsuario, 21),
 	(@IdUsuario, 22),
-	(@IdUsuario, 26),
-	(@IdUsuario, 27),
-	(@IdUsuario, 28),
 	(@IdUsuario, 29),
-	(@IdUsuario, 30),
-	(@IdUsuario, 31),
-	(@IdUsuario, 32),
 	(@IdUsuario, 33),
 	(@IdUsuario, 40),
 	(@IdUsuario, 46),
 	(@IdUsuario, 47)
 END
-

@@ -19,4 +19,5 @@ BEGIN
 	VALUES
 	(@Apellido, @Nombre, @DNI, @FechaNacimiento, @Email, @IdUsuario)
 
+	EXEC [dbo].[s_AgregarPermisosPaciente] @IDUsuario
 END
