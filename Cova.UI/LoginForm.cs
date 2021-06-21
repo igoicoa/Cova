@@ -15,10 +15,11 @@ namespace Cova.UI
 {
     public partial class LoginForm : Form
     {
-
-        public LoginForm()
+        private MainForm _MainForm;
+        public LoginForm(MainForm mainForm)
         {
             InitializeComponent();
+            this._MainForm = mainForm;
         }
 
         private void btn_login_Click(object sender, EventArgs e)
@@ -30,10 +31,11 @@ namespace Cova.UI
 
             usuario.Usuario = nombreUsuario;
             usuario.Password = password;
-            if(usuarioBL.Login(usuario))
+            if(usuarioBL.Login(ref usuario))
             {
                 Sesion.Login(usuario);
                 MessageBox.Show("Usuario logueado correctamente");
+                this._MainForm.InicializarMainForm();
                 this.Close();
             } else
             {

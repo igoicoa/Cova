@@ -14,7 +14,7 @@ BEGIN
 
 	INSERT INTO Usuario (Usuario, Password)
 	VALUES
-	(LEFT(@Nombre, 1) + @apellido, 'test123')
+	(LEFT(@Nombre, 1) + @apellido, @DNI)
 	SET @IdUsuario = SCOPE_IDENTITY();
 
 	INSERT INTO Profesional (Apellido, Nombre, DNI, FechaNacimiento, Email, UsuarioID)

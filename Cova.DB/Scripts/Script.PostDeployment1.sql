@@ -12,6 +12,7 @@ Post-Deployment Script Template
 
 INSERT INTO Usuario(Usuario, Password, UltimoLogin)
 VALUES
-('TestUser', '61-3E-5A-EB-44-D9-F5-C9-24-35-B6-1C-DB-28-43-F6', GETDATE());
+--Pwd test123
+('TestUser', 'CC-03-E7-47-A6-AF-BB-CB-F8-BE-76-68-AC-FE-BE-E5', GETDATE());
 
 GO

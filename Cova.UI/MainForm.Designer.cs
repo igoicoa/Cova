@@ -70,12 +70,12 @@
             this.misDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.permisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contactoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.novedadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearPermisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarPermisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarPermisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contactoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.novedadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -396,6 +396,25 @@
             this.permisosToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.permisosToolStripMenuItem.Text = "Permisos";
             // 
+            // crearPermisosToolStripMenuItem
+            // 
+            this.crearPermisosToolStripMenuItem.Name = "crearPermisosToolStripMenuItem";
+            this.crearPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.crearPermisosToolStripMenuItem.Text = "Crear Permisos";
+            // 
+            // modificarPermisosToolStripMenuItem
+            // 
+            this.modificarPermisosToolStripMenuItem.Name = "modificarPermisosToolStripMenuItem";
+            this.modificarPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modificarPermisosToolStripMenuItem.Text = "Modificar Permisos";
+            // 
+            // asignarPermisosToolStripMenuItem
+            // 
+            this.asignarPermisosToolStripMenuItem.Name = "asignarPermisosToolStripMenuItem";
+            this.asignarPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.asignarPermisosToolStripMenuItem.Text = "Asignar Permisos";
+            this.asignarPermisosToolStripMenuItem.Click += new System.EventHandler(this.asignarPermisosToolStripMenuItem_Click);
+            // 
             // informaciónToolStripMenuItem
             // 
             this.informaciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -416,24 +435,6 @@
             this.novedadesToolStripMenuItem.Name = "novedadesToolStripMenuItem";
             this.novedadesToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.novedadesToolStripMenuItem.Text = "Novedades";
-            // 
-            // crearPermisosToolStripMenuItem
-            // 
-            this.crearPermisosToolStripMenuItem.Name = "crearPermisosToolStripMenuItem";
-            this.crearPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.crearPermisosToolStripMenuItem.Text = "Crear Permisos";
-            // 
-            // modificarPermisosToolStripMenuItem
-            // 
-            this.modificarPermisosToolStripMenuItem.Name = "modificarPermisosToolStripMenuItem";
-            this.modificarPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.modificarPermisosToolStripMenuItem.Text = "Modificar Permisos";
-            // 
-            // asignarPermisosToolStripMenuItem
-            // 
-            this.asignarPermisosToolStripMenuItem.Name = "asignarPermisosToolStripMenuItem";
-            this.asignarPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.asignarPermisosToolStripMenuItem.Text = "Asignar Permisos";
             // 
             // MainForm
             // 

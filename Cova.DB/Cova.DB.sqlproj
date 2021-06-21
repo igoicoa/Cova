@@ -73,11 +73,7 @@
     <Build Include="Tables\CoberturaMedica.sql" />
     <Build Include="Tables\Usuario.sql" />
     <Build Include="StoredProcedures\s_ObtenerUsuario.sql" />
-    <Build Include="Tables\ComponentePermiso.sql" />
-    <Build Include="Tables\FamiliaPermiso.sql" />
-    <Build Include="Tables\Permiso.sql" />
-    <Build Include="StoredProcedures\s_ObtenerFamiliaPermisoUsuario.sql" />
-    <Build Include="StoredProcedures\s_ObtenerFamiliaPermisosMaster.sql" />
+    <Build Include="StoredProcedures\s_ObtenerPermisosUsuario.sql" />
     <Build Include="StoredProcedures\s_CrearProfesionalMedico.sql" />
     <Build Include="StoredProcedures\s_CrearProfesionalEnfermero.sql" />
     <Build Include="StoredProcedures\s_CrearPaciente.sql" />

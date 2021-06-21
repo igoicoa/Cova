@@ -32,12 +32,14 @@ namespace Cova.BE.Permisos
             return _hijos.ToArray();
         }
 
-        public override bool TienePermiso(TipoPermiso tipoPermiso)
+        public override bool TienePermiso(TipoPermiso tipoPermisoAVerificar)
         {
             bool tienePermiso = false;
+            if (this.TipoPermiso == tipoPermisoAVerificar)
+                return true;
             foreach (ComponentePermiso permiso in this._hijos)
             {
-                tienePermiso = permiso.TienePermiso(tipoPermiso);
+                tienePermiso = permiso.TienePermiso(tipoPermisoAVerificar);
                 if (tienePermiso)
                     return tienePermiso;
             }

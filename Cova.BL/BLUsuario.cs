@@ -8,7 +8,7 @@ namespace Cova.BL
 {
     public class BLUsuario
     {
-        public bool Login(BEUsuario usuarioALoguearse)
+        public bool Login(ref BEUsuario usuarioALoguearse)
         {
             bool claveCorrecta = false;
             MPPUsuario MPPUsuario = new MPPUsuario();
@@ -16,7 +16,11 @@ namespace Cova.BL
             BEUsuario usuario = new BEUsuario();
             usuario = MPPUsuario.ObtenerUsuario(usuarioALoguearse);
             if (usuario.Password == claveEncriptada)
+            {
+                usuarioALoguearse.UsuarioID = usuario.UsuarioID;
+                usuarioALoguearse.UltimoLogin = usuario.UltimoLogin;
                 claveCorrecta = true;
+            }
 
             return claveCorrecta;
         }

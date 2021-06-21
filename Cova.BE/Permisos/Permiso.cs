@@ -20,12 +20,12 @@ namespace Cova.BE.Permisos
 
         public override void EliminarPermiso(ComponentePermiso p)
         {
-            throw new NotImplementedException();
+            return;
         }
 
         public override IList<ComponentePermiso> ObtenerHijos()
         {
-            throw new NotImplementedException();
+            return new List<ComponentePermiso>();
         }
 
         public override bool TienePermiso(TipoPermiso tipoPermiso)

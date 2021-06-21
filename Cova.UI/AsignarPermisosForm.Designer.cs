@@ -1,6 +1,6 @@
 ﻿namespace Cova.UI
 {
-    partial class AsignarPermisos
+    partial class AsignarPermisosForm
     {
         /// <summary>
         /// Required designer variable.
@@ -77,7 +77,6 @@
             this.Controls.Add(this.tv_PermisosMaster);
             this.Name = "AsignarPermisos";
             this.Text = "Asignar Permisos";
-            this.Load += new System.EventHandler(this.AsignarPermisos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
