@@ -14,6 +14,7 @@ BEGIN
 	(@IdUsuario, 11),
 	(@IdUsuario, 12),
 	(@IdUsuario, 15),
+	(@IdUsuario, 16),
 	(@IdUsuario, 17),
 	(@IdUsuario, 19),
 	(@IdUsuario, 20),

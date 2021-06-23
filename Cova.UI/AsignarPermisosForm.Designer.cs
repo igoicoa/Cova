@@ -136,6 +136,7 @@
             this.btn_agregarPermiso.TabIndex = 11;
             this.btn_agregarPermiso.Text = "Agregar";
             this.btn_agregarPermiso.UseVisualStyleBackColor = true;
+            this.btn_agregarPermiso.Click += new System.EventHandler(this.btn_agregarPermiso_Click);
             // 
             // btn_quitarPermiso
             // 
@@ -145,6 +146,7 @@
             this.btn_quitarPermiso.TabIndex = 12;
             this.btn_quitarPermiso.Text = "Quitar";
             this.btn_quitarPermiso.UseVisualStyleBackColor = true;
+            this.btn_quitarPermiso.Click += new System.EventHandler(this.btn_quitarPermiso_Click);
             // 
             // dgv_usuarios
             // 

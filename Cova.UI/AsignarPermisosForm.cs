@@ -12,10 +12,12 @@ namespace Cova.UI
 {
     public partial class AsignarPermisosForm : Form
     {
+        private BEUsuario _usuarioSeleccionado;
         public AsignarPermisosForm()
         {
             InitializeComponent();
             CargarPermisosMaestro();
+            this._usuarioSeleccionado = new BEUsuario();
         }
 
         public void CargarPermisosMaestro()
@@ -98,7 +100,7 @@ namespace Cova.UI
             dgv_usuarios.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgv_usuarios.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgv_usuarios.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_usuarios.Columns[5].Visible = false;
+            dgv_usuarios.Columns[5].Visible = true;
 
         }
 
@@ -107,16 +109,53 @@ namespace Cova.UI
             if (dgv_usuarios.SelectedRows.Count != 0)
             {
                 long usuarioID = Convert.ToInt64(dgv_usuarios.SelectedRows[0].Cells["UsuarioID"].Value);
-                BLUsuario bLUsuario = new BLUsuario();
-                ComponentePermiso permisosUsuario = bLUsuario.ObtenerPermisosUsuario(usuarioID);
-                this.tv_PermisosUsuario.Nodes.Clear();
-                TreeNode raizPermisoUsuario = new TreeNode("Permisos Usuario");
-                this.tv_PermisosUsuario.Nodes.Add(raizPermisoUsuario);
-                MostrarPermisosRecursivo(permisosUsuario, raizPermisoUsuario);
+                this._usuarioSeleccionado.UsuarioID = usuarioID;
+                CargarPermisosUsuario();
             }
             else
             {
                 MessageBox.Show("Debe seleccionar un usuario para administrar sus permisos");
+            }
+        }
+
+        private void CargarPermisosUsuario()
+        {
+            BLUsuario bLUsuario = new BLUsuario();
+            ComponentePermiso permisosUsuario = bLUsuario.ObtenerPermisosUsuario(this._usuarioSeleccionado.UsuarioID);
+            this.tv_PermisosUsuario.Nodes.Clear();
+            TreeNode raizPermisoUsuario = new TreeNode("Permisos Usuario");
+            this.tv_PermisosUsuario.Nodes.Add(raizPermisoUsuario);
+            MostrarPermisosRecursivo(permisosUsuario, raizPermisoUsuario);
+        }
+
+        private void btn_agregarPermiso_Click(object sender, EventArgs e)
+        {
+            if(this.tv_PermisosMaster.SelectedNode.IsSelected)
+            {
+                ComponentePermiso permiso = (ComponentePermiso)this.tv_PermisosMaster.SelectedNode.Tag;
+                BLUsuario bLUsuario = new BLUsuario();
+                bLUsuario.AgregarPermiso(this._usuarioSeleccionado.UsuarioID, permiso.TipoPermiso);
+                CargarPermisosUsuario();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un permiso de la izquierda a agregar");
+            }
+            
+        }
+
+        private void btn_quitarPermiso_Click(object sender, EventArgs e)
+        {
+            if (this.tv_PermisosMaster.SelectedNode.IsSelected)
+            {
+                ComponentePermiso permiso = (ComponentePermiso)this.tv_PermisosUsuario.SelectedNode.Tag;
+                BLUsuario bLUsuario = new BLUsuario();
+                bLUsuario.EliminarPermiso(this._usuarioSeleccionado.UsuarioID, permiso.TipoPermiso);
+                CargarPermisosUsuario();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un permiso de la derecha a eliminar");
             }
         }
     }

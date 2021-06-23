@@ -44,5 +44,17 @@ namespace Cova.BL
             MPPUsuario mPPUsuario = new MPPUsuario();
             return mPPUsuario.BuscarUsuarios(nombreABuscar, ApellidoABuscar);
         }
+
+        public bool AgregarPermiso(long usuarioID, TipoPermiso permisoAAgregar)
+        {
+            MPPPermiso mPPPermiso = new MPPPermiso();
+            return mPPPermiso.AgregarPermisoUsuario(usuarioID, permisoAAgregar);
+        }
+
+        public bool EliminarPermiso(long usuarioID, TipoPermiso permisoAAgregar)
+        {
+            MPPPermiso mPPPermiso = new MPPPermiso();
+            return mPPPermiso.EliminarPermisoUsuario(usuarioID, permisoAAgregar);
+        }
     }
 }

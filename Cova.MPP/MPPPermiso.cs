@@ -73,6 +73,39 @@ namespace Cova.MPP
             }
         }
 
+        public bool AgregarPermisoUsuario(long usuarioID, TipoPermiso tipoPermiso)
+        {
+            Hashtable datosUsuario = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_AgregarPermisoUsuario";
+                datosUsuario.Add("@UsuarioID", usuarioID);
+                datosUsuario.Add("@TipoPermiso", (int)tipoPermiso);
+                return conexionBDD.escribir(strSQL, datosUsuario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool EliminarPermisoUsuario(long usuarioID, TipoPermiso tipoPermiso)
+        {
+            Hashtable datosUsuario = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_EliminarPermisoUsuario";
+                datosUsuario.Add("@UsuarioID", usuarioID);
+                datosUsuario.Add("@TipoPermiso", (int)tipoPermiso);
+                return conexionBDD.escribir(strSQL, datosUsuario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 
 }

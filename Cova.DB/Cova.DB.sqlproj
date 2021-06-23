@@ -81,6 +81,8 @@
     <Build Include="Tables\UsuarioPermiso.sql" />
     <Build Include="StoredProcedures\s_AgregarPermisosPaciente.sql" />
     <Build Include="StoredProcedures\s_BuscarUsuario.sql" />
+    <Build Include="StoredProcedures\s_AgregarPermisoUsuario.sql" />
+    <Build Include="StoredProcedures\s_EliminarPermisoUsuario.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />
