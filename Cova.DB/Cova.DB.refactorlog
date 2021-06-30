@@ -77,4 +77,53 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="UsuarioID" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="ff1b100d-f7bb-42cd-b815-754fb13c08ee" ChangeDateTime="06/29/2021 21:10:11">
+    <Property Name="ElementName" Value="[dbo].[Idioma].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Idioma]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IDIdioma" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5ac00a2e-c510-4f1b-a914-46ebefa85ddb" ChangeDateTime="06/29/2021 21:11:15">
+    <Property Name="ElementName" Value="[dbo].[Etiqueta].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Etiqueta]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IDEtiqueta" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="345fb29e-b7c8-4f8e-8d34-add4420e40d4" ChangeDateTime="06/29/2021 21:11:29">
+    <Property Name="ElementName" Value="[dbo].[Etiqueta].[Etiqueta]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Etiqueta]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Nombre" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0cbd9c75-7636-4133-a04f-8165fe70e38b" ChangeDateTime="06/29/2021 21:12:39">
+    <Property Name="ElementName" Value="[dbo].[Idioma].[IDIdioma]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Idioma]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IdiomaId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3572a89d-2f78-4dd2-ac7c-d2fef92bb44d" ChangeDateTime="06/29/2021 21:12:49">
+    <Property Name="ElementName" Value="[dbo].[Etiqueta].[IDEtiqueta]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Etiqueta]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="EtiquetaId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b0424838-3606-4787-9096-7e66d913f01e" ChangeDateTime="06/29/2021 21:14:25">
+    <Property Name="ElementName" Value="[dbo].[Traduccion].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Traduccion]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TraduccionId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="39b58644-1224-440b-9825-a0e40307b2c7" ChangeDateTime="06/29/2021 21:15:23">
+    <Property Name="ElementName" Value="[dbo].[Traduccion].[IdiomaID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Traduccion]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IdiomaId" />
+  </Operation>
 </Operations>

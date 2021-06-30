@@ -1,6 +1,8 @@
 ﻿using System;
 using Cova.BE;
 using Cova.BE.Permisos;
+using Cova.BE.Multiidioma;
+using Cova.Servicios.Multiidioma;
 using Cova.MPP;
 
 namespace Cova.Servicios.Sesion
@@ -11,13 +13,12 @@ namespace Cova.Servicios.Sesion
 
         public BEUsuario Usuario { get; set; }
         public DateTime FechaLogueo { get; set; }
-        
+        public ManejadorIdioma ManejadorIdioma { get; set; }
+
         public static Sesion GetInstance
         {
             get
             {
-                if (_sesion == null)
-                    throw new Exception("No hay sesion inicializada");
                 return _sesion;
             }
         }
@@ -30,6 +31,9 @@ namespace Cova.Servicios.Sesion
                 _sesion.Usuario = usuario;
                 _sesion.FechaLogueo = DateTime.Now;
                 _sesion.CargarPermisos();
+                Idioma idiomaElegido = new Idioma();
+                idiomaElegido.Nombre = "Castellano";
+                _sesion.ManejadorIdioma = new ManejadorIdioma(idiomaElegido);
             }
             else
             {

@@ -9,28 +9,82 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cova.Servicios.Sesion;
 using Cova.BE.Permisos;
+using Cova.BE.Multiidioma;
+using Cova.Servicios.Multiidioma;
 
 namespace Cova.UI
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Form, IIdiomaObserver
     {
         public MainForm()
         {
             InitializeComponent();
             InicializarMainForm();
+            if(Sesion.GetInstance != null)
+            { 
+                this.Traducir(Sesion.GetInstance.ManejadorIdioma.Idioma);
+            }
+            else
+            {
+                this.Traducir();
+            }
         }
 
         public void InicializarMainForm()
         {
-            try
+
+            if (Sesion.GetInstance != null)
+                this.MostrarComponentes();
+            else
+                this.MostrarComponentes(false);
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            if (Sesion.GetInstance != null)
             {
-                if (Sesion.GetInstance.Usuario != null)
-                    MostrarComponentes();
+                Sesion.GetInstance.ManejadorIdioma.SuscribirObservador(this);
             }
-            catch (Exception ex)
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Sesion.GetInstance != null)
             {
-                MostrarComponentes(false);
+                Sesion.GetInstance.ManejadorIdioma.DesuscribirObservador(this);
             }
+        }
+
+        public void UpdateLanguage(Idioma idioma)
+        {
+            this.Traducir(idioma);
+        }
+
+        public void Traducir(Idioma idioma = null)
+        {
+            Traductor traductor = new Traductor();
+            IDictionary<string, Traduccion> traducciones = traductor.ObtenerTraducciones(idioma);
+            
+            if (inicioToolStripMenuItem.Tag != null && traducciones.ContainsKey(inicioToolStripMenuItem.Tag.ToString()))
+                inicioToolStripMenuItem.Text = traducciones[inicioToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (loginToolStripMenuItem.Tag != null && traducciones.ContainsKey(loginToolStripMenuItem.Tag.ToString()))
+                loginToolStripMenuItem.Text = traducciones[loginToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (logoutToolStripMenuItem.Tag != null && traducciones.ContainsKey(logoutToolStripMenuItem.Tag.ToString()))
+                logoutToolStripMenuItem.Text = traducciones[logoutToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (inicioToolStripMenuItem.Tag != null && traducciones.ContainsKey(inicioToolStripMenuItem.Tag.ToString()))
+                inicioToolStripMenuItem.Text = traducciones[inicioToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (administrarToolStripMenuItem.Tag != null && traducciones.ContainsKey(administrarToolStripMenuItem.Tag.ToString()))
+                administrarToolStripMenuItem.Text = traducciones[administrarToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (administrarCuentaToolStripMenuItem.Tag != null && traducciones.ContainsKey(administrarCuentaToolStripMenuItem.Tag.ToString()))
+                administrarCuentaToolStripMenuItem.Text = traducciones[administrarCuentaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (crearCuentaToolStripMenuItem.Tag != null && traducciones.ContainsKey(crearCuentaToolStripMenuItem.Tag.ToString()))
+                crearCuentaToolStripMenuItem.Text = traducciones[crearCuentaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
         }
 
         private void MostrarComponentes(bool cargarPermisosUsuario = true)
@@ -119,11 +173,6 @@ namespace Cova.UI
         }
 
         private void pacienteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
         {
 
         }

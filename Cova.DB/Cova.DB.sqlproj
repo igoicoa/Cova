@@ -83,6 +83,11 @@
     <Build Include="StoredProcedures\s_BuscarUsuario.sql" />
     <Build Include="StoredProcedures\s_AgregarPermisoUsuario.sql" />
     <Build Include="StoredProcedures\s_EliminarPermisoUsuario.sql" />
+    <Build Include="Tables\Idioma.sql" />
+    <Build Include="Tables\Etiqueta.sql" />
+    <Build Include="Tables\Traduccion.sql" />
+    <Build Include="StoredProcedures\s_ObtenerTraducciones.sql" />
+    <Build Include="StoredProcedures\s_ObtenerIdiomaDefault.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />

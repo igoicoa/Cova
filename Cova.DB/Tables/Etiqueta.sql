@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Etiqueta]
+(
+	[EtiquetaId]	INT			NOT NULL	IDENTITY(1,1)
+		CONSTRAINT [PK_EtiquetaId] PRIMARY KEY CLUSTERED,
+    [Nombre]		VARCHAR(150) NOT NULL
+)

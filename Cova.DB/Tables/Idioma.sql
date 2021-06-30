@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Idioma]
+(
+	[IdiomaId]	INT			NOT NULL	IDENTITY(1,1)
+		CONSTRAINT [PK_IdiomaId] PRIMARY KEY CLUSTERED,
+    [Nombre]	VARCHAR(50) NOT NULL, 
+    [Default] BIT NOT NULL
+)
