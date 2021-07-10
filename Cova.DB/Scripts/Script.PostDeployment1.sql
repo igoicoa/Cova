@@ -10,21 +10,86 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
--- Creo usuarios de prueba
-EXEC s_CrearPaciente 'Gonzalez', 'Juan', 32382278, '1987-02-21', 'M', 'Soltero', '1123423452', 'jgonzalez@hotmail.com'
-EXEC s_CrearPaciente 'Lopez', 'Pedro', 31938278, '1986-04-18', 'M', 'Soltero', '1123423452', 'plopez@hotmail.com'
-EXEC s_CrearPaciente 'Fernandez', 'Maria', 35263728, '1991-07-15', 'M', 'Soltero', '1123423452', 'mfernandez@hotmail.com'
-EXEC s_CrearProfesionalMedico 'Rojas', 'Daniel', 2593776, '1973-08-12', 'drojas@gmail.com', 'M', 'Soltero', '1123423452', 123943, 643234, 'Neumonologia'
-EXEC s_CrearProfesionalMedico 'Lopez', 'Ricardo', 16827367, '1968-10-15', 'rlopez@gmail.com', 'M', 'Soltero', '1123423452', 382726, 293728, 'Cardiologia'
-EXEC s_CrearProfesionalMedico 'Perez', 'Jose Luis', 28384374, '1981-05-21', 'jlperez@gmail.com', 'M', 'Soltero', '1123423452', 382139, 284920, 'Pediatria'
+-- Creo las Coberturas Medicas con sus Planes
+INSERT INTO [dbo].[CoberturaMedica] (Nombre)
+VALUES
+('AVALIAN'),
+('GALENO'),
+('MEDICUS'),
+('MEDIFE'),
+('OMINT'),
+('OSDE'),
+('SANCOR SALUD'),
+('SWISS MEDICAL')
 
--- Creo el Admin user
+INSERT INTO [dbo].[CoberturaMedicaPlan] (CoberturaMedicaId, Nombre)
+VALUES
+-- AVALIAN
+(1, 'Plan Integral'),
+(1, 'Plan Superior'),
+(1, 'Plan Selecta'),
+-- GALENO
+(2, '220'),
+(2, '330'),
+(2, '440'),
+(2, '550'),
+-- MEDICUS
+(3, 'Plan Azul'),
+(3, 'Plan Celeste'),
+(3, 'Plan One'),
+(3, 'Plan One R'),
+(3, 'Plan Integra'),
+-- MEDIFE
+(4, 'Plan Bronce'),
+(4, 'Plan Juntos'),
+(4, 'Plan Plata'),
+(4, 'Plan Oro'),
+(4, 'Plan Platinum'),
+-- OMINT
+(5, 'Genesis'),
+(5, 'Global'),
+(5, 'Clasico'),
+(5, 'Premium'),
+-- OSDE
+(6, 'OSDE 210'),
+(6, 'OSDE 310'),
+(6, 'OSDE 410'),
+(6, 'OSDE 450'),
+(6, 'OSDE 450'),
+-- SANCOR SALUD
+(7, 'SanCor 700A'),
+(7, 'SanCor 800V'),
+(7, 'SanCor 1000'),
+(7, 'SanCor 1500'),
+(7, 'SanCor 3000'),
+(7, 'SanCor 3500'),
+(7, 'SanCor 4000'),
+(7, 'SanCor 4500'),
+(7, 'SanCor 5000 Exclusive'),
+(7, 'SanCor 6000 Exclusive'),
+-- SWISS MEDICAL
+(8, 'Advance'),
+(8, 'Global'),
+(8, 'Premium'),
+(8, 'Black')
+
+-- Creo usuarios de prueba
+-- Pacientes (PWD: paciente123)
+EXEC s_CrearPaciente 'Gonzalez', 'Juan', 32382278, '1987-02-21', 'M', 'Soltero', '1123423452', 'jgonzalez@hotmail.com', 5, 1, '1234323424', '2023-01-02','B6-0F-15-38-5B-90-5B-E9-C9-77-C5-9A-A3-42-0F-D2'
+EXEC s_CrearPaciente 'Lopez', 'Pedro', 31938278, '1986-04-18', 'M', 'Soltero', '1126376283', 'plopez@hotmail.com', 8, 2, '302229329382834', '2022-08-01','B6-0F-15-38-5B-90-5B-E9-C9-77-C5-9A-A3-42-0F-D2'
+EXEC s_CrearPaciente 'Fernandez', 'Maria', 35263728, '1991-07-15', 'S', 'Soltera', '1126399837', 'mfernandez@hotmail.com', 6, 2, '2736352637483', '2023-04-01','B6-0F-15-38-5B-90-5B-E9-C9-77-C5-9A-A3-42-0F-D2'
+-- Medicos (PWD: medico123)
+EXEC s_CrearProfesionalMedico 'Rojas', 'Daniel', 2593776, '1973-08-12', 'drojas@gmail.com', 'M', 'Casado', '1126352435', 123943, 643234, 'Neumonologia','D7-A3-95-61-4E-B5-F8-8F-59-5D-4A-DA-63-89-48-F9'
+EXEC s_CrearProfesionalMedico 'Lopez', 'Ricardo', 16827367, '1968-10-15', 'rlopez@gmail.com', 'M', 'Soltero', '1125333826', 382726, 293728, 'Cardiologia','D7-A3-95-61-4E-B5-F8-8F-59-5D-4A-DA-63-89-48-F9'
+EXEC s_CrearProfesionalMedico 'Perez', 'Jose Luis', 28384374, '1981-05-21', 'jlperez@gmail.com', 'M', 'Casado', '1128372634', 382139, 284920, 'Pediatria','D7-A3-95-61-4E-B5-F8-8F-59-5D-4A-DA-63-89-48-F9'
+-- Enfermeros (PWD: enfermero123)
+EXEC s_CrearProfesionalEnfermero 'Vargas', 'Pablo', 29327384, '1982-07-30', 'pvargas@gmail.com', 'M', 'Soltero', '1182533324', 29182736,'0E-C2-CB-0E-1D-1A-7C-5B-2A-CB-1C-2E-B3-8B-08-20'
+EXEC s_CrearProfesionalEnfermero 'Salas', 'Sofia', 34928392, '1989-09-21', 'ssalas@hotmail.com', 'F', 'Soltera', '1182736253', 38292832,'0E-C2-CB-0E-1D-1A-7C-5B-2A-CB-1C-2E-B3-8B-08-20'
+-- Admin User (User: Admin - PWD: test123)
 DECLARE @UserIDAdmin BIGINT
 DECLARE @permiso INT = 0;
 INSERT INTO Usuario(Usuario, Password, UltimoLogin)
 VALUES
---User: Admin
---Password: test123
 ('Admin', 'CC-03-E7-47-A6-AF-BB-CB-F8-BE-76-68-AC-FE-BE-E5', GETDATE());
 SET @UserIDAdmin = SCOPE_IDENTITY();
 
@@ -36,7 +101,7 @@ BEGIN
     SET @permiso = @permiso + 1;
 END;
 
--- Multiidioma
+-- DICCIONARIO MULTI IDIOMA
 DECLARE @IdiomaCastellanoId INT,
         @IdiomaInglesId INT,
         @EtiquetaId INT
