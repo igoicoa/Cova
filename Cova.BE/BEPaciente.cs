@@ -13,6 +13,9 @@ namespace Cova.BE
         public string Nombre { get; set; }
         public int DNI { get; set; }
         public DateTime FechaNacimiento { get; set; }
+        public string Sexo { get; set; }
+        public string EstadoCivil { get; set; }
+        public string Telefono { get; set; }
         public string Email { get; set; }
         public BEDomicilio Domicilio { get; set; }
         public BECoberturaMedica CoberturaMedica { get; set; }

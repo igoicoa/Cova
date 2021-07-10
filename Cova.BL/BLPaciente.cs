@@ -4,26 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Cova.BE;
+using Cova.MPP;
 
 namespace Cova.BL
 {
     public class BLPaciente
     {
-        public bool crearPaciene(BEPaciente pacienteNuevo) 
+        public bool CrearPaciene(BEPaciente pacienteNuevo) 
         {
-            throw new NotImplementedException();
+            MPPUsuario mPPUsuario = new MPPUsuario();
+            return mPPUsuario.CrearPaciente(pacienteNuevo);
         }
-        public IList<BEPaciente> obtenerPacientes()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IList<BEVacuna> obtenerVacunasAplicadas()
+        public IList<BEPaciente> ObtenerPacientes()
         {
             throw new NotImplementedException();
         }
 
-        public IList<BEVacuna> obtenerVacunasRecetadas()
+        public IList<BEVacuna> ObtenerVacunasAplicadas()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IList<BEVacuna> ObtenerVacunasRecetadas()
         {
             throw new NotImplementedException();
         }
@@ -33,22 +35,22 @@ namespace Cova.BL
             throw new NotImplementedException();
         }
 
-        public bool agregarCoberturaMedica(BEPaciente paciente, BECoberturaMedica coberturaMedica)
+        public bool AgregarCoberturaMedica(BEPaciente paciente, BECoberturaMedica coberturaMedica)
         {
             throw new NotImplementedException();
         }
 
-        public bool eliminarCoberturaMedica(BEPaciente paciente)
+        public bool EliminarCoberturaMedica(BEPaciente paciente)
         {
             throw new NotImplementedException();
         }
 
-        public bool agregarTurno(BEPaciente paciente, BETurno turnoNuevo)
+        public bool AgregarTurno(BEPaciente paciente, BETurno turnoNuevo)
         {
             throw new NotImplementedException();
         }
 
-        public bool cancelarTurno(BEPaciente paciente, BETurno turnoACancelar)
+        public bool CancelarTurno(BEPaciente paciente, BETurno turnoACancelar)
         {
             throw new NotImplementedException();
         }

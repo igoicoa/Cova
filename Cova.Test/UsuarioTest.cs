@@ -17,7 +17,7 @@ namespace Cova.Test
             usuario.Usuario = "TestUser";
             usuario.Password = "TestPwd";
 
-            bool resultado = usuarioBL.Login(usuario);
+            bool resultado = usuarioBL.Login(ref usuario);
             Assert.IsTrue(resultado);
         }
 
@@ -30,7 +30,7 @@ namespace Cova.Test
             usuario.Usuario = "TestUser";
             usuario.Password = "PwdIncorrecto";
 
-            bool resultado = usuarioBL.Login(usuario);
+            bool resultado = usuarioBL.Login(ref usuario);
             Assert.IsFalse(resultado);
         }
 
@@ -43,7 +43,7 @@ namespace Cova.Test
             usuario.Usuario = "UserInexistente";
             usuario.Password = "PwdInexistente";
 
-            bool resultado = usuarioBL.Login(usuario);
+            bool resultado = usuarioBL.Login(ref usuario);
             Assert.IsFalse(resultado);
         }
 

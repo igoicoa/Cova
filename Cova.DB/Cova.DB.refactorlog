@@ -126,4 +126,25 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="IdiomaId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="d6d113a6-021b-47db-9684-4e7abab9229d" ChangeDateTime="07/10/2021 14:24:38">
+    <Property Name="ElementName" Value="[dbo].[CoberturaMedicaPlan].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CoberturaMedicaPlan]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PlanId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="02e2da0d-7e49-4acf-be8e-1c4a2c643d5a" ChangeDateTime="07/10/2021 14:27:31">
+    <Property Name="ElementName" Value="[dbo].[CoberturaMedicaPaciente].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CoberturaMedicaPaciente]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CoberturaMedicaPacienteId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5bcff242-24b8-476c-96f6-b1ceb1d71b86" ChangeDateTime="07/10/2021 14:31:51">
+    <Property Name="ElementName" Value="[dbo].[Paciente].[CoberturaMedicaId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Paciente]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CoberturaMedicaPacienteId" />
+  </Operation>
 </Operations>

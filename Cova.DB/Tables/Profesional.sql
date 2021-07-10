@@ -5,7 +5,10 @@
     [Apellido]          VARCHAR(120)    NOT NULL, 
     [Nombre]            VARCHAR(120)    NOT NULL, 
     [DNI]               INT             NOT NULL, 
-    [FechaNacimiento]   DATE            NOT NULL, 
+    [FechaNacimiento]   DATE            NOT NULL,
+    [Sexo]              VARCHAR(2)      NOT NULL,
+    [EstadoCivil]       VARCHAR(15)     NULL,
+    [Telefono]          VARCHAR(20)     NULL,
     [Email]             VARCHAR(120)    NOT NULL,
     [DomicilioId]       bigint          NULL
         CONSTRAINT [FK_Profesional_DomicilioId]

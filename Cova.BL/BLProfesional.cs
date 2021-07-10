@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Cova.BE;
+using Cova.MPP;
 
 namespace Cova.BL
 {
@@ -14,9 +15,16 @@ namespace Cova.BL
             throw new NotImplementedException();
         }
 
-        public bool agregarProfesional(BEProfesional nuevoProfesional)
+        public bool CrearProfesionalMedico(BEMedico medico)
         {
-            throw new NotImplementedException();
+            MPPUsuario mPPUsuario = new MPPUsuario();
+            return mPPUsuario.CrearProfesionalMedico(medico);
+        }
+
+        public bool CrearProfesionalEnfermero(BEEnfermero enfermero)
+        {
+            MPPUsuario mPPUsuario = new MPPUsuario();
+            return mPPUsuario.CrearProfesionalEnfermero(enfermero);
         }
 
         public bool aplicarVacuna(BEProfesional profesional, BEPaciente pacienteAVacunar, BEVacuna vacunaAAplicar)

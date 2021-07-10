@@ -182,5 +182,11 @@ namespace Cova.UI
             AsignarPermisosForm frmAsignarPermisos = new AsignarPermisosForm();
             frmAsignarPermisos.Show();
         }
+
+        private void crearCuentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrearCuentaForm frmCrearCuenta = new CrearCuentaForm();
+            frmCrearCuenta.Show();
+        }
     }
 }

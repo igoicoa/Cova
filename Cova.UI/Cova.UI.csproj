@@ -52,6 +52,12 @@
     <Compile Include="AsignarPermisosForm.Designer.cs">
       <DependentUpon>AsignarPermisosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CrearCuentaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearCuentaForm.Designer.cs">
+      <DependentUpon>CrearCuentaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AsignarPermisosForm.resx">
       <DependentUpon>AsignarPermisosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearCuentaForm.resx">
+      <DependentUpon>CrearCuentaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
