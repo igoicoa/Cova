@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Cova.BE.Multiidioma;
+using Cova.MPP;
 
 namespace Cova.Servicios.Multiidioma
 {
@@ -39,6 +40,24 @@ namespace Cova.Servicios.Multiidioma
         {
             this.Idioma = idiomaElegido;
             this.Notificar(idiomaElegido);
+        }
+
+        public bool CrearIdioma(Idioma idiomaNuevo)
+        {
+            MPPTraductor mPPTraductor = new MPPTraductor();
+            return mPPTraductor.CrearIdioma(idiomaNuevo);
+        }
+
+        public bool AgregarTraducciones(IList<Traduccion> nuevaTraduccion)
+        {
+            MPPTraductor mPPTraductor = new MPPTraductor();
+            return mPPTraductor.AgregarTraducciones(nuevaTraduccion);
+        }
+
+        public IDictionary<string, Traduccion> ObtenerEtiquetasIdiomaDefault()
+        {
+            MPPTraductor mPPTraductor = new MPPTraductor();
+            return mPPTraductor.ObtenerEtiquetasIdiomaDefault();
         }
 
     }

@@ -9,11 +9,11 @@ namespace Cova.BE
 {
     public class BECentroVacunacion
     {
-        public int centroVacunacionId { get; set; }
-        public string nombre { get; set; }
-        public string domicilio { get; set; }
-        public IList<BETurno> turnosAsignados { get; set; }
-        public IList<BERangoHorario> rangosHorarios { get; set; }
+        public int CentroVacunacionId { get; set; }
+        public string Nombre { get; set; }
+        public string Domicilio { get; set; }
+        public IList<BETurno> TurnosAsignados { get; set; }
+        public IList<BERangoHorario> RangosHorarios { get; set; }
 
     }
 }

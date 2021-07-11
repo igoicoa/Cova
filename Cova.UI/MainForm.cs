@@ -188,5 +188,11 @@ namespace Cova.UI
             CrearCuentaForm frmCrearCuenta = new CrearCuentaForm();
             frmCrearCuenta.Show();
         }
+
+        private void crearIdiomaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AgregarIdiomaForm frmAgregarIdioma = new AgregarIdiomaForm();
+            frmAgregarIdioma.Show();
+        }
     }
 }

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarIdiomaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarIdiomaForm.Designer.cs">
+      <DependentUpon>AgregarIdiomaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AsignarPermisosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AgregarIdiomaForm.resx">
+      <DependentUpon>AgregarIdiomaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AsignarPermisosForm.resx">
       <DependentUpon>AsignarPermisosForm.cs</DependentUpon>
     </EmbeddedResource>

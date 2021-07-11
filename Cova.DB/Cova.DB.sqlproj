@@ -90,6 +90,9 @@
     <Build Include="StoredProcedures\s_ObtenerIdiomaDefault.sql" />
     <Build Include="Tables\CoberturaMedicaPlan.sql" />
     <Build Include="Tables\CoberturaMedicaPaciente.sql" />
+    <Build Include="StoredProcedures\s_AgregarTraduccion.sql" />
+    <Build Include="StoredProcedures\s_AgregarIdioma.sql" />
+    <Build Include="StoredProcedures\s_ObtenerEtiquetasIdiomaDefault.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />

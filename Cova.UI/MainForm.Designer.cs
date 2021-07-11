@@ -66,7 +66,6 @@
             this.realizarRestoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bloquerarPaswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cambiarIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.misDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.permisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,6 +75,9 @@
             this.informaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contactoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novedadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administrarIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cambiarIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.crearIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,7 +108,7 @@
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.loginToolStripMenuItem.Tag = "menuiniciologin";
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
@@ -114,7 +116,7 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoutToolStripMenuItem.Tag = "menuiniciologout";
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
@@ -332,9 +334,9 @@
             this.realizarRestoreToolStripMenuItem,
             this.bloquerarPaswordToolStripMenuItem,
             this.cambiarContraseñaToolStripMenuItem,
-            this.cambiarIdiomaToolStripMenuItem,
             this.misDatosToolStripMenuItem,
-            this.permisosToolStripMenuItem});
+            this.permisosToolStripMenuItem,
+            this.administrarIdiomaToolStripMenuItem});
             this.seguridadToolStripMenuItem.Name = "seguridadToolStripMenuItem";
             this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.seguridadToolStripMenuItem.Text = "Seguridad";
@@ -370,12 +372,6 @@
             this.cambiarContraseñaToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.cambiarContraseñaToolStripMenuItem.Text = "Cambiar Contraseña";
             // 
-            // cambiarIdiomaToolStripMenuItem
-            // 
-            this.cambiarIdiomaToolStripMenuItem.Name = "cambiarIdiomaToolStripMenuItem";
-            this.cambiarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.cambiarIdiomaToolStripMenuItem.Text = "Cambiar Idioma";
-            // 
             // misDatosToolStripMenuItem
             // 
             this.misDatosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -387,7 +383,7 @@
             // modificarDatosToolStripMenuItem
             // 
             this.modificarDatosToolStripMenuItem.Name = "modificarDatosToolStripMenuItem";
-            this.modificarDatosToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.modificarDatosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modificarDatosToolStripMenuItem.Text = "Modificar Datos";
             // 
             // permisosToolStripMenuItem
@@ -440,6 +436,28 @@
             this.novedadesToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.novedadesToolStripMenuItem.Text = "Novedades";
             // 
+            // administrarIdiomaToolStripMenuItem
+            // 
+            this.administrarIdiomaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cambiarIdiomaToolStripMenuItem,
+            this.crearIdiomaToolStripMenuItem});
+            this.administrarIdiomaToolStripMenuItem.Name = "administrarIdiomaToolStripMenuItem";
+            this.administrarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.administrarIdiomaToolStripMenuItem.Text = "Administrar Idioma";
+            // 
+            // cambiarIdiomaToolStripMenuItem
+            // 
+            this.cambiarIdiomaToolStripMenuItem.Name = "cambiarIdiomaToolStripMenuItem";
+            this.cambiarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cambiarIdiomaToolStripMenuItem.Text = "Cambiar Idioma";
+            // 
+            // crearIdiomaToolStripMenuItem
+            // 
+            this.crearIdiomaToolStripMenuItem.Name = "crearIdiomaToolStripMenuItem";
+            this.crearIdiomaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.crearIdiomaToolStripMenuItem.Text = "Crear Idioma";
+            this.crearIdiomaToolStripMenuItem.Click += new System.EventHandler(this.crearIdiomaToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -474,7 +492,6 @@
         private System.Windows.Forms.ToolStripMenuItem realizarRestoreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bloquerarPaswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cambiarContraseñaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cambiarIdiomaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearCuentaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarCuentaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verUsuariosToolStripMenuItem;
@@ -508,6 +525,9 @@
         private System.Windows.Forms.ToolStripMenuItem crearPermisosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarPermisosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asignarPermisosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administrarIdiomaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cambiarIdiomaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem crearIdiomaToolStripMenuItem;
     }
 }
 

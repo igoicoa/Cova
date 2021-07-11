@@ -8,11 +8,10 @@ namespace Cova.BE
 {
     public class BETurno
     {
-        public  long turnoId { get; set; }
-        public BEVacuna vacunaAAlpicar { get; set; }
-        public DateTime fechaTurno { get; set; }
-
-        public BECentroVacunacion centroVacunacion { get; set; }
+        public  long TurnoId { get; set; }
+        public BEVacuna VacunaAAlpicar { get; set; }
+        public DateTime FechaTurno { get; set; }
+        public BECentroVacunacion CentroVacunacion { get; set; }
 
     }
 }

@@ -9,9 +9,9 @@ namespace Cova.BE
 {
     public class BERangoHorario
     {
-        public DiasSemana diaSemana { get; set; }
-        public int horaDesde { get; set; }
-        public int horaHasta { get; set; }
-        public int duracionTurnoMinutos { get; set; }
+        public DiasSemana DiaSemana { get; set; }
+        public int HoraDesde { get; set; }
+        public int HoraHasta { get; set; }
+        public int DuracionTurnoMinutos { get; set; }
     }
 }
