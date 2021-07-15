@@ -68,6 +68,7 @@
             this.cmb_Plan = new System.Windows.Forms.ComboBox();
             this.lbl_Plan = new System.Windows.Forms.Label();
             this.gb_Profesional = new System.Windows.Forms.GroupBox();
+            this.cmb_especialidad = new System.Windows.Forms.ComboBox();
             this.lbl_especialidad = new System.Windows.Forms.Label();
             this.txt_matriculaProvincial = new System.Windows.Forms.TextBox();
             this.lbl_matriculaProvincial = new System.Windows.Forms.Label();
@@ -85,7 +86,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_piso = new System.Windows.Forms.TextBox();
-            this.cmb_especialidad = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen_CrearCuenta)).BeginInit();
             this.gb_paciente.SuspendLayout();
@@ -494,6 +495,14 @@
             this.gb_Profesional.TabStop = false;
             this.gb_Profesional.Text = "Profesional";
             // 
+            // cmb_especialidad
+            // 
+            this.cmb_especialidad.FormattingEnabled = true;
+            this.cmb_especialidad.Location = new System.Drawing.Point(24, 143);
+            this.cmb_especialidad.Name = "cmb_especialidad";
+            this.cmb_especialidad.Size = new System.Drawing.Size(187, 21);
+            this.cmb_especialidad.TabIndex = 82;
+            // 
             // lbl_especialidad
             // 
             this.lbl_especialidad.AutoSize = true;
@@ -643,19 +652,23 @@
             this.txt_piso.Size = new System.Drawing.Size(70, 20);
             this.txt_piso.TabIndex = 81;
             // 
-            // cmb_especialidad
+            // label7
             // 
-            this.cmb_especialidad.FormattingEnabled = true;
-            this.cmb_especialidad.Location = new System.Drawing.Point(24, 143);
-            this.cmb_especialidad.Name = "cmb_especialidad";
-            this.cmb_especialidad.Size = new System.Drawing.Size(187, 21);
-            this.cmb_especialidad.TabIndex = 82;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.label7.Location = new System.Drawing.Point(41, 2);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(164, 25);
+            this.label7.TabIndex = 82;
+            this.label7.Text = "Crear Cuentas";
             // 
             // CrearCuentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 658);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.txt_piso);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txt_Email);
@@ -769,5 +782,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_piso;
         private System.Windows.Forms.ComboBox cmb_especialidad;
+        private System.Windows.Forms.Label label7;
     }
 }

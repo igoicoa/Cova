@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Cova.UI
 {
-    public partial class VerUsuarioscs : Form
+    public partial class CalendarioDeVacunación : Form
     {
-        public VerUsuarioscs()
+        public CalendarioDeVacunación()
         {
             InitializeComponent();
         }

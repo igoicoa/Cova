@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,6 +79,7 @@
             this.informaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contactoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novedadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aplicarVacunaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,22 +149,23 @@
             // crearCuentaToolStripMenuItem
             // 
             this.crearCuentaToolStripMenuItem.Name = "crearCuentaToolStripMenuItem";
-            this.crearCuentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.crearCuentaToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.crearCuentaToolStripMenuItem.Text = "Crear Cuenta";
             this.crearCuentaToolStripMenuItem.Click += new System.EventHandler(this.crearCuentaToolStripMenuItem_Click);
             // 
             // modificarCuentaToolStripMenuItem
             // 
             this.modificarCuentaToolStripMenuItem.Name = "modificarCuentaToolStripMenuItem";
-            this.modificarCuentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modificarCuentaToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.modificarCuentaToolStripMenuItem.Text = "Modificar Cuenta";
             this.modificarCuentaToolStripMenuItem.Click += new System.EventHandler(this.modificarCuentaToolStripMenuItem_Click);
             // 
             // verUsuariosToolStripMenuItem
             // 
             this.verUsuariosToolStripMenuItem.Name = "verUsuariosToolStripMenuItem";
-            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.verUsuariosToolStripMenuItem.Text = "Ver Usuarios";
+            this.verUsuariosToolStripMenuItem.Click += new System.EventHandler(this.verUsuariosToolStripMenuItem_Click);
             // 
             // administrarVacunasToolStripMenuItem
             // 
@@ -170,7 +173,8 @@
             this.calendarioDeVacunaciónToolStripMenuItem,
             this.crearVacunasToolStripMenuItem,
             this.modificarVacunasToolStripMenuItem,
-            this.verVacunasToolStripMenuItem});
+            this.verVacunasToolStripMenuItem,
+            this.aplicarVacunaToolStripMenuItem});
             this.administrarVacunasToolStripMenuItem.Name = "administrarVacunasToolStripMenuItem";
             this.administrarVacunasToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.administrarVacunasToolStripMenuItem.Text = "Administrar Vacunas";
@@ -180,6 +184,7 @@
             this.calendarioDeVacunaciónToolStripMenuItem.Name = "calendarioDeVacunaciónToolStripMenuItem";
             this.calendarioDeVacunaciónToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.calendarioDeVacunaciónToolStripMenuItem.Text = "Calendario de Vacunación";
+            this.calendarioDeVacunaciónToolStripMenuItem.Click += new System.EventHandler(this.calendarioDeVacunaciónToolStripMenuItem_Click);
             // 
             // crearVacunasToolStripMenuItem
             // 
@@ -459,12 +464,19 @@
             this.novedadesToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.novedadesToolStripMenuItem.Text = "Novedades";
             // 
+            // aplicarVacunaToolStripMenuItem
+            // 
+            this.aplicarVacunaToolStripMenuItem.Name = "aplicarVacunaToolStripMenuItem";
+            this.aplicarVacunaToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.aplicarVacunaToolStripMenuItem.Text = "Aplicar Vacuna";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
@@ -529,6 +541,7 @@
         private System.Windows.Forms.ToolStripMenuItem administrarIdiomaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cambiarIdiomaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearIdiomaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aplicarVacunaToolStripMenuItem;
     }
 }
 

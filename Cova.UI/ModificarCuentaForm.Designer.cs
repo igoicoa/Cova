@@ -66,6 +66,9 @@ namespace Cova.UI
             this.textBoxUsuario_ModificarCuenta = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblClave_ModificarCuenta = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmb_InhabilitarModificarCuenta = new System.Windows.Forms.ComboBox();
+            this.lbl_InhabilitarModificarCuenta = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen_ModificarCuenta)).BeginInit();
             this.groupBoxTipoUsuario_ModificarCuenta.SuspendLayout();
             this.SuspendLayout();
@@ -73,9 +76,6 @@ namespace Cova.UI
             // comboBoxCoberturaMedica_ModificarCuenta
             // 
             this.comboBoxCoberturaMedica_ModificarCuenta.FormattingEnabled = true;
-            this.comboBoxCoberturaMedica_ModificarCuenta.Items.AddRange(new object[] {
-            "DNI",
-            "Cédula de Ciudadania"});
             this.comboBoxCoberturaMedica_ModificarCuenta.Location = new System.Drawing.Point(422, 408);
             this.comboBoxCoberturaMedica_ModificarCuenta.Name = "comboBoxCoberturaMedica_ModificarCuenta";
             this.comboBoxCoberturaMedica_ModificarCuenta.Size = new System.Drawing.Size(121, 21);
@@ -111,7 +111,6 @@ namespace Cova.UI
             // 
             // pictureBoxImagen_ModificarCuenta
             // 
-            //this.pictureBoxImagen_ModificarCuenta.Image = global::Cova.UI.Properties.Resources.Imagen;
             this.pictureBoxImagen_ModificarCuenta.Location = new System.Drawing.Point(609, 28);
             this.pictureBoxImagen_ModificarCuenta.Name = "pictureBoxImagen_ModificarCuenta";
             this.pictureBoxImagen_ModificarCuenta.Size = new System.Drawing.Size(159, 145);
@@ -154,9 +153,6 @@ namespace Cova.UI
             // comboBoxEspecialidad_ModificarCuenta
             // 
             this.comboBoxEspecialidad_ModificarCuenta.FormattingEnabled = true;
-            this.comboBoxEspecialidad_ModificarCuenta.Items.AddRange(new object[] {
-            "DNI",
-            "Cédula de Ciudadania"});
             this.comboBoxEspecialidad_ModificarCuenta.Location = new System.Drawing.Point(422, 305);
             this.comboBoxEspecialidad_ModificarCuenta.Name = "comboBoxEspecialidad_ModificarCuenta";
             this.comboBoxEspecialidad_ModificarCuenta.Size = new System.Drawing.Size(121, 21);
@@ -336,7 +332,7 @@ namespace Cova.UI
             this.groupBoxTipoUsuario_ModificarCuenta.Controls.Add(this.rb_enfermero_ModificarCuenta);
             this.groupBoxTipoUsuario_ModificarCuenta.Controls.Add(this.rb_medico_ModificarCuenta);
             this.groupBoxTipoUsuario_ModificarCuenta.Controls.Add(this.rb_paciente_ModificarCuenta);
-            this.groupBoxTipoUsuario_ModificarCuenta.Location = new System.Drawing.Point(42, 28);
+            this.groupBoxTipoUsuario_ModificarCuenta.Location = new System.Drawing.Point(40, 28);
             this.groupBoxTipoUsuario_ModificarCuenta.Name = "groupBoxTipoUsuario_ModificarCuenta";
             this.groupBoxTipoUsuario_ModificarCuenta.Size = new System.Drawing.Size(355, 42);
             this.groupBoxTipoUsuario_ModificarCuenta.TabIndex = 35;
@@ -421,11 +417,45 @@ namespace Cova.UI
             this.lblClave_ModificarCuenta.TabIndex = 66;
             this.lblClave_ModificarCuenta.Text = "Clave";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.label3.Location = new System.Drawing.Point(35, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(203, 25);
+            this.label3.TabIndex = 68;
+            this.label3.Text = "Modificar Cuentas";
+            // 
+            // cmb_InhabilitarModificarCuenta
+            // 
+            this.cmb_InhabilitarModificarCuenta.FormattingEnabled = true;
+            this.cmb_InhabilitarModificarCuenta.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cmb_InhabilitarModificarCuenta.Location = new System.Drawing.Point(419, 471);
+            this.cmb_InhabilitarModificarCuenta.Name = "cmb_InhabilitarModificarCuenta";
+            this.cmb_InhabilitarModificarCuenta.Size = new System.Drawing.Size(121, 21);
+            this.cmb_InhabilitarModificarCuenta.TabIndex = 70;
+            // 
+            // lbl_InhabilitarModificarCuenta
+            // 
+            this.lbl_InhabilitarModificarCuenta.AutoSize = true;
+            this.lbl_InhabilitarModificarCuenta.Location = new System.Drawing.Point(419, 455);
+            this.lbl_InhabilitarModificarCuenta.Name = "lbl_InhabilitarModificarCuenta";
+            this.lbl_InhabilitarModificarCuenta.Size = new System.Drawing.Size(52, 13);
+            this.lbl_InhabilitarModificarCuenta.TabIndex = 69;
+            this.lbl_InhabilitarModificarCuenta.Text = "Inhabilitar";
+            // 
             // ModificarCuentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 640);
+            this.Controls.Add(this.cmb_InhabilitarModificarCuenta);
+            this.Controls.Add(this.lbl_InhabilitarModificarCuenta);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblClave_ModificarCuenta);
             this.Controls.Add(this.textBoxUsuario_ModificarCuenta);
@@ -509,5 +539,8 @@ namespace Cova.UI
         private System.Windows.Forms.TextBox textBoxUsuario_ModificarCuenta;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblClave_ModificarCuenta;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmb_InhabilitarModificarCuenta;
+        private System.Windows.Forms.Label lbl_InhabilitarModificarCuenta;
     }
 }
