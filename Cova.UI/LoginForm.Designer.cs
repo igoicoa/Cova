@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.txt_password = new System.Windows.Forms.TextBox();
             this.btn_login = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -73,7 +76,7 @@
             // 
             // btn_login
             // 
-            this.btn_login.Location = new System.Drawing.Point(100, 207);
+            this.btn_login.Location = new System.Drawing.Point(100, 249);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(85, 27);
             this.btn_login.TabIndex = 5;
@@ -83,18 +86,29 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(210, 207);
+            this.button1.Location = new System.Drawing.Point(210, 249);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(106, 27);
             this.button1.TabIndex = 6;
             this.button1.Text = "Olvide Contraseña";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(351, 32);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(194, 235);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 450);
+            this.ClientSize = new System.Drawing.Size(600, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.txt_password);
@@ -103,6 +117,7 @@
             this.Controls.Add(this.label2);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,5 +131,6 @@
         private System.Windows.Forms.TextBox txt_password;
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
