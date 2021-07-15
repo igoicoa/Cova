@@ -60,5 +60,11 @@ namespace Cova.Servicios.Multiidioma
             return mPPTraductor.ObtenerEtiquetasIdiomaDefault();
         }
 
+        public IList<Idioma> ObtenerIdiomas()
+        {
+            MPPTraductor mPPTraductor = new MPPTraductor();
+            return mPPTraductor.ObtenerIdiomas();
+        }
+
     }
 }

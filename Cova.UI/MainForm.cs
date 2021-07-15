@@ -20,19 +20,18 @@ namespace Cova.UI
         {
             InitializeComponent();
             InicializarMainForm();
-            if(Sesion.GetInstance != null)
-            { 
+        }
+
+        public void InicializarMainForm()
+        {
+            if (Sesion.GetInstance != null)
+            {
                 this.Traducir(Sesion.GetInstance.ManejadorIdioma.Idioma);
             }
             else
             {
                 this.Traducir();
             }
-        }
-
-        public void InicializarMainForm()
-        {
-
             if (Sesion.GetInstance != null)
                 this.MostrarComponentes();
             else
@@ -164,7 +163,14 @@ namespace Cova.UI
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                Sesion.Logout();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void bloquerarPaswordToolStripMenuItem_Click(object sender, EventArgs e)

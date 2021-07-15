@@ -73,6 +73,37 @@ namespace Cova.MPP
             return idiomaDefault;
         }
 
+        public IList<Idioma> ObtenerIdiomas()
+        {
+            List<Idioma> idiomas = new List<Idioma>();
+            DataSet traduccionesDS;
+            DataTable traduccionesT;
+            Hashtable datosTraduccion = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_ObtenerIdiomas";
+                traduccionesDS = conexionBDD.obtenerDataSet(strSQL, datosTraduccion);
+                traduccionesT = traduccionesDS.Tables[0];
+                if (traduccionesT.Rows.Count > 0)
+                {
+                    foreach (DataRow fila in traduccionesT.Rows)
+                    {
+                        Idioma idioma = new Idioma();
+                        idioma.Nombre = Convert.ToString(fila["Nombre"]);
+                        idioma.Default = Convert.ToBoolean(fila["Default"]);
+
+                        idiomas.Add(idioma);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return idiomas;
+        }
+
         public bool CrearIdioma(Idioma idiomaNuevo)
         {
             Hashtable datosIdioma = new Hashtable();

@@ -23,7 +23,7 @@ namespace Cova.Servicios.Sesion
             }
         }
 
-        public static void Login(BEUsuario usuario)
+        public static void Login(BEUsuario usuario, Idioma idiomaElegido = null)
         {
             if (_sesion == null)
             {
@@ -31,8 +31,11 @@ namespace Cova.Servicios.Sesion
                 _sesion.Usuario = usuario;
                 _sesion.FechaLogueo = DateTime.Now;
                 _sesion.CargarPermisos();
-                Idioma idiomaElegido = new Idioma();
-                idiomaElegido.Nombre = "Castellano";
+                if (idiomaElegido == null)
+                {
+                    idiomaElegido = new Idioma();
+                    idiomaElegido.Nombre = "Castellano";
+                }
                 _sesion.ManejadorIdioma = new ManejadorIdioma(idiomaElegido);
             }
             else
