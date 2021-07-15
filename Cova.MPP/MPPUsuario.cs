@@ -108,6 +108,12 @@ namespace Cova.MPP
                 datosUsuario.Add("@EstadoCivil", medico.EstadoCivil);
                 datosUsuario.Add("@Telefono", medico.Telefono);
                 datosUsuario.Add("@Email", medico.Email);
+                datosUsuario.Add("@Calle", medico.Domicilio.Calle);
+                datosUsuario.Add("@Numero", medico.Domicilio.Numero);
+                datosUsuario.Add("@Piso", medico.Domicilio.Piso);
+                datosUsuario.Add("@Localidad", medico.Domicilio.Localidad);
+                datosUsuario.Add("@Provincia", medico.Domicilio.Provincia);
+                datosUsuario.Add("@Pais", medico.Domicilio.Pais);
                 datosUsuario.Add("@MatriculaNacional", medico.MatriculaNacional);
                 datosUsuario.Add("@MatriculaProvincial", medico.MatriculaProvincial);
                 datosUsuario.Add("@Especialidad", medico.Especialidad);
@@ -135,6 +141,12 @@ namespace Cova.MPP
                 datosUsuario.Add("@EstadoCivil", enfermero.EstadoCivil);
                 datosUsuario.Add("@Telefono", enfermero.Telefono);
                 datosUsuario.Add("@Email", enfermero.Email);
+                datosUsuario.Add("@Calle", enfermero.Domicilio.Calle);
+                datosUsuario.Add("@Numero", enfermero.Domicilio.Numero);
+                datosUsuario.Add("@Piso", enfermero.Domicilio.Piso);
+                datosUsuario.Add("@Localidad", enfermero.Domicilio.Localidad);
+                datosUsuario.Add("@Provincia", enfermero.Domicilio.Provincia);
+                datosUsuario.Add("@Pais", enfermero.Domicilio.Pais);
                 datosUsuario.Add("@MatriculaEnfermero", enfermero.MatriculaEnfermero);
                 datosUsuario.Add("@Password", enfermero.Password);
                 return conexionBDD.escribir(strSQL, datosUsuario);
@@ -151,7 +163,7 @@ namespace Cova.MPP
             try
             {
                 ConexionDB conexionBDD = new ConexionDB();
-                string strSQL = @"s_CrearProfesionalMedico";
+                string strSQL = @"s_CrearPaciente";
                 datosUsuario.Add("@Apellido", paciente.Apellido);
                 datosUsuario.Add("@Nombre", paciente.Nombre);
                 datosUsuario.Add("@DNI", paciente.DNI);
@@ -159,10 +171,20 @@ namespace Cova.MPP
                 datosUsuario.Add("@Sexo", paciente.Sexo);
                 datosUsuario.Add("@EstadoCivil", paciente.EstadoCivil);
                 datosUsuario.Add("@Telefono", paciente.Telefono);
-                datosUsuario.Add("@CoberturaMedicaId", paciente.CoberturaMedica.CoberturaMedicaId);
-                datosUsuario.Add("@CoberturaMedicaPlanId", paciente.CoberturaMedica.Plan);
-                datosUsuario.Add("@CoberturaMedicaNumeroAfiliado", paciente.CoberturaMedica.NumeroAfiliado);
-                datosUsuario.Add("@CoberturaMedicaFechaVencimiento", paciente.CoberturaMedica.FechaVencimiento);
+                datosUsuario.Add("@Email", paciente.Email);
+                datosUsuario.Add("@Calle", paciente.Domicilio.Calle);
+                datosUsuario.Add("@Numero", paciente.Domicilio.Numero);
+                datosUsuario.Add("@Piso", paciente.Domicilio.Piso);
+                datosUsuario.Add("@Localidad", paciente.Domicilio.Localidad);
+                datosUsuario.Add("@Provincia", paciente.Domicilio.Provincia);
+                datosUsuario.Add("@Pais", paciente.Domicilio.Pais);
+                if(paciente.CoberturaMedica != null)
+                {
+                    datosUsuario.Add("@CoberturaMedicaId", paciente.CoberturaMedica.CoberturaMedicaId);
+                    datosUsuario.Add("@CoberturaMedicaPlanId", paciente.CoberturaMedica.Plan.PlanId);
+                    datosUsuario.Add("@CoberturaMedicaNumeroAfiliado", paciente.CoberturaMedica.NumeroAfiliado);
+                    datosUsuario.Add("@CoberturaMedicaFechaVencimiento", paciente.CoberturaMedica.FechaVencimiento);
+                }
                 datosUsuario.Add("@Password", paciente.Password);
                 return conexionBDD.escribir(strSQL, datosUsuario);
             }

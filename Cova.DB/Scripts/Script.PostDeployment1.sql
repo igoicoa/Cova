@@ -75,16 +75,16 @@ VALUES
 
 -- Creo usuarios de prueba
 -- Pacientes (PWD: paciente123)
-EXEC s_CrearPaciente 'Gonzalez', 'Juan', 32382278, '1987-02-21', 'M', 'Soltero', '1123423452', 'jgonzalez@hotmail.com', 5, 1, '1234323424', '2023-01-02','B6-0F-15-38-5B-90-5B-E9-C9-77-C5-9A-A3-42-0F-D2'
-EXEC s_CrearPaciente 'Lopez', 'Pedro', 31938278, '1986-04-18', 'M', 'Soltero', '1126376283', 'plopez@hotmail.com', 8, 2, '302229329382834', '2022-08-01','B6-0F-15-38-5B-90-5B-E9-C9-77-C5-9A-A3-42-0F-D2'
-EXEC s_CrearPaciente 'Fernandez', 'Maria', 35263728, '1991-07-15', 'S', 'Soltera', '1126399837', 'mfernandez@hotmail.com', 6, 2, '2736352637483', '2023-04-01','B6-0F-15-38-5B-90-5B-E9-C9-77-C5-9A-A3-42-0F-D2'
+EXEC s_CrearPaciente 'Gonzalez', 'Juan', 32382278, '1987-02-21', 'M', 'Soltero', '1123423452', 'jgonzalez@hotmail.com','San Martin',123,'','Quilmes','Buenos Aires','Argentina', 5, 1, '1234323424', '2023-01-02','B6-0F-15-38-5B-90-5B-E9-C9-77-C5-9A-A3-42-0F-D2'
+EXEC s_CrearPaciente 'Lopez', 'Pedro', 31938278, '1986-04-18', 'M', 'Soltero', '1126376283', 'plopez@hotmail.com','Belgrano',2342,'2 A','CABA','CABA','Argentina', 8, 2, '302229329382834', '2022-08-01','B6-0F-15-38-5B-90-5B-E9-C9-77-C5-9A-A3-42-0F-D2'
+EXEC s_CrearPaciente 'Fernandez', 'Maria', 35263728, '1991-07-15', 'F', 'Soltera', '1126399837', 'mfernandez@hotmail.com','Ciudad de la Paz',3321,'3 B','CABA','CABA','Argentina', 6, 2, '2736352637483', '2023-04-01','B6-0F-15-38-5B-90-5B-E9-C9-77-C5-9A-A3-42-0F-D2'
 -- Medicos (PWD: medico123)
-EXEC s_CrearProfesionalMedico 'Rojas', 'Daniel', 2593776, '1973-08-12', 'drojas@gmail.com', 'M', 'Casado', '1126352435', 123943, 643234, 'Neumonologia','D7-A3-95-61-4E-B5-F8-8F-59-5D-4A-DA-63-89-48-F9'
-EXEC s_CrearProfesionalMedico 'Lopez', 'Ricardo', 16827367, '1968-10-15', 'rlopez@gmail.com', 'M', 'Soltero', '1125333826', 382726, 293728, 'Cardiologia','D7-A3-95-61-4E-B5-F8-8F-59-5D-4A-DA-63-89-48-F9'
-EXEC s_CrearProfesionalMedico 'Perez', 'Jose Luis', 28384374, '1981-05-21', 'jlperez@gmail.com', 'M', 'Casado', '1128372634', 382139, 284920, 'Pediatria','D7-A3-95-61-4E-B5-F8-8F-59-5D-4A-DA-63-89-48-F9'
+EXEC s_CrearProfesionalMedico 'Rojas', 'Daniel', 2593776, '1973-08-12', 'M', 'Casado', '1126352435','drojas@gmail.com','Lavalle',1453,'6 C','CABA','CABA','Argentina', 123943, 643234, 'Neumonologia','D7-A3-95-61-4E-B5-F8-8F-59-5D-4A-DA-63-89-48-F9'
+EXEC s_CrearProfesionalMedico 'Lopez', 'Ricardo', 16827367, '1968-10-15', 'M', 'Casado', '1125333826','rlopez@gmail.com','9 de Julio',1242,'','Vicente Lopez','Buenos Aires','Argentina', 382726, 293728, 'Cardiologia','D7-A3-95-61-4E-B5-F8-8F-59-5D-4A-DA-63-89-48-F9'
+EXEC s_CrearProfesionalMedico 'Perez', 'Jose Luis', 28384374, '1981-05-21', 'M', 'Casado', '1128372634','jlperez@gmail.com','Sarmiento',2817,'','Tigre','Buenos Aires','Argentina', 382139, 284920, 'Pediatria','D7-A3-95-61-4E-B5-F8-8F-59-5D-4A-DA-63-89-48-F9'
 -- Enfermeros (PWD: enfermero123)
-EXEC s_CrearProfesionalEnfermero 'Vargas', 'Pablo', 29327384, '1982-07-30', 'pvargas@gmail.com', 'M', 'Soltero', '1182533324', 29182736,'0E-C2-CB-0E-1D-1A-7C-5B-2A-CB-1C-2E-B3-8B-08-20'
-EXEC s_CrearProfesionalEnfermero 'Salas', 'Sofia', 34928392, '1989-09-21', 'ssalas@hotmail.com', 'F', 'Soltera', '1182736253', 38292832,'0E-C2-CB-0E-1D-1A-7C-5B-2A-CB-1C-2E-B3-8B-08-20'
+EXEC s_CrearProfesionalEnfermero 'Vargas', 'Pablo', 29327384, '1982-07-30', 'M', 'Soltero', '1182533324','pvargas@gmail.com','Palaa',2134,'','Avellaneda','Buenos Aires','Argentina', 29182736,'0E-C2-CB-0E-1D-1A-7C-5B-2A-CB-1C-2E-B3-8B-08-20'
+EXEC s_CrearProfesionalEnfermero 'Salas', 'Sofia', 34928392, '1989-09-21', 'F', 'Soltera', '1182736253','ssalas@hotmail.com','Roca',213,'','Munro','Buenos Aires','Argentina', 38292832,'0E-C2-CB-0E-1D-1A-7C-5B-2A-CB-1C-2E-B3-8B-08-20'
 -- Admin User (User: Admin - PWD: test123)
 DECLARE @UserIDAdmin BIGINT
 DECLARE @permiso INT = 0;

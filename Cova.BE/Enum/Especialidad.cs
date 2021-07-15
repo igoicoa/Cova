@@ -16,6 +16,5 @@ namespace Cova.BE
         Oncologia,
         Gastroenterologia,
         Cardiologia
-
     }
 }
