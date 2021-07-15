@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cova.BE;
 using Cova.BL;
+using Cova.Servicios.Encriptacion;
 
 namespace Cova.UI
 {
@@ -62,7 +63,7 @@ namespace Cova.UI
             pacienteNuevo.EstadoCivil = textBoxEstadoCivil_CrearCuenta.Text;
             pacienteNuevo.DNI = Convert.ToInt32(txt_documentoNumero.Text);
             pacienteNuevo.FechaNacimiento = monthCalendarCrearCuenta.SelectionRange.Start;
-            pacienteNuevo.Password = textBoxClave_CrearCuenta.Text;
+            pacienteNuevo.Password = HashHelper.HashMD5(textBoxClave_CrearCuenta.Text);
             BEDomicilio domicilioPaciente = new BEDomicilio();
             domicilioPaciente.Calle = textBoxCalle_CrearCuenta.Text;
             domicilioPaciente.Numero = Convert.ToInt32(txt_calleNumero.Text);
@@ -107,7 +108,7 @@ namespace Cova.UI
             medicoNuevo.EstadoCivil = textBoxEstadoCivil_CrearCuenta.Text;
             medicoNuevo.DNI = Convert.ToInt32(txt_documentoNumero.Text);
             medicoNuevo.FechaNacimiento = monthCalendarCrearCuenta.SelectionRange.Start;
-            medicoNuevo.Password = textBoxClave_CrearCuenta.Text;
+            medicoNuevo.Password = HashHelper.HashMD5(textBoxClave_CrearCuenta.Text);
             BEDomicilio domicilioProfesional = new BEDomicilio();
             domicilioProfesional.Calle = textBoxCalle_CrearCuenta.Text;
             domicilioProfesional.Numero = Convert.ToInt32(txt_calleNumero.Text);
@@ -118,7 +119,7 @@ namespace Cova.UI
             medicoNuevo.Domicilio = domicilioProfesional;
             medicoNuevo.MatriculaNacional = Convert.ToInt32(txt_matriculaNacional.Text);
             medicoNuevo.MatriculaProvincial = Convert.ToInt32(txt_matriculaProvincial.Text);
-            medicoNuevo.Especialidad = (Especialidad)cmb_especialidad.SelectedItem;
+            medicoNuevo.Especialidad = (Especialidad)Enum.Parse(typeof(Especialidad), cmb_especialidad.SelectedItem.ToString());
 
             if (bLProfesional.CrearProfesionalMedico(medicoNuevo))
             {
@@ -143,7 +144,7 @@ namespace Cova.UI
             enfermeroNuevo.EstadoCivil = textBoxEstadoCivil_CrearCuenta.Text;
             enfermeroNuevo.DNI = Convert.ToInt32(txt_documentoNumero.Text);
             enfermeroNuevo.FechaNacimiento = monthCalendarCrearCuenta.SelectionRange.Start;
-            enfermeroNuevo.Password = textBoxClave_CrearCuenta.Text;
+            enfermeroNuevo.Password = HashHelper.HashMD5(textBoxClave_CrearCuenta.Text);
             BEDomicilio domicilioProfesional = new BEDomicilio();
             domicilioProfesional.Calle = textBoxCalle_CrearCuenta.Text;
             domicilioProfesional.Numero = Convert.ToInt32(txt_calleNumero.Text);

@@ -32,7 +32,7 @@ namespace Cova.MPP
                         usuario.UsuarioID = Convert.ToInt64(fila["UsuarioID"]);
                         usuario.Usuario = Convert.ToString(fila["Usuario"]);
                         usuario.Password = Convert.ToString(fila["Password"]);
-                        usuario.UltimoLogin = Convert.ToDateTime(fila["UltimoLogin"]);
+                        //usuario.UltimoLogin = Convert.ToDateTime(fila["UltimoLogin"]);
                     }
                 }
             }
@@ -132,7 +132,7 @@ namespace Cova.MPP
             try
             {
                 ConexionDB conexionBDD = new ConexionDB();
-                string strSQL = @"s_CrearProfesionalMedico";
+                string strSQL = @"s_CrearProfesionalEnfermero";
                 datosUsuario.Add("@Apellido", enfermero.Apellido);
                 datosUsuario.Add("@Nombre", enfermero.Nombre);
                 datosUsuario.Add("@DNI", enfermero.DNI);
