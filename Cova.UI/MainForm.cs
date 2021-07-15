@@ -206,5 +206,17 @@ namespace Cova.UI
             ModificarCuentaForm frmModificarCuenta = new ModificarCuentaForm();
             frmModificarCuenta.Show();
         }
+
+        private void verUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VerUsuarios frmVerUsuarios = new VerUsuarios();
+            frmVerUsuarios.Show();
+        }
+
+        private void calendarioDeVacunaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CalendarioDeVacunación frmCalendarioVacunacion = new CalendarioDeVacunación();
+            frmCalendarioVacunacion.Show();
+        }
     }
 }
