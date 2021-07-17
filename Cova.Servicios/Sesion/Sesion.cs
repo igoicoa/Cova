@@ -1,7 +1,8 @@
 ﻿using System;
 using Cova.BE;
-using Cova.BE.Permisos;
-using Cova.BE.Multiidioma;
+using Cova.Common.Permisos;
+using Cova.Common.Multiidioma;
+using Cova.Common.Excepciones;
 using Cova.Servicios.Multiidioma;
 using Cova.MPP;
 
@@ -40,7 +41,7 @@ namespace Cova.Servicios.Sesion
             }
             else
             {
-                throw new Exception("Ya hay una sesion iniciada");
+                throw new SesionIniciadaException();
             }
         }
 
@@ -64,7 +65,7 @@ namespace Cova.Servicios.Sesion
             }
             else
             {
-                throw new Exception("No hay sesion inicializada");
+                throw new SesionNoIniciadaException();
             }
         }
 

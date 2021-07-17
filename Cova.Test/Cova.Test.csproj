@@ -65,7 +65,11 @@
       <Project>{fe7b2201-a15b-49ff-89f3-e37c223b4a41}</Project>
       <Name>Cova.BL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Cova.Common\Cova.Servicios.csproj">
+    <ProjectReference Include="..\Cova.Common\Cova.Common.csproj">
+      <Project>{413A882E-0398-4B5C-A902-783B478F378D}</Project>
+      <Name>Cova.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cova.Servicios\Cova.Servicios.csproj">
       <Project>{bc43feb2-c54e-4d4e-b491-a8820ed31031}</Project>
       <Name>Cova.Servicios</Name>
     </ProjectReference>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Cova.BE;
 using Cova.MPP;
 using Cova.Servicios.Encriptacion;
-using Cova.BE.Permisos;
+using Cova.Common.Permisos;
 
 namespace Cova.BL
 {

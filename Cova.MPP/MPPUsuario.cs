@@ -2,9 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Cova.BE;
 using Cova.DAL;
 
@@ -23,7 +20,7 @@ namespace Cova.MPP
                 ConexionDB conexionBDD = new ConexionDB();
                 string strSQL = @"s_ObtenerUsuario";
                 datosUsuario.Add("@NombreUsuario", usuarioALoguearse.Usuario);
-                usuarioDS = conexionBDD.obtenerDataSet(strSQL, datosUsuario);
+                usuarioDS = conexionBDD.ObtenerDataSet(strSQL, datosUsuario);
                 usuarioT = usuarioDS.Tables[0];
                 if (usuarioT.Rows.Count > 0)
                 {
@@ -55,7 +52,7 @@ namespace Cova.MPP
                 string strSQL = @"s_BuscarUsuario";
                 datosUsuario.Add("@NombreABuscar", nombreABuscar);
                 datosUsuario.Add("@ApellidoABuscar", apellidoABuscar);
-                usuariosDS = conexionBDD.obtenerDataSet(strSQL, datosUsuario);
+                usuariosDS = conexionBDD.ObtenerDataSet(strSQL, datosUsuario);
                 usuariosT = usuariosDS.Tables[0];
                 if (usuariosT.Rows.Count > 0)
                 {
@@ -118,7 +115,7 @@ namespace Cova.MPP
                 datosUsuario.Add("@MatriculaProvincial", medico.MatriculaProvincial);
                 datosUsuario.Add("@Especialidad", medico.Especialidad);
                 datosUsuario.Add("@Password", medico.Password);
-                return conexionBDD.escribir(strSQL, datosUsuario);
+                return conexionBDD.Escribir(strSQL, datosUsuario);
             }
             catch (Exception ex)
             {
@@ -149,7 +146,7 @@ namespace Cova.MPP
                 datosUsuario.Add("@Pais", enfermero.Domicilio.Pais);
                 datosUsuario.Add("@MatriculaEnfermero", enfermero.MatriculaEnfermero);
                 datosUsuario.Add("@Password", enfermero.Password);
-                return conexionBDD.escribir(strSQL, datosUsuario);
+                return conexionBDD.Escribir(strSQL, datosUsuario);
             }
             catch (Exception ex)
             {
@@ -186,7 +183,7 @@ namespace Cova.MPP
                     datosUsuario.Add("@CoberturaMedicaFechaVencimiento", paciente.CoberturaMedica.FechaVencimiento);
                 }
                 datosUsuario.Add("@Password", paciente.Password);
-                return conexionBDD.escribir(strSQL, datosUsuario);
+                return conexionBDD.Escribir(strSQL, datosUsuario);
             }
             catch (Exception ex)
             {

@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Cova.BE.Multiidioma;
+using Cova.Common.Multiidioma;
 using Cova.MPP;
 
 namespace Cova.Servicios.Multiidioma

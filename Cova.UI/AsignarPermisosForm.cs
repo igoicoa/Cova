@@ -1,5 +1,5 @@
 ﻿using System.Windows.Forms;
-using Cova.BE.Permisos;
+using Cova.Common.Permisos;
 using Cova.Servicios.Sesion;
 using Cova.BE;
 using Cova.BL;

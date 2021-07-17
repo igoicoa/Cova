@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using Cova.DAL;
-using Cova.BE.Multiidioma;
+using Cova.Common.Multiidioma;
 
 namespace Cova.MPP
 {
@@ -21,7 +21,7 @@ namespace Cova.MPP
                 ConexionDB conexionBDD = new ConexionDB();
                 string strSQL = @"s_ObtenerTraducciones";
                 datosTraduccion.Add("@Idioma", idiomaElegido);
-                traduccionesDS = conexionBDD.obtenerDataSet(strSQL, datosTraduccion);
+                traduccionesDS = conexionBDD.ObtenerDataSet(strSQL, datosTraduccion);
                 traduccionesT = traduccionesDS.Tables[0];
                 if (traduccionesT.Rows.Count > 0)
                 {
@@ -55,7 +55,7 @@ namespace Cova.MPP
             {
                 ConexionDB conexionBDD = new ConexionDB();
                 string strSQL = @"s_ObtenerIdiomaDefault";
-                traduccionesDS = conexionBDD.obtenerDataSet(strSQL, datosTraduccion);
+                traduccionesDS = conexionBDD.ObtenerDataSet(strSQL, datosTraduccion);
                 traduccionesT = traduccionesDS.Tables[0];
                 if (traduccionesT.Rows.Count > 0)
                 {
@@ -83,7 +83,7 @@ namespace Cova.MPP
             {
                 ConexionDB conexionBDD = new ConexionDB();
                 string strSQL = @"s_ObtenerIdiomas";
-                traduccionesDS = conexionBDD.obtenerDataSet(strSQL, datosTraduccion);
+                traduccionesDS = conexionBDD.ObtenerDataSet(strSQL, datosTraduccion);
                 traduccionesT = traduccionesDS.Tables[0];
                 if (traduccionesT.Rows.Count > 0)
                 {
@@ -112,7 +112,7 @@ namespace Cova.MPP
                 ConexionDB conexionBDD = new ConexionDB();
                 string strSQL = @"s_AgregarIdioma";
                 datosIdioma.Add("@NombreIdioma", idiomaNuevo.Nombre);
-                return conexionBDD.escribir(strSQL, datosIdioma);
+                return conexionBDD.Escribir(strSQL, datosIdioma);
             }
             catch (Exception ex)
             {
@@ -132,7 +132,7 @@ namespace Cova.MPP
                     datosTraduccion.Add("@NombreIdioma", traduccion.Idioma.Nombre);
                     datosTraduccion.Add("@NombreEtiqueta", traduccion.Etiqueta.Nombre);
                     datosTraduccion.Add("@PalabraTraducida", traduccion.PalabraTraducida);
-                    conexionBDD.escribir(strSQL, datosTraduccion);
+                    conexionBDD.Escribir(strSQL, datosTraduccion);
                 }
             }
             catch (Exception ex)
@@ -152,7 +152,7 @@ namespace Cova.MPP
             {
                 ConexionDB conexionBDD = new ConexionDB();
                 string strSQL = @"s_ObtenerEtiquetasIdiomaDefault";
-                traduccionesDS = conexionBDD.obtenerDataSet(strSQL, datosTraduccion);
+                traduccionesDS = conexionBDD.ObtenerDataSet(strSQL, datosTraduccion);
                 traduccionesT = traduccionesDS.Tables[0];
                 if (traduccionesT.Rows.Count > 0)
                 {

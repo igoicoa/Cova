@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cova.Servicios.Sesion;
-using Cova.BE.Permisos;
-using Cova.BE.Multiidioma;
+using Cova.Common.Permisos;
+using Cova.Common.Multiidioma;
 using Cova.Servicios.Multiidioma;
+using Cova.Common.Excepciones;
 
 namespace Cova.UI
 {
@@ -167,7 +162,7 @@ namespace Cova.UI
             {
                 Sesion.Logout();
             }
-            catch(Exception ex)
+            catch(SesionNoIniciadaException ex)
             {
                 MessageBox.Show(ex.Message);
             }

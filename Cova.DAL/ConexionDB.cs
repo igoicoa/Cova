@@ -7,7 +7,7 @@ namespace Cova.DAL
 {
     public class ConexionDB
     {
-        private SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-MT2P0IO\SQLEXPRESS;Initial Catalog=Cova;Integrated Security=True");
+        private SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Cova;Integrated Security=True");
         private SqlTransaction transaccion;
 
         public string obtenerStringConexion()
@@ -15,7 +15,7 @@ namespace Cova.DAL
             return this.connection.ConnectionString;
         }
 
-        public string testearConexion()
+        public string TestearConexion()
         {
             connection.Open();
             if (connection.State == ConnectionState.Open)
@@ -30,7 +30,7 @@ namespace Cova.DAL
             }
         }
 
-        public int leerEscalar(string consulta)
+        public int LeerEscalar(string consulta)
         {
             int respuesta;
             connection.Open();
@@ -51,7 +51,7 @@ namespace Cova.DAL
             return respuesta;
         }
 
-        public DataSet obtenerDataSet(string Consulta_SQL, Hashtable hdatos)
+        public DataSet ObtenerDataSet(string Consulta_SQL, Hashtable hdatos)
         {
             DataSet dataSet = new DataSet();
             try
@@ -88,7 +88,7 @@ namespace Cova.DAL
             return dataSet;
         }
 
-        public bool escribir(string Consulta_SQL, Hashtable hdatos)
+        public bool Escribir(string Consulta_SQL, Hashtable hdatos)
         {
             try
             {

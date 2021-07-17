@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FE7B2201-A15B-49FF-89F3-E37C223B4A41}</ProjectGuid>
+    <ProjectGuid>{413A882E-0398-4B5C-A902-783B478F378D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Cova.BL</RootNamespace>
-    <AssemblyName>Cova.BL</AssemblyName>
+    <RootNamespace>Cova.Common</RootNamespace>
+    <AssemblyName>Cova.Common</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,30 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLCentroVacunacion.cs" />
-    <Compile Include="BLCoberturaMedica.cs" />
-    <Compile Include="BLPaciente.cs" />
-    <Compile Include="BLProfesional.cs" />
-    <Compile Include="BLUsuario.cs" />
+    <Compile Include="Excepciones\SesionIniciadaException.cs" />
+    <Compile Include="Excepciones\SesionNoIniciadaException.cs" />
+    <Compile Include="Multiidioma\Etiqueta.cs" />
+    <Compile Include="Multiidioma\Idioma.cs" />
+    <Compile Include="Multiidioma\Traduccion.cs" />
+    <Compile Include="Permisos\ComponentePermiso.cs" />
+    <Compile Include="Permisos\FamiliaPermisos.cs" />
+    <Compile Include="Permisos\Permiso.cs" />
+    <Compile Include="Permisos\PermisosMaestro.cs" />
+    <Compile Include="Permisos\TipoPermiso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Cova.BE\Cova.BE.csproj">
-      <Project>{2a51aeed-ba94-4eab-b45e-504135f79a83}</Project>
-      <Name>Cova.BE</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cova.Common\Cova.Common.csproj">
-      <Project>{413a882e-0398-4b5c-a902-783b478f378d}</Project>
-      <Name>Cova.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cova.MPP\Cova.MPP.csproj">
-      <Project>{63dc98c3-6600-48d4-8690-e613c3222e5c}</Project>
-      <Name>Cova.MPP</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cova.Servicios\Cova.Servicios.csproj">
-      <Project>{bc43feb2-c54e-4d4e-b491-a8820ed31031}</Project>
-      <Name>Cova.Servicios</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

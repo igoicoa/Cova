@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Cova.BE;
 using Cova.DAL;
 using System.Data;
@@ -22,7 +19,7 @@ namespace Cova.MPP
             {
                 ConexionDB conexionBDD = new ConexionDB();
                 string strSQL = @"s_ObtenerCoberturasMedicas";
-                coberturasMedicasDS = conexionBDD.obtenerDataSet(strSQL, datosCoberturas);
+                coberturasMedicasDS = conexionBDD.ObtenerDataSet(strSQL, datosCoberturas);
                 coberturasMedicasT = coberturasMedicasDS.Tables[0];
                 if (coberturasMedicasT.Rows.Count > 0)
                 {
@@ -55,7 +52,7 @@ namespace Cova.MPP
                     ConexionDB conexionBDD = new ConexionDB();
                     string strSQL = @"s_ObtenerCoberturasMedicasPlanes";
                     datosCoberturas.Add("@CoberturaMedicaId", cobertura.CoberturaMedicaId);
-                    coberturasMedicasDS = conexionBDD.obtenerDataSet(strSQL, datosCoberturas);
+                    coberturasMedicasDS = conexionBDD.ObtenerDataSet(strSQL, datosCoberturas);
                     coberturasMedicasT = coberturasMedicasDS.Tables[0];
                     if (coberturasMedicasT.Rows.Count > 0)
                     {

@@ -1,5 +1,5 @@
 ﻿using System;
-using Cova.BE.Permisos;
+using Cova.Common.Permisos;
 
 namespace Cova.BE
 {

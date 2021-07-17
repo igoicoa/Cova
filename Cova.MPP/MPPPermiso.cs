@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using Cova.BE.Permisos;
+using Cova.Common.Permisos;
 using Cova.DAL;
 
 namespace Cova.MPP
@@ -20,7 +20,7 @@ namespace Cova.MPP
                 ConexionDB conexionBDD = new ConexionDB();
                 string strSQL = @"s_ObtenerPermisosUsuario";
                 datosUsuario.Add("@IDUsuario", usuarioID);
-                permisosUsuarioDS = conexionBDD.obtenerDataSet(strSQL, datosUsuario);
+                permisosUsuarioDS = conexionBDD.ObtenerDataSet(strSQL, datosUsuario);
                 permisosUsuarioT = permisosUsuarioDS.Tables[0];
                 if (permisosUsuarioT.Rows.Count > 0)
                 {
@@ -82,7 +82,7 @@ namespace Cova.MPP
                 string strSQL = @"s_AgregarPermisoUsuario";
                 datosUsuario.Add("@UsuarioID", usuarioID);
                 datosUsuario.Add("@TipoPermiso", (int)tipoPermiso);
-                return conexionBDD.escribir(strSQL, datosUsuario);
+                return conexionBDD.Escribir(strSQL, datosUsuario);
             }
             catch (Exception ex)
             {
@@ -99,7 +99,7 @@ namespace Cova.MPP
                 string strSQL = @"s_EliminarPermisoUsuario";
                 datosUsuario.Add("@UsuarioID", usuarioID);
                 datosUsuario.Add("@TipoPermiso", (int)tipoPermiso);
-                return conexionBDD.escribir(strSQL, datosUsuario);
+                return conexionBDD.Escribir(strSQL, datosUsuario);
             }
             catch (Exception ex)
             {

@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cova.BE;
-using Cova.BE.Multiidioma;
+using Cova.Common.Multiidioma;
 using Cova.BL;
 using Cova.Servicios.Sesion;
 using Cova.Servicios.Multiidioma;
