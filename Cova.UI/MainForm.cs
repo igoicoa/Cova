@@ -218,5 +218,29 @@ namespace Cova.UI
             CalendarioDeVacunación frmCalendarioVacunacion = new CalendarioDeVacunación();
             frmCalendarioVacunacion.Show();
         }
+
+        private void crearVacunasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrearVacunas frmCrearVacunas = new CrearVacunas();
+            frmCrearVacunas.Show();
+        }
+
+        private void modificarVacunasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModificarVacunas frmModificarVacunas = new ModificarVacunas();
+            frmModificarVacunas.Show();
+        }
+
+        private void verVacunasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VerVacunas frmVerVacunas = new VerVacunas();
+            frmVerVacunas.Show();
+        }
+
+        private void aplicarVacunaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AplicarVacuna frmAplicarVacuna = new AplicarVacuna();
+            frmAplicarVacuna.Show();
+        }
     }
 }

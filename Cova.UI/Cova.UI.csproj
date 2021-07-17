@@ -52,6 +52,12 @@
     <Compile Include="AgregarIdiomaForm.Designer.cs">
       <DependentUpon>AgregarIdiomaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AplicarVacuna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AplicarVacuna.Designer.cs">
+      <DependentUpon>AplicarVacuna.cs</DependentUpon>
+    </Compile>
     <Compile Include="AsignarPermisosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,12 @@
     </Compile>
     <Compile Include="CrearCuentaForm.Designer.cs">
       <DependentUpon>CrearCuentaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrearVacunas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearVacunas.Designer.cs">
+      <DependentUpon>CrearVacunas.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -88,6 +100,12 @@
     <Compile Include="ModificarCuentaForm.Designer.cs">
       <DependentUpon>ModificarCuentaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModificarVacunas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarVacunas.Designer.cs">
+      <DependentUpon>ModificarVacunas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VerUsuarios.cs">
@@ -96,8 +114,17 @@
     <Compile Include="VerUsuarios.Designer.cs">
       <DependentUpon>VerUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="VerVacunas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerVacunas.Designer.cs">
+      <DependentUpon>VerVacunas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AgregarIdiomaForm.resx">
       <DependentUpon>AgregarIdiomaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicarVacuna.resx">
+      <DependentUpon>AplicarVacuna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AsignarPermisosForm.resx">
       <DependentUpon>AsignarPermisosForm.cs</DependentUpon>
@@ -108,6 +135,9 @@
     <EmbeddedResource Include="CrearCuentaForm.resx">
       <DependentUpon>CrearCuentaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrearVacunas.resx">
+      <DependentUpon>CrearVacunas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarCuentaForm.resx">
       <DependentUpon>ModificarCuentaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarVacunas.resx">
+      <DependentUpon>ModificarVacunas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -128,6 +161,9 @@
     </Compile>
     <EmbeddedResource Include="VerUsuarios.resx">
       <DependentUpon>VerUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerVacunas.resx">
+      <DependentUpon>VerVacunas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

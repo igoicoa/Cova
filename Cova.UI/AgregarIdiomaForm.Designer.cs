@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarIdiomaForm));
             this.dgv_etiquetas = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_IdiomaNuevo = new System.Windows.Forms.TextBox();
             this.btn_AgregarIdioma = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_etiquetas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +50,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 28);
+            this.label1.Location = new System.Drawing.Point(24, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 13);
             this.label1.TabIndex = 1;
@@ -56,7 +58,7 @@
             // 
             // txt_IdiomaNuevo
             // 
-            this.txt_IdiomaNuevo.Location = new System.Drawing.Point(104, 25);
+            this.txt_IdiomaNuevo.Location = new System.Drawing.Point(104, 39);
             this.txt_IdiomaNuevo.MaxLength = 50;
             this.txt_IdiomaNuevo.Name = "txt_IdiomaNuevo";
             this.txt_IdiomaNuevo.Size = new System.Drawing.Size(160, 20);
@@ -64,7 +66,7 @@
             // 
             // btn_AgregarIdioma
             // 
-            this.btn_AgregarIdioma.Location = new System.Drawing.Point(27, 67);
+            this.btn_AgregarIdioma.Location = new System.Drawing.Point(12, 70);
             this.btn_AgregarIdioma.Name = "btn_AgregarIdioma";
             this.btn_AgregarIdioma.Size = new System.Drawing.Size(109, 23);
             this.btn_AgregarIdioma.TabIndex = 3;
@@ -72,15 +74,28 @@
             this.btn_AgregarIdioma.UseVisualStyleBackColor = true;
             this.btn_AgregarIdioma.Click += new System.EventHandler(this.btn_AgregarIdioma_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.label3.Location = new System.Drawing.Point(7, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(183, 25);
+            this.label3.TabIndex = 70;
+            this.label3.Text = "Agregar Idiomas";
+            // 
             // AgregarIdiomaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_AgregarIdioma);
             this.Controls.Add(this.txt_IdiomaNuevo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv_etiquetas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AgregarIdiomaForm";
             this.Text = "Agregar Idioma";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_etiquetas)).EndInit();
@@ -95,5 +110,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_IdiomaNuevo;
         private System.Windows.Forms.Button btn_AgregarIdioma;
+        private System.Windows.Forms.Label label3;
     }
 }

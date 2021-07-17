@@ -29,23 +29,17 @@ namespace Cova.UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBoxCoberturaMedica_ModificarCuenta = new System.Windows.Forms.ComboBox();
             this.btnLimpiar_ModificarCuenta = new System.Windows.Forms.Button();
             this.btnCancelar_ModificarCuenta = new System.Windows.Forms.Button();
             this.btnModificar_ModificarCuenta = new System.Windows.Forms.Button();
             this.pictureBoxImagen_ModificarCuenta = new System.Windows.Forms.PictureBox();
             this.lblImagen_ModificarCuenta = new System.Windows.Forms.Label();
-            this.lblCoberturaMedica_ModificarUsuario = new System.Windows.Forms.Label();
             this.monthCalendarModificarCuenta = new System.Windows.Forms.MonthCalendar();
             this.lblFechaNacimiento_ModificarCuenta = new System.Windows.Forms.Label();
-            this.comboBoxEspecialidad_ModificarCuenta = new System.Windows.Forms.ComboBox();
-            this.textBoxDireccion_ModificarCuenta = new System.Windows.Forms.TextBox();
-            this.lblDireccion_ModificarCuenta = new System.Windows.Forms.Label();
-            this.textBoxCiudad_ModificarCuenta = new System.Windows.Forms.TextBox();
-            this.lblCiudad_ModificarUsuario = new System.Windows.Forms.Label();
-            this.lblEspecialidad_ModificarUsuario = new System.Windows.Forms.Label();
-            this.textBoxTelefono_ModificarCuenta = new System.Windows.Forms.TextBox();
-            this.lblTelefono_ModificarCuenta = new System.Windows.Forms.Label();
+            this.txtLocalidad_ModificarCuenta = new System.Windows.Forms.TextBox();
+            this.lblLocalidad_ModificarCuenta = new System.Windows.Forms.Label();
+            this.txtProvincia_ModificarCuenta = new System.Windows.Forms.TextBox();
+            this.lblProvincia_ModificarUsuario = new System.Windows.Forms.Label();
             this.textBoxEstadoCivil_ModificarCuenta = new System.Windows.Forms.TextBox();
             this.lblEstadoCivil_ModificarCuenta = new System.Windows.Forms.Label();
             this.radioButtonFemenino_ModificarCuenta = new System.Windows.Forms.RadioButton();
@@ -69,22 +63,45 @@ namespace Cova.UI
             this.label3 = new System.Windows.Forms.Label();
             this.cmb_InhabilitarModificarCuenta = new System.Windows.Forms.ComboBox();
             this.lbl_InhabilitarModificarCuenta = new System.Windows.Forms.Label();
+            this.txt_documentoNumeroModificarCuenta = new System.Windows.Forms.TextBox();
+            this.lbl_NumeroDocModificarCuenta = new System.Windows.Forms.Label();
+            this.textBoxTelefono_ModifCuenta = new System.Windows.Forms.TextBox();
+            this.lblTelefono_ModifCuenta = new System.Windows.Forms.Label();
+            this.lblEmail_ModificarCuenta = new System.Windows.Forms.Label();
+            this.txtEmail_ModificarCuenta = new System.Windows.Forms.TextBox();
+            this.txt_pisoModificarCuenta = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_NumeroModificarCuenta = new System.Windows.Forms.TextBox();
+            this.lbl_NumeroModificarCuenta = new System.Windows.Forms.Label();
+            this.textBoxCalle_CrearCuenta = new System.Windows.Forms.TextBox();
+            this.lblCalle_ModificarCuenta = new System.Windows.Forms.Label();
+            this.gb_ProfesionalModificarCuenta = new System.Windows.Forms.GroupBox();
+            this.cmb_especialidadModificarCuenta = new System.Windows.Forms.ComboBox();
+            this.lbl_especialidad_ModificarCuenta = new System.Windows.Forms.Label();
+            this.txt_matriculaProvincialModificarCuenta = new System.Windows.Forms.TextBox();
+            this.lbl_matriculaProvincialModificarCuenta = new System.Windows.Forms.Label();
+            this.txt_matriculaNacionalModificarCuenta = new System.Windows.Forms.TextBox();
+            this.lblMatriculaNacional_ModificarCuenta = new System.Windows.Forms.Label();
+            this.gb_pacienteModificarCuenta = new System.Windows.Forms.GroupBox();
+            this.chk_particular_ModificarCuenta = new System.Windows.Forms.CheckBox();
+            this.dtp_fechaVencimiento_ModificarCuenta = new System.Windows.Forms.DateTimePicker();
+            this.lbl_FechaVencimiento_ModificarCuenta = new System.Windows.Forms.Label();
+            this.txt_numeroAfiliado_ModificarCuenta = new System.Windows.Forms.TextBox();
+            this.lbl_numeroAfiliado_ModificarCuenta = new System.Windows.Forms.Label();
+            this.cmb_Plan_ModificarCuenta = new System.Windows.Forms.ComboBox();
+            this.lbl_Plan_ModificarCuenta = new System.Windows.Forms.Label();
+            this.cmb_coberturaMedica_ModificarCuenta = new System.Windows.Forms.ComboBox();
+            this.lblCoberturaMedica_ModificarCuenta = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen_ModificarCuenta)).BeginInit();
             this.groupBoxTipoUsuario_ModificarCuenta.SuspendLayout();
+            this.gb_ProfesionalModificarCuenta.SuspendLayout();
+            this.gb_pacienteModificarCuenta.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // comboBoxCoberturaMedica_ModificarCuenta
-            // 
-            this.comboBoxCoberturaMedica_ModificarCuenta.FormattingEnabled = true;
-            this.comboBoxCoberturaMedica_ModificarCuenta.Location = new System.Drawing.Point(422, 408);
-            this.comboBoxCoberturaMedica_ModificarCuenta.Name = "comboBoxCoberturaMedica_ModificarCuenta";
-            this.comboBoxCoberturaMedica_ModificarCuenta.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxCoberturaMedica_ModificarCuenta.TabIndex = 63;
             // 
             // btnLimpiar_ModificarCuenta
             // 
             this.btnLimpiar_ModificarCuenta.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLimpiar_ModificarCuenta.Location = new System.Drawing.Point(206, 599);
+            this.btnLimpiar_ModificarCuenta.Location = new System.Drawing.Point(487, 606);
             this.btnLimpiar_ModificarCuenta.Name = "btnLimpiar_ModificarCuenta";
             this.btnLimpiar_ModificarCuenta.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar_ModificarCuenta.TabIndex = 62;
@@ -93,7 +110,7 @@ namespace Cova.UI
             // 
             // btnCancelar_ModificarCuenta
             // 
-            this.btnCancelar_ModificarCuenta.Location = new System.Drawing.Point(125, 599);
+            this.btnCancelar_ModificarCuenta.Location = new System.Drawing.Point(406, 606);
             this.btnCancelar_ModificarCuenta.Name = "btnCancelar_ModificarCuenta";
             this.btnCancelar_ModificarCuenta.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar_ModificarCuenta.TabIndex = 61;
@@ -102,7 +119,7 @@ namespace Cova.UI
             // 
             // btnModificar_ModificarCuenta
             // 
-            this.btnModificar_ModificarCuenta.Location = new System.Drawing.Point(43, 599);
+            this.btnModificar_ModificarCuenta.Location = new System.Drawing.Point(320, 606);
             this.btnModificar_ModificarCuenta.Name = "btnModificar_ModificarCuenta";
             this.btnModificar_ModificarCuenta.Size = new System.Drawing.Size(75, 23);
             this.btnModificar_ModificarCuenta.TabIndex = 60;
@@ -126,106 +143,61 @@ namespace Cova.UI
             this.lblImagen_ModificarCuenta.TabIndex = 58;
             this.lblImagen_ModificarCuenta.Text = "Imagen";
             // 
-            // lblCoberturaMedica_ModificarUsuario
-            // 
-            this.lblCoberturaMedica_ModificarUsuario.AutoSize = true;
-            this.lblCoberturaMedica_ModificarUsuario.Location = new System.Drawing.Point(419, 392);
-            this.lblCoberturaMedica_ModificarUsuario.Name = "lblCoberturaMedica_ModificarUsuario";
-            this.lblCoberturaMedica_ModificarUsuario.Size = new System.Drawing.Size(91, 13);
-            this.lblCoberturaMedica_ModificarUsuario.TabIndex = 57;
-            this.lblCoberturaMedica_ModificarUsuario.Text = "Cobertura Medica";
-            // 
             // monthCalendarModificarCuenta
             // 
-            this.monthCalendarModificarCuenta.Location = new System.Drawing.Point(40, 414);
+            this.monthCalendarModificarCuenta.Location = new System.Drawing.Point(35, 479);
             this.monthCalendarModificarCuenta.Name = "monthCalendarModificarCuenta";
             this.monthCalendarModificarCuenta.TabIndex = 56;
             // 
             // lblFechaNacimiento_ModificarCuenta
             // 
             this.lblFechaNacimiento_ModificarCuenta.AutoSize = true;
-            this.lblFechaNacimiento_ModificarCuenta.Location = new System.Drawing.Point(39, 392);
+            this.lblFechaNacimiento_ModificarCuenta.Location = new System.Drawing.Point(34, 457);
             this.lblFechaNacimiento_ModificarCuenta.Name = "lblFechaNacimiento_ModificarCuenta";
             this.lblFechaNacimiento_ModificarCuenta.Size = new System.Drawing.Size(108, 13);
             this.lblFechaNacimiento_ModificarCuenta.TabIndex = 55;
             this.lblFechaNacimiento_ModificarCuenta.Text = "Fecha de Nacimiento";
             // 
-            // comboBoxEspecialidad_ModificarCuenta
+            // txtLocalidad_ModificarCuenta
             // 
-            this.comboBoxEspecialidad_ModificarCuenta.FormattingEnabled = true;
-            this.comboBoxEspecialidad_ModificarCuenta.Location = new System.Drawing.Point(422, 305);
-            this.comboBoxEspecialidad_ModificarCuenta.Name = "comboBoxEspecialidad_ModificarCuenta";
-            this.comboBoxEspecialidad_ModificarCuenta.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxEspecialidad_ModificarCuenta.TabIndex = 54;
+            this.txtLocalidad_ModificarCuenta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtLocalidad_ModificarCuenta.Location = new System.Drawing.Point(35, 419);
+            this.txtLocalidad_ModificarCuenta.Name = "txtLocalidad_ModificarCuenta";
+            this.txtLocalidad_ModificarCuenta.Size = new System.Drawing.Size(187, 20);
+            this.txtLocalidad_ModificarCuenta.TabIndex = 53;
             // 
-            // textBoxDireccion_ModificarCuenta
+            // lblLocalidad_ModificarCuenta
             // 
-            this.textBoxDireccion_ModificarCuenta.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBoxDireccion_ModificarCuenta.Location = new System.Drawing.Point(40, 354);
-            this.textBoxDireccion_ModificarCuenta.Name = "textBoxDireccion_ModificarCuenta";
-            this.textBoxDireccion_ModificarCuenta.Size = new System.Drawing.Size(187, 20);
-            this.textBoxDireccion_ModificarCuenta.TabIndex = 53;
+            this.lblLocalidad_ModificarCuenta.AutoEllipsis = true;
+            this.lblLocalidad_ModificarCuenta.AutoSize = true;
+            this.lblLocalidad_ModificarCuenta.Location = new System.Drawing.Point(32, 406);
+            this.lblLocalidad_ModificarCuenta.Name = "lblLocalidad_ModificarCuenta";
+            this.lblLocalidad_ModificarCuenta.Size = new System.Drawing.Size(53, 13);
+            this.lblLocalidad_ModificarCuenta.TabIndex = 52;
+            this.lblLocalidad_ModificarCuenta.Text = "Localidad";
             // 
-            // lblDireccion_ModificarCuenta
+            // txtProvincia_ModificarCuenta
             // 
-            this.lblDireccion_ModificarCuenta.AutoEllipsis = true;
-            this.lblDireccion_ModificarCuenta.AutoSize = true;
-            this.lblDireccion_ModificarCuenta.Location = new System.Drawing.Point(37, 341);
-            this.lblDireccion_ModificarCuenta.Name = "lblDireccion_ModificarCuenta";
-            this.lblDireccion_ModificarCuenta.Size = new System.Drawing.Size(52, 13);
-            this.lblDireccion_ModificarCuenta.TabIndex = 52;
-            this.lblDireccion_ModificarCuenta.Text = "Direccion";
+            this.txtProvincia_ModificarCuenta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtProvincia_ModificarCuenta.Location = new System.Drawing.Point(246, 419);
+            this.txtProvincia_ModificarCuenta.Name = "txtProvincia_ModificarCuenta";
+            this.txtProvincia_ModificarCuenta.Size = new System.Drawing.Size(187, 20);
+            this.txtProvincia_ModificarCuenta.TabIndex = 51;
             // 
-            // textBoxCiudad_ModificarCuenta
+            // lblProvincia_ModificarUsuario
             // 
-            this.textBoxCiudad_ModificarCuenta.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBoxCiudad_ModificarCuenta.Location = new System.Drawing.Point(422, 354);
-            this.textBoxCiudad_ModificarCuenta.Name = "textBoxCiudad_ModificarCuenta";
-            this.textBoxCiudad_ModificarCuenta.Size = new System.Drawing.Size(187, 20);
-            this.textBoxCiudad_ModificarCuenta.TabIndex = 51;
-            // 
-            // lblCiudad_ModificarUsuario
-            // 
-            this.lblCiudad_ModificarUsuario.AutoEllipsis = true;
-            this.lblCiudad_ModificarUsuario.AutoSize = true;
-            this.lblCiudad_ModificarUsuario.Location = new System.Drawing.Point(419, 341);
-            this.lblCiudad_ModificarUsuario.Name = "lblCiudad_ModificarUsuario";
-            this.lblCiudad_ModificarUsuario.Size = new System.Drawing.Size(40, 13);
-            this.lblCiudad_ModificarUsuario.TabIndex = 50;
-            this.lblCiudad_ModificarUsuario.Text = "Ciudad";
-            // 
-            // lblEspecialidad_ModificarUsuario
-            // 
-            this.lblEspecialidad_ModificarUsuario.AutoEllipsis = true;
-            this.lblEspecialidad_ModificarUsuario.AutoSize = true;
-            this.lblEspecialidad_ModificarUsuario.Location = new System.Drawing.Point(419, 289);
-            this.lblEspecialidad_ModificarUsuario.Name = "lblEspecialidad_ModificarUsuario";
-            this.lblEspecialidad_ModificarUsuario.Size = new System.Drawing.Size(67, 13);
-            this.lblEspecialidad_ModificarUsuario.TabIndex = 49;
-            this.lblEspecialidad_ModificarUsuario.Text = "Especialidad";
-            // 
-            // textBoxTelefono_ModificarCuenta
-            // 
-            this.textBoxTelefono_ModificarCuenta.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBoxTelefono_ModificarCuenta.Location = new System.Drawing.Point(40, 302);
-            this.textBoxTelefono_ModificarCuenta.Name = "textBoxTelefono_ModificarCuenta";
-            this.textBoxTelefono_ModificarCuenta.Size = new System.Drawing.Size(187, 20);
-            this.textBoxTelefono_ModificarCuenta.TabIndex = 48;
-            // 
-            // lblTelefono_ModificarCuenta
-            // 
-            this.lblTelefono_ModificarCuenta.AutoEllipsis = true;
-            this.lblTelefono_ModificarCuenta.AutoSize = true;
-            this.lblTelefono_ModificarCuenta.Location = new System.Drawing.Point(37, 289);
-            this.lblTelefono_ModificarCuenta.Name = "lblTelefono_ModificarCuenta";
-            this.lblTelefono_ModificarCuenta.Size = new System.Drawing.Size(49, 13);
-            this.lblTelefono_ModificarCuenta.TabIndex = 47;
-            this.lblTelefono_ModificarCuenta.Text = "Telefono";
+            this.lblProvincia_ModificarUsuario.AutoEllipsis = true;
+            this.lblProvincia_ModificarUsuario.AutoSize = true;
+            this.lblProvincia_ModificarUsuario.Location = new System.Drawing.Point(243, 403);
+            this.lblProvincia_ModificarUsuario.Name = "lblProvincia_ModificarUsuario";
+            this.lblProvincia_ModificarUsuario.Size = new System.Drawing.Size(51, 13);
+            this.lblProvincia_ModificarUsuario.TabIndex = 50;
+            this.lblProvincia_ModificarUsuario.Text = "Provincia";
             // 
             // textBoxEstadoCivil_ModificarCuenta
             // 
             this.textBoxEstadoCivil_ModificarCuenta.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBoxEstadoCivil_ModificarCuenta.Location = new System.Drawing.Point(419, 247);
+            this.textBoxEstadoCivil_ModificarCuenta.Location = new System.Drawing.Point(476, 267);
             this.textBoxEstadoCivil_ModificarCuenta.Name = "textBoxEstadoCivil_ModificarCuenta";
             this.textBoxEstadoCivil_ModificarCuenta.Size = new System.Drawing.Size(187, 20);
             this.textBoxEstadoCivil_ModificarCuenta.TabIndex = 46;
@@ -234,7 +206,7 @@ namespace Cova.UI
             // 
             this.lblEstadoCivil_ModificarCuenta.AutoEllipsis = true;
             this.lblEstadoCivil_ModificarCuenta.AutoSize = true;
-            this.lblEstadoCivil_ModificarCuenta.Location = new System.Drawing.Point(416, 234);
+            this.lblEstadoCivil_ModificarCuenta.Location = new System.Drawing.Point(473, 251);
             this.lblEstadoCivil_ModificarCuenta.Name = "lblEstadoCivil_ModificarCuenta";
             this.lblEstadoCivil_ModificarCuenta.Size = new System.Drawing.Size(62, 13);
             this.lblEstadoCivil_ModificarCuenta.TabIndex = 45;
@@ -243,7 +215,7 @@ namespace Cova.UI
             // radioButtonFemenino_ModificarCuenta
             // 
             this.radioButtonFemenino_ModificarCuenta.AutoSize = true;
-            this.radioButtonFemenino_ModificarCuenta.Location = new System.Drawing.Point(124, 253);
+            this.radioButtonFemenino_ModificarCuenta.Location = new System.Drawing.Point(119, 318);
             this.radioButtonFemenino_ModificarCuenta.Name = "radioButtonFemenino_ModificarCuenta";
             this.radioButtonFemenino_ModificarCuenta.Size = new System.Drawing.Size(71, 17);
             this.radioButtonFemenino_ModificarCuenta.TabIndex = 44;
@@ -254,7 +226,7 @@ namespace Cova.UI
             // radioButtonMasculino_ModificarCuenta
             // 
             this.radioButtonMasculino_ModificarCuenta.AutoSize = true;
-            this.radioButtonMasculino_ModificarCuenta.Location = new System.Drawing.Point(45, 253);
+            this.radioButtonMasculino_ModificarCuenta.Location = new System.Drawing.Point(40, 318);
             this.radioButtonMasculino_ModificarCuenta.Name = "radioButtonMasculino_ModificarCuenta";
             this.radioButtonMasculino_ModificarCuenta.Size = new System.Drawing.Size(73, 17);
             this.radioButtonMasculino_ModificarCuenta.TabIndex = 43;
@@ -266,7 +238,7 @@ namespace Cova.UI
             // 
             this.lblSexoModificarCuenta.AutoEllipsis = true;
             this.lblSexoModificarCuenta.AutoSize = true;
-            this.lblSexoModificarCuenta.Location = new System.Drawing.Point(42, 237);
+            this.lblSexoModificarCuenta.Location = new System.Drawing.Point(37, 302);
             this.lblSexoModificarCuenta.Name = "lblSexoModificarCuenta";
             this.lblSexoModificarCuenta.Size = new System.Drawing.Size(31, 13);
             this.lblSexoModificarCuenta.TabIndex = 42;
@@ -275,7 +247,7 @@ namespace Cova.UI
             // textBoxApellidoModificarCuenta
             // 
             this.textBoxApellidoModificarCuenta.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBoxApellidoModificarCuenta.Location = new System.Drawing.Point(42, 203);
+            this.textBoxApellidoModificarCuenta.Location = new System.Drawing.Point(40, 267);
             this.textBoxApellidoModificarCuenta.Name = "textBoxApellidoModificarCuenta";
             this.textBoxApellidoModificarCuenta.Size = new System.Drawing.Size(363, 20);
             this.textBoxApellidoModificarCuenta.TabIndex = 41;
@@ -283,7 +255,7 @@ namespace Cova.UI
             // lbl_ApellidoCrearCuenta
             // 
             this.lbl_ApellidoCrearCuenta.AutoSize = true;
-            this.lbl_ApellidoCrearCuenta.Location = new System.Drawing.Point(42, 186);
+            this.lbl_ApellidoCrearCuenta.Location = new System.Drawing.Point(37, 251);
             this.lbl_ApellidoCrearCuenta.Name = "lbl_ApellidoCrearCuenta";
             this.lbl_ApellidoCrearCuenta.Size = new System.Drawing.Size(44, 13);
             this.lbl_ApellidoCrearCuenta.TabIndex = 40;
@@ -292,7 +264,7 @@ namespace Cova.UI
             // txtBox_ModificarCuentaNombre
             // 
             this.txtBox_ModificarCuentaNombre.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtBox_ModificarCuentaNombre.Location = new System.Drawing.Point(42, 153);
+            this.txtBox_ModificarCuentaNombre.Location = new System.Drawing.Point(40, 217);
             this.txtBox_ModificarCuentaNombre.Name = "txtBox_ModificarCuentaNombre";
             this.txtBox_ModificarCuentaNombre.Size = new System.Drawing.Size(363, 20);
             this.txtBox_ModificarCuentaNombre.TabIndex = 39;
@@ -311,7 +283,7 @@ namespace Cova.UI
             // lblNombreModificarCuenta
             // 
             this.lblNombreModificarCuenta.AutoSize = true;
-            this.lblNombreModificarCuenta.Location = new System.Drawing.Point(42, 136);
+            this.lblNombreModificarCuenta.Location = new System.Drawing.Point(37, 201);
             this.lblNombreModificarCuenta.Name = "lblNombreModificarCuenta";
             this.lblNombreModificarCuenta.Size = new System.Drawing.Size(44, 13);
             this.lblNombreModificarCuenta.TabIndex = 37;
@@ -386,7 +358,7 @@ namespace Cova.UI
             // TxtBoxUsuario_ModificarCuenta
             // 
             this.TxtBoxUsuario_ModificarCuenta.AutoSize = true;
-            this.TxtBoxUsuario_ModificarCuenta.Location = new System.Drawing.Point(212, 87);
+            this.TxtBoxUsuario_ModificarCuenta.Location = new System.Drawing.Point(323, 87);
             this.TxtBoxUsuario_ModificarCuenta.Name = "TxtBoxUsuario_ModificarCuenta";
             this.TxtBoxUsuario_ModificarCuenta.Size = new System.Drawing.Size(43, 13);
             this.TxtBoxUsuario_ModificarCuenta.TabIndex = 64;
@@ -395,7 +367,7 @@ namespace Cova.UI
             // textBoxUsuario_ModificarCuenta
             // 
             this.textBoxUsuario_ModificarCuenta.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBoxUsuario_ModificarCuenta.Location = new System.Drawing.Point(215, 104);
+            this.textBoxUsuario_ModificarCuenta.Location = new System.Drawing.Point(326, 104);
             this.textBoxUsuario_ModificarCuenta.Name = "textBoxUsuario_ModificarCuenta";
             this.textBoxUsuario_ModificarCuenta.Size = new System.Drawing.Size(123, 20);
             this.textBoxUsuario_ModificarCuenta.TabIndex = 65;
@@ -403,7 +375,7 @@ namespace Cova.UI
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBox1.Location = new System.Drawing.Point(394, 104);
+            this.textBox1.Location = new System.Drawing.Point(42, 163);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(123, 20);
             this.textBox1.TabIndex = 67;
@@ -411,7 +383,7 @@ namespace Cova.UI
             // lblClave_ModificarCuenta
             // 
             this.lblClave_ModificarCuenta.AutoSize = true;
-            this.lblClave_ModificarCuenta.Location = new System.Drawing.Point(391, 87);
+            this.lblClave_ModificarCuenta.Location = new System.Drawing.Point(39, 146);
             this.lblClave_ModificarCuenta.Name = "lblClave_ModificarCuenta";
             this.lblClave_ModificarCuenta.Size = new System.Drawing.Size(34, 13);
             this.lblClave_ModificarCuenta.TabIndex = 66;
@@ -434,7 +406,7 @@ namespace Cova.UI
             this.cmb_InhabilitarModificarCuenta.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cmb_InhabilitarModificarCuenta.Location = new System.Drawing.Point(419, 471);
+            this.cmb_InhabilitarModificarCuenta.Location = new System.Drawing.Point(477, 318);
             this.cmb_InhabilitarModificarCuenta.Name = "cmb_InhabilitarModificarCuenta";
             this.cmb_InhabilitarModificarCuenta.Size = new System.Drawing.Size(121, 21);
             this.cmb_InhabilitarModificarCuenta.TabIndex = 70;
@@ -442,17 +414,302 @@ namespace Cova.UI
             // lbl_InhabilitarModificarCuenta
             // 
             this.lbl_InhabilitarModificarCuenta.AutoSize = true;
-            this.lbl_InhabilitarModificarCuenta.Location = new System.Drawing.Point(419, 455);
+            this.lbl_InhabilitarModificarCuenta.Location = new System.Drawing.Point(477, 302);
             this.lbl_InhabilitarModificarCuenta.Name = "lbl_InhabilitarModificarCuenta";
             this.lbl_InhabilitarModificarCuenta.Size = new System.Drawing.Size(52, 13);
             this.lbl_InhabilitarModificarCuenta.TabIndex = 69;
             this.lbl_InhabilitarModificarCuenta.Text = "Inhabilitar";
             // 
+            // txt_documentoNumeroModificarCuenta
+            // 
+            this.txt_documentoNumeroModificarCuenta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_documentoNumeroModificarCuenta.Location = new System.Drawing.Point(172, 104);
+            this.txt_documentoNumeroModificarCuenta.Name = "txt_documentoNumeroModificarCuenta";
+            this.txt_documentoNumeroModificarCuenta.Size = new System.Drawing.Size(132, 20);
+            this.txt_documentoNumeroModificarCuenta.TabIndex = 79;
+            // 
+            // lbl_NumeroDocModificarCuenta
+            // 
+            this.lbl_NumeroDocModificarCuenta.AutoSize = true;
+            this.lbl_NumeroDocModificarCuenta.Location = new System.Drawing.Point(169, 87);
+            this.lbl_NumeroDocModificarCuenta.Name = "lbl_NumeroDocModificarCuenta";
+            this.lbl_NumeroDocModificarCuenta.Size = new System.Drawing.Size(100, 13);
+            this.lbl_NumeroDocModificarCuenta.TabIndex = 78;
+            this.lbl_NumeroDocModificarCuenta.Text = "Numero documento";
+            // 
+            // textBoxTelefono_ModifCuenta
+            // 
+            this.textBoxTelefono_ModifCuenta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBoxTelefono_ModifCuenta.Location = new System.Drawing.Point(192, 163);
+            this.textBoxTelefono_ModifCuenta.Name = "textBoxTelefono_ModifCuenta";
+            this.textBoxTelefono_ModifCuenta.Size = new System.Drawing.Size(181, 20);
+            this.textBoxTelefono_ModifCuenta.TabIndex = 81;
+            // 
+            // lblTelefono_ModifCuenta
+            // 
+            this.lblTelefono_ModifCuenta.AutoEllipsis = true;
+            this.lblTelefono_ModifCuenta.AutoSize = true;
+            this.lblTelefono_ModifCuenta.Location = new System.Drawing.Point(189, 146);
+            this.lblTelefono_ModifCuenta.Name = "lblTelefono_ModifCuenta";
+            this.lblTelefono_ModifCuenta.Size = new System.Drawing.Size(49, 13);
+            this.lblTelefono_ModifCuenta.TabIndex = 80;
+            this.lblTelefono_ModifCuenta.Text = "Telefono";
+            // 
+            // lblEmail_ModificarCuenta
+            // 
+            this.lblEmail_ModificarCuenta.AutoEllipsis = true;
+            this.lblEmail_ModificarCuenta.AutoSize = true;
+            this.lblEmail_ModificarCuenta.Location = new System.Drawing.Point(473, 201);
+            this.lblEmail_ModificarCuenta.Name = "lblEmail_ModificarCuenta";
+            this.lblEmail_ModificarCuenta.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail_ModificarCuenta.TabIndex = 47;
+            this.lblEmail_ModificarCuenta.Text = "Email";
+            // 
+            // txtEmail_ModificarCuenta
+            // 
+            this.txtEmail_ModificarCuenta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtEmail_ModificarCuenta.Location = new System.Drawing.Point(476, 217);
+            this.txtEmail_ModificarCuenta.Name = "txtEmail_ModificarCuenta";
+            this.txtEmail_ModificarCuenta.Size = new System.Drawing.Size(187, 20);
+            this.txtEmail_ModificarCuenta.TabIndex = 48;
+            // 
+            // txt_pisoModificarCuenta
+            // 
+            this.txt_pisoModificarCuenta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_pisoModificarCuenta.Location = new System.Drawing.Point(367, 370);
+            this.txt_pisoModificarCuenta.Name = "txt_pisoModificarCuenta";
+            this.txt_pisoModificarCuenta.Size = new System.Drawing.Size(70, 20);
+            this.txt_pisoModificarCuenta.TabIndex = 87;
+            // 
+            // label6
+            // 
+            this.label6.AutoEllipsis = true;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(365, 357);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(27, 13);
+            this.label6.TabIndex = 86;
+            this.label6.Text = "Piso";
+            // 
+            // txt_NumeroModificarCuenta
+            // 
+            this.txt_NumeroModificarCuenta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_NumeroModificarCuenta.Location = new System.Drawing.Point(246, 370);
+            this.txt_NumeroModificarCuenta.Name = "txt_NumeroModificarCuenta";
+            this.txt_NumeroModificarCuenta.Size = new System.Drawing.Size(102, 20);
+            this.txt_NumeroModificarCuenta.TabIndex = 85;
+            // 
+            // lbl_NumeroModificarCuenta
+            // 
+            this.lbl_NumeroModificarCuenta.AutoEllipsis = true;
+            this.lbl_NumeroModificarCuenta.AutoSize = true;
+            this.lbl_NumeroModificarCuenta.Location = new System.Drawing.Point(243, 357);
+            this.lbl_NumeroModificarCuenta.Name = "lbl_NumeroModificarCuenta";
+            this.lbl_NumeroModificarCuenta.Size = new System.Drawing.Size(44, 13);
+            this.lbl_NumeroModificarCuenta.TabIndex = 84;
+            this.lbl_NumeroModificarCuenta.Text = "Numero";
+            // 
+            // textBoxCalle_CrearCuenta
+            // 
+            this.textBoxCalle_CrearCuenta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBoxCalle_CrearCuenta.Location = new System.Drawing.Point(35, 370);
+            this.textBoxCalle_CrearCuenta.Name = "textBoxCalle_CrearCuenta";
+            this.textBoxCalle_CrearCuenta.Size = new System.Drawing.Size(181, 20);
+            this.textBoxCalle_CrearCuenta.TabIndex = 83;
+            // 
+            // lblCalle_ModificarCuenta
+            // 
+            this.lblCalle_ModificarCuenta.AutoEllipsis = true;
+            this.lblCalle_ModificarCuenta.AutoSize = true;
+            this.lblCalle_ModificarCuenta.Location = new System.Drawing.Point(32, 357);
+            this.lblCalle_ModificarCuenta.Name = "lblCalle_ModificarCuenta";
+            this.lblCalle_ModificarCuenta.Size = new System.Drawing.Size(30, 13);
+            this.lblCalle_ModificarCuenta.TabIndex = 82;
+            this.lblCalle_ModificarCuenta.Text = "Calle";
+            // 
+            // gb_ProfesionalModificarCuenta
+            // 
+            this.gb_ProfesionalModificarCuenta.Controls.Add(this.cmb_especialidadModificarCuenta);
+            this.gb_ProfesionalModificarCuenta.Controls.Add(this.lbl_especialidad_ModificarCuenta);
+            this.gb_ProfesionalModificarCuenta.Controls.Add(this.txt_matriculaProvincialModificarCuenta);
+            this.gb_ProfesionalModificarCuenta.Controls.Add(this.lbl_matriculaProvincialModificarCuenta);
+            this.gb_ProfesionalModificarCuenta.Controls.Add(this.txt_matriculaNacionalModificarCuenta);
+            this.gb_ProfesionalModificarCuenta.Controls.Add(this.lblMatriculaNacional_ModificarCuenta);
+            this.gb_ProfesionalModificarCuenta.Location = new System.Drawing.Point(475, 363);
+            this.gb_ProfesionalModificarCuenta.Name = "gb_ProfesionalModificarCuenta";
+            this.gb_ProfesionalModificarCuenta.Size = new System.Drawing.Size(354, 180);
+            this.gb_ProfesionalModificarCuenta.TabIndex = 88;
+            this.gb_ProfesionalModificarCuenta.TabStop = false;
+            this.gb_ProfesionalModificarCuenta.Text = "Profesional";
+            // 
+            // cmb_especialidadModificarCuenta
+            // 
+            this.cmb_especialidadModificarCuenta.FormattingEnabled = true;
+            this.cmb_especialidadModificarCuenta.Location = new System.Drawing.Point(24, 143);
+            this.cmb_especialidadModificarCuenta.Name = "cmb_especialidadModificarCuenta";
+            this.cmb_especialidadModificarCuenta.Size = new System.Drawing.Size(187, 21);
+            this.cmb_especialidadModificarCuenta.TabIndex = 82;
+            // 
+            // lbl_especialidad_ModificarCuenta
+            // 
+            this.lbl_especialidad_ModificarCuenta.AutoSize = true;
+            this.lbl_especialidad_ModificarCuenta.Location = new System.Drawing.Point(24, 127);
+            this.lbl_especialidad_ModificarCuenta.Name = "lbl_especialidad_ModificarCuenta";
+            this.lbl_especialidad_ModificarCuenta.Size = new System.Drawing.Size(70, 13);
+            this.lbl_especialidad_ModificarCuenta.TabIndex = 75;
+            this.lbl_especialidad_ModificarCuenta.Text = "Especialidad:";
+            // 
+            // txt_matriculaProvincialModificarCuenta
+            // 
+            this.txt_matriculaProvincialModificarCuenta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_matriculaProvincialModificarCuenta.Location = new System.Drawing.Point(24, 94);
+            this.txt_matriculaProvincialModificarCuenta.Name = "txt_matriculaProvincialModificarCuenta";
+            this.txt_matriculaProvincialModificarCuenta.Size = new System.Drawing.Size(187, 20);
+            this.txt_matriculaProvincialModificarCuenta.TabIndex = 74;
+            // 
+            // lbl_matriculaProvincialModificarCuenta
+            // 
+            this.lbl_matriculaProvincialModificarCuenta.AutoSize = true;
+            this.lbl_matriculaProvincialModificarCuenta.Location = new System.Drawing.Point(24, 78);
+            this.lbl_matriculaProvincialModificarCuenta.Name = "lbl_matriculaProvincialModificarCuenta";
+            this.lbl_matriculaProvincialModificarCuenta.Size = new System.Drawing.Size(102, 13);
+            this.lbl_matriculaProvincialModificarCuenta.TabIndex = 73;
+            this.lbl_matriculaProvincialModificarCuenta.Text = "Matricula Provincial:";
+            // 
+            // txt_matriculaNacionalModificarCuenta
+            // 
+            this.txt_matriculaNacionalModificarCuenta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_matriculaNacionalModificarCuenta.Location = new System.Drawing.Point(24, 46);
+            this.txt_matriculaNacionalModificarCuenta.Name = "txt_matriculaNacionalModificarCuenta";
+            this.txt_matriculaNacionalModificarCuenta.Size = new System.Drawing.Size(187, 20);
+            this.txt_matriculaNacionalModificarCuenta.TabIndex = 72;
+            // 
+            // lblMatriculaNacional_ModificarCuenta
+            // 
+            this.lblMatriculaNacional_ModificarCuenta.AutoSize = true;
+            this.lblMatriculaNacional_ModificarCuenta.Location = new System.Drawing.Point(21, 30);
+            this.lblMatriculaNacional_ModificarCuenta.Name = "lblMatriculaNacional_ModificarCuenta";
+            this.lblMatriculaNacional_ModificarCuenta.Size = new System.Drawing.Size(98, 13);
+            this.lblMatriculaNacional_ModificarCuenta.TabIndex = 28;
+            this.lblMatriculaNacional_ModificarCuenta.Text = "Matricula Nacional:";
+            // 
+            // gb_pacienteModificarCuenta
+            // 
+            this.gb_pacienteModificarCuenta.Controls.Add(this.chk_particular_ModificarCuenta);
+            this.gb_pacienteModificarCuenta.Controls.Add(this.dtp_fechaVencimiento_ModificarCuenta);
+            this.gb_pacienteModificarCuenta.Controls.Add(this.lbl_FechaVencimiento_ModificarCuenta);
+            this.gb_pacienteModificarCuenta.Controls.Add(this.txt_numeroAfiliado_ModificarCuenta);
+            this.gb_pacienteModificarCuenta.Controls.Add(this.lbl_numeroAfiliado_ModificarCuenta);
+            this.gb_pacienteModificarCuenta.Controls.Add(this.cmb_Plan_ModificarCuenta);
+            this.gb_pacienteModificarCuenta.Controls.Add(this.lbl_Plan_ModificarCuenta);
+            this.gb_pacienteModificarCuenta.Controls.Add(this.cmb_coberturaMedica_ModificarCuenta);
+            this.gb_pacienteModificarCuenta.Controls.Add(this.lblCoberturaMedica_ModificarCuenta);
+            this.gb_pacienteModificarCuenta.Location = new System.Drawing.Point(476, 357);
+            this.gb_pacienteModificarCuenta.Name = "gb_pacienteModificarCuenta";
+            this.gb_pacienteModificarCuenta.Size = new System.Drawing.Size(359, 186);
+            this.gb_pacienteModificarCuenta.TabIndex = 89;
+            this.gb_pacienteModificarCuenta.TabStop = false;
+            this.gb_pacienteModificarCuenta.Text = "Paciente";
+            // 
+            // chk_particular_ModificarCuenta
+            // 
+            this.chk_particular_ModificarCuenta.AutoSize = true;
+            this.chk_particular_ModificarCuenta.Location = new System.Drawing.Point(13, 29);
+            this.chk_particular_ModificarCuenta.Name = "chk_particular_ModificarCuenta";
+            this.chk_particular_ModificarCuenta.Size = new System.Drawing.Size(70, 17);
+            this.chk_particular_ModificarCuenta.TabIndex = 80;
+            this.chk_particular_ModificarCuenta.Text = "Particular";
+            this.chk_particular_ModificarCuenta.UseVisualStyleBackColor = true;
+            // 
+            // dtp_fechaVencimiento_ModificarCuenta
+            // 
+            this.dtp_fechaVencimiento_ModificarCuenta.Location = new System.Drawing.Point(171, 126);
+            this.dtp_fechaVencimiento_ModificarCuenta.Name = "dtp_fechaVencimiento_ModificarCuenta";
+            this.dtp_fechaVencimiento_ModificarCuenta.Size = new System.Drawing.Size(143, 20);
+            this.dtp_fechaVencimiento_ModificarCuenta.TabIndex = 79;
+            // 
+            // lbl_FechaVencimiento_ModificarCuenta
+            // 
+            this.lbl_FechaVencimiento_ModificarCuenta.AutoEllipsis = true;
+            this.lbl_FechaVencimiento_ModificarCuenta.AutoSize = true;
+            this.lbl_FechaVencimiento_ModificarCuenta.Location = new System.Drawing.Point(168, 107);
+            this.lbl_FechaVencimiento_ModificarCuenta.Name = "lbl_FechaVencimiento_ModificarCuenta";
+            this.lbl_FechaVencimiento_ModificarCuenta.Size = new System.Drawing.Size(98, 13);
+            this.lbl_FechaVencimiento_ModificarCuenta.TabIndex = 78;
+            this.lbl_FechaVencimiento_ModificarCuenta.Text = "Fecha Vencimiento";
+            // 
+            // txt_numeroAfiliado_ModificarCuenta
+            // 
+            this.txt_numeroAfiliado_ModificarCuenta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_numeroAfiliado_ModificarCuenta.Location = new System.Drawing.Point(9, 126);
+            this.txt_numeroAfiliado_ModificarCuenta.Name = "txt_numeroAfiliado_ModificarCuenta";
+            this.txt_numeroAfiliado_ModificarCuenta.Size = new System.Drawing.Size(144, 20);
+            this.txt_numeroAfiliado_ModificarCuenta.TabIndex = 77;
+            // 
+            // lbl_numeroAfiliado_ModificarCuenta
+            // 
+            this.lbl_numeroAfiliado_ModificarCuenta.AutoEllipsis = true;
+            this.lbl_numeroAfiliado_ModificarCuenta.AutoSize = true;
+            this.lbl_numeroAfiliado_ModificarCuenta.Location = new System.Drawing.Point(10, 107);
+            this.lbl_numeroAfiliado_ModificarCuenta.Name = "lbl_numeroAfiliado_ModificarCuenta";
+            this.lbl_numeroAfiliado_ModificarCuenta.Size = new System.Drawing.Size(81, 13);
+            this.lbl_numeroAfiliado_ModificarCuenta.TabIndex = 76;
+            this.lbl_numeroAfiliado_ModificarCuenta.Text = "Numero Afiliado";
+            // 
+            // cmb_Plan_ModificarCuenta
+            // 
+            this.cmb_Plan_ModificarCuenta.FormattingEnabled = true;
+            this.cmb_Plan_ModificarCuenta.Location = new System.Drawing.Point(171, 77);
+            this.cmb_Plan_ModificarCuenta.Name = "cmb_Plan_ModificarCuenta";
+            this.cmb_Plan_ModificarCuenta.Size = new System.Drawing.Size(143, 21);
+            this.cmb_Plan_ModificarCuenta.TabIndex = 36;
+            // 
+            // lbl_Plan_ModificarCuenta
+            // 
+            this.lbl_Plan_ModificarCuenta.AutoSize = true;
+            this.lbl_Plan_ModificarCuenta.Location = new System.Drawing.Point(168, 62);
+            this.lbl_Plan_ModificarCuenta.Name = "lbl_Plan_ModificarCuenta";
+            this.lbl_Plan_ModificarCuenta.Size = new System.Drawing.Size(28, 13);
+            this.lbl_Plan_ModificarCuenta.TabIndex = 35;
+            this.lbl_Plan_ModificarCuenta.Text = "Plan";
+            // 
+            // cmb_coberturaMedica_ModificarCuenta
+            // 
+            this.cmb_coberturaMedica_ModificarCuenta.FormattingEnabled = true;
+            this.cmb_coberturaMedica_ModificarCuenta.Items.AddRange(new object[] {
+            "DNI",
+            "Cédula de Ciudadania"});
+            this.cmb_coberturaMedica_ModificarCuenta.Location = new System.Drawing.Point(10, 77);
+            this.cmb_coberturaMedica_ModificarCuenta.Name = "cmb_coberturaMedica_ModificarCuenta";
+            this.cmb_coberturaMedica_ModificarCuenta.Size = new System.Drawing.Size(143, 21);
+            this.cmb_coberturaMedica_ModificarCuenta.TabIndex = 34;
+            // 
+            // lblCoberturaMedica_ModificarCuenta
+            // 
+            this.lblCoberturaMedica_ModificarCuenta.AutoSize = true;
+            this.lblCoberturaMedica_ModificarCuenta.Location = new System.Drawing.Point(10, 62);
+            this.lblCoberturaMedica_ModificarCuenta.Name = "lblCoberturaMedica_ModificarCuenta";
+            this.lblCoberturaMedica_ModificarCuenta.Size = new System.Drawing.Size(91, 13);
+            this.lblCoberturaMedica_ModificarCuenta.TabIndex = 28;
+            this.lblCoberturaMedica_ModificarCuenta.Text = "Cobertura Medica";
+            // 
             // ModificarCuentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 640);
+            this.ClientSize = new System.Drawing.Size(860, 749);
+            this.Controls.Add(this.gb_pacienteModificarCuenta);
+            this.Controls.Add(this.gb_ProfesionalModificarCuenta);
+            this.Controls.Add(this.txt_pisoModificarCuenta);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txt_NumeroModificarCuenta);
+            this.Controls.Add(this.lbl_NumeroModificarCuenta);
+            this.Controls.Add(this.textBoxCalle_CrearCuenta);
+            this.Controls.Add(this.lblCalle_ModificarCuenta);
+            this.Controls.Add(this.textBoxTelefono_ModifCuenta);
+            this.Controls.Add(this.lblTelefono_ModifCuenta);
+            this.Controls.Add(this.txt_documentoNumeroModificarCuenta);
+            this.Controls.Add(this.lbl_NumeroDocModificarCuenta);
             this.Controls.Add(this.cmb_InhabilitarModificarCuenta);
             this.Controls.Add(this.lbl_InhabilitarModificarCuenta);
             this.Controls.Add(this.label3);
@@ -460,23 +717,19 @@ namespace Cova.UI
             this.Controls.Add(this.lblClave_ModificarCuenta);
             this.Controls.Add(this.textBoxUsuario_ModificarCuenta);
             this.Controls.Add(this.TxtBoxUsuario_ModificarCuenta);
-            this.Controls.Add(this.comboBoxCoberturaMedica_ModificarCuenta);
             this.Controls.Add(this.btnLimpiar_ModificarCuenta);
             this.Controls.Add(this.btnCancelar_ModificarCuenta);
             this.Controls.Add(this.btnModificar_ModificarCuenta);
             this.Controls.Add(this.pictureBoxImagen_ModificarCuenta);
             this.Controls.Add(this.lblImagen_ModificarCuenta);
-            this.Controls.Add(this.lblCoberturaMedica_ModificarUsuario);
             this.Controls.Add(this.monthCalendarModificarCuenta);
             this.Controls.Add(this.lblFechaNacimiento_ModificarCuenta);
-            this.Controls.Add(this.comboBoxEspecialidad_ModificarCuenta);
-            this.Controls.Add(this.textBoxDireccion_ModificarCuenta);
-            this.Controls.Add(this.lblDireccion_ModificarCuenta);
-            this.Controls.Add(this.textBoxCiudad_ModificarCuenta);
-            this.Controls.Add(this.lblCiudad_ModificarUsuario);
-            this.Controls.Add(this.lblEspecialidad_ModificarUsuario);
-            this.Controls.Add(this.textBoxTelefono_ModificarCuenta);
-            this.Controls.Add(this.lblTelefono_ModificarCuenta);
+            this.Controls.Add(this.txtLocalidad_ModificarCuenta);
+            this.Controls.Add(this.lblLocalidad_ModificarCuenta);
+            this.Controls.Add(this.txtProvincia_ModificarCuenta);
+            this.Controls.Add(this.lblProvincia_ModificarUsuario);
+            this.Controls.Add(this.txtEmail_ModificarCuenta);
+            this.Controls.Add(this.lblEmail_ModificarCuenta);
             this.Controls.Add(this.textBoxEstadoCivil_ModificarCuenta);
             this.Controls.Add(this.lblEstadoCivil_ModificarCuenta);
             this.Controls.Add(this.radioButtonFemenino_ModificarCuenta);
@@ -495,30 +748,27 @@ namespace Cova.UI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen_ModificarCuenta)).EndInit();
             this.groupBoxTipoUsuario_ModificarCuenta.ResumeLayout(false);
             this.groupBoxTipoUsuario_ModificarCuenta.PerformLayout();
+            this.gb_ProfesionalModificarCuenta.ResumeLayout(false);
+            this.gb_ProfesionalModificarCuenta.PerformLayout();
+            this.gb_pacienteModificarCuenta.ResumeLayout(false);
+            this.gb_pacienteModificarCuenta.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBoxCoberturaMedica_ModificarCuenta;
         private System.Windows.Forms.Button btnLimpiar_ModificarCuenta;
         private System.Windows.Forms.Button btnCancelar_ModificarCuenta;
         private System.Windows.Forms.Button btnModificar_ModificarCuenta;
         private System.Windows.Forms.PictureBox pictureBoxImagen_ModificarCuenta;
         private System.Windows.Forms.Label lblImagen_ModificarCuenta;
-        private System.Windows.Forms.Label lblCoberturaMedica_ModificarUsuario;
         private System.Windows.Forms.MonthCalendar monthCalendarModificarCuenta;
         private System.Windows.Forms.Label lblFechaNacimiento_ModificarCuenta;
-        private System.Windows.Forms.ComboBox comboBoxEspecialidad_ModificarCuenta;
-        private System.Windows.Forms.TextBox textBoxDireccion_ModificarCuenta;
-        private System.Windows.Forms.Label lblDireccion_ModificarCuenta;
-        private System.Windows.Forms.TextBox textBoxCiudad_ModificarCuenta;
-        private System.Windows.Forms.Label lblCiudad_ModificarUsuario;
-        private System.Windows.Forms.Label lblEspecialidad_ModificarUsuario;
-        private System.Windows.Forms.TextBox textBoxTelefono_ModificarCuenta;
-        private System.Windows.Forms.Label lblTelefono_ModificarCuenta;
+        private System.Windows.Forms.TextBox txtLocalidad_ModificarCuenta;
+        private System.Windows.Forms.Label lblLocalidad_ModificarCuenta;
+        private System.Windows.Forms.TextBox txtProvincia_ModificarCuenta;
+        private System.Windows.Forms.Label lblProvincia_ModificarUsuario;
         private System.Windows.Forms.TextBox textBoxEstadoCivil_ModificarCuenta;
         private System.Windows.Forms.Label lblEstadoCivil_ModificarCuenta;
         private System.Windows.Forms.RadioButton radioButtonFemenino_ModificarCuenta;
@@ -542,5 +792,34 @@ namespace Cova.UI
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmb_InhabilitarModificarCuenta;
         private System.Windows.Forms.Label lbl_InhabilitarModificarCuenta;
+        private System.Windows.Forms.TextBox txt_documentoNumeroModificarCuenta;
+        private System.Windows.Forms.Label lbl_NumeroDocModificarCuenta;
+        private System.Windows.Forms.TextBox textBoxTelefono_ModifCuenta;
+        private System.Windows.Forms.Label lblTelefono_ModifCuenta;
+        private System.Windows.Forms.Label lblEmail_ModificarCuenta;
+        private System.Windows.Forms.TextBox txtEmail_ModificarCuenta;
+        private System.Windows.Forms.TextBox txt_pisoModificarCuenta;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txt_NumeroModificarCuenta;
+        private System.Windows.Forms.Label lbl_NumeroModificarCuenta;
+        private System.Windows.Forms.TextBox textBoxCalle_CrearCuenta;
+        private System.Windows.Forms.Label lblCalle_ModificarCuenta;
+        private System.Windows.Forms.GroupBox gb_ProfesionalModificarCuenta;
+        private System.Windows.Forms.ComboBox cmb_especialidadModificarCuenta;
+        private System.Windows.Forms.Label lbl_especialidad_ModificarCuenta;
+        private System.Windows.Forms.TextBox txt_matriculaProvincialModificarCuenta;
+        private System.Windows.Forms.Label lbl_matriculaProvincialModificarCuenta;
+        private System.Windows.Forms.TextBox txt_matriculaNacionalModificarCuenta;
+        private System.Windows.Forms.Label lblMatriculaNacional_ModificarCuenta;
+        private System.Windows.Forms.GroupBox gb_pacienteModificarCuenta;
+        private System.Windows.Forms.CheckBox chk_particular_ModificarCuenta;
+        private System.Windows.Forms.DateTimePicker dtp_fechaVencimiento_ModificarCuenta;
+        private System.Windows.Forms.Label lbl_FechaVencimiento_ModificarCuenta;
+        private System.Windows.Forms.TextBox txt_numeroAfiliado_ModificarCuenta;
+        private System.Windows.Forms.Label lbl_numeroAfiliado_ModificarCuenta;
+        private System.Windows.Forms.ComboBox cmb_Plan_ModificarCuenta;
+        private System.Windows.Forms.Label lbl_Plan_ModificarCuenta;
+        private System.Windows.Forms.ComboBox cmb_coberturaMedica_ModificarCuenta;
+        private System.Windows.Forms.Label lblCoberturaMedica_ModificarCuenta;
     }
 }

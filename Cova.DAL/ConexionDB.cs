@@ -7,7 +7,7 @@ namespace Cova.DAL
 {
     public class ConexionDB
     {
-        private SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Cova;Integrated Security=True");
+        private SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-MT2P0IO\SQLEXPRESS;Initial Catalog=Cova;Integrated Security=True");
         private SqlTransaction transaccion;
 
         public string obtenerStringConexion()

@@ -8,7 +8,7 @@ namespace Cova.BE
 {
     public class BEVacuna
     {
-        public int VacunaId { get; set; }
+        public long Lote { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public string Prospecto { get; set; }
