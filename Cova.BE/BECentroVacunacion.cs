@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Cova.BE
 {
-    public class BECentroVacunacion
+    public class BECentroMedico
     {
-        public int CentroVacunacionId { get; set; }
+        public int CentroMedicoId { get; set; }
         public string Nombre { get; set; }
         public string Domicilio { get; set; }
         public IList<BETurno> TurnosAsignados { get; set; }

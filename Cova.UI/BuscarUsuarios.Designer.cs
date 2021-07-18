@@ -37,7 +37,7 @@ namespace Cova.UI
             this.lbl_DNI_BuscarUsuario = new System.Windows.Forms.Label();
             this.lbl_Usuario_BuscarUsuario = new System.Windows.Forms.Label();
             this.bttn_Buscar_BuscarUsuario = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_usuario = new System.Windows.Forms.DataGridView();
             this.lbl_BuscarUsuarios = new System.Windows.Forms.Label();
             this.gb_TipoUsuario_BuscarUsuarios = new System.Windows.Forms.GroupBox();
             this.rb_administrador_BuscarUsuarios = new System.Windows.Forms.RadioButton();
@@ -45,7 +45,7 @@ namespace Cova.UI
             this.rb_medico_BuscarUsuarios = new System.Windows.Forms.RadioButton();
             this.rb_paciente_BuscarUsuarios = new System.Windows.Forms.RadioButton();
             this.btn_SeleccionarUsuario_BuscarUsuarios = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_usuario)).BeginInit();
             this.gb_TipoUsuario_BuscarUsuarios.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,14 +110,15 @@ namespace Cova.UI
             this.bttn_Buscar_BuscarUsuario.TabIndex = 138;
             this.bttn_Buscar_BuscarUsuario.Text = "Buscar";
             this.bttn_Buscar_BuscarUsuario.UseVisualStyleBackColor = true;
+            this.bttn_Buscar_BuscarUsuario.Click += new System.EventHandler(this.bttn_Buscar_BuscarUsuario_Click);
             // 
-            // dataGridView1
+            // dgv_usuario
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 134);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 277);
-            this.dataGridView1.TabIndex = 137;
+            this.dgv_usuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_usuario.Location = new System.Drawing.Point(12, 134);
+            this.dgv_usuario.Name = "dgv_usuario";
+            this.dgv_usuario.Size = new System.Drawing.Size(776, 277);
+            this.dgv_usuario.TabIndex = 137;
             // 
             // lbl_BuscarUsuarios
             // 
@@ -212,11 +213,11 @@ namespace Cova.UI
             this.Controls.Add(this.lbl_DNI_BuscarUsuario);
             this.Controls.Add(this.lbl_Usuario_BuscarUsuario);
             this.Controls.Add(this.bttn_Buscar_BuscarUsuario);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_usuario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BuscarUsuarios";
             this.Text = "BuscarUsuarios";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_usuario)).EndInit();
             this.gb_TipoUsuario_BuscarUsuarios.ResumeLayout(false);
             this.gb_TipoUsuario_BuscarUsuarios.PerformLayout();
             this.ResumeLayout(false);
@@ -233,7 +234,7 @@ namespace Cova.UI
         private System.Windows.Forms.Label lbl_DNI_BuscarUsuario;
         private System.Windows.Forms.Label lbl_Usuario_BuscarUsuario;
         private System.Windows.Forms.Button bttn_Buscar_BuscarUsuario;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_usuario;
         private System.Windows.Forms.Label lbl_BuscarUsuarios;
         private System.Windows.Forms.GroupBox gb_TipoUsuario_BuscarUsuarios;
         private System.Windows.Forms.RadioButton rb_administrador_BuscarUsuarios;

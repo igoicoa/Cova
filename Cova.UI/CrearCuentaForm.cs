@@ -110,7 +110,7 @@ namespace Cova.UI
             try
             {
             BEMedico medicoNuevo = new BEMedico();
-            BLProfesional bLProfesional = new BLProfesional();
+            BLMedico bLMedico = new BLMedico();
             medicoNuevo.Apellido = textBoxApellidoCrearCuenta.Text;
             medicoNuevo.Nombre = txtBox_CrearCuentaNombre.Text;
             medicoNuevo.Sexo = radioButtonMasculino_CrearCuenta.Checked ? "M" : "F";
@@ -132,7 +132,7 @@ namespace Cova.UI
             medicoNuevo.MatriculaProvincial = Convert.ToInt32(txt_matriculaProvincial.Text);
             medicoNuevo.Especialidad = (Especialidad)Enum.Parse(typeof(Especialidad), cmb_especialidad.SelectedItem.ToString());
 
-            if (bLProfesional.CrearProfesionalMedico(medicoNuevo))
+            if (bLMedico.CrearProfesionalMedico(medicoNuevo))
             {
                 MessageBox.Show("Profesional Creado con exito");
                 this.Close();
@@ -152,7 +152,7 @@ namespace Cova.UI
         {
             try { 
             BEEnfermero enfermeroNuevo = new BEEnfermero();
-            BLProfesional bLProfesional = new BLProfesional();
+            BLEnfermero bLEnfermero = new BLEnfermero();
             enfermeroNuevo.Apellido = textBoxApellidoCrearCuenta.Text;
             enfermeroNuevo.Nombre = txtBox_CrearCuentaNombre.Text;
             enfermeroNuevo.Sexo = radioButtonMasculino_CrearCuenta.Checked ? "M" : "F";
@@ -172,7 +172,7 @@ namespace Cova.UI
             enfermeroNuevo.Domicilio = domicilioProfesional;
             enfermeroNuevo.MatriculaEnfermero = Convert.ToInt32(txt_matriculaNacional.Text);
       
-            if (bLProfesional.CrearProfesionalEnfermero(enfermeroNuevo))
+            if (bLEnfermero.CrearProfesionalEnfermero(enfermeroNuevo))
             {
                 MessageBox.Show("Profesional Creado con exito");
                 this.Close();

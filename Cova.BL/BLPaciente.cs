@@ -15,9 +15,11 @@ namespace Cova.BL
             MPPUsuario mPPUsuario = new MPPUsuario();
             return mPPUsuario.CrearPaciente(pacienteNuevo);
         }
-        public IList<BEPaciente> ObtenerPacientes()
+
+        public IList<BEPaciente> BuscarPacientes(string Usuario, int DNI)
         {
-            throw new NotImplementedException();
+            MPPPaciente mPPPaciente = new MPPPaciente();
+            return mPPPaciente.BuscarPacientes(Usuario, DNI);
         }
 
         public IList<BEVacuna> ObtenerVacunasAplicadas()

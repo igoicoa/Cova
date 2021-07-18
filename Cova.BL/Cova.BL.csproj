@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="BLCentroVacunacion.cs" />
     <Compile Include="BLCoberturaMedica.cs" />
+    <Compile Include="BLEnfermero.cs" />
+    <Compile Include="BLMedico.cs" />
     <Compile Include="BLPaciente.cs" />
     <Compile Include="BLProfesional.cs" />
     <Compile Include="BLUsuario.cs" />

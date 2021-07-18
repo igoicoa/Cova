@@ -15,18 +15,6 @@ namespace Cova.BL
             throw new NotImplementedException();
         }
 
-        public bool CrearProfesionalMedico(BEMedico medico)
-        {
-            MPPUsuario mPPUsuario = new MPPUsuario();
-            return mPPUsuario.CrearProfesionalMedico(medico);
-        }
-
-        public bool CrearProfesionalEnfermero(BEEnfermero enfermero)
-        {
-            MPPUsuario mPPUsuario = new MPPUsuario();
-            return mPPUsuario.CrearProfesionalEnfermero(enfermero);
-        }
-
         public bool aplicarVacuna(BEProfesional profesional, BEPaciente pacienteAVacunar, BEVacuna vacunaAAplicar)
         {
             throw new NotImplementedException();
