@@ -53,6 +53,8 @@ namespace Cova.UI
 
         public void CrearPaciente()
         {
+            try
+            {
             BEPaciente pacienteNuevo = new BEPaciente();
             BLPaciente bLPaciente = new BLPaciente();
             pacienteNuevo.Apellido = textBoxApellidoCrearCuenta.Text;
@@ -84,6 +86,7 @@ namespace Cova.UI
 
                 pacienteNuevo.CoberturaMedica = coberturaMedicaPaciente;
             }
+           
 
             if (bLPaciente.CrearPaciene(pacienteNuevo))
             {
@@ -94,10 +97,18 @@ namespace Cova.UI
             {
                 MessageBox.Show("Hubo un error al crear el paciente");
             }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Por favor debe completar todos los campos obligatorios");
+            }
         }
 
         public void CrearProfesionalMedico()
         {
+            try
+            {
             BEMedico medicoNuevo = new BEMedico();
             BLProfesional bLProfesional = new BLProfesional();
             medicoNuevo.Apellido = textBoxApellidoCrearCuenta.Text;
@@ -130,10 +141,16 @@ namespace Cova.UI
             {
                 MessageBox.Show("Hubo un error al crear el profesional");
             }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Por favor debe completar todos los campos obligatorios");
+            }
         }
 
         public void CrearProfesionalEnfermero()
         {
+            try { 
             BEEnfermero enfermeroNuevo = new BEEnfermero();
             BLProfesional bLProfesional = new BLProfesional();
             enfermeroNuevo.Apellido = textBoxApellidoCrearCuenta.Text;
@@ -163,6 +180,11 @@ namespace Cova.UI
             else
             {
                 MessageBox.Show("Hubo un error al crear el profesional");
+            }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Por favor debe completar todos los campos obligatorios");
             }
         }
 

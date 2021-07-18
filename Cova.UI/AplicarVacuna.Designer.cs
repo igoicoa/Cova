@@ -31,8 +31,6 @@ namespace Cova.UI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AplicarVacuna));
             this.label7 = new System.Windows.Forms.Label();
-            this.txt_Profesional_AplicarVacunas = new System.Windows.Forms.TextBox();
-            this.lbl_Profesional_AplicarVacunas = new System.Windows.Forms.Label();
             this.lbl_Vacuna_AplicarVacunas = new System.Windows.Forms.Label();
             this.cmb_Vacuna_AplicarVacunas = new System.Windows.Forms.ComboBox();
             this.dgv_AplicarVacunas = new System.Windows.Forms.DataGridView();
@@ -50,7 +48,7 @@ namespace Cova.UI
             this.cmb_estado_AplicarVacunas = new System.Windows.Forms.ComboBox();
             this.btn_Limpiar_AplicarVacunas = new System.Windows.Forms.Button();
             this.btn_Cancelar_AplicarVacunas = new System.Windows.Forms.Button();
-            this.btnCargar_AplicarVacunas = new System.Windows.Forms.Button();
+            this.btn_Cargar_AplicarVacunas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AplicarVacunas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,24 +62,6 @@ namespace Cova.UI
             this.label7.Size = new System.Drawing.Size(183, 25);
             this.label7.TabIndex = 128;
             this.label7.Text = "Aplicar Vacunas";
-            // 
-            // txt_Profesional_AplicarVacunas
-            // 
-            this.txt_Profesional_AplicarVacunas.BackColor = System.Drawing.SystemColors.Menu;
-            this.txt_Profesional_AplicarVacunas.Location = new System.Drawing.Point(645, 6);
-            this.txt_Profesional_AplicarVacunas.MaxLength = 30;
-            this.txt_Profesional_AplicarVacunas.Name = "txt_Profesional_AplicarVacunas";
-            this.txt_Profesional_AplicarVacunas.Size = new System.Drawing.Size(148, 20);
-            this.txt_Profesional_AplicarVacunas.TabIndex = 130;
-            // 
-            // lbl_Profesional_AplicarVacunas
-            // 
-            this.lbl_Profesional_AplicarVacunas.AutoSize = true;
-            this.lbl_Profesional_AplicarVacunas.Location = new System.Drawing.Point(574, 9);
-            this.lbl_Profesional_AplicarVacunas.Name = "lbl_Profesional_AplicarVacunas";
-            this.lbl_Profesional_AplicarVacunas.Size = new System.Drawing.Size(59, 13);
-            this.lbl_Profesional_AplicarVacunas.TabIndex = 129;
-            this.lbl_Profesional_AplicarVacunas.Text = "Profesional";
             // 
             // lbl_Vacuna_AplicarVacunas
             // 
@@ -110,7 +90,7 @@ namespace Cova.UI
             // 
             // txt_Paciente_AplicarVacunas
             // 
-            this.txt_Paciente_AplicarVacunas.Location = new System.Drawing.Point(271, 53);
+            this.txt_Paciente_AplicarVacunas.Location = new System.Drawing.Point(257, 52);
             this.txt_Paciente_AplicarVacunas.MaxLength = 30;
             this.txt_Paciente_AplicarVacunas.Name = "txt_Paciente_AplicarVacunas";
             this.txt_Paciente_AplicarVacunas.Size = new System.Drawing.Size(148, 20);
@@ -119,7 +99,7 @@ namespace Cova.UI
             // lbl_paciente_AplicarVacunas
             // 
             this.lbl_paciente_AplicarVacunas.AutoSize = true;
-            this.lbl_paciente_AplicarVacunas.Location = new System.Drawing.Point(216, 56);
+            this.lbl_paciente_AplicarVacunas.Location = new System.Drawing.Point(202, 55);
             this.lbl_paciente_AplicarVacunas.Name = "lbl_paciente_AplicarVacunas";
             this.lbl_paciente_AplicarVacunas.Size = new System.Drawing.Size(49, 13);
             this.lbl_paciente_AplicarVacunas.TabIndex = 134;
@@ -196,7 +176,7 @@ namespace Cova.UI
             // lbl_estado_AplicarVacunas
             // 
             this.lbl_estado_AplicarVacunas.AutoSize = true;
-            this.lbl_estado_AplicarVacunas.Location = new System.Drawing.Point(474, 56);
+            this.lbl_estado_AplicarVacunas.Location = new System.Drawing.Point(446, 55);
             this.lbl_estado_AplicarVacunas.Name = "lbl_estado_AplicarVacunas";
             this.lbl_estado_AplicarVacunas.Size = new System.Drawing.Size(40, 13);
             this.lbl_estado_AplicarVacunas.TabIndex = 144;
@@ -205,7 +185,7 @@ namespace Cova.UI
             // cmb_estado_AplicarVacunas
             // 
             this.cmb_estado_AplicarVacunas.FormattingEnabled = true;
-            this.cmb_estado_AplicarVacunas.Location = new System.Drawing.Point(520, 53);
+            this.cmb_estado_AplicarVacunas.Location = new System.Drawing.Point(492, 52);
             this.cmb_estado_AplicarVacunas.Name = "cmb_estado_AplicarVacunas";
             this.cmb_estado_AplicarVacunas.Size = new System.Drawing.Size(121, 21);
             this.cmb_estado_AplicarVacunas.TabIndex = 145;
@@ -229,14 +209,14 @@ namespace Cova.UI
             this.btn_Cancelar_AplicarVacunas.Text = "Cancelar";
             this.btn_Cancelar_AplicarVacunas.UseVisualStyleBackColor = true;
             // 
-            // btnCargar_AplicarVacunas
+            // btn_Cargar_AplicarVacunas
             // 
-            this.btnCargar_AplicarVacunas.Location = new System.Drawing.Point(234, 180);
-            this.btnCargar_AplicarVacunas.Name = "btnCargar_AplicarVacunas";
-            this.btnCargar_AplicarVacunas.Size = new System.Drawing.Size(75, 23);
-            this.btnCargar_AplicarVacunas.TabIndex = 146;
-            this.btnCargar_AplicarVacunas.Text = "Cargar";
-            this.btnCargar_AplicarVacunas.UseVisualStyleBackColor = true;
+            this.btn_Cargar_AplicarVacunas.Location = new System.Drawing.Point(234, 180);
+            this.btn_Cargar_AplicarVacunas.Name = "btn_Cargar_AplicarVacunas";
+            this.btn_Cargar_AplicarVacunas.Size = new System.Drawing.Size(75, 23);
+            this.btn_Cargar_AplicarVacunas.TabIndex = 146;
+            this.btn_Cargar_AplicarVacunas.Text = "Cargar";
+            this.btn_Cargar_AplicarVacunas.UseVisualStyleBackColor = true;
             // 
             // AplicarVacuna
             // 
@@ -245,7 +225,7 @@ namespace Cova.UI
             this.ClientSize = new System.Drawing.Size(800, 504);
             this.Controls.Add(this.btn_Limpiar_AplicarVacunas);
             this.Controls.Add(this.btn_Cancelar_AplicarVacunas);
-            this.Controls.Add(this.btnCargar_AplicarVacunas);
+            this.Controls.Add(this.btn_Cargar_AplicarVacunas);
             this.Controls.Add(this.cmb_estado_AplicarVacunas);
             this.Controls.Add(this.lbl_estado_AplicarVacunas);
             this.Controls.Add(this.txt_CentrodeVacunacion_AplicarVacunas);
@@ -261,8 +241,6 @@ namespace Cova.UI
             this.Controls.Add(this.dgv_AplicarVacunas);
             this.Controls.Add(this.cmb_Vacuna_AplicarVacunas);
             this.Controls.Add(this.lbl_Vacuna_AplicarVacunas);
-            this.Controls.Add(this.txt_Profesional_AplicarVacunas);
-            this.Controls.Add(this.lbl_Profesional_AplicarVacunas);
             this.Controls.Add(this.label7);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AplicarVacuna";
@@ -276,8 +254,6 @@ namespace Cova.UI
         #endregion
 
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txt_Profesional_AplicarVacunas;
-        private System.Windows.Forms.Label lbl_Profesional_AplicarVacunas;
         private System.Windows.Forms.Label lbl_Vacuna_AplicarVacunas;
         private System.Windows.Forms.ComboBox cmb_Vacuna_AplicarVacunas;
         private System.Windows.Forms.DataGridView dgv_AplicarVacunas;
@@ -295,6 +271,6 @@ namespace Cova.UI
         private System.Windows.Forms.ComboBox cmb_estado_AplicarVacunas;
         private System.Windows.Forms.Button btn_Limpiar_AplicarVacunas;
         private System.Windows.Forms.Button btn_Cancelar_AplicarVacunas;
-        private System.Windows.Forms.Button btnCargar_AplicarVacunas;
+        private System.Windows.Forms.Button btn_Cargar_AplicarVacunas;
     }
 }

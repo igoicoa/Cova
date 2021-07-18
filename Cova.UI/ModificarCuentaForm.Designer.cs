@@ -92,6 +92,7 @@ namespace Cova.UI
             this.lbl_Plan_ModificarCuenta = new System.Windows.Forms.Label();
             this.cmb_coberturaMedica_ModificarCuenta = new System.Windows.Forms.ComboBox();
             this.lblCoberturaMedica_ModificarCuenta = new System.Windows.Forms.Label();
+            this.btn_BuscarUsuarios_ModificarUsuarios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen_ModificarCuenta)).BeginInit();
             this.groupBoxTipoUsuario_ModificarCuenta.SuspendLayout();
             this.gb_ProfesionalModificarCuenta.SuspendLayout();
@@ -693,11 +694,23 @@ namespace Cova.UI
             this.lblCoberturaMedica_ModificarCuenta.TabIndex = 28;
             this.lblCoberturaMedica_ModificarCuenta.Text = "Cobertura Medica";
             // 
+            // btn_BuscarUsuarios_ModificarUsuarios
+            // 
+            this.btn_BuscarUsuarios_ModificarUsuarios.BackColor = System.Drawing.Color.MistyRose;
+            this.btn_BuscarUsuarios_ModificarUsuarios.Location = new System.Drawing.Point(485, 102);
+            this.btn_BuscarUsuarios_ModificarUsuarios.Name = "btn_BuscarUsuarios_ModificarUsuarios";
+            this.btn_BuscarUsuarios_ModificarUsuarios.Size = new System.Drawing.Size(103, 23);
+            this.btn_BuscarUsuarios_ModificarUsuarios.TabIndex = 136;
+            this.btn_BuscarUsuarios_ModificarUsuarios.Text = "Buscar Usuarios";
+            this.btn_BuscarUsuarios_ModificarUsuarios.UseVisualStyleBackColor = false;
+            this.btn_BuscarUsuarios_ModificarUsuarios.Click += new System.EventHandler(this.btn_BuscarUsuarios_ModificarUsuarios_Click);
+            // 
             // ModificarCuentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 749);
+            this.Controls.Add(this.btn_BuscarUsuarios_ModificarUsuarios);
             this.Controls.Add(this.gb_pacienteModificarCuenta);
             this.Controls.Add(this.gb_ProfesionalModificarCuenta);
             this.Controls.Add(this.txt_pisoModificarCuenta);
@@ -821,5 +834,6 @@ namespace Cova.UI
         private System.Windows.Forms.Label lbl_Plan_ModificarCuenta;
         private System.Windows.Forms.ComboBox cmb_coberturaMedica_ModificarCuenta;
         private System.Windows.Forms.Label lblCoberturaMedica_ModificarCuenta;
+        private System.Windows.Forms.Button btn_BuscarUsuarios_ModificarUsuarios;
     }
 }

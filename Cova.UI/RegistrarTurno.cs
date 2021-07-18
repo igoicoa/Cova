@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Cova.UI
 {
-    public partial class ModificarVacunas : Form
+    public partial class RegistrarTurno : Form
     {
-        public ModificarVacunas()
+        public RegistrarTurno()
         {
             InitializeComponent();
-        }
-
-        private void btn_Buscar_ModificarVacunas_Click(object sender, EventArgs e)
-        {
-            BuscarVacunas frmBuscarVacunas = new BuscarVacunas();
-            frmBuscarVacunas.Show();
         }
     }
 }

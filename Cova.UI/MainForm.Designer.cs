@@ -238,12 +238,14 @@
             this.verCalendarioDePacientesToolStripMenuItem.Name = "verCalendarioDePacientesToolStripMenuItem";
             this.verCalendarioDePacientesToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
             this.verCalendarioDePacientesToolStripMenuItem.Text = "Ver Calendario de Mis Pacientes";
+            this.verCalendarioDePacientesToolStripMenuItem.Click += new System.EventHandler(this.verCalendarioDePacientesToolStripMenuItem_Click);
             // 
             // registrarTurnoToolStripMenuItem1
             // 
             this.registrarTurnoToolStripMenuItem1.Name = "registrarTurnoToolStripMenuItem1";
             this.registrarTurnoToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
             this.registrarTurnoToolStripMenuItem1.Text = "Registrar Turnos";
+            this.registrarTurnoToolStripMenuItem1.Click += new System.EventHandler(this.registrarTurnoToolStripMenuItem1_Click);
             // 
             // cancelarTurnoToolStripMenuItem1
             // 
@@ -262,7 +264,7 @@
             // historialDeTurnosToolStripMenuItem
             // 
             this.historialDeTurnosToolStripMenuItem.Name = "historialDeTurnosToolStripMenuItem";
-            this.historialDeTurnosToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.historialDeTurnosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.historialDeTurnosToolStripMenuItem.Text = "Historial de Turnos";
             // 
             // administrarCoberturaMedicaToolStripMenuItem
@@ -399,7 +401,7 @@
             // modificarDatosToolStripMenuItem
             // 
             this.modificarDatosToolStripMenuItem.Name = "modificarDatosToolStripMenuItem";
-            this.modificarDatosToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.modificarDatosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modificarDatosToolStripMenuItem.Text = "Modificar Datos";
             // 
             // permisosToolStripMenuItem
@@ -415,19 +417,19 @@
             // crearPermisosToolStripMenuItem
             // 
             this.crearPermisosToolStripMenuItem.Name = "crearPermisosToolStripMenuItem";
-            this.crearPermisosToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.crearPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.crearPermisosToolStripMenuItem.Text = "Crear Permisos";
             // 
             // modificarPermisosToolStripMenuItem
             // 
             this.modificarPermisosToolStripMenuItem.Name = "modificarPermisosToolStripMenuItem";
-            this.modificarPermisosToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.modificarPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modificarPermisosToolStripMenuItem.Text = "Modificar Permisos";
             // 
             // asignarPermisosToolStripMenuItem
             // 
             this.asignarPermisosToolStripMenuItem.Name = "asignarPermisosToolStripMenuItem";
-            this.asignarPermisosToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.asignarPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.asignarPermisosToolStripMenuItem.Text = "Asignar Permisos";
             this.asignarPermisosToolStripMenuItem.Click += new System.EventHandler(this.asignarPermisosToolStripMenuItem_Click);
             // 

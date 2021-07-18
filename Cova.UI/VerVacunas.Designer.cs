@@ -34,11 +34,13 @@ namespace Cova.UI
             this.lbl_Lote_VerVacunas = new System.Windows.Forms.Label();
             this.cmb_Laboratorio_VerVacunas = new System.Windows.Forms.ComboBox();
             this.lbl_Laboratorio_VerVacunas = new System.Windows.Forms.Label();
-            this.txtBox_Nombre_VerVacunas = new System.Windows.Forms.TextBox();
+            this.txt_Nombre_VerVacunas = new System.Windows.Forms.TextBox();
             this.lbl_Nombre_VerVacunas = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lbl_VerVacunas = new System.Windows.Forms.Label();
             this.btn_Buscar_VerVacunas = new System.Windows.Forms.Button();
             this.dtg_ListaVacunas_VerVacunas = new System.Windows.Forms.DataGridView();
+            this.btn_Limpiar_VerVacunas = new System.Windows.Forms.Button();
+            this.btn_Cancelar_VerVacunas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_ListaVacunas_VerVacunas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,13 +78,13 @@ namespace Cova.UI
             this.lbl_Laboratorio_VerVacunas.TabIndex = 125;
             this.lbl_Laboratorio_VerVacunas.Text = "Laboratorio";
             // 
-            // txtBox_Nombre_VerVacunas
+            // txt_Nombre_VerVacunas
             // 
-            this.txtBox_Nombre_VerVacunas.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtBox_Nombre_VerVacunas.Location = new System.Drawing.Point(326, 69);
-            this.txtBox_Nombre_VerVacunas.Name = "txtBox_Nombre_VerVacunas";
-            this.txtBox_Nombre_VerVacunas.Size = new System.Drawing.Size(363, 20);
-            this.txtBox_Nombre_VerVacunas.TabIndex = 129;
+            this.txt_Nombre_VerVacunas.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_Nombre_VerVacunas.Location = new System.Drawing.Point(326, 69);
+            this.txt_Nombre_VerVacunas.Name = "txt_Nombre_VerVacunas";
+            this.txt_Nombre_VerVacunas.Size = new System.Drawing.Size(308, 20);
+            this.txt_Nombre_VerVacunas.TabIndex = 129;
             // 
             // lbl_Nombre_VerVacunas
             // 
@@ -93,16 +95,16 @@ namespace Cova.UI
             this.lbl_Nombre_VerVacunas.TabIndex = 128;
             this.lbl_Nombre_VerVacunas.Text = "Nombre";
             // 
-            // label7
+            // lbl_VerVacunas
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.label7.Location = new System.Drawing.Point(10, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(146, 25);
-            this.label7.TabIndex = 127;
-            this.label7.Text = "Ver Vacunas";
+            this.lbl_VerVacunas.AutoSize = true;
+            this.lbl_VerVacunas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_VerVacunas.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.lbl_VerVacunas.Location = new System.Drawing.Point(10, 9);
+            this.lbl_VerVacunas.Name = "lbl_VerVacunas";
+            this.lbl_VerVacunas.Size = new System.Drawing.Size(146, 25);
+            this.lbl_VerVacunas.TabIndex = 127;
+            this.lbl_VerVacunas.Text = "Ver Vacunas";
             // 
             // btn_Buscar_VerVacunas
             // 
@@ -121,16 +123,37 @@ namespace Cova.UI
             this.dtg_ListaVacunas_VerVacunas.Size = new System.Drawing.Size(777, 304);
             this.dtg_ListaVacunas_VerVacunas.TabIndex = 136;
             // 
+            // btn_Limpiar_VerVacunas
+            // 
+            this.btn_Limpiar_VerVacunas.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Limpiar_VerVacunas.Location = new System.Drawing.Point(177, 108);
+            this.btn_Limpiar_VerVacunas.Name = "btn_Limpiar_VerVacunas";
+            this.btn_Limpiar_VerVacunas.Size = new System.Drawing.Size(78, 23);
+            this.btn_Limpiar_VerVacunas.TabIndex = 138;
+            this.btn_Limpiar_VerVacunas.Text = "Limpiar";
+            this.btn_Limpiar_VerVacunas.UseVisualStyleBackColor = true;
+            // 
+            // btn_Cancelar_VerVacunas
+            // 
+            this.btn_Cancelar_VerVacunas.Location = new System.Drawing.Point(96, 108);
+            this.btn_Cancelar_VerVacunas.Name = "btn_Cancelar_VerVacunas";
+            this.btn_Cancelar_VerVacunas.Size = new System.Drawing.Size(78, 23);
+            this.btn_Cancelar_VerVacunas.TabIndex = 137;
+            this.btn_Cancelar_VerVacunas.Text = "Cancelar";
+            this.btn_Cancelar_VerVacunas.UseVisualStyleBackColor = true;
+            // 
             // VerVacunas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 462);
+            this.Controls.Add(this.btn_Limpiar_VerVacunas);
+            this.Controls.Add(this.btn_Cancelar_VerVacunas);
             this.Controls.Add(this.dtg_ListaVacunas_VerVacunas);
             this.Controls.Add(this.btn_Buscar_VerVacunas);
-            this.Controls.Add(this.txtBox_Nombre_VerVacunas);
+            this.Controls.Add(this.txt_Nombre_VerVacunas);
             this.Controls.Add(this.lbl_Nombre_VerVacunas);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lbl_VerVacunas);
             this.Controls.Add(this.cmb_Laboratorio_VerVacunas);
             this.Controls.Add(this.lbl_Laboratorio_VerVacunas);
             this.Controls.Add(this.txt_Lote_VerVacunas);
@@ -150,10 +173,12 @@ namespace Cova.UI
         private System.Windows.Forms.Label lbl_Lote_VerVacunas;
         private System.Windows.Forms.ComboBox cmb_Laboratorio_VerVacunas;
         private System.Windows.Forms.Label lbl_Laboratorio_VerVacunas;
-        private System.Windows.Forms.TextBox txtBox_Nombre_VerVacunas;
+        private System.Windows.Forms.TextBox txt_Nombre_VerVacunas;
         private System.Windows.Forms.Label lbl_Nombre_VerVacunas;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbl_VerVacunas;
         private System.Windows.Forms.Button btn_Buscar_VerVacunas;
         private System.Windows.Forms.DataGridView dtg_ListaVacunas_VerVacunas;
+        private System.Windows.Forms.Button btn_Limpiar_VerVacunas;
+        private System.Windows.Forms.Button btn_Cancelar_VerVacunas;
     }
 }

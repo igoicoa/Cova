@@ -21,5 +21,11 @@ namespace Cova.UI
         {
 
         }
+
+        private void btn_BuscarUsuarios_ModificarUsuarios_Click(object sender, EventArgs e)
+        {
+            BuscarUsuarios frmBuscarUsuarios = new BuscarUsuarios();
+            frmBuscarUsuarios.Show();
+        }
     }
 }
