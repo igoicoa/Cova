@@ -15,6 +15,7 @@ namespace Cova.BE
         Hematologia,
         Oncologia,
         Gastroenterologia,
-        Cardiologia
+        Cardiologia,
+        Pediatria
     }
 }
