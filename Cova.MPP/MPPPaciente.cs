@@ -9,7 +9,7 @@ namespace Cova.MPP
 {
     public class MPPPaciente
     {
-        public IList<BEPaciente> BuscarPacientes(string usuario, int DNI)
+        public IList<BEPaciente> BuscarPacientes(string usuario, string DNI)
         {
             List<BEPaciente> pacientes = new List<BEPaciente>();
             DataSet pacientesDS;
@@ -19,10 +19,8 @@ namespace Cova.MPP
             {
                 ConexionDB conexionBDD = new ConexionDB();
                 string strSQL = @"s_BuscarPaciente";
-                if (!string.IsNullOrEmpty(usuario))
-                    datosPaciente.Add("@Usuario", usuario);
-                if (DNI != 0)
-                    datosPaciente.Add("@DNI", DNI);
+                datosPaciente.Add("@Usuario", usuario);
+                datosPaciente.Add("@DNI", DNI);
                 pacientesDS = conexionBDD.ObtenerDataSet(strSQL, datosPaciente);
                 pacientesT = pacientesDS.Tables[0];
                 if (pacientesT.Rows.Count > 0)

@@ -16,7 +16,7 @@ namespace Cova.BL
             return mPPUsuario.CrearProfesionalMedico(medico);
         }
 
-        public IList<BEMedico> BuscarMedicos(string Usuario, int DNI)
+        public IList<BEMedico> BuscarMedicos(string Usuario, string DNI)
         {
             MPPMedico mPPMedico = new MPPMedico();
             return mPPMedico.BuscarMedicos(Usuario, DNI);

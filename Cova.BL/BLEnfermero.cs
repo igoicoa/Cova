@@ -16,7 +16,7 @@ namespace Cova.BL
             return mPPUsuario.CrearProfesionalEnfermero(enfermero);
         }
 
-        public IList<BEEnfermero> BuscarEnfermeros(string Usuario, int DNI)
+        public IList<BEEnfermero> BuscarEnfermeros(string Usuario, string DNI)
         {
             MPPEnfermero mPPEnfermero = new MPPEnfermero();
             return mPPEnfermero.BuscarEnfermeros(Usuario, DNI);

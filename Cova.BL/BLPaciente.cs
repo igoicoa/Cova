@@ -16,7 +16,7 @@ namespace Cova.BL
             return mPPUsuario.CrearPaciente(pacienteNuevo);
         }
 
-        public IList<BEPaciente> BuscarPacientes(string Usuario, int DNI)
+        public IList<BEPaciente> BuscarPacientes(string Usuario, string DNI)
         {
             MPPPaciente mPPPaciente = new MPPPaciente();
             return mPPPaciente.BuscarPacientes(Usuario, DNI);

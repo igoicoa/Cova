@@ -9,7 +9,7 @@ namespace Cova.MPP
 {
     public class MPPMedico
     {
-        public IList<BEMedico> BuscarMedicos(string usuario, int DNI)
+        public IList<BEMedico> BuscarMedicos(string usuario, string DNI)
         {
             List<BEMedico> medicos = new List<BEMedico>();
             DataSet medicosDS;
@@ -19,10 +19,8 @@ namespace Cova.MPP
             {
                 ConexionDB conexionBDD = new ConexionDB();
                 string strSQL = @"s_BuscarMedico";
-                if (!string.IsNullOrEmpty(usuario))
-                    datosMedico.Add("@Usuario", usuario);
-                if (DNI != 0)
-                    datosMedico.Add("@DNI", DNI);
+                datosMedico.Add("@Usuario", usuario);
+                datosMedico.Add("@DNI", DNI);
                 medicosDS = conexionBDD.ObtenerDataSet(strSQL, datosMedico);
                 medicoT = medicosDS.Tables[0];
                 if (medicoT.Rows.Count > 0)
@@ -50,7 +48,7 @@ namespace Cova.MPP
                         medico.Domicilio = domicilio;
                         medico.MatriculaNacional = Convert.ToInt32(fila["MatriculaNacional"]);
                         medico.MatriculaProvincial = Convert.ToInt32(fila["MatriculaProvincial"]);
-                        medico.Especialidad = (Especialidad)(fila["Especialidad"]);
+                        medico.Especialidad = (Especialidad)Enum.Parse(typeof(Especialidad), Convert.ToString(fila["Especialidad"]));
 
                         medicos.Add(medico);
                     }

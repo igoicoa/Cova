@@ -22,7 +22,7 @@ namespace Cova.UI
         private void bttn_Buscar_BuscarUsuario_Click(object sender, EventArgs e)
         {
             string usuario = this.txt_Usuario_BuscarUsuario.Text;
-            int DNI = !string.IsNullOrEmpty(txt_DNI_BuscarUsuario.Text) ? Convert.ToInt32(this.txt_DNI_BuscarUsuario.Text) : 0;
+            string DNI = txt_DNI_BuscarUsuario.Text;
 
             if (rb_medico_BuscarUsuarios.Checked)
             {
@@ -42,7 +42,7 @@ namespace Cova.UI
             }
         }
 
-        public void BuscarMedico(string usuario, int DNI)
+        public void BuscarMedico(string usuario, string DNI)
         {
             BLMedico bLMedico = new BLMedico();
             List<BEMedico> medicos = bLMedico.BuscarMedicos(usuario, DNI).ToList();
@@ -108,7 +108,7 @@ namespace Cova.UI
             dgv_usuario.Columns[15].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
-        public void BuscarEnfermero(string usuario, int DNI)
+        public void BuscarEnfermero(string usuario, string DNI)
         {
             BLEnfermero bLEnfermero = new BLEnfermero();
             List<BEEnfermero> enfermeros = bLEnfermero.BuscarEnfermeros(usuario, DNI).ToList();
@@ -167,7 +167,7 @@ namespace Cova.UI
             dgv_usuario.Columns[14].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
-        public void BuscarPaciente(string usuario, int DNI)
+        public void BuscarPaciente(string usuario, string DNI)
         {
             BLPaciente bLPaciente = new BLPaciente();
             List<BEPaciente> pacientes = bLPaciente.BuscarPacientes(usuario, DNI).ToList();
@@ -237,7 +237,7 @@ namespace Cova.UI
             dgv_usuario.Columns[17].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
-        public void BuscarAdministrador(string usuario, int DNI)
+        public void BuscarAdministrador(string usuario, string DNI)
         {
 
         }
