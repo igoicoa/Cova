@@ -9,7 +9,7 @@ namespace Cova.MPP
 {
     public class MPPEnfermero
     {
-        public IList<BEEnfermero> BuscarEnfermeros(string usuario, int DNI)
+        public IList<BEEnfermero> BuscarEnfermeros(string usuario, string DNI)
         {
             List<BEEnfermero> enfermeros = new List<BEEnfermero>();
             DataSet enfermeroDS;
@@ -19,10 +19,8 @@ namespace Cova.MPP
             {
                 ConexionDB conexionBDD = new ConexionDB();
                 string strSQL = @"s_BuscarEnfermero";
-                if(!string.IsNullOrEmpty(usuario))
-                    datosEnfermero.Add("@Usuario", usuario);
-                if(DNI != 0)
-                    datosEnfermero.Add("@DNI", DNI);
+                datosEnfermero.Add("@Usuario", usuario);
+                datosEnfermero.Add("@DNI", DNI);
 
                 enfermeroDS = conexionBDD.ObtenerDataSet(strSQL, datosEnfermero);
                 enfermeroT = enfermeroDS.Tables[0];
