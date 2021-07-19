@@ -55,7 +55,7 @@ namespace Cova.UI
             this.lbl_Nombre_ModificarVacunas = new System.Windows.Forms.Label();
             this.txt_Lote_ModificarVacunas = new System.Windows.Forms.TextBox();
             this.lbl_Lote_ModificarVacunas = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lbl_ModificarVacunas = new System.Windows.Forms.Label();
             this.btn_Buscar_ModificarVacunas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Imagen_ModificarVacunas)).BeginInit();
             this.SuspendLayout();
@@ -78,6 +78,7 @@ namespace Cova.UI
             this.btn_Cancelar_ModificarVacunas.TabIndex = 133;
             this.btn_Cancelar_ModificarVacunas.Text = "Cancelar";
             this.btn_Cancelar_ModificarVacunas.UseVisualStyleBackColor = true;
+            this.btn_Cancelar_ModificarVacunas.Click += new System.EventHandler(this.btn_Cancelar_ModificarVacunas_Click);
             // 
             // btn_Modificar_ModificarVacunas
             // 
@@ -275,16 +276,16 @@ namespace Cova.UI
             this.lbl_Lote_ModificarVacunas.TabIndex = 110;
             this.lbl_Lote_ModificarVacunas.Text = "Lote";
             // 
-            // label7
+            // lbl_ModificarVacunas
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.label7.Location = new System.Drawing.Point(12, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(207, 25);
-            this.label7.TabIndex = 109;
-            this.label7.Text = "Modificar Vacunas";
+            this.lbl_ModificarVacunas.AutoSize = true;
+            this.lbl_ModificarVacunas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ModificarVacunas.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.lbl_ModificarVacunas.Location = new System.Drawing.Point(12, 9);
+            this.lbl_ModificarVacunas.Name = "lbl_ModificarVacunas";
+            this.lbl_ModificarVacunas.Size = new System.Drawing.Size(207, 25);
+            this.lbl_ModificarVacunas.TabIndex = 109;
+            this.lbl_ModificarVacunas.Text = "Modificar Vacunas";
             // 
             // btn_Buscar_ModificarVacunas
             // 
@@ -328,7 +329,7 @@ namespace Cova.UI
             this.Controls.Add(this.lbl_Nombre_ModificarVacunas);
             this.Controls.Add(this.txt_Lote_ModificarVacunas);
             this.Controls.Add(this.lbl_Lote_ModificarVacunas);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lbl_ModificarVacunas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModificarVacunas";
             this.Text = "ModificarVacunas";
@@ -365,7 +366,7 @@ namespace Cova.UI
         private System.Windows.Forms.Label lbl_Nombre_ModificarVacunas;
         private System.Windows.Forms.TextBox txt_Lote_ModificarVacunas;
         private System.Windows.Forms.Label lbl_Lote_ModificarVacunas;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbl_ModificarVacunas;
         private System.Windows.Forms.Button btn_Buscar_ModificarVacunas;
     }
 }

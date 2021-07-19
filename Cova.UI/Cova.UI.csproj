@@ -64,6 +64,12 @@
     <Compile Include="AsignarPermisosForm.Designer.cs">
       <DependentUpon>AsignarPermisosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BuscarCoberturaMedica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarCoberturaMedica.Designer.cs">
+      <DependentUpon>BuscarCoberturaMedica.cs</DependentUpon>
+    </Compile>
     <Compile Include="BuscarUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,11 +88,23 @@
     <Compile Include="CalendarioDeVacunación.Designer.cs">
       <DependentUpon>CalendarioDeVacunación.cs</DependentUpon>
     </Compile>
+    <Compile Include="CargarCoberturaMedica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CargarCoberturaMedica.Designer.cs">
+      <DependentUpon>CargarCoberturaMedica.cs</DependentUpon>
+    </Compile>
     <Compile Include="CrearCuentaForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CrearCuentaForm.Designer.cs">
       <DependentUpon>CrearCuentaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrearHistoriaClinica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearHistoriaClinica.Designer.cs">
+      <DependentUpon>CrearHistoriaClinica.cs</DependentUpon>
     </Compile>
     <Compile Include="CrearVacunas.cs">
       <SubType>Form</SubType>
@@ -106,11 +124,23 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModificarCoberturaMedica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarCoberturaMedica.Designer.cs">
+      <DependentUpon>ModificarCoberturaMedica.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModificarCuentaForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ModificarCuentaForm.Designer.cs">
       <DependentUpon>ModificarCuentaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarHistoriaClinica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarHistoriaClinica.Designer.cs">
+      <DependentUpon>ModificarHistoriaClinica.cs</DependentUpon>
     </Compile>
     <Compile Include="ModificarVacunas.cs">
       <SubType>Form</SubType>
@@ -131,6 +161,12 @@
     </Compile>
     <Compile Include="VerCalendarioMisPacientes.Designer.cs">
       <DependentUpon>VerCalendarioMisPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerCoberturaMedica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerCoberturaMedica.Designer.cs">
+      <DependentUpon>VerCoberturaMedica.cs</DependentUpon>
     </Compile>
     <Compile Include="VerUsuarios.cs">
       <SubType>Form</SubType>
@@ -153,6 +189,9 @@
     <EmbeddedResource Include="AsignarPermisosForm.resx">
       <DependentUpon>AsignarPermisosForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BuscarCoberturaMedica.resx">
+      <DependentUpon>BuscarCoberturaMedica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BuscarUsuarios.resx">
       <DependentUpon>BuscarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,8 +201,14 @@
     <EmbeddedResource Include="CalendarioDeVacunación.resx">
       <DependentUpon>CalendarioDeVacunación.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CargarCoberturaMedica.resx">
+      <DependentUpon>CargarCoberturaMedica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrearCuentaForm.resx">
       <DependentUpon>CrearCuentaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearHistoriaClinica.resx">
+      <DependentUpon>CrearHistoriaClinica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrearVacunas.resx">
       <DependentUpon>CrearVacunas.cs</DependentUpon>
@@ -174,8 +219,14 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModificarCoberturaMedica.resx">
+      <DependentUpon>ModificarCoberturaMedica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModificarCuentaForm.resx">
       <DependentUpon>ModificarCuentaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarHistoriaClinica.resx">
+      <DependentUpon>ModificarHistoriaClinica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarVacunas.resx">
       <DependentUpon>ModificarVacunas.cs</DependentUpon>
@@ -194,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VerCalendarioMisPacientes.resx">
       <DependentUpon>VerCalendarioMisPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerCoberturaMedica.resx">
+      <DependentUpon>VerCoberturaMedica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VerUsuarios.resx">
       <DependentUpon>VerUsuarios.cs</DependentUpon>

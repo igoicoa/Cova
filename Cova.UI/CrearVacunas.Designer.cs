@@ -30,7 +30,7 @@ namespace Cova.UI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearVacunas));
-            this.label7 = new System.Windows.Forms.Label();
+            this.lbl_CrearVacunas = new System.Windows.Forms.Label();
             this.txt_Lote_CrearVacunas = new System.Windows.Forms.TextBox();
             this.lbl_Lote_CrearVacunas = new System.Windows.Forms.Label();
             this.txtBox_Nombre_CrearVacuna = new System.Windows.Forms.TextBox();
@@ -59,16 +59,16 @@ namespace Cova.UI
             ((System.ComponentModel.ISupportInitialize)(this.pc_Imagen_CrearVacuna)).BeginInit();
             this.SuspendLayout();
             // 
-            // label7
+            // lbl_CrearVacunas
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.label7.Location = new System.Drawing.Point(12, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(168, 25);
-            this.label7.TabIndex = 83;
-            this.label7.Text = "Crear Vacunas";
+            this.lbl_CrearVacunas.AutoSize = true;
+            this.lbl_CrearVacunas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CrearVacunas.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.lbl_CrearVacunas.Location = new System.Drawing.Point(12, 9);
+            this.lbl_CrearVacunas.Name = "lbl_CrearVacunas";
+            this.lbl_CrearVacunas.Size = new System.Drawing.Size(168, 25);
+            this.lbl_CrearVacunas.TabIndex = 83;
+            this.lbl_CrearVacunas.Text = "Crear Vacunas";
             // 
             // txt_Lote_CrearVacunas
             // 
@@ -266,6 +266,7 @@ namespace Cova.UI
             this.btn_Limpiar_CrearVacunas.TabIndex = 108;
             this.btn_Limpiar_CrearVacunas.Text = "Limpiar";
             this.btn_Limpiar_CrearVacunas.UseVisualStyleBackColor = true;
+            this.btn_Limpiar_CrearVacunas.Click += new System.EventHandler(this.btn_Limpiar_CrearVacunas_Click);
             // 
             // btn_Cancelar_CrearVacunas
             // 
@@ -275,6 +276,7 @@ namespace Cova.UI
             this.btn_Cancelar_CrearVacunas.TabIndex = 107;
             this.btn_Cancelar_CrearVacunas.Text = "Cancelar";
             this.btn_Cancelar_CrearVacunas.UseVisualStyleBackColor = true;
+            this.btn_Cancelar_CrearVacunas.Click += new System.EventHandler(this.btn_Cancelar_CrearVacunas_Click);
             // 
             // btn_Crear_CrearVacunas
             // 
@@ -315,7 +317,7 @@ namespace Cova.UI
             this.Controls.Add(this.lbl_Nombre_CrearVacuna);
             this.Controls.Add(this.txt_Lote_CrearVacunas);
             this.Controls.Add(this.lbl_Lote_CrearVacunas);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lbl_CrearVacunas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CrearVacunas";
             this.Text = "CrearVacunas";
@@ -327,7 +329,7 @@ namespace Cova.UI
 
         #endregion
 
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbl_CrearVacunas;
         private System.Windows.Forms.TextBox txt_Lote_CrearVacunas;
         private System.Windows.Forms.Label lbl_Lote_CrearVacunas;
         private System.Windows.Forms.TextBox txtBox_Nombre_CrearVacuna;

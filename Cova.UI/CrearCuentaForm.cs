@@ -56,7 +56,7 @@ namespace Cova.UI
             BEPaciente pacienteNuevo = new BEPaciente();
             BLPaciente bLPaciente = new BLPaciente();
             pacienteNuevo.Apellido = textBoxApellidoCrearCuenta.Text;
-            pacienteNuevo.Nombre = txtBox_CrearCuentaNombre.Text;
+            pacienteNuevo.Nombre = txt_CrearCuentaNombre.Text;
             pacienteNuevo.Sexo = radioButtonMasculino_CrearCuenta.Checked ? "M" : "F";
             pacienteNuevo.Telefono = textBoxTelefono_CrearCuenta.Text;
             pacienteNuevo.Email = txt_Email.Text;
@@ -101,7 +101,7 @@ namespace Cova.UI
             BEMedico medicoNuevo = new BEMedico();
             BLMedico bLMedico = new BLMedico();
             medicoNuevo.Apellido = textBoxApellidoCrearCuenta.Text;
-            medicoNuevo.Nombre = txtBox_CrearCuentaNombre.Text;
+            medicoNuevo.Nombre = txt_CrearCuentaNombre.Text;
             medicoNuevo.Sexo = radioButtonMasculino_CrearCuenta.Checked ? "M" : "F";
             medicoNuevo.Telefono = textBoxTelefono_CrearCuenta.Text;
             medicoNuevo.Email = txt_Email.Text;
@@ -137,7 +137,7 @@ namespace Cova.UI
             BEEnfermero enfermeroNuevo = new BEEnfermero();
             BLEnfermero bLEnfermero = new BLEnfermero();
             enfermeroNuevo.Apellido = textBoxApellidoCrearCuenta.Text;
-            enfermeroNuevo.Nombre = txtBox_CrearCuentaNombre.Text;
+            enfermeroNuevo.Nombre = txt_CrearCuentaNombre.Text;
             enfermeroNuevo.Sexo = radioButtonMasculino_CrearCuenta.Checked ? "M" : "F";
             enfermeroNuevo.Telefono = textBoxTelefono_CrearCuenta.Text;
             enfermeroNuevo.Email = txt_Email.Text;
@@ -296,6 +296,35 @@ namespace Cova.UI
                 lbl_FechaVencimiento.Visible = true;
                 dtp_fechaVencimiento.Visible = true;
             }
+        }
+
+        private void btnCancelar_CrearCuenta_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnLimpiar_CrearCuenta_Click(object sender, EventArgs e)
+        {
+            txt_CrearCuentaNombre.Clear();
+            txt_documentoNumero.Clear();
+            textBoxClave_CrearCuenta.Clear();
+            textBoxTelefono_CrearCuenta.Clear();
+            pictureBoxImagen_CrearCuenta=null;
+            txt_Email.Clear();
+            textBoxApellidoCrearCuenta.Clear();
+            textBoxEstadoCivil_CrearCuenta.Clear();
+            textBoxCalle_CrearCuenta.Clear();
+            txt_calleNumero.Clear();
+            txt_piso.Clear();
+            txt_localidad.Clear();
+            txt_provincia.Clear();
+            txt_matriculaNacional.Clear();
+            txt_matriculaProvincial.Clear();
+            txt_numeroAfiliado.Clear();
+            cmb_coberturaMedica.Items.Clear();
+            cmb_especialidad.Items.Clear();
+            cmb_Plan.Items.Clear();
+            comboBox1.Items.Clear();
         }
     }
 }

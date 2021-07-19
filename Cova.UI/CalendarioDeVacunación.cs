@@ -16,5 +16,15 @@ namespace Cova.UI
         {
             InitializeComponent();
         }
+
+        private void btnCancelar_CalendarioVacunacion_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_Limpiar_CalendarioVacunacion_Click(object sender, EventArgs e)
+        {
+            txtBoxUsuario_CalendarioVacunacion.Clear();
+        }
     }
 }

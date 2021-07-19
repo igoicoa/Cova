@@ -16,5 +16,10 @@ namespace Cova.UI
         {
             InitializeComponent();
         }
+
+        private void btnCancelar_VerUsuarios_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

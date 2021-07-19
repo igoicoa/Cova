@@ -30,7 +30,7 @@ namespace Cova.UI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AplicarVacuna));
-            this.label7 = new System.Windows.Forms.Label();
+            this.lbl_AplicarVacunas = new System.Windows.Forms.Label();
             this.lbl_Vacuna_AplicarVacunas = new System.Windows.Forms.Label();
             this.cmb_Vacuna_AplicarVacunas = new System.Windows.Forms.ComboBox();
             this.dgv_AplicarVacunas = new System.Windows.Forms.DataGridView();
@@ -52,16 +52,16 @@ namespace Cova.UI
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AplicarVacunas)).BeginInit();
             this.SuspendLayout();
             // 
-            // label7
+            // lbl_AplicarVacunas
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.label7.Location = new System.Drawing.Point(1, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(183, 25);
-            this.label7.TabIndex = 128;
-            this.label7.Text = "Aplicar Vacunas";
+            this.lbl_AplicarVacunas.AutoSize = true;
+            this.lbl_AplicarVacunas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_AplicarVacunas.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.lbl_AplicarVacunas.Location = new System.Drawing.Point(1, 9);
+            this.lbl_AplicarVacunas.Name = "lbl_AplicarVacunas";
+            this.lbl_AplicarVacunas.Size = new System.Drawing.Size(183, 25);
+            this.lbl_AplicarVacunas.TabIndex = 128;
+            this.lbl_AplicarVacunas.Text = "Aplicar Vacunas";
             // 
             // lbl_Vacuna_AplicarVacunas
             // 
@@ -199,6 +199,7 @@ namespace Cova.UI
             this.btn_Limpiar_AplicarVacunas.TabIndex = 148;
             this.btn_Limpiar_AplicarVacunas.Text = "Limpiar";
             this.btn_Limpiar_AplicarVacunas.UseVisualStyleBackColor = true;
+            this.btn_Limpiar_AplicarVacunas.Click += new System.EventHandler(this.btn_Limpiar_AplicarVacunas_Click);
             // 
             // btn_Cancelar_AplicarVacunas
             // 
@@ -208,6 +209,7 @@ namespace Cova.UI
             this.btn_Cancelar_AplicarVacunas.TabIndex = 147;
             this.btn_Cancelar_AplicarVacunas.Text = "Cancelar";
             this.btn_Cancelar_AplicarVacunas.UseVisualStyleBackColor = true;
+            this.btn_Cancelar_AplicarVacunas.Click += new System.EventHandler(this.btn_Cancelar_AplicarVacunas_Click);
             // 
             // btn_Cargar_AplicarVacunas
             // 
@@ -241,7 +243,7 @@ namespace Cova.UI
             this.Controls.Add(this.dgv_AplicarVacunas);
             this.Controls.Add(this.cmb_Vacuna_AplicarVacunas);
             this.Controls.Add(this.lbl_Vacuna_AplicarVacunas);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lbl_AplicarVacunas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AplicarVacuna";
             this.Text = "AplicarVacuna";
@@ -253,7 +255,7 @@ namespace Cova.UI
 
         #endregion
 
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbl_AplicarVacunas;
         private System.Windows.Forms.Label lbl_Vacuna_AplicarVacunas;
         private System.Windows.Forms.ComboBox cmb_Vacuna_AplicarVacunas;
         private System.Windows.Forms.DataGridView dgv_AplicarVacunas;

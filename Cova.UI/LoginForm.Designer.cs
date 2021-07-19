@@ -36,7 +36,7 @@
             this.btn_login = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_Bienvenida_Loguin = new System.Windows.Forms.Label();
             this.lbl_IdiomaLogin = new System.Windows.Forms.Label();
             this.cmb_idiomasLogin = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -106,16 +106,16 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // label3
+            // lbl_Bienvenida_Loguin
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.label3.Location = new System.Drawing.Point(132, 4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(334, 25);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Bienvenido/a al Sistema Cova.\r\n";
+            this.lbl_Bienvenida_Loguin.AutoSize = true;
+            this.lbl_Bienvenida_Loguin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Bienvenida_Loguin.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.lbl_Bienvenida_Loguin.Location = new System.Drawing.Point(132, 4);
+            this.lbl_Bienvenida_Loguin.Name = "lbl_Bienvenida_Loguin";
+            this.lbl_Bienvenida_Loguin.Size = new System.Drawing.Size(334, 25);
+            this.lbl_Bienvenida_Loguin.TabIndex = 8;
+            this.lbl_Bienvenida_Loguin.Text = "Bienvenido/a al Sistema Cova.\r\n";
             // 
             // lbl_IdiomaLogin
             // 
@@ -141,7 +141,7 @@
             this.ClientSize = new System.Drawing.Size(606, 383);
             this.Controls.Add(this.cmb_idiomasLogin);
             this.Controls.Add(this.lbl_IdiomaLogin);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbl_Bienvenida_Loguin);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_login);
@@ -167,7 +167,7 @@
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_Bienvenida_Loguin;
         private System.Windows.Forms.Label lbl_IdiomaLogin;
         private System.Windows.Forms.ComboBox cmb_idiomasLogin;
     }

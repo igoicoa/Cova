@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_IdiomaNuevo = new System.Windows.Forms.TextBox();
             this.btn_AgregarIdioma = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_AgregarIdiomas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_etiquetas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,23 +74,23 @@
             this.btn_AgregarIdioma.UseVisualStyleBackColor = true;
             this.btn_AgregarIdioma.Click += new System.EventHandler(this.btn_AgregarIdioma_Click);
             // 
-            // label3
+            // lbl_AgregarIdiomas
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.label3.Location = new System.Drawing.Point(7, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(183, 25);
-            this.label3.TabIndex = 70;
-            this.label3.Text = "Agregar Idiomas";
+            this.lbl_AgregarIdiomas.AutoSize = true;
+            this.lbl_AgregarIdiomas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_AgregarIdiomas.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.lbl_AgregarIdiomas.Location = new System.Drawing.Point(7, 3);
+            this.lbl_AgregarIdiomas.Name = "lbl_AgregarIdiomas";
+            this.lbl_AgregarIdiomas.Size = new System.Drawing.Size(183, 25);
+            this.lbl_AgregarIdiomas.TabIndex = 70;
+            this.lbl_AgregarIdiomas.Text = "Agregar Idiomas";
             // 
             // AgregarIdiomaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbl_AgregarIdiomas);
             this.Controls.Add(this.btn_AgregarIdioma);
             this.Controls.Add(this.txt_IdiomaNuevo);
             this.Controls.Add(this.label1);
@@ -110,6 +110,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_IdiomaNuevo;
         private System.Windows.Forms.Button btn_AgregarIdioma;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_AgregarIdiomas;
     }
 }

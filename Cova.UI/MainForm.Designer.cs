@@ -80,6 +80,7 @@
             this.informaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contactoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novedadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verCoberturasMedicasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,21 +150,21 @@
             // crearCuentaToolStripMenuItem
             // 
             this.crearCuentaToolStripMenuItem.Name = "crearCuentaToolStripMenuItem";
-            this.crearCuentaToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.crearCuentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.crearCuentaToolStripMenuItem.Text = "Crear Cuenta";
             this.crearCuentaToolStripMenuItem.Click += new System.EventHandler(this.crearCuentaToolStripMenuItem_Click);
             // 
             // modificarCuentaToolStripMenuItem
             // 
             this.modificarCuentaToolStripMenuItem.Name = "modificarCuentaToolStripMenuItem";
-            this.modificarCuentaToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.modificarCuentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modificarCuentaToolStripMenuItem.Text = "Modificar Cuenta";
             this.modificarCuentaToolStripMenuItem.Click += new System.EventHandler(this.modificarCuentaToolStripMenuItem_Click);
             // 
             // verUsuariosToolStripMenuItem
             // 
             this.verUsuariosToolStripMenuItem.Name = "verUsuariosToolStripMenuItem";
-            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verUsuariosToolStripMenuItem.Text = "Ver Usuarios";
             this.verUsuariosToolStripMenuItem.Click += new System.EventHandler(this.verUsuariosToolStripMenuItem_Click);
             // 
@@ -264,14 +265,15 @@
             // historialDeTurnosToolStripMenuItem
             // 
             this.historialDeTurnosToolStripMenuItem.Name = "historialDeTurnosToolStripMenuItem";
-            this.historialDeTurnosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.historialDeTurnosToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.historialDeTurnosToolStripMenuItem.Text = "Historial de Turnos";
             // 
             // administrarCoberturaMedicaToolStripMenuItem
             // 
             this.administrarCoberturaMedicaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.crearCoberturaMedicaToolStripMenuItem,
-            this.modificarCoberturaMedicaToolStripMenuItem});
+            this.modificarCoberturaMedicaToolStripMenuItem,
+            this.verCoberturasMedicasToolStripMenuItem});
             this.administrarCoberturaMedicaToolStripMenuItem.Name = "administrarCoberturaMedicaToolStripMenuItem";
             this.administrarCoberturaMedicaToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.administrarCoberturaMedicaToolStripMenuItem.Text = "Administrar Cobertura Medica";
@@ -281,12 +283,14 @@
             this.crearCoberturaMedicaToolStripMenuItem.Name = "crearCoberturaMedicaToolStripMenuItem";
             this.crearCoberturaMedicaToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
             this.crearCoberturaMedicaToolStripMenuItem.Text = "Crear Cobertura Medica";
+            this.crearCoberturaMedicaToolStripMenuItem.Click += new System.EventHandler(this.crearCoberturaMedicaToolStripMenuItem_Click);
             // 
             // modificarCoberturaMedicaToolStripMenuItem
             // 
             this.modificarCoberturaMedicaToolStripMenuItem.Name = "modificarCoberturaMedicaToolStripMenuItem";
             this.modificarCoberturaMedicaToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
             this.modificarCoberturaMedicaToolStripMenuItem.Text = "Modificar Cobertura Medica";
+            this.modificarCoberturaMedicaToolStripMenuItem.Click += new System.EventHandler(this.modificarCoberturaMedicaToolStripMenuItem_Click);
             // 
             // administrarHistoriaClinicaToolStripMenuItem
             // 
@@ -303,12 +307,14 @@
             this.crearHistoriaClinicaToolStripMenuItem.Name = "crearHistoriaClinicaToolStripMenuItem";
             this.crearHistoriaClinicaToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.crearHistoriaClinicaToolStripMenuItem.Text = "Crear Historia Clinica";
+            this.crearHistoriaClinicaToolStripMenuItem.Click += new System.EventHandler(this.crearHistoriaClinicaToolStripMenuItem_Click);
             // 
             // modificarHistoriaClinicaToolStripMenuItem
             // 
             this.modificarHistoriaClinicaToolStripMenuItem.Name = "modificarHistoriaClinicaToolStripMenuItem";
             this.modificarHistoriaClinicaToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.modificarHistoriaClinicaToolStripMenuItem.Text = "Modificar Historia Clinica";
+            this.modificarHistoriaClinicaToolStripMenuItem.Click += new System.EventHandler(this.modificarHistoriaClinicaToolStripMenuItem_Click);
             // 
             // verHistoriaClinicaToolStripMenuItem
             // 
@@ -401,7 +407,7 @@
             // modificarDatosToolStripMenuItem
             // 
             this.modificarDatosToolStripMenuItem.Name = "modificarDatosToolStripMenuItem";
-            this.modificarDatosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modificarDatosToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.modificarDatosToolStripMenuItem.Text = "Modificar Datos";
             // 
             // permisosToolStripMenuItem
@@ -417,19 +423,19 @@
             // crearPermisosToolStripMenuItem
             // 
             this.crearPermisosToolStripMenuItem.Name = "crearPermisosToolStripMenuItem";
-            this.crearPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.crearPermisosToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.crearPermisosToolStripMenuItem.Text = "Crear Permisos";
             // 
             // modificarPermisosToolStripMenuItem
             // 
             this.modificarPermisosToolStripMenuItem.Name = "modificarPermisosToolStripMenuItem";
-            this.modificarPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modificarPermisosToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.modificarPermisosToolStripMenuItem.Text = "Modificar Permisos";
             // 
             // asignarPermisosToolStripMenuItem
             // 
             this.asignarPermisosToolStripMenuItem.Name = "asignarPermisosToolStripMenuItem";
-            this.asignarPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.asignarPermisosToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.asignarPermisosToolStripMenuItem.Text = "Asignar Permisos";
             this.asignarPermisosToolStripMenuItem.Click += new System.EventHandler(this.asignarPermisosToolStripMenuItem_Click);
             // 
@@ -475,6 +481,13 @@
             this.novedadesToolStripMenuItem.Name = "novedadesToolStripMenuItem";
             this.novedadesToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.novedadesToolStripMenuItem.Text = "Novedades";
+            // 
+            // verCoberturasMedicasToolStripMenuItem
+            // 
+            this.verCoberturasMedicasToolStripMenuItem.Name = "verCoberturasMedicasToolStripMenuItem";
+            this.verCoberturasMedicasToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.verCoberturasMedicasToolStripMenuItem.Text = "Ver Coberturas Medicas";
+            this.verCoberturasMedicasToolStripMenuItem.Click += new System.EventHandler(this.verCoberturasMedicasToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -548,6 +561,7 @@
         private System.Windows.Forms.ToolStripMenuItem cambiarIdiomaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearIdiomaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aplicarVacunaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verCoberturasMedicasToolStripMenuItem;
     }
 }
 

@@ -30,27 +30,29 @@ namespace Cova.UI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalendarioDeVacunación));
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_CalendariodeVacunacion = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgv_CalendarioVacunacion = new System.Windows.Forms.DataGridView();
             this.lbl_UsuarioCalendarioVacunacion = new System.Windows.Forms.Label();
             this.txtBoxUsuario_CalendarioVacunacion = new System.Windows.Forms.TextBox();
             this.lbl_EstadoCalendarioVacunacion = new System.Windows.Forms.Label();
             this.cmb_EstadoCalendarioVacunacion = new System.Windows.Forms.ComboBox();
-            this.bttn_MostrarCalendarioVacunacion = new System.Windows.Forms.Button();
+            this.bttn_Mostrar_CalendarioVacunacion = new System.Windows.Forms.Button();
+            this.btnCancelar_CalendarioVacunacion = new System.Windows.Forms.Button();
+            this.btn_Limpiar_CalendarioVacunacion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_CalendarioVacunacion)).BeginInit();
             this.SuspendLayout();
             // 
-            // label3
+            // lbl_CalendariodeVacunacion
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.label3.Location = new System.Drawing.Point(3, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(289, 25);
-            this.label3.TabIndex = 69;
-            this.label3.Text = "Calendario de Vacunación";
+            this.lbl_CalendariodeVacunacion.AutoSize = true;
+            this.lbl_CalendariodeVacunacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CalendariodeVacunacion.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.lbl_CalendariodeVacunacion.Location = new System.Drawing.Point(3, 9);
+            this.lbl_CalendariodeVacunacion.Name = "lbl_CalendariodeVacunacion";
+            this.lbl_CalendariodeVacunacion.Size = new System.Drawing.Size(289, 25);
+            this.lbl_CalendariodeVacunacion.TabIndex = 69;
+            this.lbl_CalendariodeVacunacion.Text = "Calendario de Vacunación";
             // 
             // label1
             // 
@@ -107,28 +109,51 @@ namespace Cova.UI
             this.cmb_EstadoCalendarioVacunacion.Size = new System.Drawing.Size(121, 21);
             this.cmb_EstadoCalendarioVacunacion.TabIndex = 75;
             // 
-            // bttn_MostrarCalendarioVacunacion
+            // bttn_Mostrar_CalendarioVacunacion
             // 
-            this.bttn_MostrarCalendarioVacunacion.Location = new System.Drawing.Point(345, 88);
-            this.bttn_MostrarCalendarioVacunacion.Name = "bttn_MostrarCalendarioVacunacion";
-            this.bttn_MostrarCalendarioVacunacion.Size = new System.Drawing.Size(75, 23);
-            this.bttn_MostrarCalendarioVacunacion.TabIndex = 76;
-            this.bttn_MostrarCalendarioVacunacion.Text = "Mostrar";
-            this.bttn_MostrarCalendarioVacunacion.UseVisualStyleBackColor = true;
+            this.bttn_Mostrar_CalendarioVacunacion.Location = new System.Drawing.Point(345, 88);
+            this.bttn_Mostrar_CalendarioVacunacion.Name = "bttn_Mostrar_CalendarioVacunacion";
+            this.bttn_Mostrar_CalendarioVacunacion.Size = new System.Drawing.Size(75, 23);
+            this.bttn_Mostrar_CalendarioVacunacion.TabIndex = 76;
+            this.bttn_Mostrar_CalendarioVacunacion.Text = "Mostrar";
+            this.bttn_Mostrar_CalendarioVacunacion.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar_CalendarioVacunacion
+            // 
+            this.btnCancelar_CalendarioVacunacion.Location = new System.Drawing.Point(426, 89);
+            this.btnCancelar_CalendarioVacunacion.Name = "btnCancelar_CalendarioVacunacion";
+            this.btnCancelar_CalendarioVacunacion.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar_CalendarioVacunacion.TabIndex = 77;
+            this.btnCancelar_CalendarioVacunacion.Text = "Cancelar";
+            this.btnCancelar_CalendarioVacunacion.UseVisualStyleBackColor = true;
+            this.btnCancelar_CalendarioVacunacion.Click += new System.EventHandler(this.btnCancelar_CalendarioVacunacion_Click);
+            // 
+            // btn_Limpiar_CalendarioVacunacion
+            // 
+            this.btn_Limpiar_CalendarioVacunacion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Limpiar_CalendarioVacunacion.Location = new System.Drawing.Point(507, 88);
+            this.btn_Limpiar_CalendarioVacunacion.Name = "btn_Limpiar_CalendarioVacunacion";
+            this.btn_Limpiar_CalendarioVacunacion.Size = new System.Drawing.Size(78, 23);
+            this.btn_Limpiar_CalendarioVacunacion.TabIndex = 147;
+            this.btn_Limpiar_CalendarioVacunacion.Text = "Limpiar";
+            this.btn_Limpiar_CalendarioVacunacion.UseVisualStyleBackColor = true;
+            this.btn_Limpiar_CalendarioVacunacion.Click += new System.EventHandler(this.btn_Limpiar_CalendarioVacunacion_Click);
             // 
             // CalendarioDeVacunación
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 493);
-            this.Controls.Add(this.bttn_MostrarCalendarioVacunacion);
+            this.Controls.Add(this.btn_Limpiar_CalendarioVacunacion);
+            this.Controls.Add(this.btnCancelar_CalendarioVacunacion);
+            this.Controls.Add(this.bttn_Mostrar_CalendarioVacunacion);
             this.Controls.Add(this.cmb_EstadoCalendarioVacunacion);
             this.Controls.Add(this.lbl_EstadoCalendarioVacunacion);
             this.Controls.Add(this.txtBoxUsuario_CalendarioVacunacion);
             this.Controls.Add(this.lbl_UsuarioCalendarioVacunacion);
             this.Controls.Add(this.dtgv_CalendarioVacunacion);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbl_CalendariodeVacunacion);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CalendarioDeVacunación";
             this.Text = "CalendarioDeVacunación";
@@ -140,13 +165,15 @@ namespace Cova.UI
 
         #endregion
 
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_CalendariodeVacunacion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dtgv_CalendarioVacunacion;
         private System.Windows.Forms.Label lbl_UsuarioCalendarioVacunacion;
         private System.Windows.Forms.TextBox txtBoxUsuario_CalendarioVacunacion;
         private System.Windows.Forms.Label lbl_EstadoCalendarioVacunacion;
         private System.Windows.Forms.ComboBox cmb_EstadoCalendarioVacunacion;
-        private System.Windows.Forms.Button bttn_MostrarCalendarioVacunacion;
+        private System.Windows.Forms.Button bttn_Mostrar_CalendarioVacunacion;
+        private System.Windows.Forms.Button btnCancelar_CalendarioVacunacion;
+        private System.Windows.Forms.Button btn_Limpiar_CalendarioVacunacion;
     }
 }

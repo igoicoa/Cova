@@ -249,5 +249,35 @@ namespace Cova.UI
             RegistrarTurno frmRegistrarTurno = new RegistrarTurno();
             frmRegistrarTurno.Show();
         }
+
+        private void crearCoberturaMedicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CargarCoberturaMedica frmCargarCoberturaMedica = new CargarCoberturaMedica();
+            frmCargarCoberturaMedica.Show();
+        }
+
+        private void modificarCoberturaMedicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModificarCoberturaMedica frmModificarCoberturaMedica = new ModificarCoberturaMedica();
+            frmModificarCoberturaMedica.Show();
+        }
+
+        private void verCoberturasMedicasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VerCoberturaMedica frmVerCoberturaMedica = new VerCoberturaMedica();
+            frmVerCoberturaMedica.Show();
+        }
+
+        private void crearHistoriaClinicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrearHistoriaClinica frmCrearHistoriaClinica = new CrearHistoriaClinica();
+            frmCrearHistoriaClinica.Show();
+        }
+
+        private void modificarHistoriaClinicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModificarHistoriaClinica frmModificarHistoriaClinica = new ModificarHistoriaClinica();
+            frmModificarHistoriaClinica.Show();
+        }
     }
 }

@@ -36,7 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblNombreCrearCuenta = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.txtBox_CrearCuentaNombre = new System.Windows.Forms.TextBox();
+            this.txt_CrearCuentaNombre = new System.Windows.Forms.TextBox();
             this.textBoxApellidoCrearCuenta = new System.Windows.Forms.TextBox();
             this.lbl_ApellidoCrearCuenta = new System.Windows.Forms.Label();
             this.lblSexoCrearCuenta = new System.Windows.Forms.Label();
@@ -86,7 +86,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_piso = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lbl_CrearCuentas = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen_CrearCuenta)).BeginInit();
             this.gb_paciente.SuspendLayout();
@@ -186,13 +186,13 @@
             this.comboBox1.TabIndex = 8;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // txtBox_CrearCuentaNombre
+            // txt_CrearCuentaNombre
             // 
-            this.txtBox_CrearCuentaNombre.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtBox_CrearCuentaNombre.Location = new System.Drawing.Point(43, 217);
-            this.txtBox_CrearCuentaNombre.Name = "txtBox_CrearCuentaNombre";
-            this.txtBox_CrearCuentaNombre.Size = new System.Drawing.Size(363, 20);
-            this.txtBox_CrearCuentaNombre.TabIndex = 9;
+            this.txt_CrearCuentaNombre.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_CrearCuentaNombre.Location = new System.Drawing.Point(43, 217);
+            this.txt_CrearCuentaNombre.Name = "txt_CrearCuentaNombre";
+            this.txt_CrearCuentaNombre.Size = new System.Drawing.Size(363, 20);
+            this.txt_CrearCuentaNombre.TabIndex = 9;
             // 
             // textBoxApellidoCrearCuenta
             // 
@@ -368,6 +368,7 @@
             this.btnCancelar_CrearCuenta.TabIndex = 32;
             this.btnCancelar_CrearCuenta.Text = "Cancelar";
             this.btnCancelar_CrearCuenta.UseVisualStyleBackColor = true;
+            this.btnCancelar_CrearCuenta.Click += new System.EventHandler(this.btnCancelar_CrearCuenta_Click);
             // 
             // btnLimpiar_CrearCuenta
             // 
@@ -378,6 +379,7 @@
             this.btnLimpiar_CrearCuenta.TabIndex = 33;
             this.btnLimpiar_CrearCuenta.Text = "Limpiar";
             this.btnLimpiar_CrearCuenta.UseVisualStyleBackColor = true;
+            this.btnLimpiar_CrearCuenta.Click += new System.EventHandler(this.btnLimpiar_CrearCuenta_Click);
             // 
             // cmb_coberturaMedica
             // 
@@ -652,23 +654,23 @@
             this.txt_piso.Size = new System.Drawing.Size(70, 20);
             this.txt_piso.TabIndex = 81;
             // 
-            // label7
+            // lbl_CrearCuentas
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.label7.Location = new System.Drawing.Point(41, 2);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(164, 25);
-            this.label7.TabIndex = 82;
-            this.label7.Text = "Crear Cuentas";
+            this.lbl_CrearCuentas.AutoSize = true;
+            this.lbl_CrearCuentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CrearCuentas.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.lbl_CrearCuentas.Location = new System.Drawing.Point(41, 2);
+            this.lbl_CrearCuentas.Name = "lbl_CrearCuentas";
+            this.lbl_CrearCuentas.Size = new System.Drawing.Size(164, 25);
+            this.lbl_CrearCuentas.TabIndex = 82;
+            this.lbl_CrearCuentas.Text = "Crear Cuentas";
             // 
             // CrearCuentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 658);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lbl_CrearCuentas);
             this.Controls.Add(this.txt_piso);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txt_Email);
@@ -703,7 +705,7 @@
             this.Controls.Add(this.lblSexoCrearCuenta);
             this.Controls.Add(this.textBoxApellidoCrearCuenta);
             this.Controls.Add(this.lbl_ApellidoCrearCuenta);
-            this.Controls.Add(this.txtBox_CrearCuentaNombre);
+            this.Controls.Add(this.txt_CrearCuentaNombre);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lblNombreCrearCuenta);
             this.Controls.Add(this.label2);
@@ -732,7 +734,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblNombreCrearCuenta;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox txtBox_CrearCuentaNombre;
+        private System.Windows.Forms.TextBox txt_CrearCuentaNombre;
         private System.Windows.Forms.TextBox textBoxApellidoCrearCuenta;
         private System.Windows.Forms.Label lbl_ApellidoCrearCuenta;
         private System.Windows.Forms.Label lblSexoCrearCuenta;
@@ -782,6 +784,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_piso;
         private System.Windows.Forms.ComboBox cmb_especialidad;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbl_CrearCuentas;
     }
 }

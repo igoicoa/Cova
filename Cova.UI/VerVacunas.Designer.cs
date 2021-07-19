@@ -141,6 +141,7 @@ namespace Cova.UI
             this.btn_Cancelar_VerVacunas.TabIndex = 137;
             this.btn_Cancelar_VerVacunas.Text = "Cancelar";
             this.btn_Cancelar_VerVacunas.UseVisualStyleBackColor = true;
+            this.btn_Cancelar_VerVacunas.Click += new System.EventHandler(this.btn_Cancelar_VerVacunas_Click);
             // 
             // VerVacunas
             // 

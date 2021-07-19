@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Cova.UI
 {
-    public partial class VerCalendarioMisPacientes : Form
+    public partial class ModificarHistoriaClinica : Form
     {
-        public VerCalendarioMisPacientes()
+        public ModificarHistoriaClinica()
         {
             InitializeComponent();
-        }
-
-        private void btn_Cancelar_VerCalendariodePacientes_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

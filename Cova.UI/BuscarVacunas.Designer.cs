@@ -54,6 +54,7 @@ namespace Cova.UI
             this.btn_Limpiar_BuscarVacunas.TabIndex = 149;
             this.btn_Limpiar_BuscarVacunas.Text = "Limpiar";
             this.btn_Limpiar_BuscarVacunas.UseVisualStyleBackColor = true;
+            this.btn_Limpiar_BuscarVacunas.Click += new System.EventHandler(this.btn_Limpiar_BuscarVacunas_Click);
             // 
             // btn_Cancelar_BuscarVacunas
             // 
@@ -63,11 +64,12 @@ namespace Cova.UI
             this.btn_Cancelar_BuscarVacunas.TabIndex = 148;
             this.btn_Cancelar_BuscarVacunas.Text = "Cancelar";
             this.btn_Cancelar_BuscarVacunas.UseVisualStyleBackColor = true;
+            this.btn_Cancelar_BuscarVacunas.Click += new System.EventHandler(this.btn_Cancelar_BuscarVacunas_Click);
             // 
             // dtg_ListaVacunas_VerVacunas
             // 
             this.dtg_ListaVacunas_VerVacunas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_ListaVacunas_VerVacunas.Location = new System.Drawing.Point(12, 145);
+            this.dtg_ListaVacunas_VerVacunas.Location = new System.Drawing.Point(11, 134);
             this.dtg_ListaVacunas_VerVacunas.Name = "dtg_ListaVacunas_VerVacunas";
             this.dtg_ListaVacunas_VerVacunas.Size = new System.Drawing.Size(777, 304);
             this.dtg_ListaVacunas_VerVacunas.TabIndex = 147;

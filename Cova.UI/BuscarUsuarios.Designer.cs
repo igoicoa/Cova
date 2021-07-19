@@ -58,6 +58,7 @@ namespace Cova.UI
             this.btn_Limpiar_BuscarUsuario.TabIndex = 146;
             this.btn_Limpiar_BuscarUsuario.Text = "Limpiar";
             this.btn_Limpiar_BuscarUsuario.UseVisualStyleBackColor = true;
+            this.btn_Limpiar_BuscarUsuario.Click += new System.EventHandler(this.btn_Limpiar_BuscarUsuario_Click);
             // 
             // btn_Cancelar_BuscarUsuario
             // 
@@ -67,6 +68,7 @@ namespace Cova.UI
             this.btn_Cancelar_BuscarUsuario.TabIndex = 145;
             this.btn_Cancelar_BuscarUsuario.Text = "Cancelar";
             this.btn_Cancelar_BuscarUsuario.UseVisualStyleBackColor = true;
+            this.btn_Cancelar_BuscarUsuario.Click += new System.EventHandler(this.btn_Cancelar_BuscarUsuario_Click);
             // 
             // txt_DNI_BuscarUsuario
             // 

@@ -16,5 +16,10 @@ namespace Cova.UI
         {
             InitializeComponent();
         }
+
+        private void btn_Cancelar_VerVacunas_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

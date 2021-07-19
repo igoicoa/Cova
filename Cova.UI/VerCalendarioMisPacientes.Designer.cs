@@ -116,6 +116,7 @@ namespace Cova.UI
             this.btn_Cancelar_VerCalendariodePacientes.TabIndex = 150;
             this.btn_Cancelar_VerCalendariodePacientes.Text = "Cancelar";
             this.btn_Cancelar_VerCalendariodePacientes.UseVisualStyleBackColor = true;
+            this.btn_Cancelar_VerCalendariodePacientes.Click += new System.EventHandler(this.btn_Cancelar_VerCalendariodePacientes_Click);
             // 
             // btn_Buscar_VerCalendariodePacientes
             // 

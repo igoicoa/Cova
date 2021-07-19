@@ -58,9 +58,9 @@ namespace Cova.UI
             this.rb_paciente_ModificarCuenta = new System.Windows.Forms.RadioButton();
             this.TxtBoxUsuario_ModificarCuenta = new System.Windows.Forms.Label();
             this.textBoxUsuario_ModificarCuenta = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_Clave_ModificarCuenta = new System.Windows.Forms.TextBox();
             this.lblClave_ModificarCuenta = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_ModificarCuentas = new System.Windows.Forms.Label();
             this.cmb_InhabilitarModificarCuenta = new System.Windows.Forms.ComboBox();
             this.lbl_InhabilitarModificarCuenta = new System.Windows.Forms.Label();
             this.txt_documentoNumeroModificarCuenta = new System.Windows.Forms.TextBox();
@@ -73,7 +73,7 @@ namespace Cova.UI
             this.label6 = new System.Windows.Forms.Label();
             this.txt_NumeroModificarCuenta = new System.Windows.Forms.TextBox();
             this.lbl_NumeroModificarCuenta = new System.Windows.Forms.Label();
-            this.textBoxCalle_CrearCuenta = new System.Windows.Forms.TextBox();
+            this.textBoxCalle_ModificarCuenta = new System.Windows.Forms.TextBox();
             this.lblCalle_ModificarCuenta = new System.Windows.Forms.Label();
             this.gb_ProfesionalModificarCuenta = new System.Windows.Forms.GroupBox();
             this.cmb_especialidadModificarCuenta = new System.Windows.Forms.ComboBox();
@@ -108,6 +108,7 @@ namespace Cova.UI
             this.btnLimpiar_ModificarCuenta.TabIndex = 62;
             this.btnLimpiar_ModificarCuenta.Text = "Limpiar";
             this.btnLimpiar_ModificarCuenta.UseVisualStyleBackColor = true;
+            this.btnLimpiar_ModificarCuenta.Click += new System.EventHandler(this.btnLimpiar_ModificarCuenta_Click);
             // 
             // btnCancelar_ModificarCuenta
             // 
@@ -117,6 +118,7 @@ namespace Cova.UI
             this.btnCancelar_ModificarCuenta.TabIndex = 61;
             this.btnCancelar_ModificarCuenta.Text = "Cancelar";
             this.btnCancelar_ModificarCuenta.UseVisualStyleBackColor = true;
+            this.btnCancelar_ModificarCuenta.Click += new System.EventHandler(this.btnCancelar_ModificarCuenta_Click);
             // 
             // btnModificar_ModificarCuenta
             // 
@@ -364,6 +366,7 @@ namespace Cova.UI
             this.TxtBoxUsuario_ModificarCuenta.Size = new System.Drawing.Size(43, 13);
             this.TxtBoxUsuario_ModificarCuenta.TabIndex = 64;
             this.TxtBoxUsuario_ModificarCuenta.Text = "Usuario";
+            this.TxtBoxUsuario_ModificarCuenta.Click += new System.EventHandler(this.TxtBoxUsuario_ModificarCuenta_Click);
             // 
             // textBoxUsuario_ModificarCuenta
             // 
@@ -372,14 +375,15 @@ namespace Cova.UI
             this.textBoxUsuario_ModificarCuenta.Name = "textBoxUsuario_ModificarCuenta";
             this.textBoxUsuario_ModificarCuenta.Size = new System.Drawing.Size(123, 20);
             this.textBoxUsuario_ModificarCuenta.TabIndex = 65;
+            this.textBoxUsuario_ModificarCuenta.TextChanged += new System.EventHandler(this.textBoxUsuario_ModificarCuenta_TextChanged);
             // 
-            // textBox1
+            // txt_Clave_ModificarCuenta
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBox1.Location = new System.Drawing.Point(42, 163);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(123, 20);
-            this.textBox1.TabIndex = 67;
+            this.txt_Clave_ModificarCuenta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_Clave_ModificarCuenta.Location = new System.Drawing.Point(42, 163);
+            this.txt_Clave_ModificarCuenta.Name = "txt_Clave_ModificarCuenta";
+            this.txt_Clave_ModificarCuenta.Size = new System.Drawing.Size(123, 20);
+            this.txt_Clave_ModificarCuenta.TabIndex = 67;
             // 
             // lblClave_ModificarCuenta
             // 
@@ -390,16 +394,16 @@ namespace Cova.UI
             this.lblClave_ModificarCuenta.TabIndex = 66;
             this.lblClave_ModificarCuenta.Text = "Clave";
             // 
-            // label3
+            // lbl_ModificarCuentas
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.label3.Location = new System.Drawing.Point(35, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(203, 25);
-            this.label3.TabIndex = 68;
-            this.label3.Text = "Modificar Cuentas";
+            this.lbl_ModificarCuentas.AutoSize = true;
+            this.lbl_ModificarCuentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ModificarCuentas.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.lbl_ModificarCuentas.Location = new System.Drawing.Point(13, 3);
+            this.lbl_ModificarCuentas.Name = "lbl_ModificarCuentas";
+            this.lbl_ModificarCuentas.Size = new System.Drawing.Size(203, 25);
+            this.lbl_ModificarCuentas.TabIndex = 68;
+            this.lbl_ModificarCuentas.Text = "Modificar Cuentas";
             // 
             // cmb_InhabilitarModificarCuenta
             // 
@@ -510,13 +514,13 @@ namespace Cova.UI
             this.lbl_NumeroModificarCuenta.TabIndex = 84;
             this.lbl_NumeroModificarCuenta.Text = "Numero";
             // 
-            // textBoxCalle_CrearCuenta
+            // textBoxCalle_ModificarCuenta
             // 
-            this.textBoxCalle_CrearCuenta.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBoxCalle_CrearCuenta.Location = new System.Drawing.Point(35, 370);
-            this.textBoxCalle_CrearCuenta.Name = "textBoxCalle_CrearCuenta";
-            this.textBoxCalle_CrearCuenta.Size = new System.Drawing.Size(181, 20);
-            this.textBoxCalle_CrearCuenta.TabIndex = 83;
+            this.textBoxCalle_ModificarCuenta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBoxCalle_ModificarCuenta.Location = new System.Drawing.Point(35, 370);
+            this.textBoxCalle_ModificarCuenta.Name = "textBoxCalle_ModificarCuenta";
+            this.textBoxCalle_ModificarCuenta.Size = new System.Drawing.Size(181, 20);
+            this.textBoxCalle_ModificarCuenta.TabIndex = 83;
             // 
             // lblCalle_ModificarCuenta
             // 
@@ -717,7 +721,7 @@ namespace Cova.UI
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txt_NumeroModificarCuenta);
             this.Controls.Add(this.lbl_NumeroModificarCuenta);
-            this.Controls.Add(this.textBoxCalle_CrearCuenta);
+            this.Controls.Add(this.textBoxCalle_ModificarCuenta);
             this.Controls.Add(this.lblCalle_ModificarCuenta);
             this.Controls.Add(this.textBoxTelefono_ModifCuenta);
             this.Controls.Add(this.lblTelefono_ModifCuenta);
@@ -725,8 +729,8 @@ namespace Cova.UI
             this.Controls.Add(this.lbl_NumeroDocModificarCuenta);
             this.Controls.Add(this.cmb_InhabilitarModificarCuenta);
             this.Controls.Add(this.lbl_InhabilitarModificarCuenta);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lbl_ModificarCuentas);
+            this.Controls.Add(this.txt_Clave_ModificarCuenta);
             this.Controls.Add(this.lblClave_ModificarCuenta);
             this.Controls.Add(this.textBoxUsuario_ModificarCuenta);
             this.Controls.Add(this.TxtBoxUsuario_ModificarCuenta);
@@ -800,9 +804,9 @@ namespace Cova.UI
         private System.Windows.Forms.RadioButton rb_paciente_ModificarCuenta;
         private System.Windows.Forms.Label TxtBoxUsuario_ModificarCuenta;
         private System.Windows.Forms.TextBox textBoxUsuario_ModificarCuenta;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_Clave_ModificarCuenta;
         private System.Windows.Forms.Label lblClave_ModificarCuenta;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_ModificarCuentas;
         private System.Windows.Forms.ComboBox cmb_InhabilitarModificarCuenta;
         private System.Windows.Forms.Label lbl_InhabilitarModificarCuenta;
         private System.Windows.Forms.TextBox txt_documentoNumeroModificarCuenta;
@@ -815,7 +819,7 @@ namespace Cova.UI
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_NumeroModificarCuenta;
         private System.Windows.Forms.Label lbl_NumeroModificarCuenta;
-        private System.Windows.Forms.TextBox textBoxCalle_CrearCuenta;
+        private System.Windows.Forms.TextBox textBoxCalle_ModificarCuenta;
         private System.Windows.Forms.Label lblCalle_ModificarCuenta;
         private System.Windows.Forms.GroupBox gb_ProfesionalModificarCuenta;
         private System.Windows.Forms.ComboBox cmb_especialidadModificarCuenta;

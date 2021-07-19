@@ -128,6 +128,7 @@ namespace Cova.UI
             this.btnCancelar_VerUsuarios.TabIndex = 135;
             this.btnCancelar_VerUsuarios.Text = "Cancelar";
             this.btnCancelar_VerUsuarios.UseVisualStyleBackColor = true;
+            this.btnCancelar_VerUsuarios.Click += new System.EventHandler(this.btnCancelar_VerUsuarios_Click);
             // 
             // gb_TipoUsuario_VerUsuarios
             // 

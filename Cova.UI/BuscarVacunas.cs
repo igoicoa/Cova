@@ -16,5 +16,16 @@ namespace Cova.UI
         {
             InitializeComponent();
         }
+
+        private void btn_Cancelar_BuscarVacunas_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_Limpiar_BuscarVacunas_Click(object sender, EventArgs e)
+        {
+            txt_Lote_BuscarVacunas.Clear();
+            txt_Nombre_BuscarVacunas.Clear();
+        }
     }
 }

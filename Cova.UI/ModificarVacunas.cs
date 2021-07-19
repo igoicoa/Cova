@@ -22,5 +22,10 @@ namespace Cova.UI
             BuscarVacunas frmBuscarVacunas = new BuscarVacunas();
             frmBuscarVacunas.Show();
         }
+
+        private void btn_Cancelar_ModificarVacunas_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
