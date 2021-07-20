@@ -29,6 +29,7 @@ namespace Cova.MPP
                         usuario.UsuarioID = Convert.ToInt64(fila["UsuarioID"]);
                         usuario.Usuario = Convert.ToString(fila["Usuario"]);
                         usuario.Password = Convert.ToString(fila["Password"]);
+                        usuario.Activo = Convert.ToBoolean(fila["Activo"]);
                         //usuario.UltimoLogin = Convert.ToDateTime(fila["UltimoLogin"]);
                     }
                 }

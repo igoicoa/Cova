@@ -609,7 +609,7 @@ namespace Cova.UI
             this.gb_pacienteModificarCuenta.Controls.Add(this.lbl_Plan_ModificarCuenta);
             this.gb_pacienteModificarCuenta.Controls.Add(this.cmb_coberturaMedica_ModificarCuenta);
             this.gb_pacienteModificarCuenta.Controls.Add(this.lblCoberturaMedica_ModificarCuenta);
-            this.gb_pacienteModificarCuenta.Location = new System.Drawing.Point(476, 357);
+            this.gb_pacienteModificarCuenta.Location = new System.Drawing.Point(475, 363);
             this.gb_pacienteModificarCuenta.Name = "gb_pacienteModificarCuenta";
             this.gb_pacienteModificarCuenta.Size = new System.Drawing.Size(359, 186);
             this.gb_pacienteModificarCuenta.TabIndex = 89;
@@ -761,7 +761,6 @@ namespace Cova.UI
             this.Controls.Add(this.groupBoxTipoUsuario_ModificarCuenta);
             this.Name = "ModificarCuentaForm";
             this.Text = "Modificar Cuenta";
-            this.Load += new System.EventHandler(this.FormModificarCuenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen_ModificarCuenta)).EndInit();
             this.groupBoxTipoUsuario_ModificarCuenta.ResumeLayout(false);
             this.groupBoxTipoUsuario_ModificarCuenta.PerformLayout();

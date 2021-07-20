@@ -7,24 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Cova.BE;
 
 namespace Cova.UI
 {
     public partial class ModificarCuentaForm : Form
     {
+        private BEUsuario _usuarioAModificar;
         public ModificarCuentaForm()
         {
             InitializeComponent();
         }
 
-        private void FormModificarCuenta_Load(object sender, EventArgs e)
+        public void CargarUsuario(BEUsuario usuarioAModificar)
         {
-
+            this._usuarioAModificar = usuarioAModificar;
+            //TODO Cargar datos en los textbox
         }
 
         private void btn_BuscarUsuarios_ModificarUsuarios_Click(object sender, EventArgs e)
         {
-            BuscarUsuarios frmBuscarUsuarios = new BuscarUsuarios();
+            BuscarUsuarios frmBuscarUsuarios = new BuscarUsuarios(this);
             frmBuscarUsuarios.Show();
         }
 

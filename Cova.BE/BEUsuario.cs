@@ -10,5 +10,6 @@ namespace Cova.BE
         public string Password { get; set; }
         public DateTime? UltimoLogin { get; set; }
         public ComponentePermiso Permisos { get; set; }
+        public bool Activo { get; set; }
     }
 }

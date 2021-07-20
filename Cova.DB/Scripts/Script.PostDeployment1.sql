@@ -88,9 +88,9 @@ EXEC s_CrearProfesionalEnfermero 'Salas', 'Sofia', 34928392, '1989-09-21', 'F', 
 -- Admin User (User: Admin - PWD: test123)
 DECLARE @UserIDAdmin BIGINT
 DECLARE @permiso INT = 0;
-INSERT INTO Usuario(Usuario, Password, UltimoLogin)
+INSERT INTO Usuario(Usuario, Password, UltimoLogin, Activo)
 VALUES
-('Admin', 'CC-03-E7-47-A6-AF-BB-CB-F8-BE-76-68-AC-FE-BE-E5', GETDATE());
+('Admin', 'CC-03-E7-47-A6-AF-BB-CB-F8-BE-76-68-AC-FE-BE-E5', GETDATE(), 1);
 SET @UserIDAdmin = SCOPE_IDENTITY();
 
 WHILE @permiso < 48

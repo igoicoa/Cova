@@ -14,9 +14,16 @@ namespace Cova.UI
 {
     public partial class BuscarUsuarios : Form
     {
-        public BuscarUsuarios()
+        private ModificarCuentaForm _formModificarCuenta;
+        public List<BEMedico> Medicos;
+        public List<BEEnfermero> Enfermeros;
+        public List<BEPaciente> Pacientes;
+        public List<BEAdministrador> Administradores;
+
+        public BuscarUsuarios(ModificarCuentaForm formModificarCuenta = null)
         {
             InitializeComponent();
+            this._formModificarCuenta = formModificarCuenta;
         }
 
         private void bttn_Buscar_BuscarUsuario_Click(object sender, EventArgs e)
@@ -45,9 +52,10 @@ namespace Cova.UI
         public void BuscarMedico(string usuario, string DNI)
         {
             BLMedico bLMedico = new BLMedico();
-            List<BEMedico> medicos = bLMedico.BuscarMedicos(usuario, DNI).ToList();
+            this.Medicos = bLMedico.BuscarMedicos(usuario, DNI).ToList();
 
             DataTable tableMedicos = new DataTable();
+            tableMedicos.Columns.Add("UsuarioID");
             tableMedicos.Columns.Add("Nombre");
             tableMedicos.Columns.Add("Apellido");
             tableMedicos.Columns.Add("DNI");
@@ -66,15 +74,16 @@ namespace Cova.UI
             tableMedicos.Columns.Add("Matricula Nacional");
             tableMedicos.Columns.Add("Matricula Provincial");
 
-            foreach (BEMedico medico in medicos)
+            foreach (BEMedico medico in this.Medicos)
             {
                 DataRow filaMedico = tableMedicos.NewRow();
+                filaMedico["UsuarioID"] = medico.UsuarioID;
                 filaMedico["Nombre"] = medico.Nombre;
                 filaMedico["Apellido"] = medico.Apellido;
                 filaMedico["DNI"] = medico.DNI;
-                filaMedico["FechaNacimiento"] = medico.FechaNacimiento;
+                filaMedico["Fecha Nacimiento"] = medico.FechaNacimiento;
                 filaMedico["Sexo"] = medico.Sexo;
-                filaMedico["EstadoCivil"] = medico.EstadoCivil;
+                filaMedico["Estado Civil"] = medico.EstadoCivil;
                 filaMedico["Telefono"] = medico.Telefono;
                 filaMedico["Email"] = medico.Email;
                 filaMedico["Calle"] = medico.Domicilio.Calle;
@@ -84,13 +93,76 @@ namespace Cova.UI
                 filaMedico["Provincia"] = medico.Domicilio.Provincia;
                 filaMedico["Pais"] = medico.Domicilio.Pais;
                 filaMedico["Especialidad"] = medico.Especialidad;
-                filaMedico["MatriculaNacional"] = medico.MatriculaNacional;
-                filaMedico["MatriculaProvincial"] = medico.MatriculaProvincial;
+                filaMedico["Matricula Nacional"] = medico.MatriculaNacional;
+                filaMedico["Matricula Provincial"] = medico.MatriculaProvincial;
                 tableMedicos.Rows.Add(filaMedico);
             }
             DataView dataviewMedicos = new DataView(tableMedicos);
             dgv_usuario.DataSource = dataviewMedicos;
-            dgv_usuario.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[0].Visible = false;
+            dgv_usuario.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[11].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[12].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[13].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[14].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[15].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[16].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        }
+
+        public void BuscarEnfermero(string usuario, string DNI)
+        {
+            BLEnfermero bLEnfermero = new BLEnfermero();
+            this.Enfermeros = bLEnfermero.BuscarEnfermeros(usuario, DNI).ToList();
+            DataTable tableEnfermeros = new DataTable();
+            tableEnfermeros.Columns.Add("UsuarioID");
+            tableEnfermeros.Columns.Add("Nombre");
+            tableEnfermeros.Columns.Add("Apellido");
+            tableEnfermeros.Columns.Add("DNI");
+            tableEnfermeros.Columns.Add("Fecha Nacimiento");
+            tableEnfermeros.Columns.Add("Sexo");
+            tableEnfermeros.Columns.Add("Estado Civil");
+            tableEnfermeros.Columns.Add("Telefono");
+            tableEnfermeros.Columns.Add("Email");
+            tableEnfermeros.Columns.Add("Calle");
+            tableEnfermeros.Columns.Add("Numero");
+            tableEnfermeros.Columns.Add("Piso");
+            tableEnfermeros.Columns.Add("Localidad");
+            tableEnfermeros.Columns.Add("Provincia");
+            tableEnfermeros.Columns.Add("Pais");
+            tableEnfermeros.Columns.Add("Matricula Enfermero");
+            foreach (BEEnfermero enfermero in this.Enfermeros)
+            {
+                DataRow filaEnfermero = tableEnfermeros.NewRow();
+                filaEnfermero["UsuarioID"] = enfermero.UsuarioID;
+                filaEnfermero["Nombre"] = enfermero.Nombre;
+                filaEnfermero["Apellido"] = enfermero.Apellido;
+                filaEnfermero["DNI"] = enfermero.DNI;
+                filaEnfermero["Fecha Nacimiento"] = enfermero.FechaNacimiento;
+                filaEnfermero["Sexo"] = enfermero.Sexo;
+                filaEnfermero["Estado Civil"] = enfermero.EstadoCivil;
+                filaEnfermero["Telefono"] = enfermero.Telefono;
+                filaEnfermero["Email"] = enfermero.Email;
+                filaEnfermero["Calle"] = enfermero.Domicilio.Calle;
+                filaEnfermero["Numero"] = enfermero.Domicilio.Numero;
+                filaEnfermero["Piso"] = enfermero.Domicilio.Piso;
+                filaEnfermero["Localidad"] = enfermero.Domicilio.Localidad;
+                filaEnfermero["Provincia"] = enfermero.Domicilio.Provincia;
+                filaEnfermero["Pais"] = enfermero.Domicilio.Pais;
+                filaEnfermero["Matricula Enfermero"] = enfermero.MatriculaEnfermero;
+                tableEnfermeros.Rows.Add(filaEnfermero);
+            }
+            DataView dataviewEnfermeros = new DataView(tableEnfermeros);
+            dgv_usuario.DataSource = dataviewEnfermeros;
+            dgv_usuario.Columns[0].Visible = false;
             dgv_usuario.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgv_usuario.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgv_usuario.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -108,71 +180,13 @@ namespace Cova.UI
             dgv_usuario.Columns[15].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
-        public void BuscarEnfermero(string usuario, string DNI)
-        {
-            BLEnfermero bLEnfermero = new BLEnfermero();
-            List<BEEnfermero> enfermeros = bLEnfermero.BuscarEnfermeros(usuario, DNI).ToList();
-            DataTable tableEnfermeros = new DataTable();
-            tableEnfermeros.Columns.Add("Nombre");
-            tableEnfermeros.Columns.Add("Apellido");
-            tableEnfermeros.Columns.Add("DNI");
-            tableEnfermeros.Columns.Add("Fecha Nacimiento");
-            tableEnfermeros.Columns.Add("Sexo");
-            tableEnfermeros.Columns.Add("Estado Civil");
-            tableEnfermeros.Columns.Add("Telefono");
-            tableEnfermeros.Columns.Add("Email");
-            tableEnfermeros.Columns.Add("Calle");
-            tableEnfermeros.Columns.Add("Numero");
-            tableEnfermeros.Columns.Add("Piso");
-            tableEnfermeros.Columns.Add("Localidad");
-            tableEnfermeros.Columns.Add("Provincia");
-            tableEnfermeros.Columns.Add("Pais");
-            tableEnfermeros.Columns.Add("Matricula Enfermero");
-            foreach (BEEnfermero enfermero in enfermeros)
-            {
-                DataRow filaEnfermero = tableEnfermeros.NewRow();
-                filaEnfermero["Nombre"] = enfermero.Nombre;
-                filaEnfermero["Apellido"] = enfermero.Apellido;
-                filaEnfermero["DNI"] = enfermero.DNI;
-                filaEnfermero["Fecha Nacimiento"] = enfermero.FechaNacimiento;
-                filaEnfermero["Sexo"] = enfermero.Sexo;
-                filaEnfermero["EstadoCivil"] = enfermero.EstadoCivil;
-                filaEnfermero["Telefono"] = enfermero.Telefono;
-                filaEnfermero["Email"] = enfermero.Email;
-                filaEnfermero["Calle"] = enfermero.Domicilio.Calle;
-                filaEnfermero["Numero"] = enfermero.Domicilio.Numero;
-                filaEnfermero["Piso"] = enfermero.Domicilio.Piso;
-                filaEnfermero["Localidad"] = enfermero.Domicilio.Localidad;
-                filaEnfermero["Provincia"] = enfermero.Domicilio.Provincia;
-                filaEnfermero["Pais"] = enfermero.Domicilio.Pais;
-                filaEnfermero["Matricula Enfermero"] = enfermero.MatriculaEnfermero;
-                tableEnfermeros.Rows.Add(filaEnfermero);
-            }
-            DataView dataviewEnfermeros = new DataView(tableEnfermeros);
-            dgv_usuario.DataSource = dataviewEnfermeros;
-            dgv_usuario.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_usuario.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_usuario.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_usuario.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_usuario.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_usuario.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_usuario.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_usuario.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_usuario.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_usuario.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_usuario.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_usuario.Columns[11].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_usuario.Columns[12].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_usuario.Columns[13].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_usuario.Columns[14].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        }
-
         public void BuscarPaciente(string usuario, string DNI)
         {
             BLPaciente bLPaciente = new BLPaciente();
-            List<BEPaciente> pacientes = bLPaciente.BuscarPacientes(usuario, DNI).ToList();
+            this.Pacientes = bLPaciente.BuscarPacientes(usuario, DNI).ToList();
 
             DataTable tablePaciente = new DataTable();
+            tablePaciente.Columns.Add("UsuarioID");
             tablePaciente.Columns.Add("Nombre");
             tablePaciente.Columns.Add("Apellido");
             tablePaciente.Columns.Add("DNI");
@@ -192,15 +206,16 @@ namespace Cova.UI
             tablePaciente.Columns.Add("Numero Afiliado");
             tablePaciente.Columns.Add("Fecha Vencimiento");
 
-            foreach (BEPaciente paciente in pacientes)
+            foreach (BEPaciente paciente in this.Pacientes)
             {
                 DataRow filaPacientes = tablePaciente.NewRow();
+                filaPacientes["UsuarioID"] = paciente.Nombre;
                 filaPacientes["Nombre"] = paciente.Nombre;
                 filaPacientes["Apellido"] = paciente.Apellido;
                 filaPacientes["DNI"] = paciente.DNI;
                 filaPacientes["Fecha Nacimiento"] = paciente.FechaNacimiento;
                 filaPacientes["Sexo"] = paciente.Sexo;
-                filaPacientes["EstadoCivil"] = paciente.EstadoCivil;
+                filaPacientes["Estado Civil"] = paciente.EstadoCivil;
                 filaPacientes["Telefono"] = paciente.Telefono;
                 filaPacientes["Email"] = paciente.Email;
                 filaPacientes["Calle"] = paciente.Domicilio.Calle;
@@ -209,15 +224,15 @@ namespace Cova.UI
                 filaPacientes["Localidad"] = paciente.Domicilio.Localidad;
                 filaPacientes["Provincia"] = paciente.Domicilio.Provincia;
                 filaPacientes["Pais"] = paciente.Domicilio.Pais;
-                filaPacientes["Cobertura Medica"] = paciente.CoberturaMedica;
-                filaPacientes["Plan"] = paciente.CoberturaMedica.Plan;
+                filaPacientes["Cobertura Medica"] = paciente.CoberturaMedica.Nombre;
+                filaPacientes["Plan"] = paciente.CoberturaMedica.Plan.Nombre;
                 filaPacientes["Numero Afiliado"] = paciente.CoberturaMedica.NumeroAfiliado;
                 filaPacientes["Fecha Vencimiento"] = paciente.CoberturaMedica.FechaVencimiento;
                 tablePaciente.Rows.Add(filaPacientes);
             }
             DataView dataviewPacientes = new DataView(tablePaciente);
             dgv_usuario.DataSource = dataviewPacientes;
-            dgv_usuario.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[0].Visible = false;
             dgv_usuario.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgv_usuario.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgv_usuario.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -235,6 +250,7 @@ namespace Cova.UI
             dgv_usuario.Columns[15].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgv_usuario.Columns[16].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgv_usuario.Columns[17].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[18].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
         public void BuscarAdministrador(string usuario, string DNI)
@@ -251,6 +267,45 @@ namespace Cova.UI
         {
             txt_Usuario_BuscarUsuario.Clear();
             txt_DNI_BuscarUsuario.Clear();
+        }
+
+        private void btn_SeleccionarUsuario_BuscarUsuarios_Click(object sender, EventArgs e)
+        {
+            if(this._formModificarCuenta != null)
+            {
+                if (dgv_usuario.SelectedRows.Count != 0)
+                {
+                    BEUsuario usuarioAModificar = CargarDatosUsuarioSeleccionado();
+                    this._formModificarCuenta.CargarUsuario(usuarioAModificar);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un usuario para administrar sus permisos");
+                }
+            }
+        }
+
+        public BEUsuario CargarDatosUsuarioSeleccionado()
+        {
+            BEUsuario bEUsuario = new BEUsuario();
+            long usuarioID = Convert.ToInt64(dgv_usuario.SelectedRows[0].Cells["UsuarioID"].Value);
+            if(this.rb_medico_BuscarUsuarios.Checked)
+            {
+                return this.Medicos.Where(x => x.UsuarioID == usuarioID).FirstOrDefault();
+            } else if (this.rb_enfermero_BuscarUsuarios.Checked)
+            {
+                return this.Enfermeros.Where(x => x.UsuarioID == usuarioID).FirstOrDefault();
+            } else if(this.rb_paciente_BuscarUsuarios.Checked)
+            {
+                return this.Pacientes.Where(x => x.UsuarioID == usuarioID).FirstOrDefault();
+            } else if(this.rb_administrador_BuscarUsuarios.Checked)
+            {
+                return this.Administradores.Where(x => x.UsuarioID == usuarioID).FirstOrDefault();
+            } else
+            {
+                return bEUsuario;
+            }
         }
     }
 }

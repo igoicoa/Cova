@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Excepciones\SesionIniciadaException.cs" />
     <Compile Include="Excepciones\SesionNoIniciadaException.cs" />
+    <Compile Include="Excepciones\UsuarioInactivoException.cs" />
+    <Compile Include="Excepciones\UsuarioPasswordIncorrecto.cs" />
     <Compile Include="Multiidioma\Etiqueta.cs" />
     <Compile Include="Multiidioma\Idioma.cs" />
     <Compile Include="Multiidioma\Traduccion.cs" />

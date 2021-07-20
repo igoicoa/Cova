@@ -9,7 +9,7 @@ AS
 BEGIN
 	SET NOCOUNT ON;
 
-    SELECT u.UsuarioID, u.Usuario, u.Password, u.UltimoLogin
+    SELECT u.UsuarioID, u.Usuario, u.Password, u.UltimoLogin, u.Activo
 	FROM Usuario u
 	WHERE u.Usuario = @NombreUsuario
 END

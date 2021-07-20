@@ -25,9 +25,9 @@ BEGIN
 			@IdProfesional	BIGINT,
 			@IdDomicilio	BIGINT
 
-	INSERT INTO [dbo].[Usuario] (Usuario, Password)
+	INSERT INTO [dbo].[Usuario] (Usuario, Password, Activo)
 	VALUES
-	(LEFT(@Nombre, 1) + @apellido, @Password)
+	(LEFT(@Nombre, 1) + @apellido, @Password, 1)
 	SET @IdUsuario = SCOPE_IDENTITY();
 
 	INSERT INTO [dbo].[Domicilio] (Calle, Numero, Piso, Localidad, Provincia, Pais)

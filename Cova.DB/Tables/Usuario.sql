@@ -4,5 +4,6 @@
 		CONSTRAINT	[PK_UsuarioID]	PRIMARY KEY CLUSTERED,
     [Usuario]		    VARCHAR(30)		NOT NULL,
     [Password]		    VARCHAR(50)		NOT NULL, 
-    [UltimoLogin]       DATETIME        NULL
+    [UltimoLogin]       DATETIME        NULL, 
+    [Activo]            BIT             NOT NULL
 )

@@ -29,6 +29,7 @@ namespace Cova.MPP
                     foreach (DataRow fila in enfermeroT.Rows)
                     {
                         BEEnfermero enfermero = new BEEnfermero();
+                        enfermero.UsuarioID = Convert.ToInt64(fila["UsuarioID"]);
                         enfermero.Nombre = Convert.ToString(fila["Nombre"]);
                         enfermero.Apellido = Convert.ToString(fila["Apellido"]);
                         enfermero.DNI = Convert.ToInt32(fila["DNI"]);
@@ -48,6 +49,7 @@ namespace Cova.MPP
 
                         enfermero.Domicilio = domicilio;
                         enfermero.MatriculaEnfermero = Convert.ToInt32(fila["MatriculaEnfermero"]);
+                        enfermero.Activo = Convert.ToBoolean(fila["Activo"]);
 
                         enfermeros.Add(enfermero);
                     }

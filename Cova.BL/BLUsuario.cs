@@ -4,6 +4,7 @@ using Cova.BE;
 using Cova.MPP;
 using Cova.Servicios.Encriptacion;
 using Cova.Common.Permisos;
+using Cova.Common.Excepciones;
 
 namespace Cova.BL
 {
@@ -16,11 +17,19 @@ namespace Cova.BL
             string claveEncriptada = HashHelper.HashMD5(usuarioALoguearse.Password);
             BEUsuario usuario;
             usuario = mPPUsuario.ObtenerUsuario(usuarioALoguearse);
-            if (usuario.Password == claveEncriptada)
+            if(!usuario.Activo)
+            {
+                throw new UsuarioInactivoException();
+            }
+            else if (usuario.Password == claveEncriptada)
             {
                 usuarioALoguearse.UsuarioID = usuario.UsuarioID;
                 usuarioALoguearse.UltimoLogin = usuario.UltimoLogin;
                 claveCorrecta = true;
+            }
+            else
+            {
+                throw new UsuarioPasswordIncorrecto();
             }
 
             return claveCorrecta;

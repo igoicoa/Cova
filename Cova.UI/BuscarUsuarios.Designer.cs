@@ -199,6 +199,7 @@ namespace Cova.UI
             this.btn_SeleccionarUsuario_BuscarUsuarios.TabIndex = 149;
             this.btn_SeleccionarUsuario_BuscarUsuarios.Text = "Seleccionar Usuario";
             this.btn_SeleccionarUsuario_BuscarUsuarios.UseVisualStyleBackColor = true;
+            this.btn_SeleccionarUsuario_BuscarUsuarios.Click += new System.EventHandler(this.btn_SeleccionarUsuario_BuscarUsuarios_Click);
             // 
             // BuscarUsuarios
             // 

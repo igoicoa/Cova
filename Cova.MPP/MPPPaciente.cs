@@ -28,6 +28,7 @@ namespace Cova.MPP
                     foreach (DataRow fila in pacientesT.Rows)
                     {
                         BEPaciente paciente = new BEPaciente();
+                        paciente.UsuarioID = Convert.ToInt64(fila["UsuarioID"]);
                         paciente.Nombre = Convert.ToString(fila["Nombre"]);
                         paciente.Apellido = Convert.ToString(fila["Apellido"]);
                         paciente.DNI = Convert.ToInt32(fila["DNI"]);
@@ -56,6 +57,7 @@ namespace Cova.MPP
                         coberturaMedicaPaciente.FechaVencimiento = Convert.ToDateTime(fila["FechaVencimiento"]);
 
                         paciente.CoberturaMedica = coberturaMedicaPaciente;
+                        paciente.Activo = Convert.ToBoolean(fila["Activo"]);
 
                         pacientes.Add(paciente);
                     }

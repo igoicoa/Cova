@@ -36,15 +36,19 @@ namespace Cova.UI
             idiomaElegido.Nombre = cmb_idiomasLogin.SelectedValue.ToString();
             usuario.Usuario = nombreUsuario;
             usuario.Password = password;
-            if(usuarioBL.Login(ref usuario))
+            try
             {
-                Sesion.Login(usuario, idiomaElegido);
-                MessageBox.Show("Usuario logueado correctamente");
-                this._MainForm.InicializarMainForm();
-                this.Close();
-            } else
+                if (usuarioBL.Login(ref usuario))
+                {
+                    Sesion.Login(usuario, idiomaElegido);
+                    MessageBox.Show("Usuario logueado correctamente");
+                    this._MainForm.InicializarMainForm();
+                    this.Close();
+                }
+            }
+            catch(Exception ex)
             {
-                MessageBox.Show("Usuario o contraseña incorrecto");
+                MessageBox.Show(ex.Message);
             }
         }
     }

@@ -4,6 +4,7 @@
 AS
 BEGIN
 	SELECT p.Nombre
+		,u.UsuarioID
 		,p.Apellido
 		,p.DNI
 		,p.FechaNacimiento
@@ -20,6 +21,7 @@ BEGIN
 		,m.Especialidad
 		,m.MatriculaNacional
 		,m.MatriculaProvincial
+		,u.Activo
 	FROM Profesional p
 	INNER JOIN Medico m ON m.ProfesionalId = p.ProfesionalId
 	INNER JOIN Domicilio d ON d.DomicilioId = p.DomicilioId

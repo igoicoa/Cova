@@ -28,6 +28,7 @@ namespace Cova.MPP
                     foreach (DataRow fila in medicoT.Rows)
                     {
                         BEMedico medico = new BEMedico();
+                        medico.UsuarioID = Convert.ToInt64(fila["UsuarioID"]);
                         medico.Nombre = Convert.ToString(fila["Nombre"]);
                         medico.Apellido = Convert.ToString(fila["Apellido"]);
                         medico.DNI = Convert.ToInt32(fila["DNI"]);
@@ -49,6 +50,7 @@ namespace Cova.MPP
                         medico.MatriculaNacional = Convert.ToInt32(fila["MatriculaNacional"]);
                         medico.MatriculaProvincial = Convert.ToInt32(fila["MatriculaProvincial"]);
                         medico.Especialidad = (Especialidad)Enum.Parse(typeof(Especialidad), Convert.ToString(fila["Especialidad"]));
+                        medico.Activo = Convert.ToBoolean(fila["Activo"]);
 
                         medicos.Add(medico);
                     }
