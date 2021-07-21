@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BEAdministrador.cs" />
-    <Compile Include="BECentroVacunacion.cs" />
+    <Compile Include="BECentroMedico.cs" />
     <Compile Include="BECoberturaMedica.cs" />
     <Compile Include="BECoberturaMedicaPaciente.cs" />
     <Compile Include="BEDomicilio.cs" />
