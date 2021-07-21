@@ -103,11 +103,11 @@ namespace Cova.UI
             this.cancelarTurnoToolStripMenuItem1.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CancelarTurno) : false;
             this.verMisTurnosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.VerMisTurnos) : false;
             this.historialDeTurnosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.HistorialTurnos) : false;
-            
+
             this.administrarCoberturaMedicaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AdministrarCoberturaMedica) : false;
             this.crearCoberturaMedicaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CrearCoberturaMedica) : false;
             this.modificarCoberturaMedicaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.ModificarCoberturaMedica) : false;
-            
+
             this.administrarHistoriaClinicaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AdministrarHistoriaClinica) : false;
             this.crearHistoriaClinicaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CrearHistoriaClinica) : false;
             this.modificarHistoriaClinicaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.ModificarHistoriaClinica) : false;
@@ -204,80 +204,98 @@ namespace Cova.UI
 
         private void verUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VerUsuarios frmVerUsuarios = new VerUsuarios();
+            VerUsuariosForm frmVerUsuarios = new VerUsuariosForm();
             frmVerUsuarios.Show();
         }
 
         private void calendarioDeVacunaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CalendarioDeVacunación frmCalendarioVacunacion = new CalendarioDeVacunación();
+            CalendarioDeVacunaciónForm frmCalendarioVacunacion = new CalendarioDeVacunaciónForm();
             frmCalendarioVacunacion.Show();
         }
 
         private void crearVacunasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CrearVacunas frmCrearVacunas = new CrearVacunas();
+            CrearVacunasForm frmCrearVacunas = new CrearVacunasForm();
             frmCrearVacunas.Show();
         }
 
         private void modificarVacunasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ModificarVacunas frmModificarVacunas = new ModificarVacunas();
+            ModificarVacunasForm frmModificarVacunas = new ModificarVacunasForm();
             frmModificarVacunas.Show();
         }
 
         private void verVacunasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VerVacunas frmVerVacunas = new VerVacunas();
+            VerVacunasForm frmVerVacunas = new VerVacunasForm();
             frmVerVacunas.Show();
         }
 
         private void aplicarVacunaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AplicarVacuna frmAplicarVacuna = new AplicarVacuna();
+            AplicarVacunaForm frmAplicarVacuna = new AplicarVacunaForm();
             frmAplicarVacuna.Show();
         }
 
         private void verCalendarioDePacientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VerCalendarioMisPacientes frmVerCalendarioMisPacientes = new VerCalendarioMisPacientes();
+            VerCalendarioMisPacientesForm frmVerCalendarioMisPacientes = new VerCalendarioMisPacientesForm();
             frmVerCalendarioMisPacientes.Show();
         }
 
         private void registrarTurnoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            RegistrarTurno frmRegistrarTurno = new RegistrarTurno();
+            RegistrarTurnoForm frmRegistrarTurno = new RegistrarTurnoForm();
             frmRegistrarTurno.Show();
         }
 
         private void crearCoberturaMedicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CargarCoberturaMedica frmCargarCoberturaMedica = new CargarCoberturaMedica();
+            CargarCoberturaMedicaForm frmCargarCoberturaMedica = new CargarCoberturaMedicaForm();
             frmCargarCoberturaMedica.Show();
         }
 
         private void modificarCoberturaMedicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ModificarCoberturaMedica frmModificarCoberturaMedica = new ModificarCoberturaMedica();
+            ModificarCoberturaMedicaForm frmModificarCoberturaMedica = new ModificarCoberturaMedicaForm();
             frmModificarCoberturaMedica.Show();
         }
 
         private void verCoberturasMedicasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VerCoberturaMedica frmVerCoberturaMedica = new VerCoberturaMedica();
+            VerCoberturaMedicaForm frmVerCoberturaMedica = new VerCoberturaMedicaForm();
             frmVerCoberturaMedica.Show();
         }
 
         private void crearHistoriaClinicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CrearHistoriaClinica frmCrearHistoriaClinica = new CrearHistoriaClinica();
+            CrearHistoriaClinicaForm frmCrearHistoriaClinica = new CrearHistoriaClinicaForm();
             frmCrearHistoriaClinica.Show();
         }
 
         private void modificarHistoriaClinicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ModificarHistoriaClinica frmModificarHistoriaClinica = new ModificarHistoriaClinica();
+            ModificarHistoriaClinicaForm frmModificarHistoriaClinica = new ModificarHistoriaClinicaForm();
             frmModificarHistoriaClinica.Show();
+        }
+
+        private void verHistoriaClinicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VerHistoriaClinicaForm frmVerHistoriaClinica = new VerHistoriaClinicaForm();
+            frmVerHistoriaClinica.Show();
+        }
+
+        private void crearRecetaCertificadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrearRecetas_CertificadosForm frmCrearRecetas_Certificados = new CrearRecetas_CertificadosForm();
+            frmCrearRecetas_Certificados.Show();
+        }
+
+        private void modificarRecetaCertificadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModificarRecetas_CertificadosForm frmModificarRecetas_Certificados= new ModificarRecetas_CertificadosForm();
+            frmModificarRecetas_Certificados.Show();
         }
     }
 }
