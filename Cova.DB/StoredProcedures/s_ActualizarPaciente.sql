@@ -18,7 +18,8 @@
 	@CoberturaMedicaPlanId				INT = NULL,
 	@CoberturaMedicaNumeroAfiliado		VARCHAR(100) = NULL,
 	@CoberturaMedicaFechaVencimiento	DATETIME = NULL,
-	@Password							VARCHAR(50) = NULL
+	@Password							VARCHAR(50),
+	@Activo								BIT
 
 AS
 BEGIN
@@ -70,6 +71,10 @@ BEGIN
 			NumeroAfiliado = @CoberturaMedicaNumeroAfiliado,
 			FechaVencimiento = @CoberturaMedicaFechaVencimiento
 		WHERE CoberturaMedicaPacienteId = @CoberturaPacienteId
+
+		UPDATE [dbo].[Usuario] SET
+				Activo = @Activo
+		WHERE UsuarioID = @UsuarioId
 
 		IF (@Password IS NOT NULL AND @Password <> '')
 		BEGIN

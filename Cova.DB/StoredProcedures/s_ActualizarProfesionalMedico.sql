@@ -17,7 +17,8 @@
 	@MatriculaNacional		INT,
 	@MatriculaProvincial	INT,
 	@Especialidad			VARCHAR(150),
-	@Password				VARCHAR(50) = NULL
+	@Password				VARCHAR(50),
+	@Activo					BIT
 
 AS
 BEGIN
@@ -62,6 +63,10 @@ BEGIN
 			MatriculaProvincial = @MatriculaProvincial,
 			Especialidad = @Especialidad
 		WHERE ProfesionalId = @ProfesionalId
+
+		UPDATE [dbo].[Usuario] SET
+				Activo = @Activo
+		WHERE UsuarioID = @UsuarioId
 
 		IF (@Password IS NOT NULL AND @Password <> '')
 		BEGIN

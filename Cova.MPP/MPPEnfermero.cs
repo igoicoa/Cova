@@ -62,5 +62,69 @@ namespace Cova.MPP
             }
             return enfermeros;
         }
+
+        public bool CrearProfesionalEnfermero(BEEnfermero enfermero)
+        {
+            Hashtable datosUsuario = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_CrearProfesionalEnfermero";
+                datosUsuario.Add("@Apellido", enfermero.Apellido);
+                datosUsuario.Add("@Nombre", enfermero.Nombre);
+                datosUsuario.Add("@DNI", enfermero.DNI);
+                datosUsuario.Add("@FechaNacimiento", enfermero.FechaNacimiento);
+                datosUsuario.Add("@Sexo", enfermero.Sexo);
+                datosUsuario.Add("@EstadoCivil", enfermero.EstadoCivil);
+                datosUsuario.Add("@Telefono", enfermero.Telefono);
+                datosUsuario.Add("@Email", enfermero.Email);
+                datosUsuario.Add("@Calle", enfermero.Domicilio.Calle);
+                datosUsuario.Add("@Numero", enfermero.Domicilio.Numero);
+                datosUsuario.Add("@Piso", enfermero.Domicilio.Piso);
+                datosUsuario.Add("@Localidad", enfermero.Domicilio.Localidad);
+                datosUsuario.Add("@Provincia", enfermero.Domicilio.Provincia);
+                datosUsuario.Add("@Pais", enfermero.Domicilio.Pais);
+                datosUsuario.Add("@MatriculaEnfermero", enfermero.MatriculaEnfermero);
+                datosUsuario.Add("@Password", enfermero.Password);
+                return conexionBDD.Escribir(strSQL, datosUsuario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool ActualizarProfesionalEnfermero(BEEnfermero enfermero)
+        {
+            Hashtable datosUsuario = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_ActualizarProfesionalEnfermero";
+                datosUsuario.Add("@UsuarioId", enfermero.UsuarioID);
+                datosUsuario.Add("@Apellido", enfermero.Apellido);
+                datosUsuario.Add("@Nombre", enfermero.Nombre);
+                datosUsuario.Add("@DNI", enfermero.DNI);
+                datosUsuario.Add("@FechaNacimiento", enfermero.FechaNacimiento);
+                datosUsuario.Add("@Sexo", enfermero.Sexo);
+                datosUsuario.Add("@EstadoCivil", enfermero.EstadoCivil);
+                datosUsuario.Add("@Telefono", enfermero.Telefono);
+                datosUsuario.Add("@Email", enfermero.Email);
+                datosUsuario.Add("@Calle", enfermero.Domicilio.Calle);
+                datosUsuario.Add("@Numero", enfermero.Domicilio.Numero);
+                datosUsuario.Add("@Piso", enfermero.Domicilio.Piso);
+                datosUsuario.Add("@Localidad", enfermero.Domicilio.Localidad);
+                datosUsuario.Add("@Provincia", enfermero.Domicilio.Provincia);
+                datosUsuario.Add("@Pais", enfermero.Domicilio.Pais);
+                datosUsuario.Add("@MatriculaEnfermero", enfermero.MatriculaEnfermero);
+                datosUsuario.Add("@Password", enfermero.Password);
+                datosUsuario.Add("@Activo", enfermero.Activo);
+                return conexionBDD.Escribir(strSQL, datosUsuario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -15,7 +15,8 @@
 	@Provincia				VARCHAR(120),
 	@Pais					VARCHAR(120),
 	@MatriculaEnfermero		INT,
-	@Password				VARCHAR(50) = NULL
+	@Password				VARCHAR(50),
+	@Activo					BIT
 
 AS
 BEGIN
@@ -58,6 +59,10 @@ BEGIN
 		UPDATE [dbo].[Enfermero] SET
 			MatriculaEnfermero = @MatriculaEnfermero
 		WHERE ProfesionalId = @ProfesionalId
+
+		UPDATE [dbo].[Usuario] SET
+				Activo = @Activo
+		WHERE UsuarioID = @UsuarioId
 
 		IF (@Password IS NOT NULL AND @Password <> '')
 		BEGIN

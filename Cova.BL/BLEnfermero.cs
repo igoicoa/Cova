@@ -12,14 +12,20 @@ namespace Cova.BL
     {
         public bool CrearProfesionalEnfermero(BEEnfermero enfermero)
         {
-            MPPUsuario mPPUsuario = new MPPUsuario();
-            return mPPUsuario.CrearProfesionalEnfermero(enfermero);
+            MPPEnfermero mPPEnfermero = new MPPEnfermero();
+            return mPPEnfermero.CrearProfesionalEnfermero(enfermero);
         }
 
         public IList<BEEnfermero> BuscarEnfermeros(string Usuario, string DNI)
         {
             MPPEnfermero mPPEnfermero = new MPPEnfermero();
             return mPPEnfermero.BuscarEnfermeros(Usuario, DNI);
+        }
+
+        public bool ActualizarProfesionalEnfermero(BEEnfermero enfermero)
+        {
+            MPPEnfermero mPPEnfermero = new MPPEnfermero();
+            return mPPEnfermero.ActualizarProfesionalEnfermero(enfermero);
         }
     }
 }

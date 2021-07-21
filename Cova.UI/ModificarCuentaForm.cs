@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Cova.BE;
 using Cova.BL;
+using Cova.Servicios.Encriptacion;
 
 namespace Cova.UI
 {
@@ -16,6 +17,15 @@ namespace Cova.UI
             InitializeComponent();
             CargarCoberturasMedicas();
             CargarEspecialidades();
+            InhabilitarRb();
+        }
+
+        public void InhabilitarRb()
+        {
+            rb_administrador_ModificarCuenta.Enabled = false;
+            rb_enfermero_ModificarCuenta.Enabled = false;
+            rb_medico_ModificarCuenta.Enabled = false;
+            rb_paciente_ModificarCuenta.Enabled = false;
         }
 
         public void CargarCoberturasMedicas()
@@ -48,6 +58,7 @@ namespace Cova.UI
 
         public void CargarUsuarioMedico(BEMedico usuarioAModificar)
         {
+            rb_medico_ModificarCuenta.Checked = true;
             txt_DNI.Text = usuarioAModificar.DNI.ToString();
             txt_usuario.Text = usuarioAModificar.Usuario.ToString();
             txt_telefono.Text = usuarioAModificar.Telefono;
@@ -66,7 +77,7 @@ namespace Cova.UI
             txt_matriculaNacional.Text = usuarioAModificar.MatriculaNacional.ToString();
             txt_matriculaProvincial.Text = usuarioAModificar.MatriculaProvincial.ToString();
             cmb_especialidad.Text = usuarioAModificar.Especialidad.ToString();
-
+            cmb_InhabilitarModificarCuenta.Text = usuarioAModificar.Activo ? "Activo" : "Inactivo";
             gb_pacienteModificarCuenta.Visible = false;
             gb_ProfesionalModificarCuenta.Visible = true;
             txt_matriculaProvincial.Visible = true;
@@ -75,6 +86,7 @@ namespace Cova.UI
 
         public void CargarUsuarioEnfermero(BEEnfermero usuarioAModificar)
         {
+            rb_enfermero_ModificarCuenta.Checked = true;
             txt_DNI.Text = usuarioAModificar.DNI.ToString();
             txt_usuario.Text = usuarioAModificar.Usuario.ToString();
             txt_telefono.Text = usuarioAModificar.Telefono;
@@ -91,6 +103,7 @@ namespace Cova.UI
             txt_provincia.Text = usuarioAModificar.Domicilio.Provincia;
             calendar_fechaNacimiento.SelectionStart = usuarioAModificar.FechaNacimiento;
             txt_matriculaNacional.Text = usuarioAModificar.MatriculaEnfermero.ToString();
+            cmb_InhabilitarModificarCuenta.Text = usuarioAModificar.Activo ? "Activo" : "Inactivo";
 
             gb_pacienteModificarCuenta.Visible = false;
             gb_ProfesionalModificarCuenta.Visible = true;
@@ -100,6 +113,7 @@ namespace Cova.UI
 
         public void CargarUsuarioPaciente(BEPaciente usuarioAModificar)
         {
+            rb_paciente_ModificarCuenta.Checked = true;
             txt_DNI.Text = usuarioAModificar.DNI.ToString();
             txt_usuario.Text = usuarioAModificar.Usuario.ToString();
             txt_telefono.Text = usuarioAModificar.Telefono;
@@ -127,6 +141,7 @@ namespace Cova.UI
                 txt_numeroAfiliado.Text = usuarioAModificar.CoberturaMedica.NumeroAfiliado;
                 dtp_fechaVencimiento.Value = usuarioAModificar.CoberturaMedica.FechaVencimiento;
             }
+            cmb_InhabilitarModificarCuenta.Text = usuarioAModificar.Activo ? "Activo" : "Inactivo";
 
             gb_pacienteModificarCuenta.Visible = true;
             gb_ProfesionalModificarCuenta.Visible = false;
@@ -135,6 +150,7 @@ namespace Cova.UI
 
         public void CargarUsuarioAdministrador(BEAdministrador usuarioAModificar)
         {
+            rb_administrador_ModificarCuenta.Checked = true;
             txt_DNI.Text = usuarioAModificar.DNI.ToString();
             txt_usuario.Text = usuarioAModificar.Usuario.ToString();
             txt_telefono.Text = usuarioAModificar.Telefono;
@@ -150,6 +166,7 @@ namespace Cova.UI
             txt_localidad.Text = usuarioAModificar.Domicilio.Localidad;
             txt_provincia.Text = usuarioAModificar.Domicilio.Provincia;
             calendar_fechaNacimiento.SelectionStart = usuarioAModificar.FechaNacimiento;
+            cmb_InhabilitarModificarCuenta.Text = usuarioAModificar.Activo ? "Activo" : "Inactivo";
 
             gb_pacienteModificarCuenta.Visible = false;
             gb_ProfesionalModificarCuenta.Visible = false;
@@ -195,6 +212,68 @@ namespace Cova.UI
         private void TxtBoxUsuario_ModificarCuenta_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnModificar_ModificarCuenta_Click(object sender, EventArgs e)
+        {
+            //TODO
+            if(rb_medico_ModificarCuenta.Checked)
+            {
+                ActualizarProfesionalMedico();
+            }
+            else if(rb_enfermero_ModificarCuenta.Checked)
+            {
+                ActualizarProfesionalEnfermero();
+            } 
+            else if(rb_paciente_ModificarCuenta.Checked)
+            {
+                ActualizarPaciente();
+            } 
+            else if(rb_administrador_ModificarCuenta.Checked)
+            {
+                ActualizarAdministrador();
+            }
+
+        }
+
+        public void ActualizarProfesionalMedico()
+        {
+            //TODO Terminar
+            BEMedico medicoActualizado = new BEMedico();
+            BEDomicilio domicilio = new BEDomicilio();
+
+            medicoActualizado.Nombre = txt_nombre.Text;
+            medicoActualizado.Apellido = txt_apellido.Text;
+            //medicoActualizado.Activo = CARGAR DEL COMBOBOX
+            if(!string.IsNullOrEmpty(txt_clave.Text))
+            {
+                medicoActualizado.Password = HashHelper.HashMD5(txt_clave.Text);
+            }
+
+            BLMedico bLMedico = new BLMedico();
+            if(bLMedico.ActualizarProfesionalMedico(medicoActualizado))
+            {
+                MessageBox.Show("Profesional actualizado con exito");
+            }
+            else
+            {
+                MessageBox.Show("Hubo un error al actualizar el profesional");
+            }
+        }
+
+        public void ActualizarProfesionalEnfermero()
+        {
+            //TODO Terminar
+        }
+
+        public void ActualizarPaciente()
+        {
+            //TODO Terminar
+        }
+
+        public void ActualizarAdministrador()
+        {
+            //TODO Terminar
         }
     }
 }

@@ -12,14 +12,20 @@ namespace Cova.BL
     {
         public bool CrearProfesionalMedico(BEMedico medico)
         {
-            MPPUsuario mPPUsuario = new MPPUsuario();
-            return mPPUsuario.CrearProfesionalMedico(medico);
+            MPPMedico mPPMedico = new MPPMedico();
+            return mPPMedico.CrearProfesionalMedico(medico);
         }
 
         public IList<BEMedico> BuscarMedicos(string Usuario, string DNI)
         {
             MPPMedico mPPMedico = new MPPMedico();
             return mPPMedico.BuscarMedicos(Usuario, DNI);
+        }
+
+        public bool ActualizarProfesionalMedico(BEMedico medico)
+        {
+            MPPMedico mPPMedico = new MPPMedico();
+            return mPPMedico.ActualizarProfesionalMedico(medico);
         }
     }
 }

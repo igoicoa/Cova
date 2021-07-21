@@ -12,14 +12,20 @@ namespace Cova.BL
     {
         public bool CrearPaciene(BEPaciente pacienteNuevo) 
         {
-            MPPUsuario mPPUsuario = new MPPUsuario();
-            return mPPUsuario.CrearPaciente(pacienteNuevo);
+            MPPPaciente mPPPaciente = new MPPPaciente();
+            return mPPPaciente.CrearPaciente(pacienteNuevo);
         }
 
         public IList<BEPaciente> BuscarPacientes(string Usuario, string DNI)
         {
             MPPPaciente mPPPaciente = new MPPPaciente();
             return mPPPaciente.BuscarPacientes(Usuario, DNI);
+        }
+
+        public bool ActualizarPaciene(BEPaciente pacienteNuevo)
+        {
+            MPPPaciente mPPPaciente = new MPPPaciente();
+            return mPPPaciente.ActualizarPaciente(pacienteNuevo);
         }
 
         public IList<BEVacuna> ObtenerVacunasAplicadas()

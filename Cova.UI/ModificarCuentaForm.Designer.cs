@@ -128,6 +128,7 @@ namespace Cova.UI
             this.btnModificar_ModificarCuenta.TabIndex = 60;
             this.btnModificar_ModificarCuenta.Text = "Modificar";
             this.btnModificar_ModificarCuenta.UseVisualStyleBackColor = true;
+            this.btnModificar_ModificarCuenta.Click += new System.EventHandler(this.btnModificar_ModificarCuenta_Click);
             // 
             // pictureBoxImagen_ModificarCuenta
             // 
@@ -421,9 +422,9 @@ namespace Cova.UI
             this.lbl_InhabilitarModificarCuenta.AutoSize = true;
             this.lbl_InhabilitarModificarCuenta.Location = new System.Drawing.Point(477, 302);
             this.lbl_InhabilitarModificarCuenta.Name = "lbl_InhabilitarModificarCuenta";
-            this.lbl_InhabilitarModificarCuenta.Size = new System.Drawing.Size(52, 13);
+            this.lbl_InhabilitarModificarCuenta.Size = new System.Drawing.Size(40, 13);
             this.lbl_InhabilitarModificarCuenta.TabIndex = 69;
-            this.lbl_InhabilitarModificarCuenta.Text = "Inhabilitar";
+            this.lbl_InhabilitarModificarCuenta.Text = "Estado";
             // 
             // txt_DNI
             // 
