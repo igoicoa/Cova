@@ -30,6 +30,7 @@ namespace Cova.MPP
                     {
                         BEEnfermero enfermero = new BEEnfermero();
                         enfermero.UsuarioID = Convert.ToInt64(fila["UsuarioID"]);
+                        enfermero.Usuario = Convert.ToString(fila["Usuario"]);
                         enfermero.Nombre = Convert.ToString(fila["Nombre"]);
                         enfermero.Apellido = Convert.ToString(fila["Apellido"]);
                         enfermero.DNI = Convert.ToInt32(fila["DNI"]);

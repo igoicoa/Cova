@@ -5,6 +5,7 @@ AS
 BEGIN
 	SELECT p.Nombre
 		,u.UsuarioID
+		,u.Usuario
 		,p.Apellido
 		,p.DNI
 		,p.FechaNacimiento

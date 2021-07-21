@@ -209,7 +209,7 @@ namespace Cova.UI
             foreach (BEPaciente paciente in this.Pacientes)
             {
                 DataRow filaPacientes = tablePaciente.NewRow();
-                filaPacientes["UsuarioID"] = paciente.Nombre;
+                filaPacientes["UsuarioID"] = paciente.UsuarioID;
                 filaPacientes["Nombre"] = paciente.Nombre;
                 filaPacientes["Apellido"] = paciente.Apellido;
                 filaPacientes["DNI"] = paciente.DNI;
@@ -275,9 +275,27 @@ namespace Cova.UI
             {
                 if (dgv_usuario.SelectedRows.Count != 0)
                 {
-                    BEUsuario usuarioAModificar = CargarDatosUsuarioSeleccionado();
-                    this._formModificarCuenta.CargarUsuario(usuarioAModificar);
-                    this.Close();
+                    long usuarioID = Convert.ToInt64(dgv_usuario.SelectedRows[0].Cells["UsuarioID"].Value);
+                    if (this.rb_medico_BuscarUsuarios.Checked)
+                    {
+                        this._formModificarCuenta.CargarUsuarioMedico(this.Medicos.Where(x => x.UsuarioID == usuarioID).FirstOrDefault());
+                        this.Close();
+                    }
+                    else if (this.rb_enfermero_BuscarUsuarios.Checked)
+                    {
+                        this._formModificarCuenta.CargarUsuarioEnfermero(this.Enfermeros.Where(x => x.UsuarioID == usuarioID).FirstOrDefault());
+                        this.Close();
+                    }
+                    else if (this.rb_paciente_BuscarUsuarios.Checked)
+                    {
+                        this._formModificarCuenta.CargarUsuarioPaciente(this.Pacientes.Where(x => x.UsuarioID == usuarioID).FirstOrDefault());
+                        this.Close();
+                    }
+                    else if (this.rb_administrador_BuscarUsuarios.Checked)
+                    {
+                        this._formModificarCuenta.CargarUsuarioAdministrador(this.Administradores.Where(x => x.UsuarioID == usuarioID).FirstOrDefault());
+                        this.Close();
+                    }
                 }
                 else
                 {
@@ -286,26 +304,5 @@ namespace Cova.UI
             }
         }
 
-        public BEUsuario CargarDatosUsuarioSeleccionado()
-        {
-            BEUsuario bEUsuario = new BEUsuario();
-            long usuarioID = Convert.ToInt64(dgv_usuario.SelectedRows[0].Cells["UsuarioID"].Value);
-            if(this.rb_medico_BuscarUsuarios.Checked)
-            {
-                return this.Medicos.Where(x => x.UsuarioID == usuarioID).FirstOrDefault();
-            } else if (this.rb_enfermero_BuscarUsuarios.Checked)
-            {
-                return this.Enfermeros.Where(x => x.UsuarioID == usuarioID).FirstOrDefault();
-            } else if(this.rb_paciente_BuscarUsuarios.Checked)
-            {
-                return this.Pacientes.Where(x => x.UsuarioID == usuarioID).FirstOrDefault();
-            } else if(this.rb_administrador_BuscarUsuarios.Checked)
-            {
-                return this.Administradores.Where(x => x.UsuarioID == usuarioID).FirstOrDefault();
-            } else
-            {
-                return bEUsuario;
-            }
-        }
     }
 }

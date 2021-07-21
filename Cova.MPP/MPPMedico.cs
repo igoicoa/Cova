@@ -29,6 +29,7 @@ namespace Cova.MPP
                     {
                         BEMedico medico = new BEMedico();
                         medico.UsuarioID = Convert.ToInt64(fila["UsuarioID"]);
+                        medico.Usuario = Convert.ToString(fila["Usuario"]);
                         medico.Nombre = Convert.ToString(fila["Nombre"]);
                         medico.Apellido = Convert.ToString(fila["Apellido"]);
                         medico.DNI = Convert.ToInt32(fila["DNI"]);
