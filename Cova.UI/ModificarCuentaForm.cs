@@ -22,12 +22,42 @@ namespace Cova.UI
         public void CargarUsuario(BEUsuario usuarioAModificar)
         {
             this._usuarioAModificar = usuarioAModificar;
-            //TODO Cargar datos en los textbox
+            this.textBoxApellidoModificarCuenta.Text = usuarioAModificar.ToString();
+            this.comboBoxTipoDocumento_ModificarCuenta.Text = usuarioAModificar.ToString();
+            this.txt_documentoNumeroModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.textBoxUsuario_ModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.txt_Clave_ModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.textBoxTelefono_ModifCuenta.Text = _usuarioAModificar.ToString();
+            this.txtBox_ModificarCuentaNombre.Text = _usuarioAModificar.ToString();
+            this.txtEmail_ModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.textBoxApellidoModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.textBoxEstadoCivil_ModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.radioButtonMasculino_ModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.radioButtonFemenino_ModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.cmb_EstadoModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.textBoxCalle_ModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.txt_NumeroModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.txt_pisoModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.txtLocalidad_ModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.txtProvincia_ModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.txtEmail_ModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.textBoxEstadoCivil_ModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.cmb_EstadoModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.chk_particular_ModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.cmb_coberturaMedica_ModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.cmb_Plan_ModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.txt_numeroAfiliado_ModificarCuenta.Text = _usuarioAModificar.ToString();
+            //this.dtp_fechaVencimiento_ModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.gb_pacienteModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.gb_ProfesionalModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.txt_matriculaNacionalModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.txt_matriculaProvincialModificarCuenta.Text = _usuarioAModificar.ToString();
+            this.cmb_especialidadModificarCuenta.Text = _usuarioAModificar.ToString();
         }
 
         private void btn_BuscarUsuarios_ModificarUsuarios_Click(object sender, EventArgs e)
         {
-            BuscarUsuarios frmBuscarUsuarios = new BuscarUsuarios(this);
+            BuscarUsuariosForm frmBuscarUsuarios = new BuscarUsuariosForm(this);
             frmBuscarUsuarios.Show();
         }
 

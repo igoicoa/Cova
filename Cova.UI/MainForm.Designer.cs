@@ -54,6 +54,7 @@
             this.administrarCoberturaMedicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearCoberturaMedicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarCoberturaMedicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verCoberturasMedicasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarHistoriaClinicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearHistoriaClinicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarHistoriaClinicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,7 +81,8 @@
             this.informaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contactoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novedadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verCoberturasMedicasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verMisRecetasCertificadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verMiHistoriaClinicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,7 +113,7 @@
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.loginToolStripMenuItem.Tag = "menuiniciologin";
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
@@ -119,7 +121,7 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoutToolStripMenuItem.Tag = "menuiniciologout";
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
@@ -150,21 +152,21 @@
             // crearCuentaToolStripMenuItem
             // 
             this.crearCuentaToolStripMenuItem.Name = "crearCuentaToolStripMenuItem";
-            this.crearCuentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.crearCuentaToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.crearCuentaToolStripMenuItem.Text = "Crear Cuenta";
             this.crearCuentaToolStripMenuItem.Click += new System.EventHandler(this.crearCuentaToolStripMenuItem_Click);
             // 
             // modificarCuentaToolStripMenuItem
             // 
             this.modificarCuentaToolStripMenuItem.Name = "modificarCuentaToolStripMenuItem";
-            this.modificarCuentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modificarCuentaToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.modificarCuentaToolStripMenuItem.Text = "Modificar Cuenta";
             this.modificarCuentaToolStripMenuItem.Click += new System.EventHandler(this.modificarCuentaToolStripMenuItem_Click);
             // 
             // verUsuariosToolStripMenuItem
             // 
             this.verUsuariosToolStripMenuItem.Name = "verUsuariosToolStripMenuItem";
-            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.verUsuariosToolStripMenuItem.Text = "Ver Usuarios";
             this.verUsuariosToolStripMenuItem.Click += new System.EventHandler(this.verUsuariosToolStripMenuItem_Click);
             // 
@@ -292,12 +294,20 @@
             this.modificarCoberturaMedicaToolStripMenuItem.Text = "Modificar Cobertura Medica";
             this.modificarCoberturaMedicaToolStripMenuItem.Click += new System.EventHandler(this.modificarCoberturaMedicaToolStripMenuItem_Click);
             // 
+            // verCoberturasMedicasToolStripMenuItem
+            // 
+            this.verCoberturasMedicasToolStripMenuItem.Name = "verCoberturasMedicasToolStripMenuItem";
+            this.verCoberturasMedicasToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.verCoberturasMedicasToolStripMenuItem.Text = "Ver Coberturas Medicas";
+            this.verCoberturasMedicasToolStripMenuItem.Click += new System.EventHandler(this.verCoberturasMedicasToolStripMenuItem_Click);
+            // 
             // administrarHistoriaClinicaToolStripMenuItem
             // 
             this.administrarHistoriaClinicaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.crearHistoriaClinicaToolStripMenuItem,
             this.modificarHistoriaClinicaToolStripMenuItem,
-            this.verHistoriaClinicaToolStripMenuItem});
+            this.verHistoriaClinicaToolStripMenuItem,
+            this.verMiHistoriaClinicaToolStripMenuItem});
             this.administrarHistoriaClinicaToolStripMenuItem.Name = "administrarHistoriaClinicaToolStripMenuItem";
             this.administrarHistoriaClinicaToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.administrarHistoriaClinicaToolStripMenuItem.Text = "Administrar Historia Clinica";
@@ -321,13 +331,15 @@
             this.verHistoriaClinicaToolStripMenuItem.Name = "verHistoriaClinicaToolStripMenuItem";
             this.verHistoriaClinicaToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.verHistoriaClinicaToolStripMenuItem.Text = "Ver Historia Clinica";
+            this.verHistoriaClinicaToolStripMenuItem.Click += new System.EventHandler(this.verHistoriaClinicaToolStripMenuItem_Click);
             // 
             // administrarRecetaCertificadoToolStripMenuItem
             // 
             this.administrarRecetaCertificadoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.crearRecetaCertificadoToolStripMenuItem,
             this.modificarRecetaCertificadoToolStripMenuItem,
-            this.verRecetasCertificadosToolStripMenuItem});
+            this.verRecetasCertificadosToolStripMenuItem,
+            this.verMisRecetasCertificadosToolStripMenuItem});
             this.administrarRecetaCertificadoToolStripMenuItem.Name = "administrarRecetaCertificadoToolStripMenuItem";
             this.administrarRecetaCertificadoToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.administrarRecetaCertificadoToolStripMenuItem.Text = "Administrar Receta/Certificado";
@@ -337,12 +349,14 @@
             this.crearRecetaCertificadoToolStripMenuItem.Name = "crearRecetaCertificadoToolStripMenuItem";
             this.crearRecetaCertificadoToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.crearRecetaCertificadoToolStripMenuItem.Text = "Crear Receta/Certificado";
+            this.crearRecetaCertificadoToolStripMenuItem.Click += new System.EventHandler(this.crearRecetaCertificadoToolStripMenuItem_Click);
             // 
             // modificarRecetaCertificadoToolStripMenuItem
             // 
             this.modificarRecetaCertificadoToolStripMenuItem.Name = "modificarRecetaCertificadoToolStripMenuItem";
             this.modificarRecetaCertificadoToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.modificarRecetaCertificadoToolStripMenuItem.Text = "Modificar Receta/Certificado";
+            this.modificarRecetaCertificadoToolStripMenuItem.Click += new System.EventHandler(this.modificarRecetaCertificadoToolStripMenuItem_Click);
             // 
             // verRecetasCertificadosToolStripMenuItem
             // 
@@ -407,8 +421,8 @@
             // modificarDatosToolStripMenuItem
             // 
             this.modificarDatosToolStripMenuItem.Name = "modificarDatosToolStripMenuItem";
-            this.modificarDatosToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.modificarDatosToolStripMenuItem.Text = "Modificar Datos";
+            this.modificarDatosToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.modificarDatosToolStripMenuItem.Text = "Ver Mis Datos";
             // 
             // permisosToolStripMenuItem
             // 
@@ -423,21 +437,21 @@
             // crearPermisosToolStripMenuItem
             // 
             this.crearPermisosToolStripMenuItem.Name = "crearPermisosToolStripMenuItem";
-            this.crearPermisosToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.crearPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.crearPermisosToolStripMenuItem.Text = "Crear Permisos";
+            this.crearPermisosToolStripMenuItem.Click += new System.EventHandler(this.asignarPermisosToolStripMenuItem_Click);
             // 
             // modificarPermisosToolStripMenuItem
             // 
             this.modificarPermisosToolStripMenuItem.Name = "modificarPermisosToolStripMenuItem";
-            this.modificarPermisosToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.modificarPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modificarPermisosToolStripMenuItem.Text = "Modificar Permisos";
             // 
             // asignarPermisosToolStripMenuItem
             // 
             this.asignarPermisosToolStripMenuItem.Name = "asignarPermisosToolStripMenuItem";
-            this.asignarPermisosToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.asignarPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.asignarPermisosToolStripMenuItem.Text = "Asignar Permisos";
-            this.asignarPermisosToolStripMenuItem.Click += new System.EventHandler(this.asignarPermisosToolStripMenuItem_Click);
             // 
             // administrarIdiomaToolStripMenuItem
             // 
@@ -451,13 +465,13 @@
             // cambiarIdiomaToolStripMenuItem
             // 
             this.cambiarIdiomaToolStripMenuItem.Name = "cambiarIdiomaToolStripMenuItem";
-            this.cambiarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.cambiarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cambiarIdiomaToolStripMenuItem.Text = "Cambiar Idioma";
             // 
             // crearIdiomaToolStripMenuItem
             // 
             this.crearIdiomaToolStripMenuItem.Name = "crearIdiomaToolStripMenuItem";
-            this.crearIdiomaToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.crearIdiomaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.crearIdiomaToolStripMenuItem.Text = "Crear Idioma";
             this.crearIdiomaToolStripMenuItem.Click += new System.EventHandler(this.crearIdiomaToolStripMenuItem_Click);
             // 
@@ -482,12 +496,17 @@
             this.novedadesToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.novedadesToolStripMenuItem.Text = "Novedades";
             // 
-            // verCoberturasMedicasToolStripMenuItem
+            // verMisRecetasCertificadosToolStripMenuItem
             // 
-            this.verCoberturasMedicasToolStripMenuItem.Name = "verCoberturasMedicasToolStripMenuItem";
-            this.verCoberturasMedicasToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.verCoberturasMedicasToolStripMenuItem.Text = "Ver Coberturas Medicas";
-            this.verCoberturasMedicasToolStripMenuItem.Click += new System.EventHandler(this.verCoberturasMedicasToolStripMenuItem_Click);
+            this.verMisRecetasCertificadosToolStripMenuItem.Name = "verMisRecetasCertificadosToolStripMenuItem";
+            this.verMisRecetasCertificadosToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.verMisRecetasCertificadosToolStripMenuItem.Text = "Ver mis Recetas/Certificados";
+            // 
+            // verMiHistoriaClinicaToolStripMenuItem
+            // 
+            this.verMiHistoriaClinicaToolStripMenuItem.Name = "verMiHistoriaClinicaToolStripMenuItem";
+            this.verMiHistoriaClinicaToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.verMiHistoriaClinicaToolStripMenuItem.Text = "Ver Mi Historia Clinica";
             // 
             // MainForm
             // 
@@ -555,13 +574,15 @@
         private System.Windows.Forms.ToolStripMenuItem novedadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem permisosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearPermisosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarPermisosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem asignarPermisosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administrarIdiomaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cambiarIdiomaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearIdiomaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aplicarVacunaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verCoberturasMedicasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificarPermisosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asignarPermisosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verMiHistoriaClinicaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verMisRecetasCertificadosToolStripMenuItem;
     }
 }
 

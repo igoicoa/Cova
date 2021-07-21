@@ -61,7 +61,7 @@ namespace Cova.UI
             this.txt_Clave_ModificarCuenta = new System.Windows.Forms.TextBox();
             this.lblClave_ModificarCuenta = new System.Windows.Forms.Label();
             this.lbl_ModificarCuentas = new System.Windows.Forms.Label();
-            this.cmb_InhabilitarModificarCuenta = new System.Windows.Forms.ComboBox();
+            this.cmb_EstadoModificarCuenta = new System.Windows.Forms.ComboBox();
             this.lbl_InhabilitarModificarCuenta = new System.Windows.Forms.Label();
             this.txt_documentoNumeroModificarCuenta = new System.Windows.Forms.TextBox();
             this.lbl_NumeroDocModificarCuenta = new System.Windows.Forms.Label();
@@ -405,25 +405,25 @@ namespace Cova.UI
             this.lbl_ModificarCuentas.TabIndex = 68;
             this.lbl_ModificarCuentas.Text = "Modificar Cuentas";
             // 
-            // cmb_InhabilitarModificarCuenta
+            // cmb_EstadoModificarCuenta
             // 
-            this.cmb_InhabilitarModificarCuenta.FormattingEnabled = true;
-            this.cmb_InhabilitarModificarCuenta.Items.AddRange(new object[] {
+            this.cmb_EstadoModificarCuenta.FormattingEnabled = true;
+            this.cmb_EstadoModificarCuenta.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cmb_InhabilitarModificarCuenta.Location = new System.Drawing.Point(477, 318);
-            this.cmb_InhabilitarModificarCuenta.Name = "cmb_InhabilitarModificarCuenta";
-            this.cmb_InhabilitarModificarCuenta.Size = new System.Drawing.Size(121, 21);
-            this.cmb_InhabilitarModificarCuenta.TabIndex = 70;
+            this.cmb_EstadoModificarCuenta.Location = new System.Drawing.Point(477, 318);
+            this.cmb_EstadoModificarCuenta.Name = "cmb_EstadoModificarCuenta";
+            this.cmb_EstadoModificarCuenta.Size = new System.Drawing.Size(121, 21);
+            this.cmb_EstadoModificarCuenta.TabIndex = 70;
             // 
             // lbl_InhabilitarModificarCuenta
             // 
             this.lbl_InhabilitarModificarCuenta.AutoSize = true;
             this.lbl_InhabilitarModificarCuenta.Location = new System.Drawing.Point(477, 302);
             this.lbl_InhabilitarModificarCuenta.Name = "lbl_InhabilitarModificarCuenta";
-            this.lbl_InhabilitarModificarCuenta.Size = new System.Drawing.Size(52, 13);
+            this.lbl_InhabilitarModificarCuenta.Size = new System.Drawing.Size(40, 13);
             this.lbl_InhabilitarModificarCuenta.TabIndex = 69;
-            this.lbl_InhabilitarModificarCuenta.Text = "Inhabilitar";
+            this.lbl_InhabilitarModificarCuenta.Text = "Estado";
             // 
             // txt_documentoNumeroModificarCuenta
             // 
@@ -727,7 +727,7 @@ namespace Cova.UI
             this.Controls.Add(this.lblTelefono_ModifCuenta);
             this.Controls.Add(this.txt_documentoNumeroModificarCuenta);
             this.Controls.Add(this.lbl_NumeroDocModificarCuenta);
-            this.Controls.Add(this.cmb_InhabilitarModificarCuenta);
+            this.Controls.Add(this.cmb_EstadoModificarCuenta);
             this.Controls.Add(this.lbl_InhabilitarModificarCuenta);
             this.Controls.Add(this.lbl_ModificarCuentas);
             this.Controls.Add(this.txt_Clave_ModificarCuenta);
@@ -806,7 +806,7 @@ namespace Cova.UI
         private System.Windows.Forms.TextBox txt_Clave_ModificarCuenta;
         private System.Windows.Forms.Label lblClave_ModificarCuenta;
         private System.Windows.Forms.Label lbl_ModificarCuentas;
-        private System.Windows.Forms.ComboBox cmb_InhabilitarModificarCuenta;
+        private System.Windows.Forms.ComboBox cmb_EstadoModificarCuenta;
         private System.Windows.Forms.Label lbl_InhabilitarModificarCuenta;
         private System.Windows.Forms.TextBox txt_documentoNumeroModificarCuenta;
         private System.Windows.Forms.Label lbl_NumeroDocModificarCuenta;
