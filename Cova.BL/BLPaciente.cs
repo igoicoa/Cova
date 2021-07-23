@@ -22,7 +22,7 @@ namespace Cova.BL
             return mPPPaciente.BuscarPacientes(Usuario, DNI);
         }
 
-        public bool ActualizarPaciene(BEPaciente pacienteNuevo)
+        public bool ActualizarPaciente(BEPaciente pacienteNuevo)
         {
             MPPPaciente mPPPaciente = new MPPPaciente();
             return mPPPaciente.ActualizarPaciente(pacienteNuevo);

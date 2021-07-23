@@ -43,19 +43,21 @@ namespace Cova.UI
             this.txt_Edad_CrearCertificado = new System.Windows.Forms.TextBox();
             this.lbl_Edad_CrearCertificado = new System.Windows.Forms.Label();
             this.btn_BuscarPacientes_CrearCertificado = new System.Windows.Forms.Button();
-            this.txt_Paciente_CrearCertificado = new System.Windows.Forms.TextBox();
-            this.lbl_Paciente_CrearCertificado = new System.Windows.Forms.Label();
             this.txt_NumeroDocumento_CrearCertificado = new System.Windows.Forms.TextBox();
             this.lbl_NumeroDocumento_CrearCertificado = new System.Windows.Forms.Label();
             this.cmb_TipoDocumento_CrearCertificado = new System.Windows.Forms.ComboBox();
             this.lbl_TipoDocumento_CrearCertificado = new System.Windows.Forms.Label();
+            this.txt_apellido_CrearCertificado = new System.Windows.Forms.TextBox();
+            this.lbl_Apellido_CrearCertificado = new System.Windows.Forms.Label();
+            this.txt_nombre_CrearCertificado = new System.Windows.Forms.TextBox();
+            this.lbl_Nombre_CrearCertificado = new System.Windows.Forms.Label();
             this.gb_DatosPaciente_CrearCertificado.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_Limpiar_CrearCertificado
             // 
             this.btn_Limpiar_CrearCertificado.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Limpiar_CrearCertificado.Location = new System.Drawing.Point(353, 455);
+            this.btn_Limpiar_CrearCertificado.Location = new System.Drawing.Point(359, 553);
             this.btn_Limpiar_CrearCertificado.Name = "btn_Limpiar_CrearCertificado";
             this.btn_Limpiar_CrearCertificado.Size = new System.Drawing.Size(75, 23);
             this.btn_Limpiar_CrearCertificado.TabIndex = 112;
@@ -65,7 +67,7 @@ namespace Cova.UI
             // 
             // btn_Cancelar_CrearCertificado
             // 
-            this.btn_Cancelar_CrearCertificado.Location = new System.Drawing.Point(272, 455);
+            this.btn_Cancelar_CrearCertificado.Location = new System.Drawing.Point(278, 553);
             this.btn_Cancelar_CrearCertificado.Name = "btn_Cancelar_CrearCertificado";
             this.btn_Cancelar_CrearCertificado.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancelar_CrearCertificado.TabIndex = 111;
@@ -75,7 +77,7 @@ namespace Cova.UI
             // 
             // btnCrearReceta_CrearCertificado
             // 
-            this.btnCrearReceta_CrearCertificado.Location = new System.Drawing.Point(188, 455);
+            this.btnCrearReceta_CrearCertificado.Location = new System.Drawing.Point(194, 553);
             this.btnCrearReceta_CrearCertificado.Name = "btnCrearReceta_CrearCertificado";
             this.btnCrearReceta_CrearCertificado.Size = new System.Drawing.Size(78, 23);
             this.btnCrearReceta_CrearCertificado.TabIndex = 110;
@@ -84,7 +86,7 @@ namespace Cova.UI
             // 
             // dtp_fecha_CrearCertificado
             // 
-            this.dtp_fecha_CrearCertificado.Location = new System.Drawing.Point(26, 405);
+            this.dtp_fecha_CrearCertificado.Location = new System.Drawing.Point(32, 503);
             this.dtp_fecha_CrearCertificado.Name = "dtp_fecha_CrearCertificado";
             this.dtp_fecha_CrearCertificado.Size = new System.Drawing.Size(143, 20);
             this.dtp_fecha_CrearCertificado.TabIndex = 109;
@@ -92,7 +94,7 @@ namespace Cova.UI
             // lbl_Firma_CrearCertificado
             // 
             this.lbl_Firma_CrearCertificado.AutoSize = true;
-            this.lbl_Firma_CrearCertificado.Location = new System.Drawing.Point(501, 428);
+            this.lbl_Firma_CrearCertificado.Location = new System.Drawing.Point(507, 526);
             this.lbl_Firma_CrearCertificado.Name = "lbl_Firma_CrearCertificado";
             this.lbl_Firma_CrearCertificado.Size = new System.Drawing.Size(87, 13);
             this.lbl_Firma_CrearCertificado.TabIndex = 108;
@@ -101,7 +103,7 @@ namespace Cova.UI
             // lbl_Fecha_CrearCertificado
             // 
             this.lbl_Fecha_CrearCertificado.AutoSize = true;
-            this.lbl_Fecha_CrearCertificado.Location = new System.Drawing.Point(23, 428);
+            this.lbl_Fecha_CrearCertificado.Location = new System.Drawing.Point(29, 526);
             this.lbl_Fecha_CrearCertificado.Name = "lbl_Fecha_CrearCertificado";
             this.lbl_Fecha_CrearCertificado.Size = new System.Drawing.Size(37, 13);
             this.lbl_Fecha_CrearCertificado.TabIndex = 107;
@@ -110,7 +112,7 @@ namespace Cova.UI
             // lb_Detalle_CrearCertificado
             // 
             this.lb_Detalle_CrearCertificado.FormattingEnabled = true;
-            this.lb_Detalle_CrearCertificado.Location = new System.Drawing.Point(20, 153);
+            this.lb_Detalle_CrearCertificado.Location = new System.Drawing.Point(26, 251);
             this.lb_Detalle_CrearCertificado.Name = "lb_Detalle_CrearCertificado";
             this.lb_Detalle_CrearCertificado.Size = new System.Drawing.Size(674, 212);
             this.lb_Detalle_CrearCertificado.TabIndex = 106;
@@ -118,7 +120,7 @@ namespace Cova.UI
             // lbl_Diagnostico_CrearCertificado
             // 
             this.lbl_Diagnostico_CrearCertificado.AutoSize = true;
-            this.lbl_Diagnostico_CrearCertificado.Location = new System.Drawing.Point(17, 137);
+            this.lbl_Diagnostico_CrearCertificado.Location = new System.Drawing.Point(23, 235);
             this.lbl_Diagnostico_CrearCertificado.Name = "lbl_Diagnostico_CrearCertificado";
             this.lbl_Diagnostico_CrearCertificado.Size = new System.Drawing.Size(63, 13);
             this.lbl_Diagnostico_CrearCertificado.TabIndex = 105;
@@ -140,15 +142,17 @@ namespace Cova.UI
             this.gb_DatosPaciente_CrearCertificado.Controls.Add(this.txt_Edad_CrearCertificado);
             this.gb_DatosPaciente_CrearCertificado.Controls.Add(this.lbl_Edad_CrearCertificado);
             this.gb_DatosPaciente_CrearCertificado.Controls.Add(this.btn_BuscarPacientes_CrearCertificado);
-            this.gb_DatosPaciente_CrearCertificado.Controls.Add(this.txt_Paciente_CrearCertificado);
-            this.gb_DatosPaciente_CrearCertificado.Controls.Add(this.lbl_Paciente_CrearCertificado);
             this.gb_DatosPaciente_CrearCertificado.Controls.Add(this.txt_NumeroDocumento_CrearCertificado);
+            this.gb_DatosPaciente_CrearCertificado.Controls.Add(this.txt_apellido_CrearCertificado);
             this.gb_DatosPaciente_CrearCertificado.Controls.Add(this.lbl_NumeroDocumento_CrearCertificado);
+            this.gb_DatosPaciente_CrearCertificado.Controls.Add(this.lbl_Apellido_CrearCertificado);
             this.gb_DatosPaciente_CrearCertificado.Controls.Add(this.cmb_TipoDocumento_CrearCertificado);
+            this.gb_DatosPaciente_CrearCertificado.Controls.Add(this.txt_nombre_CrearCertificado);
             this.gb_DatosPaciente_CrearCertificado.Controls.Add(this.lbl_TipoDocumento_CrearCertificado);
+            this.gb_DatosPaciente_CrearCertificado.Controls.Add(this.lbl_Nombre_CrearCertificado);
             this.gb_DatosPaciente_CrearCertificado.Location = new System.Drawing.Point(17, 37);
             this.gb_DatosPaciente_CrearCertificado.Name = "gb_DatosPaciente_CrearCertificado";
-            this.gb_DatosPaciente_CrearCertificado.Size = new System.Drawing.Size(672, 87);
+            this.gb_DatosPaciente_CrearCertificado.Size = new System.Drawing.Size(683, 179);
             this.gb_DatosPaciente_CrearCertificado.TabIndex = 103;
             this.gb_DatosPaciente_CrearCertificado.TabStop = false;
             this.gb_DatosPaciente_CrearCertificado.Text = "Datos Paciente";
@@ -156,7 +160,7 @@ namespace Cova.UI
             // txt_Edad_CrearCertificado
             // 
             this.txt_Edad_CrearCertificado.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_Edad_CrearCertificado.Location = new System.Drawing.Point(454, 43);
+            this.txt_Edad_CrearCertificado.Location = new System.Drawing.Point(331, 44);
             this.txt_Edad_CrearCertificado.Name = "txt_Edad_CrearCertificado";
             this.txt_Edad_CrearCertificado.Size = new System.Drawing.Size(67, 20);
             this.txt_Edad_CrearCertificado.TabIndex = 143;
@@ -164,7 +168,7 @@ namespace Cova.UI
             // lbl_Edad_CrearCertificado
             // 
             this.lbl_Edad_CrearCertificado.AutoSize = true;
-            this.lbl_Edad_CrearCertificado.Location = new System.Drawing.Point(451, 26);
+            this.lbl_Edad_CrearCertificado.Location = new System.Drawing.Point(328, 27);
             this.lbl_Edad_CrearCertificado.Name = "lbl_Edad_CrearCertificado";
             this.lbl_Edad_CrearCertificado.Size = new System.Drawing.Size(32, 13);
             this.lbl_Edad_CrearCertificado.TabIndex = 142;
@@ -173,30 +177,13 @@ namespace Cova.UI
             // btn_BuscarPacientes_CrearCertificado
             // 
             this.btn_BuscarPacientes_CrearCertificado.BackColor = System.Drawing.Color.MistyRose;
-            this.btn_BuscarPacientes_CrearCertificado.Location = new System.Drawing.Point(556, 40);
+            this.btn_BuscarPacientes_CrearCertificado.Location = new System.Drawing.Point(465, 93);
             this.btn_BuscarPacientes_CrearCertificado.Name = "btn_BuscarPacientes_CrearCertificado";
             this.btn_BuscarPacientes_CrearCertificado.Size = new System.Drawing.Size(103, 23);
             this.btn_BuscarPacientes_CrearCertificado.TabIndex = 139;
             this.btn_BuscarPacientes_CrearCertificado.Text = "Buscar Pacientes";
             this.btn_BuscarPacientes_CrearCertificado.UseVisualStyleBackColor = false;
             this.btn_BuscarPacientes_CrearCertificado.Click += new System.EventHandler(this.btn_BuscarPacientes_CrearCertificado_Click);
-            // 
-            // txt_Paciente_CrearCertificado
-            // 
-            this.txt_Paciente_CrearCertificado.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_Paciente_CrearCertificado.Location = new System.Drawing.Point(312, 43);
-            this.txt_Paciente_CrearCertificado.Name = "txt_Paciente_CrearCertificado";
-            this.txt_Paciente_CrearCertificado.Size = new System.Drawing.Size(123, 20);
-            this.txt_Paciente_CrearCertificado.TabIndex = 138;
-            // 
-            // lbl_Paciente_CrearCertificado
-            // 
-            this.lbl_Paciente_CrearCertificado.AutoSize = true;
-            this.lbl_Paciente_CrearCertificado.Location = new System.Drawing.Point(309, 26);
-            this.lbl_Paciente_CrearCertificado.Name = "lbl_Paciente_CrearCertificado";
-            this.lbl_Paciente_CrearCertificado.Size = new System.Drawing.Size(49, 13);
-            this.lbl_Paciente_CrearCertificado.TabIndex = 137;
-            this.lbl_Paciente_CrearCertificado.Text = "Paciente";
             // 
             // txt_NumeroDocumento_CrearCertificado
             // 
@@ -235,11 +222,45 @@ namespace Cova.UI
             this.lbl_TipoDocumento_CrearCertificado.TabIndex = 78;
             this.lbl_TipoDocumento_CrearCertificado.Text = "Tipo de documento";
             // 
+            // txt_apellido_CrearCertificado
+            // 
+            this.txt_apellido_CrearCertificado.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_apellido_CrearCertificado.Location = new System.Drawing.Point(9, 146);
+            this.txt_apellido_CrearCertificado.Name = "txt_apellido_CrearCertificado";
+            this.txt_apellido_CrearCertificado.Size = new System.Drawing.Size(363, 20);
+            this.txt_apellido_CrearCertificado.TabIndex = 161;
+            // 
+            // lbl_Apellido_CrearCertificado
+            // 
+            this.lbl_Apellido_CrearCertificado.AutoSize = true;
+            this.lbl_Apellido_CrearCertificado.Location = new System.Drawing.Point(6, 130);
+            this.lbl_Apellido_CrearCertificado.Name = "lbl_Apellido_CrearCertificado";
+            this.lbl_Apellido_CrearCertificado.Size = new System.Drawing.Size(44, 13);
+            this.lbl_Apellido_CrearCertificado.TabIndex = 160;
+            this.lbl_Apellido_CrearCertificado.Text = "Apellido";
+            // 
+            // txt_nombre_CrearCertificado
+            // 
+            this.txt_nombre_CrearCertificado.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_nombre_CrearCertificado.Location = new System.Drawing.Point(9, 96);
+            this.txt_nombre_CrearCertificado.Name = "txt_nombre_CrearCertificado";
+            this.txt_nombre_CrearCertificado.Size = new System.Drawing.Size(363, 20);
+            this.txt_nombre_CrearCertificado.TabIndex = 159;
+            // 
+            // lbl_Nombre_CrearCertificado
+            // 
+            this.lbl_Nombre_CrearCertificado.AutoSize = true;
+            this.lbl_Nombre_CrearCertificado.Location = new System.Drawing.Point(6, 80);
+            this.lbl_Nombre_CrearCertificado.Name = "lbl_Nombre_CrearCertificado";
+            this.lbl_Nombre_CrearCertificado.Size = new System.Drawing.Size(44, 13);
+            this.lbl_Nombre_CrearCertificado.TabIndex = 158;
+            this.lbl_Nombre_CrearCertificado.Text = "Nombre";
+            // 
             // CrearCertificadoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 490);
+            this.ClientSize = new System.Drawing.Size(813, 581);
             this.Controls.Add(this.btn_Limpiar_CrearCertificado);
             this.Controls.Add(this.btn_Cancelar_CrearCertificado);
             this.Controls.Add(this.btnCrearReceta_CrearCertificado);
@@ -275,11 +296,13 @@ namespace Cova.UI
         private System.Windows.Forms.TextBox txt_Edad_CrearCertificado;
         private System.Windows.Forms.Label lbl_Edad_CrearCertificado;
         private System.Windows.Forms.Button btn_BuscarPacientes_CrearCertificado;
-        private System.Windows.Forms.TextBox txt_Paciente_CrearCertificado;
-        private System.Windows.Forms.Label lbl_Paciente_CrearCertificado;
         private System.Windows.Forms.TextBox txt_NumeroDocumento_CrearCertificado;
         private System.Windows.Forms.Label lbl_NumeroDocumento_CrearCertificado;
         private System.Windows.Forms.ComboBox cmb_TipoDocumento_CrearCertificado;
         private System.Windows.Forms.Label lbl_TipoDocumento_CrearCertificado;
+        private System.Windows.Forms.TextBox txt_apellido_CrearCertificado;
+        private System.Windows.Forms.Label lbl_Apellido_CrearCertificado;
+        private System.Windows.Forms.TextBox txt_nombre_CrearCertificado;
+        private System.Windows.Forms.Label lbl_Nombre_CrearCertificado;
     }
 }

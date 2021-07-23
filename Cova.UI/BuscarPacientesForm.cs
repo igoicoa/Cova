@@ -24,8 +24,10 @@ namespace Cova.UI
 
         private void btn_Limpiar_BuscarPacientes_Click(object sender, EventArgs e)
         {
-            txt_DNI_BuscarPacientes.Clear();
-            txt_UsuarioPaciente_BuscarPacientes.Clear();
+            txt_apellido_BuscarPacientes.Clear();
+            txt_Edad_BuscarPacientes.Clear();
+            txt_nombre_BuscarPacientes.Clear();
+            txt_NumeroDocumento_BuscarPacientes.Clear();
         }
     }
 }

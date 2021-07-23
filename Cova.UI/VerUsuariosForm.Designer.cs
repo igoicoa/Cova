@@ -187,11 +187,11 @@ namespace Cova.UI
             this.rb_paciente_VerUsuarios.Text = "Paciente";
             this.rb_paciente_VerUsuarios.UseVisualStyleBackColor = true;
             // 
-            // VerUsuarios
+            // VerUsuariosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(808, 450);
             this.Controls.Add(this.gb_TipoUsuario_VerUsuarios);
             this.Controls.Add(this.btnLimpiar_VerUsuarios);
             this.Controls.Add(this.btnCancelar_VerUsuarios);
@@ -203,7 +203,7 @@ namespace Cova.UI
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lbl_VerUsuarios);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "VerUsuarios";
+            this.Name = "VerUsuariosForm";
             this.Text = "VerUsuarios";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gb_TipoUsuario_VerUsuarios.ResumeLayout(false);

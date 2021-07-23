@@ -51,7 +51,6 @@
             this.textBoxCalle_CrearCuenta = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.lblFechaNacimiento_CrearCuenta = new System.Windows.Forms.Label();
-            this.monthCalendarCrearCuenta = new System.Windows.Forms.MonthCalendar();
             this.lblCoberturaMedica_CrearUsuario = new System.Windows.Forms.Label();
             this.lblImagen_CrearCuenta = new System.Windows.Forms.Label();
             this.btnCrear_CrearCuenta = new System.Windows.Forms.Button();
@@ -87,6 +86,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txt_piso = new System.Windows.Forms.TextBox();
             this.lbl_CrearCuentas = new System.Windows.Forms.Label();
+            this.monthCalendarCrearCuenta = new System.Windows.Forms.MonthCalendar();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen_CrearCuenta)).BeginInit();
             this.gb_paciente.SuspendLayout();
@@ -325,12 +325,6 @@
             this.lblFechaNacimiento_CrearCuenta.Size = new System.Drawing.Size(108, 13);
             this.lblFechaNacimiento_CrearCuenta.TabIndex = 26;
             this.lblFechaNacimiento_CrearCuenta.Text = "Fecha de Nacimiento";
-            // 
-            // monthCalendarCrearCuenta
-            // 
-            this.monthCalendarCrearCuenta.Location = new System.Drawing.Point(41, 478);
-            this.monthCalendarCrearCuenta.Name = "monthCalendarCrearCuenta";
-            this.monthCalendarCrearCuenta.TabIndex = 27;
             // 
             // lblCoberturaMedica_CrearUsuario
             // 
@@ -665,6 +659,12 @@
             this.lbl_CrearCuentas.TabIndex = 82;
             this.lbl_CrearCuentas.Text = "Crear Cuentas";
             // 
+            // monthCalendarCrearCuenta
+            // 
+            this.monthCalendarCrearCuenta.Location = new System.Drawing.Point(41, 478);
+            this.monthCalendarCrearCuenta.Name = "monthCalendarCrearCuenta";
+            this.monthCalendarCrearCuenta.TabIndex = 27;
+            // 
             // CrearCuentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -749,7 +749,6 @@
         private System.Windows.Forms.TextBox textBoxCalle_CrearCuenta;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Label lblFechaNacimiento_CrearCuenta;
-        private System.Windows.Forms.MonthCalendar monthCalendarCrearCuenta;
         private System.Windows.Forms.Label lblCoberturaMedica_CrearUsuario;
         private System.Windows.Forms.Label lblImagen_CrearCuenta;
         private System.Windows.Forms.PictureBox pictureBoxImagen_CrearCuenta;
@@ -785,5 +784,6 @@
         private System.Windows.Forms.TextBox txt_piso;
         private System.Windows.Forms.ComboBox cmb_especialidad;
         private System.Windows.Forms.Label lbl_CrearCuentas;
+        private System.Windows.Forms.MonthCalendar monthCalendarCrearCuenta;
     }
 }

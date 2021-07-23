@@ -31,7 +31,9 @@ namespace Cova.UI
         private void btnLimpiar_CrearHistoriaClinica_Click(object sender, EventArgs e)
         {
             txt_NumeroDocumento_CrearHistoriaClinica.Clear();
-            txt_Paciente_CrearHistoriaClinica.Clear();
+            txt_apellido_CrearHistoriaClinica.Clear();
+            txt_nombre_CrearHistoriaClinica.Clear();
+            txt_Edad_CrearHistoriaClinica.Clear();
             txt_MotivoConsulta.Clear();
             txt_Medicacion_CrearHistoriaClinica.Clear();
             txt_Observacion_CrearHistoriaClinica.Clear();

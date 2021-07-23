@@ -10,16 +10,22 @@ namespace Cova.BL
 {
     public class BLAdministrador
     {
-        //public bool CrearAdministrador(BEAdministrador administrador)
-        //{
-        //    MPPUsuario mPPUsuario = new MPPUsuario();
-        //    return mPPUsuario.CrearAdministrador(administrador);
-        //}
+        public bool CrearAdministrador(BEAdministrador administrador)
+        {
+            MPPAdministrador mPPAdministrador = new MPPAdministrador();
+            return mPPAdministrador.CrearAdministrador(administrador);
+        }
 
-        //public IList<BEAdministrador> BuscarAdministrador(string Usuario, string DNI)
-        //{
-        //    MPPMedico mPPMedico = new MPPMedico();
-        //    return mPPMedico.BuscarAdministrador(Usuario, DNI);
-        //}
+        public IList<BEAdministrador> BuscarAdministrador(string Usuario, string DNI)
+        {
+            MPPAdministrador mPPAdministrador = new MPPAdministrador();
+            return mPPAdministrador.BuscarAdministrador(Usuario, DNI);
+        }
+
+        public bool ActualizarAdministrador(BEAdministrador administrador)
+        {
+            MPPAdministrador mPPAdministrador = new MPPAdministrador();
+            return mPPAdministrador.ActualizarAdministrador(administrador);
+        }
     }
 }

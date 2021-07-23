@@ -24,7 +24,10 @@ namespace Cova.UI
 
         private void btn_Limpiar_CalendarioVacunacion_Click(object sender, EventArgs e)
         {
-            txtBoxUsuario_CalendarioVacunacion.Clear();
+            txt_apellido_CalendarioVacunacion.Clear();
+            txt_DNI_CalendarioVacunacion.Clear();
+            txt_edad_CalendarioVacunacion.Clear();
+            txt_nombre_CalendarioVacunacion.Clear();
         }
     }
 }

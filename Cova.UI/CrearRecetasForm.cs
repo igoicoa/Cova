@@ -32,7 +32,9 @@ namespace Cova.UI
         {
             txt_Edad_CrearReceta.Clear();
             txt_NumeroDocumento_CrearReceta.Clear();
-            txt_Paciente_CrearReceta.Clear();
+            txt_apellido_CrearReceta.Clear();
+            txt_Edad_CrearReceta.Clear();
+            txt_nombre_CrearReceta.Clear();
             lb_DetalleDiagnostico_CrearReceta.Items.Clear();
         }
     }

@@ -33,13 +33,20 @@ namespace Cova.UI
             this.lbl_CalendariodeVacunacion = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgv_CalendarioVacunacion = new System.Windows.Forms.DataGridView();
-            this.lbl_UsuarioCalendarioVacunacion = new System.Windows.Forms.Label();
-            this.txtBoxUsuario_CalendarioVacunacion = new System.Windows.Forms.TextBox();
-            this.lbl_EstadoCalendarioVacunacion = new System.Windows.Forms.Label();
-            this.cmb_EstadoCalendarioVacunacion = new System.Windows.Forms.ComboBox();
+            this.lbl_Estado_CalendarioVacunacion = new System.Windows.Forms.Label();
+            this.cmb_Estado_CalendarioVacunacion = new System.Windows.Forms.ComboBox();
             this.bttn_Mostrar_CalendarioVacunacion = new System.Windows.Forms.Button();
             this.btnCancelar_CalendarioVacunacion = new System.Windows.Forms.Button();
             this.btn_Limpiar_CalendarioVacunacion = new System.Windows.Forms.Button();
+            this.txt_apellido_CalendarioVacunacion = new System.Windows.Forms.TextBox();
+            this.lbl_Apellido_CalendarioVacunacion = new System.Windows.Forms.Label();
+            this.txt_nombre_CalendarioVacunacion = new System.Windows.Forms.TextBox();
+            this.lbl_Nombre_CalendarioVacunacion = new System.Windows.Forms.Label();
+            this.txt_DNI_CalendarioVacunacion = new System.Windows.Forms.TextBox();
+            this.lbl_NumeroDoc_CalendarioVacunacion = new System.Windows.Forms.Label();
+            this.txt_edad_CalendarioVacunacion = new System.Windows.Forms.TextBox();
+            this.lbl_Edad_CalendarioVacunacion = new System.Windows.Forms.Label();
+            this.btn_BuscarPacientes_CalendarioVacunacion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_CalendarioVacunacion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,51 +74,34 @@ namespace Cova.UI
             // dtgv_CalendarioVacunacion
             // 
             this.dtgv_CalendarioVacunacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_CalendarioVacunacion.Location = new System.Drawing.Point(8, 142);
+            this.dtgv_CalendarioVacunacion.Location = new System.Drawing.Point(8, 259);
             this.dtgv_CalendarioVacunacion.Name = "dtgv_CalendarioVacunacion";
-            this.dtgv_CalendarioVacunacion.Size = new System.Drawing.Size(790, 309);
+            this.dtgv_CalendarioVacunacion.Size = new System.Drawing.Size(790, 324);
             this.dtgv_CalendarioVacunacion.TabIndex = 71;
             // 
-            // lbl_UsuarioCalendarioVacunacion
+            // lbl_Estado_CalendarioVacunacion
             // 
-            this.lbl_UsuarioCalendarioVacunacion.AutoSize = true;
-            this.lbl_UsuarioCalendarioVacunacion.Location = new System.Drawing.Point(13, 75);
-            this.lbl_UsuarioCalendarioVacunacion.Name = "lbl_UsuarioCalendarioVacunacion";
-            this.lbl_UsuarioCalendarioVacunacion.Size = new System.Drawing.Size(43, 13);
-            this.lbl_UsuarioCalendarioVacunacion.TabIndex = 72;
-            this.lbl_UsuarioCalendarioVacunacion.Text = "Usuario";
+            this.lbl_Estado_CalendarioVacunacion.AutoSize = true;
+            this.lbl_Estado_CalendarioVacunacion.Location = new System.Drawing.Point(418, 131);
+            this.lbl_Estado_CalendarioVacunacion.Name = "lbl_Estado_CalendarioVacunacion";
+            this.lbl_Estado_CalendarioVacunacion.Size = new System.Drawing.Size(40, 13);
+            this.lbl_Estado_CalendarioVacunacion.TabIndex = 74;
+            this.lbl_Estado_CalendarioVacunacion.Text = "Estado";
             // 
-            // txtBoxUsuario_CalendarioVacunacion
+            // cmb_Estado_CalendarioVacunacion
             // 
-            this.txtBoxUsuario_CalendarioVacunacion.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtBoxUsuario_CalendarioVacunacion.Location = new System.Drawing.Point(16, 91);
-            this.txtBoxUsuario_CalendarioVacunacion.Name = "txtBoxUsuario_CalendarioVacunacion";
-            this.txtBoxUsuario_CalendarioVacunacion.Size = new System.Drawing.Size(123, 20);
-            this.txtBoxUsuario_CalendarioVacunacion.TabIndex = 73;
-            // 
-            // lbl_EstadoCalendarioVacunacion
-            // 
-            this.lbl_EstadoCalendarioVacunacion.AutoSize = true;
-            this.lbl_EstadoCalendarioVacunacion.Location = new System.Drawing.Point(190, 75);
-            this.lbl_EstadoCalendarioVacunacion.Name = "lbl_EstadoCalendarioVacunacion";
-            this.lbl_EstadoCalendarioVacunacion.Size = new System.Drawing.Size(40, 13);
-            this.lbl_EstadoCalendarioVacunacion.TabIndex = 74;
-            this.lbl_EstadoCalendarioVacunacion.Text = "Estado";
-            // 
-            // cmb_EstadoCalendarioVacunacion
-            // 
-            this.cmb_EstadoCalendarioVacunacion.FormattingEnabled = true;
-            this.cmb_EstadoCalendarioVacunacion.Items.AddRange(new object[] {
+            this.cmb_Estado_CalendarioVacunacion.FormattingEnabled = true;
+            this.cmb_Estado_CalendarioVacunacion.Items.AddRange(new object[] {
             "Pendiente",
             "Aplicada"});
-            this.cmb_EstadoCalendarioVacunacion.Location = new System.Drawing.Point(193, 89);
-            this.cmb_EstadoCalendarioVacunacion.Name = "cmb_EstadoCalendarioVacunacion";
-            this.cmb_EstadoCalendarioVacunacion.Size = new System.Drawing.Size(121, 21);
-            this.cmb_EstadoCalendarioVacunacion.TabIndex = 75;
+            this.cmb_Estado_CalendarioVacunacion.Location = new System.Drawing.Point(421, 145);
+            this.cmb_Estado_CalendarioVacunacion.Name = "cmb_Estado_CalendarioVacunacion";
+            this.cmb_Estado_CalendarioVacunacion.Size = new System.Drawing.Size(132, 21);
+            this.cmb_Estado_CalendarioVacunacion.TabIndex = 75;
             // 
             // bttn_Mostrar_CalendarioVacunacion
             // 
-            this.bttn_Mostrar_CalendarioVacunacion.Location = new System.Drawing.Point(345, 88);
+            this.bttn_Mostrar_CalendarioVacunacion.Location = new System.Drawing.Point(259, 207);
             this.bttn_Mostrar_CalendarioVacunacion.Name = "bttn_Mostrar_CalendarioVacunacion";
             this.bttn_Mostrar_CalendarioVacunacion.Size = new System.Drawing.Size(75, 23);
             this.bttn_Mostrar_CalendarioVacunacion.TabIndex = 76;
@@ -120,7 +110,7 @@ namespace Cova.UI
             // 
             // btnCancelar_CalendarioVacunacion
             // 
-            this.btnCancelar_CalendarioVacunacion.Location = new System.Drawing.Point(426, 89);
+            this.btnCancelar_CalendarioVacunacion.Location = new System.Drawing.Point(340, 208);
             this.btnCancelar_CalendarioVacunacion.Name = "btnCancelar_CalendarioVacunacion";
             this.btnCancelar_CalendarioVacunacion.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar_CalendarioVacunacion.TabIndex = 77;
@@ -131,7 +121,7 @@ namespace Cova.UI
             // btn_Limpiar_CalendarioVacunacion
             // 
             this.btn_Limpiar_CalendarioVacunacion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Limpiar_CalendarioVacunacion.Location = new System.Drawing.Point(507, 88);
+            this.btn_Limpiar_CalendarioVacunacion.Location = new System.Drawing.Point(421, 207);
             this.btn_Limpiar_CalendarioVacunacion.Name = "btn_Limpiar_CalendarioVacunacion";
             this.btn_Limpiar_CalendarioVacunacion.Size = new System.Drawing.Size(78, 23);
             this.btn_Limpiar_CalendarioVacunacion.TabIndex = 147;
@@ -139,23 +129,109 @@ namespace Cova.UI
             this.btn_Limpiar_CalendarioVacunacion.UseVisualStyleBackColor = true;
             this.btn_Limpiar_CalendarioVacunacion.Click += new System.EventHandler(this.btn_Limpiar_CalendarioVacunacion_Click);
             // 
-            // CalendarioDeVacunación
+            // txt_apellido_CalendarioVacunacion
+            // 
+            this.txt_apellido_CalendarioVacunacion.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_apellido_CalendarioVacunacion.Location = new System.Drawing.Point(8, 147);
+            this.txt_apellido_CalendarioVacunacion.Name = "txt_apellido_CalendarioVacunacion";
+            this.txt_apellido_CalendarioVacunacion.Size = new System.Drawing.Size(363, 20);
+            this.txt_apellido_CalendarioVacunacion.TabIndex = 151;
+            // 
+            // lbl_Apellido_CalendarioVacunacion
+            // 
+            this.lbl_Apellido_CalendarioVacunacion.AutoSize = true;
+            this.lbl_Apellido_CalendarioVacunacion.Location = new System.Drawing.Point(5, 131);
+            this.lbl_Apellido_CalendarioVacunacion.Name = "lbl_Apellido_CalendarioVacunacion";
+            this.lbl_Apellido_CalendarioVacunacion.Size = new System.Drawing.Size(44, 13);
+            this.lbl_Apellido_CalendarioVacunacion.TabIndex = 150;
+            this.lbl_Apellido_CalendarioVacunacion.Text = "Apellido";
+            // 
+            // txt_nombre_CalendarioVacunacion
+            // 
+            this.txt_nombre_CalendarioVacunacion.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_nombre_CalendarioVacunacion.Location = new System.Drawing.Point(8, 97);
+            this.txt_nombre_CalendarioVacunacion.Name = "txt_nombre_CalendarioVacunacion";
+            this.txt_nombre_CalendarioVacunacion.Size = new System.Drawing.Size(363, 20);
+            this.txt_nombre_CalendarioVacunacion.TabIndex = 149;
+            // 
+            // lbl_Nombre_CalendarioVacunacion
+            // 
+            this.lbl_Nombre_CalendarioVacunacion.AutoSize = true;
+            this.lbl_Nombre_CalendarioVacunacion.Location = new System.Drawing.Point(5, 81);
+            this.lbl_Nombre_CalendarioVacunacion.Name = "lbl_Nombre_CalendarioVacunacion";
+            this.lbl_Nombre_CalendarioVacunacion.Size = new System.Drawing.Size(44, 13);
+            this.lbl_Nombre_CalendarioVacunacion.TabIndex = 148;
+            this.lbl_Nombre_CalendarioVacunacion.Text = "Nombre";
+            // 
+            // txt_DNI_CalendarioVacunacion
+            // 
+            this.txt_DNI_CalendarioVacunacion.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_DNI_CalendarioVacunacion.Location = new System.Drawing.Point(421, 98);
+            this.txt_DNI_CalendarioVacunacion.Name = "txt_DNI_CalendarioVacunacion";
+            this.txt_DNI_CalendarioVacunacion.Size = new System.Drawing.Size(132, 20);
+            this.txt_DNI_CalendarioVacunacion.TabIndex = 153;
+            // 
+            // lbl_NumeroDoc_CalendarioVacunacion
+            // 
+            this.lbl_NumeroDoc_CalendarioVacunacion.AutoSize = true;
+            this.lbl_NumeroDoc_CalendarioVacunacion.Location = new System.Drawing.Point(418, 81);
+            this.lbl_NumeroDoc_CalendarioVacunacion.Name = "lbl_NumeroDoc_CalendarioVacunacion";
+            this.lbl_NumeroDoc_CalendarioVacunacion.Size = new System.Drawing.Size(100, 13);
+            this.lbl_NumeroDoc_CalendarioVacunacion.TabIndex = 152;
+            this.lbl_NumeroDoc_CalendarioVacunacion.Text = "Numero documento";
+            // 
+            // txt_edad_CalendarioVacunacion
+            // 
+            this.txt_edad_CalendarioVacunacion.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_edad_CalendarioVacunacion.Location = new System.Drawing.Point(604, 94);
+            this.txt_edad_CalendarioVacunacion.Name = "txt_edad_CalendarioVacunacion";
+            this.txt_edad_CalendarioVacunacion.Size = new System.Drawing.Size(70, 20);
+            this.txt_edad_CalendarioVacunacion.TabIndex = 155;
+            // 
+            // lbl_Edad_CalendarioVacunacion
+            // 
+            this.lbl_Edad_CalendarioVacunacion.AutoEllipsis = true;
+            this.lbl_Edad_CalendarioVacunacion.AutoSize = true;
+            this.lbl_Edad_CalendarioVacunacion.Location = new System.Drawing.Point(602, 81);
+            this.lbl_Edad_CalendarioVacunacion.Name = "lbl_Edad_CalendarioVacunacion";
+            this.lbl_Edad_CalendarioVacunacion.Size = new System.Drawing.Size(32, 13);
+            this.lbl_Edad_CalendarioVacunacion.TabIndex = 154;
+            this.lbl_Edad_CalendarioVacunacion.Text = "Edad";
+            // 
+            // btn_BuscarPacientes_CalendarioVacunacion
+            // 
+            this.btn_BuscarPacientes_CalendarioVacunacion.BackColor = System.Drawing.Color.MistyRose;
+            this.btn_BuscarPacientes_CalendarioVacunacion.Location = new System.Drawing.Point(695, 126);
+            this.btn_BuscarPacientes_CalendarioVacunacion.Name = "btn_BuscarPacientes_CalendarioVacunacion";
+            this.btn_BuscarPacientes_CalendarioVacunacion.Size = new System.Drawing.Size(103, 23);
+            this.btn_BuscarPacientes_CalendarioVacunacion.TabIndex = 156;
+            this.btn_BuscarPacientes_CalendarioVacunacion.Text = "Buscar Pacientes";
+            this.btn_BuscarPacientes_CalendarioVacunacion.UseVisualStyleBackColor = false;
+            // 
+            // CalendarioDeVacunaciónForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 493);
+            this.ClientSize = new System.Drawing.Size(840, 595);
+            this.Controls.Add(this.btn_BuscarPacientes_CalendarioVacunacion);
+            this.Controls.Add(this.txt_edad_CalendarioVacunacion);
+            this.Controls.Add(this.lbl_Edad_CalendarioVacunacion);
+            this.Controls.Add(this.txt_DNI_CalendarioVacunacion);
+            this.Controls.Add(this.lbl_NumeroDoc_CalendarioVacunacion);
+            this.Controls.Add(this.txt_apellido_CalendarioVacunacion);
+            this.Controls.Add(this.lbl_Apellido_CalendarioVacunacion);
+            this.Controls.Add(this.txt_nombre_CalendarioVacunacion);
+            this.Controls.Add(this.lbl_Nombre_CalendarioVacunacion);
             this.Controls.Add(this.btn_Limpiar_CalendarioVacunacion);
             this.Controls.Add(this.btnCancelar_CalendarioVacunacion);
             this.Controls.Add(this.bttn_Mostrar_CalendarioVacunacion);
-            this.Controls.Add(this.cmb_EstadoCalendarioVacunacion);
-            this.Controls.Add(this.lbl_EstadoCalendarioVacunacion);
-            this.Controls.Add(this.txtBoxUsuario_CalendarioVacunacion);
-            this.Controls.Add(this.lbl_UsuarioCalendarioVacunacion);
+            this.Controls.Add(this.cmb_Estado_CalendarioVacunacion);
+            this.Controls.Add(this.lbl_Estado_CalendarioVacunacion);
             this.Controls.Add(this.dtgv_CalendarioVacunacion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_CalendariodeVacunacion);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "CalendarioDeVacunación";
+            this.Name = "CalendarioDeVacunaciónForm";
             this.Text = "CalendarioDeVacunación";
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_CalendarioVacunacion)).EndInit();
             this.ResumeLayout(false);
@@ -168,12 +244,19 @@ namespace Cova.UI
         private System.Windows.Forms.Label lbl_CalendariodeVacunacion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dtgv_CalendarioVacunacion;
-        private System.Windows.Forms.Label lbl_UsuarioCalendarioVacunacion;
-        private System.Windows.Forms.TextBox txtBoxUsuario_CalendarioVacunacion;
-        private System.Windows.Forms.Label lbl_EstadoCalendarioVacunacion;
-        private System.Windows.Forms.ComboBox cmb_EstadoCalendarioVacunacion;
+        private System.Windows.Forms.Label lbl_Estado_CalendarioVacunacion;
+        private System.Windows.Forms.ComboBox cmb_Estado_CalendarioVacunacion;
         private System.Windows.Forms.Button bttn_Mostrar_CalendarioVacunacion;
         private System.Windows.Forms.Button btnCancelar_CalendarioVacunacion;
         private System.Windows.Forms.Button btn_Limpiar_CalendarioVacunacion;
+        private System.Windows.Forms.TextBox txt_apellido_CalendarioVacunacion;
+        private System.Windows.Forms.Label lbl_Apellido_CalendarioVacunacion;
+        private System.Windows.Forms.TextBox txt_nombre_CalendarioVacunacion;
+        private System.Windows.Forms.Label lbl_Nombre_CalendarioVacunacion;
+        private System.Windows.Forms.TextBox txt_DNI_CalendarioVacunacion;
+        private System.Windows.Forms.Label lbl_NumeroDoc_CalendarioVacunacion;
+        private System.Windows.Forms.TextBox txt_edad_CalendarioVacunacion;
+        private System.Windows.Forms.Label lbl_Edad_CalendarioVacunacion;
+        private System.Windows.Forms.Button btn_BuscarPacientes_CalendarioVacunacion;
     }
 }

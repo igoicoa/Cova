@@ -42,7 +42,9 @@ namespace Cova.UI
             txt_Medicacion_ModificarHistoriaClinica.Clear();
             txt_MotivoConsulta_ModificarHistoriaClinica.Clear();
             txt_Observacion_ModificarHistoriaClinica.Clear();
-            txt_Paciente_ModificarHistoriaClinica.Clear();
+            txt_apellido_ModificarHistoriaClinica.Clear();
+            txt_nombre_ModificarHistoriaClinica.Clear();
+            txt_NumeroDocumento_ModificarHistoriaClinica.Clear();
         }
     }
 }

@@ -25,9 +25,11 @@ namespace Cova.UI
         private void btn_Limpiar_AplicarVacunas_Click(object sender, EventArgs e)
         {
             txt_Dosis_AplicarVacunas.Clear();
-            txt_Paciente_AplicarVacunas.Clear();
+            txt_apellido_AplicarVacunas.Clear();
             txt_Observacion_AplicarVacunas.Clear();
             txt_CentrodeVacunacion_AplicarVacunas.Clear();
+            txt_Edad_AplicarVacunas.Clear();
+            txt_nombre_AplicarVacunas.Clear();
         }
     }
 }

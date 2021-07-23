@@ -26,7 +26,7 @@ namespace Cova.UI
         {
             txt_Edad_CrearCertificado.Clear();
             txt_NumeroDocumento_CrearCertificado.Clear();
-            txt_Paciente_CrearCertificado.Clear();
+            txt_apellido_CrearCertificado.Clear();
             lb_Detalle_CrearCertificado.Items.Clear();
         }
 

@@ -111,4 +111,8 @@
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="StoredProcedures\s_CrearAdministrador.sql" />
+    <None Include="StoredProcedures\s_ActualizarAdministrador.sql" />
+  </ItemGroup>
 </Project>

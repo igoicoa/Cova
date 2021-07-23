@@ -34,7 +34,6 @@ namespace Cova.UI
             this.btnModificar_ModificarCuenta = new System.Windows.Forms.Button();
             this.pictureBoxImagen_ModificarCuenta = new System.Windows.Forms.PictureBox();
             this.lblImagen_ModificarCuenta = new System.Windows.Forms.Label();
-            this.calendar_fechaNacimiento = new System.Windows.Forms.MonthCalendar();
             this.lblFechaNacimiento_ModificarCuenta = new System.Windows.Forms.Label();
             this.txt_localidad = new System.Windows.Forms.TextBox();
             this.lblLocalidad_ModificarCuenta = new System.Windows.Forms.Label();
@@ -93,6 +92,7 @@ namespace Cova.UI
             this.cmb_coberturaMedica = new System.Windows.Forms.ComboBox();
             this.lblCoberturaMedica_ModificarCuenta = new System.Windows.Forms.Label();
             this.btn_BuscarUsuarios_ModificarUsuarios = new System.Windows.Forms.Button();
+            this.calendar_fechaNacimiento = new System.Windows.Forms.MonthCalendar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen_ModificarCuenta)).BeginInit();
             this.groupBoxTipoUsuario_ModificarCuenta.SuspendLayout();
             this.gb_ProfesionalModificarCuenta.SuspendLayout();
@@ -146,12 +146,6 @@ namespace Cova.UI
             this.lblImagen_ModificarCuenta.Size = new System.Drawing.Size(42, 13);
             this.lblImagen_ModificarCuenta.TabIndex = 58;
             this.lblImagen_ModificarCuenta.Text = "Imagen";
-            // 
-            // calendar_fechaNacimiento
-            // 
-            this.calendar_fechaNacimiento.Location = new System.Drawing.Point(35, 479);
-            this.calendar_fechaNacimiento.Name = "calendar_fechaNacimiento";
-            this.calendar_fechaNacimiento.TabIndex = 56;
             // 
             // lblFechaNacimiento_ModificarCuenta
             // 
@@ -710,6 +704,12 @@ namespace Cova.UI
             this.btn_BuscarUsuarios_ModificarUsuarios.UseVisualStyleBackColor = false;
             this.btn_BuscarUsuarios_ModificarUsuarios.Click += new System.EventHandler(this.btn_BuscarUsuarios_ModificarUsuarios_Click);
             // 
+            // calendar_fechaNacimiento
+            // 
+            this.calendar_fechaNacimiento.Location = new System.Drawing.Point(35, 479);
+            this.calendar_fechaNacimiento.Name = "calendar_fechaNacimiento";
+            this.calendar_fechaNacimiento.TabIndex = 56;
+            // 
             // ModificarCuentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -780,7 +780,6 @@ namespace Cova.UI
         private System.Windows.Forms.Button btnModificar_ModificarCuenta;
         private System.Windows.Forms.PictureBox pictureBoxImagen_ModificarCuenta;
         private System.Windows.Forms.Label lblImagen_ModificarCuenta;
-        private System.Windows.Forms.MonthCalendar calendar_fechaNacimiento;
         private System.Windows.Forms.Label lblFechaNacimiento_ModificarCuenta;
         private System.Windows.Forms.TextBox txt_localidad;
         private System.Windows.Forms.Label lblLocalidad_ModificarCuenta;
@@ -839,5 +838,6 @@ namespace Cova.UI
         private System.Windows.Forms.ComboBox cmb_coberturaMedica;
         private System.Windows.Forms.Label lblCoberturaMedica_ModificarCuenta;
         private System.Windows.Forms.Button btn_BuscarUsuarios_ModificarUsuarios;
+        private System.Windows.Forms.MonthCalendar calendar_fechaNacimiento;
     }
 }
