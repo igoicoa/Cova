@@ -20,8 +20,13 @@ namespace Cova.BE
         public BEDomicilio Domicilio { get; set; }
         public BECoberturaMedicaPaciente CoberturaMedica { get; set; }
         public IList<BEVacunaAplicada> VacunasAplicadas { get; set; }
-        public IList<BETurno> turnosAsignados { get; set; }
+        public IList<BETurno> TurnosAsignados { get; set; }
         public IList<BEVacuna> VacunasSugeridas { get; set; }
-
+        public int Edad {
+            get 
+            {
+                return Convert.ToInt32(((DateTime.Now - FechaNacimiento).TotalDays / 365));
+            }
+        }
     }
 }

@@ -14,16 +14,30 @@ namespace Cova.UI
 {
     public partial class BuscarUsuariosForm : Form
     {
-        private ModificarCuentaForm _formModificarCuenta;
+        private bool _buscarSoloPacientes;
+        private IFormCargarUsuarios _formPadre;
         public List<BEMedico> Medicos;
         public List<BEEnfermero> Enfermeros;
         public List<BEPaciente> Pacientes;
         public List<BEAdministrador> Administradores;
 
-        public BuscarUsuariosForm(ModificarCuentaForm formModificarCuenta = null)
+        public BuscarUsuariosForm(bool buscarSoloPacientes, IFormCargarUsuarios formPadre = null)
         {
             InitializeComponent();
-            this._formModificarCuenta = formModificarCuenta;
+            this._formPadre = formPadre;
+            this._buscarSoloPacientes = buscarSoloPacientes;
+            ActualizarForm();
+        }
+
+        public void ActualizarForm()
+        {
+            if(this._buscarSoloPacientes)
+            {
+                gb_TipoUsuario_BuscarUsuarios.Visible = false;
+                rb_paciente_BuscarUsuarios.Checked = true;
+                lbl_BuscarUsuarios.Text = "Buscar pacientes";
+                this.Text = "Buscar pacientes";
+            }
         }
 
         private void bttn_Buscar_BuscarUsuario_Click(object sender, EventArgs e)
@@ -281,29 +295,29 @@ namespace Cova.UI
 
         private void btn_SeleccionarUsuario_BuscarUsuarios_Click(object sender, EventArgs e)
         {
-            if(this._formModificarCuenta != null)
+            if(this._formPadre != null)
             {
                 if (dgv_usuario.SelectedRows.Count != 0)
                 {
                     long usuarioID = Convert.ToInt64(dgv_usuario.SelectedRows[0].Cells["UsuarioID"].Value);
                     if (this.rb_medico_BuscarUsuarios.Checked)
                     {
-                        this._formModificarCuenta.CargarUsuarioMedico(this.Medicos.Where(x => x.UsuarioID == usuarioID).FirstOrDefault());
+                        this._formPadre.CargarUsuarioMedico(this.Medicos.Where(x => x.UsuarioID == usuarioID).FirstOrDefault());
                         this.Close();
                     }
                     else if (this.rb_enfermero_BuscarUsuarios.Checked)
                     {
-                        this._formModificarCuenta.CargarUsuarioEnfermero(this.Enfermeros.Where(x => x.UsuarioID == usuarioID).FirstOrDefault());
+                        this._formPadre.CargarUsuarioEnfermero(this.Enfermeros.Where(x => x.UsuarioID == usuarioID).FirstOrDefault());
                         this.Close();
                     }
                     else if (this.rb_paciente_BuscarUsuarios.Checked)
                     {
-                        this._formModificarCuenta.CargarUsuarioPaciente(this.Pacientes.Where(x => x.UsuarioID == usuarioID).FirstOrDefault());
+                        this._formPadre.CargarUsuarioPaciente(this.Pacientes.Where(x => x.UsuarioID == usuarioID).FirstOrDefault());
                         this.Close();
                     }
                     else if (this.rb_administrador_BuscarUsuarios.Checked)
                     {
-                        this._formModificarCuenta.CargarUsuarioAdministrador(this.Administradores.Where(x => x.UsuarioID == usuarioID).FirstOrDefault());
+                        this._formPadre.CargarUsuarioAdministrador(this.Administradores.Where(x => x.UsuarioID == usuarioID).FirstOrDefault());
                         this.Close();
                     }
                 }

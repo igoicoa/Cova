@@ -45,6 +45,10 @@ namespace Cova.UI
             this.rb_medico_BuscarUsuarios = new System.Windows.Forms.RadioButton();
             this.rb_paciente_BuscarUsuarios = new System.Windows.Forms.RadioButton();
             this.btn_SeleccionarUsuario_BuscarUsuarios = new System.Windows.Forms.Button();
+            this.txt_apellido = new System.Windows.Forms.TextBox();
+            this.txt_nombre = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_usuario)).BeginInit();
             this.gb_TipoUsuario_BuscarUsuarios.SuspendLayout();
             this.SuspendLayout();
@@ -117,9 +121,9 @@ namespace Cova.UI
             // dgv_usuario
             // 
             this.dgv_usuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_usuario.Location = new System.Drawing.Point(12, 134);
+            this.dgv_usuario.Location = new System.Drawing.Point(12, 167);
             this.dgv_usuario.Name = "dgv_usuario";
-            this.dgv_usuario.Size = new System.Drawing.Size(776, 277);
+            this.dgv_usuario.Size = new System.Drawing.Size(776, 244);
             this.dgv_usuario.TabIndex = 137;
             // 
             // lbl_BuscarUsuarios
@@ -201,11 +205,49 @@ namespace Cova.UI
             this.btn_SeleccionarUsuario_BuscarUsuarios.UseVisualStyleBackColor = true;
             this.btn_SeleccionarUsuario_BuscarUsuarios.Click += new System.EventHandler(this.btn_SeleccionarUsuario_BuscarUsuarios_Click);
             // 
-            // BuscarUsuarios
+            // txt_apellido
+            // 
+            this.txt_apellido.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_apellido.Location = new System.Drawing.Point(202, 140);
+            this.txt_apellido.Name = "txt_apellido";
+            this.txt_apellido.Size = new System.Drawing.Size(136, 20);
+            this.txt_apellido.TabIndex = 153;
+            // 
+            // txt_nombre
+            // 
+            this.txt_nombre.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_nombre.Location = new System.Drawing.Point(19, 141);
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(136, 20);
+            this.txt_nombre.TabIndex = 152;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(199, 124);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 151;
+            this.label1.Text = "Apellido";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 124);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 150;
+            this.label2.Text = "Nombre";
+            // 
+            // BuscarUsuariosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txt_apellido);
+            this.Controls.Add(this.txt_nombre);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_SeleccionarUsuario_BuscarUsuarios);
             this.Controls.Add(this.gb_TipoUsuario_BuscarUsuarios);
             this.Controls.Add(this.lbl_BuscarUsuarios);
@@ -218,8 +260,8 @@ namespace Cova.UI
             this.Controls.Add(this.bttn_Buscar_BuscarUsuario);
             this.Controls.Add(this.dgv_usuario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "BuscarUsuarios";
-            this.Text = "BuscarUsuarios";
+            this.Name = "BuscarUsuariosForm";
+            this.Text = "Buscar Usuarios";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_usuario)).EndInit();
             this.gb_TipoUsuario_BuscarUsuarios.ResumeLayout(false);
             this.gb_TipoUsuario_BuscarUsuarios.PerformLayout();
@@ -245,5 +287,9 @@ namespace Cova.UI
         private System.Windows.Forms.RadioButton rb_medico_BuscarUsuarios;
         private System.Windows.Forms.RadioButton rb_paciente_BuscarUsuarios;
         private System.Windows.Forms.Button btn_SeleccionarUsuario_BuscarUsuarios;
+        private System.Windows.Forms.TextBox txt_apellido;
+        private System.Windows.Forms.TextBox txt_nombre;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -8,7 +8,7 @@ using Cova.Servicios.Encriptacion;
 
 namespace Cova.UI
 {
-    public partial class ModificarCuentaForm : Form
+    public partial class ModificarCuentaForm : Form, IFormCargarUsuarios
     {
         private List<BECoberturaMedica> coberturasMedicas;
         private long _usuarioId;
@@ -182,7 +182,7 @@ namespace Cova.UI
 
         private void btn_BuscarUsuarios_ModificarUsuarios_Click(object sender, EventArgs e)
         {
-            BuscarUsuariosForm frmBuscarUsuarios = new BuscarUsuariosForm(this);
+            BuscarUsuariosForm frmBuscarUsuarios = new BuscarUsuariosForm(false, this);
             frmBuscarUsuarios.Show();
         }
 

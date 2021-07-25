@@ -11,6 +11,8 @@ namespace Cova.BE
     {
         public int CentroMedicoId { get; set; }
         public string Nombre { get; set; }
+        public string Telefono { get; set; }
+        public string Email { get; set; }
         public BEDomicilio Domicilio { get; set; }
         public IList<BETurno> TurnosAsignados { get; set; }
         public IList<BERangoHorario> RangosHorarios { get; set; }

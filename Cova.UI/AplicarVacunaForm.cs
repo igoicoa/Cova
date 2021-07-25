@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cova.BE;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Cova.UI
 {
-    public partial class AplicarVacunaForm : Form
+    public partial class AplicarVacunaForm : Form, IFormCargarUsuarios
     {
         public AplicarVacunaForm()
         {
@@ -30,6 +31,35 @@ namespace Cova.UI
             txt_CentrodeVacunacion_AplicarVacunas.Clear();
             txt_Edad_AplicarVacunas.Clear();
             txt_nombre_AplicarVacunas.Clear();
+        }
+
+        private void btn_BuscarPacientes_AplicarVacunas_Click(object sender, EventArgs e)
+        {
+            BuscarUsuariosForm buscarUsuariosForm = new BuscarUsuariosForm(true, this);
+            buscarUsuariosForm.Show();
+        }
+
+        public void CargarUsuarioPaciente(BEPaciente usuarioAModificar)
+        {
+            txt_apellido_AplicarVacunas.Text = usuarioAModificar.Apellido;
+            txt_nombre_AplicarVacunas.Text = usuarioAModificar.Nombre;
+            txt_NumeroDocumento_AplicarVacunas.Text = Convert.ToString(usuarioAModificar.DNI);
+            txt_Edad_AplicarVacunas.Text = Convert.ToString(usuarioAModificar.Edad);
+        }
+
+        public void CargarUsuarioMedico(BEMedico usuarioAModificar)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CargarUsuarioEnfermero(BEEnfermero usuarioAModificar)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CargarUsuarioAdministrador(BEAdministrador usuarioAModificar)
+        {
+            throw new NotImplementedException();
         }
     }
 }

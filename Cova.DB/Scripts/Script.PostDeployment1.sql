@@ -73,6 +73,11 @@ VALUES
 (8, 'Premium'),
 (8, 'Black')
 
+-- Creo Centros medicos
+EXEC s_CrearCentroMedico 'Sanatorio Anchorena', '112536252', 'sanchorena@gmail.com', 'Anchorena',2342,'','CABA','CABA','Argentina'
+EXEC s_CrearCentroMedico 'Sanatorio Mitre', '112536252', 'sanchorena@gmail.com', 'Mitre',2342,'','CABA','CABA','Argentina'
+EXEC s_CrearCentroMedico 'Sanatorio Trinidad', '112536252', 'sanchorena@gmail.com', 'Santa Fe',2342,'','CABA','CABA','Argentina'
+
 -- Creo usuarios de prueba
 -- Pacientes (PWD: paciente123)
 EXEC s_CrearPaciente 'Gonzalez', 'Juan', 32382278, '1987-02-21', 'M', 'Soltero', '1123423452', 'jgonzalez@hotmail.com','San Martin',123,'','Quilmes','Buenos Aires','Argentina', 5, 1, '1234323424', '2023-01-02','B6-0F-15-38-5B-90-5B-E9-C9-77-C5-9A-A3-42-0F-D2'

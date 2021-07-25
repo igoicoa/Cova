@@ -9,7 +9,9 @@ namespace Cova.BE
     public class BEVacunaAplicada
     {
         public BEVacuna VacunaAplicada { get; set; }
-        public int DosisAplicadas { get; set; }
-        public IList<DateTime> FechasAplicacion { get; set; }
+        public int DosisAplicada { get; set; }
+        public DateTime FechaAplicacion { get; set; }
+        public string ObservacionProfesional { get; set; }
+        public int CentroMedicoAplicacionId { get; set; }
     }
 }
