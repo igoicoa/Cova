@@ -84,13 +84,13 @@ namespace Cova.UI
             this.gb_pacienteModificarCuenta = new System.Windows.Forms.GroupBox();
             this.ch_particular = new System.Windows.Forms.CheckBox();
             this.dtp_fechaVencimiento = new System.Windows.Forms.DateTimePicker();
-            this.lbl_FechaVencimiento_ModificarCuenta = new System.Windows.Forms.Label();
+            this.lbl_FechaVencimiento = new System.Windows.Forms.Label();
             this.txt_numeroAfiliado = new System.Windows.Forms.TextBox();
-            this.lbl_numeroAfiliado_ModificarCuenta = new System.Windows.Forms.Label();
+            this.lbl_numeroAfiliado = new System.Windows.Forms.Label();
             this.cmb_plan = new System.Windows.Forms.ComboBox();
-            this.lbl_Plan_ModificarCuenta = new System.Windows.Forms.Label();
+            this.lbl_plan = new System.Windows.Forms.Label();
             this.cmb_coberturaMedica = new System.Windows.Forms.ComboBox();
-            this.lblCoberturaMedica_ModificarCuenta = new System.Windows.Forms.Label();
+            this.lbl_coberturaMedica = new System.Windows.Forms.Label();
             this.btn_BuscarUsuarios_ModificarUsuarios = new System.Windows.Forms.Button();
             this.calendar_fechaNacimiento = new System.Windows.Forms.MonthCalendar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen_ModificarCuenta)).BeginInit();
@@ -597,13 +597,13 @@ namespace Cova.UI
             // 
             this.gb_pacienteModificarCuenta.Controls.Add(this.ch_particular);
             this.gb_pacienteModificarCuenta.Controls.Add(this.dtp_fechaVencimiento);
-            this.gb_pacienteModificarCuenta.Controls.Add(this.lbl_FechaVencimiento_ModificarCuenta);
+            this.gb_pacienteModificarCuenta.Controls.Add(this.lbl_FechaVencimiento);
             this.gb_pacienteModificarCuenta.Controls.Add(this.txt_numeroAfiliado);
-            this.gb_pacienteModificarCuenta.Controls.Add(this.lbl_numeroAfiliado_ModificarCuenta);
+            this.gb_pacienteModificarCuenta.Controls.Add(this.lbl_numeroAfiliado);
             this.gb_pacienteModificarCuenta.Controls.Add(this.cmb_plan);
-            this.gb_pacienteModificarCuenta.Controls.Add(this.lbl_Plan_ModificarCuenta);
+            this.gb_pacienteModificarCuenta.Controls.Add(this.lbl_plan);
             this.gb_pacienteModificarCuenta.Controls.Add(this.cmb_coberturaMedica);
-            this.gb_pacienteModificarCuenta.Controls.Add(this.lblCoberturaMedica_ModificarCuenta);
+            this.gb_pacienteModificarCuenta.Controls.Add(this.lbl_coberturaMedica);
             this.gb_pacienteModificarCuenta.Location = new System.Drawing.Point(476, 357);
             this.gb_pacienteModificarCuenta.Name = "gb_pacienteModificarCuenta";
             this.gb_pacienteModificarCuenta.Size = new System.Drawing.Size(359, 186);
@@ -620,6 +620,7 @@ namespace Cova.UI
             this.ch_particular.TabIndex = 80;
             this.ch_particular.Text = "Particular";
             this.ch_particular.UseVisualStyleBackColor = true;
+            this.ch_particular.CheckedChanged += new System.EventHandler(this.ch_particular_CheckedChanged);
             // 
             // dtp_fechaVencimiento
             // 
@@ -628,15 +629,15 @@ namespace Cova.UI
             this.dtp_fechaVencimiento.Size = new System.Drawing.Size(143, 20);
             this.dtp_fechaVencimiento.TabIndex = 79;
             // 
-            // lbl_FechaVencimiento_ModificarCuenta
+            // lbl_FechaVencimiento
             // 
-            this.lbl_FechaVencimiento_ModificarCuenta.AutoEllipsis = true;
-            this.lbl_FechaVencimiento_ModificarCuenta.AutoSize = true;
-            this.lbl_FechaVencimiento_ModificarCuenta.Location = new System.Drawing.Point(168, 107);
-            this.lbl_FechaVencimiento_ModificarCuenta.Name = "lbl_FechaVencimiento_ModificarCuenta";
-            this.lbl_FechaVencimiento_ModificarCuenta.Size = new System.Drawing.Size(98, 13);
-            this.lbl_FechaVencimiento_ModificarCuenta.TabIndex = 78;
-            this.lbl_FechaVencimiento_ModificarCuenta.Text = "Fecha Vencimiento";
+            this.lbl_FechaVencimiento.AutoEllipsis = true;
+            this.lbl_FechaVencimiento.AutoSize = true;
+            this.lbl_FechaVencimiento.Location = new System.Drawing.Point(168, 107);
+            this.lbl_FechaVencimiento.Name = "lbl_FechaVencimiento";
+            this.lbl_FechaVencimiento.Size = new System.Drawing.Size(98, 13);
+            this.lbl_FechaVencimiento.TabIndex = 78;
+            this.lbl_FechaVencimiento.Text = "Fecha Vencimiento";
             // 
             // txt_numeroAfiliado
             // 
@@ -646,15 +647,15 @@ namespace Cova.UI
             this.txt_numeroAfiliado.Size = new System.Drawing.Size(144, 20);
             this.txt_numeroAfiliado.TabIndex = 77;
             // 
-            // lbl_numeroAfiliado_ModificarCuenta
+            // lbl_numeroAfiliado
             // 
-            this.lbl_numeroAfiliado_ModificarCuenta.AutoEllipsis = true;
-            this.lbl_numeroAfiliado_ModificarCuenta.AutoSize = true;
-            this.lbl_numeroAfiliado_ModificarCuenta.Location = new System.Drawing.Point(10, 107);
-            this.lbl_numeroAfiliado_ModificarCuenta.Name = "lbl_numeroAfiliado_ModificarCuenta";
-            this.lbl_numeroAfiliado_ModificarCuenta.Size = new System.Drawing.Size(81, 13);
-            this.lbl_numeroAfiliado_ModificarCuenta.TabIndex = 76;
-            this.lbl_numeroAfiliado_ModificarCuenta.Text = "Numero Afiliado";
+            this.lbl_numeroAfiliado.AutoEllipsis = true;
+            this.lbl_numeroAfiliado.AutoSize = true;
+            this.lbl_numeroAfiliado.Location = new System.Drawing.Point(10, 107);
+            this.lbl_numeroAfiliado.Name = "lbl_numeroAfiliado";
+            this.lbl_numeroAfiliado.Size = new System.Drawing.Size(81, 13);
+            this.lbl_numeroAfiliado.TabIndex = 76;
+            this.lbl_numeroAfiliado.Text = "Numero Afiliado";
             // 
             // cmb_plan
             // 
@@ -664,14 +665,14 @@ namespace Cova.UI
             this.cmb_plan.Size = new System.Drawing.Size(143, 21);
             this.cmb_plan.TabIndex = 36;
             // 
-            // lbl_Plan_ModificarCuenta
+            // lbl_plan
             // 
-            this.lbl_Plan_ModificarCuenta.AutoSize = true;
-            this.lbl_Plan_ModificarCuenta.Location = new System.Drawing.Point(168, 62);
-            this.lbl_Plan_ModificarCuenta.Name = "lbl_Plan_ModificarCuenta";
-            this.lbl_Plan_ModificarCuenta.Size = new System.Drawing.Size(28, 13);
-            this.lbl_Plan_ModificarCuenta.TabIndex = 35;
-            this.lbl_Plan_ModificarCuenta.Text = "Plan";
+            this.lbl_plan.AutoSize = true;
+            this.lbl_plan.Location = new System.Drawing.Point(168, 62);
+            this.lbl_plan.Name = "lbl_plan";
+            this.lbl_plan.Size = new System.Drawing.Size(28, 13);
+            this.lbl_plan.TabIndex = 35;
+            this.lbl_plan.Text = "Plan";
             // 
             // cmb_coberturaMedica
             // 
@@ -683,15 +684,16 @@ namespace Cova.UI
             this.cmb_coberturaMedica.Name = "cmb_coberturaMedica";
             this.cmb_coberturaMedica.Size = new System.Drawing.Size(143, 21);
             this.cmb_coberturaMedica.TabIndex = 34;
+            this.cmb_coberturaMedica.SelectedIndexChanged += new System.EventHandler(this.cmb_coberturaMedica_SelectedIndexChanged);
             // 
-            // lblCoberturaMedica_ModificarCuenta
+            // lbl_coberturaMedica
             // 
-            this.lblCoberturaMedica_ModificarCuenta.AutoSize = true;
-            this.lblCoberturaMedica_ModificarCuenta.Location = new System.Drawing.Point(10, 62);
-            this.lblCoberturaMedica_ModificarCuenta.Name = "lblCoberturaMedica_ModificarCuenta";
-            this.lblCoberturaMedica_ModificarCuenta.Size = new System.Drawing.Size(91, 13);
-            this.lblCoberturaMedica_ModificarCuenta.TabIndex = 28;
-            this.lblCoberturaMedica_ModificarCuenta.Text = "Cobertura Medica";
+            this.lbl_coberturaMedica.AutoSize = true;
+            this.lbl_coberturaMedica.Location = new System.Drawing.Point(10, 62);
+            this.lbl_coberturaMedica.Name = "lbl_coberturaMedica";
+            this.lbl_coberturaMedica.Size = new System.Drawing.Size(91, 13);
+            this.lbl_coberturaMedica.TabIndex = 28;
+            this.lbl_coberturaMedica.Text = "Cobertura Medica";
             // 
             // btn_BuscarUsuarios_ModificarUsuarios
             // 
@@ -830,13 +832,13 @@ namespace Cova.UI
         private System.Windows.Forms.GroupBox gb_pacienteModificarCuenta;
         private System.Windows.Forms.CheckBox ch_particular;
         private System.Windows.Forms.DateTimePicker dtp_fechaVencimiento;
-        private System.Windows.Forms.Label lbl_FechaVencimiento_ModificarCuenta;
+        private System.Windows.Forms.Label lbl_FechaVencimiento;
         private System.Windows.Forms.TextBox txt_numeroAfiliado;
-        private System.Windows.Forms.Label lbl_numeroAfiliado_ModificarCuenta;
+        private System.Windows.Forms.Label lbl_numeroAfiliado;
         private System.Windows.Forms.ComboBox cmb_plan;
-        private System.Windows.Forms.Label lbl_Plan_ModificarCuenta;
+        private System.Windows.Forms.Label lbl_plan;
         private System.Windows.Forms.ComboBox cmb_coberturaMedica;
-        private System.Windows.Forms.Label lblCoberturaMedica_ModificarCuenta;
+        private System.Windows.Forms.Label lbl_coberturaMedica;
         private System.Windows.Forms.Button btn_BuscarUsuarios_ModificarUsuarios;
         private System.Windows.Forms.MonthCalendar calendar_fechaNacimiento;
     }

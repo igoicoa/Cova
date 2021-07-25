@@ -122,8 +122,11 @@ namespace Cova.MPP
                 datosUsuario.Add("@MatriculaNacional", medico.MatriculaNacional);
                 datosUsuario.Add("@MatriculaProvincial", medico.MatriculaProvincial);
                 datosUsuario.Add("@Especialidad", medico.Especialidad);
-                datosUsuario.Add("@Password", medico.Password);
                 datosUsuario.Add("@Activo", medico.Activo);
+                if (!string.IsNullOrEmpty(medico.Password))
+                {
+                    datosUsuario.Add("@Password", medico.Password);
+                }
                 return conexionBDD.Escribir(strSQL, datosUsuario);
             }
             catch (Exception ex)

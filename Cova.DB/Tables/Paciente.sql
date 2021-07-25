@@ -18,7 +18,7 @@
         CONSTRAINT [FK_Paciente_CoberturaMedicaPacienteId]
 			FOREIGN KEY REFERENCES [dbo].[CoberturaMedicaPaciente](CoberturaMedicaPacienteId)
         INDEX [idx_CoberturaMedicaId],
-    [UsuarioID]                 BIGINT          NULL
+    [UsuarioID]                 BIGINT          NOT NULL
         CONSTRAINT [FK_Paciente_UsuarioId]
 			FOREIGN KEY REFERENCES [dbo].[Usuario](UsuarioId)
         INDEX [idx_UsuarioId]

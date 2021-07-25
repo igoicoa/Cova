@@ -111,8 +111,11 @@ namespace Cova.MPP
                 datosUsuario.Add("@Localidad", administrador.Domicilio.Localidad);
                 datosUsuario.Add("@Provincia", administrador.Domicilio.Provincia);
                 datosUsuario.Add("@Pais", administrador.Domicilio.Pais);
-                datosUsuario.Add("@Password", administrador.Password);
                 datosUsuario.Add("@Activo", administrador.Activo);
+                if (!string.IsNullOrEmpty(administrador.Password))
+                {
+                    datosUsuario.Add("@Password", administrador.Password);
+                }
                 return conexionBDD.Escribir(strSQL, datosUsuario);
             }
             catch (Exception ex)

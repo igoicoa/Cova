@@ -17,8 +17,8 @@
 	@MatriculaNacional		INT,
 	@MatriculaProvincial	INT,
 	@Especialidad			VARCHAR(150),
-	@Password				VARCHAR(50),
-	@Activo					BIT
+	@Activo					BIT,
+	@Password				VARCHAR(50) = NULL
 
 AS
 BEGIN

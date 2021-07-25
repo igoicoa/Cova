@@ -18,8 +18,8 @@
 	@CoberturaMedicaPlanId				INT = NULL,
 	@CoberturaMedicaNumeroAfiliado		VARCHAR(100) = NULL,
 	@CoberturaMedicaFechaVencimiento	DATETIME = NULL,
-	@Password							VARCHAR(50),
-	@Activo								BIT
+	@Activo								BIT,
+	@Password							VARCHAR(50) = NULL
 
 AS
 BEGIN
@@ -65,12 +65,31 @@ BEGIN
 			Pais = @Pais
 		WHERE DomicilioId = @DomicilioId
 
-		UPDATE [dbo].[CoberturaMedicaPaciente] SET
-			CoberturaMedicaId = @CoberturaMedicaId,
-			CoberturaMedicaPlanId = @CoberturaMedicaPlanId,
-			NumeroAfiliado = @CoberturaMedicaNumeroAfiliado,
-			FechaVencimiento = @CoberturaMedicaFechaVencimiento
-		WHERE CoberturaMedicaPacienteId = @CoberturaPacienteId
+		IF (@CoberturaPacienteId IS NOT NULL AND @CoberturaMedicaId IS NOT NULL AND @CoberturaMedicaPlanId IS NOT NULL AND @CoberturaMedicaNumeroAfiliado IS NOT NULL)
+		BEGIN
+			UPDATE [dbo].[CoberturaMedicaPaciente] SET
+				CoberturaMedicaId = @CoberturaMedicaId,
+				CoberturaMedicaPlanId = @CoberturaMedicaPlanId,
+				NumeroAfiliado = @CoberturaMedicaNumeroAfiliado,
+				FechaVencimiento = @CoberturaMedicaFechaVencimiento
+			WHERE CoberturaMedicaPacienteId = @CoberturaPacienteId
+		END
+		ELSE IF (@CoberturaPacienteId IS NULL AND @CoberturaMedicaId IS NOT NULL AND @CoberturaMedicaPlanId IS NOT NULL AND @CoberturaMedicaNumeroAfiliado IS NOT NULL)
+		BEGIN
+			DECLARE @CoberturaMedicaPacienteId BIGINT;
+			INSERT INTO [dbo].[CoberturaMedicaPaciente] (CoberturaMedicaId, CoberturaMedicaPlanId, NumeroAfiliado, FechaVencimiento)
+			VALUES
+			(@CoberturaMedicaId, @CoberturaMedicaPlanId, @CoberturaMedicaNumeroAfiliado, @CoberturaMedicaFechaVencimiento)
+			SET @CoberturaMedicaPacienteId = SCOPE_IDENTITY();
+
+			UPDATE [dbo].[Paciente] SET CoberturaMedicaPacienteId = @CoberturaMedicaPacienteId WHERE PacienteId = @PacienteId
+		END
+		ELSE IF (@CoberturaPacienteId IS NOT NULL AND @CoberturaMedicaId IS NULL)
+		BEGIN
+			DELETE FROM [dbo].[CoberturaMedicaPaciente] WHERE CoberturaMedicaPacienteId = @CoberturaMedicaPacienteId
+
+			UPDATE [dbo].[Paciente] SET CoberturaMedicaPacienteId = NULL WHERE PacienteId = @PacienteId
+		END
 
 		UPDATE [dbo].[Usuario] SET
 				Activo = @Activo

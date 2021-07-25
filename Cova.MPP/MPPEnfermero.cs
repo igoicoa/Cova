@@ -117,8 +117,11 @@ namespace Cova.MPP
                 datosUsuario.Add("@Provincia", enfermero.Domicilio.Provincia);
                 datosUsuario.Add("@Pais", enfermero.Domicilio.Pais);
                 datosUsuario.Add("@MatriculaEnfermero", enfermero.MatriculaEnfermero);
-                datosUsuario.Add("@Password", enfermero.Password);
                 datosUsuario.Add("@Activo", enfermero.Activo);
+                if (!string.IsNullOrEmpty(enfermero.Password))
+                {
+                    datosUsuario.Add("@Password", enfermero.Password);
+                }
                 return conexionBDD.Escribir(strSQL, datosUsuario);
             }
             catch (Exception ex)

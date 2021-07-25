@@ -224,10 +224,20 @@ namespace Cova.UI
                 filaPacientes["Localidad"] = paciente.Domicilio.Localidad;
                 filaPacientes["Provincia"] = paciente.Domicilio.Provincia;
                 filaPacientes["Pais"] = paciente.Domicilio.Pais;
-                filaPacientes["Cobertura Medica"] = paciente.CoberturaMedica.Nombre;
-                filaPacientes["Plan"] = paciente.CoberturaMedica.Plan.Nombre;
-                filaPacientes["Numero Afiliado"] = paciente.CoberturaMedica.NumeroAfiliado;
-                filaPacientes["Fecha Vencimiento"] = paciente.CoberturaMedica.FechaVencimiento;
+                if(paciente.CoberturaMedica != null)
+                {
+                    filaPacientes["Cobertura Medica"] = paciente.CoberturaMedica.Nombre;
+                    filaPacientes["Plan"] = paciente.CoberturaMedica.Plan.Nombre;
+                    filaPacientes["Numero Afiliado"] = paciente.CoberturaMedica.NumeroAfiliado;
+                    filaPacientes["Fecha Vencimiento"] = paciente.CoberturaMedica.FechaVencimiento;
+                }
+                else
+                {
+                    filaPacientes["Cobertura Medica"] = "-";
+                    filaPacientes["Plan"] = "-";
+                    filaPacientes["Numero Afiliado"] = "-";
+                    filaPacientes["Fecha Vencimiento"] = "-";
+                }
                 tablePaciente.Rows.Add(filaPacientes);
             }
             DataView dataviewPacientes = new DataView(tablePaciente);

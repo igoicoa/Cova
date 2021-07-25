@@ -49,15 +49,19 @@ namespace Cova.MPP
 
                         paciente.Domicilio = domicilio;
 
-                        BECoberturaMedicaPaciente coberturaMedicaPaciente = new BECoberturaMedicaPaciente();
-                        coberturaMedicaPaciente.Nombre = Convert.ToString(fila["CoberturaMedica"]);
-                        BECoberturaMedicaPlan plan = new BECoberturaMedicaPlan();
-                        plan.Nombre = Convert.ToString(fila["Plan"]);
-                        coberturaMedicaPaciente.Plan = plan;
-                        coberturaMedicaPaciente.NumeroAfiliado = Convert.ToString(fila["NumeroAfiliado"]);
-                        coberturaMedicaPaciente.FechaVencimiento = Convert.ToDateTime(fila["FechaVencimiento"]);
+                        if (!string.IsNullOrEmpty(Convert.ToString(fila["CoberturaMedica"])))
+                        {
+                            BECoberturaMedicaPaciente coberturaMedicaPaciente = new BECoberturaMedicaPaciente();
+                            coberturaMedicaPaciente.Nombre = Convert.ToString(fila["CoberturaMedica"]);
+                            BECoberturaMedicaPlan plan = new BECoberturaMedicaPlan();
+                            plan.Nombre = Convert.ToString(fila["Plan"]);
+                            coberturaMedicaPaciente.Plan = plan;
+                            coberturaMedicaPaciente.NumeroAfiliado = Convert.ToString(fila["NumeroAfiliado"]);
+                            coberturaMedicaPaciente.FechaVencimiento = Convert.ToDateTime(fila["FechaVencimiento"]);
 
-                        paciente.CoberturaMedica = coberturaMedicaPaciente;
+                            paciente.CoberturaMedica = coberturaMedicaPaciente;
+                        }
+
                         paciente.Activo = Convert.ToBoolean(fila["Activo"]);
 
                         pacientes.Add(paciente);
@@ -137,8 +141,11 @@ namespace Cova.MPP
                     datosUsuario.Add("@CoberturaMedicaNumeroAfiliado", paciente.CoberturaMedica.NumeroAfiliado);
                     datosUsuario.Add("@CoberturaMedicaFechaVencimiento", paciente.CoberturaMedica.FechaVencimiento);
                 }
-                datosUsuario.Add("@Password", paciente.Password);
                 datosUsuario.Add("@Activo", paciente.Activo);
+                if (!string.IsNullOrEmpty(paciente.Password))
+                {
+                    datosUsuario.Add("@Password", paciente.Password);
+                }
                 return conexionBDD.Escribir(strSQL, datosUsuario);
             }
             catch (Exception ex)

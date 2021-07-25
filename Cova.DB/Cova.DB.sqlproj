@@ -104,6 +104,8 @@
     <Build Include="StoredProcedures\s_ActualizarProfesionalEnfermero.sql" />
     <Build Include="Tables\VacunaAplicada.sql" />
     <Build Include="Tables\CentroMedico.sql" />
+    <Build Include="Tables\Administrador.sql" />
+    <Build Include="StoredProcedures\s_AgregarPermisosAdministrador.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />

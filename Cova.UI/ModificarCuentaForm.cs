@@ -11,7 +11,7 @@ namespace Cova.UI
     public partial class ModificarCuentaForm : Form
     {
         private List<BECoberturaMedica> coberturasMedicas;
-
+        private long _usuarioId;
         public ModificarCuentaForm()
         {
             InitializeComponent();
@@ -58,6 +58,7 @@ namespace Cova.UI
 
         public void CargarUsuarioMedico(BEMedico usuarioAModificar)
         {
+            this._usuarioId = usuarioAModificar.UsuarioID;
             rb_medico_ModificarCuenta.Checked = true;
             txt_DNI.Text = usuarioAModificar.DNI.ToString();
             txt_usuario.Text = usuarioAModificar.Usuario.ToString();
@@ -86,6 +87,7 @@ namespace Cova.UI
 
         public void CargarUsuarioEnfermero(BEEnfermero usuarioAModificar)
         {
+            this._usuarioId = usuarioAModificar.UsuarioID;
             rb_enfermero_ModificarCuenta.Checked = true;
             txt_DNI.Text = usuarioAModificar.DNI.ToString();
             txt_usuario.Text = usuarioAModificar.Usuario.ToString();
@@ -113,6 +115,7 @@ namespace Cova.UI
 
         public void CargarUsuarioPaciente(BEPaciente usuarioAModificar)
         {
+            this._usuarioId = usuarioAModificar.UsuarioID;
             rb_paciente_ModificarCuenta.Checked = true;
             txt_DNI.Text = usuarioAModificar.DNI.ToString();
             txt_usuario.Text = usuarioAModificar.Usuario.ToString();
@@ -129,17 +132,21 @@ namespace Cova.UI
             txt_localidad.Text = usuarioAModificar.Domicilio.Localidad;
             txt_provincia.Text = usuarioAModificar.Domicilio.Provincia;
             calendar_fechaNacimiento.SelectionStart = usuarioAModificar.FechaNacimiento;
-            if(string.IsNullOrEmpty(usuarioAModificar.CoberturaMedica.Nombre))
+            if(usuarioAModificar.CoberturaMedica == null)
             {
                 ch_particular.Checked = true;
+                OcultarCoberturaMedica();
             }
             else
             {
+                ch_particular.Checked = false;
                 cmb_coberturaMedica.Text = usuarioAModificar.CoberturaMedica.Nombre;
                 CargarPlanesCobertura();
                 cmb_plan.Text = usuarioAModificar.CoberturaMedica.Plan.Nombre;
                 txt_numeroAfiliado.Text = usuarioAModificar.CoberturaMedica.NumeroAfiliado;
                 dtp_fechaVencimiento.Value = usuarioAModificar.CoberturaMedica.FechaVencimiento;
+
+                MostrarCoberturaMedica();
             }
             cmb_EstadoModificarCuenta.Text = usuarioAModificar.Activo ? "Activo" : "Inactivo";
 
@@ -150,6 +157,7 @@ namespace Cova.UI
 
         public void CargarUsuarioAdministrador(BEAdministrador usuarioAModificar)
         {
+            this._usuarioId = usuarioAModificar.UsuarioID;
             rb_administrador_ModificarCuenta.Checked = true;
             txt_DNI.Text = usuarioAModificar.DNI.ToString();
             txt_usuario.Text = usuarioAModificar.Usuario.ToString();
@@ -216,7 +224,6 @@ namespace Cova.UI
 
         private void btnModificar_ModificarCuenta_Click(object sender, EventArgs e)
         {
-            //TODO
             if(rb_medico_ModificarCuenta.Checked)
             {
                 ActualizarProfesionalMedico();
@@ -241,38 +248,31 @@ namespace Cova.UI
             BEMedico medicoActualizado = new BEMedico();
             BEDomicilio domicilio = new BEDomicilio();
 
+            medicoActualizado.UsuarioID = this._usuarioId;
             medicoActualizado.Nombre = txt_nombre.Text;
             medicoActualizado.Apellido = txt_apellido.Text;
             medicoActualizado.DNI = Convert.ToInt32 (txt_DNI.Text);
             medicoActualizado.Usuario = txt_usuario.Text;
-            medicoActualizado.Password = txt_clave.Text;
-            medicoActualizado.Telefono = txt_telefono.Text;
-            medicoActualizado.Email = txt_email.Text;
-            medicoActualizado.EstadoCivil = txt_estadoCivil.Text;
-            medicoActualizado.Domicilio.Calle = txt_calle.Text;
-            medicoActualizado.Domicilio.Numero = Convert.ToInt32(txt_numero.Text);
-            medicoActualizado.Domicilio.Piso = txt_piso.Text;
-            medicoActualizado.Domicilio.Localidad = txt_localidad.Text;
-            medicoActualizado.Domicilio.Provincia = txt_provincia.Text;
-            medicoActualizado.MatriculaNacional = Convert.ToInt32(txt_matriculaNacional.Text);
-            medicoActualizado.MatriculaProvincial = Convert.ToInt32(txt_matriculaProvincial.Text);
-            medicoActualizado.Especialidad = (Especialidad)Enum.Parse(typeof(Especialidad), cmb_especialidad.SelectedItem.ToString());
-            medicoActualizado.FechaNacimiento = calendar_fechaNacimiento.SelectionRange.Start;
-            medicoActualizado.Activo = Convert.ToBoolean (cmb_EstadoModificarCuenta.Text);
-
+            medicoActualizado.Sexo = rb_sexoMasulino.Checked ? "M" : "F";
             if (!string.IsNullOrEmpty(txt_clave.Text))
             {
                 medicoActualizado.Password = HashHelper.HashMD5(txt_clave.Text);
             }
-
-            if (rb_sexoFemenino.Checked)
-            {
-                medicoActualizado.Sexo = rb_sexoFemenino.Text;
-            }
-            else
-            {
-                medicoActualizado.Sexo = rb_sexoMasulino.Text;
-            }
+            medicoActualizado.Telefono = txt_telefono.Text;
+            medicoActualizado.Email = txt_email.Text;
+            medicoActualizado.EstadoCivil = txt_estadoCivil.Text;
+            domicilio.Calle = txt_calle.Text;
+            domicilio.Numero = Convert.ToInt32(txt_numero.Text);
+            domicilio.Piso = txt_piso.Text;
+            domicilio.Localidad = txt_localidad.Text;
+            domicilio.Provincia = txt_provincia.Text;
+            domicilio.Pais = "Argentina";
+            medicoActualizado.Domicilio = domicilio;
+            medicoActualizado.MatriculaNacional = Convert.ToInt32(txt_matriculaNacional.Text);
+            medicoActualizado.MatriculaProvincial = Convert.ToInt32(txt_matriculaProvincial.Text);
+            medicoActualizado.Especialidad = (Especialidad)Enum.Parse(typeof(Especialidad), cmb_especialidad.SelectedItem.ToString());
+            medicoActualizado.FechaNacimiento = calendar_fechaNacimiento.SelectionRange.Start;
+            medicoActualizado.Activo = cmb_EstadoModificarCuenta.Text == "Activo" ? true : false;
 
             BLMedico bLMedico = new BLMedico();
             if(bLMedico.ActualizarProfesionalMedico(medicoActualizado))
@@ -287,102 +287,84 @@ namespace Cova.UI
 
         public void ActualizarProfesionalEnfermero()
         {
-            //TODO Terminar
             BEEnfermero enfermeroActualizado = new BEEnfermero();
             BEDomicilio domicilio = new BEDomicilio();
 
+            enfermeroActualizado.UsuarioID = this._usuarioId;
             enfermeroActualizado.Nombre = txt_nombre.Text;
             enfermeroActualizado.Apellido = txt_apellido.Text;
             enfermeroActualizado.DNI = Convert.ToInt32(txt_DNI.Text);
             enfermeroActualizado.Usuario = txt_usuario.Text;
-            enfermeroActualizado.Password = txt_clave.Text;
+            enfermeroActualizado.Sexo = rb_sexoMasulino.Checked ? "M" : "F";
+            if (!string.IsNullOrEmpty(txt_clave.Text))
+            {
+                enfermeroActualizado.Password = HashHelper.HashMD5(txt_clave.Text);
+            }
             enfermeroActualizado.Telefono = txt_telefono.Text;
             enfermeroActualizado.Email = txt_email.Text;
             enfermeroActualizado.EstadoCivil = txt_estadoCivil.Text;
             enfermeroActualizado.MatriculaEnfermero = Convert.ToInt32(txt_matriculaNacional.Text);
             enfermeroActualizado.MatriculaEnfermero = Convert.ToInt32(txt_matriculaProvincial.Text);
-            enfermeroActualizado.Domicilio.Calle = txt_calle.Text;
-            enfermeroActualizado.Domicilio.Numero = Convert.ToInt32(txt_numero.Text);
-            enfermeroActualizado.Domicilio.Piso = txt_piso.Text;
-            enfermeroActualizado.Domicilio.Localidad = txt_localidad.Text;
-            enfermeroActualizado.Domicilio.Provincia = txt_provincia.Text;
+            domicilio.Calle = txt_calle.Text;
+            domicilio.Numero = Convert.ToInt32(txt_numero.Text);
+            domicilio.Piso = txt_piso.Text;
+            domicilio.Localidad = txt_localidad.Text;
+            domicilio.Provincia = txt_provincia.Text;
+            domicilio.Pais = "Argentina";
+            enfermeroActualizado.Domicilio = domicilio;
             enfermeroActualizado.FechaNacimiento = calendar_fechaNacimiento.SelectionRange.Start;
-            enfermeroActualizado.Activo = Convert.ToBoolean(cmb_EstadoModificarCuenta.Text);
+            enfermeroActualizado.Activo = cmb_EstadoModificarCuenta.Text == "Activo" ? true : false;
 
-            if (!string.IsNullOrEmpty(txt_clave.Text))
+            BLEnfermero bLEnfermero = new BLEnfermero();
+            if (bLEnfermero.ActualizarProfesionalEnfermero(enfermeroActualizado))
             {
-                enfermeroActualizado.Password = HashHelper.HashMD5(txt_clave.Text);
+                MessageBox.Show("Profesional actualizado con exito");
             }
-
-            if (rb_sexoFemenino.Checked)
+            else
             {
-                enfermeroActualizado.Sexo = rb_sexoFemenino.Text;
-            } else
-            {
-                enfermeroActualizado.Sexo = rb_sexoMasulino.Text;
+                MessageBox.Show("Hubo un error al actualizar el profesional");
             }
-
-            //BEEnfermero bLEnfermero = new BEEnfermero();
-            //if (bLEnfermero.ActualizarProfesionalEnfermero(enfermeroActualizado))
-            //{
-            //    MessageBox.Show("Profesional actualizado con exito");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Hubo un error al actualizar el profesional");
-            //}
         }
 
         public void ActualizarPaciente()
         {
-            //TODO Terminar
             BEPaciente pacienteActualizado = new BEPaciente();
             BEDomicilio domicilio = new BEDomicilio();
 
+            pacienteActualizado.UsuarioID = this._usuarioId;
             pacienteActualizado.Nombre = txt_nombre.Text;
             pacienteActualizado.Apellido = txt_apellido.Text;
             pacienteActualizado.DNI = Convert.ToInt32(txt_DNI.Text);
             pacienteActualizado.Usuario = txt_usuario.Text;
-            pacienteActualizado.Password = txt_clave.Text;
-            pacienteActualizado.Telefono = txt_telefono.Text;
-            pacienteActualizado.Email = txt_email.Text;
-            pacienteActualizado.EstadoCivil = txt_estadoCivil.Text;
-            pacienteActualizado.Sexo = rb_sexoFemenino.Text;
-            pacienteActualizado.Sexo = rb_sexoMasulino.Text;
-            pacienteActualizado.Domicilio.Calle = txt_calle.Text;
-            pacienteActualizado.Domicilio.Numero = Convert.ToInt32(txt_numero.Text);
-            pacienteActualizado.Domicilio.Piso = txt_piso.Text;
-            pacienteActualizado.Domicilio.Localidad = txt_localidad.Text;
-            pacienteActualizado.Domicilio.Provincia = txt_provincia.Text;
-            pacienteActualizado.FechaNacimiento = calendar_fechaNacimiento.SelectionRange.Start;
-            pacienteActualizado.Activo = Convert.ToBoolean(cmb_EstadoModificarCuenta.Text);
-
-            if (ch_particular.Checked)
-            {
-                lblCoberturaMedica_ModificarCuenta.Visible = false;
-                cmb_coberturaMedica.Visible = false;
-                lbl_Plan_ModificarCuenta.Visible = false;
-                cmb_plan.Visible = false;
-                lbl_numeroAfiliado_ModificarCuenta.Visible = false;
-                txt_numeroAfiliado.Visible = false;
-                lbl_FechaVencimiento_ModificarCuenta.Visible = false;
-                dtp_fechaVencimiento.Visible = false;
-            }
-            else
-            {
-                lblCoberturaMedica_ModificarCuenta.Visible = true;
-                cmb_coberturaMedica.Visible = true;
-                lbl_Plan_ModificarCuenta.Visible = true;
-                cmb_plan.Visible = true;
-                lbl_numeroAfiliado_ModificarCuenta.Visible = true;
-                txt_numeroAfiliado.Visible = true;
-                lbl_FechaVencimiento_ModificarCuenta.Visible = true;
-                dtp_fechaVencimiento.Visible = true;
-            }
-
+            pacienteActualizado.Sexo = rb_sexoMasulino.Checked ? "M" : "F";
             if (!string.IsNullOrEmpty(txt_clave.Text))
             {
                 pacienteActualizado.Password = HashHelper.HashMD5(txt_clave.Text);
+            }
+            pacienteActualizado.Telefono = txt_telefono.Text;
+            pacienteActualizado.Email = txt_email.Text;
+            pacienteActualizado.EstadoCivil = txt_estadoCivil.Text;
+            domicilio.Calle = txt_calle.Text;
+            domicilio.Numero = Convert.ToInt32(txt_numero.Text);
+            domicilio.Piso = txt_piso.Text;
+            domicilio.Localidad = txt_localidad.Text;
+            domicilio.Provincia = txt_provincia.Text;
+            domicilio.Pais = "Argentina";
+            pacienteActualizado.Domicilio = domicilio;
+            pacienteActualizado.FechaNacimiento = calendar_fechaNacimiento.SelectionRange.Start;
+            pacienteActualizado.Activo = cmb_EstadoModificarCuenta.Text == "Activo" ? true : false;
+
+            if(!ch_particular.Checked)
+            {
+                BECoberturaMedica coberturaMedicaSeleccionada = (BECoberturaMedica)cmb_coberturaMedica.SelectedItem;
+                BECoberturaMedicaPlan coberturaMedicaPlan = (BECoberturaMedicaPlan)cmb_plan.SelectedItem;
+                BECoberturaMedicaPaciente coberturaMedicaPaciente = new BECoberturaMedicaPaciente();
+                coberturaMedicaPaciente.CoberturaMedicaId = coberturaMedicaSeleccionada.CoberturaMedicaId;
+                coberturaMedicaPaciente.Plan = coberturaMedicaPlan;
+                coberturaMedicaPaciente.NumeroAfiliado = txt_numeroAfiliado.Text;
+                coberturaMedicaPaciente.FechaVencimiento = dtp_fechaVencimiento.Value;
+
+                pacienteActualizado.CoberturaMedica = coberturaMedicaPaciente;
             }
 
             BLPaciente bLPaciente = new BLPaciente();
@@ -398,39 +380,31 @@ namespace Cova.UI
 
         public void ActualizarAdministrador()
         {
-            //TODO Terminar
             BEAdministrador administradorActualizado = new BEAdministrador();
             BEDomicilio domicilio = new BEDomicilio();
 
+            administradorActualizado.UsuarioID = this._usuarioId;
             administradorActualizado.Nombre = txt_nombre.Text;
             administradorActualizado.Apellido = txt_apellido.Text;
             administradorActualizado.DNI = Convert.ToInt32(txt_DNI.Text);
             administradorActualizado.Usuario = txt_usuario.Text;
-            administradorActualizado.Password = txt_clave.Text;
-            administradorActualizado.Telefono = txt_telefono.Text;
-            administradorActualizado.Email = txt_email.Text;
-            administradorActualizado.EstadoCivil = txt_estadoCivil.Text;
-            administradorActualizado.Domicilio.Calle = txt_calle.Text;
-            administradorActualizado.Domicilio.Numero = Convert.ToInt32(txt_numero.Text);
-            administradorActualizado.Domicilio.Piso = txt_piso.Text;
-            administradorActualizado.Domicilio.Localidad = txt_localidad.Text;
-            administradorActualizado.Domicilio.Provincia = txt_provincia.Text;
-            administradorActualizado.FechaNacimiento = calendar_fechaNacimiento.SelectionRange.Start;
-            administradorActualizado.Activo = Convert.ToBoolean(cmb_EstadoModificarCuenta.Text);
-
+            administradorActualizado.Sexo = rb_sexoMasulino.Checked ? "M" : "F";
             if (!string.IsNullOrEmpty(txt_clave.Text))
             {
                 administradorActualizado.Password = HashHelper.HashMD5(txt_clave.Text);
             }
-
-            if (rb_sexoFemenino.Checked)
-            {
-                administradorActualizado.Sexo = rb_sexoFemenino.Text;
-            }
-            else
-            {
-                administradorActualizado.Sexo = rb_sexoMasulino.Text;
-            }
+            administradorActualizado.Telefono = txt_telefono.Text;
+            administradorActualizado.Email = txt_email.Text;
+            administradorActualizado.EstadoCivil = txt_estadoCivil.Text;
+            domicilio.Calle = txt_calle.Text;
+            domicilio.Numero = Convert.ToInt32(txt_numero.Text);
+            domicilio.Piso = txt_piso.Text;
+            domicilio.Localidad = txt_localidad.Text;
+            domicilio.Provincia = txt_provincia.Text;
+            domicilio.Pais = "Argentina";
+            administradorActualizado.Domicilio = domicilio;
+            administradorActualizado.FechaNacimiento = calendar_fechaNacimiento.SelectionRange.Start;
+            administradorActualizado.Activo = cmb_EstadoModificarCuenta.Text == "Activo" ? true : false;
 
             BLAdministrador bLAdministrador = new BLAdministrador();
             if (bLAdministrador.ActualizarAdministrador(administradorActualizado))
@@ -441,6 +415,47 @@ namespace Cova.UI
             {
                 MessageBox.Show("Hubo un error al actualizar el Administrador");
             }
+        }
+
+        public void OcultarCoberturaMedica()
+        {
+            lbl_coberturaMedica.Visible = false;
+            cmb_coberturaMedica.Visible = false;
+            lbl_plan.Visible = false;
+            cmb_plan.Visible = false;
+            lbl_numeroAfiliado.Visible = false;
+            txt_numeroAfiliado.Visible = false;
+            lbl_FechaVencimiento.Visible = false;
+            dtp_fechaVencimiento.Visible = false;
+        }
+
+        public void MostrarCoberturaMedica()
+        {
+            lbl_coberturaMedica.Visible = true;
+            cmb_coberturaMedica.Visible = true;
+            lbl_plan.Visible = true;
+            cmb_plan.Visible = true;
+            lbl_numeroAfiliado.Visible = true;
+            txt_numeroAfiliado.Visible = true;
+            lbl_FechaVencimiento.Visible = true;
+            dtp_fechaVencimiento.Visible = true;
+        }
+
+        private void ch_particular_CheckedChanged(object sender, EventArgs e)
+        {
+            if(ch_particular.Checked)
+            {
+                OcultarCoberturaMedica();
+            } 
+            else
+            {
+                MostrarCoberturaMedica();
+            }
+        }
+
+        private void cmb_coberturaMedica_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarPlanesCobertura();
         }
     }
 }

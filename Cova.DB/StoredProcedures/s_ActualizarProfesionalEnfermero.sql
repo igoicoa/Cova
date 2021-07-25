@@ -15,8 +15,8 @@
 	@Provincia				VARCHAR(120),
 	@Pais					VARCHAR(120),
 	@MatriculaEnfermero		INT,
-	@Password				VARCHAR(50),
-	@Activo					BIT
+	@Activo					BIT,
+	@Password				VARCHAR(50) = NULL
 
 AS
 BEGIN
