@@ -61,5 +61,11 @@ namespace Cova.UI
         {
             throw new NotImplementedException();
         }
+
+        private void btn_BuscarPacientes_AplicarVacunas_Click_1(object sender, EventArgs e)
+        {
+            BuscarUsuariosForm buscarUsuariosForm = new BuscarUsuariosForm(true, this);
+            buscarUsuariosForm.Show();
+        }
     }
 }

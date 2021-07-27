@@ -24,7 +24,7 @@ namespace Cova.UI
 
         private void btn_Limpiar_BuscarVacunas_Click(object sender, EventArgs e)
         {
-            txt_Lote_BuscarVacunas.Clear();
+            txt_IDVacuna_BuscarVacunas.Clear();
             txt_Nombre_BuscarVacunas.Clear();
         }
     }

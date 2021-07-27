@@ -53,7 +53,7 @@
     <Compile Include="BETurno.cs" />
     <Compile Include="BEUsuario.cs" />
     <Compile Include="BEVacuna.cs" />
-    <Compile Include="BEVacunaAplicada.cs" />
+    <Compile Include="BEVacunaDosis.cs" />
     <Compile Include="Enum\DiasSemana.cs" />
     <Compile Include="Enum\Especialidad.cs" />
     <Compile Include="BEMedico.cs" />

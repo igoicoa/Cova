@@ -32,8 +32,8 @@ namespace Cova.UI
 
         private void btn_BuscarPacientes_CrearCertificado_Click(object sender, EventArgs e)
         {
-            BuscarPacientesForm frmBuscarPacientes = new BuscarPacientesForm();
-            frmBuscarPacientes.Show();
+            //BuscarUsuariosForm buscarUsuariosForm = new BuscarUsuariosForm(true, this);
+            //buscarUsuariosForm.Show();
         }
     }
 }

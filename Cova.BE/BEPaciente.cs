@@ -19,7 +19,7 @@ namespace Cova.BE
         public string Email { get; set; }
         public BEDomicilio Domicilio { get; set; }
         public BECoberturaMedicaPaciente CoberturaMedica { get; set; }
-        public IList<BEVacunaAplicada> VacunasAplicadas { get; set; }
+        //public IList<BEVacunaAplicada> VacunasAplicadas { get; set; }
         public IList<BETurno> TurnosAsignados { get; set; }
         public IList<BEVacuna> VacunasSugeridas { get; set; }
         public int Edad {

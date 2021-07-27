@@ -52,10 +52,10 @@
     <Compile Include="AgregarIdiomaForm.Designer.cs">
       <DependentUpon>AgregarIdiomaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AplicarVacunaForm.cs">
+    <Compile Include="Administrar Vacunas\AplicarVacunaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AplicarVacunaForm.Designer.cs">
+    <Compile Include="Administrar Vacunas\AplicarVacunaForm.Designer.cs">
       <DependentUpon>AplicarVacunaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AsignarPermisosForm.cs">
@@ -64,17 +64,11 @@
     <Compile Include="AsignarPermisosForm.Designer.cs">
       <DependentUpon>AsignarPermisosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BuscarCoberturaMedicaForm.cs">
+    <Compile Include="Administrar Cobertura Medica\BuscarCoberturaMedicaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BuscarCoberturaMedicaForm.Designer.cs">
+    <Compile Include="Administrar Cobertura Medica\BuscarCoberturaMedicaForm.Designer.cs">
       <DependentUpon>BuscarCoberturaMedicaForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BuscarPacientesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BuscarPacientesForm.Designer.cs">
-      <DependentUpon>BuscarPacientesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="BuscarUsuariosForm.cs">
       <SubType>Form</SubType>
@@ -82,58 +76,58 @@
     <Compile Include="BuscarUsuariosForm.Designer.cs">
       <DependentUpon>BuscarUsuariosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BuscarVacunasForm.cs">
+    <Compile Include="Administrar Vacunas\BuscarVacunasForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BuscarVacunasForm.Designer.cs">
+    <Compile Include="Administrar Vacunas\BuscarVacunasForm.Designer.cs">
       <DependentUpon>BuscarVacunasForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CalendarioDeVacunaciónForm.cs">
+    <Compile Include="Administrar Vacunas\CalendarioDeVacunaciónForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CalendarioDeVacunaciónForm.Designer.cs">
+    <Compile Include="Administrar Vacunas\CalendarioDeVacunaciónForm.Designer.cs">
       <DependentUpon>CalendarioDeVacunaciónForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CargarCoberturaMedicaForm.cs">
+    <Compile Include="Administrar Cobertura Medica\CargarCoberturaMedicaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CargarCoberturaMedicaForm.Designer.cs">
+    <Compile Include="Administrar Cobertura Medica\CargarCoberturaMedicaForm.Designer.cs">
       <DependentUpon>CargarCoberturaMedicaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CrearCertificadoForm.cs">
+    <Compile Include="Administrar Receta y Certificado\CrearCertificadoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CrearCertificadoForm.Designer.cs">
+    <Compile Include="Administrar Receta y Certificado\CrearCertificadoForm.Designer.cs">
       <DependentUpon>CrearCertificadoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CrearCuentaForm.cs">
+    <Compile Include="Administrar Cuenta\CrearCuentaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CrearCuentaForm.Designer.cs">
+    <Compile Include="Administrar Cuenta\CrearCuentaForm.Designer.cs">
       <DependentUpon>CrearCuentaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CrearHistoriaClinicaForm.cs">
+    <Compile Include="Administrar Historia Clinica\CrearHistoriaClinicaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CrearHistoriaClinicaForm.Designer.cs">
+    <Compile Include="Administrar Historia Clinica\CrearHistoriaClinicaForm.Designer.cs">
       <DependentUpon>CrearHistoriaClinicaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CrearRecetasForm.cs">
+    <Compile Include="Administrar Receta y Certificado\CrearRecetasForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CrearRecetasForm.Designer.cs">
+    <Compile Include="Administrar Receta y Certificado\CrearRecetasForm.Designer.cs">
       <DependentUpon>CrearRecetasForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CrearRecetas_CertificadosForm.cs">
+    <Compile Include="Administrar Receta y Certificado\CrearRecetas_CertificadosForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CrearRecetas_CertificadosForm.Designer.cs">
+    <Compile Include="Administrar Receta y Certificado\CrearRecetas_CertificadosForm.Designer.cs">
       <DependentUpon>CrearRecetas_CertificadosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CrearVacunasForm.cs">
+    <Compile Include="Administrar Vacunas\CrearVacunasForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CrearVacunasForm.Designer.cs">
+    <Compile Include="Administrar Vacunas\CrearVacunasForm.Designer.cs">
       <DependentUpon>CrearVacunasForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IFormCargarUsuarios.cs" />
@@ -149,117 +143,114 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModificarCoberturaMedicaForm.cs">
+    <Compile Include="Administrar Cobertura Medica\ModificarCoberturaMedicaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModificarCoberturaMedicaForm.Designer.cs">
+    <Compile Include="Administrar Cobertura Medica\ModificarCoberturaMedicaForm.Designer.cs">
       <DependentUpon>ModificarCoberturaMedicaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModificarCuentaForm.cs">
+    <Compile Include="Administrar Cuenta\ModificarCuentaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModificarCuentaForm.Designer.cs">
+    <Compile Include="Administrar Cuenta\ModificarCuentaForm.Designer.cs">
       <DependentUpon>ModificarCuentaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModificarHistoriaClinicaForm.cs">
+    <Compile Include="Administrar Historia Clinica\ModificarHistoriaClinicaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModificarHistoriaClinicaForm.Designer.cs">
+    <Compile Include="Administrar Historia Clinica\ModificarHistoriaClinicaForm.Designer.cs">
       <DependentUpon>ModificarHistoriaClinicaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModificarRecetas_CertificadosForm.cs">
+    <Compile Include="Administrar Receta y Certificado\ModificarRecetas_CertificadosForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModificarRecetas_CertificadosForm.Designer.cs">
+    <Compile Include="Administrar Receta y Certificado\ModificarRecetas_CertificadosForm.Designer.cs">
       <DependentUpon>ModificarRecetas_CertificadosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModificarVacunasForm.cs">
+    <Compile Include="Administrar Vacunas\ModificarVacunasForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModificarVacunasForm.Designer.cs">
+    <Compile Include="Administrar Vacunas\ModificarVacunasForm.Designer.cs">
       <DependentUpon>ModificarVacunasForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistrarTurnoForm.cs">
+    <Compile Include="Administrar Turnos\RegistrarTurnoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistrarTurnoForm.Designer.cs">
+    <Compile Include="Administrar Turnos\RegistrarTurnoForm.Designer.cs">
       <DependentUpon>RegistrarTurnoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="VerCalendarioMisPacientesForm.cs">
+    <Compile Include="Administrar Turnos\VerCalendarioMisPacientesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VerCalendarioMisPacientesForm.Designer.cs">
+    <Compile Include="Administrar Turnos\VerCalendarioMisPacientesForm.Designer.cs">
       <DependentUpon>VerCalendarioMisPacientesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="VerCoberturaMedicaForm.cs">
+    <Compile Include="Administrar Cobertura Medica\VerCoberturaMedicaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VerCoberturaMedicaForm.Designer.cs">
+    <Compile Include="Administrar Cobertura Medica\VerCoberturaMedicaForm.Designer.cs">
       <DependentUpon>VerCoberturaMedicaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="VerHistoriaClinicaForm.cs">
+    <Compile Include="Administrar Historia Clinica\VerHistoriaClinicaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VerHistoriaClinicaForm.Designer.cs">
+    <Compile Include="Administrar Historia Clinica\VerHistoriaClinicaForm.Designer.cs">
       <DependentUpon>VerHistoriaClinicaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="VerHistorialHistoriaClinicaForm.cs">
+    <Compile Include="Administrar Historia Clinica\VerHistorialHistoriaClinicaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VerHistorialHistoriaClinicaForm.Designer.cs">
+    <Compile Include="Administrar Historia Clinica\VerHistorialHistoriaClinicaForm.Designer.cs">
       <DependentUpon>VerHistorialHistoriaClinicaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="VerVacunasForm.cs">
+    <Compile Include="Administrar Vacunas\VerVacunasForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VerVacunasForm.Designer.cs">
+    <Compile Include="Administrar Vacunas\VerVacunasForm.Designer.cs">
       <DependentUpon>VerVacunasForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AgregarIdiomaForm.resx">
       <DependentUpon>AgregarIdiomaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AplicarVacunaForm.resx">
+    <EmbeddedResource Include="Administrar Vacunas\AplicarVacunaForm.resx">
       <DependentUpon>AplicarVacunaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AsignarPermisosForm.resx">
       <DependentUpon>AsignarPermisosForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BuscarCoberturaMedicaForm.resx">
+    <EmbeddedResource Include="Administrar Cobertura Medica\BuscarCoberturaMedicaForm.resx">
       <DependentUpon>BuscarCoberturaMedicaForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BuscarPacientesForm.resx">
-      <DependentUpon>BuscarPacientesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BuscarUsuariosForm.resx">
       <DependentUpon>BuscarUsuariosForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BuscarVacunasForm.resx">
+    <EmbeddedResource Include="Administrar Vacunas\BuscarVacunasForm.resx">
       <DependentUpon>BuscarVacunasForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CalendarioDeVacunaciónForm.resx">
+    <EmbeddedResource Include="Administrar Vacunas\CalendarioDeVacunaciónForm.resx">
       <DependentUpon>CalendarioDeVacunaciónForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CargarCoberturaMedicaForm.resx">
+    <EmbeddedResource Include="Administrar Cobertura Medica\CargarCoberturaMedicaForm.resx">
       <DependentUpon>CargarCoberturaMedicaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrearCertificadoForm.resx">
+    <EmbeddedResource Include="Administrar Receta y Certificado\CrearCertificadoForm.resx">
       <DependentUpon>CrearCertificadoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrearCuentaForm.resx">
+    <EmbeddedResource Include="Administrar Cuenta\CrearCuentaForm.resx">
       <DependentUpon>CrearCuentaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrearHistoriaClinicaForm.resx">
+    <EmbeddedResource Include="Administrar Historia Clinica\CrearHistoriaClinicaForm.resx">
       <DependentUpon>CrearHistoriaClinicaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrearRecetasForm.resx">
+    <EmbeddedResource Include="Administrar Receta y Certificado\CrearRecetasForm.resx">
       <DependentUpon>CrearRecetasForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrearRecetas_CertificadosForm.resx">
+    <EmbeddedResource Include="Administrar Receta y Certificado\CrearRecetas_CertificadosForm.resx">
       <DependentUpon>CrearRecetas_CertificadosForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrearVacunasForm.resx">
+    <EmbeddedResource Include="Administrar Vacunas\CrearVacunasForm.resx">
       <DependentUpon>CrearVacunasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
@@ -268,19 +259,19 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModificarCoberturaMedicaForm.resx">
+    <EmbeddedResource Include="Administrar Cobertura Medica\ModificarCoberturaMedicaForm.resx">
       <DependentUpon>ModificarCoberturaMedicaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModificarCuentaForm.resx">
+    <EmbeddedResource Include="Administrar Cuenta\ModificarCuentaForm.resx">
       <DependentUpon>ModificarCuentaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModificarHistoriaClinicaForm.resx">
+    <EmbeddedResource Include="Administrar Historia Clinica\ModificarHistoriaClinicaForm.resx">
       <DependentUpon>ModificarHistoriaClinicaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModificarRecetas_CertificadosForm.resx">
+    <EmbeddedResource Include="Administrar Receta y Certificado\ModificarRecetas_CertificadosForm.resx">
       <DependentUpon>ModificarRecetas_CertificadosForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModificarVacunasForm.resx">
+    <EmbeddedResource Include="Administrar Vacunas\ModificarVacunasForm.resx">
       <DependentUpon>ModificarVacunasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -292,22 +283,22 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RegistrarTurnoForm.resx">
+    <EmbeddedResource Include="Administrar Turnos\RegistrarTurnoForm.resx">
       <DependentUpon>RegistrarTurnoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VerCalendarioMisPacientesForm.resx">
+    <EmbeddedResource Include="Administrar Turnos\VerCalendarioMisPacientesForm.resx">
       <DependentUpon>VerCalendarioMisPacientesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VerCoberturaMedicaForm.resx">
+    <EmbeddedResource Include="Administrar Cobertura Medica\VerCoberturaMedicaForm.resx">
       <DependentUpon>VerCoberturaMedicaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VerHistoriaClinicaForm.resx">
+    <EmbeddedResource Include="Administrar Historia Clinica\VerHistoriaClinicaForm.resx">
       <DependentUpon>VerHistoriaClinicaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VerHistorialHistoriaClinicaForm.resx">
+    <EmbeddedResource Include="Administrar Historia Clinica\VerHistorialHistoriaClinicaForm.resx">
       <DependentUpon>VerHistorialHistoriaClinicaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VerVacunasForm.resx">
+    <EmbeddedResource Include="Administrar Vacunas\VerVacunasForm.resx">
       <DependentUpon>VerVacunasForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

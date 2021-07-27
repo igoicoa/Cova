@@ -30,8 +30,8 @@ namespace Cova.UI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerVacunasForm));
-            this.txt_Lote_VerVacunas = new System.Windows.Forms.TextBox();
-            this.lbl_Lote_VerVacunas = new System.Windows.Forms.Label();
+            this.txt_IDVacuna_VerVacunas = new System.Windows.Forms.TextBox();
+            this.lbl_IDVacuna_VerVacunas = new System.Windows.Forms.Label();
             this.cmb_Laboratorio_VerVacunas = new System.Windows.Forms.ComboBox();
             this.lbl_Laboratorio_VerVacunas = new System.Windows.Forms.Label();
             this.txt_Nombre_VerVacunas = new System.Windows.Forms.TextBox();
@@ -44,22 +44,22 @@ namespace Cova.UI
             ((System.ComponentModel.ISupportInitialize)(this.dtg_ListaVacunas_VerVacunas)).BeginInit();
             this.SuspendLayout();
             // 
-            // txt_Lote_VerVacunas
+            // txt_IDVacuna_VerVacunas
             // 
-            this.txt_Lote_VerVacunas.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_Lote_VerVacunas.Location = new System.Drawing.Point(15, 69);
-            this.txt_Lote_VerVacunas.Name = "txt_Lote_VerVacunas";
-            this.txt_Lote_VerVacunas.Size = new System.Drawing.Size(132, 20);
-            this.txt_Lote_VerVacunas.TabIndex = 113;
+            this.txt_IDVacuna_VerVacunas.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_IDVacuna_VerVacunas.Location = new System.Drawing.Point(15, 69);
+            this.txt_IDVacuna_VerVacunas.Name = "txt_IDVacuna_VerVacunas";
+            this.txt_IDVacuna_VerVacunas.Size = new System.Drawing.Size(132, 20);
+            this.txt_IDVacuna_VerVacunas.TabIndex = 113;
             // 
-            // lbl_Lote_VerVacunas
+            // lbl_IDVacuna_VerVacunas
             // 
-            this.lbl_Lote_VerVacunas.AutoSize = true;
-            this.lbl_Lote_VerVacunas.Location = new System.Drawing.Point(12, 52);
-            this.lbl_Lote_VerVacunas.Name = "lbl_Lote_VerVacunas";
-            this.lbl_Lote_VerVacunas.Size = new System.Drawing.Size(28, 13);
-            this.lbl_Lote_VerVacunas.TabIndex = 112;
-            this.lbl_Lote_VerVacunas.Text = "Lote";
+            this.lbl_IDVacuna_VerVacunas.AutoSize = true;
+            this.lbl_IDVacuna_VerVacunas.Location = new System.Drawing.Point(12, 52);
+            this.lbl_IDVacuna_VerVacunas.Name = "lbl_IDVacuna_VerVacunas";
+            this.lbl_IDVacuna_VerVacunas.Size = new System.Drawing.Size(58, 13);
+            this.lbl_IDVacuna_VerVacunas.TabIndex = 112;
+            this.lbl_IDVacuna_VerVacunas.Text = "ID Vacuna";
             // 
             // cmb_Laboratorio_VerVacunas
             // 
@@ -143,7 +143,7 @@ namespace Cova.UI
             this.btn_Cancelar_VerVacunas.UseVisualStyleBackColor = true;
             this.btn_Cancelar_VerVacunas.Click += new System.EventHandler(this.btn_Cancelar_VerVacunas_Click);
             // 
-            // VerVacunas
+            // VerVacunasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -157,10 +157,10 @@ namespace Cova.UI
             this.Controls.Add(this.lbl_VerVacunas);
             this.Controls.Add(this.cmb_Laboratorio_VerVacunas);
             this.Controls.Add(this.lbl_Laboratorio_VerVacunas);
-            this.Controls.Add(this.txt_Lote_VerVacunas);
-            this.Controls.Add(this.lbl_Lote_VerVacunas);
+            this.Controls.Add(this.txt_IDVacuna_VerVacunas);
+            this.Controls.Add(this.lbl_IDVacuna_VerVacunas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "VerVacunas";
+            this.Name = "VerVacunasForm";
             this.Text = "VerVacunas";
             ((System.ComponentModel.ISupportInitialize)(this.dtg_ListaVacunas_VerVacunas)).EndInit();
             this.ResumeLayout(false);
@@ -170,8 +170,8 @@ namespace Cova.UI
 
         #endregion
 
-        private System.Windows.Forms.TextBox txt_Lote_VerVacunas;
-        private System.Windows.Forms.Label lbl_Lote_VerVacunas;
+        private System.Windows.Forms.TextBox txt_IDVacuna_VerVacunas;
+        private System.Windows.Forms.Label lbl_IDVacuna_VerVacunas;
         private System.Windows.Forms.ComboBox cmb_Laboratorio_VerVacunas;
         private System.Windows.Forms.Label lbl_Laboratorio_VerVacunas;
         private System.Windows.Forms.TextBox txt_Nombre_VerVacunas;

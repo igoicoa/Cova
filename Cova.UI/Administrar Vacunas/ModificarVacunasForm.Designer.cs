@@ -33,7 +33,6 @@ namespace Cova.UI
             this.btn_Limpiar_ModificarVacunas = new System.Windows.Forms.Button();
             this.btn_Cancelar_ModificarVacunas = new System.Windows.Forms.Button();
             this.btn_Modificar_ModificarVacunas = new System.Windows.Forms.Button();
-            this.lbl_Imagen_ModificarVacunas = new System.Windows.Forms.Label();
             this.dtp_FechaVecnimiento_ModificarVacunas = new System.Windows.Forms.DateTimePicker();
             this.lbl_FechaVencimiento_ModificarVacunas = new System.Windows.Forms.Label();
             this.dtp_FechaElaboracion_ModificarVacunas = new System.Windows.Forms.DateTimePicker();
@@ -42,22 +41,20 @@ namespace Cova.UI
             this.lbl_stock_ModificarVacunas = new System.Windows.Forms.Label();
             this.cmb_Laboratorio_ModificarVacunas = new System.Windows.Forms.ComboBox();
             this.lbl_Laboratorio_ModificarVacunas = new System.Windows.Forms.Label();
-            this.txt_cantidadDosis_ModificarVacunas = new System.Windows.Forms.TextBox();
             this.lbl_CantidadDosis_ModificarVacunas = new System.Windows.Forms.Label();
             this.txt_Prospecto_ModificarVacunas = new System.Windows.Forms.TextBox();
             this.lbl_Prospecto_ModificarVacunas = new System.Windows.Forms.Label();
             this.txt_Contraindicaciones_ModificarVacunas = new System.Windows.Forms.TextBox();
             this.lbl_Contraindicaciones_ModificarVacunas = new System.Windows.Forms.Label();
-            this.pb_Imagen_ModificarVacunas = new System.Windows.Forms.PictureBox();
             this.txt_Descripcion_ModificarVacunas = new System.Windows.Forms.TextBox();
             this.lbl_Descripción_ModificarVacunas = new System.Windows.Forms.Label();
             this.txt_Nombre_ModificarVacunas = new System.Windows.Forms.TextBox();
             this.lbl_Nombre_ModificarVacunas = new System.Windows.Forms.Label();
-            this.txt_Lote_ModificarVacunas = new System.Windows.Forms.TextBox();
+            this.txt_IDVacuna_ModificarVacunas = new System.Windows.Forms.TextBox();
             this.lbl_Lote_ModificarVacunas = new System.Windows.Forms.Label();
             this.lbl_ModificarVacunas = new System.Windows.Forms.Label();
             this.btn_Buscar_ModificarVacunas = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Imagen_ModificarVacunas)).BeginInit();
+            this.cb_CantidadDosis_ModificarVacunas = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btn_Limpiar_ModificarVacunas
@@ -88,15 +85,6 @@ namespace Cova.UI
             this.btn_Modificar_ModificarVacunas.TabIndex = 132;
             this.btn_Modificar_ModificarVacunas.Text = "Modificar";
             this.btn_Modificar_ModificarVacunas.UseVisualStyleBackColor = true;
-            // 
-            // lbl_Imagen_ModificarVacunas
-            // 
-            this.lbl_Imagen_ModificarVacunas.AutoSize = true;
-            this.lbl_Imagen_ModificarVacunas.Location = new System.Drawing.Point(681, 9);
-            this.lbl_Imagen_ModificarVacunas.Name = "lbl_Imagen_ModificarVacunas";
-            this.lbl_Imagen_ModificarVacunas.Size = new System.Drawing.Size(42, 13);
-            this.lbl_Imagen_ModificarVacunas.TabIndex = 131;
-            this.lbl_Imagen_ModificarVacunas.Text = "Imagen";
             // 
             // dtp_FechaVecnimiento_ModificarVacunas
             // 
@@ -166,14 +154,6 @@ namespace Cova.UI
             this.lbl_Laboratorio_ModificarVacunas.TabIndex = 123;
             this.lbl_Laboratorio_ModificarVacunas.Text = "Laboratorio";
             // 
-            // txt_cantidadDosis_ModificarVacunas
-            // 
-            this.txt_cantidadDosis_ModificarVacunas.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_cantidadDosis_ModificarVacunas.Location = new System.Drawing.Point(17, 270);
-            this.txt_cantidadDosis_ModificarVacunas.Name = "txt_cantidadDosis_ModificarVacunas";
-            this.txt_cantidadDosis_ModificarVacunas.Size = new System.Drawing.Size(70, 20);
-            this.txt_cantidadDosis_ModificarVacunas.TabIndex = 122;
-            // 
             // lbl_CantidadDosis_ModificarVacunas
             // 
             this.lbl_CantidadDosis_ModificarVacunas.AutoSize = true;
@@ -217,14 +197,6 @@ namespace Cova.UI
             this.lbl_Contraindicaciones_ModificarVacunas.TabIndex = 117;
             this.lbl_Contraindicaciones_ModificarVacunas.Text = "Contraindicaciones";
             // 
-            // pb_Imagen_ModificarVacunas
-            // 
-            this.pb_Imagen_ModificarVacunas.Location = new System.Drawing.Point(651, 30);
-            this.pb_Imagen_ModificarVacunas.Name = "pb_Imagen_ModificarVacunas";
-            this.pb_Imagen_ModificarVacunas.Size = new System.Drawing.Size(118, 79);
-            this.pb_Imagen_ModificarVacunas.TabIndex = 116;
-            this.pb_Imagen_ModificarVacunas.TabStop = false;
-            // 
             // txt_Descripcion_ModificarVacunas
             // 
             this.txt_Descripcion_ModificarVacunas.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -245,7 +217,7 @@ namespace Cova.UI
             // txt_Nombre_ModificarVacunas
             // 
             this.txt_Nombre_ModificarVacunas.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_Nombre_ModificarVacunas.Location = new System.Drawing.Point(298, 63);
+            this.txt_Nombre_ModificarVacunas.Location = new System.Drawing.Point(175, 63);
             this.txt_Nombre_ModificarVacunas.Name = "txt_Nombre_ModificarVacunas";
             this.txt_Nombre_ModificarVacunas.Size = new System.Drawing.Size(318, 20);
             this.txt_Nombre_ModificarVacunas.TabIndex = 113;
@@ -253,28 +225,28 @@ namespace Cova.UI
             // lbl_Nombre_ModificarVacunas
             // 
             this.lbl_Nombre_ModificarVacunas.AutoSize = true;
-            this.lbl_Nombre_ModificarVacunas.Location = new System.Drawing.Point(298, 46);
+            this.lbl_Nombre_ModificarVacunas.Location = new System.Drawing.Point(175, 46);
             this.lbl_Nombre_ModificarVacunas.Name = "lbl_Nombre_ModificarVacunas";
             this.lbl_Nombre_ModificarVacunas.Size = new System.Drawing.Size(44, 13);
             this.lbl_Nombre_ModificarVacunas.TabIndex = 112;
             this.lbl_Nombre_ModificarVacunas.Text = "Nombre";
             // 
-            // txt_Lote_ModificarVacunas
+            // txt_IDVacuna_ModificarVacunas
             // 
-            this.txt_Lote_ModificarVacunas.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_Lote_ModificarVacunas.Location = new System.Drawing.Point(17, 63);
-            this.txt_Lote_ModificarVacunas.Name = "txt_Lote_ModificarVacunas";
-            this.txt_Lote_ModificarVacunas.Size = new System.Drawing.Size(132, 20);
-            this.txt_Lote_ModificarVacunas.TabIndex = 111;
+            this.txt_IDVacuna_ModificarVacunas.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_IDVacuna_ModificarVacunas.Location = new System.Drawing.Point(17, 63);
+            this.txt_IDVacuna_ModificarVacunas.Name = "txt_IDVacuna_ModificarVacunas";
+            this.txt_IDVacuna_ModificarVacunas.Size = new System.Drawing.Size(132, 20);
+            this.txt_IDVacuna_ModificarVacunas.TabIndex = 111;
             // 
             // lbl_Lote_ModificarVacunas
             // 
             this.lbl_Lote_ModificarVacunas.AutoSize = true;
             this.lbl_Lote_ModificarVacunas.Location = new System.Drawing.Point(14, 46);
             this.lbl_Lote_ModificarVacunas.Name = "lbl_Lote_ModificarVacunas";
-            this.lbl_Lote_ModificarVacunas.Size = new System.Drawing.Size(28, 13);
+            this.lbl_Lote_ModificarVacunas.Size = new System.Drawing.Size(58, 13);
             this.lbl_Lote_ModificarVacunas.TabIndex = 110;
-            this.lbl_Lote_ModificarVacunas.Text = "Lote";
+            this.lbl_Lote_ModificarVacunas.Text = "ID Vacuna";
             // 
             // lbl_ModificarVacunas
             // 
@@ -290,7 +262,7 @@ namespace Cova.UI
             // btn_Buscar_ModificarVacunas
             // 
             this.btn_Buscar_ModificarVacunas.BackColor = System.Drawing.Color.MistyRose;
-            this.btn_Buscar_ModificarVacunas.Location = new System.Drawing.Point(172, 63);
+            this.btn_Buscar_ModificarVacunas.Location = new System.Drawing.Point(532, 63);
             this.btn_Buscar_ModificarVacunas.Name = "btn_Buscar_ModificarVacunas";
             this.btn_Buscar_ModificarVacunas.Size = new System.Drawing.Size(103, 23);
             this.btn_Buscar_ModificarVacunas.TabIndex = 135;
@@ -298,16 +270,24 @@ namespace Cova.UI
             this.btn_Buscar_ModificarVacunas.UseVisualStyleBackColor = false;
             this.btn_Buscar_ModificarVacunas.Click += new System.EventHandler(this.btn_Buscar_ModificarVacunas_Click);
             // 
-            // ModificarVacunas
+            // cb_CantidadDosis_ModificarVacunas
+            // 
+            this.cb_CantidadDosis_ModificarVacunas.FormattingEnabled = true;
+            this.cb_CantidadDosis_ModificarVacunas.Location = new System.Drawing.Point(17, 269);
+            this.cb_CantidadDosis_ModificarVacunas.Name = "cb_CantidadDosis_ModificarVacunas";
+            this.cb_CantidadDosis_ModificarVacunas.Size = new System.Drawing.Size(75, 21);
+            this.cb_CantidadDosis_ModificarVacunas.TabIndex = 136;
+            // 
+            // ModificarVacunasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 371);
+            this.Controls.Add(this.cb_CantidadDosis_ModificarVacunas);
             this.Controls.Add(this.btn_Buscar_ModificarVacunas);
             this.Controls.Add(this.btn_Limpiar_ModificarVacunas);
             this.Controls.Add(this.btn_Cancelar_ModificarVacunas);
             this.Controls.Add(this.btn_Modificar_ModificarVacunas);
-            this.Controls.Add(this.lbl_Imagen_ModificarVacunas);
             this.Controls.Add(this.dtp_FechaVecnimiento_ModificarVacunas);
             this.Controls.Add(this.lbl_FechaVencimiento_ModificarVacunas);
             this.Controls.Add(this.dtp_FechaElaboracion_ModificarVacunas);
@@ -316,24 +296,21 @@ namespace Cova.UI
             this.Controls.Add(this.lbl_stock_ModificarVacunas);
             this.Controls.Add(this.cmb_Laboratorio_ModificarVacunas);
             this.Controls.Add(this.lbl_Laboratorio_ModificarVacunas);
-            this.Controls.Add(this.txt_cantidadDosis_ModificarVacunas);
             this.Controls.Add(this.lbl_CantidadDosis_ModificarVacunas);
             this.Controls.Add(this.txt_Prospecto_ModificarVacunas);
             this.Controls.Add(this.lbl_Prospecto_ModificarVacunas);
             this.Controls.Add(this.txt_Contraindicaciones_ModificarVacunas);
             this.Controls.Add(this.lbl_Contraindicaciones_ModificarVacunas);
-            this.Controls.Add(this.pb_Imagen_ModificarVacunas);
             this.Controls.Add(this.txt_Descripcion_ModificarVacunas);
             this.Controls.Add(this.lbl_Descripción_ModificarVacunas);
             this.Controls.Add(this.txt_Nombre_ModificarVacunas);
             this.Controls.Add(this.lbl_Nombre_ModificarVacunas);
-            this.Controls.Add(this.txt_Lote_ModificarVacunas);
+            this.Controls.Add(this.txt_IDVacuna_ModificarVacunas);
             this.Controls.Add(this.lbl_Lote_ModificarVacunas);
             this.Controls.Add(this.lbl_ModificarVacunas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ModificarVacunas";
+            this.Name = "ModificarVacunasForm";
             this.Text = "ModificarVacunas";
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Imagen_ModificarVacunas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -344,7 +321,6 @@ namespace Cova.UI
         private System.Windows.Forms.Button btn_Limpiar_ModificarVacunas;
         private System.Windows.Forms.Button btn_Cancelar_ModificarVacunas;
         private System.Windows.Forms.Button btn_Modificar_ModificarVacunas;
-        private System.Windows.Forms.Label lbl_Imagen_ModificarVacunas;
         private System.Windows.Forms.DateTimePicker dtp_FechaVecnimiento_ModificarVacunas;
         private System.Windows.Forms.Label lbl_FechaVencimiento_ModificarVacunas;
         private System.Windows.Forms.DateTimePicker dtp_FechaElaboracion_ModificarVacunas;
@@ -353,20 +329,19 @@ namespace Cova.UI
         private System.Windows.Forms.Label lbl_stock_ModificarVacunas;
         private System.Windows.Forms.ComboBox cmb_Laboratorio_ModificarVacunas;
         private System.Windows.Forms.Label lbl_Laboratorio_ModificarVacunas;
-        private System.Windows.Forms.TextBox txt_cantidadDosis_ModificarVacunas;
         private System.Windows.Forms.Label lbl_CantidadDosis_ModificarVacunas;
         private System.Windows.Forms.TextBox txt_Prospecto_ModificarVacunas;
         private System.Windows.Forms.Label lbl_Prospecto_ModificarVacunas;
         private System.Windows.Forms.TextBox txt_Contraindicaciones_ModificarVacunas;
         private System.Windows.Forms.Label lbl_Contraindicaciones_ModificarVacunas;
-        private System.Windows.Forms.PictureBox pb_Imagen_ModificarVacunas;
         private System.Windows.Forms.TextBox txt_Descripcion_ModificarVacunas;
         private System.Windows.Forms.Label lbl_Descripción_ModificarVacunas;
         private System.Windows.Forms.TextBox txt_Nombre_ModificarVacunas;
         private System.Windows.Forms.Label lbl_Nombre_ModificarVacunas;
-        private System.Windows.Forms.TextBox txt_Lote_ModificarVacunas;
+        private System.Windows.Forms.TextBox txt_IDVacuna_ModificarVacunas;
         private System.Windows.Forms.Label lbl_Lote_ModificarVacunas;
         private System.Windows.Forms.Label lbl_ModificarVacunas;
         private System.Windows.Forms.Button btn_Buscar_ModificarVacunas;
+        private System.Windows.Forms.ComboBox cb_CantidadDosis_ModificarVacunas;
     }
 }

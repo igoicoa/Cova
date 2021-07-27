@@ -19,8 +19,8 @@ namespace Cova.UI
 
         private void btn_BuscarUsuarios_ModificarUsuarios_Click(object sender, EventArgs e)
         {
-            BuscarPacientesForm frmBuscarPacientes = new BuscarPacientesForm();
-            frmBuscarPacientes.Show();
+            //BuscarPacientesForm frmBuscarPacientes = new BuscarPacientesForm();
+            //frmBuscarPacientes.Show();
         }
 
         private void btnCancelar_CrearHistoriaClinica_Click(object sender, EventArgs e)

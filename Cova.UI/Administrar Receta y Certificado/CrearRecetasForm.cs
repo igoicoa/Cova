@@ -19,8 +19,8 @@ namespace Cova.UI
 
         private void btn_BuscarPacientes_CrearReceta_Click(object sender, EventArgs e)
         {
-            BuscarPacientesForm frmBuscarPacientes = new BuscarPacientesForm();
-            frmBuscarPacientes.Show();
+            //BuscarUsuariosForm buscarUsuariosForm = new BuscarUsuariosForm(true, this);
+            //buscarUsuariosForm.Show();
         }
 
         private void btn_Cancelar_CrearReceta_Click(object sender, EventArgs e)

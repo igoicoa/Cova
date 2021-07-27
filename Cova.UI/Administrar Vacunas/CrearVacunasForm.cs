@@ -26,11 +26,9 @@ namespace Cova.UI
         {
             txtBox_Descripcion_CrearVacunas.Clear();
             txtBox_Nombre_CrearVacuna.Clear();
-            txt_cantidadDosis_CrearVacunas.Clear();
             txt_Contraindicaciones_CrearVacunas.Clear();
             txt_Lote_CrearVacunas.Clear();
             txt_Prospecto_CrearVacunas.Clear();
-            txt_stock_CrearVacunas.Clear();
             cmb_Laboratorio_CrearVacunas.Items.Clear();
         }
     }

@@ -19,8 +19,8 @@ namespace Cova.UI
 
         private void btn_BuscarPacientes_CrearRecetasyCertificados_Click(object sender, EventArgs e)
         {
-            BuscarPacientesForm frmBuscarPacientes = new BuscarPacientesForm();
-            frmBuscarPacientes.Show();
+            //BuscarPacientesForm frmBuscarPacientes = new BuscarPacientesForm();
+            //frmBuscarPacientes.Show();
         }
 
         private void rb_Receta_CrearRecetayCertificado_CheckedChanged(object sender, EventArgs e)
