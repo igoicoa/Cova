@@ -11,8 +11,9 @@ namespace Cova.BE
         public long VacunaID { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-        public string Prospecto { get; set; }
         public string Contraindicaciones { get; set; }
+        public string Prospecto { get; set; }
+        public int CantidadDosis { get; set; }
         public BELaboratorio Laboratorio { get; set; }
     }
 }

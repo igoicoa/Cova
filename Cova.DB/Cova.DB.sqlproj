@@ -102,11 +102,12 @@
     <Build Include="StoredProcedures\s_ActualizarPaciente.sql" />
     <Build Include="StoredProcedures\s_ActualizarProfesionalMedico.sql" />
     <Build Include="StoredProcedures\s_ActualizarProfesionalEnfermero.sql" />
-    <Build Include="Tables\VacunaAplicada.sql" />
     <Build Include="Tables\CentroMedico.sql" />
     <Build Include="Tables\Administrador.sql" />
     <Build Include="StoredProcedures\s_AgregarPermisosAdministrador.sql" />
     <Build Include="StoredProcedures\s_CrearCentroMedico.sql" />
+    <Build Include="Tables\VacunDosis.sql" />
+    <Build Include="StoredProcedures\BuscarVacunaCentroMedico.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />

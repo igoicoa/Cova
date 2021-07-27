@@ -49,6 +49,7 @@
     <Compile Include="MPPPermiso.cs" />
     <Compile Include="MPPTraductor.cs" />
     <Compile Include="MPPUsuario.cs" />
+    <Compile Include="MPPVacuna.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

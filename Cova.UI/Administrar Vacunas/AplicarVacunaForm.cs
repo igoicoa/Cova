@@ -21,14 +21,24 @@ namespace Cova.UI
         private void btn_Cancelar_AplicarVacunas_Click(object sender, EventArgs e)
         {
             this.Close();
+            CargarCentrosMedicos();
+            CargarVacunas();
+        }
+
+        public void CargarCentrosMedicos()
+        {
+
+        }
+
+        public void CargarVacunas()
+        {
+
         }
 
         private void btn_Limpiar_AplicarVacunas_Click(object sender, EventArgs e)
         {
-            txt_Dosis_AplicarVacunas.Clear();
             txt_apellido_AplicarVacunas.Clear();
             txt_Observacion_AplicarVacunas.Clear();
-            txt_CentrodeVacunacion_AplicarVacunas.Clear();
             txt_Edad_AplicarVacunas.Clear();
             txt_nombre_AplicarVacunas.Clear();
         }
@@ -66,6 +76,11 @@ namespace Cova.UI
         {
             BuscarUsuariosForm buscarUsuariosForm = new BuscarUsuariosForm(true, this);
             buscarUsuariosForm.Show();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
