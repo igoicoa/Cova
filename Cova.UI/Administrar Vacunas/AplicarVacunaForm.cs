@@ -8,10 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Cova.UI.Interfaces;
 
 namespace Cova.UI
 {
-    public partial class AplicarVacunaForm : Form, IFormCargarUsuarios
+    public partial class AplicarVacunaForm : Form, IFormCargarUsuarios, IFormCargarVacunas
     {
         public AplicarVacunaForm()
         {
@@ -81,6 +82,26 @@ namespace Cova.UI
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        public void CargarVacunasDosis(BEVacunaDosis Vacuna)
+        {
+            txt_vacuna.Text = Vacuna.Vacuna.Nombre;
+            txt_laboratorio.Text = Vacuna.Vacuna.Laboratorio.Nombre;
+            txt_lote.Text = Vacuna.Lote;
+            dtp_fechaElaboracion.Value = Vacuna.FechaElaboracion;
+            dtp_fechaVencimiento.Value = Vacuna.FechaVencimiento;
+        }
+
+        private void btn_Aplicar_AplicarVacunas_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Se realizó la aplicación de la vacuna");
+        }
+
+        private void btn_buscarVacuna_Click(object sender, EventArgs e)
+        {
+            BuscarVacunasForm buscarVacunasForm = new BuscarVacunasForm();
+            buscarVacunasForm.Show();
         }
     }
 }

@@ -73,6 +73,28 @@ VALUES
 (8, 'Premium'),
 (8, 'Black')
 
+--Laboratorio
+INSERT INTO [dbo].[Laboratorio] ( Nombre, Pais, Email, Telefono)
+VALUES
+('Laboratorio Municipal de Olavarría','Argentina', 'dario.fontana@olavarria.gov.ar', 440803),
+('Laboratorio del Hospital Municipal San Luis de Bragado','Argentina', ' ', 02342422210),
+('Laboratorio Universidad de La Plata','Argentina', 'erbenmf@gmail.com', 4236701),
+('INTI- Instituto Nacional de Tecnología Industrial','Argentina', ' ', 47246200),
+('Instituto Nacional de Producción de Biológicos','Argentina', 'institPasteur@gmail.com', 48031732),
+('Cephalon, Inc','EEUU', 'Cephalon@gov.com', 56663526),
+('AstraZeneca International','EEUU', 'Astraz@gmail.com ', 58947363),
+('Pfizer Inc','EEUU', 'Phizer@hotmail.com ', 55674839),
+('Sigma-Tau Pharmaceuticals, Inc.','EEUU', ' ', 27465839)
+
+--Vacunas
+INSERT INTO [dbo].[Vacuna](Nombre, Descripcion, Prospecto, Contraindicaciones, CantidadDosis, LaboratorioID)
+VALUES
+('BCG','La tuberculosis es una infección que, en la mayoría de los casos, ataca a los pulmones, pero en los niños afecta a otros órganos, como el cerebro. Un caso grave podría acarrear serias complicaciones o causar la muerte.', 'Si padece tuberculosis o cualquier otra enfermedad infecciosa (activa o durante su convalecencia) o si está en tratamiento antituberculosis.Si padece algún trastornos de inmunidad, fundamentalmente en pacientes con infección por VIH, en niños nacidos de madres seropositivas, en casos de inmunodeficiencia congénita, o casos con la respuesta inmune disminuida por la acción de ciertos medicamentos (corticoides, agentes alquilantes, antimetabolitos) o la radiación.', 'En general, esta vacunación no suele causar fiebre o malestar. Algunos días después de la vacunación se desarrolla un nódulo de induración (abultamiento endurecido de tejido que se forma en la piel) en el sitio de la inyección. Este nódulo disminuye gradualmente y es reemplazado por una lesión local que puede ulcerarse algunas semanas más tarde. La lesión local no requiere tratamiento ni deben utilizarse apósitos. Esta lesión cura espontáneamente con formación de una pequeña costra negruzca.', 1, 2),
+('HepB','La hepatitis B es una enfermedad del hígado contagiosa causada por el virus de la hepatitis B. Se refiere a los primeros 6 meses después de que se contrae el virus.', 'El principio activo es la cubierta externa del virus de la hepatitis B. Cada dosis contiene 20 microgramos/1 ml de proteína compuesta por esta cubierta externa adsorbida en hidróxido de aluminio hidratado.', 'Usted ha tenido una grave reacción alérgica a una dosis previa de la vacuna contra la hepatitis B', 4, 6),
+('DTP Difteria','La difteria infecta la garganta y las amígdalas y, como consecuencia, a los niños que la padecen les cuesta respirar y tragar. Los casos graves pueden ocasionar daños en el corazón, los riñones y/o los nervios.', 'También puede haber malestar, irritabilidad y fiebre de 38.5º C por 12 o 24 horas (después de 48 horas generalmente corresponde a otra causa) y crisis convulsivas asociadas a fiebre. Pueden aparecer ronchas, que también desaparecen.', 'Tener una enfermedad grave, con o sin fiebre; tener temperatura mayor de 38°C. En cuanto se resuelvan estos problemas se podrá aplicar la vacuna.', 5, 3),
+('Poliomielitis','La poliomielitis es un virus que paraliza a 1 de cada 200 personas que lo contraen. De esos casos, entre el 5% y el 10% mueren por la parálisis de los músculos respiratorios.', 'El enrojecimiento, malestar, inflamación y sensibilidad donde se puso la vacuna es común después de DTaP.','Las diferentes vacunas frente a la poliomielitis pueden tener en su composición excipientes como: formaldehido, fenoxietanol, polisorbato 80, trometamol, hidróxido  de aluminio, cloruro de magnesio, sacarosa o aminoácidos esenciales entre otros. ', 2, 4),
+('DTP Tetanos','El tétanos provoca contracciones musculares muy dolorosas. Puede causar rigidez en el cuello y la mandíbula de los niños (trismo), impidiéndoles abrir la boca, tragar (o amamantar) o respirar.  Incluso con tratamiento, el tétanos suele ser mortal.', 'La vacuna Td puede administrarse como inmunización primaria a partir de los 7 años de edad. Se utilizan dos dosis de 0,5 ml de Td adsorbido con dosis reducida de componente antidiftérico para adultos con un intervalo mínimo de cuatro semanas. Se recomienda una tercera dosis por lo menos seis meses después de la segunda dosis.', 'No se debe volver a administrar la vacuna a una persona que haya sufrido una reacción grave tras una dosis anterior.', 3, 5)
+
 -- Creo Centros medicos
 EXEC s_CrearCentroMedico 'Sanatorio Anchorena', '112536252', 'sanchorena@gmail.com', 'Anchorena',2342,'','CABA','CABA','Argentina'
 EXEC s_CrearCentroMedico 'Sanatorio Mitre', '112536252', 'sanchorena@gmail.com', 'Mitre',2342,'','CABA','CABA','Argentina'

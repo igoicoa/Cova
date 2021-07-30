@@ -131,6 +131,7 @@
       <DependentUpon>CrearVacunasForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IFormCargarUsuarios.cs" />
+    <Compile Include="Interfaces\IFormCargarVacunas.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

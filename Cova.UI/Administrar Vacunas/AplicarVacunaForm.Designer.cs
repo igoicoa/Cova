@@ -40,10 +40,20 @@ namespace Cova.UI
             this.lbl_CentrodeVacunacion_AplicarVacunas = new System.Windows.Forms.Label();
             this.btn_Limpiar_AplicarVacunas = new System.Windows.Forms.Button();
             this.btn_Cancelar_AplicarVacunas = new System.Windows.Forms.Button();
-            this.btn_Cargar_AplicarVacunas = new System.Windows.Forms.Button();
+            this.btn_Aplicar_AplicarVacunas = new System.Windows.Forms.Button();
             this.lbl_estado_AplicarVacunas = new System.Windows.Forms.Label();
             this.txt_lote = new System.Windows.Forms.TextBox();
             this.gb_DatosVacuna_AplicarVacunas = new System.Windows.Forms.GroupBox();
+            this.txt_laboratorio = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_vacuna = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtp_fechaVencimiento = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtp_fechaElaboracion = new System.Windows.Forms.DateTimePicker();
+            this.btn_buscarVacuna = new System.Windows.Forms.Button();
+            this.cmb_dosis = new System.Windows.Forms.ComboBox();
             this.gb_DatosPaciente = new System.Windows.Forms.GroupBox();
             this.txt_Edad_AplicarVacunas = new System.Windows.Forms.TextBox();
             this.lbl_Edad_AplicarVacunas = new System.Windows.Forms.Label();
@@ -54,19 +64,9 @@ namespace Cova.UI
             this.lbl_Apellido_AplicarVacunas = new System.Windows.Forms.Label();
             this.cmb_TipoDocumento_AplicarVacunas = new System.Windows.Forms.ComboBox();
             this.txt_nombre_AplicarVacunas = new System.Windows.Forms.TextBox();
+            this.cmb_centroMedico = new System.Windows.Forms.ComboBox();
             this.lbl_TipoDocumento_AplicarVacunas = new System.Windows.Forms.Label();
             this.lbl_Nombre_AplicarVacunas = new System.Windows.Forms.Label();
-            this.cmb_dosis = new System.Windows.Forms.ComboBox();
-            this.cmb_centroMedico = new System.Windows.Forms.ComboBox();
-            this.btn_buscarVacuna = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtp_fechaElaboracion = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dtp_fechaVencimiento = new System.Windows.Forms.DateTimePicker();
-            this.txt_vacuna = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_laboratorio = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AplicarVacunas)).BeginInit();
             this.gb_DatosVacuna_AplicarVacunas.SuspendLayout();
             this.gb_DatosPaciente.SuspendLayout();
@@ -165,14 +165,15 @@ namespace Cova.UI
             this.btn_Cancelar_AplicarVacunas.UseVisualStyleBackColor = true;
             this.btn_Cancelar_AplicarVacunas.Click += new System.EventHandler(this.btn_Cancelar_AplicarVacunas_Click);
             // 
-            // btn_Cargar_AplicarVacunas
+            // btn_Aplicar_AplicarVacunas
             // 
-            this.btn_Cargar_AplicarVacunas.Location = new System.Drawing.Point(253, 467);
-            this.btn_Cargar_AplicarVacunas.Name = "btn_Cargar_AplicarVacunas";
-            this.btn_Cargar_AplicarVacunas.Size = new System.Drawing.Size(75, 23);
-            this.btn_Cargar_AplicarVacunas.TabIndex = 146;
-            this.btn_Cargar_AplicarVacunas.Text = "Cargar";
-            this.btn_Cargar_AplicarVacunas.UseVisualStyleBackColor = true;
+            this.btn_Aplicar_AplicarVacunas.Location = new System.Drawing.Point(253, 467);
+            this.btn_Aplicar_AplicarVacunas.Name = "btn_Aplicar_AplicarVacunas";
+            this.btn_Aplicar_AplicarVacunas.Size = new System.Drawing.Size(75, 23);
+            this.btn_Aplicar_AplicarVacunas.TabIndex = 146;
+            this.btn_Aplicar_AplicarVacunas.Text = "Aplicar";
+            this.btn_Aplicar_AplicarVacunas.UseVisualStyleBackColor = true;
+            this.btn_Aplicar_AplicarVacunas.Click += new System.EventHandler(this.btn_Aplicar_AplicarVacunas_Click);
             // 
             // lbl_estado_AplicarVacunas
             // 
@@ -215,6 +216,99 @@ namespace Cova.UI
             this.gb_DatosVacuna_AplicarVacunas.TabIndex = 174;
             this.gb_DatosVacuna_AplicarVacunas.TabStop = false;
             this.gb_DatosVacuna_AplicarVacunas.Text = "Datos Vacuna";
+            // 
+            // txt_laboratorio
+            // 
+            this.txt_laboratorio.Location = new System.Drawing.Point(349, 28);
+            this.txt_laboratorio.Name = "txt_laboratorio";
+            this.txt_laboratorio.Size = new System.Drawing.Size(184, 20);
+            this.txt_laboratorio.TabIndex = 192;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(283, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.TabIndex = 191;
+            this.label4.Text = "Laboratorio";
+            // 
+            // txt_vacuna
+            // 
+            this.txt_vacuna.Location = new System.Drawing.Point(67, 28);
+            this.txt_vacuna.Name = "txt_vacuna";
+            this.txt_vacuna.Size = new System.Drawing.Size(195, 20);
+            this.txt_vacuna.TabIndex = 190;
+            this.txt_vacuna.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.TabIndex = 189;
+            this.label3.Text = "Vacuna";
+            // 
+            // label2
+            // 
+            this.label2.AutoEllipsis = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(287, 118);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 13);
+            this.label2.TabIndex = 187;
+            this.label2.Text = "Fecha Vencimiento";
+            // 
+            // dtp_fechaVencimiento
+            // 
+            this.dtp_fechaVencimiento.Location = new System.Drawing.Point(409, 111);
+            this.dtp_fechaVencimiento.Name = "dtp_fechaVencimiento";
+            this.dtp_fechaVencimiento.Size = new System.Drawing.Size(143, 20);
+            this.dtp_fechaVencimiento.TabIndex = 188;
+            // 
+            // label1
+            // 
+            this.label1.AutoEllipsis = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 118);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 13);
+            this.label1.TabIndex = 185;
+            this.label1.Text = "Fecha Elaboracion";
+            // 
+            // dtp_fechaElaboracion
+            // 
+            this.dtp_fechaElaboracion.Location = new System.Drawing.Point(119, 115);
+            this.dtp_fechaElaboracion.Name = "dtp_fechaElaboracion";
+            this.dtp_fechaElaboracion.Size = new System.Drawing.Size(143, 20);
+            this.dtp_fechaElaboracion.TabIndex = 186;
+            // 
+            // btn_buscarVacuna
+            // 
+            this.btn_buscarVacuna.BackColor = System.Drawing.Color.MistyRose;
+            this.btn_buscarVacuna.Location = new System.Drawing.Point(576, 28);
+            this.btn_buscarVacuna.Name = "btn_buscarVacuna";
+            this.btn_buscarVacuna.Size = new System.Drawing.Size(103, 23);
+            this.btn_buscarVacuna.TabIndex = 184;
+            this.btn_buscarVacuna.Text = "Buscar Vacuna";
+            this.btn_buscarVacuna.UseVisualStyleBackColor = false;
+            this.btn_buscarVacuna.Click += new System.EventHandler(this.btn_buscarVacuna_Click);
+            // 
+            // cmb_dosis
+            // 
+            this.cmb_dosis.AutoCompleteCustomSource.AddRange(new string[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.cmb_dosis.FormattingEnabled = true;
+            this.cmb_dosis.Location = new System.Drawing.Point(67, 150);
+            this.cmb_dosis.Name = "cmb_dosis";
+            this.cmb_dosis.Size = new System.Drawing.Size(60, 21);
+            this.cmb_dosis.TabIndex = 174;
             // 
             // gb_DatosPaciente
             // 
@@ -319,6 +413,14 @@ namespace Cova.UI
             this.txt_nombre_AplicarVacunas.Size = new System.Drawing.Size(363, 20);
             this.txt_nombre_AplicarVacunas.TabIndex = 181;
             // 
+            // cmb_centroMedico
+            // 
+            this.cmb_centroMedico.FormattingEnabled = true;
+            this.cmb_centroMedico.Location = new System.Drawing.Point(439, 47);
+            this.cmb_centroMedico.Name = "cmb_centroMedico";
+            this.cmb_centroMedico.Size = new System.Drawing.Size(202, 21);
+            this.cmb_centroMedico.TabIndex = 175;
+            // 
             // lbl_TipoDocumento_AplicarVacunas
             // 
             this.lbl_TipoDocumento_AplicarVacunas.AutoSize = true;
@@ -337,106 +439,6 @@ namespace Cova.UI
             this.lbl_Nombre_AplicarVacunas.TabIndex = 180;
             this.lbl_Nombre_AplicarVacunas.Text = "Nombre";
             // 
-            // cmb_dosis
-            // 
-            this.cmb_dosis.AutoCompleteCustomSource.AddRange(new string[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
-            this.cmb_dosis.FormattingEnabled = true;
-            this.cmb_dosis.Location = new System.Drawing.Point(67, 150);
-            this.cmb_dosis.Name = "cmb_dosis";
-            this.cmb_dosis.Size = new System.Drawing.Size(60, 21);
-            this.cmb_dosis.TabIndex = 174;
-            // 
-            // cmb_centroMedico
-            // 
-            this.cmb_centroMedico.FormattingEnabled = true;
-            this.cmb_centroMedico.Location = new System.Drawing.Point(439, 47);
-            this.cmb_centroMedico.Name = "cmb_centroMedico";
-            this.cmb_centroMedico.Size = new System.Drawing.Size(202, 21);
-            this.cmb_centroMedico.TabIndex = 175;
-            // 
-            // btn_buscarVacuna
-            // 
-            this.btn_buscarVacuna.BackColor = System.Drawing.Color.MistyRose;
-            this.btn_buscarVacuna.Location = new System.Drawing.Point(576, 28);
-            this.btn_buscarVacuna.Name = "btn_buscarVacuna";
-            this.btn_buscarVacuna.Size = new System.Drawing.Size(103, 23);
-            this.btn_buscarVacuna.TabIndex = 184;
-            this.btn_buscarVacuna.Text = "Buscar Vacuna";
-            this.btn_buscarVacuna.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoEllipsis = true;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 118);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 13);
-            this.label1.TabIndex = 185;
-            this.label1.Text = "Fecha Elaboracion";
-            // 
-            // dtp_fechaElaboracion
-            // 
-            this.dtp_fechaElaboracion.Location = new System.Drawing.Point(119, 115);
-            this.dtp_fechaElaboracion.Name = "dtp_fechaElaboracion";
-            this.dtp_fechaElaboracion.Size = new System.Drawing.Size(143, 20);
-            this.dtp_fechaElaboracion.TabIndex = 186;
-            // 
-            // label2
-            // 
-            this.label2.AutoEllipsis = true;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(287, 118);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 13);
-            this.label2.TabIndex = 187;
-            this.label2.Text = "Fecha Vencimiento";
-            // 
-            // dtp_fechaVencimiento
-            // 
-            this.dtp_fechaVencimiento.Location = new System.Drawing.Point(409, 111);
-            this.dtp_fechaVencimiento.Name = "dtp_fechaVencimiento";
-            this.dtp_fechaVencimiento.Size = new System.Drawing.Size(143, 20);
-            this.dtp_fechaVencimiento.TabIndex = 188;
-            // 
-            // txt_vacuna
-            // 
-            this.txt_vacuna.Location = new System.Drawing.Point(67, 28);
-            this.txt_vacuna.Name = "txt_vacuna";
-            this.txt_vacuna.Size = new System.Drawing.Size(195, 20);
-            this.txt_vacuna.TabIndex = 190;
-            this.txt_vacuna.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
-            this.label3.TabIndex = 189;
-            this.label3.Text = "Vacuna";
-            // 
-            // txt_laboratorio
-            // 
-            this.txt_laboratorio.Location = new System.Drawing.Point(349, 28);
-            this.txt_laboratorio.Name = "txt_laboratorio";
-            this.txt_laboratorio.Size = new System.Drawing.Size(184, 20);
-            this.txt_laboratorio.TabIndex = 192;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(283, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
-            this.label4.TabIndex = 191;
-            this.label4.Text = "Laboratorio";
-            // 
             // AplicarVacunaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -446,7 +448,7 @@ namespace Cova.UI
             this.Controls.Add(this.gb_DatosVacuna_AplicarVacunas);
             this.Controls.Add(this.btn_Limpiar_AplicarVacunas);
             this.Controls.Add(this.btn_Cancelar_AplicarVacunas);
-            this.Controls.Add(this.btn_Cargar_AplicarVacunas);
+            this.Controls.Add(this.btn_Aplicar_AplicarVacunas);
             this.Controls.Add(this.dgv_AplicarVacunas);
             this.Controls.Add(this.lbl_AplicarVacunas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -474,7 +476,7 @@ namespace Cova.UI
         private System.Windows.Forms.Label lbl_CentrodeVacunacion_AplicarVacunas;
         private System.Windows.Forms.Button btn_Limpiar_AplicarVacunas;
         private System.Windows.Forms.Button btn_Cancelar_AplicarVacunas;
-        private System.Windows.Forms.Button btn_Cargar_AplicarVacunas;
+        private System.Windows.Forms.Button btn_Aplicar_AplicarVacunas;
         private System.Windows.Forms.Label lbl_estado_AplicarVacunas;
         private System.Windows.Forms.TextBox txt_lote;
         private System.Windows.Forms.GroupBox gb_DatosVacuna_AplicarVacunas;

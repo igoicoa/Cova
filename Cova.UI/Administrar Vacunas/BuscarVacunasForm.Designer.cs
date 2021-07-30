@@ -155,6 +155,7 @@ namespace Cova.UI
             this.btn_SeleccionarVacunas_BuscarVacunas.TabIndex = 150;
             this.btn_SeleccionarVacunas_BuscarVacunas.Text = "Seleccionar Vacunas";
             this.btn_SeleccionarVacunas_BuscarVacunas.UseVisualStyleBackColor = true;
+            this.btn_SeleccionarVacunas_BuscarVacunas.Click += new System.EventHandler(this.btn_SeleccionarVacunas_BuscarVacunas_Click);
             // 
             // BuscarVacunasForm
             // 
