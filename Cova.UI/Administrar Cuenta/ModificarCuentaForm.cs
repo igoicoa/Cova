@@ -218,16 +218,6 @@ namespace Cova.UI
             this.cmb_plan.SelectedIndex = -1;
         }
 
-        private void textBoxUsuario_ModificarCuenta_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtBoxUsuario_ModificarCuenta_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnModificar_ModificarCuenta_Click(object sender, EventArgs e)
         {
             if(rb_medico_ModificarCuenta.Checked)

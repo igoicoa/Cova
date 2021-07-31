@@ -162,7 +162,6 @@
             this.label2.Size = new System.Drawing.Size(99, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Tipo de documento";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblNombreCrearCuenta
             // 
@@ -172,7 +171,6 @@
             this.lblNombreCrearCuenta.Size = new System.Drawing.Size(44, 13);
             this.lblNombreCrearCuenta.TabIndex = 7;
             this.lblNombreCrearCuenta.Text = "Nombre";
-            this.lblNombreCrearCuenta.Click += new System.EventHandler(this.label6_Click);
             // 
             // comboBox1
             // 
@@ -184,7 +182,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 8;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // txt_CrearCuentaNombre
             // 
@@ -210,7 +207,6 @@
             this.lbl_ApellidoCrearCuenta.Size = new System.Drawing.Size(44, 13);
             this.lbl_ApellidoCrearCuenta.TabIndex = 10;
             this.lbl_ApellidoCrearCuenta.Text = "Apellido";
-            this.lbl_ApellidoCrearCuenta.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblSexoCrearCuenta
             // 
@@ -221,7 +217,6 @@
             this.lblSexoCrearCuenta.Size = new System.Drawing.Size(31, 13);
             this.lblSexoCrearCuenta.TabIndex = 12;
             this.lblSexoCrearCuenta.Text = "Sexo";
-            this.lblSexoCrearCuenta.Click += new System.EventHandler(this.lblSexoCrearCuenta_Click);
             // 
             // radioButtonMasculino_CrearCuenta
             // 

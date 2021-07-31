@@ -361,7 +361,6 @@ namespace Cova.UI
             this.TxtBoxUsuario_ModificarCuenta.Size = new System.Drawing.Size(43, 13);
             this.TxtBoxUsuario_ModificarCuenta.TabIndex = 64;
             this.TxtBoxUsuario_ModificarCuenta.Text = "Usuario";
-            this.TxtBoxUsuario_ModificarCuenta.Click += new System.EventHandler(this.TxtBoxUsuario_ModificarCuenta_Click);
             // 
             // txt_usuario
             // 
@@ -370,7 +369,6 @@ namespace Cova.UI
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(123, 20);
             this.txt_usuario.TabIndex = 65;
-            this.txt_usuario.TextChanged += new System.EventHandler(this.textBoxUsuario_ModificarCuenta_TextChanged);
             // 
             // txt_clave
             // 
