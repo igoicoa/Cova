@@ -10,6 +10,12 @@ namespace Cova.BL
 {
     public class BLVacuna
     {
+        public IList<BEVacuna> ObtenerVacunas()
+        {
+            MPPVacuna mPPVacuna = new MPPVacuna();
+            return mPPVacuna.ObtenerVacunas();
+        }
+
         public IList<BEVacunaDosis> ObtenerVacunasDeCentroMedico(BEVacunaDosis vacunaABuscar)
         {
             MPPVacuna mPPVacuna = new MPPVacuna();

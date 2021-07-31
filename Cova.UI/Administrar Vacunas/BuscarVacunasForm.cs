@@ -21,8 +21,28 @@ namespace Cova.UI
         public BuscarVacunasForm(int? CentroMedicoId = null, IFormCargarVacunas formPadre = null)
         {
             InitializeComponent();
+            CargarVacunas();
+            CargarLaboratorios();
             this._centroMedicoId = CentroMedicoId;
             this._formPadre = formPadre;
+        }
+
+        public void CargarVacunas()
+        {
+            BLVacuna bLVacuna = new BLVacuna();
+            this.cmb_vacuna.DataSource = bLVacuna.ObtenerVacunas();
+            this.cmb_vacuna.DisplayMember = "Nombre";
+            this.cmb_vacuna.ValueMember = "VacunaId";
+            this.cmb_vacuna.SelectedIndex = -1;
+        }
+
+        public void CargarLaboratorios()
+        {
+            BLLaboratorio bLLaboratorio = new BLLaboratorio();
+            this.cmb_Laboratorio_BuscarVacunas.DataSource = bLLaboratorio.ObtenerLaboratorios();
+            this.cmb_Laboratorio_BuscarVacunas.DisplayMember = "Nombre";
+            this.cmb_Laboratorio_BuscarVacunas.ValueMember = "LaboratorioId";
+            this.cmb_Laboratorio_BuscarVacunas.SelectedIndex = -1;
         }
 
         private void btn_Cancelar_BuscarVacunas_Click(object sender, EventArgs e)
@@ -33,7 +53,8 @@ namespace Cova.UI
         private void btn_Limpiar_BuscarVacunas_Click(object sender, EventArgs e)
         {
             txt_lote.Clear();
-            txt_Nombre_BuscarVacunas.Clear();
+            cmb_vacuna.SelectedIndex = -1;
+            cmb_Laboratorio_BuscarVacunas.SelectedIndex = -1;
         }
 
         private void btn_Buscar_BuscarVacunas_Click(object sender, EventArgs e)
@@ -42,12 +63,13 @@ namespace Cova.UI
             BECentroMedico centroMedico = new BECentroMedico();
             BELaboratorio laboratorio = new BELaboratorio();
 
-            laboratorio.LaboratorioId = (int)cmb_Laboratorio_BuscarVacunas.SelectedValue;
+            laboratorio.Nombre = cmb_Laboratorio_BuscarVacunas.SelectedItem != null ? ((BELaboratorio)cmb_Laboratorio_BuscarVacunas.SelectedItem).Nombre : "";
             centroMedico.CentroMedicoId = (int)this._centroMedicoId;
             vacunaABuscar.Vacuna = new BEVacuna();
             vacunaABuscar.Lote = txt_lote.Text;
             vacunaABuscar.Vacuna.Laboratorio = laboratorio;
-            vacunaABuscar.Vacuna.Nombre = txt_Nombre_BuscarVacunas.Text;
+            vacunaABuscar.Vacuna.Nombre = cmb_vacuna.SelectedItem != null ? ((BEVacuna)cmb_vacuna.SelectedItem).Nombre : "";
+            vacunaABuscar.CentroMedico = centroMedico;
 
             BLVacuna bLVacuna = new BLVacuna();
             bLVacuna.ObtenerVacunasDeCentroMedico(vacunaABuscar);
@@ -107,6 +129,7 @@ namespace Cova.UI
                 {
                     string lote = Convert.ToString(dtg_ListaVacunas_VerVacunas.SelectedRows[0].Cells["Lote"].Value);
                     this._formPadre.CargarVacunasDosis(this.VacunasDosis.Where(x => x.Lote == lote).FirstOrDefault());
+                    this.Close();
                 }
                 else
                 {

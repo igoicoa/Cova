@@ -107,7 +107,11 @@
     <Build Include="StoredProcedures\s_AgregarPermisosAdministrador.sql" />
     <Build Include="StoredProcedures\s_CrearCentroMedico.sql" />
     <Build Include="Tables\VacunDosis.sql" />
-    <Build Include="StoredProcedures\BuscarVacunaCentroMedico.sql" />
+    <Build Include="StoredProcedures\s_BuscarVacunaCentroMedico.sql" />
+    <Build Include="StoredProcedures\s_ObtenerVacunas.sql" />
+    <Build Include="StoredProcedures\s_ObtenerLaboratorios.sql" />
+    <Build Include="StoredProcedures\s_CrearVacunaDosis.sql" />
+    <Build Include="StoredProcedures\s_ObtenerCentrosMedicos.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />

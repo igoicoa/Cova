@@ -182,4 +182,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="Lote" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="be2d70e7-38aa-49d9-bfdf-6b7483b8ce6e" ChangeDateTime="07/31/2021 14:33:29">
+    <Property Name="ElementName" Value="[dbo].[Vacuna].[EdadMinima]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Vacuna]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="EdadMinimaAplicacion" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a2ed9b48-a07d-446d-89da-7aa5ba15c8ac" ChangeDateTime="07/31/2021 14:33:34">
+    <Property Name="ElementName" Value="[dbo].[Vacuna].[EdadMaxima]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Vacuna]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="EdadMaximaAplicacion" />
+  </Operation>
 </Operations>

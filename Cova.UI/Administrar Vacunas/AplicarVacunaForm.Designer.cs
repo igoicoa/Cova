@@ -305,6 +305,17 @@ namespace Cova.UI
             "5",
             "6"});
             this.cmb_dosis.FormattingEnabled = true;
+            this.cmb_dosis.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
             this.cmb_dosis.Location = new System.Drawing.Point(67, 150);
             this.cmb_dosis.Name = "cmb_dosis";
             this.cmb_dosis.Size = new System.Drawing.Size(60, 21);

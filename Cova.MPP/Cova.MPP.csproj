@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MPPAdministrador.cs" />
+    <Compile Include="MPPCentroMedico.cs" />
     <Compile Include="MPPCoberturaMedica.cs" />
     <Compile Include="MPPEnfermero.cs" />
+    <Compile Include="MPPLaboratorio.cs" />
     <Compile Include="MPPMedico.cs" />
     <Compile Include="MPPPaciente.cs" />
     <Compile Include="MPPPermiso.cs" />

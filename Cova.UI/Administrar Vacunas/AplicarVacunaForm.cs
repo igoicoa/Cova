@@ -1,39 +1,35 @@
-﻿using Cova.BE;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cova.UI.Interfaces;
+using Cova.BE;
+using Cova.BL;
 
 namespace Cova.UI
 {
     public partial class AplicarVacunaForm : Form, IFormCargarUsuarios, IFormCargarVacunas
     {
+        private BEVacunaDosis _vacunaAAplicar;
+        private BEPaciente _pacienteAVacunar;
+
         public AplicarVacunaForm()
         {
             InitializeComponent();
+            CargarCentrosMedicos();
         }
 
         private void btn_Cancelar_AplicarVacunas_Click(object sender, EventArgs e)
         {
             this.Close();
-            CargarCentrosMedicos();
-            CargarVacunas();
         }
 
         public void CargarCentrosMedicos()
         {
-
-        }
-
-        public void CargarVacunas()
-        {
-
+            BLCentroMedico bLCentroMedico = new BLCentroMedico();
+            this.cmb_centroMedico.DataSource = bLCentroMedico.ObtenerCentrosMedicos();
+            this.cmb_centroMedico.DisplayMember = "Nombre";
+            this.cmb_centroMedico.ValueMember = "CentroMedicoId";
+            this.cmb_centroMedico.SelectedIndex = -1;
         }
 
         private void btn_Limpiar_AplicarVacunas_Click(object sender, EventArgs e)
@@ -42,6 +38,7 @@ namespace Cova.UI
             txt_Observacion_AplicarVacunas.Clear();
             txt_Edad_AplicarVacunas.Clear();
             txt_nombre_AplicarVacunas.Clear();
+            this.cmb_centroMedico.SelectedIndex = -1;
         }
 
         private void btn_BuscarPacientes_AplicarVacunas_Click(object sender, EventArgs e)
@@ -50,12 +47,13 @@ namespace Cova.UI
             buscarUsuariosForm.Show();
         }
 
-        public void CargarUsuarioPaciente(BEPaciente usuarioAModificar)
+        public void CargarUsuarioPaciente(BEPaciente pacienteAVacunar)
         {
-            txt_apellido_AplicarVacunas.Text = usuarioAModificar.Apellido;
-            txt_nombre_AplicarVacunas.Text = usuarioAModificar.Nombre;
-            txt_NumeroDocumento_AplicarVacunas.Text = Convert.ToString(usuarioAModificar.DNI);
-            txt_Edad_AplicarVacunas.Text = Convert.ToString(usuarioAModificar.Edad);
+            _pacienteAVacunar = pacienteAVacunar;
+            txt_apellido_AplicarVacunas.Text = pacienteAVacunar.Apellido;
+            txt_nombre_AplicarVacunas.Text = pacienteAVacunar.Nombre;
+            txt_NumeroDocumento_AplicarVacunas.Text = Convert.ToString(pacienteAVacunar.DNI);
+            txt_Edad_AplicarVacunas.Text = Convert.ToString(pacienteAVacunar.Edad);
         }
 
         public void CargarUsuarioMedico(BEMedico usuarioAModificar)
@@ -86,6 +84,7 @@ namespace Cova.UI
 
         public void CargarVacunasDosis(BEVacunaDosis Vacuna)
         {
+            _vacunaAAplicar = Vacuna;
             txt_vacuna.Text = Vacuna.Vacuna.Nombre;
             txt_laboratorio.Text = Vacuna.Vacuna.Laboratorio.Nombre;
             txt_lote.Text = Vacuna.Lote;
@@ -100,7 +99,14 @@ namespace Cova.UI
 
         private void btn_buscarVacuna_Click(object sender, EventArgs e)
         {
-            BuscarVacunasForm buscarVacunasForm = new BuscarVacunasForm();
+            int centroMedicoId;
+            if(cmb_centroMedico.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar un centro medico para buscar una dosis de vacuna");
+                return;
+            }
+            centroMedicoId = ((BECentroMedico)cmb_centroMedico.SelectedItem).CentroMedicoId;
+            BuscarVacunasForm buscarVacunasForm = new BuscarVacunasForm(centroMedicoId, this);
             buscarVacunasForm.Show();
         }
     }

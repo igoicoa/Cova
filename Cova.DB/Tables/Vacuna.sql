@@ -11,5 +11,7 @@
         CONSTRAINT [FK_Vacuna_LaboratorioId]
 			FOREIGN KEY REFERENCES [dbo].[Laboratorio](LaboratorioId)
         INDEX [idx_LaboratorioId], 
+    [EdadMinimaAplicacion]  INT             NOT NULL, 
+    [EdadMaximaAplicacion]  INT             NOT NULL, 
     
 )

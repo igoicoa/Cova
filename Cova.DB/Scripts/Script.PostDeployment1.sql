@@ -100,6 +100,31 @@ EXEC s_CrearCentroMedico 'Sanatorio Anchorena', '112536252', 'sanchorena@gmail.c
 EXEC s_CrearCentroMedico 'Sanatorio Mitre', '112536252', 'sanchorena@gmail.com', 'Mitre',2342,'','CABA','CABA','Argentina'
 EXEC s_CrearCentroMedico 'Sanatorio Trinidad', '112536252', 'sanchorena@gmail.com', 'Santa Fe',2342,'','CABA','CABA','Argentina'
 
+-- Creo dosis de vacunas
+EXEC s_CrearVacunaDosis 'NH1231', 1, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'NH2123', 1, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'NH2124', 1, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'NH2125', 1, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'RP1231', 2, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'RP1232', 2, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'RP1233', 2, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'RP1234', 2, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'RP1235', 2, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'RP1236', 2, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'LE3231', 3, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'LE3232', 3, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'LE3233', 3, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'LE3234', 3, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'BR0021', 4, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'BR0022', 4, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'BR0023', 4, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'BR0024', 4, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'CE10024', 5, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'CE10025', 5, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'CE10026', 5, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'CE10027', 5, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'CE10028', 5, '2021-01-01', '2021-02-02', 1
+
 -- Creo usuarios de prueba
 -- Pacientes (PWD: paciente123)
 EXEC s_CrearPaciente 'Gonzalez', 'Juan', 32382278, '1987-02-21', 'M', 'Soltero', '1123423452', 'jgonzalez@hotmail.com','San Martin',123,'','Quilmes','Buenos Aires','Argentina', 5, 1, '1234323424', '2023-01-02','B6-0F-15-38-5B-90-5B-E9-C9-77-C5-9A-A3-42-0F-D2'

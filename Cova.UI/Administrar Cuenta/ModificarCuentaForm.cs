@@ -36,24 +36,27 @@ namespace Cova.UI
             this.cmb_coberturaMedica.DataSource = coberturasMedicas;
             this.cmb_coberturaMedica.DisplayMember = "Nombre";
             this.cmb_coberturaMedica.ValueMember = "CoberturaMedicaId";
+            this.cmb_coberturaMedica.SelectedIndex = -1;
         }
 
         public void CargarPlanesCobertura()
         {
             BECoberturaMedica coberturaMedica = (BECoberturaMedica)cmb_coberturaMedica.SelectedItem;
 
-            if (!string.IsNullOrEmpty(coberturaMedica.Nombre))
+            if (coberturaMedica != null)
             {
                 List<BECoberturaMedicaPlan> planes = coberturaMedica.Plan.ToList();
                 this.cmb_plan.DataSource = planes;
                 this.cmb_plan.DisplayMember = "Nombre";
                 this.cmb_plan.ValueMember = "PlanId";
+                this.cmb_plan.SelectedIndex = -1;
             }
         }
 
         public void CargarEspecialidades()
         {
             this.cmb_especialidad.DataSource = Enum.GetNames(typeof(Especialidad));
+            this.cmb_especialidad.SelectedIndex = -1;
         }
 
         public void CargarUsuarioMedico(BEMedico usuarioAModificar)
@@ -210,6 +213,9 @@ namespace Cova.UI
             txt_matriculaProvincial.Clear();
             txt_matriculaNacional.Clear();
             txt_numeroAfiliado.Clear();
+            this.cmb_especialidad.SelectedIndex = -1;
+            this.cmb_coberturaMedica.SelectedIndex = -1;
+            this.cmb_plan.SelectedIndex = -1;
         }
 
         private void textBoxUsuario_ModificarCuenta_TextChanged(object sender, EventArgs e)

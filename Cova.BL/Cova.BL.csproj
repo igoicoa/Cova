@@ -42,9 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLAdministrador.cs" />
-    <Compile Include="BLCentroVacunacion.cs" />
+    <Compile Include="BLCentroMedico.cs" />
     <Compile Include="BLCoberturaMedica.cs" />
     <Compile Include="BLEnfermero.cs" />
+    <Compile Include="BLLaboratorio.cs" />
     <Compile Include="BLMedico.cs" />
     <Compile Include="BLPaciente.cs" />
     <Compile Include="BLProfesional.cs" />

@@ -28,6 +28,48 @@ namespace Cova.BL
             return mPPPaciente.ActualizarPaciente(pacienteNuevo);
         }
 
+        public IDictionary<bool, string> EstaEnCondicionesDeRecibirVacuna(BEPaciente pacienteAVacunarse, BEVacunaDosis vacunaAAplicar)
+        {
+            Dictionary<bool, string> condicionesPaciente = new Dictionary<bool, string>();
+            bool estaEnCondicionesDeVacunarse = true;
+            if (!this.TieneRecetaMedicaParaAplicarVacuna(pacienteAVacunarse, vacunaAAplicar))
+            {
+                condicionesPaciente.Add(false, "El paciente no tiene receta para la vacuna");
+                estaEnCondicionesDeVacunarse = false;
+            }
+            if(this.TieneDosisDeVacunaAplicada(pacienteAVacunarse, vacunaAAplicar))
+            {
+                condicionesPaciente.Add(false, "El paciente ya recibio la dosis de la vacuna indicada");
+                estaEnCondicionesDeVacunarse = false;
+            }
+            if (this.EstaDentroRangoEtarioVacunacion(pacienteAVacunarse, vacunaAAplicar))
+            {
+                condicionesPaciente.Add(false, "El paciente no se encuentra dentro del rango etario de vacunacion");
+                estaEnCondicionesDeVacunarse = false;
+            }
+
+            if (estaEnCondicionesDeVacunarse)
+            {
+                condicionesPaciente.Add(true, "El paciente esta en condiciones de vacunarse");
+            }
+            return condicionesPaciente;
+        }
+
+        public bool TieneRecetaMedicaParaAplicarVacuna(BEPaciente pacienteAVacunarse, BEVacunaDosis vacunaAAplicar)
+        {
+            return true;
+        }
+
+        public bool TieneDosisDeVacunaAplicada(BEPaciente pacienteAVacunarse, BEVacunaDosis vacunaAAplicar)
+        {
+            return false;
+        }
+
+        public bool EstaDentroRangoEtarioVacunacion(BEPaciente pacienteAVacunarse, BEVacunaDosis vacunaAAplicar)
+        {
+            return true;
+        }
+
         public IList<BEVacuna> ObtenerVacunasAplicadas()
         {
             throw new NotImplementedException();

@@ -34,7 +34,6 @@ namespace Cova.UI
             this.btn_Cancelar_BuscarVacunas = new System.Windows.Forms.Button();
             this.dtg_ListaVacunas_VerVacunas = new System.Windows.Forms.DataGridView();
             this.btn_Buscar_BuscarVacunas = new System.Windows.Forms.Button();
-            this.txt_Nombre_BuscarVacunas = new System.Windows.Forms.TextBox();
             this.lbl_Nombre_BuscarVacunas = new System.Windows.Forms.Label();
             this.lbl_BuscarVacunas = new System.Windows.Forms.Label();
             this.cmb_Laboratorio_BuscarVacunas = new System.Windows.Forms.ComboBox();
@@ -42,6 +41,7 @@ namespace Cova.UI
             this.txt_lote = new System.Windows.Forms.TextBox();
             this.lbl_IDVacuna_BuscarVacunas = new System.Windows.Forms.Label();
             this.btn_SeleccionarVacunas_BuscarVacunas = new System.Windows.Forms.Button();
+            this.cmb_vacuna = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_ListaVacunas_VerVacunas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,14 +84,6 @@ namespace Cova.UI
             this.btn_Buscar_BuscarVacunas.UseVisualStyleBackColor = true;
             this.btn_Buscar_BuscarVacunas.Click += new System.EventHandler(this.btn_Buscar_BuscarVacunas_Click);
             // 
-            // txt_Nombre_BuscarVacunas
-            // 
-            this.txt_Nombre_BuscarVacunas.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_Nombre_BuscarVacunas.Location = new System.Drawing.Point(17, 60);
-            this.txt_Nombre_BuscarVacunas.Name = "txt_Nombre_BuscarVacunas";
-            this.txt_Nombre_BuscarVacunas.Size = new System.Drawing.Size(308, 20);
-            this.txt_Nombre_BuscarVacunas.TabIndex = 145;
-            // 
             // lbl_Nombre_BuscarVacunas
             // 
             this.lbl_Nombre_BuscarVacunas.AutoSize = true;
@@ -115,15 +107,15 @@ namespace Cova.UI
             // cmb_Laboratorio_BuscarVacunas
             // 
             this.cmb_Laboratorio_BuscarVacunas.FormattingEnabled = true;
-            this.cmb_Laboratorio_BuscarVacunas.Location = new System.Drawing.Point(346, 59);
+            this.cmb_Laboratorio_BuscarVacunas.Location = new System.Drawing.Point(289, 60);
             this.cmb_Laboratorio_BuscarVacunas.Name = "cmb_Laboratorio_BuscarVacunas";
-            this.cmb_Laboratorio_BuscarVacunas.Size = new System.Drawing.Size(121, 21);
+            this.cmb_Laboratorio_BuscarVacunas.Size = new System.Drawing.Size(236, 21);
             this.cmb_Laboratorio_BuscarVacunas.TabIndex = 142;
             // 
             // lbl_Laboratorio_BuscarVacunas
             // 
             this.lbl_Laboratorio_BuscarVacunas.AutoSize = true;
-            this.lbl_Laboratorio_BuscarVacunas.Location = new System.Drawing.Point(343, 37);
+            this.lbl_Laboratorio_BuscarVacunas.Location = new System.Drawing.Point(286, 38);
             this.lbl_Laboratorio_BuscarVacunas.Name = "lbl_Laboratorio_BuscarVacunas";
             this.lbl_Laboratorio_BuscarVacunas.Size = new System.Drawing.Size(60, 13);
             this.lbl_Laboratorio_BuscarVacunas.TabIndex = 141;
@@ -132,15 +124,15 @@ namespace Cova.UI
             // txt_lote
             // 
             this.txt_lote.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_lote.Location = new System.Drawing.Point(496, 59);
+            this.txt_lote.Location = new System.Drawing.Point(561, 60);
             this.txt_lote.Name = "txt_lote";
-            this.txt_lote.Size = new System.Drawing.Size(132, 20);
+            this.txt_lote.Size = new System.Drawing.Size(180, 20);
             this.txt_lote.TabIndex = 140;
             // 
             // lbl_IDVacuna_BuscarVacunas
             // 
             this.lbl_IDVacuna_BuscarVacunas.AutoSize = true;
-            this.lbl_IDVacuna_BuscarVacunas.Location = new System.Drawing.Point(493, 42);
+            this.lbl_IDVacuna_BuscarVacunas.Location = new System.Drawing.Point(558, 43);
             this.lbl_IDVacuna_BuscarVacunas.Name = "lbl_IDVacuna_BuscarVacunas";
             this.lbl_IDVacuna_BuscarVacunas.Size = new System.Drawing.Size(28, 13);
             this.lbl_IDVacuna_BuscarVacunas.TabIndex = 139;
@@ -153,21 +145,29 @@ namespace Cova.UI
             this.btn_SeleccionarVacunas_BuscarVacunas.Name = "btn_SeleccionarVacunas_BuscarVacunas";
             this.btn_SeleccionarVacunas_BuscarVacunas.Size = new System.Drawing.Size(136, 23);
             this.btn_SeleccionarVacunas_BuscarVacunas.TabIndex = 150;
-            this.btn_SeleccionarVacunas_BuscarVacunas.Text = "Seleccionar Vacunas";
+            this.btn_SeleccionarVacunas_BuscarVacunas.Text = "Seleccionar Vacuna";
             this.btn_SeleccionarVacunas_BuscarVacunas.UseVisualStyleBackColor = true;
             this.btn_SeleccionarVacunas_BuscarVacunas.Click += new System.EventHandler(this.btn_SeleccionarVacunas_BuscarVacunas_Click);
+            // 
+            // cmb_vacuna
+            // 
+            this.cmb_vacuna.FormattingEnabled = true;
+            this.cmb_vacuna.Location = new System.Drawing.Point(17, 60);
+            this.cmb_vacuna.Name = "cmb_vacuna";
+            this.cmb_vacuna.Size = new System.Drawing.Size(239, 21);
+            this.cmb_vacuna.TabIndex = 151;
             // 
             // BuscarVacunasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmb_vacuna);
             this.Controls.Add(this.btn_SeleccionarVacunas_BuscarVacunas);
             this.Controls.Add(this.btn_Limpiar_BuscarVacunas);
             this.Controls.Add(this.btn_Cancelar_BuscarVacunas);
             this.Controls.Add(this.dtg_ListaVacunas_VerVacunas);
             this.Controls.Add(this.btn_Buscar_BuscarVacunas);
-            this.Controls.Add(this.txt_Nombre_BuscarVacunas);
             this.Controls.Add(this.lbl_Nombre_BuscarVacunas);
             this.Controls.Add(this.lbl_BuscarVacunas);
             this.Controls.Add(this.cmb_Laboratorio_BuscarVacunas);
@@ -189,7 +189,6 @@ namespace Cova.UI
         private System.Windows.Forms.Button btn_Cancelar_BuscarVacunas;
         private System.Windows.Forms.DataGridView dtg_ListaVacunas_VerVacunas;
         private System.Windows.Forms.Button btn_Buscar_BuscarVacunas;
-        private System.Windows.Forms.TextBox txt_Nombre_BuscarVacunas;
         private System.Windows.Forms.Label lbl_Nombre_BuscarVacunas;
         private System.Windows.Forms.Label lbl_BuscarVacunas;
         private System.Windows.Forms.ComboBox cmb_Laboratorio_BuscarVacunas;
@@ -197,5 +196,6 @@ namespace Cova.UI
         private System.Windows.Forms.TextBox txt_lote;
         private System.Windows.Forms.Label lbl_IDVacuna_BuscarVacunas;
         private System.Windows.Forms.Button btn_SeleccionarVacunas_BuscarVacunas;
+        private System.Windows.Forms.ComboBox cmb_vacuna;
     }
 }

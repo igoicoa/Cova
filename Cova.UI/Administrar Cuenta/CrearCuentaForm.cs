@@ -31,24 +31,27 @@ namespace Cova.UI
             this.cmb_coberturaMedica.DataSource = coberturasMedicas;
             this.cmb_coberturaMedica.DisplayMember = "Nombre";
             this.cmb_coberturaMedica.ValueMember = "CoberturaMedicaId";
+            this.cmb_coberturaMedica.SelectedIndex = -1;
         }
 
         public void CargarPlanesCobertura()
         {
             BECoberturaMedica coberturaMedica = (BECoberturaMedica)cmb_coberturaMedica.SelectedItem;
 
-            if(!string.IsNullOrEmpty(coberturaMedica.Nombre))
+            if(coberturaMedica != null)
             {
                 List<BECoberturaMedicaPlan> planes = coberturaMedica.Plan.ToList();
                 this.cmb_Plan.DataSource = planes;
                 this.cmb_Plan.DisplayMember = "Nombre";
                 this.cmb_Plan.ValueMember = "PlanId";
+                this.cmb_Plan.SelectedIndex = -1;
             }
         }
 
         public void CargarEspecialidades()
         {
             this.cmb_especialidad.DataSource = Enum.GetNames(typeof(Especialidad));
+            this.cmb_especialidad.SelectedIndex = -1;
         }
 
         public void CrearPaciente()
@@ -325,6 +328,9 @@ namespace Cova.UI
             cmb_especialidad.Items.Clear();
             cmb_Plan.Items.Clear();
             comboBox1.Items.Clear();
+            this.cmb_especialidad.SelectedIndex = -1;
+            this.cmb_coberturaMedica.SelectedIndex = -1;
+            this.cmb_Plan.SelectedIndex = -1;
         }
     }
 }
