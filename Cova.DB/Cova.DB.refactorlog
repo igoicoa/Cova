@@ -196,4 +196,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="EdadMaximaAplicacion" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="13fe1751-4659-40ea-a1d1-e3e08a9bab3f" ChangeDateTime="07/31/2021 20:48:43">
+    <Property Name="ElementName" Value="[dbo].[Receta].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Receta]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="RecetaId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5698fea2-1663-4df8-88b5-9295765bfaf3" ChangeDateTime="07/31/2021 21:03:23">
+    <Property Name="ElementName" Value="[dbo].[Receta].[MedicoId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Receta]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ProfesionalId" />
+  </Operation>
 </Operations>

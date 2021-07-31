@@ -14,6 +14,8 @@ namespace Cova.BE
         public string Contraindicaciones { get; set; }
         public string Prospecto { get; set; }
         public int CantidadDosis { get; set; }
+        public int EdadMinimaAplicacion { get; set; }
+        public int EdadMaximaAplicacion { get; set; }
         public BELaboratorio Laboratorio { get; set; }
     }
 }

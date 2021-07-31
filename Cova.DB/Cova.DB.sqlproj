@@ -106,12 +106,16 @@
     <Build Include="Tables\Administrador.sql" />
     <Build Include="StoredProcedures\s_AgregarPermisosAdministrador.sql" />
     <Build Include="StoredProcedures\s_CrearCentroMedico.sql" />
-    <Build Include="Tables\VacunDosis.sql" />
+    <Build Include="Tables\VacunaDosis.sql" />
     <Build Include="StoredProcedures\s_BuscarVacunaCentroMedico.sql" />
     <Build Include="StoredProcedures\s_ObtenerVacunas.sql" />
     <Build Include="StoredProcedures\s_ObtenerLaboratorios.sql" />
     <Build Include="StoredProcedures\s_CrearVacunaDosis.sql" />
     <Build Include="StoredProcedures\s_ObtenerCentrosMedicos.sql" />
+    <Build Include="Tables\Receta.sql" />
+    <Build Include="StoredProcedures\s_ObtenerRecetaParaVacunaYPaciente.sql" />
+    <Build Include="StoredProcedures\s_ObtenerVacunaDosisPaciente.sql" />
+    <Build Include="StoredProcedures\s_ObtenerCantidadDosisAplicadasDeVacunaAPaciente.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />

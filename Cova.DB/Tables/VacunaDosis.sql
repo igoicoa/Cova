@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[VacunDosis]
+﻿CREATE TABLE [dbo].[VacunaDosis]
 (
 	[Lote]			        VARCHAR(100)	NOT NULL
 		CONSTRAINT	[PK_Lote]	PRIMARY KEY CLUSTERED, 

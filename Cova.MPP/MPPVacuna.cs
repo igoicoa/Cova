@@ -32,6 +32,8 @@ namespace Cova.MPP
                         vacuna.Prospecto = Convert.ToString(fila["Prospecto"]);
                         vacuna.Contraindicaciones = Convert.ToString(fila["Contraindicaciones"]);
                         vacuna.CantidadDosis = Convert.ToInt32(fila["CantidadDosis"]);
+                        vacuna.EdadMinimaAplicacion = Convert.ToInt32(fila["EdadMinimaAplicacion"]);
+                        vacuna.EdadMaximaAplicacion = Convert.ToInt32(fila["EdadMaximaAplicacion"]);
 
                         BELaboratorio laboratorio = new BELaboratorio();
                         laboratorio.LaboratorioId = Convert.ToInt32(fila["LaboratorioId"]);
@@ -82,6 +84,8 @@ namespace Cova.MPP
                         vacuna.Prospecto = Convert.ToString(fila["Prospecto"]);
                         vacuna.Contraindicaciones = Convert.ToString(fila["Contraindicaciones"]);
                         vacuna.CantidadDosis = Convert.ToInt32(fila["CantidadDosis"]);
+                        vacuna.EdadMinimaAplicacion = Convert.ToInt32(fila["EdadMinimaAplicacion"]);
+                        vacuna.EdadMaximaAplicacion = Convert.ToInt32(fila["EdadMaximaAplicacion"]);
 
                         BELaboratorio laboratorio = new BELaboratorio();
                         laboratorio.LaboratorioId = Convert.ToInt32(fila["LaboratorioId"]);

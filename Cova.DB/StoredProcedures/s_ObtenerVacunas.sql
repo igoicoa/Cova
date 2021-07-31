@@ -8,6 +8,8 @@ BEGIN
 			,Prospecto
 			,Contraindicaciones
 			,CantidadDosis
+			,EdadMinimaAplicacion
+			,EdadMaximaAplicacion
 			,l.LaboratorioId
 			,l.Nombre AS NombreLaboratorio
 	FROM [dbo].[Vacuna] v

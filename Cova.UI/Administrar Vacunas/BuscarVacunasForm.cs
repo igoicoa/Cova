@@ -84,6 +84,8 @@ namespace Cova.UI
             tableVacunas.Columns.Add("Prospecto");
             tableVacunas.Columns.Add("Contraindicaciones");
             tableVacunas.Columns.Add("Cantidad Dosis");
+            tableVacunas.Columns.Add("Edad Minima");
+            tableVacunas.Columns.Add("Edad Maxima");
             tableVacunas.Columns.Add("LaboratorioId");
             tableVacunas.Columns.Add("Nombre Laboratorio");
 
@@ -100,6 +102,8 @@ namespace Cova.UI
                 filaVacunas["Prospecto"] = vacunaDosis.Vacuna.Prospecto;
                 filaVacunas["Contraindicaciones"] = vacunaDosis.Vacuna.Contraindicaciones;
                 filaVacunas["Cantidad Dosis"] = vacunaDosis.Vacuna.CantidadDosis;
+                filaVacunas["Edad Minima"] = vacunaDosis.Vacuna.EdadMinimaAplicacion;
+                filaVacunas["Edad Maxima"] = vacunaDosis.Vacuna.EdadMaximaAplicacion;
                 filaVacunas["LaboratorioId"] = vacunaDosis.Vacuna.Laboratorio.LaboratorioId;
                 filaVacunas["Nombre Laboratorio"] = vacunaDosis.Vacuna.Laboratorio.Nombre;
                 tableVacunas.Rows.Add(filaVacunas);
@@ -116,8 +120,10 @@ namespace Cova.UI
             dtg_ListaVacunas_VerVacunas.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dtg_ListaVacunas_VerVacunas.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dtg_ListaVacunas_VerVacunas.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtg_ListaVacunas_VerVacunas.Columns[9].Visible = false;
+            dtg_ListaVacunas_VerVacunas.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dtg_ListaVacunas_VerVacunas.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtg_ListaVacunas_VerVacunas.Columns[11].Visible = false;
+            dtg_ListaVacunas_VerVacunas.Columns[12].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
         }
 

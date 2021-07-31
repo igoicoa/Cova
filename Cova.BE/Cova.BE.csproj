@@ -50,6 +50,7 @@
     <Compile Include="BELaboratorio.cs" />
     <Compile Include="BECoberturaMedicaPlan.cs" />
     <Compile Include="BERangoHorario.cs" />
+    <Compile Include="BEReceta.cs" />
     <Compile Include="BETurno.cs" />
     <Compile Include="BEUsuario.cs" />
     <Compile Include="BEVacuna.cs" />

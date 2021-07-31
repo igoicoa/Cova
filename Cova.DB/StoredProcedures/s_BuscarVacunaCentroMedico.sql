@@ -14,9 +14,11 @@ BEGIN
 	   ,v.Prospecto
 	   ,v.Contraindicaciones
 	   ,v.CantidadDosis
+	   ,v.EdadMinimaAplicacion
+	   ,v.EdadMaximaAplicacion
 	   ,l.LaboratorioId
 	   ,l.Nombre AS NombreLaboratorio
-	FROM [dbo].[VacunDosis] vd
+	FROM [dbo].[VacunaDosis] vd
 	INNER JOIN [dbo].[Vacuna] v ON v.VacunaId = vd.VacunaId
 	INNER JOIN [dbo].[CentroMedico] cm ON vd.CentroMedicoId = cm.CentroMedicoId
 	INNER JOIN [dbo].[Laboratorio] l ON l.LaboratorioId = v.LaboratorioId

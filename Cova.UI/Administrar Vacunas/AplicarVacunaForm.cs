@@ -94,6 +94,23 @@ namespace Cova.UI
 
         private void btn_Aplicar_AplicarVacunas_Click(object sender, EventArgs e)
         {
+            BLPaciente blPaciente = new BLPaciente();
+            int dosisAAplicar = 2; //TODO
+            Dictionary<bool, List<string>> correspondeRecibirDosis = (Dictionary<bool, List<string>>)blPaciente.EstaEnCondicionesDeRecibirVacuna(this._pacienteAVacunar, this._vacunaAAplicar, dosisAAplicar);
+            if(correspondeRecibirDosis.ContainsKey(false))
+            {
+                string razones = "";
+                foreach(string razon in correspondeRecibirDosis[false])
+                {
+                    razones += razon + "\n";
+                }
+                MessageBox.Show(razones);
+                return;
+            }
+            else
+            {
+                blPaciente.VacunarPaciente(this._pacienteAVacunar, this._vacunaAAplicar);
+            }
             MessageBox.Show("Se realizó la aplicación de la vacuna");
         }
 

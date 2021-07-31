@@ -153,5 +153,68 @@ namespace Cova.MPP
                 throw ex;
             }
         }
+
+        public int ObtenerCantidadDosisAplicadasDeVacunaAPaciente(BEPaciente paciente, BEVacuna vacuna)
+        {
+            int cantidadDosisAplicadas = 0;
+            DataSet vacunaDosisDS;
+            DataTable vacunaDosisT;
+            Hashtable datosVacunaDosis = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_ObtenerCantidadDosisAplicadasDeVacunaAPaciente";
+                datosVacunaDosis.Add("@PacienteId", paciente.PacienteId);
+                datosVacunaDosis.Add("@VacunaId", vacuna.VacunaID);
+                vacunaDosisDS = conexionBDD.ObtenerDataSet(strSQL, datosVacunaDosis);
+                vacunaDosisT = vacunaDosisDS.Tables[0];
+                if (vacunaDosisT.Rows.Count > 0)
+                {
+                    foreach (DataRow fila in vacunaDosisT.Rows)
+                    {
+                        cantidadDosisAplicadas = Convert.ToInt32(fila["CantidadDosisAplicadas"]);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return cantidadDosisAplicadas;
+        }
+
+        public BEVacunaDosis ObtenerVacunaDosisPaciente(BEPaciente paciente, BEVacuna vacuna)
+        {
+            BEVacunaDosis vacunaDosis = new BEVacunaDosis();
+            DataSet vacunaDosisDS;
+            DataTable vacunaDosisT;
+            Hashtable datosVacunaDosis = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_ObtenerVacunaDosisPaciente";
+                datosVacunaDosis.Add("@PacienteId", paciente.PacienteId);
+                datosVacunaDosis.Add("@VacunaId", vacuna.VacunaID);
+                vacunaDosisDS = conexionBDD.ObtenerDataSet(strSQL, datosVacunaDosis);
+                vacunaDosisT = vacunaDosisDS.Tables[0];
+                if (vacunaDosisT.Rows.Count > 0)
+                {
+                    foreach (DataRow fila in vacunaDosisT.Rows)
+                    {
+                        vacunaDosis.Vacuna = vacuna;
+                        vacunaDosis.Paciente = paciente;
+                        vacunaDosis.Lote = Convert.ToString(fila["Lote"]);
+                        vacunaDosis.FechaAplicacion = Convert.ToDateTime(fila["FechaAplicacion"]);
+                        vacunaDosis.FechaElaboracion = Convert.ToDateTime(fila["FechaElaboracion"]);
+                        vacunaDosis.FechaVencimiento = Convert.ToDateTime(fila["FechaVencimiento"]);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return vacunaDosis;
+        }
     }
 }

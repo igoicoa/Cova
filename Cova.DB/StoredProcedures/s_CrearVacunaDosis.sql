@@ -6,6 +6,6 @@
 	@CentroMedicoId		INT
 AS
 BEGIN
-	INSERT INTO [dbo].[VacunDosis] (Lote, VacunaId, FechaElaboracion, FechaVencimiento, CentroMedicoId)
+	INSERT INTO [dbo].[VacunaDosis] (Lote, VacunaId, FechaElaboracion, FechaVencimiento, CentroMedicoId)
 	VALUES (@Lote, @VacunaId, @FechaElaboracion, @FechaVencimiento, @CentroMedicoId)
 END
