@@ -16,6 +16,7 @@ namespace Cova.UI
         {
             InitializeComponent();
             CargarCentrosMedicos();
+            CargarCantidadDosis();
         }
 
         private void btn_Cancelar_AplicarVacunas_Click(object sender, EventArgs e)
@@ -30,6 +31,16 @@ namespace Cova.UI
             this.cmb_centroMedico.DisplayMember = "Nombre";
             this.cmb_centroMedico.ValueMember = "CentroMedicoId";
             this.cmb_centroMedico.SelectedIndex = -1;
+        }
+
+        public void CargarCantidadDosis()
+        {
+            List<int> cantidadDosis = new List<int>();
+            for (int i = 1; i <= 10; i++)
+            {
+                cantidadDosis.Add(i);
+            }
+            cmb_dosis.DataSource = cantidadDosis;
         }
 
         private void btn_Limpiar_AplicarVacunas_Click(object sender, EventArgs e)
@@ -95,7 +106,7 @@ namespace Cova.UI
         private void btn_Aplicar_AplicarVacunas_Click(object sender, EventArgs e)
         {
             BLPaciente blPaciente = new BLPaciente();
-            int dosisAAplicar = 2; //TODO
+            int dosisAAplicar = Convert.ToInt32(cmb_dosis.Text);
             Dictionary<bool, List<string>> correspondeRecibirDosis = (Dictionary<bool, List<string>>)blPaciente.EstaEnCondicionesDeRecibirVacuna(this._pacienteAVacunar, this._vacunaAAplicar, dosisAAplicar);
             if(correspondeRecibirDosis.ContainsKey(false))
             {

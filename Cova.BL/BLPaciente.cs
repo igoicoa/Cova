@@ -38,12 +38,12 @@ namespace Cova.BL
                 razones.Add("El paciente no tiene receta para la vacuna");
                 estaEnCondicionesDeVacunarse = false;
             }
-            if(this.CorrespondeRecibirDosis(pacienteAVacunarse, vacunaAAplicar, dosisAAplicar))
+            if(!this.CorrespondeRecibirDosis(pacienteAVacunarse, vacunaAAplicar, dosisAAplicar))
             {
-                razones.Add("El paciente ya recibio la dosis de la vacuna indicada");
+                razones.Add("Al paciente no le corresponde recibir la dosis: " + Convert.ToString(dosisAAplicar));
                 estaEnCondicionesDeVacunarse = false;
             }
-            if (this.EstaDentroRangoEtarioVacunacion(pacienteAVacunarse, vacunaAAplicar))
+            if (!this.EstaDentroRangoEtarioVacunacion(pacienteAVacunarse, vacunaAAplicar))
             {
                 razones.Add("El paciente no se encuentra dentro del rango etario de vacunacion");
                 estaEnCondicionesDeVacunarse = false;
@@ -74,11 +74,7 @@ namespace Cova.BL
             int cantidadDosisAplicadas;
             MPPPaciente mPPPaciente = new MPPPaciente();
             cantidadDosisAplicadas = mPPPaciente.ObtenerCantidadDosisAplicadasDeVacunaAPaciente(pacienteAVacunarse, vacunaAAplicar.Vacuna);
-            if(dosisAAplicar != (cantidadDosisAplicadas + 1) && vacunaAAplicar.Vacuna.CantidadDosis >= dosisAAplicar)
-            {
-                return false;
-            }
-            else if(vacunaAAplicar.Vacuna.CantidadDosis < dosisAAplicar)
+            if(dosisAAplicar != (cantidadDosisAplicadas + 1) || vacunaAAplicar.Vacuna.CantidadDosis < dosisAAplicar)
             {
                 return false;
             }
