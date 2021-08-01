@@ -116,6 +116,7 @@
     <Build Include="StoredProcedures\s_ObtenerRecetaParaVacunaYPaciente.sql" />
     <Build Include="StoredProcedures\s_ObtenerVacunaDosisPaciente.sql" />
     <Build Include="StoredProcedures\s_ObtenerCantidadDosisAplicadasDeVacunaAPaciente.sql" />
+    <Build Include="StoredProcedures\s_CrearReceta.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />

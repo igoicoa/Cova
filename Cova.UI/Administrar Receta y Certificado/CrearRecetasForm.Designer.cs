@@ -31,6 +31,10 @@ namespace Cova.UI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearRecetasForm));
             this.gb_DatosPaciente_CrearReceta = new System.Windows.Forms.GroupBox();
+            this.txt_apellido_CrearReceta = new System.Windows.Forms.TextBox();
+            this.lbl_Apellido_CrearReceta = new System.Windows.Forms.Label();
+            this.txt_nombre_CrearReceta = new System.Windows.Forms.TextBox();
+            this.lbl_Nombre_CrearReceta = new System.Windows.Forms.Label();
             this.txt_Edad_CrearReceta = new System.Windows.Forms.TextBox();
             this.lbl_Edad_CrearReceta = new System.Windows.Forms.Label();
             this.btn_BuscarPacientes_CrearReceta = new System.Windows.Forms.Button();
@@ -47,10 +51,8 @@ namespace Cova.UI
             this.btnCrearReceta_CrearReceta = new System.Windows.Forms.Button();
             this.btn_Limpiar_CrearReceta = new System.Windows.Forms.Button();
             this.btn_Cancelar_CrearReceta = new System.Windows.Forms.Button();
-            this.txt_apellido_CrearReceta = new System.Windows.Forms.TextBox();
-            this.lbl_Apellido_CrearReceta = new System.Windows.Forms.Label();
-            this.txt_nombre_CrearReceta = new System.Windows.Forms.TextBox();
-            this.lbl_Nombre_CrearReceta = new System.Windows.Forms.Label();
+            this.cmb_vacuna = new System.Windows.Forms.ComboBox();
+            this.lbl_Nombre_BuscarVacunas = new System.Windows.Forms.Label();
             this.gb_DatosPaciente_CrearReceta.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +75,40 @@ namespace Cova.UI
             this.gb_DatosPaciente_CrearReceta.TabIndex = 93;
             this.gb_DatosPaciente_CrearReceta.TabStop = false;
             this.gb_DatosPaciente_CrearReceta.Text = "Datos Paciente";
+            // 
+            // txt_apellido_CrearReceta
+            // 
+            this.txt_apellido_CrearReceta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_apellido_CrearReceta.Location = new System.Drawing.Point(9, 149);
+            this.txt_apellido_CrearReceta.Name = "txt_apellido_CrearReceta";
+            this.txt_apellido_CrearReceta.Size = new System.Drawing.Size(363, 20);
+            this.txt_apellido_CrearReceta.TabIndex = 165;
+            // 
+            // lbl_Apellido_CrearReceta
+            // 
+            this.lbl_Apellido_CrearReceta.AutoSize = true;
+            this.lbl_Apellido_CrearReceta.Location = new System.Drawing.Point(6, 133);
+            this.lbl_Apellido_CrearReceta.Name = "lbl_Apellido_CrearReceta";
+            this.lbl_Apellido_CrearReceta.Size = new System.Drawing.Size(44, 13);
+            this.lbl_Apellido_CrearReceta.TabIndex = 164;
+            this.lbl_Apellido_CrearReceta.Text = "Apellido";
+            // 
+            // txt_nombre_CrearReceta
+            // 
+            this.txt_nombre_CrearReceta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_nombre_CrearReceta.Location = new System.Drawing.Point(9, 99);
+            this.txt_nombre_CrearReceta.Name = "txt_nombre_CrearReceta";
+            this.txt_nombre_CrearReceta.Size = new System.Drawing.Size(363, 20);
+            this.txt_nombre_CrearReceta.TabIndex = 163;
+            // 
+            // lbl_Nombre_CrearReceta
+            // 
+            this.lbl_Nombre_CrearReceta.AutoSize = true;
+            this.lbl_Nombre_CrearReceta.Location = new System.Drawing.Point(6, 83);
+            this.lbl_Nombre_CrearReceta.Name = "lbl_Nombre_CrearReceta";
+            this.lbl_Nombre_CrearReceta.Size = new System.Drawing.Size(44, 13);
+            this.lbl_Nombre_CrearReceta.TabIndex = 162;
+            this.lbl_Nombre_CrearReceta.Text = "Nombre";
             // 
             // txt_Edad_CrearReceta
             // 
@@ -153,7 +189,7 @@ namespace Cova.UI
             // lbl_Diagnostico_CrearReceta
             // 
             this.lbl_Diagnostico_CrearReceta.AutoSize = true;
-            this.lbl_Diagnostico_CrearReceta.Location = new System.Drawing.Point(12, 234);
+            this.lbl_Diagnostico_CrearReceta.Location = new System.Drawing.Point(18, 290);
             this.lbl_Diagnostico_CrearReceta.Name = "lbl_Diagnostico_CrearReceta";
             this.lbl_Diagnostico_CrearReceta.Size = new System.Drawing.Size(63, 13);
             this.lbl_Diagnostico_CrearReceta.TabIndex = 95;
@@ -162,7 +198,7 @@ namespace Cova.UI
             // lb_DetalleDiagnostico_CrearReceta
             // 
             this.lb_DetalleDiagnostico_CrearReceta.FormattingEnabled = true;
-            this.lb_DetalleDiagnostico_CrearReceta.Location = new System.Drawing.Point(15, 250);
+            this.lb_DetalleDiagnostico_CrearReceta.Location = new System.Drawing.Point(12, 317);
             this.lb_DetalleDiagnostico_CrearReceta.Name = "lb_DetalleDiagnostico_CrearReceta";
             this.lb_DetalleDiagnostico_CrearReceta.Size = new System.Drawing.Size(674, 212);
             this.lb_DetalleDiagnostico_CrearReceta.TabIndex = 96;
@@ -170,7 +206,7 @@ namespace Cova.UI
             // lbl_Fecha_CrearReceta
             // 
             this.lbl_Fecha_CrearReceta.AutoSize = true;
-            this.lbl_Fecha_CrearReceta.Location = new System.Drawing.Point(18, 525);
+            this.lbl_Fecha_CrearReceta.Location = new System.Drawing.Point(15, 567);
             this.lbl_Fecha_CrearReceta.Name = "lbl_Fecha_CrearReceta";
             this.lbl_Fecha_CrearReceta.Size = new System.Drawing.Size(37, 13);
             this.lbl_Fecha_CrearReceta.TabIndex = 97;
@@ -179,7 +215,7 @@ namespace Cova.UI
             // lbl_Firma_CrearReceta
             // 
             this.lbl_Firma_CrearReceta.AutoSize = true;
-            this.lbl_Firma_CrearReceta.Location = new System.Drawing.Point(496, 525);
+            this.lbl_Firma_CrearReceta.Location = new System.Drawing.Point(493, 567);
             this.lbl_Firma_CrearReceta.Name = "lbl_Firma_CrearReceta";
             this.lbl_Firma_CrearReceta.Size = new System.Drawing.Size(87, 13);
             this.lbl_Firma_CrearReceta.TabIndex = 98;
@@ -187,14 +223,14 @@ namespace Cova.UI
             // 
             // dtp_fecha_CrearReceta
             // 
-            this.dtp_fecha_CrearReceta.Location = new System.Drawing.Point(21, 502);
+            this.dtp_fecha_CrearReceta.Location = new System.Drawing.Point(18, 544);
             this.dtp_fecha_CrearReceta.Name = "dtp_fecha_CrearReceta";
             this.dtp_fecha_CrearReceta.Size = new System.Drawing.Size(143, 20);
             this.dtp_fecha_CrearReceta.TabIndex = 99;
             // 
             // btnCrearReceta_CrearReceta
             // 
-            this.btnCrearReceta_CrearReceta.Location = new System.Drawing.Point(183, 552);
+            this.btnCrearReceta_CrearReceta.Location = new System.Drawing.Point(180, 594);
             this.btnCrearReceta_CrearReceta.Name = "btnCrearReceta_CrearReceta";
             this.btnCrearReceta_CrearReceta.Size = new System.Drawing.Size(78, 23);
             this.btnCrearReceta_CrearReceta.TabIndex = 100;
@@ -204,7 +240,7 @@ namespace Cova.UI
             // btn_Limpiar_CrearReceta
             // 
             this.btn_Limpiar_CrearReceta.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Limpiar_CrearReceta.Location = new System.Drawing.Point(348, 552);
+            this.btn_Limpiar_CrearReceta.Location = new System.Drawing.Point(345, 594);
             this.btn_Limpiar_CrearReceta.Name = "btn_Limpiar_CrearReceta";
             this.btn_Limpiar_CrearReceta.Size = new System.Drawing.Size(75, 23);
             this.btn_Limpiar_CrearReceta.TabIndex = 102;
@@ -214,7 +250,7 @@ namespace Cova.UI
             // 
             // btn_Cancelar_CrearReceta
             // 
-            this.btn_Cancelar_CrearReceta.Location = new System.Drawing.Point(267, 552);
+            this.btn_Cancelar_CrearReceta.Location = new System.Drawing.Point(264, 594);
             this.btn_Cancelar_CrearReceta.Name = "btn_Cancelar_CrearReceta";
             this.btn_Cancelar_CrearReceta.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancelar_CrearReceta.TabIndex = 101;
@@ -222,45 +258,30 @@ namespace Cova.UI
             this.btn_Cancelar_CrearReceta.UseVisualStyleBackColor = true;
             this.btn_Cancelar_CrearReceta.Click += new System.EventHandler(this.btn_Cancelar_CrearReceta_Click);
             // 
-            // txt_apellido_CrearReceta
+            // cmb_vacuna
             // 
-            this.txt_apellido_CrearReceta.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_apellido_CrearReceta.Location = new System.Drawing.Point(9, 149);
-            this.txt_apellido_CrearReceta.Name = "txt_apellido_CrearReceta";
-            this.txt_apellido_CrearReceta.Size = new System.Drawing.Size(363, 20);
-            this.txt_apellido_CrearReceta.TabIndex = 165;
+            this.cmb_vacuna.FormattingEnabled = true;
+            this.cmb_vacuna.Location = new System.Drawing.Point(21, 251);
+            this.cmb_vacuna.Name = "cmb_vacuna";
+            this.cmb_vacuna.Size = new System.Drawing.Size(263, 21);
+            this.cmb_vacuna.TabIndex = 153;
             // 
-            // lbl_Apellido_CrearReceta
+            // lbl_Nombre_BuscarVacunas
             // 
-            this.lbl_Apellido_CrearReceta.AutoSize = true;
-            this.lbl_Apellido_CrearReceta.Location = new System.Drawing.Point(6, 133);
-            this.lbl_Apellido_CrearReceta.Name = "lbl_Apellido_CrearReceta";
-            this.lbl_Apellido_CrearReceta.Size = new System.Drawing.Size(44, 13);
-            this.lbl_Apellido_CrearReceta.TabIndex = 164;
-            this.lbl_Apellido_CrearReceta.Text = "Apellido";
-            // 
-            // txt_nombre_CrearReceta
-            // 
-            this.txt_nombre_CrearReceta.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_nombre_CrearReceta.Location = new System.Drawing.Point(9, 99);
-            this.txt_nombre_CrearReceta.Name = "txt_nombre_CrearReceta";
-            this.txt_nombre_CrearReceta.Size = new System.Drawing.Size(363, 20);
-            this.txt_nombre_CrearReceta.TabIndex = 163;
-            // 
-            // lbl_Nombre_CrearReceta
-            // 
-            this.lbl_Nombre_CrearReceta.AutoSize = true;
-            this.lbl_Nombre_CrearReceta.Location = new System.Drawing.Point(6, 83);
-            this.lbl_Nombre_CrearReceta.Name = "lbl_Nombre_CrearReceta";
-            this.lbl_Nombre_CrearReceta.Size = new System.Drawing.Size(44, 13);
-            this.lbl_Nombre_CrearReceta.TabIndex = 162;
-            this.lbl_Nombre_CrearReceta.Text = "Nombre";
+            this.lbl_Nombre_BuscarVacunas.AutoSize = true;
+            this.lbl_Nombre_BuscarVacunas.Location = new System.Drawing.Point(18, 235);
+            this.lbl_Nombre_BuscarVacunas.Name = "lbl_Nombre_BuscarVacunas";
+            this.lbl_Nombre_BuscarVacunas.Size = new System.Drawing.Size(44, 13);
+            this.lbl_Nombre_BuscarVacunas.TabIndex = 152;
+            this.lbl_Nombre_BuscarVacunas.Text = "Vacuna";
             // 
             // CrearRecetasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 590);
+            this.ClientSize = new System.Drawing.Size(847, 623);
+            this.Controls.Add(this.cmb_vacuna);
+            this.Controls.Add(this.lbl_Nombre_BuscarVacunas);
             this.Controls.Add(this.btn_Limpiar_CrearReceta);
             this.Controls.Add(this.btn_Cancelar_CrearReceta);
             this.Controls.Add(this.btnCrearReceta_CrearReceta);
@@ -304,5 +325,7 @@ namespace Cova.UI
         private System.Windows.Forms.Label lbl_Apellido_CrearReceta;
         private System.Windows.Forms.TextBox txt_nombre_CrearReceta;
         private System.Windows.Forms.Label lbl_Nombre_CrearReceta;
+        private System.Windows.Forms.ComboBox cmb_vacuna;
+        private System.Windows.Forms.Label lbl_Nombre_BuscarVacunas;
     }
 }

@@ -12,5 +12,11 @@ namespace Cova.BL
             MPPReceta mPPReceta = new MPPReceta();
             return mPPReceta.ObtenerRecetaParaVacunaYPaciente(vacunaAAplicar, pacienteAVacunar);
         }
+
+        public bool CrearReceta(BEReceta receta)
+        {
+            MPPReceta mPPReceta = new MPPReceta();
+            return mPPReceta.CrearReceta(receta);
+        }
     }
 }

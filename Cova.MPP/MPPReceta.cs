@@ -47,5 +47,26 @@ namespace Cova.MPP
             }
             return receta;
         }
+
+        public bool CrearReceta(BEReceta receta)
+        {
+            Hashtable datosReceta = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_CrearReceta";
+                datosReceta.Add("@FechaPrescripcion", receta.FechaPrescripcion);
+                datosReceta.Add("@PacienteId", receta.Paciente.PacienteId);
+                datosReceta.Add("@ProfesionalId", receta.Medico.ProfesionalId);
+                datosReceta.Add("@VacunaId", receta.Vacuna.VacunaID);
+                datosReceta.Add("@Observacion", receta.Observacion);
+                
+                return conexionBDD.Escribir(strSQL, datosReceta);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

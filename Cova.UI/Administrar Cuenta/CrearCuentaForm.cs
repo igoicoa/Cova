@@ -173,24 +173,101 @@ namespace Cova.UI
         {
 
         }
+        //TODO Terminar todos los campos
+        public bool ValidarTodosLosCamposPaciente()
+        {
+            if(string.IsNullOrEmpty(textBoxApellidoCrearCuenta.Text) || (string.IsNullOrEmpty(txt_CrearCuentaNombre.Text)))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        //TODO Terminar todos los campos
+        public bool ValidarTodosLosCamposMedico()
+        {
+            if (string.IsNullOrEmpty(textBoxApellidoCrearCuenta.Text) || (string.IsNullOrEmpty(txt_CrearCuentaNombre.Text)))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        //TODO Terminar todos los campos
+        public bool ValidarTodosLosCamposEnfermero()
+        {
+            if (string.IsNullOrEmpty(textBoxApellidoCrearCuenta.Text) || (string.IsNullOrEmpty(txt_CrearCuentaNombre.Text)))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        //TODO Terminar todos los campos
+        public bool ValidarTodosLosCamposAdministrador()
+        {
+            if (string.IsNullOrEmpty(textBoxApellidoCrearCuenta.Text) || (string.IsNullOrEmpty(txt_CrearCuentaNombre.Text))
+                )
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (rb_paciente.Checked)
             {
-                CrearPaciente();
+                if(ValidarTodosLosCamposPaciente())
+                {
+                    CrearPaciente();
+                }
+                else
+                {
+                    MessageBox.Show("Debe completar todos los campos");
+                }
             } 
             else if (rb_medico.Checked)
             {
-                CrearProfesionalMedico();
+                if (ValidarTodosLosCamposMedico())
+                {
+                    CrearProfesionalMedico();
+                }
+                else
+                {
+                    MessageBox.Show("Debe completar todos los campos");
+                }
             } 
             else if (rb_enfermero.Checked)
             {
-                CrearProfesionalEnfermero();
+                if (ValidarTodosLosCamposEnfermero())
+                {
+                    CrearProfesionalEnfermero();
+                }
+                else
+                {
+                    MessageBox.Show("Debe completar todos los campos");
+                }
             }
             else if (rb_administrador.Checked)
             {
-                CrearAdministrador();
+                if (ValidarTodosLosCamposAdministrador())
+                {
+                    CrearAdministrador();
+                }
+                else
+                {
+                    MessageBox.Show("Debe completar todos los campos");
+                }
             }
         }
 
