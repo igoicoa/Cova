@@ -58,7 +58,7 @@ namespace Cova.UI
         {
             Traductor traductor = new Traductor();
             IDictionary<string, Traduccion> traducciones = traductor.ObtenerTraducciones(idioma);
-            
+            //Inicio
             if (inicioToolStripMenuItem.Tag != null && traducciones.ContainsKey(inicioToolStripMenuItem.Tag.ToString()))
                 inicioToolStripMenuItem.Text = traducciones[inicioToolStripMenuItem.Tag.ToString()].PalabraTraducida;
 
@@ -71,6 +71,7 @@ namespace Cova.UI
             if (inicioToolStripMenuItem.Tag != null && traducciones.ContainsKey(inicioToolStripMenuItem.Tag.ToString()))
                 inicioToolStripMenuItem.Text = traducciones[inicioToolStripMenuItem.Tag.ToString()].PalabraTraducida;
 
+            //Administrar Cuenta
             if (administrarToolStripMenuItem.Tag != null && traducciones.ContainsKey(administrarToolStripMenuItem.Tag.ToString()))
                 administrarToolStripMenuItem.Text = traducciones[administrarToolStripMenuItem.Tag.ToString()].PalabraTraducida;
 
@@ -79,6 +80,31 @@ namespace Cova.UI
 
             if (crearCuentaToolStripMenuItem.Tag != null && traducciones.ContainsKey(crearCuentaToolStripMenuItem.Tag.ToString()))
                 crearCuentaToolStripMenuItem.Text = traducciones[crearCuentaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (modificarCuentaToolStripMenuItem.Tag != null && traducciones.ContainsKey(modificarCuentaToolStripMenuItem.Tag.ToString()))
+                modificarCuentaToolStripMenuItem.Text = traducciones[modificarCuentaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (verUsuariosToolStripMenuItem.Tag != null && traducciones.ContainsKey(verUsuariosToolStripMenuItem.Tag.ToString()))
+                verUsuariosToolStripMenuItem.Text = traducciones[verUsuariosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            //Administrar Vacunas administrarVacunasToolStripMenuItem
+            if (administrarVacunasToolStripMenuItem.Tag != null && traducciones.ContainsKey(administrarVacunasToolStripMenuItem.Tag.ToString()))
+                administrarVacunasToolStripMenuItem.Text = traducciones[administrarVacunasToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (calendarioDeVacunaciónToolStripMenuItem.Tag != null && traducciones.ContainsKey(calendarioDeVacunaciónToolStripMenuItem.Tag.ToString()))
+                calendarioDeVacunaciónToolStripMenuItem.Text = traducciones[calendarioDeVacunaciónToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (crearVacunasToolStripMenuItem.Tag != null && traducciones.ContainsKey(crearVacunasToolStripMenuItem.Tag.ToString()))
+                crearVacunasToolStripMenuItem.Text = traducciones[crearVacunasToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (modificarVacunasToolStripMenuItem.Tag != null && traducciones.ContainsKey(modificarVacunasToolStripMenuItem.Tag.ToString()))
+                modificarVacunasToolStripMenuItem.Text = traducciones[modificarVacunasToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (verVacunasToolStripMenuItem.Tag != null && traducciones.ContainsKey(verVacunasToolStripMenuItem.Tag.ToString()))
+                verVacunasToolStripMenuItem.Text = traducciones[verVacunasToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (aplicarVacunaToolStripMenuItem.Tag != null && traducciones.ContainsKey(aplicarVacunaToolStripMenuItem.Tag.ToString()))
+                aplicarVacunaToolStripMenuItem.Text = traducciones[aplicarVacunaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
         }
 
         private void MostrarComponentes(bool cargarPermisosUsuario = true)
@@ -95,6 +121,7 @@ namespace Cova.UI
             this.crearVacunasToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CrearVacunas) : false;
             this.modificarVacunasToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.ModificarVacunas) : false;
             this.verVacunasToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.VerVacunas) : false;
+            this.aplicarVacunaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.VerVacunas) : false;
 
             this.administrarTurnosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AdministrarTurnos) : false;
             this.calendarioDeTurnosToolStripMenuItem1.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CalendarioDeTurnos) : false;

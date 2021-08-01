@@ -224,3 +224,112 @@ INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
 VALUES
 (@IdiomaInglesId, @EtiquetaId, 'Logout')
 
+-- Guardo traduccion para etiqueta menuAdministrar
+INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('menuadministrar')
+SET @EtiquetaId = SCOPE_IDENTITY()
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaCastellanoId, @EtiquetaId, 'Administrar')
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaInglesId, @EtiquetaId, 'Manage')
+
+-- Guardo traduccion para etiqueta menuinicioAdministrarCuentas
+INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('administrarcuenta')
+SET @EtiquetaId = SCOPE_IDENTITY()
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaCastellanoId, @EtiquetaId, 'Administrar Cuenta')
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaInglesId, @EtiquetaId, 'Manage Account')
+
+-- Guardo traduccion para etiqueta menuCrearCuenta
+INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('Crearcuenta')
+SET @EtiquetaId = SCOPE_IDENTITY()
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaCastellanoId, @EtiquetaId, 'Crear Cuenta')
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaInglesId, @EtiquetaId, 'Create Account')
+
+-- Guardo traduccion para etiqueta menuModificarCuenta
+INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('Modificarcuenta')
+SET @EtiquetaId = SCOPE_IDENTITY()
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaCastellanoId, @EtiquetaId, 'Modificar Cuenta')
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaInglesId, @EtiquetaId, 'Edit Account')
+
+-- Guardo traduccion para etiqueta menuVerUsuarios
+INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('VerUsuarios')
+SET @EtiquetaId = SCOPE_IDENTITY()
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaCastellanoId, @EtiquetaId, 'Ver Usuarios')
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaInglesId, @EtiquetaId, 'View Users')
+
+-- Guardo traduccion para etiqueta menuinicioAdministrarVacunas
+INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('AdministrarVacunas')
+SET @EtiquetaId = SCOPE_IDENTITY()
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaCastellanoId, @EtiquetaId, 'Administrar Vacunas')
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaInglesId, @EtiquetaId, 'Administering Vaccines')
+
+-- Guardo traduccion para etiqueta menuCalendariodeVacunacion
+INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('CalendariodeVacunacion')
+SET @EtiquetaId = SCOPE_IDENTITY()
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaCastellanoId, @EtiquetaId, 'Calendario de Vacunacion')
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaInglesId, @EtiquetaId, 'Vaccination Schedule')
+
+-- Guardo traduccion para etiqueta menuCrearVacunas
+INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('CrearVacunas')
+SET @EtiquetaId = SCOPE_IDENTITY()
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaCastellanoId, @EtiquetaId, 'Crear Vacunas')
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaInglesId, @EtiquetaId, 'Create Vaccines')
+
+-- Guardo traduccion para etiqueta menuModificarVacunas
+INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('ModificarVacunas')
+SET @EtiquetaId = SCOPE_IDENTITY()
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaCastellanoId, @EtiquetaId, 'Modificar Vacunas')
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaInglesId, @EtiquetaId, 'Edit Vaccines')
+
+-- Guardo traduccion para etiqueta menuVerVacunas
+INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('VerVacunas')
+SET @EtiquetaId = SCOPE_IDENTITY()
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaCastellanoId, @EtiquetaId, 'Ver Vacunas')
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaInglesId, @EtiquetaId, 'View Vaccines')
+
+-- Guardo traduccion para etiqueta menuAplicarVacuna
+INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('AplicarVacunas')
+SET @EtiquetaId = SCOPE_IDENTITY()
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaCastellanoId, @EtiquetaId, 'Aplicar Vacunas')
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaInglesId, @EtiquetaId, 'Apply Vaccines')

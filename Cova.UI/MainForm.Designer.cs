@@ -137,6 +137,7 @@
             this.administrarRecetaCertificadoToolStripMenuItem});
             this.administrarToolStripMenuItem.Name = "administrarToolStripMenuItem";
             this.administrarToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.administrarToolStripMenuItem.Tag = "menuadministrar";
             this.administrarToolStripMenuItem.Text = "Administrar";
             // 
             // administrarCuentaToolStripMenuItem
@@ -147,6 +148,7 @@
             this.verUsuariosToolStripMenuItem});
             this.administrarCuentaToolStripMenuItem.Name = "administrarCuentaToolStripMenuItem";
             this.administrarCuentaToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.administrarCuentaToolStripMenuItem.Tag = "administrarcuenta";
             this.administrarCuentaToolStripMenuItem.Text = "Administrar Cuenta";
             // 
             // crearCuentaToolStripMenuItem
@@ -154,6 +156,7 @@
             this.crearCuentaToolStripMenuItem.Name = "crearCuentaToolStripMenuItem";
             this.crearCuentaToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.crearCuentaToolStripMenuItem.Text = "Crear Cuenta";
+            this.crearCuentaToolStripMenuItem.Tag = "Crearcuenta";
             this.crearCuentaToolStripMenuItem.Click += new System.EventHandler(this.crearCuentaToolStripMenuItem_Click);
             // 
             // modificarCuentaToolStripMenuItem
@@ -161,6 +164,7 @@
             this.modificarCuentaToolStripMenuItem.Name = "modificarCuentaToolStripMenuItem";
             this.modificarCuentaToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.modificarCuentaToolStripMenuItem.Text = "Modificar Cuenta";
+            this.modificarCuentaToolStripMenuItem.Tag = "Modificarcuenta";
             this.modificarCuentaToolStripMenuItem.Click += new System.EventHandler(this.modificarCuentaToolStripMenuItem_Click);
             // 
             // verUsuariosToolStripMenuItem
@@ -168,6 +172,7 @@
             this.verUsuariosToolStripMenuItem.Name = "verUsuariosToolStripMenuItem";
             this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.verUsuariosToolStripMenuItem.Text = "Ver Usuarios";
+            this.verUsuariosToolStripMenuItem.Tag = "VerUsuarios";
             this.verUsuariosToolStripMenuItem.Click += new System.EventHandler(this.verUsuariosToolStripMenuItem_Click);
             // 
             // administrarVacunasToolStripMenuItem
@@ -181,6 +186,7 @@
             this.administrarVacunasToolStripMenuItem.Name = "administrarVacunasToolStripMenuItem";
             this.administrarVacunasToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.administrarVacunasToolStripMenuItem.Text = "Administrar Vacunas";
+            this.administrarVacunasToolStripMenuItem.Tag = "AdministrarVacunas";
             // 
             // calendarioDeVacunaciónToolStripMenuItem
             // 
@@ -550,6 +556,7 @@
         private System.Windows.Forms.ToolStripMenuItem crearVacunasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarVacunasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verVacunasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aplicarVacunaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem calendarioDeTurnosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem verCalendarioDePacientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarTurnoToolStripMenuItem1;
@@ -577,7 +584,6 @@
         private System.Windows.Forms.ToolStripMenuItem administrarIdiomaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cambiarIdiomaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearIdiomaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aplicarVacunaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verCoberturasMedicasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarPermisosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asignarPermisosToolStripMenuItem;
