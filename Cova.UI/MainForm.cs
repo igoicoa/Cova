@@ -105,6 +105,139 @@ namespace Cova.UI
 
             if (aplicarVacunaToolStripMenuItem.Tag != null && traducciones.ContainsKey(aplicarVacunaToolStripMenuItem.Tag.ToString()))
                 aplicarVacunaToolStripMenuItem.Text = traducciones[aplicarVacunaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            //Administrar Turno administrarTurnosToolStripMenuItem
+            if (administrarTurnosToolStripMenuItem.Tag != null && traducciones.ContainsKey(administrarTurnosToolStripMenuItem.Tag.ToString()))
+                administrarTurnosToolStripMenuItem.Text = traducciones[administrarTurnosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (calendarioDeTurnosToolStripMenuItem1.Tag != null && traducciones.ContainsKey(calendarioDeTurnosToolStripMenuItem1.Tag.ToString()))
+                calendarioDeTurnosToolStripMenuItem1.Text = traducciones[calendarioDeTurnosToolStripMenuItem1.Tag.ToString()].PalabraTraducida;
+
+            if (verCalendarioDePacientesToolStripMenuItem.Tag != null && traducciones.ContainsKey(verCalendarioDePacientesToolStripMenuItem.Tag.ToString()))
+                verCalendarioDePacientesToolStripMenuItem.Text = traducciones[verCalendarioDePacientesToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (registrarTurnoToolStripMenuItem1.Tag != null && traducciones.ContainsKey(registrarTurnoToolStripMenuItem1.Tag.ToString()))
+                registrarTurnoToolStripMenuItem1.Text = traducciones[registrarTurnoToolStripMenuItem1.Tag.ToString()].PalabraTraducida;
+
+            if (cancelarTurnoToolStripMenuItem1.Tag != null && traducciones.ContainsKey(cancelarTurnoToolStripMenuItem1.Tag.ToString()))
+                cancelarTurnoToolStripMenuItem1.Text = traducciones[cancelarTurnoToolStripMenuItem1.Tag.ToString()].PalabraTraducida;
+
+            if (verMisTurnosToolStripMenuItem.Tag != null && traducciones.ContainsKey(verMisTurnosToolStripMenuItem.Tag.ToString()))
+                verMisTurnosToolStripMenuItem.Text = traducciones[verMisTurnosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (historialDeTurnosToolStripMenuItem.Tag != null && traducciones.ContainsKey(historialDeTurnosToolStripMenuItem.Tag.ToString()))
+                historialDeTurnosToolStripMenuItem.Text = traducciones[historialDeTurnosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            //Administrar Cobertura medica administrarCoberturaMedicaToolStripMenuItem
+            if (administrarCoberturaMedicaToolStripMenuItem.Tag != null && traducciones.ContainsKey(administrarCoberturaMedicaToolStripMenuItem.Tag.ToString()))
+                administrarCoberturaMedicaToolStripMenuItem.Text = traducciones[administrarCoberturaMedicaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (crearCoberturaMedicaToolStripMenuItem.Tag != null && traducciones.ContainsKey(crearCoberturaMedicaToolStripMenuItem.Tag.ToString()))
+                crearCoberturaMedicaToolStripMenuItem.Text = traducciones[crearCoberturaMedicaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (modificarCoberturaMedicaToolStripMenuItem.Tag != null && traducciones.ContainsKey(modificarCoberturaMedicaToolStripMenuItem.Tag.ToString()))
+                modificarCoberturaMedicaToolStripMenuItem.Text = traducciones[modificarCoberturaMedicaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (verCoberturasMedicasToolStripMenuItem.Tag != null && traducciones.ContainsKey(verCoberturasMedicasToolStripMenuItem.Tag.ToString()))
+                verCoberturasMedicasToolStripMenuItem.Text = traducciones[verCoberturasMedicasToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            //Administrar Historia Clinica administrarHistoriaClinicaToolStripMenuItem
+            if (administrarHistoriaClinicaToolStripMenuItem.Tag != null && traducciones.ContainsKey(administrarHistoriaClinicaToolStripMenuItem.Tag.ToString()))
+                administrarHistoriaClinicaToolStripMenuItem.Text = traducciones[administrarHistoriaClinicaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (crearHistoriaClinicaToolStripMenuItem.Tag != null && traducciones.ContainsKey(crearHistoriaClinicaToolStripMenuItem.Tag.ToString()))
+                crearHistoriaClinicaToolStripMenuItem.Text = traducciones[crearHistoriaClinicaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (modificarHistoriaClinicaToolStripMenuItem.Tag != null && traducciones.ContainsKey(modificarHistoriaClinicaToolStripMenuItem.Tag.ToString()))
+                modificarHistoriaClinicaToolStripMenuItem.Text = traducciones[modificarHistoriaClinicaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (verHistoriaClinicaToolStripMenuItem.Tag != null && traducciones.ContainsKey(verHistoriaClinicaToolStripMenuItem.Tag.ToString()))
+                verHistoriaClinicaToolStripMenuItem.Text = traducciones[verHistoriaClinicaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (verMiHistoriaClinicaToolStripMenuItem.Tag != null && traducciones.ContainsKey(verMiHistoriaClinicaToolStripMenuItem.Tag.ToString()))
+                verMiHistoriaClinicaToolStripMenuItem.Text = traducciones[verMiHistoriaClinicaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            //Administrar Receta/Certificado administrarReceta/CertificadoToolStripMenuItem
+            if (administrarRecetaCertificadoToolStripMenuItem.Tag != null && traducciones.ContainsKey(administrarRecetaCertificadoToolStripMenuItem.Tag.ToString()))
+                administrarRecetaCertificadoToolStripMenuItem.Text = traducciones[administrarRecetaCertificadoToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (crearRecetaCertificadoToolStripMenuItem.Tag != null && traducciones.ContainsKey(crearRecetaCertificadoToolStripMenuItem.Tag.ToString()))
+                crearRecetaCertificadoToolStripMenuItem.Text = traducciones[crearRecetaCertificadoToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (modificarRecetaCertificadoToolStripMenuItem.Tag != null && traducciones.ContainsKey(modificarRecetaCertificadoToolStripMenuItem.Tag.ToString()))
+                modificarRecetaCertificadoToolStripMenuItem.Text = traducciones[modificarRecetaCertificadoToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (verRecetasCertificadosToolStripMenuItem.Tag != null && traducciones.ContainsKey(verRecetasCertificadosToolStripMenuItem.Tag.ToString()))
+                verRecetasCertificadosToolStripMenuItem.Text = traducciones[verRecetasCertificadosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (verMisRecetasCertificadosToolStripMenuItem.Tag != null && traducciones.ContainsKey(verMisRecetasCertificadosToolStripMenuItem.Tag.ToString()))
+                verMisRecetasCertificadosToolStripMenuItem.Text = traducciones[verMisRecetasCertificadosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            //Seguridad
+            //Administrar Receta/Certificado administrarReceta/CertificadoToolStripMenuItem
+            if (seguridadToolStripMenuItem.Tag != null && traducciones.ContainsKey(seguridadToolStripMenuItem.Tag.ToString()))
+                seguridadToolStripMenuItem.Text = traducciones[seguridadToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            //Realizar Backup realizarBackupToolStripMenuItem
+            if (realizarBackupToolStripMenuItem.Tag != null && traducciones.ContainsKey(realizarBackupToolStripMenuItem.Tag.ToString()))
+                realizarBackupToolStripMenuItem.Text = traducciones[realizarBackupToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            //Bitacora bitacoraToolStripMenuItem
+            if (bitacoraToolStripMenuItem.Tag != null && traducciones.ContainsKey(bitacoraToolStripMenuItem.Tag.ToString()))
+                bitacoraToolStripMenuItem.Text = traducciones[bitacoraToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            //Realizar Restore realizarRestoreToolStripMenuItem
+            if (realizarRestoreToolStripMenuItem.Tag != null && traducciones.ContainsKey(realizarRestoreToolStripMenuItem.Tag.ToString()))
+                realizarRestoreToolStripMenuItem.Text = traducciones[realizarRestoreToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            //Bloquear Pasword bloquerarPaswordToolStripMenuItem
+            if (bloquerarPaswordToolStripMenuItem.Tag != null && traducciones.ContainsKey(bloquerarPaswordToolStripMenuItem.Tag.ToString()))
+                bloquerarPaswordToolStripMenuItem.Text = traducciones[bloquerarPaswordToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            //Cambiar Contraseña cambiarContraseñaToolStripMenuItem
+            if (cambiarContraseñaToolStripMenuItem.Tag != null && traducciones.ContainsKey(cambiarContraseñaToolStripMenuItem.Tag.ToString()))
+                cambiarContraseñaToolStripMenuItem.Text = traducciones[cambiarContraseñaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            //Mis Datos misDatosToolStripMenuItem
+            if (misDatosToolStripMenuItem.Tag != null && traducciones.ContainsKey(misDatosToolStripMenuItem.Tag.ToString()))
+                misDatosToolStripMenuItem.Text = traducciones[misDatosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            //Ver Mis Datos VerMisDatosToolStripMenuItem
+            if (VerMisDatosToolStripMenuItem.Tag != null && traducciones.ContainsKey(VerMisDatosToolStripMenuItem.Tag.ToString()))
+                VerMisDatosToolStripMenuItem.Text = traducciones[VerMisDatosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            //Permisos permisosToolStripMenuItem
+            if (permisosToolStripMenuItem.Tag != null && traducciones.ContainsKey(permisosToolStripMenuItem.Tag.ToString()))
+                permisosToolStripMenuItem.Text = traducciones[permisosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (crearPermisosToolStripMenuItem.Tag != null && traducciones.ContainsKey(crearPermisosToolStripMenuItem.Tag.ToString()))
+                crearPermisosToolStripMenuItem.Text = traducciones[crearPermisosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (modificarPermisosToolStripMenuItem.Tag != null && traducciones.ContainsKey(modificarPermisosToolStripMenuItem.Tag.ToString()))
+                modificarPermisosToolStripMenuItem.Text = traducciones[modificarPermisosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (asignarPermisosToolStripMenuItem.Tag != null && traducciones.ContainsKey(asignarPermisosToolStripMenuItem.Tag.ToString()))
+                asignarPermisosToolStripMenuItem.Text = traducciones[asignarPermisosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            //Administrar Idioma administrarIdiomaToolStripMenuItem
+            if (administrarIdiomaToolStripMenuItem.Tag != null && traducciones.ContainsKey(administrarIdiomaToolStripMenuItem.Tag.ToString()))
+                administrarIdiomaToolStripMenuItem.Text = traducciones[administrarIdiomaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (crearIdiomaToolStripMenuItem.Tag != null && traducciones.ContainsKey(crearIdiomaToolStripMenuItem.Tag.ToString()))
+                crearIdiomaToolStripMenuItem.Text = traducciones[crearIdiomaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (cambiarIdiomaToolStripMenuItem.Tag != null && traducciones.ContainsKey(cambiarIdiomaToolStripMenuItem.Tag.ToString()))
+                cambiarIdiomaToolStripMenuItem.Text = traducciones[cambiarIdiomaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            //Informacion informaciónToolStripMenuItem
+            if (informaciónToolStripMenuItem.Tag != null && traducciones.ContainsKey(informaciónToolStripMenuItem.Tag.ToString()))
+                informaciónToolStripMenuItem.Text = traducciones[informaciónToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (contactoToolStripMenuItem.Tag != null && traducciones.ContainsKey(contactoToolStripMenuItem.Tag.ToString()))
+                contactoToolStripMenuItem.Text = traducciones[contactoToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (novedadesToolStripMenuItem.Tag != null && traducciones.ContainsKey(novedadesToolStripMenuItem.Tag.ToString()))
+                novedadesToolStripMenuItem.Text = traducciones[novedadesToolStripMenuItem.Tag.ToString()].PalabraTraducida;
         }
 
         private void MostrarComponentes(bool cargarPermisosUsuario = true)
@@ -155,7 +288,7 @@ namespace Cova.UI
             this.cambiarContraseñaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CambiarPassword) : false;
             this.cambiarIdiomaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CambiarIdioma) : false;
             this.misDatosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.MisDatos) : false;
-            this.modificarDatosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.ModificarDatos) : false;
+            this.VerMisDatosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.ModificarDatos) : false;
             this.permisosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.Permisos) : false;
             this.crearPermisosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CrearPermisos) : false;
             this.modificarPermisosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.ModificarPermisos) : false;
