@@ -60,6 +60,7 @@
     <Compile Include="BEMedico.cs" />
     <Compile Include="BEPaciente.cs" />
     <Compile Include="BEProfesional.cs" />
+    <Compile Include="Enum\TipoUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

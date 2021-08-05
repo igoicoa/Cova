@@ -207,6 +207,7 @@ namespace Cova.UI
             this.btn_BuscarPacientes_CalendarioVacunacion.TabIndex = 156;
             this.btn_BuscarPacientes_CalendarioVacunacion.Text = "Buscar Pacientes";
             this.btn_BuscarPacientes_CalendarioVacunacion.UseVisualStyleBackColor = false;
+            this.btn_BuscarPacientes_CalendarioVacunacion.Click += new System.EventHandler(this.btn_BuscarPacientes_CalendarioVacunacion_Click);
             // 
             // CalendarioDeVacunaciónForm
             // 

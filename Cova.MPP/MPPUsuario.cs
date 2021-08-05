@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using Cova.BE;
 using Cova.DAL;
+using Cova.BE.Enum;
 
 namespace Cova.MPP
 {
@@ -30,6 +31,7 @@ namespace Cova.MPP
                         usuario.Usuario = Convert.ToString(fila["Usuario"]);
                         usuario.Password = Convert.ToString(fila["Password"]);
                         usuario.Activo = Convert.ToBoolean(fila["Activo"]);
+                        usuario.TipoUsuario = (TipoUsuario)Enum.Parse(typeof(TipoUsuario), Convert.ToString(fila["TipoUsuario"]));
                         //usuario.UltimoLogin = Convert.ToDateTime(fila["UltimoLogin"]);
                     }
                 }

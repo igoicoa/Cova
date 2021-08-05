@@ -8,7 +8,8 @@
     [FechaNacimiento]       DATE            NOT NULL, 
     [Sexo]                  VARCHAR(2)      NOT NULL, 
     [EstadoCivil]           VARCHAR(15)     NULL, 
-    [Telefono]              VARCHAR(20)     NULL, 
+    [Telefono]              VARCHAR(20)     NULL,
+    [Email]                 VARCHAR(120)    NOT NULL, 
     [DomicilioId]           BIGINT          NULL
         CONSTRAINT [FK_Administrador_DomicilioId]
 			FOREIGN KEY REFERENCES [dbo].[Domicilio](DomicilioId)

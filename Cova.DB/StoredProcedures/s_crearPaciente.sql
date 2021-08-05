@@ -24,11 +24,20 @@ BEGIN
 	SET NOCOUNT ON;
 	DECLARE @IdUsuario					BIGINT,
 			@IdCoberturaMedicaPaciente	BIGINT = NULL,
-			@IdDomicilio				BIGINT
+			@IdDomicilio				BIGINT,
+			@NombreUsuario				VARCHAR(30),
+			@ContadorNombre				INT = 0
+
+	SET @NombreUsuario = LEFT(@Nombre, 1) + @apellido
+	WHILE EXISTS(SELECT UsuarioId FROM [dbo].[Usuario] WHERE Usuario = @NombreUsuario)
+	BEGIN
+		SET @ContadorNombre = @ContadorNombre + 1
+		SET @NombreUsuario = LEFT(@Nombre, 1) + @apellido + CONVERT(VARCHAR(10), @ContadorNombre)
+	END
 
 	INSERT INTO [dbo].[Usuario] (Usuario, Password, Activo)
 	VALUES
-	(LEFT(@Nombre, 1) + @apellido, @Password, 1)
+	(@NombreUsuario, @Password, 1)
 	SET @IdUsuario = SCOPE_IDENTITY();
 
 	INSERT INTO [dbo].[Domicilio] (Calle, Numero, Piso, Localidad, Provincia, Pais)

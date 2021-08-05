@@ -138,20 +138,7 @@ EXEC s_CrearProfesionalMedico 'Perez', 'Jose Luis', 28384374, '1981-05-21', 'M',
 EXEC s_CrearProfesionalEnfermero 'Vargas', 'Pablo', 29327384, '1982-07-30', 'M', 'Soltero', '1182533324','pvargas@gmail.com','Palaa',2134,'','Avellaneda','Buenos Aires','Argentina', 29182736,'0E-C2-CB-0E-1D-1A-7C-5B-2A-CB-1C-2E-B3-8B-08-20'
 EXEC s_CrearProfesionalEnfermero 'Salas', 'Sofia', 34928392, '1989-09-21', 'F', 'Soltera', '1182736253','ssalas@hotmail.com','Roca',213,'','Munro','Buenos Aires','Argentina', 38292832,'0E-C2-CB-0E-1D-1A-7C-5B-2A-CB-1C-2E-B3-8B-08-20'
 -- Admin User (User: Admin - PWD: test123)
-DECLARE @UserIDAdmin BIGINT
-DECLARE @permiso INT = 0;
-INSERT INTO Usuario(Usuario, Password, UltimoLogin, Activo)
-VALUES
-('Admin', 'CC-03-E7-47-A6-AF-BB-CB-F8-BE-76-68-AC-FE-BE-E5', GETDATE(), 1);
-SET @UserIDAdmin = SCOPE_IDENTITY();
-
-WHILE @permiso < 48
-BEGIN
-   INSERT INTO [dbo].[UsuarioPermiso] (UsuarioID, TipoPermiso)
-    VALUES
-    (@UserIDAdmin, @permiso)
-    SET @permiso = @permiso + 1;
-END;
+EXEC s_CrearAdministrador 'Dmin', 'Admin', 34928392, '1989-09-21', 'F', 'Soltera', '1182736253','ssalas@hotmail.com','Roca',213,'','Munro','Buenos Aires','Argentina','CC-03-E7-47-A6-AF-BB-CB-F8-BE-76-68-AC-FE-BE-E5'
 
 -- DICCIONARIO MULTI IDIOMA
 DECLARE @IdiomaCastellanoId INT,
