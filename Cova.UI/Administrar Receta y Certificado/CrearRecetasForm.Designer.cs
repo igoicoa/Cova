@@ -44,7 +44,6 @@ namespace Cova.UI
             this.lbl_TipoDocumento_CrearReceta = new System.Windows.Forms.Label();
             this.lbl_CrearReceta = new System.Windows.Forms.Label();
             this.lbl_Diagnostico_CrearReceta = new System.Windows.Forms.Label();
-            this.lb_DetalleDiagnostico_CrearReceta = new System.Windows.Forms.ListBox();
             this.lbl_Fecha_CrearReceta = new System.Windows.Forms.Label();
             this.lbl_Firma_CrearReceta = new System.Windows.Forms.Label();
             this.dtp_fecha_CrearReceta = new System.Windows.Forms.DateTimePicker();
@@ -53,6 +52,7 @@ namespace Cova.UI
             this.btn_Cancelar_CrearReceta = new System.Windows.Forms.Button();
             this.cmb_vacuna = new System.Windows.Forms.ComboBox();
             this.lbl_Nombre_BuscarVacunas = new System.Windows.Forms.Label();
+            this.rtxt_Diagnostico = new System.Windows.Forms.RichTextBox();
             this.gb_DatosPaciente_CrearReceta.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -195,14 +195,6 @@ namespace Cova.UI
             this.lbl_Diagnostico_CrearReceta.TabIndex = 95;
             this.lbl_Diagnostico_CrearReceta.Text = "Diagnostico";
             // 
-            // lb_DetalleDiagnostico_CrearReceta
-            // 
-            this.lb_DetalleDiagnostico_CrearReceta.FormattingEnabled = true;
-            this.lb_DetalleDiagnostico_CrearReceta.Location = new System.Drawing.Point(12, 317);
-            this.lb_DetalleDiagnostico_CrearReceta.Name = "lb_DetalleDiagnostico_CrearReceta";
-            this.lb_DetalleDiagnostico_CrearReceta.Size = new System.Drawing.Size(674, 212);
-            this.lb_DetalleDiagnostico_CrearReceta.TabIndex = 96;
-            // 
             // lbl_Fecha_CrearReceta
             // 
             this.lbl_Fecha_CrearReceta.AutoSize = true;
@@ -236,6 +228,7 @@ namespace Cova.UI
             this.btnCrearReceta_CrearReceta.TabIndex = 100;
             this.btnCrearReceta_CrearReceta.Text = "Crear";
             this.btnCrearReceta_CrearReceta.UseVisualStyleBackColor = true;
+            this.btnCrearReceta_CrearReceta.Click += new System.EventHandler(this.btnCrearReceta_CrearReceta_Click);
             // 
             // btn_Limpiar_CrearReceta
             // 
@@ -275,11 +268,20 @@ namespace Cova.UI
             this.lbl_Nombre_BuscarVacunas.TabIndex = 152;
             this.lbl_Nombre_BuscarVacunas.Text = "Vacuna";
             // 
+            // rtxt_Diagnostico
+            // 
+            this.rtxt_Diagnostico.Location = new System.Drawing.Point(21, 307);
+            this.rtxt_Diagnostico.Name = "rtxt_Diagnostico";
+            this.rtxt_Diagnostico.Size = new System.Drawing.Size(775, 231);
+            this.rtxt_Diagnostico.TabIndex = 154;
+            this.rtxt_Diagnostico.Text = "";
+            // 
             // CrearRecetasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 623);
+            this.Controls.Add(this.rtxt_Diagnostico);
             this.Controls.Add(this.cmb_vacuna);
             this.Controls.Add(this.lbl_Nombre_BuscarVacunas);
             this.Controls.Add(this.btn_Limpiar_CrearReceta);
@@ -288,7 +290,6 @@ namespace Cova.UI
             this.Controls.Add(this.dtp_fecha_CrearReceta);
             this.Controls.Add(this.lbl_Firma_CrearReceta);
             this.Controls.Add(this.lbl_Fecha_CrearReceta);
-            this.Controls.Add(this.lb_DetalleDiagnostico_CrearReceta);
             this.Controls.Add(this.lbl_Diagnostico_CrearReceta);
             this.Controls.Add(this.lbl_CrearReceta);
             this.Controls.Add(this.gb_DatosPaciente_CrearReceta);
@@ -314,7 +315,6 @@ namespace Cova.UI
         private System.Windows.Forms.Label lbl_TipoDocumento_CrearReceta;
         private System.Windows.Forms.Label lbl_CrearReceta;
         private System.Windows.Forms.Label lbl_Diagnostico_CrearReceta;
-        private System.Windows.Forms.ListBox lb_DetalleDiagnostico_CrearReceta;
         private System.Windows.Forms.Label lbl_Fecha_CrearReceta;
         private System.Windows.Forms.Label lbl_Firma_CrearReceta;
         private System.Windows.Forms.DateTimePicker dtp_fecha_CrearReceta;
@@ -327,5 +327,6 @@ namespace Cova.UI
         private System.Windows.Forms.Label lbl_Nombre_CrearReceta;
         private System.Windows.Forms.ComboBox cmb_vacuna;
         private System.Windows.Forms.Label lbl_Nombre_BuscarVacunas;
+        private System.Windows.Forms.RichTextBox rtxt_Diagnostico;
     }
 }

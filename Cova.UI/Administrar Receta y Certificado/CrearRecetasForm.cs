@@ -22,6 +22,20 @@ namespace Cova.UI
             this.cmb_vacuna.SelectedIndex = -1;
         }
 
+        public bool ValidarTodosLosCamposReceta()
+        {
+            if (string.IsNullOrEmpty(txt_apellido_CrearReceta.Text) || (string.IsNullOrEmpty(txt_nombre_CrearReceta.Text))
+                || (string.IsNullOrEmpty(txt_Edad_CrearReceta.Text)) || string.IsNullOrEmpty(txt_NumeroDocumento_CrearReceta.Text)
+                || string.IsNullOrEmpty(cmb_vacuna.Text) || string.IsNullOrEmpty(rtxt_Diagnostico.Text)
+                || string.IsNullOrEmpty(dtp_fecha_CrearReceta.Value.ToString()))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         private void btn_BuscarPacientes_CrearReceta_Click(object sender, EventArgs e)
         {
             BuscarUsuariosForm buscarUsuariosForm = new BuscarUsuariosForm(true, this);
@@ -48,7 +62,7 @@ namespace Cova.UI
             txt_apellido_CrearReceta.Clear();
             txt_Edad_CrearReceta.Clear();
             txt_nombre_CrearReceta.Clear();
-            lb_DetalleDiagnostico_CrearReceta.Items.Clear();
+            rtxt_Diagnostico.Clear();
         }
 
         public void CargarUsuarioAdministrador(BEAdministrador usuarioAModificar)
@@ -64,6 +78,25 @@ namespace Cova.UI
         public void CargarUsuarioMedico(BEMedico usuarioAModificar)
         {
             throw new NotImplementedException();
+        }
+
+        private void btnCrearReceta_CrearReceta_Click(object sender, EventArgs e)
+        {
+            BLReceta blReceta = new BLReceta();
+            
+            
+            if (ValidarTodosLosCamposReceta())
+            {
+                BEReceta receta = new BEReceta();
+                receta.FechaPrescripcion = dtp_fecha_CrearReceta.Value;
+                BEPaciente paciente = new BEPaciente();
+                receta.Medico.
+                blReceta.CrearReceta(receta);
+            }
+            else
+            {
+                
+            }
         }
     }
 }

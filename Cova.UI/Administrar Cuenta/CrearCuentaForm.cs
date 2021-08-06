@@ -207,7 +207,7 @@ namespace Cova.UI
                 || string.IsNullOrEmpty(txt_Email.Text) || string.IsNullOrEmpty(txt_matriculaProvincial.Text)
                 || string.IsNullOrEmpty(txt_localidad.Text) || string.IsNullOrEmpty(txt_calleNumero.Text)
                 || string.IsNullOrEmpty(txt_provincia.Text) || string.IsNullOrEmpty(txt_piso.Text)
-                || string.IsNullOrEmpty(monthCalendarCrearCuenta.Text) || string.IsNullOrEmpty(txt_matriculaNacional.Text))
+                || string.IsNullOrEmpty(monthCalendarCrearCuenta.SelectionRange.Start.ToString()) || string.IsNullOrEmpty(txt_matriculaNacional.Text))
             {
                 return false;
             }
