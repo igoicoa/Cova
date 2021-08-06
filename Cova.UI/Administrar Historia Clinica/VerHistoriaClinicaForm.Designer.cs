@@ -35,6 +35,11 @@ namespace Cova.UI
             this.btn_Mostrar_VerHistoriaClinica = new System.Windows.Forms.Button();
             this.dgv_Mostrar_VerHistoriaClinica = new System.Windows.Forms.DataGridView();
             this.gb_DatosPaciente_VerHistorialHistoriaClinica = new System.Windows.Forms.GroupBox();
+            this.btn_BuscarPacientes_VerHistoriaClinica = new System.Windows.Forms.Button();
+            this.txt_apellido_VerHistoriaClinica = new System.Windows.Forms.TextBox();
+            this.lbl_Apellido_VerHistoriaClinica = new System.Windows.Forms.Label();
+            this.txt_nombre_VerHistoriaClinica = new System.Windows.Forms.TextBox();
+            this.lbl_Nombre_VerHistoriaClinica = new System.Windows.Forms.Label();
             this.txt_Edad_VerHistoriaClinica = new System.Windows.Forms.TextBox();
             this.lbl_Edad_VerHistoriaClinica = new System.Windows.Forms.Label();
             this.txt_NumeroDocumento_VerHistoriaClinica = new System.Windows.Forms.TextBox();
@@ -42,11 +47,6 @@ namespace Cova.UI
             this.cmb_TipoDocumento_VerHistoriaClinica = new System.Windows.Forms.ComboBox();
             this.lbl_TipoDocumento_VerHistoriaClinica = new System.Windows.Forms.Label();
             this.lbl_VerHistorial = new System.Windows.Forms.Label();
-            this.txt_apellido_VerHistoriaClinica = new System.Windows.Forms.TextBox();
-            this.lbl_Apellido_VerHistoriaClinica = new System.Windows.Forms.Label();
-            this.txt_nombre_VerHistoriaClinica = new System.Windows.Forms.TextBox();
-            this.lbl_Nombre_VerHistoriaClinica = new System.Windows.Forms.Label();
-            this.btn_BuscarPacientes_VerHistoriaClinica = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Mostrar_VerHistoriaClinica)).BeginInit();
             this.gb_DatosPaciente_VerHistorialHistoriaClinica.SuspendLayout();
             this.SuspendLayout();
@@ -107,6 +107,51 @@ namespace Cova.UI
             this.gb_DatosPaciente_VerHistorialHistoriaClinica.TabIndex = 110;
             this.gb_DatosPaciente_VerHistorialHistoriaClinica.TabStop = false;
             this.gb_DatosPaciente_VerHistorialHistoriaClinica.Text = "Datos Paciente";
+            // 
+            // btn_BuscarPacientes_VerHistoriaClinica
+            // 
+            this.btn_BuscarPacientes_VerHistoriaClinica.BackColor = System.Drawing.Color.MistyRose;
+            this.btn_BuscarPacientes_VerHistoriaClinica.Location = new System.Drawing.Point(427, 81);
+            this.btn_BuscarPacientes_VerHistoriaClinica.Name = "btn_BuscarPacientes_VerHistoriaClinica";
+            this.btn_BuscarPacientes_VerHistoriaClinica.Size = new System.Drawing.Size(103, 23);
+            this.btn_BuscarPacientes_VerHistoriaClinica.TabIndex = 174;
+            this.btn_BuscarPacientes_VerHistoriaClinica.Text = "Buscar Pacientes";
+            this.btn_BuscarPacientes_VerHistoriaClinica.UseVisualStyleBackColor = false;
+            this.btn_BuscarPacientes_VerHistoriaClinica.Click += new System.EventHandler(this.btn_BuscarPacientes_VerHistoriaClinica_Click);
+            // 
+            // txt_apellido_VerHistoriaClinica
+            // 
+            this.txt_apellido_VerHistoriaClinica.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_apellido_VerHistoriaClinica.Location = new System.Drawing.Point(9, 147);
+            this.txt_apellido_VerHistoriaClinica.Name = "txt_apellido_VerHistoriaClinica";
+            this.txt_apellido_VerHistoriaClinica.Size = new System.Drawing.Size(363, 20);
+            this.txt_apellido_VerHistoriaClinica.TabIndex = 173;
+            // 
+            // lbl_Apellido_VerHistoriaClinica
+            // 
+            this.lbl_Apellido_VerHistoriaClinica.AutoSize = true;
+            this.lbl_Apellido_VerHistoriaClinica.Location = new System.Drawing.Point(6, 131);
+            this.lbl_Apellido_VerHistoriaClinica.Name = "lbl_Apellido_VerHistoriaClinica";
+            this.lbl_Apellido_VerHistoriaClinica.Size = new System.Drawing.Size(44, 13);
+            this.lbl_Apellido_VerHistoriaClinica.TabIndex = 172;
+            this.lbl_Apellido_VerHistoriaClinica.Text = "Apellido";
+            // 
+            // txt_nombre_VerHistoriaClinica
+            // 
+            this.txt_nombre_VerHistoriaClinica.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_nombre_VerHistoriaClinica.Location = new System.Drawing.Point(9, 97);
+            this.txt_nombre_VerHistoriaClinica.Name = "txt_nombre_VerHistoriaClinica";
+            this.txt_nombre_VerHistoriaClinica.Size = new System.Drawing.Size(363, 20);
+            this.txt_nombre_VerHistoriaClinica.TabIndex = 171;
+            // 
+            // lbl_Nombre_VerHistoriaClinica
+            // 
+            this.lbl_Nombre_VerHistoriaClinica.AutoSize = true;
+            this.lbl_Nombre_VerHistoriaClinica.Location = new System.Drawing.Point(6, 81);
+            this.lbl_Nombre_VerHistoriaClinica.Name = "lbl_Nombre_VerHistoriaClinica";
+            this.lbl_Nombre_VerHistoriaClinica.Size = new System.Drawing.Size(44, 13);
+            this.lbl_Nombre_VerHistoriaClinica.TabIndex = 170;
+            this.lbl_Nombre_VerHistoriaClinica.Text = "Nombre";
             // 
             // txt_Edad_VerHistoriaClinica
             // 
@@ -172,50 +217,6 @@ namespace Cova.UI
             this.lbl_VerHistorial.Size = new System.Drawing.Size(215, 25);
             this.lbl_VerHistorial.TabIndex = 109;
             this.lbl_VerHistorial.Text = "Ver Historia Clinica";
-            // 
-            // txt_apellido_VerHistoriaClinica
-            // 
-            this.txt_apellido_VerHistoriaClinica.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_apellido_VerHistoriaClinica.Location = new System.Drawing.Point(9, 147);
-            this.txt_apellido_VerHistoriaClinica.Name = "txt_apellido_VerHistoriaClinica";
-            this.txt_apellido_VerHistoriaClinica.Size = new System.Drawing.Size(363, 20);
-            this.txt_apellido_VerHistoriaClinica.TabIndex = 173;
-            // 
-            // lbl_Apellido_VerHistoriaClinica
-            // 
-            this.lbl_Apellido_VerHistoriaClinica.AutoSize = true;
-            this.lbl_Apellido_VerHistoriaClinica.Location = new System.Drawing.Point(6, 131);
-            this.lbl_Apellido_VerHistoriaClinica.Name = "lbl_Apellido_VerHistoriaClinica";
-            this.lbl_Apellido_VerHistoriaClinica.Size = new System.Drawing.Size(44, 13);
-            this.lbl_Apellido_VerHistoriaClinica.TabIndex = 172;
-            this.lbl_Apellido_VerHistoriaClinica.Text = "Apellido";
-            // 
-            // txt_nombre_VerHistoriaClinica
-            // 
-            this.txt_nombre_VerHistoriaClinica.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_nombre_VerHistoriaClinica.Location = new System.Drawing.Point(9, 97);
-            this.txt_nombre_VerHistoriaClinica.Name = "txt_nombre_VerHistoriaClinica";
-            this.txt_nombre_VerHistoriaClinica.Size = new System.Drawing.Size(363, 20);
-            this.txt_nombre_VerHistoriaClinica.TabIndex = 171;
-            // 
-            // lbl_Nombre_VerHistoriaClinica
-            // 
-            this.lbl_Nombre_VerHistoriaClinica.AutoSize = true;
-            this.lbl_Nombre_VerHistoriaClinica.Location = new System.Drawing.Point(6, 81);
-            this.lbl_Nombre_VerHistoriaClinica.Name = "lbl_Nombre_VerHistoriaClinica";
-            this.lbl_Nombre_VerHistoriaClinica.Size = new System.Drawing.Size(44, 13);
-            this.lbl_Nombre_VerHistoriaClinica.TabIndex = 170;
-            this.lbl_Nombre_VerHistoriaClinica.Text = "Nombre";
-            // 
-            // btn_BuscarPacientes_VerHistoriaClinica
-            // 
-            this.btn_BuscarPacientes_VerHistoriaClinica.BackColor = System.Drawing.Color.MistyRose;
-            this.btn_BuscarPacientes_VerHistoriaClinica.Location = new System.Drawing.Point(427, 81);
-            this.btn_BuscarPacientes_VerHistoriaClinica.Name = "btn_BuscarPacientes_VerHistoriaClinica";
-            this.btn_BuscarPacientes_VerHistoriaClinica.Size = new System.Drawing.Size(103, 23);
-            this.btn_BuscarPacientes_VerHistoriaClinica.TabIndex = 174;
-            this.btn_BuscarPacientes_VerHistoriaClinica.Text = "Buscar Pacientes";
-            this.btn_BuscarPacientes_VerHistoriaClinica.UseVisualStyleBackColor = false;
             // 
             // VerHistoriaClinicaForm
             // 

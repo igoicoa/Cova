@@ -40,6 +40,13 @@ namespace Cova.UI
             }
         }
 
+        public DataView TraerInformacionFiltrada(DataView dv)
+        {
+            dv.RowFilter = $"Nombre like '%{txt_nombre.Text}%' and UsuarioID like '%{txt_Usuario_BuscarUsuario.Text}%' and " +
+                           $"Apellido like '%{txt_apellido.Text}%' and DNI like '%{txt_DNI_BuscarUsuario.Text}%'";
+            return dv;
+        }
+
         private void bttn_Buscar_BuscarUsuario_Click(object sender, EventArgs e)
         {
             string usuario = this.txt_Usuario_BuscarUsuario.Text;
@@ -112,7 +119,8 @@ namespace Cova.UI
                 tableMedicos.Rows.Add(filaMedico);
             }
             DataView dataviewMedicos = new DataView(tableMedicos);
-            dgv_usuario.DataSource = dataviewMedicos;
+            dgv_usuario.DataSource = TraerInformacionFiltrada(dataviewMedicos);
+            //dgv_usuario.DataSource = dataviewMedicos;
             dgv_usuario.Columns[0].Visible = false;
             dgv_usuario.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgv_usuario.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -175,7 +183,8 @@ namespace Cova.UI
                 tableEnfermeros.Rows.Add(filaEnfermero);
             }
             DataView dataviewEnfermeros = new DataView(tableEnfermeros);
-            dgv_usuario.DataSource = dataviewEnfermeros;
+            dgv_usuario.DataSource = TraerInformacionFiltrada(dataviewEnfermeros);
+            //dgv_usuario.DataSource = dataviewEnfermeros;
             dgv_usuario.Columns[0].Visible = false;
             dgv_usuario.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgv_usuario.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -255,7 +264,8 @@ namespace Cova.UI
                 tablePaciente.Rows.Add(filaPacientes);
             }
             DataView dataviewPacientes = new DataView(tablePaciente);
-            dgv_usuario.DataSource = dataviewPacientes;
+            dgv_usuario.DataSource = TraerInformacionFiltrada(dataviewPacientes);
+            //dgv_usuario.DataSource = dataviewPacientes;
             dgv_usuario.Columns[0].Visible = false;
             dgv_usuario.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgv_usuario.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -291,6 +301,8 @@ namespace Cova.UI
         {
             txt_Usuario_BuscarUsuario.Clear();
             txt_DNI_BuscarUsuario.Clear();
+            txt_nombre.Clear();
+            txt_apellido.Clear();
         }
 
         private void btn_SeleccionarUsuario_BuscarUsuarios_Click(object sender, EventArgs e)

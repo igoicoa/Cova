@@ -471,7 +471,7 @@
             // VerMisDatosToolStripMenuItem
             // 
             this.VerMisDatosToolStripMenuItem.Name = "VerMisDatosToolStripMenuItem";
-            this.VerMisDatosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.VerMisDatosToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.VerMisDatosToolStripMenuItem.Tag = "VerMisDatos";
             this.VerMisDatosToolStripMenuItem.Text = "Ver Mis Datos";
             // 
@@ -483,30 +483,32 @@
             this.asignarPermisosToolStripMenuItem});
             this.permisosToolStripMenuItem.Name = "permisosToolStripMenuItem";
             this.permisosToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.permisosToolStripMenuItem.Text = "Permisos";
             this.permisosToolStripMenuItem.Tag = "Permisos";
+            this.permisosToolStripMenuItem.Text = "Permisos";
             // 
             // crearPermisosToolStripMenuItem
             // 
             this.crearPermisosToolStripMenuItem.Name = "crearPermisosToolStripMenuItem";
-            this.crearPermisosToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.crearPermisosToolStripMenuItem.Text = "Crear Permisos";
+            this.crearPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.crearPermisosToolStripMenuItem.Tag = "CrearPermisos";
+            this.crearPermisosToolStripMenuItem.Text = "Crear Permisos";
             this.crearPermisosToolStripMenuItem.Click += new System.EventHandler(this.asignarPermisosToolStripMenuItem_Click);
             // 
             // modificarPermisosToolStripMenuItem
             // 
             this.modificarPermisosToolStripMenuItem.Name = "modificarPermisosToolStripMenuItem";
-            this.modificarPermisosToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.modificarPermisosToolStripMenuItem.Text = "Modificar Permisos";
+            this.modificarPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modificarPermisosToolStripMenuItem.Tag = "ModificarPermisos";
+            this.modificarPermisosToolStripMenuItem.Text = "Modificar Permisos";
+            this.modificarPermisosToolStripMenuItem.Visible = false;
             // 
             // asignarPermisosToolStripMenuItem
             // 
             this.asignarPermisosToolStripMenuItem.Name = "asignarPermisosToolStripMenuItem";
-            this.asignarPermisosToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.asignarPermisosToolStripMenuItem.Text = "Asignar Permisos";
+            this.asignarPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.asignarPermisosToolStripMenuItem.Tag = "AsignarPermisos";
+            this.asignarPermisosToolStripMenuItem.Text = "Asignar Permisos";
+            this.asignarPermisosToolStripMenuItem.Visible = false;
             // 
             // administrarIdiomaToolStripMenuItem
             // 
@@ -515,22 +517,22 @@
             this.crearIdiomaToolStripMenuItem});
             this.administrarIdiomaToolStripMenuItem.Name = "administrarIdiomaToolStripMenuItem";
             this.administrarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.administrarIdiomaToolStripMenuItem.Text = "Administrar Idioma";
             this.administrarIdiomaToolStripMenuItem.Tag = "AdministrarIdioma";
+            this.administrarIdiomaToolStripMenuItem.Text = "Administrar Idioma";
             // 
             // cambiarIdiomaToolStripMenuItem
             // 
             this.cambiarIdiomaToolStripMenuItem.Name = "cambiarIdiomaToolStripMenuItem";
-            this.cambiarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cambiarIdiomaToolStripMenuItem.Text = "Cambiar Idioma";
+            this.cambiarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.cambiarIdiomaToolStripMenuItem.Tag = "CambiarIdioma";
+            this.cambiarIdiomaToolStripMenuItem.Text = "Cambiar Idioma";
             // 
             // crearIdiomaToolStripMenuItem
             // 
             this.crearIdiomaToolStripMenuItem.Name = "crearIdiomaToolStripMenuItem";
-            this.crearIdiomaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.crearIdiomaToolStripMenuItem.Text = "Crear Idioma";
+            this.crearIdiomaToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.crearIdiomaToolStripMenuItem.Tag = "CrearIdioma";
+            this.crearIdiomaToolStripMenuItem.Text = "Crear Idioma";
             this.crearIdiomaToolStripMenuItem.Click += new System.EventHandler(this.crearIdiomaToolStripMenuItem_Click);
             // 
             // informaciónToolStripMenuItem
@@ -540,22 +542,22 @@
             this.novedadesToolStripMenuItem});
             this.informaciónToolStripMenuItem.Name = "informaciónToolStripMenuItem";
             this.informaciónToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
-            this.informaciónToolStripMenuItem.Text = "Información";
             this.informaciónToolStripMenuItem.Tag = "Informacion";
+            this.informaciónToolStripMenuItem.Text = "Información";
             // 
             // contactoToolStripMenuItem
             // 
             this.contactoToolStripMenuItem.Name = "contactoToolStripMenuItem";
-            this.contactoToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.contactoToolStripMenuItem.Text = "Contacto";
+            this.contactoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.contactoToolStripMenuItem.Tag = "Contacto";
+            this.contactoToolStripMenuItem.Text = "Contacto";
             // 
             // novedadesToolStripMenuItem
             // 
             this.novedadesToolStripMenuItem.Name = "novedadesToolStripMenuItem";
-            this.novedadesToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.novedadesToolStripMenuItem.Text = "Novedades";
+            this.novedadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.novedadesToolStripMenuItem.Tag = "Novedades";
+            this.novedadesToolStripMenuItem.Text = "Novedades";
             // 
             // MainForm
             // 

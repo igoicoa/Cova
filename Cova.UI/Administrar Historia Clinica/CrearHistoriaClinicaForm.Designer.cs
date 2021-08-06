@@ -32,6 +32,10 @@ namespace Cova.UI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearHistoriaClinicaForm));
             this.lbl_CrearHistoriaClinica = new System.Windows.Forms.Label();
             this.gb_DatosPaciente = new System.Windows.Forms.GroupBox();
+            this.txt_apellido_CrearHistoriaClinica = new System.Windows.Forms.TextBox();
+            this.lbl_Apellido_CrearHistoriaClinica = new System.Windows.Forms.Label();
+            this.txt_nombre_CrearHistoriaClinica = new System.Windows.Forms.TextBox();
+            this.lbl_Nombre_CrearHistoriaClinica = new System.Windows.Forms.Label();
             this.txt_Edad_CrearHistoriaClinica = new System.Windows.Forms.TextBox();
             this.lbl_Edad_CrearHistoriaClinica = new System.Windows.Forms.Label();
             this.btn_BuscarPacientes_CrearHistoriaClinica = new System.Windows.Forms.Button();
@@ -79,10 +83,6 @@ namespace Cova.UI
             this.btnLimpiar_CrearHistoriaClinica = new System.Windows.Forms.Button();
             this.btnCancelar_CrearHistoriaClinica = new System.Windows.Forms.Button();
             this.btnCrear_CrearHistoriaClinica = new System.Windows.Forms.Button();
-            this.txt_apellido_CrearHistoriaClinica = new System.Windows.Forms.TextBox();
-            this.lbl_Apellido_CrearHistoriaClinica = new System.Windows.Forms.Label();
-            this.txt_nombre_CrearHistoriaClinica = new System.Windows.Forms.TextBox();
-            this.lbl_Nombre_CrearHistoriaClinica = new System.Windows.Forms.Label();
             this.gb_DatosPaciente.SuspendLayout();
             this.gb_MotivoConsulta.SuspendLayout();
             this.gb_AntecedentesPersonales_CrearHistoriaClinica.SuspendLayout();
@@ -118,6 +118,40 @@ namespace Cova.UI
             this.gb_DatosPaciente.TabIndex = 90;
             this.gb_DatosPaciente.TabStop = false;
             this.gb_DatosPaciente.Text = "Datos Paciente";
+            // 
+            // txt_apellido_CrearHistoriaClinica
+            // 
+            this.txt_apellido_CrearHistoriaClinica.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_apellido_CrearHistoriaClinica.Location = new System.Drawing.Point(9, 143);
+            this.txt_apellido_CrearHistoriaClinica.Name = "txt_apellido_CrearHistoriaClinica";
+            this.txt_apellido_CrearHistoriaClinica.Size = new System.Drawing.Size(363, 20);
+            this.txt_apellido_CrearHistoriaClinica.TabIndex = 176;
+            // 
+            // lbl_Apellido_CrearHistoriaClinica
+            // 
+            this.lbl_Apellido_CrearHistoriaClinica.AutoSize = true;
+            this.lbl_Apellido_CrearHistoriaClinica.Location = new System.Drawing.Point(6, 127);
+            this.lbl_Apellido_CrearHistoriaClinica.Name = "lbl_Apellido_CrearHistoriaClinica";
+            this.lbl_Apellido_CrearHistoriaClinica.Size = new System.Drawing.Size(44, 13);
+            this.lbl_Apellido_CrearHistoriaClinica.TabIndex = 175;
+            this.lbl_Apellido_CrearHistoriaClinica.Text = "Apellido";
+            // 
+            // txt_nombre_CrearHistoriaClinica
+            // 
+            this.txt_nombre_CrearHistoriaClinica.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_nombre_CrearHistoriaClinica.Location = new System.Drawing.Point(9, 93);
+            this.txt_nombre_CrearHistoriaClinica.Name = "txt_nombre_CrearHistoriaClinica";
+            this.txt_nombre_CrearHistoriaClinica.Size = new System.Drawing.Size(363, 20);
+            this.txt_nombre_CrearHistoriaClinica.TabIndex = 174;
+            // 
+            // lbl_Nombre_CrearHistoriaClinica
+            // 
+            this.lbl_Nombre_CrearHistoriaClinica.AutoSize = true;
+            this.lbl_Nombre_CrearHistoriaClinica.Location = new System.Drawing.Point(6, 77);
+            this.lbl_Nombre_CrearHistoriaClinica.Name = "lbl_Nombre_CrearHistoriaClinica";
+            this.lbl_Nombre_CrearHistoriaClinica.Size = new System.Drawing.Size(44, 13);
+            this.lbl_Nombre_CrearHistoriaClinica.TabIndex = 173;
+            this.lbl_Nombre_CrearHistoriaClinica.Text = "Nombre";
             // 
             // txt_Edad_CrearHistoriaClinica
             // 
@@ -627,40 +661,6 @@ namespace Cova.UI
             this.btnCrear_CrearHistoriaClinica.TabIndex = 93;
             this.btnCrear_CrearHistoriaClinica.Text = "Crear";
             this.btnCrear_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // txt_apellido_CrearHistoriaClinica
-            // 
-            this.txt_apellido_CrearHistoriaClinica.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_apellido_CrearHistoriaClinica.Location = new System.Drawing.Point(9, 143);
-            this.txt_apellido_CrearHistoriaClinica.Name = "txt_apellido_CrearHistoriaClinica";
-            this.txt_apellido_CrearHistoriaClinica.Size = new System.Drawing.Size(363, 20);
-            this.txt_apellido_CrearHistoriaClinica.TabIndex = 176;
-            // 
-            // lbl_Apellido_CrearHistoriaClinica
-            // 
-            this.lbl_Apellido_CrearHistoriaClinica.AutoSize = true;
-            this.lbl_Apellido_CrearHistoriaClinica.Location = new System.Drawing.Point(6, 127);
-            this.lbl_Apellido_CrearHistoriaClinica.Name = "lbl_Apellido_CrearHistoriaClinica";
-            this.lbl_Apellido_CrearHistoriaClinica.Size = new System.Drawing.Size(44, 13);
-            this.lbl_Apellido_CrearHistoriaClinica.TabIndex = 175;
-            this.lbl_Apellido_CrearHistoriaClinica.Text = "Apellido";
-            // 
-            // txt_nombre_CrearHistoriaClinica
-            // 
-            this.txt_nombre_CrearHistoriaClinica.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_nombre_CrearHistoriaClinica.Location = new System.Drawing.Point(9, 93);
-            this.txt_nombre_CrearHistoriaClinica.Name = "txt_nombre_CrearHistoriaClinica";
-            this.txt_nombre_CrearHistoriaClinica.Size = new System.Drawing.Size(363, 20);
-            this.txt_nombre_CrearHistoriaClinica.TabIndex = 174;
-            // 
-            // lbl_Nombre_CrearHistoriaClinica
-            // 
-            this.lbl_Nombre_CrearHistoriaClinica.AutoSize = true;
-            this.lbl_Nombre_CrearHistoriaClinica.Location = new System.Drawing.Point(6, 77);
-            this.lbl_Nombre_CrearHistoriaClinica.Name = "lbl_Nombre_CrearHistoriaClinica";
-            this.lbl_Nombre_CrearHistoriaClinica.Size = new System.Drawing.Size(44, 13);
-            this.lbl_Nombre_CrearHistoriaClinica.TabIndex = 173;
-            this.lbl_Nombre_CrearHistoriaClinica.Text = "Nombre";
             // 
             // CrearHistoriaClinicaForm
             // 

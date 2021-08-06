@@ -32,6 +32,7 @@ namespace Cova.UI
             this.cmb_coberturaMedica.DisplayMember = "Nombre";
             this.cmb_coberturaMedica.ValueMember = "CoberturaMedicaId";
             this.cmb_coberturaMedica.SelectedIndex = -1;
+            this.cmb_coberturaMedica.SelectedIndex = 0;
         }
 
         public void CargarPlanesCobertura()
@@ -45,6 +46,7 @@ namespace Cova.UI
                 this.cmb_Plan.DisplayMember = "Nombre";
                 this.cmb_Plan.ValueMember = "PlanId";
                 this.cmb_Plan.SelectedIndex = -1;
+                this.cmb_Plan.SelectedIndex = 0;
             }
         }
 
@@ -52,6 +54,7 @@ namespace Cova.UI
         {
             this.cmb_especialidad.DataSource = Enum.GetNames(typeof(Especialidad));
             this.cmb_especialidad.SelectedIndex = -1;
+            this.cmb_especialidad.SelectedIndex = 0;
         }
 
         public void CrearPaciente()
@@ -97,6 +100,7 @@ namespace Cova.UI
             {
                 MessageBox.Show("Hubo un error al crear el paciente");
             }
+
         }
 
         public void CrearProfesionalMedico()
@@ -157,7 +161,7 @@ namespace Cova.UI
             domicilioProfesional.Pais = "Argentina";
             enfermeroNuevo.Domicilio = domicilioProfesional;
             enfermeroNuevo.MatriculaEnfermero = Convert.ToInt32(txt_matriculaNacional.Text);
-      
+
             if (bLEnfermero.CrearProfesionalEnfermero(enfermeroNuevo))
             {
                 MessageBox.Show("Profesional Creado con exito");
@@ -176,7 +180,15 @@ namespace Cova.UI
         //TODO Terminar todos los campos
         public bool ValidarTodosLosCamposPaciente()
         {
-            if(string.IsNullOrEmpty(textBoxApellidoCrearCuenta.Text) || (string.IsNullOrEmpty(txt_CrearCuentaNombre.Text)))
+            if(string.IsNullOrEmpty(textBoxApellidoCrearCuenta.Text) || (string.IsNullOrEmpty(txt_CrearCuentaNombre.Text))
+                || (string.IsNullOrEmpty (textBoxClave_CrearCuenta.Text)) || string.IsNullOrEmpty(textBoxCalle_CrearCuenta.Text)
+                || string.IsNullOrEmpty(textBoxEstadoCivil_CrearCuenta.Text) || string.IsNullOrEmpty(textBoxTelefono_CrearCuenta.Text)
+                || string.IsNullOrEmpty(txt_documentoNumero.Text) || string.IsNullOrEmpty(cmb_Plan.Text)
+                || string.IsNullOrEmpty(txt_Email.Text) || string.IsNullOrEmpty(chk_particular.Text)
+                || string.IsNullOrEmpty(txt_localidad.Text) || string.IsNullOrEmpty(txt_calleNumero.Text)
+                || string.IsNullOrEmpty(txt_provincia.Text) || string.IsNullOrEmpty(txt_piso.Text)
+                || string.IsNullOrEmpty(monthCalendarCrearCuenta.Text) || string.IsNullOrEmpty(txt_numeroAfiliado.Text)
+                || string.IsNullOrEmpty(cmb_coberturaMedica.Text))
             {
                 return false;
             }
@@ -188,7 +200,14 @@ namespace Cova.UI
         //TODO Terminar todos los campos
         public bool ValidarTodosLosCamposMedico()
         {
-            if (string.IsNullOrEmpty(textBoxApellidoCrearCuenta.Text) || (string.IsNullOrEmpty(txt_CrearCuentaNombre.Text)))
+            if (string.IsNullOrEmpty(textBoxApellidoCrearCuenta.Text) || (string.IsNullOrEmpty(txt_CrearCuentaNombre.Text))
+                || (string.IsNullOrEmpty(textBoxClave_CrearCuenta.Text)) || string.IsNullOrEmpty(textBoxCalle_CrearCuenta.Text)
+                || string.IsNullOrEmpty(textBoxEstadoCivil_CrearCuenta.Text) || string.IsNullOrEmpty(textBoxTelefono_CrearCuenta.Text)
+                || string.IsNullOrEmpty(txt_documentoNumero.Text) || string.IsNullOrEmpty(cmb_especialidad.Text)
+                || string.IsNullOrEmpty(txt_Email.Text) || string.IsNullOrEmpty(txt_matriculaProvincial.Text)
+                || string.IsNullOrEmpty(txt_localidad.Text) || string.IsNullOrEmpty(txt_calleNumero.Text)
+                || string.IsNullOrEmpty(txt_provincia.Text) || string.IsNullOrEmpty(txt_piso.Text)
+                || string.IsNullOrEmpty(monthCalendarCrearCuenta.Text) || string.IsNullOrEmpty(txt_matriculaNacional.Text))
             {
                 return false;
             }
@@ -200,7 +219,13 @@ namespace Cova.UI
         //TODO Terminar todos los campos
         public bool ValidarTodosLosCamposEnfermero()
         {
-            if (string.IsNullOrEmpty(textBoxApellidoCrearCuenta.Text) || (string.IsNullOrEmpty(txt_CrearCuentaNombre.Text)))
+            if (string.IsNullOrEmpty(textBoxApellidoCrearCuenta.Text) || (string.IsNullOrEmpty(txt_CrearCuentaNombre.Text))
+                || (string.IsNullOrEmpty(textBoxClave_CrearCuenta.Text)) || string.IsNullOrEmpty(textBoxCalle_CrearCuenta.Text)
+                || string.IsNullOrEmpty(textBoxEstadoCivil_CrearCuenta.Text) || string.IsNullOrEmpty(textBoxTelefono_CrearCuenta.Text)
+                || string.IsNullOrEmpty(txt_documentoNumero.Text) || string.IsNullOrEmpty(txt_matriculaProvincial.Text)
+                || string.IsNullOrEmpty(txt_Email.Text) || string.IsNullOrEmpty(monthCalendarCrearCuenta.Text)
+                || string.IsNullOrEmpty(txt_localidad.Text) || string.IsNullOrEmpty(txt_calleNumero.Text)
+                || string.IsNullOrEmpty(txt_provincia.Text) || string.IsNullOrEmpty(txt_piso.Text))
             {
                 return false;
             }
@@ -213,12 +238,18 @@ namespace Cova.UI
         public bool ValidarTodosLosCamposAdministrador()
         {
             if (string.IsNullOrEmpty(textBoxApellidoCrearCuenta.Text) || (string.IsNullOrEmpty(txt_CrearCuentaNombre.Text))
-                )
+                || (string.IsNullOrEmpty(textBoxClave_CrearCuenta.Text)) || string.IsNullOrEmpty(textBoxCalle_CrearCuenta.Text)
+                || string.IsNullOrEmpty(textBoxEstadoCivil_CrearCuenta.Text) || string.IsNullOrEmpty(textBoxTelefono_CrearCuenta.Text)
+                || string.IsNullOrEmpty(txt_documentoNumero.Text) || string.IsNullOrEmpty(monthCalendarCrearCuenta.Text)
+                || string.IsNullOrEmpty(txt_Email.Text) || string.IsNullOrEmpty(txt_piso.Text)
+                || string.IsNullOrEmpty(txt_localidad.Text) || string.IsNullOrEmpty(txt_calleNumero.Text)
+                || string.IsNullOrEmpty(txt_provincia.Text))
             {
                 return false;
             }
             else
             {
+
                 return true;
             }
         }
@@ -383,6 +414,34 @@ namespace Cova.UI
             this.cmb_especialidad.SelectedIndex = -1;
             this.cmb_coberturaMedica.SelectedIndex = -1;
             this.cmb_Plan.SelectedIndex = -1;
+        }
+
+        private void txt_documentoNumero_TextChanged(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsPunctuation(e.KeyChar)) //Comparas si la tecla presionada corresponde a un signo de puntuacion
+            {
+                e.Handled = true; //Si coincide se controla el evento, es decir, no se escribe el caracter
+            }
+            else
+            {
+                MessageBox.Show("Debe verificar que el campo DNI contenga datos validos");
+            }
+            if (Char.IsSymbol(e.KeyChar)) //Comparas si la tecla presionada corresponde a un simbolo
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                MessageBox.Show("Debe verificar que el campo DNI contenga datos validos");
+            }
+            if (Char.IsLetter(e.KeyChar)) //Comparas si la tecla presionada corresponde a una letra
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                MessageBox.Show("Debe verificar que el campo DNI contenga datos validos");
+            }
         }
     }
 }

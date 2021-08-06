@@ -216,6 +216,7 @@ namespace Cova.UI
             this.btn_BuscarPacientes_VerCalendariodePacientes.TabIndex = 174;
             this.btn_BuscarPacientes_VerCalendariodePacientes.Text = "Buscar Pacientes";
             this.btn_BuscarPacientes_VerCalendariodePacientes.UseVisualStyleBackColor = false;
+            this.btn_BuscarPacientes_VerCalendariodePacientes.Click += new System.EventHandler(this.btn_BuscarPacientes_VerCalendariodePacientes_Click);
             // 
             // txt_NumeroDocumento_VerCalendariodePacientes
             // 

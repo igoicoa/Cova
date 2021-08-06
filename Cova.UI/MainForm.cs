@@ -6,10 +6,11 @@ using Cova.Common.Permisos;
 using Cova.Common.Multiidioma;
 using Cova.Servicios.Multiidioma;
 using Cova.Common.Excepciones;
+using Cova.BE;
 
 namespace Cova.UI
 {
-    public partial class MainForm : Form, IIdiomaObserver
+    public partial class MainForm : Form, IFormCargarUsuarios, IIdiomaObserver
     {
         public MainForm()
         {
@@ -364,8 +365,8 @@ namespace Cova.UI
 
         private void verUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BuscarUsuariosForm frmVerUsuarios = new BuscarUsuariosForm(false);
-            frmVerUsuarios.Show();
+            BuscarUsuariosForm frmBuscarUsuarios = new BuscarUsuariosForm(false, this);
+            frmBuscarUsuarios.Show();
         }
 
         private void calendarioDeVacunaciónToolStripMenuItem_Click(object sender, EventArgs e)
@@ -456,6 +457,26 @@ namespace Cova.UI
         {
             ModificarRecetas_CertificadosForm frmModificarRecetas_Certificados= new ModificarRecetas_CertificadosForm();
             frmModificarRecetas_Certificados.Show();
+        }
+
+        void IFormCargarUsuarios.CargarUsuarioMedico(BEMedico usuarioAModificar)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IFormCargarUsuarios.CargarUsuarioEnfermero(BEEnfermero usuarioAModificar)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IFormCargarUsuarios.CargarUsuarioPaciente(BEPaciente usuarioAModificar)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IFormCargarUsuarios.CargarUsuarioAdministrador(BEAdministrador usuarioAModificar)
+        {
+            throw new NotImplementedException();
         }
     }
 }
