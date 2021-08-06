@@ -4,6 +4,7 @@
 AS
 BEGIN
 	SELECT p.Nombre
+		,p.PacienteId
 		,u.UsuarioID
 		,u.Usuario
 		,p.Apellido

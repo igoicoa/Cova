@@ -4,6 +4,7 @@
 AS
 BEGIN
 	SELECT p.Nombre
+		,p.ProfesionalId
 		,u.UsuarioID
 		,u.Usuario
 		,p.Apellido

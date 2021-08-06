@@ -2,15 +2,28 @@
 using System.Windows.Forms;
 using Cova.BL;
 using Cova.BE;
+using Cova.Servicios.Sesion;
+using System.Linq;
 
 namespace Cova.UI
 {
     public partial class CrearRecetasForm : Form, IFormCargarUsuarios
     {
+        private BEPaciente _pacienteARecetar;
+        private BEMedico _usuarioMedico;
         public CrearRecetasForm()
         {
             InitializeComponent();
             CargarVacunas();
+            CargarDatosMedico();
+        }
+
+        public void CargarDatosMedico()
+        {
+            string usuario = Sesion.GetInstance.Usuario.Usuario;
+            long usuarioID = Sesion.GetInstance.Usuario.UsuarioID;
+            BLMedico bLMedico = new BLMedico();
+            this._usuarioMedico = bLMedico.BuscarMedicos(usuario, "").ToList().Where(x => x.UsuarioID == usuarioID).FirstOrDefault();
         }
 
         public void CargarVacunas()
@@ -44,6 +57,7 @@ namespace Cova.UI
 
         public void CargarUsuarioPaciente(BEPaciente pacienteARecetar)
         {
+            this._pacienteARecetar = pacienteARecetar;
             txt_apellido_CrearReceta.Text = pacienteARecetar.Apellido;
             txt_nombre_CrearReceta.Text = pacienteARecetar.Nombre;
             txt_Edad_CrearReceta.Text = pacienteARecetar.Edad.ToString();
@@ -82,15 +96,16 @@ namespace Cova.UI
 
         private void btnCrearReceta_CrearReceta_Click(object sender, EventArgs e)
         {
-            BLReceta blReceta = new BLReceta();
-            
-            
+         
             if (ValidarTodosLosCamposReceta())
             {
+                BLReceta blReceta = new BLReceta();
                 BEReceta receta = new BEReceta();
+                BEVacuna vacuna = ((BEVacuna)cmb_vacuna.SelectedItem);
+                receta.Vacuna = vacuna;
                 receta.FechaPrescripcion = dtp_fecha_CrearReceta.Value;
-                BEPaciente paciente = new BEPaciente();
-                receta.Medico.
+                receta.Paciente = this._pacienteARecetar;
+                receta.Medico = this._usuarioMedico;
                 blReceta.CrearReceta(receta);
             }
             else

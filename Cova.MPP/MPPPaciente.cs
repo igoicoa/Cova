@@ -27,7 +27,8 @@ namespace Cova.MPP
                 {
                     foreach (DataRow fila in pacientesT.Rows)
                     {
-                        BEPaciente paciente = new BEPaciente();
+                        BEPaciente paciente = new BEPaciente(); 
+                        paciente.PacienteId = Convert.ToInt64(fila["PacienteId"]);
                         paciente.UsuarioID = Convert.ToInt64(fila["UsuarioID"]);
                         paciente.Usuario = Convert.ToString(fila["Usuario"]);
                         paciente.Nombre = Convert.ToString(fila["Nombre"]);
