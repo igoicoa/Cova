@@ -2,8 +2,8 @@
 	@FechaPrescripcion		DATETIME,
 	@PacienteId				BIGINT,
 	@ProfesionalId			BIGINT,
-	@VacunaId				INT = NULL,
-	@Observacion			VARCHAR(MAX) = NULL
+	@Observacion			VARCHAR(MAX),
+	@VacunaId				INT = NULL
 AS
 BEGIN
 	INSERT INTO [dbo].[Receta] (FechaPrescripcion, PacienteId, ProfesionalId, VacunaId, Observacion)

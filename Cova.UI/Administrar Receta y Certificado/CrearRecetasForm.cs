@@ -39,8 +39,7 @@ namespace Cova.UI
         {
             if (string.IsNullOrEmpty(txt_apellido_CrearReceta.Text) || (string.IsNullOrEmpty(txt_nombre_CrearReceta.Text))
                 || (string.IsNullOrEmpty(txt_Edad_CrearReceta.Text)) || string.IsNullOrEmpty(txt_NumeroDocumento_CrearReceta.Text)
-                || string.IsNullOrEmpty(cmb_vacuna.Text) || string.IsNullOrEmpty(rtxt_Diagnostico.Text)
-                || string.IsNullOrEmpty(dtp_fecha_CrearReceta.Value.ToString()))
+                || string.IsNullOrEmpty(rtxt_Diagnostico.Text) || string.IsNullOrEmpty(dtp_fecha_CrearReceta.Value.ToString()))
             {
                 return false;
             }
@@ -107,9 +106,11 @@ namespace Cova.UI
                     receta.FechaPrescripcion = dtp_fecha_CrearReceta.Value;
                     receta.Paciente = this._pacienteARecetar;
                     receta.Medico = this._usuarioMedico;
+                    receta.Observacion = rtxt_Diagnostico.Text;
                     if (blReceta.CrearReceta(receta))
                     {
                         MessageBox.Show("La Receta fue creada con exito");
+                        this.Close();
                     }
                     else
                     {

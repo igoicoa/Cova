@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[s_BuscarVacunaCentroMedico]
+﻿CREATE PROCEDURE [dbo].[s_ObtenerVacunaCentroMedicoAAplicar]
 	@CentroMedicoId		INT,
 	@VacunaNombre		VARCHAR(150),
 	@LaboratorioNombre	VARCHAR(150),
@@ -23,4 +23,5 @@ BEGIN
 	INNER JOIN [dbo].[CentroMedico] cm ON vd.CentroMedicoId = cm.CentroMedicoId
 	INNER JOIN [dbo].[Laboratorio] l ON l.LaboratorioId = v.LaboratorioId
 	WHERE cm.CentroMedicoId = @CentroMedicoId AND v.Nombre LIKE '%' + @VacunaNombre + '%' AND l.Nombre LIKE '%' + @LaboratorioNombre + '%'
+	AND vd.PacienteId IS NULL and vd.FechaAplicacion IS NULL
 END

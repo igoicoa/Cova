@@ -95,7 +95,7 @@ namespace Cova.UI
 
         public void CargarVacunasDosis(BEVacunaDosis Vacuna)
         {
-            _vacunaAAplicar = Vacuna;
+            this._vacunaAAplicar = Vacuna;
             txt_vacuna.Text = Vacuna.Vacuna.Nombre;
             txt_laboratorio.Text = Vacuna.Vacuna.Laboratorio.Nombre;
             txt_lote.Text = Vacuna.Lote;
@@ -106,8 +106,9 @@ namespace Cova.UI
         private void btn_Aplicar_AplicarVacunas_Click(object sender, EventArgs e)
         {
             BLPaciente blPaciente = new BLPaciente();
-            int dosisAAplicar = Convert.ToInt32(cmb_dosis.Text);
-            Dictionary<bool, List<string>> correspondeRecibirDosis = (Dictionary<bool, List<string>>)blPaciente.EstaEnCondicionesDeRecibirVacuna(this._pacienteAVacunar, this._vacunaAAplicar, dosisAAplicar);
+            this._vacunaAAplicar.FechaAplicacion = dtp_fechaAplicacion_AplicarVacunas.Value;
+            this._vacunaAAplicar.Dosis = Convert.ToInt32(cmb_dosis.Text);
+            Dictionary<bool, List<string>> correspondeRecibirDosis = (Dictionary<bool, List<string>>)blPaciente.EstaEnCondicionesDeRecibirVacuna(this._pacienteAVacunar, this._vacunaAAplicar);
             if(correspondeRecibirDosis.ContainsKey(false))
             {
                 string razones = "";
@@ -120,9 +121,17 @@ namespace Cova.UI
             }
             else
             {
-                blPaciente.VacunarPaciente(this._pacienteAVacunar, this._vacunaAAplicar);
+                if(blPaciente.VacunarPaciente(this._pacienteAVacunar, this._vacunaAAplicar))
+                {
+                    MessageBox.Show("Se realizó la aplicación de la vacuna");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error al registrar la aplicacion de la vacuna");
+                }
             }
-            MessageBox.Show("Se realizó la aplicación de la vacuna");
+            
         }
 
         private void btn_buscarVacuna_Click(object sender, EventArgs e)

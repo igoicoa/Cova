@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Data;
 using Cova.BE;
 using Cova.DAL;
@@ -58,9 +57,11 @@ namespace Cova.MPP
                 datosReceta.Add("@FechaPrescripcion", receta.FechaPrescripcion);
                 datosReceta.Add("@PacienteId", receta.Paciente.PacienteId);
                 datosReceta.Add("@ProfesionalId", receta.Medico.ProfesionalId);
-                datosReceta.Add("@VacunaId", receta.Vacuna.VacunaID);
                 datosReceta.Add("@Observacion", receta.Observacion);
-                
+                if (receta.Vacuna != null)
+                {
+                    datosReceta.Add("@VacunaId", receta.Vacuna.VacunaID);
+                }
                 return conexionBDD.Escribir(strSQL, datosReceta);
             }
             catch (Exception ex)

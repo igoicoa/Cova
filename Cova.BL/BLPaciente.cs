@@ -28,7 +28,7 @@ namespace Cova.BL
             return mPPPaciente.ActualizarPaciente(pacienteNuevo);
         }
 
-        public IDictionary<bool, List<string>> EstaEnCondicionesDeRecibirVacuna(BEPaciente pacienteAVacunarse, BEVacunaDosis vacunaAAplicar, int dosisAAplicar)
+        public IDictionary<bool, List<string>> EstaEnCondicionesDeRecibirVacuna(BEPaciente pacienteAVacunarse, BEVacunaDosis vacunaAAplicar)
         {
             Dictionary<bool, List<string>> condicionesPaciente = new Dictionary<bool, List<string>>();
             List<string> razones = new List<string>();
@@ -38,9 +38,9 @@ namespace Cova.BL
                 razones.Add("El paciente no tiene receta para la vacuna");
                 estaEnCondicionesDeVacunarse = false;
             }
-            if(!this.CorrespondeRecibirDosis(pacienteAVacunarse, vacunaAAplicar, dosisAAplicar))
+            if(!this.CorrespondeRecibirDosis(pacienteAVacunarse, vacunaAAplicar))
             {
-                razones.Add("Al paciente no le corresponde recibir la dosis: " + Convert.ToString(dosisAAplicar));
+                razones.Add("Al paciente no le corresponde recibir la dosis: " + Convert.ToString(vacunaAAplicar.Dosis));
                 estaEnCondicionesDeVacunarse = false;
             }
             if (!this.EstaDentroRangoEtarioVacunacion(pacienteAVacunarse, vacunaAAplicar))
@@ -69,12 +69,12 @@ namespace Cova.BL
             return recetaVacuna.RecetaId == 0 ? false : true;
         }
 
-        private bool CorrespondeRecibirDosis(BEPaciente pacienteAVacunarse, BEVacunaDosis vacunaAAplicar, int dosisAAplicar)
+        private bool CorrespondeRecibirDosis(BEPaciente pacienteAVacunarse, BEVacunaDosis vacunaAAplicar)
         {
             int cantidadDosisAplicadas;
             MPPPaciente mPPPaciente = new MPPPaciente();
             cantidadDosisAplicadas = mPPPaciente.ObtenerCantidadDosisAplicadasDeVacunaAPaciente(pacienteAVacunarse, vacunaAAplicar.Vacuna);
-            if(dosisAAplicar != (cantidadDosisAplicadas + 1) || vacunaAAplicar.Vacuna.CantidadDosis < dosisAAplicar)
+            if(vacunaAAplicar.Dosis != (cantidadDosisAplicadas + 1) || vacunaAAplicar.Vacuna.CantidadDosis < vacunaAAplicar.Dosis)
             {
                 return false;
             }
@@ -86,17 +86,25 @@ namespace Cova.BL
             return (pacienteAVacunarse.Edad >= vacunaAAplicar.Vacuna.EdadMinimaAplicacion && pacienteAVacunarse.Edad <= vacunaAAplicar.Vacuna.EdadMaximaAplicacion);
         }
 
-        public IList<BEVacuna> ObtenerVacunasAplicadas()
+        public bool VacunarPaciente(BEPaciente pacienteAVacunar, BEVacunaDosis vacunaAAplicar)
         {
-            throw new NotImplementedException();
+            MPPVacuna mPPVacuna = new MPPVacuna();
+            return mPPVacuna.VacunarPaciente(pacienteAVacunar, vacunaAAplicar);
+        }
+
+        public IList<BEVacunaDosis> ObtenerVacunasAplicadasEsquemaCompleto(BEPaciente paciente)
+        {
+            MPPPaciente mPPPaciente = new MPPPaciente();
+            return mPPPaciente.ObtenerVacunasAplicadasEsquemaCompleto(paciente);
+        }
+
+        public IList<BEVacunaDosis> ObtenerVacunasAplicadasEsquemaIncompleto(BEPaciente paciente)
+        {
+            MPPPaciente mPPPaciente = new MPPPaciente();
+            return mPPPaciente.ObtenerVacunasAplicadasEsquemaIncompleto(paciente);
         }
 
         public IList<BEVacuna> ObtenerVacunasRecetadas()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool VacunarPaciente(BEPaciente pacienteAVacunar, BEVacunaDosis vacunaAAplicar)
         {
             throw new NotImplementedException();
         }

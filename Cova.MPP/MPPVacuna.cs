@@ -52,7 +52,7 @@ namespace Cova.MPP
             return vacunas;
         }
 
-        public IList<BEVacunaDosis> ObtenerVacunasDeCentroMedico(BEVacunaDosis vacunaABuscar)
+        public IList<BEVacunaDosis> ObtenerVacunasDeCentroMedicoAAplicar(BEVacunaDosis vacunaABuscar)
         {
             List<BEVacunaDosis> vacunasDosis = new List<BEVacunaDosis>();
             DataSet vacunasDosisDS;
@@ -61,7 +61,7 @@ namespace Cova.MPP
             try
             {
                 ConexionDB conexionBDD = new ConexionDB();
-                string strSQL = @"s_BuscarVacunaCentroMedico";
+                string strSQL = @"s_ObtenerVacunaCentroMedicoAAplicar";
                 datosVacunaDosis.Add("@CentroMedicoId", vacunaABuscar.CentroMedico.CentroMedicoId);
                 datosVacunaDosis.Add("@VacunaNombre", vacunaABuscar.Vacuna.Nombre);
                 datosVacunaDosis.Add("@LaboratorioNombre", vacunaABuscar.Vacuna.Laboratorio.Nombre);
@@ -103,6 +103,26 @@ namespace Cova.MPP
                 throw ex;
             }
             return vacunasDosis;
+        }
+
+        public bool VacunarPaciente(BEPaciente pacienteAVacunar, BEVacunaDosis vacunaAAplicar)
+        {
+            Hashtable datosVacunaDosis = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_AplicarVacuna";
+                datosVacunaDosis.Add("@PacienteId", pacienteAVacunar.PacienteId);
+                datosVacunaDosis.Add("@FechaAplicacion", vacunaAAplicar.FechaAplicacion);
+                datosVacunaDosis.Add("@Dosis", vacunaAAplicar.Dosis);
+                datosVacunaDosis.Add("@Lote", vacunaAAplicar.Lote);
+                datosVacunaDosis.Add("@VacunaId", vacunaAAplicar.Vacuna.VacunaID);
+                return conexionBDD.Escribir(strSQL, datosVacunaDosis);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

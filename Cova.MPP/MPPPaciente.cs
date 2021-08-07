@@ -217,5 +217,109 @@ namespace Cova.MPP
             }
             return vacunaDosis;
         }
+
+        public IList<BEVacunaDosis> ObtenerVacunasAplicadasEsquemaCompleto(BEPaciente paciente)
+        {
+            IList<BEVacunaDosis> vacunasDosis = new List<BEVacunaDosis>();
+            DataSet vacunaDosisDS;
+            DataTable vacunaDosisT;
+            Hashtable datosVacunaDosis = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_ObtenerVacunasAplicadasEsquemaCompleto";
+                datosVacunaDosis.Add("@PacienteId", paciente.PacienteId);
+                vacunaDosisDS = conexionBDD.ObtenerDataSet(strSQL, datosVacunaDosis);
+                vacunaDosisT = vacunaDosisDS.Tables[0];
+                if (vacunaDosisT.Rows.Count > 0)
+                {
+                    foreach (DataRow fila in vacunaDosisT.Rows)
+                    {
+                        BEVacunaDosis vacunaDosis = new BEVacunaDosis();
+                        BEVacuna vacuna = new BEVacuna();
+                        BELaboratorio laboratorio = new BELaboratorio();
+
+                        laboratorio.Nombre = Convert.ToString(fila["LaboratorioNombre"]);
+                        laboratorio.LaboratorioId = Convert.ToInt32(fila["LaboratorioId"]);
+
+                        vacuna.Laboratorio = laboratorio;
+                        vacuna.Nombre = Convert.ToString(fila["VacunaNombre"]);
+                        vacuna.VacunaID = Convert.ToInt32(fila["VacunaId"]);
+                        vacuna.CantidadDosis = Convert.ToInt32(fila["CantidadDosis"]);
+                        vacuna.Descripcion = Convert.ToString(fila["Descripcion"]);
+                        vacuna.Contraindicaciones = Convert.ToString(fila["Contraindicaciones"]);
+
+                        vacunaDosis.Vacuna = vacuna;
+                        vacunaDosis.Paciente = paciente;
+                        vacunaDosis.Lote = Convert.ToString(fila["Lote"]);
+                        vacunaDosis.Dosis = Convert.ToInt32(fila["Dosis"]);
+                        vacunaDosis.FechaAplicacion = Convert.ToDateTime(fila["FechaAplicacion"]);
+                        vacunaDosis.FechaElaboracion = Convert.ToDateTime(fila["FechaElaboracion"]);
+                        vacunaDosis.FechaVencimiento = Convert.ToDateTime(fila["FechaVencimiento"]);
+                        vacunaDosis.ObservaionPaciente = Convert.ToString(fila["ObservaionPaciente"]);
+                        vacunaDosis.IndicacionMedico = Convert.ToString(fila["IndicacionMedico"]);
+
+                        vacunasDosis.Add(vacunaDosis);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return vacunasDosis;
+        }
+
+        public IList<BEVacunaDosis> ObtenerVacunasAplicadasEsquemaIncompleto(BEPaciente paciente)
+        {
+            IList<BEVacunaDosis> vacunasDosis = new List<BEVacunaDosis>();
+            DataSet vacunaDosisDS;
+            DataTable vacunaDosisT;
+            Hashtable datosVacunaDosis = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_ObtenerVacunasAplicadasEsquemaIncompleto";
+                datosVacunaDosis.Add("@PacienteId", paciente.PacienteId);
+                vacunaDosisDS = conexionBDD.ObtenerDataSet(strSQL, datosVacunaDosis);
+                vacunaDosisT = vacunaDosisDS.Tables[0];
+                if (vacunaDosisT.Rows.Count > 0)
+                {
+                    foreach (DataRow fila in vacunaDosisT.Rows)
+                    {
+                        BEVacunaDosis vacunaDosis = new BEVacunaDosis();
+                        BEVacuna vacuna = new BEVacuna();
+                        BELaboratorio laboratorio = new BELaboratorio();
+
+                        laboratorio.Nombre = Convert.ToString(fila["LaboratorioNombre"]);
+                        laboratorio.LaboratorioId = Convert.ToInt32(fila["LaboratorioId"]);
+
+                        vacuna.Laboratorio = laboratorio;
+                        vacuna.Nombre = Convert.ToString(fila["VacunaNombre"]);
+                        vacuna.VacunaID = Convert.ToInt32(fila["VacunaId"]);
+                        vacuna.CantidadDosis = Convert.ToInt32(fila["CantidadDosis"]);
+                        vacuna.Descripcion = Convert.ToString(fila["Descripcion"]);
+                        vacuna.Contraindicaciones = Convert.ToString(fila["Contraindicaciones"]);
+
+                        vacunaDosis.Vacuna = vacuna;
+                        vacunaDosis.Paciente = paciente;
+                        vacunaDosis.Lote = Convert.ToString(fila["Lote"]);
+                        vacunaDosis.Dosis = Convert.ToInt32(fila["Dosis"]);
+                        vacunaDosis.FechaAplicacion = Convert.ToDateTime(fila["FechaAplicacion"]);
+                        vacunaDosis.FechaElaboracion = Convert.ToDateTime(fila["FechaElaboracion"]);
+                        vacunaDosis.FechaVencimiento = Convert.ToDateTime(fila["FechaVencimiento"]);
+                        vacunaDosis.ObservaionPaciente = Convert.ToString(fila["ObservaionPaciente"]);
+                        vacunaDosis.IndicacionMedico = Convert.ToString(fila["IndicacionMedico"]);
+
+                        vacunasDosis.Add(vacunaDosis);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return vacunasDosis;
+        }
     }
 }

@@ -16,7 +16,8 @@ namespace Cova.BE
         public BEPaciente Paciente { get; set; }
         public DateTime FechaAplicacion { get; set; }
         public int Dosis { get; set; }
-        public string ObservacionProfesional { get; set; }
+        public string ObservaionPaciente { get; set; }
+        public string IndicacionMedico { get; set; }
         public int CentroMedicoAplicacionId { get; set; }
     }
 }

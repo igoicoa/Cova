@@ -16,16 +16,8 @@ namespace Cova.BL
 
         public bool CrearReceta(BEReceta receta)
         {
-            if (Servicios.Sesion.Sesion.GetInstance.Usuario.TipoUsuario== BE.Enum.TipoUsuario.Administrador ||
-                Servicios.Sesion.Sesion.GetInstance.Usuario.TipoUsuario == BE.Enum.TipoUsuario.Paciente)
-            {
-                throw new Exception("Operacion invalida ya que no posee permisos de Profesional");
-            }
-            else
-            {
-                MPPReceta mPPReceta = new MPPReceta();
-                return mPPReceta.CrearReceta(receta);
-            }
+            MPPReceta mPPReceta = new MPPReceta();
+            return mPPReceta.CrearReceta(receta);
         }
     }
 }

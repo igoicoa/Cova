@@ -72,8 +72,7 @@ namespace Cova.UI
             vacunaABuscar.CentroMedico = centroMedico;
 
             BLVacuna bLVacuna = new BLVacuna();
-            bLVacuna.ObtenerVacunasDeCentroMedico(vacunaABuscar);
-            this.VacunasDosis = bLVacuna.ObtenerVacunasDeCentroMedico(vacunaABuscar).ToList();
+            this.VacunasDosis = bLVacuna.ObtenerVacunasDeCentroMedicoAAplicar(vacunaABuscar).ToList();
             DataTable tableVacunas = new DataTable();
             tableVacunas.Columns.Add("Lote");
             tableVacunas.Columns.Add("Fecha Elaboracion");

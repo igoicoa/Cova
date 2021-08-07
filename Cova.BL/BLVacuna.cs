@@ -16,10 +16,10 @@ namespace Cova.BL
             return mPPVacuna.ObtenerVacunas();
         }
 
-        public IList<BEVacunaDosis> ObtenerVacunasDeCentroMedico(BEVacunaDosis vacunaABuscar)
+        public IList<BEVacunaDosis> ObtenerVacunasDeCentroMedicoAAplicar(BEVacunaDosis vacunaABuscar)
         {
             MPPVacuna mPPVacuna = new MPPVacuna();
-            return mPPVacuna.ObtenerVacunasDeCentroMedico(vacunaABuscar);
+            return mPPVacuna.ObtenerVacunasDeCentroMedicoAAplicar(vacunaABuscar);
         }
     }
 }
