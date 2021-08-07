@@ -35,7 +35,6 @@ namespace Cova.UI
             this.dtp_fechaAplicacion_AplicarVacunas = new System.Windows.Forms.DateTimePicker();
             this.lbl_FechaAplicacion_AplicarVacuna = new System.Windows.Forms.Label();
             this.lbl_Observacion_AplicarVacunas = new System.Windows.Forms.Label();
-            this.txt_Observacion_AplicarVacunas = new System.Windows.Forms.TextBox();
             this.lbl_Dosis_AplicarVacunas = new System.Windows.Forms.Label();
             this.lbl_CentrodeVacunacion_AplicarVacunas = new System.Windows.Forms.Label();
             this.btn_Limpiar_AplicarVacunas = new System.Windows.Forms.Button();
@@ -67,6 +66,7 @@ namespace Cova.UI
             this.cmb_centroMedico = new System.Windows.Forms.ComboBox();
             this.lbl_TipoDocumento_AplicarVacunas = new System.Windows.Forms.Label();
             this.lbl_Nombre_AplicarVacunas = new System.Windows.Forms.Label();
+            this.txt_Observacion_AplicarVacunas = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AplicarVacunas)).BeginInit();
             this.gb_DatosVacuna_AplicarVacunas.SuspendLayout();
             this.gb_DatosPaciente.SuspendLayout();
@@ -111,20 +111,11 @@ namespace Cova.UI
             // lbl_Observacion_AplicarVacunas
             // 
             this.lbl_Observacion_AplicarVacunas.AutoSize = true;
-            this.lbl_Observacion_AplicarVacunas.Location = new System.Drawing.Point(15, 186);
+            this.lbl_Observacion_AplicarVacunas.Location = new System.Drawing.Point(16, 201);
             this.lbl_Observacion_AplicarVacunas.Name = "lbl_Observacion_AplicarVacunas";
             this.lbl_Observacion_AplicarVacunas.Size = new System.Drawing.Size(67, 13);
             this.lbl_Observacion_AplicarVacunas.TabIndex = 138;
             this.lbl_Observacion_AplicarVacunas.Text = "Observación";
-            // 
-            // txt_Observacion_AplicarVacunas
-            // 
-            this.txt_Observacion_AplicarVacunas.BackColor = System.Drawing.SystemColors.Menu;
-            this.txt_Observacion_AplicarVacunas.Location = new System.Drawing.Point(88, 186);
-            this.txt_Observacion_AplicarVacunas.MaxLength = 30;
-            this.txt_Observacion_AplicarVacunas.Name = "txt_Observacion_AplicarVacunas";
-            this.txt_Observacion_AplicarVacunas.Size = new System.Drawing.Size(692, 20);
-            this.txt_Observacion_AplicarVacunas.TabIndex = 139;
             // 
             // lbl_Dosis_AplicarVacunas
             // 
@@ -193,6 +184,7 @@ namespace Cova.UI
             // 
             // gb_DatosVacuna_AplicarVacunas
             // 
+            this.gb_DatosVacuna_AplicarVacunas.Controls.Add(this.txt_Observacion_AplicarVacunas);
             this.gb_DatosVacuna_AplicarVacunas.Controls.Add(this.txt_laboratorio);
             this.gb_DatosVacuna_AplicarVacunas.Controls.Add(this.label4);
             this.gb_DatosVacuna_AplicarVacunas.Controls.Add(this.txt_vacuna);
@@ -207,12 +199,11 @@ namespace Cova.UI
             this.gb_DatosVacuna_AplicarVacunas.Controls.Add(this.lbl_FechaAplicacion_AplicarVacuna);
             this.gb_DatosVacuna_AplicarVacunas.Controls.Add(this.dtp_fechaAplicacion_AplicarVacunas);
             this.gb_DatosVacuna_AplicarVacunas.Controls.Add(this.lbl_Observacion_AplicarVacunas);
-            this.gb_DatosVacuna_AplicarVacunas.Controls.Add(this.txt_Observacion_AplicarVacunas);
             this.gb_DatosVacuna_AplicarVacunas.Controls.Add(this.lbl_Dosis_AplicarVacunas);
             this.gb_DatosVacuna_AplicarVacunas.Controls.Add(this.lbl_estado_AplicarVacunas);
             this.gb_DatosVacuna_AplicarVacunas.Location = new System.Drawing.Point(6, 222);
             this.gb_DatosVacuna_AplicarVacunas.Name = "gb_DatosVacuna_AplicarVacunas";
-            this.gb_DatosVacuna_AplicarVacunas.Size = new System.Drawing.Size(795, 224);
+            this.gb_DatosVacuna_AplicarVacunas.Size = new System.Drawing.Size(795, 239);
             this.gb_DatosVacuna_AplicarVacunas.TabIndex = 174;
             this.gb_DatosVacuna_AplicarVacunas.TabStop = false;
             this.gb_DatosVacuna_AplicarVacunas.Text = "Datos Vacuna";
@@ -439,6 +430,14 @@ namespace Cova.UI
             this.lbl_Nombre_AplicarVacunas.TabIndex = 180;
             this.lbl_Nombre_AplicarVacunas.Text = "Nombre";
             // 
+            // txt_Observacion_AplicarVacunas
+            // 
+            this.txt_Observacion_AplicarVacunas.Location = new System.Drawing.Point(89, 186);
+            this.txt_Observacion_AplicarVacunas.Name = "txt_Observacion_AplicarVacunas";
+            this.txt_Observacion_AplicarVacunas.Size = new System.Drawing.Size(684, 47);
+            this.txt_Observacion_AplicarVacunas.TabIndex = 193;
+            this.txt_Observacion_AplicarVacunas.Text = "";
+            // 
             // AplicarVacunaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -471,7 +470,6 @@ namespace Cova.UI
         private System.Windows.Forms.DateTimePicker dtp_fechaAplicacion_AplicarVacunas;
         private System.Windows.Forms.Label lbl_FechaAplicacion_AplicarVacuna;
         private System.Windows.Forms.Label lbl_Observacion_AplicarVacunas;
-        private System.Windows.Forms.TextBox txt_Observacion_AplicarVacunas;
         private System.Windows.Forms.Label lbl_Dosis_AplicarVacunas;
         private System.Windows.Forms.Label lbl_CentrodeVacunacion_AplicarVacunas;
         private System.Windows.Forms.Button btn_Limpiar_AplicarVacunas;
@@ -503,5 +501,6 @@ namespace Cova.UI
         private System.Windows.Forms.Button btn_buscarVacuna;
         private System.Windows.Forms.TextBox txt_laboratorio;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.RichTextBox txt_Observacion_AplicarVacunas;
     }
 }

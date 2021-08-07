@@ -59,25 +59,28 @@ namespace Cova.UI
 
         public void CrearPaciente()
         {
-            BEPaciente pacienteNuevo = new BEPaciente();
-            BLPaciente bLPaciente = new BLPaciente();
-            pacienteNuevo.Apellido = textBoxApellidoCrearCuenta.Text;
-            pacienteNuevo.Nombre = txt_CrearCuentaNombre.Text;
-            pacienteNuevo.Sexo = radioButtonMasculino_CrearCuenta.Checked ? "M" : "F";
-            pacienteNuevo.Telefono = textBoxTelefono_CrearCuenta.Text;
-            pacienteNuevo.Email = txt_Email.Text;
-            pacienteNuevo.EstadoCivil = textBoxEstadoCivil_CrearCuenta.Text;
-            pacienteNuevo.DNI = Convert.ToInt32(txt_documentoNumero.Text);
-            pacienteNuevo.FechaNacimiento = monthCalendarCrearCuenta.SelectionRange.Start;
-            pacienteNuevo.Password = HashHelper.HashMD5(textBoxClave_CrearCuenta.Text);
-            BEDomicilio domicilioPaciente = new BEDomicilio();
-            domicilioPaciente.Calle = textBoxCalle_CrearCuenta.Text;
-            domicilioPaciente.Numero = Convert.ToInt32(txt_calleNumero.Text);
-            domicilioPaciente.Piso = txt_piso.Text;
-            domicilioPaciente.Localidad = txt_localidad.Text;
-            domicilioPaciente.Provincia = txt_provincia.Text;
-            domicilioPaciente.Pais = "Argentina";
-            pacienteNuevo.Domicilio = domicilioPaciente;
+            int dni, calleNum;
+            if (int.TryParse(txt_documentoNumero.Text, out dni) && int.TryParse(txt_calleNumero.Text, out calleNum))
+            {
+                BEPaciente pacienteNuevo = new BEPaciente();
+                BLPaciente bLPaciente = new BLPaciente();
+                pacienteNuevo.Apellido = textBoxApellidoCrearCuenta.Text;
+                pacienteNuevo.Nombre = txt_CrearCuentaNombre.Text;
+                pacienteNuevo.Sexo = radioButtonMasculino_CrearCuenta.Checked ? "M" : "F";
+                pacienteNuevo.Telefono = textBoxTelefono_CrearCuenta.Text;
+                pacienteNuevo.Email = txt_Email.Text;
+                pacienteNuevo.EstadoCivil = textBoxEstadoCivil_CrearCuenta.Text;
+                pacienteNuevo.DNI = dni;
+                pacienteNuevo.FechaNacimiento = monthCalendarCrearCuenta.SelectionRange.Start;
+                pacienteNuevo.Password = HashHelper.HashMD5(textBoxClave_CrearCuenta.Text);
+                BEDomicilio domicilioPaciente = new BEDomicilio();
+                domicilioPaciente.Calle = textBoxCalle_CrearCuenta.Text;
+                domicilioPaciente.Numero = calleNum;
+                domicilioPaciente.Piso = txt_piso.Text;
+                domicilioPaciente.Localidad = txt_localidad.Text;
+                domicilioPaciente.Provincia = txt_provincia.Text;
+                domicilioPaciente.Pais = "Argentina";
+                pacienteNuevo.Domicilio = domicilioPaciente;
             if(!chk_particular.Checked)
             {
                 BECoberturaMedica coberturaMedicaSeleccionada = (BECoberturaMedica)cmb_coberturaMedica.SelectedItem;
@@ -100,11 +103,19 @@ namespace Cova.UI
             {
                 MessageBox.Show("Hubo un error al crear el paciente");
             }
-
+         }
+            else
+            {
+                MessageBox.Show("Completar con valores numericos");
+            }
         }
 
         public void CrearProfesionalMedico()
         {
+            int dni, calleNum, Mnacional, Mprovincial ;
+            if (int.TryParse(txt_documentoNumero.Text, out dni) && int.TryParse(txt_calleNumero.Text, out calleNum)
+                && int.TryParse(txt_matriculaNacional.Text, out Mnacional) && int.TryParse(txt_matriculaProvincial.Text, out Mprovincial))
+                { 
             BEMedico medicoNuevo = new BEMedico();
             BLMedico bLMedico = new BLMedico();
             medicoNuevo.Apellido = textBoxApellidoCrearCuenta.Text;
@@ -113,19 +124,19 @@ namespace Cova.UI
             medicoNuevo.Telefono = textBoxTelefono_CrearCuenta.Text;
             medicoNuevo.Email = txt_Email.Text;
             medicoNuevo.EstadoCivil = textBoxEstadoCivil_CrearCuenta.Text;
-            medicoNuevo.DNI = Convert.ToInt32(txt_documentoNumero.Text);
+            medicoNuevo.DNI = dni;
             medicoNuevo.FechaNacimiento = monthCalendarCrearCuenta.SelectionRange.Start;
             medicoNuevo.Password = HashHelper.HashMD5(textBoxClave_CrearCuenta.Text);
             BEDomicilio domicilioProfesional = new BEDomicilio();
             domicilioProfesional.Calle = textBoxCalle_CrearCuenta.Text;
-            domicilioProfesional.Numero = Convert.ToInt32(txt_calleNumero.Text);
+            domicilioProfesional.Numero = calleNum;
             domicilioProfesional.Piso = txt_piso.Text;
             domicilioProfesional.Localidad = txt_localidad.Text;
             domicilioProfesional.Provincia = txt_provincia.Text;
             domicilioProfesional.Pais = "Argentina";
             medicoNuevo.Domicilio = domicilioProfesional;
-            medicoNuevo.MatriculaNacional = Convert.ToInt32(txt_matriculaNacional.Text);
-            medicoNuevo.MatriculaProvincial = Convert.ToInt32(txt_matriculaProvincial.Text);
+            medicoNuevo.MatriculaNacional = Mnacional;
+            medicoNuevo.MatriculaProvincial = Mprovincial;
             medicoNuevo.Especialidad = (Especialidad)Enum.Parse(typeof(Especialidad), cmb_especialidad.SelectedItem.ToString());
 
             if (bLMedico.CrearProfesionalMedico(medicoNuevo))
@@ -137,10 +148,19 @@ namespace Cova.UI
             {
                 MessageBox.Show("Hubo un error al crear el profesional");
             }
+            }
+            else
+            {
+                MessageBox.Show("Completar con valores numericos");
+            }
         }
 
         public void CrearProfesionalEnfermero()
         {
+            int dni, calleNum, Mnacional;
+            if (int.TryParse(txt_documentoNumero.Text, out dni) && int.TryParse(txt_calleNumero.Text, out calleNum)
+                && int.TryParse(txt_matriculaNacional.Text, out Mnacional))
+            {
             BEEnfermero enfermeroNuevo = new BEEnfermero();
             BLEnfermero bLEnfermero = new BLEnfermero();
             enfermeroNuevo.Apellido = textBoxApellidoCrearCuenta.Text;
@@ -149,12 +169,12 @@ namespace Cova.UI
             enfermeroNuevo.Telefono = textBoxTelefono_CrearCuenta.Text;
             enfermeroNuevo.Email = txt_Email.Text;
             enfermeroNuevo.EstadoCivil = textBoxEstadoCivil_CrearCuenta.Text;
-            enfermeroNuevo.DNI = Convert.ToInt32(txt_documentoNumero.Text);
+            enfermeroNuevo.DNI = dni;
             enfermeroNuevo.FechaNacimiento = monthCalendarCrearCuenta.SelectionRange.Start;
             enfermeroNuevo.Password = HashHelper.HashMD5(textBoxClave_CrearCuenta.Text);
             BEDomicilio domicilioProfesional = new BEDomicilio();
             domicilioProfesional.Calle = textBoxCalle_CrearCuenta.Text;
-            domicilioProfesional.Numero = Convert.ToInt32(txt_calleNumero.Text);
+            domicilioProfesional.Numero = calleNum;
             domicilioProfesional.Piso = txt_piso.Text;
             domicilioProfesional.Localidad = txt_localidad.Text;
             domicilioProfesional.Provincia = txt_provincia.Text;
@@ -172,12 +192,53 @@ namespace Cova.UI
                 MessageBox.Show("Hubo un error al crear el profesional");
             }
         }
+             else
+            {
+                MessageBox.Show("Completar con valores numericos");
+            }
+        }
 
         public void CrearAdministrador()
         {
-
+            int dni, calleNum;
+            if (int.TryParse(txt_documentoNumero.Text, out dni) && int.TryParse(txt_calleNumero.Text, out calleNum))
+            {
+                BEAdministrador administradorNuevo = new BEAdministrador();
+                BLAdministrador blAdministrador = new BLAdministrador();
+                administradorNuevo.Apellido = textBoxApellidoCrearCuenta.Text;
+                administradorNuevo.Nombre = txt_CrearCuentaNombre.Text;
+                administradorNuevo.Sexo = radioButtonMasculino_CrearCuenta.Checked ? "M" : "F";
+                administradorNuevo.Telefono = textBoxTelefono_CrearCuenta.Text;
+                administradorNuevo.Email = txt_Email.Text;
+                administradorNuevo.EstadoCivil = textBoxEstadoCivil_CrearCuenta.Text;
+                administradorNuevo.DNI = dni;
+                administradorNuevo.FechaNacimiento = monthCalendarCrearCuenta.SelectionRange.Start;
+                administradorNuevo.Password = HashHelper.HashMD5(textBoxClave_CrearCuenta.Text);
+                BEDomicilio domicilioAdministrador = new BEDomicilio();
+                domicilioAdministrador.Calle = textBoxCalle_CrearCuenta.Text;
+                domicilioAdministrador.Numero = calleNum;
+                domicilioAdministrador.Piso = txt_piso.Text;
+                domicilioAdministrador.Localidad = txt_localidad.Text;
+                domicilioAdministrador.Provincia = txt_provincia.Text;
+                domicilioAdministrador.Pais = "Argentina";
+                administradorNuevo.Domicilio = domicilioAdministrador;
+   
+                if (blAdministrador.CrearAdministrador(administradorNuevo))
+                {
+                    MessageBox.Show("Administrador Creado con exito");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error al crear el Administrador");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Completar con valores numericos");
+            }
         }
-        //TODO Terminar todos los campos
+
         public bool ValidarTodosLosCamposPaciente()
         {
             if(string.IsNullOrEmpty(textBoxApellidoCrearCuenta.Text) || (string.IsNullOrEmpty(txt_CrearCuentaNombre.Text))
@@ -186,8 +247,8 @@ namespace Cova.UI
                 || string.IsNullOrEmpty(txt_documentoNumero.Text) || string.IsNullOrEmpty(cmb_Plan.Text)
                 || string.IsNullOrEmpty(txt_Email.Text) || string.IsNullOrEmpty(chk_particular.Text)
                 || string.IsNullOrEmpty(txt_localidad.Text) || string.IsNullOrEmpty(txt_calleNumero.Text)
-                || string.IsNullOrEmpty(txt_provincia.Text) || string.IsNullOrEmpty(txt_piso.Text)
-                || string.IsNullOrEmpty(monthCalendarCrearCuenta.Text) || string.IsNullOrEmpty(txt_numeroAfiliado.Text)
+                || string.IsNullOrEmpty(txt_provincia.Text)
+                || string.IsNullOrEmpty(monthCalendarCrearCuenta.SelectionRange.Start.ToString()) || string.IsNullOrEmpty(txt_numeroAfiliado.Text)
                 || string.IsNullOrEmpty(cmb_coberturaMedica.Text))
             {
                 return false;
@@ -197,7 +258,7 @@ namespace Cova.UI
                 return true;
             }
         }
-        //TODO Terminar todos los campos
+
         public bool ValidarTodosLosCamposMedico()
         {
             if (string.IsNullOrEmpty(textBoxApellidoCrearCuenta.Text) || (string.IsNullOrEmpty(txt_CrearCuentaNombre.Text))
@@ -206,7 +267,7 @@ namespace Cova.UI
                 || string.IsNullOrEmpty(txt_documentoNumero.Text) || string.IsNullOrEmpty(cmb_especialidad.Text)
                 || string.IsNullOrEmpty(txt_Email.Text) || string.IsNullOrEmpty(txt_matriculaProvincial.Text)
                 || string.IsNullOrEmpty(txt_localidad.Text) || string.IsNullOrEmpty(txt_calleNumero.Text)
-                || string.IsNullOrEmpty(txt_provincia.Text) || string.IsNullOrEmpty(txt_piso.Text)
+                || string.IsNullOrEmpty(txt_provincia.Text)
                 || string.IsNullOrEmpty(monthCalendarCrearCuenta.SelectionRange.Start.ToString()) || string.IsNullOrEmpty(txt_matriculaNacional.Text))
             {
                 return false;
@@ -216,16 +277,16 @@ namespace Cova.UI
                 return true;
             }
         }
-        //TODO Terminar todos los campos
+
         public bool ValidarTodosLosCamposEnfermero()
         {
             if (string.IsNullOrEmpty(textBoxApellidoCrearCuenta.Text) || (string.IsNullOrEmpty(txt_CrearCuentaNombre.Text))
                 || (string.IsNullOrEmpty(textBoxClave_CrearCuenta.Text)) || string.IsNullOrEmpty(textBoxCalle_CrearCuenta.Text)
                 || string.IsNullOrEmpty(textBoxEstadoCivil_CrearCuenta.Text) || string.IsNullOrEmpty(textBoxTelefono_CrearCuenta.Text)
                 || string.IsNullOrEmpty(txt_documentoNumero.Text) || string.IsNullOrEmpty(txt_matriculaProvincial.Text)
-                || string.IsNullOrEmpty(txt_Email.Text) || string.IsNullOrEmpty(monthCalendarCrearCuenta.Text)
+                || string.IsNullOrEmpty(txt_Email.Text) || string.IsNullOrEmpty(monthCalendarCrearCuenta.SelectionRange.Start.ToString())
                 || string.IsNullOrEmpty(txt_localidad.Text) || string.IsNullOrEmpty(txt_calleNumero.Text)
-                || string.IsNullOrEmpty(txt_provincia.Text) || string.IsNullOrEmpty(txt_piso.Text))
+                || string.IsNullOrEmpty(txt_provincia.Text))
             {
                 return false;
             }
@@ -240,8 +301,8 @@ namespace Cova.UI
             if (string.IsNullOrEmpty(textBoxApellidoCrearCuenta.Text) || (string.IsNullOrEmpty(txt_CrearCuentaNombre.Text))
                 || (string.IsNullOrEmpty(textBoxClave_CrearCuenta.Text)) || string.IsNullOrEmpty(textBoxCalle_CrearCuenta.Text)
                 || string.IsNullOrEmpty(textBoxEstadoCivil_CrearCuenta.Text) || string.IsNullOrEmpty(textBoxTelefono_CrearCuenta.Text)
-                || string.IsNullOrEmpty(txt_documentoNumero.Text) || string.IsNullOrEmpty(monthCalendarCrearCuenta.Text)
-                || string.IsNullOrEmpty(txt_Email.Text) || string.IsNullOrEmpty(txt_piso.Text)
+                || string.IsNullOrEmpty(txt_documentoNumero.Text) || string.IsNullOrEmpty(monthCalendarCrearCuenta.SelectionRange.Start.ToString())
+                || string.IsNullOrEmpty(txt_Email.Text)
                 || string.IsNullOrEmpty(txt_localidad.Text) || string.IsNullOrEmpty(txt_calleNumero.Text)
                 || string.IsNullOrEmpty(txt_provincia.Text))
             {
@@ -418,30 +479,6 @@ namespace Cova.UI
 
         private void txt_documentoNumero_TextChanged(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsPunctuation(e.KeyChar)) //Comparas si la tecla presionada corresponde a un signo de puntuacion
-            {
-                e.Handled = true; //Si coincide se controla el evento, es decir, no se escribe el caracter
-            }
-            else
-            {
-                MessageBox.Show("Debe verificar que el campo DNI contenga datos validos");
-            }
-            if (Char.IsSymbol(e.KeyChar)) //Comparas si la tecla presionada corresponde a un simbolo
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                MessageBox.Show("Debe verificar que el campo DNI contenga datos validos");
-            }
-            if (Char.IsLetter(e.KeyChar)) //Comparas si la tecla presionada corresponde a una letra
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                MessageBox.Show("Debe verificar que el campo DNI contenga datos validos");
-            }
         }
     }
 }

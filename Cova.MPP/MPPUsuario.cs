@@ -20,7 +20,7 @@ namespace Cova.MPP
             {
                 ConexionDB conexionBDD = new ConexionDB();
                 string strSQL = @"s_ObtenerUsuario";
-                datosUsuario.Add("@NombreUsuario", usuarioALoguearse.Usuario);
+                datosUsuario.Add("@Usuario", usuarioALoguearse.Usuario);
                 usuarioDS = conexionBDD.ObtenerDataSet(strSQL, datosUsuario);
                 usuarioT = usuarioDS.Tables[0];
                 if (usuarioT.Rows.Count > 0)
@@ -31,7 +31,7 @@ namespace Cova.MPP
                         usuario.Usuario = Convert.ToString(fila["Usuario"]);
                         usuario.Password = Convert.ToString(fila["Password"]);
                         usuario.Activo = Convert.ToBoolean(fila["Activo"]);
-                        usuario.TipoUsuario = (TipoUsuario)Enum.Parse(typeof(TipoUsuario), Convert.ToString(fila["TipoUsuario"]));
+                        usuario.TipoUsuario = (TipoUsuario) int.Parse (fila["TipoUsuario"].ToString());
                         //usuario.UltimoLogin = Convert.ToDateTime(fila["UltimoLogin"]);
                     }
                 }

@@ -96,22 +96,37 @@ namespace Cova.UI
 
         private void btnCrearReceta_CrearReceta_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (ValidarTodosLosCamposReceta())
+                {
+                    BLReceta blReceta = new BLReceta();
+                    BEReceta receta = new BEReceta();
+                    BEVacuna vacuna = ((BEVacuna)cmb_vacuna.SelectedItem);
+                    receta.Vacuna = vacuna;
+                    receta.FechaPrescripcion = dtp_fecha_CrearReceta.Value;
+                    receta.Paciente = this._pacienteARecetar;
+                    receta.Medico = this._usuarioMedico;
+                    if (blReceta.CrearReceta(receta))
+                    {
+                        MessageBox.Show("La Receta fue creada con exito");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrió un error al crear la receta");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe completar todos los campos");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
          
-            if (ValidarTodosLosCamposReceta())
-            {
-                BLReceta blReceta = new BLReceta();
-                BEReceta receta = new BEReceta();
-                BEVacuna vacuna = ((BEVacuna)cmb_vacuna.SelectedItem);
-                receta.Vacuna = vacuna;
-                receta.FechaPrescripcion = dtp_fecha_CrearReceta.Value;
-                receta.Paciente = this._pacienteARecetar;
-                receta.Medico = this._usuarioMedico;
-                blReceta.CrearReceta(receta);
-            }
-            else
-            {
-                
-            }
+           
         }
     }
 }

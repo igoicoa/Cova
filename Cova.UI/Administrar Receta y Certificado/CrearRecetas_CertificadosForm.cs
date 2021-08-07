@@ -27,6 +27,7 @@ namespace Cova.UI
         {
             CrearRecetasForm frmCrearRecetas = new CrearRecetasForm();
             frmCrearRecetas.Show();
+            this.Close();
         }
 
         private void btnCancelar_CrearRecetayCertificado_Click(object sender, EventArgs e)
@@ -38,6 +39,7 @@ namespace Cova.UI
         {
             CrearCertificadoForm frmCrearCertificado = new CrearCertificadoForm();
             frmCrearCertificado.Show();
+            this.Close();
         }
     }
 }

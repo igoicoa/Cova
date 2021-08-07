@@ -79,6 +79,7 @@ namespace Cova.UI
             // txt_apellido_CrearReceta
             // 
             this.txt_apellido_CrearReceta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_apellido_CrearReceta.Enabled = false;
             this.txt_apellido_CrearReceta.Location = new System.Drawing.Point(9, 149);
             this.txt_apellido_CrearReceta.Name = "txt_apellido_CrearReceta";
             this.txt_apellido_CrearReceta.Size = new System.Drawing.Size(363, 20);
@@ -96,6 +97,7 @@ namespace Cova.UI
             // txt_nombre_CrearReceta
             // 
             this.txt_nombre_CrearReceta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_nombre_CrearReceta.Enabled = false;
             this.txt_nombre_CrearReceta.Location = new System.Drawing.Point(9, 99);
             this.txt_nombre_CrearReceta.Name = "txt_nombre_CrearReceta";
             this.txt_nombre_CrearReceta.Size = new System.Drawing.Size(363, 20);
@@ -113,6 +115,7 @@ namespace Cova.UI
             // txt_Edad_CrearReceta
             // 
             this.txt_Edad_CrearReceta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_Edad_CrearReceta.Enabled = false;
             this.txt_Edad_CrearReceta.Location = new System.Drawing.Point(331, 44);
             this.txt_Edad_CrearReceta.Name = "txt_Edad_CrearReceta";
             this.txt_Edad_CrearReceta.Size = new System.Drawing.Size(67, 20);
@@ -141,6 +144,7 @@ namespace Cova.UI
             // txt_NumeroDocumento_CrearReceta
             // 
             this.txt_NumeroDocumento_CrearReceta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_NumeroDocumento_CrearReceta.Enabled = false;
             this.txt_NumeroDocumento_CrearReceta.Location = new System.Drawing.Point(163, 44);
             this.txt_NumeroDocumento_CrearReceta.Name = "txt_NumeroDocumento_CrearReceta";
             this.txt_NumeroDocumento_CrearReceta.Size = new System.Drawing.Size(132, 20);
@@ -157,6 +161,7 @@ namespace Cova.UI
             // 
             // cmb_TipoDocumento_CrearReceta
             // 
+            this.cmb_TipoDocumento_CrearReceta.Enabled = false;
             this.cmb_TipoDocumento_CrearReceta.FormattingEnabled = true;
             this.cmb_TipoDocumento_CrearReceta.Items.AddRange(new object[] {
             "DNI",

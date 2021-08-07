@@ -4,32 +4,32 @@
 -- Description:	Obtiene un usuario a partir de su nombre de usuario
 -- ================================================================
 CREATE PROCEDURE s_ObtenerUsuario 
-	@NombreUsuario varchar(30)
+	@Usuario varchar(30)
 AS
 BEGIN
 	SET NOCOUNT ON;
 
-	DECLARE @TipoUsuario	VARCHAR(30)
+	DECLARE @TipoUsuario	int
 
-	IF EXISTS (SELECT u.usuarioID FROM [dbo].[Usuario] u INNER JOIN [dbo].[Paciente] p ON p.UsuarioID = u.UsuarioID WHERE u.Usuario = @NombreUsuario)
+	IF EXISTS (SELECT u.usuarioID FROM [dbo].[Usuario] u INNER JOIN [dbo].[Paciente] p ON p.UsuarioID = u.UsuarioID WHERE u.Usuario = @Usuario)
 	BEGIN
-		SET @TipoUsuario = 'Paciente';
+		SET @TipoUsuario = 0;
 	END
-	ELSE IF EXISTS (SELECT u.usuarioID FROM [dbo].[Usuario] u INNER JOIN [dbo].[Profesional] p ON p.UsuarioID = u.UsuarioID INNER JOIN [dbo].[Medico] m ON m.ProfesionalId = p.ProfesionalId WHERE u.Usuario = @NombreUsuario)
+	ELSE IF EXISTS (SELECT u.usuarioID FROM [dbo].[Usuario] u INNER JOIN [dbo].[Profesional] p ON p.UsuarioID = u.UsuarioID INNER JOIN [dbo].[Medico] m ON m.ProfesionalId = p.ProfesionalId WHERE u.Usuario = @Usuario)
 	BEGIN 
-		SET @TipoUsuario = 'Medico';
+		SET @TipoUsuario = 1;
 	END
-	ELSE IF EXISTS (SELECT u.usuarioID FROM [dbo].[Usuario] u INNER JOIN [dbo].[Profesional] p ON p.UsuarioID = u.UsuarioID INNER JOIN [dbo].[Enfermero] e ON e.ProfesionalId = p.ProfesionalId WHERE u.Usuario = @NombreUsuario)
+	ELSE IF EXISTS (SELECT u.usuarioID FROM [dbo].[Usuario] u INNER JOIN [dbo].[Profesional] p ON p.UsuarioID = u.UsuarioID INNER JOIN [dbo].[Enfermero] e ON e.ProfesionalId = p.ProfesionalId WHERE u.Usuario = @Usuario)
 	BEGIN 
-		SET @TipoUsuario = 'Enfermero';
+		SET @TipoUsuario = 2;
 	END
-	ELSE IF EXISTS (SELECT u.usuarioID FROM [dbo].[Usuario] u INNER JOIN [dbo].[Administrador] a ON a.UsuarioID = u.UsuarioID WHERE u.Usuario = @NombreUsuario)
+	ELSE IF EXISTS (SELECT u.usuarioID FROM [dbo].[Usuario] u INNER JOIN [dbo].[Administrador] a ON a.UsuarioID = u.UsuarioID WHERE u.Usuario = @Usuario)
 	BEGIN 
-		SET @TipoUsuario = 'Administrador';
+		SET @TipoUsuario = 3;
 	END
 
     SELECT u.UsuarioID, u.Usuario, u.Password, u.UltimoLogin, u.Activo, @TipoUsuario AS TipoUsuario
 	FROM Usuario u
-	WHERE u.Usuario = @NombreUsuario
+	WHERE u.Usuario = @Usuario
 END
 GO

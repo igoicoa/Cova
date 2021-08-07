@@ -25,6 +25,7 @@ namespace Cova.BL
             {
                 usuarioALoguearse.UsuarioID = usuario.UsuarioID;
                 usuarioALoguearse.UltimoLogin = usuario.UltimoLogin;
+                usuarioALoguearse.TipoUsuario = usuario.TipoUsuario;
                 claveCorrecta = true;
             }
             else
