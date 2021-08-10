@@ -98,6 +98,7 @@ namespace Cova.UI
             this.cmb_Estado_CalendarioVacunacion.Name = "cmb_Estado_CalendarioVacunacion";
             this.cmb_Estado_CalendarioVacunacion.Size = new System.Drawing.Size(132, 21);
             this.cmb_Estado_CalendarioVacunacion.TabIndex = 75;
+            this.cmb_Estado_CalendarioVacunacion.Text = "Aplicada";
             // 
             // bttn_Mostrar_CalendarioVacunacion
             // 
@@ -107,6 +108,7 @@ namespace Cova.UI
             this.bttn_Mostrar_CalendarioVacunacion.TabIndex = 76;
             this.bttn_Mostrar_CalendarioVacunacion.Text = "Mostrar";
             this.bttn_Mostrar_CalendarioVacunacion.UseVisualStyleBackColor = true;
+            this.bttn_Mostrar_CalendarioVacunacion.Click += new System.EventHandler(this.bttn_Mostrar_CalendarioVacunacion_Click);
             // 
             // btnCancelar_CalendarioVacunacion
             // 
@@ -132,6 +134,7 @@ namespace Cova.UI
             // txt_apellido_CalendarioVacunacion
             // 
             this.txt_apellido_CalendarioVacunacion.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_apellido_CalendarioVacunacion.Enabled = false;
             this.txt_apellido_CalendarioVacunacion.Location = new System.Drawing.Point(8, 147);
             this.txt_apellido_CalendarioVacunacion.Name = "txt_apellido_CalendarioVacunacion";
             this.txt_apellido_CalendarioVacunacion.Size = new System.Drawing.Size(363, 20);
@@ -149,6 +152,7 @@ namespace Cova.UI
             // txt_nombre_CalendarioVacunacion
             // 
             this.txt_nombre_CalendarioVacunacion.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_nombre_CalendarioVacunacion.Enabled = false;
             this.txt_nombre_CalendarioVacunacion.Location = new System.Drawing.Point(8, 97);
             this.txt_nombre_CalendarioVacunacion.Name = "txt_nombre_CalendarioVacunacion";
             this.txt_nombre_CalendarioVacunacion.Size = new System.Drawing.Size(363, 20);
@@ -166,6 +170,7 @@ namespace Cova.UI
             // txt_DNI_CalendarioVacunacion
             // 
             this.txt_DNI_CalendarioVacunacion.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_DNI_CalendarioVacunacion.Enabled = false;
             this.txt_DNI_CalendarioVacunacion.Location = new System.Drawing.Point(421, 98);
             this.txt_DNI_CalendarioVacunacion.Name = "txt_DNI_CalendarioVacunacion";
             this.txt_DNI_CalendarioVacunacion.Size = new System.Drawing.Size(132, 20);

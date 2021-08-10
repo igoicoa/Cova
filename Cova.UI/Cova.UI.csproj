@@ -130,6 +130,12 @@
     <Compile Include="Administrar Vacunas\CrearVacunasForm.Designer.cs">
       <DependentUpon>CrearVacunasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CambiarIdiomaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CambiarIdiomaForm.Designer.cs">
+      <DependentUpon>CambiarIdiomaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\IFormCargarUsuarios.cs" />
     <Compile Include="Interfaces\IFormCargarVacunas.cs" />
     <Compile Include="LoginForm.cs">
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administrar Vacunas\CrearVacunasForm.resx">
       <DependentUpon>CrearVacunasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CambiarIdiomaForm.resx">
+      <DependentUpon>CambiarIdiomaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

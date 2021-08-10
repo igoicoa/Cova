@@ -28,7 +28,6 @@ namespace Cova.UI
             txt_Edad_CrearCertificado.Clear();
             txt_NumeroDocumento_CrearCertificado.Clear();
             txt_apellido_CrearCertificado.Clear();
-            lb_Detalle_CrearCertificado.Items.Clear();
         }
 
         private void btn_BuscarPacientes_CrearCertificado_Click(object sender, EventArgs e)

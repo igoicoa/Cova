@@ -478,5 +478,11 @@ namespace Cova.UI
         {
             throw new NotImplementedException();
         }
+
+        private void cambiarIdiomaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CambiarIdiomaForm frmCambiarIdiomaForm = new CambiarIdiomaForm();
+            frmCambiarIdiomaForm.Show();
+        }
     }
 }
