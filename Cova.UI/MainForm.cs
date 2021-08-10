@@ -22,6 +22,7 @@ namespace Cova.UI
         {
             if (Sesion.GetInstance != null)
             {
+                Sesion.GetInstance.ManejadorIdioma.SuscribirObservador(this);
                 this.Traducir(Sesion.GetInstance.ManejadorIdioma.Idioma);
             }
             else

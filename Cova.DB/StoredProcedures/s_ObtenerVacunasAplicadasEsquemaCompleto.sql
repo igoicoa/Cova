@@ -2,6 +2,17 @@
 	@PacienteId		BIGINT
 AS
 BEGIN
+	CREATE TABLE #VacunasCompletas
+	(VacunaId	INT,
+	CantidadDosisAplicadas	INT
+	)
+
+	INSERT INTO #VacunasCompletas (VacunaId, CantidadDosisAplicadas)
+	SELECT VacunaId, COUNT(VacunaId)
+	FROM [dbo].[VacunaDosis] vd
+	WHERE vd.PacienteId = @PacienteId
+	GROUP BY VacunaId
+
 	SELECT v.VacunaId
 	   ,v.Nombre AS VacunaNombre
 	   ,l.LaboratorioId
@@ -19,5 +30,7 @@ BEGIN
 	FROM [dbo].[VacunaDosis] vd
 	INNER JOIN [dbo].[Vacuna] v ON vd.VacunaId = v.VacunaId
 	INNER JOIN [dbo].[Laboratorio] l ON l.LaboratorioId = v.LaboratorioId
-	WHERE vd.PacienteId = @PacienteId AND vd.FechaAplicacion IS NOT NULL
+	INNER JOIN #VacunasCompletas vc ON vc.VacunaId = vd.VacunaId
+	WHERE vd.PacienteId = @PacienteId AND vc.CantidadDosisAplicadas = v.CantidadDosis
+
 END

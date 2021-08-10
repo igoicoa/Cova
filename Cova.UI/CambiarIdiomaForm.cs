@@ -1,13 +1,8 @@
 ﻿using Cova.Common.Multiidioma;
 using Cova.Servicios.Multiidioma;
+using Cova.Servicios.Sesion;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Cova.UI
@@ -17,6 +12,16 @@ namespace Cova.UI
         public CambiarIdiomaForm()
         {
             InitializeComponent();
+            CargarIdiomas();
+        }
+
+        public void CargarIdiomas()
+        {
+            Idioma idiomaDefault = new Idioma();
+            ManejadorIdioma manejadorIdioma = new ManejadorIdioma(idiomaDefault);
+            cmb_idiomas_CambiarIdioma.DataSource = manejadorIdioma.ObtenerIdiomas();
+            cmb_idiomas_CambiarIdioma.DisplayMember = "Nombre";
+            cmb_idiomas_CambiarIdioma.ValueMember = "Nombre";
         }
 
         public void UpdateLanguage(Idioma idioma)
@@ -33,7 +38,9 @@ namespace Cova.UI
 
         private void cmb_idiomas_CambiarIdioma_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Idioma idiomaElegido = new Idioma();
+            idiomaElegido.Nombre = cmb_idiomas_CambiarIdioma.SelectedValue.ToString();
+            Sesion.GetInstance.ManejadorIdioma.CambiarIdioma(idiomaElegido);
         }
 
         private void CambiarIdiomaForm_Load(object sender, EventArgs e)

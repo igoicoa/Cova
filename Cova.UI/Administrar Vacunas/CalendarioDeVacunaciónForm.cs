@@ -6,6 +6,7 @@ using Cova.BE;
 using Cova.Servicios.Sesion;
 using Cova.BE.Enum;
 using Cova.BL;
+using System.Data;
 
 namespace Cova.UI
 {
@@ -59,7 +60,7 @@ namespace Cova.UI
         public void CargarVacunasEsquemaIncompletoPaciente()
         {
             BLPaciente bLPaciente = new BLPaciente();
-            this._vacunasEsquemaCompleto = bLPaciente.ObtenerVacunasAplicadasEsquemaIncompleto(this._paciente).ToList();
+            this._vacunasEsquemaIncompleto = bLPaciente.ObtenerVacunasAplicadasEsquemaIncompleto(this._paciente).ToList();
         }
 
         public void CargarDatosPaciente()
@@ -105,6 +106,7 @@ namespace Cova.UI
         {
             this._paciente = paciente;
             this.CargarDatosPaciente();
+            this.CargarVacunasPaciente();
         }
 
         public void CargarUsuarioMedico(BEMedico usuarioAModificar)
@@ -124,67 +126,62 @@ namespace Cova.UI
 
         private void bttn_Mostrar_CalendarioVacunacion_Click(object sender, EventArgs e)
         {
-            BEVacunaDosis vacunaDosis = new BEVacunaDosis();
-            BEVacuna vacuna = new BEVacuna();
-            BELaboratorio laboratorio = new BELaboratorio();
-            BECentroMedico centroMedico = new BECentroMedico();
-            BLVacuna bLVacuna = new BLVacuna();
-
-            if ( cmb_Estado_CalendarioVacunacion.SelectedItem.ToString() == "Aplicada")
+            List<BEVacunaDosis> vacunasAMostrar = new List<BEVacunaDosis>();
+            if ( cmb_Estado_CalendarioVacunacion.SelectedItem.ToString() == "Completo")
             {
-
+                vacunasAMostrar = this._vacunasEsquemaCompleto;
+            } 
+            else
+            {
+                vacunasAMostrar = this._vacunasEsquemaIncompleto;
             }
             
-            //DataTable tableVacunas = new DataTable();
-            //tableVacunas.Columns.Add("Lote");
-            //tableVacunas.Columns.Add("Fecha Elaboracion");
-            //tableVacunas.Columns.Add("Fecha Vencimiento");
-            //tableVacunas.Columns.Add("VacunaId");
-            //tableVacunas.Columns.Add("Nombre Vacuna");
-            //tableVacunas.Columns.Add("Descripcion");
-            //tableVacunas.Columns.Add("Prospecto");
-            //tableVacunas.Columns.Add("Contraindicaciones");
-            //tableVacunas.Columns.Add("Cantidad Dosis");
-            //tableVacunas.Columns.Add("Edad Minima");
-            //tableVacunas.Columns.Add("Edad Maxima");
-            //tableVacunas.Columns.Add("LaboratorioId");
-            //tableVacunas.Columns.Add("Nombre Laboratorio");
+            DataTable tableVacunas = new DataTable();
+            tableVacunas.Columns.Add("Vacuna");
+            tableVacunas.Columns.Add("Laboratorio");
+            tableVacunas.Columns.Add("Cantidad Dosis");
+            tableVacunas.Columns.Add("Lote");
+            tableVacunas.Columns.Add("Dosis Aplicadas");
+            tableVacunas.Columns.Add("Fecha Aplicacion");
+            tableVacunas.Columns.Add("Fecha Elaboracion");
+            tableVacunas.Columns.Add("Fecha Vencimiento");
+            tableVacunas.Columns.Add("Observacion Paciente");
+            tableVacunas.Columns.Add("Indicacion Medico");
+            tableVacunas.Columns.Add("Descripcion");
+            tableVacunas.Columns.Add("Contraindicaciones");
 
+            foreach (BEVacunaDosis vacunaDosis in vacunasAMostrar)
+            {
+                DataRow filaVacunas = tableVacunas.NewRow();
+                filaVacunas["Vacuna"] = vacunaDosis.Vacuna.Nombre;
+                filaVacunas["Laboratorio"] = vacunaDosis.Vacuna.Laboratorio.Nombre;
+                filaVacunas["Cantidad Dosis"] = vacunaDosis.Vacuna.CantidadDosis;
+                filaVacunas["Lote"] = vacunaDosis.Lote;
+                filaVacunas["Dosis Aplicadas"] = vacunaDosis.Dosis;
+                filaVacunas["Fecha Aplicacion"] = vacunaDosis.FechaAplicacion;
+                filaVacunas["Fecha Elaboracion"] = vacunaDosis.FechaElaboracion;
+                filaVacunas["Fecha Vencimiento"] = vacunaDosis.FechaVencimiento;
+                filaVacunas["Observacion Paciente"] = vacunaDosis.ObservaionPaciente;
+                filaVacunas["Indicacion Medico"] = vacunaDosis.IndicacionMedico;
+                filaVacunas["Descripcion"] = vacunaDosis.Vacuna.Descripcion;
+                filaVacunas["Contraindicaciones"] = vacunaDosis.Vacuna.Contraindicaciones;
+                tableVacunas.Rows.Add(filaVacunas);
+            }
 
-            //foreach (BEVacunaDosis vacunaDosis in this.VacunasDosis)
-            //{
-            //    DataRow filaVacunas = tableVacunas.NewRow();
-            //    filaVacunas["Lote"] = vacunaDosis.Lote;
-            //    filaVacunas["Fecha Elaboracion"] = vacunaDosis.FechaElaboracion;
-            //    filaVacunas["Fecha Vencimiento"] = vacunaDosis.FechaVencimiento;
-            //    filaVacunas["VacunaId"] = vacunaDosis.Vacuna.VacunaID;
-            //    filaVacunas["Nombre Vacuna"] = vacunaDosis.Vacuna.Nombre;
-            //    filaVacunas["Descripcion"] = vacunaDosis.Vacuna.Descripcion;
-            //    filaVacunas["Prospecto"] = vacunaDosis.Vacuna.Prospecto;
-            //    filaVacunas["Contraindicaciones"] = vacunaDosis.Vacuna.Contraindicaciones;
-            //    filaVacunas["Cantidad Dosis"] = vacunaDosis.Vacuna.CantidadDosis;
-            //    filaVacunas["Edad Minima"] = vacunaDosis.Vacuna.EdadMinimaAplicacion;
-            //    filaVacunas["Edad Maxima"] = vacunaDosis.Vacuna.EdadMaximaAplicacion;
-            //    filaVacunas["LaboratorioId"] = vacunaDosis.Vacuna.Laboratorio.LaboratorioId;
-            //    filaVacunas["Nombre Laboratorio"] = vacunaDosis.Vacuna.Laboratorio.Nombre;
-            //    tableVacunas.Rows.Add(filaVacunas);
-            //}
-
-            //DataView dataviewVacunas = new DataView(tableVacunas);
-            //dtg_ListaVacunas_VerVacunas.DataSource = dataviewVacunas;
-            //dtg_ListaVacunas_VerVacunas.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dtg_ListaVacunas_VerVacunas.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dtg_ListaVacunas_VerVacunas.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dtg_ListaVacunas_VerVacunas.Columns[3].Visible = false;
-            //dtg_ListaVacunas_VerVacunas.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dtg_ListaVacunas_VerVacunas.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dtg_ListaVacunas_VerVacunas.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dtg_ListaVacunas_VerVacunas.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dtg_ListaVacunas_VerVacunas.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dtg_ListaVacunas_VerVacunas.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dtg_ListaVacunas_VerVacunas.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dtg_ListaVacunas_VerVacunas.Columns[11].Visible = false;
-            //dtg_ListaVacunas_VerVacunas.Columns[12].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            DataView dataviewVacunas = new DataView(tableVacunas);
+            dtgv_CalendarioVacunacion.DataSource = dataviewVacunas;
+            dtgv_CalendarioVacunacion.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtgv_CalendarioVacunacion.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtgv_CalendarioVacunacion.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtgv_CalendarioVacunacion.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtgv_CalendarioVacunacion.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtgv_CalendarioVacunacion.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtgv_CalendarioVacunacion.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtgv_CalendarioVacunacion.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtgv_CalendarioVacunacion.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtgv_CalendarioVacunacion.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtgv_CalendarioVacunacion.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtgv_CalendarioVacunacion.Columns[11].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
     }
 }

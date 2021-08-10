@@ -256,7 +256,7 @@ namespace Cova.MPP
                         vacunaDosis.FechaAplicacion = Convert.ToDateTime(fila["FechaAplicacion"]);
                         vacunaDosis.FechaElaboracion = Convert.ToDateTime(fila["FechaElaboracion"]);
                         vacunaDosis.FechaVencimiento = Convert.ToDateTime(fila["FechaVencimiento"]);
-                        vacunaDosis.ObservaionPaciente = Convert.ToString(fila["ObservaionPaciente"]);
+                        vacunaDosis.ObservaionPaciente = Convert.ToString(fila["ObservacionPaciente"]);
                         vacunaDosis.IndicacionMedico = Convert.ToString(fila["IndicacionMedico"]);
 
                         vacunasDosis.Add(vacunaDosis);
@@ -308,7 +308,7 @@ namespace Cova.MPP
                         vacunaDosis.FechaAplicacion = Convert.ToDateTime(fila["FechaAplicacion"]);
                         vacunaDosis.FechaElaboracion = Convert.ToDateTime(fila["FechaElaboracion"]);
                         vacunaDosis.FechaVencimiento = Convert.ToDateTime(fila["FechaVencimiento"]);
-                        vacunaDosis.ObservaionPaciente = Convert.ToString(fila["ObservaionPaciente"]);
+                        vacunaDosis.ObservaionPaciente = Convert.ToString(fila["ObservacionPaciente"]);
                         vacunaDosis.IndicacionMedico = Convert.ToString(fila["IndicacionMedico"]);
 
                         vacunasDosis.Add(vacunaDosis);

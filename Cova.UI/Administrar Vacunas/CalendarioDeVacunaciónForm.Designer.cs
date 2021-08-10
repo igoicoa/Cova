@@ -93,12 +93,11 @@ namespace Cova.UI
             this.cmb_Estado_CalendarioVacunacion.FormattingEnabled = true;
             this.cmb_Estado_CalendarioVacunacion.Items.AddRange(new object[] {
             "Pendiente",
-            "Aplicada"});
+            "Completo"});
             this.cmb_Estado_CalendarioVacunacion.Location = new System.Drawing.Point(421, 145);
             this.cmb_Estado_CalendarioVacunacion.Name = "cmb_Estado_CalendarioVacunacion";
             this.cmb_Estado_CalendarioVacunacion.Size = new System.Drawing.Size(132, 21);
             this.cmb_Estado_CalendarioVacunacion.TabIndex = 75;
-            this.cmb_Estado_CalendarioVacunacion.Text = "Aplicada";
             // 
             // bttn_Mostrar_CalendarioVacunacion
             // 
