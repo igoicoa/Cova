@@ -31,15 +31,10 @@ namespace Cova.UI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearVacunasForm));
             this.lbl_CrearVacunas = new System.Windows.Forms.Label();
-            this.txt_Lote_CrearVacunas = new System.Windows.Forms.TextBox();
-            this.lbl_IDVacuna_CrearVacunas = new System.Windows.Forms.Label();
             this.txtBox_Nombre_CrearVacuna = new System.Windows.Forms.TextBox();
             this.lbl_Nombre_CrearVacuna = new System.Windows.Forms.Label();
-            this.txtBox_Descripcion_CrearVacunas = new System.Windows.Forms.TextBox();
             this.lbl_Descripción_CrearVacunas = new System.Windows.Forms.Label();
-            this.txt_Contraindicaciones_CrearVacunas = new System.Windows.Forms.TextBox();
             this.lbl_Contraindicaciones_CrearVacunas = new System.Windows.Forms.Label();
-            this.txt_Prospecto_CrearVacunas = new System.Windows.Forms.TextBox();
             this.lbl_Prospecto_CrearVacunas = new System.Windows.Forms.Label();
             this.lbl_CantidadDosis_CrearVacunas = new System.Windows.Forms.Label();
             this.cmb_Laboratorio_CrearVacunas = new System.Windows.Forms.ComboBox();
@@ -54,6 +49,9 @@ namespace Cova.UI
             this.btn_Crear_CrearVacunas = new System.Windows.Forms.Button();
             this.cb_cantidadDosis_CrearVacunas = new System.Windows.Forms.ComboBox();
             this.cb_Stock_CrearVacunas = new System.Windows.Forms.ComboBox();
+            this.rtb_Descripcion_CrearVacunas = new System.Windows.Forms.RichTextBox();
+            this.rtb_Prospecto_CrearVacunas = new System.Windows.Forms.RichTextBox();
+            this.rtb_Contraindicaciones_CrearVacunas = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // lbl_CrearVacunas
@@ -67,27 +65,10 @@ namespace Cova.UI
             this.lbl_CrearVacunas.TabIndex = 83;
             this.lbl_CrearVacunas.Text = "Crear Vacunas";
             // 
-            // txt_Lote_CrearVacunas
-            // 
-            this.txt_Lote_CrearVacunas.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_Lote_CrearVacunas.Location = new System.Drawing.Point(17, 63);
-            this.txt_Lote_CrearVacunas.Name = "txt_Lote_CrearVacunas";
-            this.txt_Lote_CrearVacunas.Size = new System.Drawing.Size(132, 20);
-            this.txt_Lote_CrearVacunas.TabIndex = 85;
-            // 
-            // lbl_IDVacuna_CrearVacunas
-            // 
-            this.lbl_IDVacuna_CrearVacunas.AutoSize = true;
-            this.lbl_IDVacuna_CrearVacunas.Location = new System.Drawing.Point(14, 46);
-            this.lbl_IDVacuna_CrearVacunas.Name = "lbl_IDVacuna_CrearVacunas";
-            this.lbl_IDVacuna_CrearVacunas.Size = new System.Drawing.Size(58, 13);
-            this.lbl_IDVacuna_CrearVacunas.TabIndex = 84;
-            this.lbl_IDVacuna_CrearVacunas.Text = "ID Vacuna";
-            // 
             // txtBox_Nombre_CrearVacuna
             // 
             this.txtBox_Nombre_CrearVacuna.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtBox_Nombre_CrearVacuna.Location = new System.Drawing.Point(183, 63);
+            this.txtBox_Nombre_CrearVacuna.Location = new System.Drawing.Point(83, 54);
             this.txtBox_Nombre_CrearVacuna.Name = "txtBox_Nombre_CrearVacuna";
             this.txtBox_Nombre_CrearVacuna.Size = new System.Drawing.Size(363, 20);
             this.txtBox_Nombre_CrearVacuna.TabIndex = 87;
@@ -95,36 +76,20 @@ namespace Cova.UI
             // lbl_Nombre_CrearVacuna
             // 
             this.lbl_Nombre_CrearVacuna.AutoSize = true;
-            this.lbl_Nombre_CrearVacuna.Location = new System.Drawing.Point(183, 46);
+            this.lbl_Nombre_CrearVacuna.Location = new System.Drawing.Point(14, 54);
             this.lbl_Nombre_CrearVacuna.Name = "lbl_Nombre_CrearVacuna";
             this.lbl_Nombre_CrearVacuna.Size = new System.Drawing.Size(44, 13);
             this.lbl_Nombre_CrearVacuna.TabIndex = 86;
             this.lbl_Nombre_CrearVacuna.Text = "Nombre";
             // 
-            // txtBox_Descripcion_CrearVacunas
-            // 
-            this.txtBox_Descripcion_CrearVacunas.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtBox_Descripcion_CrearVacunas.Location = new System.Drawing.Point(14, 113);
-            this.txtBox_Descripcion_CrearVacunas.Name = "txtBox_Descripcion_CrearVacunas";
-            this.txtBox_Descripcion_CrearVacunas.Size = new System.Drawing.Size(774, 20);
-            this.txtBox_Descripcion_CrearVacunas.TabIndex = 89;
-            // 
             // lbl_Descripción_CrearVacunas
             // 
             this.lbl_Descripción_CrearVacunas.AutoSize = true;
-            this.lbl_Descripción_CrearVacunas.Location = new System.Drawing.Point(14, 96);
+            this.lbl_Descripción_CrearVacunas.Location = new System.Drawing.Point(14, 109);
             this.lbl_Descripción_CrearVacunas.Name = "lbl_Descripción_CrearVacunas";
             this.lbl_Descripción_CrearVacunas.Size = new System.Drawing.Size(63, 13);
             this.lbl_Descripción_CrearVacunas.TabIndex = 88;
             this.lbl_Descripción_CrearVacunas.Text = "Descripción";
-            // 
-            // txt_Contraindicaciones_CrearVacunas
-            // 
-            this.txt_Contraindicaciones_CrearVacunas.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_Contraindicaciones_CrearVacunas.Location = new System.Drawing.Point(14, 220);
-            this.txt_Contraindicaciones_CrearVacunas.Name = "txt_Contraindicaciones_CrearVacunas";
-            this.txt_Contraindicaciones_CrearVacunas.Size = new System.Drawing.Size(774, 20);
-            this.txt_Contraindicaciones_CrearVacunas.TabIndex = 92;
             // 
             // lbl_Contraindicaciones_CrearVacunas
             // 
@@ -135,18 +100,10 @@ namespace Cova.UI
             this.lbl_Contraindicaciones_CrearVacunas.TabIndex = 91;
             this.lbl_Contraindicaciones_CrearVacunas.Text = "Contraindicaciones";
             // 
-            // txt_Prospecto_CrearVacunas
-            // 
-            this.txt_Prospecto_CrearVacunas.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_Prospecto_CrearVacunas.Location = new System.Drawing.Point(14, 171);
-            this.txt_Prospecto_CrearVacunas.Name = "txt_Prospecto_CrearVacunas";
-            this.txt_Prospecto_CrearVacunas.Size = new System.Drawing.Size(774, 20);
-            this.txt_Prospecto_CrearVacunas.TabIndex = 94;
-            // 
             // lbl_Prospecto_CrearVacunas
             // 
             this.lbl_Prospecto_CrearVacunas.AutoSize = true;
-            this.lbl_Prospecto_CrearVacunas.Location = new System.Drawing.Point(14, 154);
+            this.lbl_Prospecto_CrearVacunas.Location = new System.Drawing.Point(11, 159);
             this.lbl_Prospecto_CrearVacunas.Name = "lbl_Prospecto_CrearVacunas";
             this.lbl_Prospecto_CrearVacunas.Size = new System.Drawing.Size(55, 13);
             this.lbl_Prospecto_CrearVacunas.TabIndex = 93;
@@ -166,7 +123,7 @@ namespace Cova.UI
             this.cmb_Laboratorio_CrearVacunas.FormattingEnabled = true;
             this.cmb_Laboratorio_CrearVacunas.Location = new System.Drawing.Point(241, 270);
             this.cmb_Laboratorio_CrearVacunas.Name = "cmb_Laboratorio_CrearVacunas";
-            this.cmb_Laboratorio_CrearVacunas.Size = new System.Drawing.Size(121, 21);
+            this.cmb_Laboratorio_CrearVacunas.Size = new System.Drawing.Size(182, 21);
             this.cmb_Laboratorio_CrearVacunas.TabIndex = 98;
             // 
             // lbl_Laboratorio_CrearVacunas
@@ -189,7 +146,7 @@ namespace Cova.UI
             // 
             // dtp_FechaElaboracion_CrearVacunas
             // 
-            this.dtp_FechaElaboracion_CrearVacunas.Location = new System.Drawing.Point(408, 273);
+            this.dtp_FechaElaboracion_CrearVacunas.Location = new System.Drawing.Point(439, 273);
             this.dtp_FechaElaboracion_CrearVacunas.Name = "dtp_FechaElaboracion_CrearVacunas";
             this.dtp_FechaElaboracion_CrearVacunas.Size = new System.Drawing.Size(143, 20);
             this.dtp_FechaElaboracion_CrearVacunas.TabIndex = 102;
@@ -198,7 +155,7 @@ namespace Cova.UI
             // 
             this.lbl_FechaElaboracion_CrearVacunas.AutoEllipsis = true;
             this.lbl_FechaElaboracion_CrearVacunas.AutoSize = true;
-            this.lbl_FechaElaboracion_CrearVacunas.Location = new System.Drawing.Point(405, 254);
+            this.lbl_FechaElaboracion_CrearVacunas.Location = new System.Drawing.Point(436, 254);
             this.lbl_FechaElaboracion_CrearVacunas.Name = "lbl_FechaElaboracion_CrearVacunas";
             this.lbl_FechaElaboracion_CrearVacunas.Size = new System.Drawing.Size(96, 13);
             this.lbl_FechaElaboracion_CrearVacunas.TabIndex = 101;
@@ -250,10 +207,32 @@ namespace Cova.UI
             this.btn_Crear_CrearVacunas.TabIndex = 106;
             this.btn_Crear_CrearVacunas.Text = "Crear";
             this.btn_Crear_CrearVacunas.UseVisualStyleBackColor = true;
+            this.btn_Crear_CrearVacunas.Click += new System.EventHandler(this.btn_Crear_CrearVacunas_Click);
             // 
             // cb_cantidadDosis_CrearVacunas
             // 
             this.cb_cantidadDosis_CrearVacunas.FormattingEnabled = true;
+            this.cb_cantidadDosis_CrearVacunas.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
             this.cb_cantidadDosis_CrearVacunas.Location = new System.Drawing.Point(14, 270);
             this.cb_cantidadDosis_CrearVacunas.Name = "cb_cantidadDosis_CrearVacunas";
             this.cb_cantidadDosis_CrearVacunas.Size = new System.Drawing.Size(97, 21);
@@ -262,16 +241,43 @@ namespace Cova.UI
             // cb_Stock_CrearVacunas
             // 
             this.cb_Stock_CrearVacunas.FormattingEnabled = true;
-            this.cb_Stock_CrearVacunas.Location = new System.Drawing.Point(130, 270);
+            this.cb_Stock_CrearVacunas.Location = new System.Drawing.Point(130, 276);
             this.cb_Stock_CrearVacunas.Name = "cb_Stock_CrearVacunas";
             this.cb_Stock_CrearVacunas.Size = new System.Drawing.Size(97, 21);
             this.cb_Stock_CrearVacunas.TabIndex = 110;
+            // 
+            // rtb_Descripcion_CrearVacunas
+            // 
+            this.rtb_Descripcion_CrearVacunas.Location = new System.Drawing.Point(83, 96);
+            this.rtb_Descripcion_CrearVacunas.Name = "rtb_Descripcion_CrearVacunas";
+            this.rtb_Descripcion_CrearVacunas.Size = new System.Drawing.Size(681, 35);
+            this.rtb_Descripcion_CrearVacunas.TabIndex = 111;
+            this.rtb_Descripcion_CrearVacunas.Text = "";
+            // 
+            // rtb_Prospecto_CrearVacunas
+            // 
+            this.rtb_Prospecto_CrearVacunas.Location = new System.Drawing.Point(83, 156);
+            this.rtb_Prospecto_CrearVacunas.Name = "rtb_Prospecto_CrearVacunas";
+            this.rtb_Prospecto_CrearVacunas.Size = new System.Drawing.Size(681, 35);
+            this.rtb_Prospecto_CrearVacunas.TabIndex = 112;
+            this.rtb_Prospecto_CrearVacunas.Text = "";
+            // 
+            // rtb_Contraindicaciones_CrearVacunas
+            // 
+            this.rtb_Contraindicaciones_CrearVacunas.Location = new System.Drawing.Point(120, 200);
+            this.rtb_Contraindicaciones_CrearVacunas.Name = "rtb_Contraindicaciones_CrearVacunas";
+            this.rtb_Contraindicaciones_CrearVacunas.Size = new System.Drawing.Size(668, 35);
+            this.rtb_Contraindicaciones_CrearVacunas.TabIndex = 113;
+            this.rtb_Contraindicaciones_CrearVacunas.Text = "";
             // 
             // CrearVacunasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 384);
+            this.Controls.Add(this.rtb_Contraindicaciones_CrearVacunas);
+            this.Controls.Add(this.rtb_Prospecto_CrearVacunas);
+            this.Controls.Add(this.rtb_Descripcion_CrearVacunas);
             this.Controls.Add(this.cb_Stock_CrearVacunas);
             this.Controls.Add(this.cb_cantidadDosis_CrearVacunas);
             this.Controls.Add(this.btn_Limpiar_CrearVacunas);
@@ -285,16 +291,11 @@ namespace Cova.UI
             this.Controls.Add(this.cmb_Laboratorio_CrearVacunas);
             this.Controls.Add(this.lbl_Laboratorio_CrearVacunas);
             this.Controls.Add(this.lbl_CantidadDosis_CrearVacunas);
-            this.Controls.Add(this.txt_Prospecto_CrearVacunas);
             this.Controls.Add(this.lbl_Prospecto_CrearVacunas);
-            this.Controls.Add(this.txt_Contraindicaciones_CrearVacunas);
             this.Controls.Add(this.lbl_Contraindicaciones_CrearVacunas);
-            this.Controls.Add(this.txtBox_Descripcion_CrearVacunas);
             this.Controls.Add(this.lbl_Descripción_CrearVacunas);
             this.Controls.Add(this.txtBox_Nombre_CrearVacuna);
             this.Controls.Add(this.lbl_Nombre_CrearVacuna);
-            this.Controls.Add(this.txt_Lote_CrearVacunas);
-            this.Controls.Add(this.lbl_IDVacuna_CrearVacunas);
             this.Controls.Add(this.lbl_CrearVacunas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CrearVacunasForm";
@@ -307,15 +308,10 @@ namespace Cova.UI
         #endregion
 
         private System.Windows.Forms.Label lbl_CrearVacunas;
-        private System.Windows.Forms.TextBox txt_Lote_CrearVacunas;
-        private System.Windows.Forms.Label lbl_IDVacuna_CrearVacunas;
         private System.Windows.Forms.TextBox txtBox_Nombre_CrearVacuna;
         private System.Windows.Forms.Label lbl_Nombre_CrearVacuna;
-        private System.Windows.Forms.TextBox txtBox_Descripcion_CrearVacunas;
         private System.Windows.Forms.Label lbl_Descripción_CrearVacunas;
-        private System.Windows.Forms.TextBox txt_Contraindicaciones_CrearVacunas;
         private System.Windows.Forms.Label lbl_Contraindicaciones_CrearVacunas;
-        private System.Windows.Forms.TextBox txt_Prospecto_CrearVacunas;
         private System.Windows.Forms.Label lbl_Prospecto_CrearVacunas;
         private System.Windows.Forms.Label lbl_CantidadDosis_CrearVacunas;
         private System.Windows.Forms.ComboBox cmb_Laboratorio_CrearVacunas;
@@ -330,5 +326,8 @@ namespace Cova.UI
         private System.Windows.Forms.Button btn_Crear_CrearVacunas;
         private System.Windows.Forms.ComboBox cb_cantidadDosis_CrearVacunas;
         private System.Windows.Forms.ComboBox cb_Stock_CrearVacunas;
+        private System.Windows.Forms.RichTextBox rtb_Descripcion_CrearVacunas;
+        private System.Windows.Forms.RichTextBox rtb_Prospecto_CrearVacunas;
+        private System.Windows.Forms.RichTextBox rtb_Contraindicaciones_CrearVacunas;
     }
 }

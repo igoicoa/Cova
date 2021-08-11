@@ -43,6 +43,8 @@ namespace Cova.UI
             this.lbl_Nombre_ModificarCoberturaMedica = new System.Windows.Forms.Label();
             this.lbl_Plan_ModificarCoberturaMedica = new System.Windows.Forms.Label();
             this.btn_BuscarCoberturaMedica_ModificarCoberturaMedica = new System.Windows.Forms.Button();
+            this.cmb_Estado_ModificarCoberturaMedica = new System.Windows.Forms.ComboBox();
+            this.lbl_Estado_ModificarCoberturaMedica = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_ModificarCoberturaMedica
@@ -123,9 +125,6 @@ namespace Cova.UI
             // cmb_Plan_ModificarCoberturaMedica
             // 
             this.cmb_Plan_ModificarCoberturaMedica.FormattingEnabled = true;
-            this.cmb_Plan_ModificarCoberturaMedica.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
             this.cmb_Plan_ModificarCoberturaMedica.Location = new System.Drawing.Point(300, 62);
             this.cmb_Plan_ModificarCoberturaMedica.Name = "cmb_Plan_ModificarCoberturaMedica";
             this.cmb_Plan_ModificarCoberturaMedica.Size = new System.Drawing.Size(121, 21);
@@ -168,11 +167,33 @@ namespace Cova.UI
             this.btn_BuscarCoberturaMedica_ModificarCoberturaMedica.UseVisualStyleBackColor = false;
             this.btn_BuscarCoberturaMedica_ModificarCoberturaMedica.Click += new System.EventHandler(this.btn_BuscarCoberturaMedica_ModificarCoberturaMedica_Click);
             // 
-            // ModificarCoberturaMedica
+            // cmb_Estado_ModificarCoberturaMedica
+            // 
+            this.cmb_Estado_ModificarCoberturaMedica.FormattingEnabled = true;
+            this.cmb_Estado_ModificarCoberturaMedica.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cmb_Estado_ModificarCoberturaMedica.Location = new System.Drawing.Point(300, 138);
+            this.cmb_Estado_ModificarCoberturaMedica.Name = "cmb_Estado_ModificarCoberturaMedica";
+            this.cmb_Estado_ModificarCoberturaMedica.Size = new System.Drawing.Size(121, 21);
+            this.cmb_Estado_ModificarCoberturaMedica.TabIndex = 157;
+            // 
+            // lbl_Estado_ModificarCoberturaMedica
+            // 
+            this.lbl_Estado_ModificarCoberturaMedica.AutoSize = true;
+            this.lbl_Estado_ModificarCoberturaMedica.Location = new System.Drawing.Point(297, 122);
+            this.lbl_Estado_ModificarCoberturaMedica.Name = "lbl_Estado_ModificarCoberturaMedica";
+            this.lbl_Estado_ModificarCoberturaMedica.Size = new System.Drawing.Size(40, 13);
+            this.lbl_Estado_ModificarCoberturaMedica.TabIndex = 156;
+            this.lbl_Estado_ModificarCoberturaMedica.Text = "Estado";
+            // 
+            // ModificarCoberturaMedicaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 296);
+            this.Controls.Add(this.cmb_Estado_ModificarCoberturaMedica);
+            this.Controls.Add(this.lbl_Estado_ModificarCoberturaMedica);
             this.Controls.Add(this.btn_BuscarCoberturaMedica_ModificarCoberturaMedica);
             this.Controls.Add(this.mc_FechaCreacion_ModificarCoberturaMedica);
             this.Controls.Add(this.lbl_FechaCreacion_ModificarCoberturaMedica);
@@ -187,7 +208,7 @@ namespace Cova.UI
             this.Controls.Add(this.lbl_Plan_ModificarCoberturaMedica);
             this.Controls.Add(this.lbl_ModificarCoberturaMedica);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ModificarCoberturaMedica";
+            this.Name = "ModificarCoberturaMedicaForm";
             this.Text = "ModificarCoberturaMedica";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -209,5 +230,7 @@ namespace Cova.UI
         private System.Windows.Forms.Label lbl_Nombre_ModificarCoberturaMedica;
         private System.Windows.Forms.Label lbl_Plan_ModificarCoberturaMedica;
         private System.Windows.Forms.Button btn_BuscarCoberturaMedica_ModificarCoberturaMedica;
+        private System.Windows.Forms.ComboBox cmb_Estado_ModificarCoberturaMedica;
+        private System.Windows.Forms.Label lbl_Estado_ModificarCoberturaMedica;
     }
 }

@@ -301,7 +301,8 @@ namespace Cova.UI
         }
 
         private void btnModificar_ModificarCuenta_Click(object sender, EventArgs e)
-        {if(rb_medico_ModificarCuenta.Checked)
+        {
+            if(rb_medico_ModificarCuenta.Checked)
             {
             
                 if (ValidarTodosLosCamposMedico())

@@ -27,5 +27,14 @@ namespace Cova.UI
         {
             this.Close();
         }
+
+        private void btn_Limpiar_ModificarVacunas_Click(object sender, EventArgs e)
+        {
+            rtb_Descripcion_ModificarVacunas.Clear();
+            txt_Nombre_ModificarVacunas.Clear();
+            rtb_Contraindicaciones_ModificarVacunas.Clear();
+            rtb_Prospecto_ModificarVacunas.Clear();
+            cmb_Laboratorio_ModificarVacunas.Items.Clear();
+        }
     }
 }

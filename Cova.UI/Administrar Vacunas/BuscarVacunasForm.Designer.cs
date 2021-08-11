@@ -38,10 +38,10 @@ namespace Cova.UI
             this.lbl_BuscarVacunas = new System.Windows.Forms.Label();
             this.cmb_Laboratorio_BuscarVacunas = new System.Windows.Forms.ComboBox();
             this.lbl_Laboratorio_BuscarVacunas = new System.Windows.Forms.Label();
-            this.txt_lote = new System.Windows.Forms.TextBox();
-            this.lbl_IDVacuna_BuscarVacunas = new System.Windows.Forms.Label();
             this.btn_SeleccionarVacunas_BuscarVacunas = new System.Windows.Forms.Button();
             this.cmb_vacuna = new System.Windows.Forms.ComboBox();
+            this.lbl_Lote = new System.Windows.Forms.Label();
+            this.txt_lote = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_ListaVacunas_VerVacunas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,23 +121,6 @@ namespace Cova.UI
             this.lbl_Laboratorio_BuscarVacunas.TabIndex = 141;
             this.lbl_Laboratorio_BuscarVacunas.Text = "Laboratorio";
             // 
-            // txt_lote
-            // 
-            this.txt_lote.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_lote.Location = new System.Drawing.Point(561, 60);
-            this.txt_lote.Name = "txt_lote";
-            this.txt_lote.Size = new System.Drawing.Size(180, 20);
-            this.txt_lote.TabIndex = 140;
-            // 
-            // lbl_IDVacuna_BuscarVacunas
-            // 
-            this.lbl_IDVacuna_BuscarVacunas.AutoSize = true;
-            this.lbl_IDVacuna_BuscarVacunas.Location = new System.Drawing.Point(558, 43);
-            this.lbl_IDVacuna_BuscarVacunas.Name = "lbl_IDVacuna_BuscarVacunas";
-            this.lbl_IDVacuna_BuscarVacunas.Size = new System.Drawing.Size(28, 13);
-            this.lbl_IDVacuna_BuscarVacunas.TabIndex = 139;
-            this.lbl_IDVacuna_BuscarVacunas.Text = "Lote";
-            // 
             // btn_SeleccionarVacunas_BuscarVacunas
             // 
             this.btn_SeleccionarVacunas_BuscarVacunas.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -157,11 +140,29 @@ namespace Cova.UI
             this.cmb_vacuna.Size = new System.Drawing.Size(239, 21);
             this.cmb_vacuna.TabIndex = 151;
             // 
+            // lbl_Lote
+            // 
+            this.lbl_Lote.AutoSize = true;
+            this.lbl_Lote.Location = new System.Drawing.Point(563, 38);
+            this.lbl_Lote.Name = "lbl_Lote";
+            this.lbl_Lote.Size = new System.Drawing.Size(28, 13);
+            this.lbl_Lote.TabIndex = 152;
+            this.lbl_Lote.Text = "Lote";
+            // 
+            // txt_lote
+            // 
+            this.txt_lote.Location = new System.Drawing.Point(566, 60);
+            this.txt_lote.Name = "txt_lote";
+            this.txt_lote.Size = new System.Drawing.Size(131, 20);
+            this.txt_lote.TabIndex = 153;
+            // 
             // BuscarVacunasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txt_lote);
+            this.Controls.Add(this.lbl_Lote);
             this.Controls.Add(this.cmb_vacuna);
             this.Controls.Add(this.btn_SeleccionarVacunas_BuscarVacunas);
             this.Controls.Add(this.btn_Limpiar_BuscarVacunas);
@@ -172,8 +173,6 @@ namespace Cova.UI
             this.Controls.Add(this.lbl_BuscarVacunas);
             this.Controls.Add(this.cmb_Laboratorio_BuscarVacunas);
             this.Controls.Add(this.lbl_Laboratorio_BuscarVacunas);
-            this.Controls.Add(this.txt_lote);
-            this.Controls.Add(this.lbl_IDVacuna_BuscarVacunas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BuscarVacunasForm";
             this.Text = "BuscarVacunas";
@@ -193,9 +192,9 @@ namespace Cova.UI
         private System.Windows.Forms.Label lbl_BuscarVacunas;
         private System.Windows.Forms.ComboBox cmb_Laboratorio_BuscarVacunas;
         private System.Windows.Forms.Label lbl_Laboratorio_BuscarVacunas;
-        private System.Windows.Forms.TextBox txt_lote;
-        private System.Windows.Forms.Label lbl_IDVacuna_BuscarVacunas;
         private System.Windows.Forms.Button btn_SeleccionarVacunas_BuscarVacunas;
         private System.Windows.Forms.ComboBox cmb_vacuna;
+        private System.Windows.Forms.Label lbl_Lote;
+        private System.Windows.Forms.TextBox txt_lote;
     }
 }

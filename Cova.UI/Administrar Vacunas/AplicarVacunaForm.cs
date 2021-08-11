@@ -52,6 +52,22 @@ namespace Cova.UI
             this.cmb_centroMedico.SelectedIndex = -1;
         }
 
+        public bool ValidarTodosLosCamposAplicarVacuna()
+        {
+            if (string.IsNullOrEmpty(cmb_centroMedico.Text) || (string.IsNullOrEmpty(txt_vacuna.Text))
+                || (string.IsNullOrEmpty(txt_laboratorio.Text)) || string.IsNullOrEmpty(dtp_fechaAplicacion_AplicarVacunas.Value.ToString())
+                || string.IsNullOrEmpty(txt_lote.Text) || string.IsNullOrEmpty(dtp_fechaElaboracion.Value.ToString())
+                || string.IsNullOrEmpty(dtp_fechaVencimiento.Value.ToString()) || string.IsNullOrEmpty(cmb_dosis.Text)
+                || string.IsNullOrEmpty(txt_Observacion_AplicarVacunas.Text))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         private void btn_BuscarPacientes_AplicarVacunas_Click(object sender, EventArgs e)
         {
             BuscarUsuariosForm buscarUsuariosForm = new BuscarUsuariosForm(true, this);
@@ -105,33 +121,47 @@ namespace Cova.UI
 
         private void btn_Aplicar_AplicarVacunas_Click(object sender, EventArgs e)
         {
-            BLPaciente blPaciente = new BLPaciente();
-            this._vacunaAAplicar.FechaAplicacion = dtp_fechaAplicacion_AplicarVacunas.Value;
-            this._vacunaAAplicar.Dosis = Convert.ToInt32(cmb_dosis.Text);
-            Dictionary<bool, List<string>> correspondeRecibirDosis = (Dictionary<bool, List<string>>)blPaciente.EstaEnCondicionesDeRecibirVacuna(this._pacienteAVacunar, this._vacunaAAplicar);
-            if(correspondeRecibirDosis.ContainsKey(false))
+            try
             {
-                string razones = "";
-                foreach(string razon in correspondeRecibirDosis[false])
+                if (ValidarTodosLosCamposAplicarVacuna())
                 {
-                    razones += razon + "\n";
-                }
-                MessageBox.Show(razones);
-                return;
-            }
-            else
-            {
-                if(blPaciente.VacunarPaciente(this._pacienteAVacunar, this._vacunaAAplicar))
-                {
-                    MessageBox.Show("Se realizó la aplicación de la vacuna");
-                    this.Close();
+                    BLPaciente blPaciente = new BLPaciente();
+                    this._vacunaAAplicar.FechaAplicacion = dtp_fechaAplicacion_AplicarVacunas.Value;
+                    this._vacunaAAplicar.Dosis = Convert.ToInt32(cmb_dosis.Text);
+                    Dictionary<bool, List<string>> correspondeRecibirDosis = (Dictionary<bool, List<string>>)blPaciente.EstaEnCondicionesDeRecibirVacuna(this._pacienteAVacunar, this._vacunaAAplicar);
+                    if(correspondeRecibirDosis.ContainsKey(false))
+                    {
+                        string razones = "";
+                        foreach(string razon in correspondeRecibirDosis[false])
+                        {
+                            razones += razon + "\n";
+                        }
+                        MessageBox.Show(razones);
+                        return;
+                    }
+                    else
+                    {
+                        if(blPaciente.VacunarPaciente(this._pacienteAVacunar, this._vacunaAAplicar))
+                        {
+                            MessageBox.Show("Se realizó la aplicación de la vacuna");
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Hubo un error al registrar la aplicacion de la vacuna");
+                        }
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Hubo un error al registrar la aplicacion de la vacuna");
+                    MessageBox.Show("Debe completar todos los campos");
                 }
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void btn_buscarVacuna_Click(object sender, EventArgs e)

@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgregarIdiomaForm.cs">
+    <Compile Include="Administrar Idioma\AgregarIdiomaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarIdiomaForm.Designer.cs">
+    <Compile Include="Administrar Idioma\AgregarIdiomaForm.Designer.cs">
       <DependentUpon>AgregarIdiomaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrar Receta y Certificado\ModificarRecetasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrar Receta y Certificado\ModificarRecetasForm.Designer.cs">
+      <DependentUpon>ModificarRecetasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrar Receta y Certificado\VerReceta_CertificadoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrar Receta y Certificado\VerReceta_CertificadoForm.Designer.cs">
+      <DependentUpon>VerReceta_CertificadoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Administrar Vacunas\AplicarVacunaForm.cs">
       <SubType>Form</SubType>
@@ -70,10 +82,10 @@
     <Compile Include="Administrar Cobertura Medica\BuscarCoberturaMedicaForm.Designer.cs">
       <DependentUpon>BuscarCoberturaMedicaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BuscarUsuariosForm.cs">
+    <Compile Include="Administrar Cuenta\BuscarUsuariosForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BuscarUsuariosForm.Designer.cs">
+    <Compile Include="Administrar Cuenta\BuscarUsuariosForm.Designer.cs">
       <DependentUpon>BuscarUsuariosForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Administrar Vacunas\BuscarVacunasForm.cs">
@@ -130,10 +142,10 @@
     <Compile Include="Administrar Vacunas\CrearVacunasForm.Designer.cs">
       <DependentUpon>CrearVacunasForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CambiarIdiomaForm.cs">
+    <Compile Include="Administrar Idioma\CambiarIdiomaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CambiarIdiomaForm.Designer.cs">
+    <Compile Include="Administrar Idioma\CambiarIdiomaForm.Designer.cs">
       <DependentUpon>CambiarIdiomaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IFormCargarUsuarios.cs" />
@@ -212,14 +224,14 @@
     <Compile Include="Administrar Historia Clinica\VerHistorialHistoriaClinicaForm.Designer.cs">
       <DependentUpon>VerHistorialHistoriaClinicaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administrar Vacunas\VerVacunasForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Administrar Vacunas\VerVacunasForm.Designer.cs">
-      <DependentUpon>VerVacunasForm.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="AgregarIdiomaForm.resx">
+    <EmbeddedResource Include="Administrar Idioma\AgregarIdiomaForm.resx">
       <DependentUpon>AgregarIdiomaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrar Receta y Certificado\ModificarRecetasForm.resx">
+      <DependentUpon>ModificarRecetasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrar Receta y Certificado\VerReceta_CertificadoForm.resx">
+      <DependentUpon>VerReceta_CertificadoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administrar Vacunas\AplicarVacunaForm.resx">
       <DependentUpon>AplicarVacunaForm.cs</DependentUpon>
@@ -230,7 +242,7 @@
     <EmbeddedResource Include="Administrar Cobertura Medica\BuscarCoberturaMedicaForm.resx">
       <DependentUpon>BuscarCoberturaMedicaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BuscarUsuariosForm.resx">
+    <EmbeddedResource Include="Administrar Cuenta\BuscarUsuariosForm.resx">
       <DependentUpon>BuscarUsuariosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administrar Vacunas\BuscarVacunasForm.resx">
@@ -260,7 +272,7 @@
     <EmbeddedResource Include="Administrar Vacunas\CrearVacunasForm.resx">
       <DependentUpon>CrearVacunasForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CambiarIdiomaForm.resx">
+    <EmbeddedResource Include="Administrar Idioma\CambiarIdiomaForm.resx">
       <DependentUpon>CambiarIdiomaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
@@ -307,9 +319,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administrar Historia Clinica\VerHistorialHistoriaClinicaForm.resx">
       <DependentUpon>VerHistorialHistoriaClinicaForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Administrar Vacunas\VerVacunasForm.resx">
-      <DependentUpon>VerVacunasForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -456,7 +456,6 @@ namespace Cova.UI
             txt_documentoNumero.Clear();
             textBoxClave_CrearCuenta.Clear();
             textBoxTelefono_CrearCuenta.Clear();
-            pictureBoxImagen_CrearCuenta=null;
             txt_Email.Clear();
             textBoxApellidoCrearCuenta.Clear();
             textBoxEstadoCivil_CrearCuenta.Clear();

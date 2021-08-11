@@ -28,6 +28,7 @@ namespace Cova.Common.Permisos
         CrearVacunas,
         ModificarVacunas,
         VerVacunas,
+        AplicarVacuna,
 
         AdministrarTurnos,
         CalendarioDeTurnos,
@@ -40,6 +41,7 @@ namespace Cova.Common.Permisos
         AdministrarCoberturaMedica,
         CrearCoberturaMedica,
         ModificarCoberturaMedica,
+        VerCoberturaMedica,
 
         AdministrarHistoriaClinica,
         CrearHistoriaClinica,
@@ -57,13 +59,14 @@ namespace Cova.Common.Permisos
         RealizarRestore,
         BloquearPassword,
         CambiarPassword,
-        CambiarIdioma,
-        MisDatos,
-        ModificarDatos,
+        VerDatos,
+
         Permisos,
-        CrearPermisos,
-        ModificarPermisos,
         AsignarPermisos,
+
+        AdministrarIdioma,
+        CambiarIdioma,
+        CrearIdioma,
 
         //Informacion
         Contacto,

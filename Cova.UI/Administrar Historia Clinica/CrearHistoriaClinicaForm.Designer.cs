@@ -122,6 +122,7 @@ namespace Cova.UI
             // txt_apellido_CrearHistoriaClinica
             // 
             this.txt_apellido_CrearHistoriaClinica.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_apellido_CrearHistoriaClinica.Enabled = false;
             this.txt_apellido_CrearHistoriaClinica.Location = new System.Drawing.Point(9, 143);
             this.txt_apellido_CrearHistoriaClinica.Name = "txt_apellido_CrearHistoriaClinica";
             this.txt_apellido_CrearHistoriaClinica.Size = new System.Drawing.Size(363, 20);
@@ -139,6 +140,7 @@ namespace Cova.UI
             // txt_nombre_CrearHistoriaClinica
             // 
             this.txt_nombre_CrearHistoriaClinica.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_nombre_CrearHistoriaClinica.Enabled = false;
             this.txt_nombre_CrearHistoriaClinica.Location = new System.Drawing.Point(9, 93);
             this.txt_nombre_CrearHistoriaClinica.Name = "txt_nombre_CrearHistoriaClinica";
             this.txt_nombre_CrearHistoriaClinica.Size = new System.Drawing.Size(363, 20);
@@ -156,6 +158,7 @@ namespace Cova.UI
             // txt_Edad_CrearHistoriaClinica
             // 
             this.txt_Edad_CrearHistoriaClinica.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_Edad_CrearHistoriaClinica.Enabled = false;
             this.txt_Edad_CrearHistoriaClinica.Location = new System.Drawing.Point(325, 44);
             this.txt_Edad_CrearHistoriaClinica.Name = "txt_Edad_CrearHistoriaClinica";
             this.txt_Edad_CrearHistoriaClinica.Size = new System.Drawing.Size(67, 20);
@@ -184,6 +187,7 @@ namespace Cova.UI
             // txt_NumeroDocumento_CrearHistoriaClinica
             // 
             this.txt_NumeroDocumento_CrearHistoriaClinica.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_NumeroDocumento_CrearHistoriaClinica.Enabled = false;
             this.txt_NumeroDocumento_CrearHistoriaClinica.Location = new System.Drawing.Point(163, 44);
             this.txt_NumeroDocumento_CrearHistoriaClinica.Name = "txt_NumeroDocumento_CrearHistoriaClinica";
             this.txt_NumeroDocumento_CrearHistoriaClinica.Size = new System.Drawing.Size(132, 20);
@@ -200,6 +204,7 @@ namespace Cova.UI
             // 
             // cmb_TipoDocumento_CrearHistoriaClinica
             // 
+            this.cmb_TipoDocumento_CrearHistoriaClinica.Enabled = false;
             this.cmb_TipoDocumento_CrearHistoriaClinica.FormattingEnabled = true;
             this.cmb_TipoDocumento_CrearHistoriaClinica.Items.AddRange(new object[] {
             "DNI",
@@ -208,6 +213,7 @@ namespace Cova.UI
             this.cmb_TipoDocumento_CrearHistoriaClinica.Name = "cmb_TipoDocumento_CrearHistoriaClinica";
             this.cmb_TipoDocumento_CrearHistoriaClinica.Size = new System.Drawing.Size(121, 21);
             this.cmb_TipoDocumento_CrearHistoriaClinica.TabIndex = 79;
+            this.cmb_TipoDocumento_CrearHistoriaClinica.Text = "DNI";
             // 
             // lbl_TipoDocumento_CrearHistoriaClinica
             // 

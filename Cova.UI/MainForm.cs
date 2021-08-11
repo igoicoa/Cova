@@ -7,6 +7,7 @@ using Cova.Common.Multiidioma;
 using Cova.Servicios.Multiidioma;
 using Cova.Common.Excepciones;
 using Cova.BE;
+using Cova.UI.Administrar_Receta_y_Certificado;
 
 namespace Cova.UI
 {
@@ -156,9 +157,6 @@ namespace Cova.UI
             if (verHistoriaClinicaToolStripMenuItem.Tag != null && traducciones.ContainsKey(verHistoriaClinicaToolStripMenuItem.Tag.ToString()))
                 verHistoriaClinicaToolStripMenuItem.Text = traducciones[verHistoriaClinicaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
 
-            if (verMiHistoriaClinicaToolStripMenuItem.Tag != null && traducciones.ContainsKey(verMiHistoriaClinicaToolStripMenuItem.Tag.ToString()))
-                verMiHistoriaClinicaToolStripMenuItem.Text = traducciones[verMiHistoriaClinicaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
-
             //Administrar Receta/Certificado administrarReceta/CertificadoToolStripMenuItem
             if (administrarRecetaCertificadoToolStripMenuItem.Tag != null && traducciones.ContainsKey(administrarRecetaCertificadoToolStripMenuItem.Tag.ToString()))
                 administrarRecetaCertificadoToolStripMenuItem.Text = traducciones[administrarRecetaCertificadoToolStripMenuItem.Tag.ToString()].PalabraTraducida;
@@ -171,9 +169,6 @@ namespace Cova.UI
 
             if (verRecetasCertificadosToolStripMenuItem.Tag != null && traducciones.ContainsKey(verRecetasCertificadosToolStripMenuItem.Tag.ToString()))
                 verRecetasCertificadosToolStripMenuItem.Text = traducciones[verRecetasCertificadosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
-
-            if (verMisRecetasCertificadosToolStripMenuItem.Tag != null && traducciones.ContainsKey(verMisRecetasCertificadosToolStripMenuItem.Tag.ToString()))
-                verMisRecetasCertificadosToolStripMenuItem.Text = traducciones[verMisRecetasCertificadosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
 
             //Seguridad
             //Administrar Receta/Certificado administrarReceta/CertificadoToolStripMenuItem
@@ -200,23 +195,13 @@ namespace Cova.UI
             if (cambiarContraseñaToolStripMenuItem.Tag != null && traducciones.ContainsKey(cambiarContraseñaToolStripMenuItem.Tag.ToString()))
                 cambiarContraseñaToolStripMenuItem.Text = traducciones[cambiarContraseñaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
 
-            //Mis Datos misDatosToolStripMenuItem
-            if (misDatosToolStripMenuItem.Tag != null && traducciones.ContainsKey(misDatosToolStripMenuItem.Tag.ToString()))
-                misDatosToolStripMenuItem.Text = traducciones[misDatosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
-
-            //Ver Mis Datos VerMisDatosToolStripMenuItem
-            if (VerMisDatosToolStripMenuItem.Tag != null && traducciones.ContainsKey(VerMisDatosToolStripMenuItem.Tag.ToString()))
-                VerMisDatosToolStripMenuItem.Text = traducciones[VerMisDatosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+            //Ver Datos misDatosToolStripMenuItem
+            if (VerDatosToolStripMenuItem.Tag != null && traducciones.ContainsKey(VerDatosToolStripMenuItem.Tag.ToString()))
+                VerDatosToolStripMenuItem.Text = traducciones[VerDatosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
 
             //Permisos permisosToolStripMenuItem
             if (permisosToolStripMenuItem.Tag != null && traducciones.ContainsKey(permisosToolStripMenuItem.Tag.ToString()))
                 permisosToolStripMenuItem.Text = traducciones[permisosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
-
-            if (crearPermisosToolStripMenuItem.Tag != null && traducciones.ContainsKey(crearPermisosToolStripMenuItem.Tag.ToString()))
-                crearPermisosToolStripMenuItem.Text = traducciones[crearPermisosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
-
-            if (modificarPermisosToolStripMenuItem.Tag != null && traducciones.ContainsKey(modificarPermisosToolStripMenuItem.Tag.ToString()))
-                modificarPermisosToolStripMenuItem.Text = traducciones[modificarPermisosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
 
             if (asignarPermisosToolStripMenuItem.Tag != null && traducciones.ContainsKey(asignarPermisosToolStripMenuItem.Tag.ToString()))
                 asignarPermisosToolStripMenuItem.Text = traducciones[asignarPermisosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
@@ -225,11 +210,11 @@ namespace Cova.UI
             if (administrarIdiomaToolStripMenuItem.Tag != null && traducciones.ContainsKey(administrarIdiomaToolStripMenuItem.Tag.ToString()))
                 administrarIdiomaToolStripMenuItem.Text = traducciones[administrarIdiomaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
 
-            if (crearIdiomaToolStripMenuItem.Tag != null && traducciones.ContainsKey(crearIdiomaToolStripMenuItem.Tag.ToString()))
-                crearIdiomaToolStripMenuItem.Text = traducciones[crearIdiomaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
-
             if (cambiarIdiomaToolStripMenuItem.Tag != null && traducciones.ContainsKey(cambiarIdiomaToolStripMenuItem.Tag.ToString()))
                 cambiarIdiomaToolStripMenuItem.Text = traducciones[cambiarIdiomaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+
+            if (crearIdiomaToolStripMenuItem.Tag != null && traducciones.ContainsKey(crearIdiomaToolStripMenuItem.Tag.ToString()))
+                crearIdiomaToolStripMenuItem.Text = traducciones[crearIdiomaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
 
             //Informacion informaciónToolStripMenuItem
             if (informaciónToolStripMenuItem.Tag != null && traducciones.ContainsKey(informaciónToolStripMenuItem.Tag.ToString()))
@@ -269,6 +254,7 @@ namespace Cova.UI
             this.administrarCoberturaMedicaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AdministrarCoberturaMedica) : false;
             this.crearCoberturaMedicaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CrearCoberturaMedica) : false;
             this.modificarCoberturaMedicaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.ModificarCoberturaMedica) : false;
+            this.verCoberturasMedicasToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.VerCoberturaMedica) : false;
 
             this.administrarHistoriaClinicaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AdministrarHistoriaClinica) : false;
             this.crearHistoriaClinicaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CrearHistoriaClinica) : false;
@@ -276,7 +262,6 @@ namespace Cova.UI
             this.verHistoriaClinicaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.VerHistoriaClinica) : false;
 
             this.administrarRecetaCertificadoToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AdministrarReceta_Certificado) : false;
-
             this.crearRecetaCertificadoToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CrearReceta_Certificado) : false;
             this.modificarRecetaCertificadoToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.ModificarReceta_Certificado) : false;
             this.verRecetasCertificadosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.VerReceta_Certificado) : false;
@@ -288,14 +273,12 @@ namespace Cova.UI
             this.realizarRestoreToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.RealizarRestore) : false;
             this.bloquerarPaswordToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.BloquearPassword) : false;
             this.cambiarContraseñaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CambiarPassword) : false;
-            this.cambiarIdiomaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CambiarIdioma) : false;
-            this.misDatosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.MisDatos) : false;
-            this.VerMisDatosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.ModificarDatos) : false;
+            this.VerDatosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.VerDatos) : false;
             this.permisosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.Permisos) : false;
-            this.crearPermisosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CrearPermisos) : false;
-            this.modificarPermisosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.ModificarPermisos) : false;
             this.asignarPermisosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AsignarPermisos) : false;
-
+            this.administrarIdiomaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AdministrarIdioma) : false;
+            this.cambiarIdiomaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CambiarIdioma) : false;
+            this.crearIdiomaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CrearIdioma) : false;
             //Menu Informacion
             this.informaciónToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.Informacion) : false;
             this.contactoToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.Contacto) : false;
@@ -390,7 +373,7 @@ namespace Cova.UI
 
         private void verVacunasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VerVacunasForm frmVerVacunas = new VerVacunasForm();
+            BuscarVacunasForm frmVerVacunas = new BuscarVacunasForm();
             frmVerVacunas.Show();
         }
 
@@ -484,6 +467,12 @@ namespace Cova.UI
         {
             CambiarIdiomaForm frmCambiarIdiomaForm = new CambiarIdiomaForm();
             frmCambiarIdiomaForm.Show();
+        }
+
+        private void verRecetasCertificadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VerReceta_CertificadoForm frmVerReceta_Certificado = new VerReceta_CertificadoForm();
+            frmVerReceta_Certificado.Show();
         }
     }
 }

@@ -187,6 +187,7 @@ namespace Cova.UI
             // txt_edad_CalendarioVacunacion
             // 
             this.txt_edad_CalendarioVacunacion.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_edad_CalendarioVacunacion.Enabled = false;
             this.txt_edad_CalendarioVacunacion.Location = new System.Drawing.Point(604, 94);
             this.txt_edad_CalendarioVacunacion.Name = "txt_edad_CalendarioVacunacion";
             this.txt_edad_CalendarioVacunacion.Size = new System.Drawing.Size(70, 20);

@@ -70,6 +70,7 @@ namespace Cova.UI
             this.rb_Receta_CrearRecetayCertificado.TabStop = true;
             this.rb_Receta_CrearRecetayCertificado.Text = "Receta";
             this.rb_Receta_CrearRecetayCertificado.UseVisualStyleBackColor = true;
+            this.rb_Receta_CrearRecetayCertificado.CheckedChanged += new System.EventHandler(this.rb_Receta_CrearRecetayCertificado_CheckedChanged);
             // 
             // btnCancelar_CrearRecetayCertificado
             // 

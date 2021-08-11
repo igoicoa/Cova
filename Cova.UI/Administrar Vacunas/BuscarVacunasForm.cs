@@ -52,7 +52,7 @@ namespace Cova.UI
 
         private void btn_Limpiar_BuscarVacunas_Click(object sender, EventArgs e)
         {
-            txt_lote.Clear();
+
             cmb_vacuna.SelectedIndex = -1;
             cmb_Laboratorio_BuscarVacunas.SelectedIndex = -1;
         }

@@ -32,8 +32,6 @@ namespace Cova.UI
             this.btnLimpiar_ModificarCuenta = new System.Windows.Forms.Button();
             this.btnCancelar_ModificarCuenta = new System.Windows.Forms.Button();
             this.btnModificar_ModificarCuenta = new System.Windows.Forms.Button();
-            this.pictureBoxImagen_ModificarCuenta = new System.Windows.Forms.PictureBox();
-            this.lblImagen_ModificarCuenta = new System.Windows.Forms.Label();
             this.lblFechaNacimiento_ModificarCuenta = new System.Windows.Forms.Label();
             this.txt_localidad = new System.Windows.Forms.TextBox();
             this.lblLocalidad_ModificarCuenta = new System.Windows.Forms.Label();
@@ -93,7 +91,6 @@ namespace Cova.UI
             this.lbl_coberturaMedica = new System.Windows.Forms.Label();
             this.btn_BuscarUsuarios_ModificarUsuarios = new System.Windows.Forms.Button();
             this.calendar_fechaNacimiento = new System.Windows.Forms.MonthCalendar();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen_ModificarCuenta)).BeginInit();
             this.groupBoxTipoUsuario_ModificarCuenta.SuspendLayout();
             this.gb_ProfesionalModificarCuenta.SuspendLayout();
             this.gb_pacienteModificarCuenta.SuspendLayout();
@@ -129,23 +126,6 @@ namespace Cova.UI
             this.btnModificar_ModificarCuenta.Text = "Modificar";
             this.btnModificar_ModificarCuenta.UseVisualStyleBackColor = true;
             this.btnModificar_ModificarCuenta.Click += new System.EventHandler(this.btnModificar_ModificarCuenta_Click);
-            // 
-            // pictureBoxImagen_ModificarCuenta
-            // 
-            this.pictureBoxImagen_ModificarCuenta.Location = new System.Drawing.Point(609, 28);
-            this.pictureBoxImagen_ModificarCuenta.Name = "pictureBoxImagen_ModificarCuenta";
-            this.pictureBoxImagen_ModificarCuenta.Size = new System.Drawing.Size(159, 145);
-            this.pictureBoxImagen_ModificarCuenta.TabIndex = 59;
-            this.pictureBoxImagen_ModificarCuenta.TabStop = false;
-            // 
-            // lblImagen_ModificarCuenta
-            // 
-            this.lblImagen_ModificarCuenta.AutoSize = true;
-            this.lblImagen_ModificarCuenta.Location = new System.Drawing.Point(606, 12);
-            this.lblImagen_ModificarCuenta.Name = "lblImagen_ModificarCuenta";
-            this.lblImagen_ModificarCuenta.Size = new System.Drawing.Size(42, 13);
-            this.lblImagen_ModificarCuenta.TabIndex = 58;
-            this.lblImagen_ModificarCuenta.Text = "Imagen";
             // 
             // lblFechaNacimiento_ModificarCuenta
             // 
@@ -738,8 +718,6 @@ namespace Cova.UI
             this.Controls.Add(this.btnLimpiar_ModificarCuenta);
             this.Controls.Add(this.btnCancelar_ModificarCuenta);
             this.Controls.Add(this.btnModificar_ModificarCuenta);
-            this.Controls.Add(this.pictureBoxImagen_ModificarCuenta);
-            this.Controls.Add(this.lblImagen_ModificarCuenta);
             this.Controls.Add(this.calendar_fechaNacimiento);
             this.Controls.Add(this.lblFechaNacimiento_ModificarCuenta);
             this.Controls.Add(this.txt_localidad);
@@ -762,7 +740,6 @@ namespace Cova.UI
             this.Controls.Add(this.groupBoxTipoUsuario_ModificarCuenta);
             this.Name = "ModificarCuentaForm";
             this.Text = "Modificar Cuenta";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen_ModificarCuenta)).EndInit();
             this.groupBoxTipoUsuario_ModificarCuenta.ResumeLayout(false);
             this.groupBoxTipoUsuario_ModificarCuenta.PerformLayout();
             this.gb_ProfesionalModificarCuenta.ResumeLayout(false);
@@ -778,8 +755,6 @@ namespace Cova.UI
         private System.Windows.Forms.Button btnLimpiar_ModificarCuenta;
         private System.Windows.Forms.Button btnCancelar_ModificarCuenta;
         private System.Windows.Forms.Button btnModificar_ModificarCuenta;
-        private System.Windows.Forms.PictureBox pictureBoxImagen_ModificarCuenta;
-        private System.Windows.Forms.Label lblImagen_ModificarCuenta;
         private System.Windows.Forms.Label lblFechaNacimiento_ModificarCuenta;
         private System.Windows.Forms.TextBox txt_localidad;
         private System.Windows.Forms.Label lblLocalidad_ModificarCuenta;

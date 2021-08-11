@@ -52,12 +52,10 @@
             this.lblDireccion = new System.Windows.Forms.Label();
             this.lblFechaNacimiento_CrearCuenta = new System.Windows.Forms.Label();
             this.lblCoberturaMedica_CrearUsuario = new System.Windows.Forms.Label();
-            this.lblImagen_CrearCuenta = new System.Windows.Forms.Label();
             this.btnCrear_CrearCuenta = new System.Windows.Forms.Button();
             this.btnCancelar_CrearCuenta = new System.Windows.Forms.Button();
             this.btnLimpiar_CrearCuenta = new System.Windows.Forms.Button();
             this.cmb_coberturaMedica = new System.Windows.Forms.ComboBox();
-            this.pictureBoxImagen_CrearCuenta = new System.Windows.Forms.PictureBox();
             this.gb_paciente = new System.Windows.Forms.GroupBox();
             this.chk_particular = new System.Windows.Forms.CheckBox();
             this.dtp_fechaVencimiento = new System.Windows.Forms.DateTimePicker();
@@ -88,7 +86,6 @@
             this.lbl_CrearCuentas = new System.Windows.Forms.Label();
             this.monthCalendarCrearCuenta = new System.Windows.Forms.MonthCalendar();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen_CrearCuenta)).BeginInit();
             this.gb_paciente.SuspendLayout();
             this.gb_Profesional.SuspendLayout();
             this.SuspendLayout();
@@ -330,15 +327,6 @@
             this.lblCoberturaMedica_CrearUsuario.TabIndex = 28;
             this.lblCoberturaMedica_CrearUsuario.Text = "Cobertura Medica";
             // 
-            // lblImagen_CrearCuenta
-            // 
-            this.lblImagen_CrearCuenta.AutoSize = true;
-            this.lblImagen_CrearCuenta.Location = new System.Drawing.Point(484, 14);
-            this.lblImagen_CrearCuenta.Name = "lblImagen_CrearCuenta";
-            this.lblImagen_CrearCuenta.Size = new System.Drawing.Size(42, 13);
-            this.lblImagen_CrearCuenta.TabIndex = 29;
-            this.lblImagen_CrearCuenta.Text = "Imagen";
-            // 
             // btnCrear_CrearCuenta
             // 
             this.btnCrear_CrearCuenta.Location = new System.Drawing.Point(333, 605);
@@ -381,14 +369,6 @@
             this.cmb_coberturaMedica.Size = new System.Drawing.Size(143, 21);
             this.cmb_coberturaMedica.TabIndex = 34;
             this.cmb_coberturaMedica.SelectedIndexChanged += new System.EventHandler(this.cmb_coberturaMedica_SelectedIndexChanged);
-            // 
-            // pictureBoxImagen_CrearCuenta
-            // 
-            this.pictureBoxImagen_CrearCuenta.Location = new System.Drawing.Point(487, 30);
-            this.pictureBoxImagen_CrearCuenta.Name = "pictureBoxImagen_CrearCuenta";
-            this.pictureBoxImagen_CrearCuenta.Size = new System.Drawing.Size(159, 145);
-            this.pictureBoxImagen_CrearCuenta.TabIndex = 30;
-            this.pictureBoxImagen_CrearCuenta.TabStop = false;
             // 
             // gb_paciente
             // 
@@ -683,8 +663,6 @@
             this.Controls.Add(this.btnLimpiar_CrearCuenta);
             this.Controls.Add(this.btnCancelar_CrearCuenta);
             this.Controls.Add(this.btnCrear_CrearCuenta);
-            this.Controls.Add(this.pictureBoxImagen_CrearCuenta);
-            this.Controls.Add(this.lblImagen_CrearCuenta);
             this.Controls.Add(this.monthCalendarCrearCuenta);
             this.Controls.Add(this.lblFechaNacimiento_CrearCuenta);
             this.Controls.Add(this.textBoxCalle_CrearCuenta);
@@ -709,7 +687,6 @@
             this.Text = "Crear Cuenta";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen_CrearCuenta)).EndInit();
             this.gb_paciente.ResumeLayout(false);
             this.gb_paciente.PerformLayout();
             this.gb_Profesional.ResumeLayout(false);
@@ -745,8 +722,6 @@
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Label lblFechaNacimiento_CrearCuenta;
         private System.Windows.Forms.Label lblCoberturaMedica_CrearUsuario;
-        private System.Windows.Forms.Label lblImagen_CrearCuenta;
-        private System.Windows.Forms.PictureBox pictureBoxImagen_CrearCuenta;
         private System.Windows.Forms.Button btnCrear_CrearCuenta;
         private System.Windows.Forms.Button btnCancelar_CrearCuenta;
         private System.Windows.Forms.Button btnLimpiar_CrearCuenta;

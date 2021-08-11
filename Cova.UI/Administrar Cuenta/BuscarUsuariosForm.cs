@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cova.BL;
 using Cova.BE;
+using Cova.UI.Administrar_Receta_y_Certificado;
 
 namespace Cova.UI
 {
@@ -21,6 +22,7 @@ namespace Cova.UI
         public List<BEPaciente> Pacientes;
         public List<BEAdministrador> Administradores;
 
+
         public BuscarUsuariosForm(bool buscarSoloPacientes, IFormCargarUsuarios formPadre = null)
         {
             InitializeComponent();
@@ -28,6 +30,7 @@ namespace Cova.UI
             this._buscarSoloPacientes = buscarSoloPacientes;
             ActualizarForm();
         }
+
 
         public void ActualizarForm()
         {
