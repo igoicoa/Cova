@@ -309,8 +309,7 @@ namespace Cova.UI
                 if (ValidarTodosLosCamposMedico())
                 {
                     ActualizarProfesionalMedico();
-                }
-                else
+                }else
                 {
                     MessageBox.Show("Debe completar todos los campos");
                 }
@@ -320,19 +319,17 @@ namespace Cova.UI
                 if (ValidarTodosLosCamposEnfermero())
                 {
                     ActualizarProfesionalEnfermero();
-                }
-                else
+                } else
                 {
                     MessageBox.Show("Debe completar todos los campos");
                 }
-            } 
+            }
             else if(rb_paciente_ModificarCuenta.Checked)
             {
                 if (ValidarTodosLosCamposPaciente())
                 {
                     ActualizarPaciente();
-                }
-                else
+                }else
                 {
                     MessageBox.Show("Debe completar todos los campos");
                 }
@@ -342,8 +339,7 @@ namespace Cova.UI
                 if (ValidarTodosLosCamposAdministrador())
                 {
                     ActualizarAdministrador();
-                }
-                else
+                } else
                 {
                     MessageBox.Show("Debe completar todos los campos");
                 }

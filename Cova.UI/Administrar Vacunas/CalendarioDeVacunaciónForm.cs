@@ -147,18 +147,18 @@ namespace Cova.UI
         private void bttn_Mostrar_CalendarioVacunacion_Click(object sender, EventArgs e)
         {
             List<BEVacunaDosis> vacunasAMostrar = new List<BEVacunaDosis>();
-            if ( cmb_Estado_CalendarioVacunacion.SelectedItem.ToString() == "Completo")
-            {
-                vacunasAMostrar = this._vacunasEsquemaCompleto;
-            } 
-            else if (cmb_Estado_CalendarioVacunacion.SelectedItem.ToString() == "Pendiente")
-            {
-                vacunasAMostrar = this._vacunasEsquemaIncompleto;
-            } else
+            if (string.IsNullOrEmpty(cmb_Estado_CalendarioVacunacion.Text))
             {
                 MessageBox.Show("Completar el estado por el cual desee informarse");
-            }
-            
+                return;
+            }else if ( cmb_Estado_CalendarioVacunacion.SelectedItem.ToString() == "Completo")
+                    {
+                        vacunasAMostrar = this._vacunasEsquemaCompleto;
+                    } 
+            else
+                {
+                    vacunasAMostrar = this._vacunasEsquemaIncompleto;
+                }
             DataTable tableVacunas = new DataTable();
             tableVacunas.Columns.Add("Vacuna");
             tableVacunas.Columns.Add("Laboratorio");
