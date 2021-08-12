@@ -41,18 +41,17 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             this.lbl_Diagnostico_CrearReceta = new System.Windows.Forms.Label();
             this.lbl_ModificarReceta = new System.Windows.Forms.Label();
             this.gb_DatosPaciente_CrearReceta = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.txt_apellido_ModificarReceta = new System.Windows.Forms.TextBox();
             this.lbl_Apellido_CrearReceta = new System.Windows.Forms.Label();
             this.txt_nombre_ModificarReceta = new System.Windows.Forms.TextBox();
             this.lbl_Nombre_CrearReceta = new System.Windows.Forms.Label();
             this.txt_Edad_ModificarReceta = new System.Windows.Forms.TextBox();
             this.lbl_Edad_CrearReceta = new System.Windows.Forms.Label();
-            this.btn_BuscarPacientes_ModificarReceta = new System.Windows.Forms.Button();
             this.txt_NumeroDocumento_ModificarReceta = new System.Windows.Forms.TextBox();
             this.lbl_NumeroDocumento_CrearReceta = new System.Windows.Forms.Label();
             this.cmb_TipoDocumento_ModificarReceta = new System.Windows.Forms.ComboBox();
             this.lbl_TipoDocumento_CrearReceta = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.gb_DatosPaciente_CrearReceta.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,6 +109,7 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             this.btn_ModificarReceta_ModificarReceta.TabIndex = 173;
             this.btn_ModificarReceta_ModificarReceta.Text = "Modificar";
             this.btn_ModificarReceta_ModificarReceta.UseVisualStyleBackColor = true;
+            this.btn_ModificarReceta_ModificarReceta.Click += new System.EventHandler(this.btn_ModificarReceta_ModificarReceta_Click_1);
             // 
             // dtp_fecha_ModificarReceta
             // 
@@ -165,7 +165,6 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             this.gb_DatosPaciente_CrearReceta.Controls.Add(this.lbl_Nombre_CrearReceta);
             this.gb_DatosPaciente_CrearReceta.Controls.Add(this.txt_Edad_ModificarReceta);
             this.gb_DatosPaciente_CrearReceta.Controls.Add(this.lbl_Edad_CrearReceta);
-            this.gb_DatosPaciente_CrearReceta.Controls.Add(this.btn_BuscarPacientes_ModificarReceta);
             this.gb_DatosPaciente_CrearReceta.Controls.Add(this.txt_NumeroDocumento_ModificarReceta);
             this.gb_DatosPaciente_CrearReceta.Controls.Add(this.lbl_NumeroDocumento_CrearReceta);
             this.gb_DatosPaciente_CrearReceta.Controls.Add(this.cmb_TipoDocumento_ModificarReceta);
@@ -176,6 +175,16 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             this.gb_DatosPaciente_CrearReceta.TabIndex = 167;
             this.gb_DatosPaciente_CrearReceta.TabStop = false;
             this.gb_DatosPaciente_CrearReceta.Text = "Datos Paciente";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(421, 133);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(156, 23);
+            this.button1.TabIndex = 179;
+            this.button1.Text = "Buscar Recetas";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txt_apellido_ModificarReceta
             // 
@@ -231,17 +240,6 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             this.lbl_Edad_CrearReceta.TabIndex = 142;
             this.lbl_Edad_CrearReceta.Text = "Edad";
             // 
-            // btn_BuscarPacientes_ModificarReceta
-            // 
-            this.btn_BuscarPacientes_ModificarReceta.BackColor = System.Drawing.Color.MistyRose;
-            this.btn_BuscarPacientes_ModificarReceta.Location = new System.Drawing.Point(421, 83);
-            this.btn_BuscarPacientes_ModificarReceta.Name = "btn_BuscarPacientes_ModificarReceta";
-            this.btn_BuscarPacientes_ModificarReceta.Size = new System.Drawing.Size(103, 23);
-            this.btn_BuscarPacientes_ModificarReceta.TabIndex = 139;
-            this.btn_BuscarPacientes_ModificarReceta.Text = "Buscar Pacientes";
-            this.btn_BuscarPacientes_ModificarReceta.UseVisualStyleBackColor = false;
-            this.btn_BuscarPacientes_ModificarReceta.Click += new System.EventHandler(this.btn_BuscarPacientes_ModificarReceta_Click_1);
-            // 
             // txt_NumeroDocumento_ModificarReceta
             // 
             this.txt_NumeroDocumento_ModificarReceta.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -281,16 +279,6 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             this.lbl_TipoDocumento_CrearReceta.Size = new System.Drawing.Size(99, 13);
             this.lbl_TipoDocumento_CrearReceta.TabIndex = 78;
             this.lbl_TipoDocumento_CrearReceta.Text = "Tipo de documento";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(421, 133);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 23);
-            this.button1.TabIndex = 179;
-            this.button1.Text = "Ver Recetas y Certificados";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ModificarRecetasForm
             // 
@@ -338,7 +326,6 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
         private System.Windows.Forms.Label lbl_Nombre_CrearReceta;
         private System.Windows.Forms.TextBox txt_Edad_ModificarReceta;
         private System.Windows.Forms.Label lbl_Edad_CrearReceta;
-        private System.Windows.Forms.Button btn_BuscarPacientes_ModificarReceta;
         private System.Windows.Forms.TextBox txt_NumeroDocumento_ModificarReceta;
         private System.Windows.Forms.Label lbl_NumeroDocumento_CrearReceta;
         private System.Windows.Forms.ComboBox cmb_TipoDocumento_ModificarReceta;

@@ -1,22 +1,19 @@
 ﻿using Cova.BE;
 using Cova.BL;
 using Cova.Servicios.Sesion;
+using Cova.UI.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Cova.UI.Administrar_Receta_y_Certificado
 {
-    public partial class ModificarRecetasForm : Form, IFormCargarUsuarios
+    public partial class ModificarRecetasForm : Form, IFormCargarRecetas
     {
         private BEMedico _usuarioMedico;
         private BEPaciente _pacienteAModificarRecetar;
+        private BEReceta _recetaAModificar;
 
         public ModificarRecetasForm()
         {
@@ -55,39 +52,25 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             }
         }
 
-        private void btn_BuscarPacientes_ModificarReceta_Click(object sender, EventArgs e)
+        public void CargarRecetaPaciente(BEReceta receta, BEPaciente paciente)
         {
-            BuscarUsuariosForm buscarUsuariosForm = new BuscarUsuariosForm(true, this);
-            buscarUsuariosForm.Show();
-        }
-
-        public void CargarUsuarioPaciente(BEPaciente pacienteARecetar)
-        {
-            this._pacienteAModificarRecetar = pacienteARecetar;
-            txt_apellido_ModificarReceta.Text = pacienteARecetar.Apellido;
-            txt_nombre_ModificarReceta.Text = pacienteARecetar.Nombre;
-            txt_Edad_ModificarReceta.Text = pacienteARecetar.Edad.ToString();
-            txt_NumeroDocumento_ModificarReceta.Text = pacienteARecetar.DNI.ToString();
+            this._pacienteAModificarRecetar = paciente;
+            this._recetaAModificar = receta;
+            txt_apellido_ModificarReceta.Text = paciente.Apellido;
+            txt_nombre_ModificarReceta.Text = paciente.Nombre;
+            txt_Edad_ModificarReceta.Text = paciente.Edad.ToString();
+            txt_NumeroDocumento_ModificarReceta.Text = paciente.DNI.ToString();
+            if(receta.Vacuna != null)
+            {
+                cmb_vacuna_ModificarReceta.Text = receta.Vacuna.Nombre;
+            }
+            rtxt_Diagnostico_ModificarReceta.Text = receta.Observacion;
+            dtp_fecha_ModificarReceta.Value = receta.FechaPrescripcion;
         }
 
         private void btn_Cancelar_ModificarReceta_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        public void CargarUsuarioMedico(BEMedico usuarioAModificar)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void CargarUsuarioEnfermero(BEEnfermero usuarioAModificar)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void CargarUsuarioAdministrador(BEAdministrador usuarioAModificar)
-        {
-            throw new NotImplementedException();
         }
 
         private void btn_Limpiar_ModificarReceta_Click(object sender, EventArgs e)
@@ -133,12 +116,6 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             }
         }
 
-        private void btn_BuscarPacientes_ModificarReceta_Click_1(object sender, EventArgs e)
-        {
-            BuscarUsuariosForm buscarUsuariosForm = new BuscarUsuariosForm(true, this);
-            buscarUsuariosForm.Show();
-        }
-
         private void btn_Cancelar_ModificarReceta_Click_1(object sender, EventArgs e)
         {
             this.Close();
@@ -156,8 +133,46 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
 
         private void button1_Click(object sender, EventArgs e)
         {
-            VerReceta_CertificadoForm frmVerReceta_Certificado = new VerReceta_CertificadoForm();
+            VerReceta_CertificadoForm frmVerReceta_Certificado = new VerReceta_CertificadoForm(this);
             frmVerReceta_Certificado.Show();
+        }
+
+        public bool ValidarTodosLosCamposReceta()
+        {
+            if (string.IsNullOrEmpty(txt_apellido_ModificarReceta.Text) || (string.IsNullOrEmpty(txt_nombre_ModificarReceta.Text))
+                || (string.IsNullOrEmpty(txt_Edad_ModificarReceta.Text)) || string.IsNullOrEmpty(txt_NumeroDocumento_ModificarReceta.Text)
+                || string.IsNullOrEmpty(rtxt_Diagnostico_ModificarReceta.Text) || string.IsNullOrEmpty(dtp_fecha_ModificarReceta.Value.ToString()))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private void btn_ModificarReceta_ModificarReceta_Click_1(object sender, EventArgs e)
+        {
+            BLReceta bLReceta = new BLReceta();
+            this._recetaAModificar.FechaPrescripcion = dtp_fecha_ModificarReceta.Value;
+            this._recetaAModificar.Observacion = rtxt_Diagnostico_ModificarReceta.Text;
+            this._recetaAModificar.Vacuna = (BEVacuna)cmb_vacuna_ModificarReceta.SelectedItem;
+            if (ValidarTodosLosCamposReceta())
+            {
+                if (bLReceta.ActualizarReceta(this._recetaAModificar))
+                {
+                    MessageBox.Show("Receta modificada con exito");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error al modificar la receta");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe completar todos los campos");
+            }
         }
     }
 }

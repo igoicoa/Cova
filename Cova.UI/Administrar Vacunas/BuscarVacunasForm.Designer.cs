@@ -42,6 +42,8 @@ namespace Cova.UI
             this.cmb_vacuna = new System.Windows.Forms.ComboBox();
             this.lbl_Lote = new System.Windows.Forms.Label();
             this.txt_lote = new System.Windows.Forms.TextBox();
+            this.cmb_centroMedico = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_ListaVacunas_VerVacunas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +73,7 @@ namespace Cova.UI
             this.dtg_ListaVacunas_VerVacunas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_ListaVacunas_VerVacunas.Location = new System.Drawing.Point(11, 134);
             this.dtg_ListaVacunas_VerVacunas.Name = "dtg_ListaVacunas_VerVacunas";
-            this.dtg_ListaVacunas_VerVacunas.Size = new System.Drawing.Size(777, 304);
+            this.dtg_ListaVacunas_VerVacunas.Size = new System.Drawing.Size(930, 304);
             this.dtg_ListaVacunas_VerVacunas.TabIndex = 147;
             // 
             // btn_Buscar_BuscarVacunas
@@ -156,11 +158,30 @@ namespace Cova.UI
             this.txt_lote.Size = new System.Drawing.Size(131, 20);
             this.txt_lote.TabIndex = 153;
             // 
+            // cmb_centroMedico
+            // 
+            this.cmb_centroMedico.FormattingEnabled = true;
+            this.cmb_centroMedico.Location = new System.Drawing.Point(719, 60);
+            this.cmb_centroMedico.Name = "cmb_centroMedico";
+            this.cmb_centroMedico.Size = new System.Drawing.Size(236, 21);
+            this.cmb_centroMedico.TabIndex = 155;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(716, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 13);
+            this.label1.TabIndex = 154;
+            this.label1.Text = "Centro Medico";
+            // 
             // BuscarVacunasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(962, 450);
+            this.Controls.Add(this.cmb_centroMedico);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_lote);
             this.Controls.Add(this.lbl_Lote);
             this.Controls.Add(this.cmb_vacuna);
@@ -196,5 +217,7 @@ namespace Cova.UI
         private System.Windows.Forms.ComboBox cmb_vacuna;
         private System.Windows.Forms.Label lbl_Lote;
         private System.Windows.Forms.TextBox txt_lote;
+        private System.Windows.Forms.ComboBox cmb_centroMedico;
+        private System.Windows.Forms.Label label1;
     }
 }

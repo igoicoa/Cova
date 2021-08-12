@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cova.BE;
 using Cova.BL;
@@ -21,10 +17,16 @@ namespace Cova.UI
         public BuscarVacunasForm(int? CentroMedicoId = null, IFormCargarVacunas formPadre = null)
         {
             InitializeComponent();
+            CargarCentrosMedicos();
             CargarVacunas();
             CargarLaboratorios();
-            this._centroMedicoId = CentroMedicoId;
             this._formPadre = formPadre;
+            if (CentroMedicoId != null)
+            {
+                this._centroMedicoId = CentroMedicoId;
+                this.cmb_centroMedico.Enabled = false;
+                this.cmb_centroMedico.SelectedValue = CentroMedicoId;
+            }
         }
 
         public void CargarVacunas()
@@ -45,6 +47,15 @@ namespace Cova.UI
             this.cmb_Laboratorio_BuscarVacunas.SelectedIndex = -1;
         }
 
+        public void CargarCentrosMedicos()
+        {
+            BLCentroMedico bLCentroMedico = new BLCentroMedico();
+            this.cmb_centroMedico.DataSource = bLCentroMedico.ObtenerCentrosMedicos();
+            this.cmb_centroMedico.DisplayMember = "Nombre";
+            this.cmb_centroMedico.ValueMember = "CentroMedicoId";
+            this.cmb_centroMedico.SelectedIndex = -1;
+        }
+
         private void btn_Cancelar_BuscarVacunas_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -62,9 +73,13 @@ namespace Cova.UI
             BEVacunaDosis vacunaABuscar = new BEVacunaDosis();
             BECentroMedico centroMedico = new BECentroMedico();
             BELaboratorio laboratorio = new BELaboratorio();
-
+            if(this.cmb_centroMedico.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar un centro medico para buscar vacunas");
+                return;
+            }
             laboratorio.Nombre = cmb_Laboratorio_BuscarVacunas.SelectedItem != null ? ((BELaboratorio)cmb_Laboratorio_BuscarVacunas.SelectedItem).Nombre : "";
-            centroMedico.CentroMedicoId = (int)this._centroMedicoId;
+            centroMedico.CentroMedicoId = ((BECentroMedico)this.cmb_centroMedico.SelectedItem).CentroMedicoId;
             vacunaABuscar.Vacuna = new BEVacuna();
             vacunaABuscar.Lote = txt_lote.Text;
             vacunaABuscar.Vacuna.Laboratorio = laboratorio;

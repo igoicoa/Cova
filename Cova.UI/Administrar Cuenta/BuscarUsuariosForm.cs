@@ -76,7 +76,14 @@ namespace Cova.UI
         public void BuscarMedico(string usuario, string DNI)
         {
             BLMedico bLMedico = new BLMedico();
-            this.Medicos = bLMedico.BuscarMedicos(usuario, DNI).ToList();
+            try
+            {
+                this.Medicos = bLMedico.BuscarMedicos(usuario, DNI).ToList();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
             DataTable tableMedicos = new DataTable();
             tableMedicos.Columns.Add("UsuarioID");
@@ -146,7 +153,15 @@ namespace Cova.UI
         public void BuscarEnfermero(string usuario, string DNI)
         {
             BLEnfermero bLEnfermero = new BLEnfermero();
-            this.Enfermeros = bLEnfermero.BuscarEnfermeros(usuario, DNI).ToList();
+            try
+            {
+                this.Enfermeros = bLEnfermero.BuscarEnfermeros(usuario, DNI).ToList();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
             DataTable tableEnfermeros = new DataTable();
             tableEnfermeros.Columns.Add("UsuarioID");
             tableEnfermeros.Columns.Add("Nombre");
@@ -209,7 +224,14 @@ namespace Cova.UI
         public void BuscarPaciente(string usuario, string DNI)
         {
             BLPaciente bLPaciente = new BLPaciente();
-            this.Pacientes = bLPaciente.BuscarPacientes(usuario, DNI).ToList();
+            try
+            {
+                this.Pacientes = bLPaciente.BuscarPacientes(usuario, DNI).ToList();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
             DataTable tablePaciente = new DataTable();
             tablePaciente.Columns.Add("UsuarioID");

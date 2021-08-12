@@ -26,10 +26,10 @@ namespace Cova.BL
             return mPPReceta.ActualizarReceta(receta);
         }
 
-        //public IList<BEMedico> BuscarRecetas(BEReceta receta)
-        //{
-        //    MPPReceta mPPReceta = new MPPReceta();
-        //    return mPPReceta.BuscarRecetas(receta);
-        //}
+        public IList<BEReceta> BuscarRecetas(BEPaciente paciente)
+        {
+            MPPReceta mPPReceta = new MPPReceta();
+            return mPPReceta.BuscarRecetas(paciente);
+        }
     }
 }

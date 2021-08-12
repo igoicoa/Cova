@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Cova.Common.Excepciones;
 using Cova.MPP;
 using Cova.BE;
 
@@ -20,6 +19,20 @@ namespace Cova.BL
         {
             MPPVacuna mPPVacuna = new MPPVacuna();
             return mPPVacuna.ObtenerVacunasDeCentroMedicoAAplicar(vacunaABuscar);
+        }
+
+        public bool CrearVacuna(BEVacuna vacunaNueva)
+        {
+            List<BEVacuna> vacunasExistentes = this.ObtenerVacunas().ToList();
+            foreach(BEVacuna vacuna in vacunasExistentes)
+            {
+                if(vacuna.Nombre == vacunaNueva.Nombre && vacuna.Laboratorio.LaboratorioId == vacunaNueva.Laboratorio.LaboratorioId)
+                {
+                    throw new VacunaYaExistenteException();
+                }
+            }
+            MPPVacuna mPPVacuna = new MPPVacuna();
+            return mPPVacuna.CrearVacuna(vacunaNueva);
         }
     }
 }

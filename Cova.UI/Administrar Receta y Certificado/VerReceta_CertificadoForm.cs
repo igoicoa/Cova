@@ -1,45 +1,47 @@
 ﻿using Cova.BE;
 using Cova.BL;
+using Cova.UI.Interfaces;
+using Cova.Servicios.Sesion;
+using Cova.BE.Enum;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Cova.UI.Administrar_Receta_y_Certificado
 {
     public partial class VerReceta_CertificadoForm : Form, IFormCargarUsuarios
     {
-        private BEPaciente _VerRecetaPaciente;
-        public List<BEReceta> Receta;
+        private IFormCargarRecetas _formPadre;
+        private BEPaciente _paciente;
+        private List<BEReceta> _recetasPaciente;
 
-        public VerReceta_CertificadoForm()
+        public VerReceta_CertificadoForm(IFormCargarRecetas formPadre = null)
         {
             InitializeComponent();
-        }
-
-        public void CargarUsuarioAdministrador(BEAdministrador usuarioAModificar)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void CargarUsuarioEnfermero(BEEnfermero usuarioAModificar)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void CargarUsuarioMedico(BEMedico usuarioAModificar)
-        {
-            throw new NotImplementedException();
+            this._formPadre = formPadre;
+            if (this._formPadre == null)
+            {
+                this.btn_SeleccionarReceta.Visible = false;
+            }
+            if(Sesion.GetInstance != null)
+            {
+                if(Sesion.GetInstance.Usuario.TipoUsuario == TipoUsuario.Paciente)
+                {
+                    btn_BuscarPacientes__VerRecetasyCertificados.Visible = false;
+                    BLPaciente bLPaciente = new BLPaciente();
+                    long usuarioId = Sesion.GetInstance.Usuario.UsuarioID;
+                    string usuario = Sesion.GetInstance.Usuario.Usuario;
+                    this._paciente = bLPaciente.BuscarPacientes(usuario, "").ToList().Where(x => x.UsuarioID == usuarioId).FirstOrDefault();
+                    CargarUsuarioPaciente(this._paciente);
+                }
+            }
         }
 
         public void CargarUsuarioPaciente(BEPaciente verRecetaPaciente)
         {
-            this._VerRecetaPaciente = verRecetaPaciente;
+            this._paciente = verRecetaPaciente;
             txt_apellido__VerRecetasyCertificados.Text = verRecetaPaciente.Apellido;
             txt_nombre__VerRecetasyCertificados.Text = verRecetaPaciente.Nombre;
             txt_Edad__VerRecetasyCertificados.Text = verRecetaPaciente.Edad.ToString();
@@ -106,41 +108,72 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
         public void BuscarRecetas()
         {
             BLReceta bLReceta = new BLReceta();
-            //this.Receta = bLReceta.BuscarRecetas().ToList();
+            this._recetasPaciente = bLReceta.BuscarRecetas(this._paciente).ToList();
 
             DataTable tableReceta = new DataTable();
             tableReceta.Columns.Add("RecetaId");
             tableReceta.Columns.Add("FechaPrescripcion");
-            tableReceta.Columns.Add("PacienteId");
-            tableReceta.Columns.Add("ProfesionalId");
-            tableReceta.Columns.Add("VacunaId");
             tableReceta.Columns.Add("Observacion");
+            tableReceta.Columns.Add("Vacuna");
+            tableReceta.Columns.Add("Medico Nombre");
+            tableReceta.Columns.Add("Medico Apellido");
+            tableReceta.Columns.Add("Medico MN");
+            tableReceta.Columns.Add("Medico MP");
 
-            foreach (BEReceta receta in this.Receta)
+            foreach (BEReceta receta in this._recetasPaciente)
             {
                 DataRow filaReceta = tableReceta.NewRow();
                 filaReceta["RecetaId"] = receta.RecetaId;
                 filaReceta["FechaPrescripcion"] = receta.FechaPrescripcion;
-                filaReceta["PacienteId"] = receta.Paciente.PacienteId;
-                filaReceta["ProfesionalId"] = receta.Medico.ProfesionalId;
-                filaReceta["VacunaId"] = receta.Vacuna.VacunaID;
                 filaReceta["Observacion"] = receta.Observacion;
+                filaReceta["Vacuna"] = receta.Vacuna != null ? receta.Vacuna.Nombre : "-";
+                filaReceta["Medico Nombre"] = receta.Medico.Nombre;
+                filaReceta["Medico Apellido"] = receta.Medico.Apellido;
+                filaReceta["Medico MN"] = receta.Medico.MatriculaNacional;
+                filaReceta["Medico MP"] = receta.Medico.MatriculaProvincial;
 
                 tableReceta.Rows.Add(filaReceta);
             }
             DataView dataviewRecetas = new DataView(tableReceta);
-            //dtg_Recetas_VerRecetasyCertificados.DataSource = TraerInformacionFiltrada(dataviewRecetas);
-            //dgv_usuario.DataSource = dataviewMedicos;
+            dtg_Recetas_VerRecetasyCertificados.DataSource = dataviewRecetas;
             dtg_Recetas_VerRecetasyCertificados.Columns[0].Visible = false;
             dtg_Recetas_VerRecetasyCertificados.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dtg_Recetas_VerRecetasyCertificados.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dtg_Recetas_VerRecetasyCertificados.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dtg_Recetas_VerRecetasyCertificados.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtg_Recetas_VerRecetasyCertificados.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtg_Recetas_VerRecetasyCertificados.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtg_Recetas_VerRecetasyCertificados.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
         public void BuscarCertificado()
         {
 
+        }
+
+        private void btn_SeleccionarUsuario_BuscarUsuarios_Click(object sender, EventArgs e)
+        {
+            if (dtg_Recetas_VerRecetasyCertificados.SelectedRows.Count != 0)
+            {
+                long recetaId = Convert.ToInt64(dtg_Recetas_VerRecetasyCertificados.SelectedRows[0].Cells["RecetaId"].Value);
+                this._formPadre.CargarRecetaPaciente(this._recetasPaciente.Where(x => x.RecetaId == recetaId).FirstOrDefault(), this._paciente);
+                this.Close();
+            }
+        }
+
+        public void CargarUsuarioAdministrador(BEAdministrador usuarioAModificar)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CargarUsuarioEnfermero(BEEnfermero usuarioAModificar)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CargarUsuarioMedico(BEMedico usuarioAModificar)
+        {
+            throw new NotImplementedException();
         }
     }
 }

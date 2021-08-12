@@ -121,6 +121,9 @@
     <Build Include="StoredProcedures\s_AplicarVacuna.sql" />
     <Build Include="StoredProcedures\s_ObtenerVacunasAplicadasEsquemaCompleto.sql" />
     <Build Include="StoredProcedures\s_ObtenerVacunasAplicadasEsquemaIncompleto.sql" />
+    <Build Include="StoredProcedures\s_BuscarRecetaPaciente.sql" />
+    <Build Include="StoredProcedures\s_ActualizarReceta.sql" />
+    <Build Include="StoredProcedures\s_CrearVacuna.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />
@@ -130,6 +133,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="StoredProcedures\s_ActualizarAdministrador.sql" />
-    <None Include="StoredProcedures\s_ActualizarReceta.sql" />
   </ItemGroup>
 </Project>

@@ -148,6 +148,7 @@
     <Compile Include="Administrar Idioma\CambiarIdiomaForm.Designer.cs">
       <DependentUpon>CambiarIdiomaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IFormCargarRecetas.cs" />
     <Compile Include="Interfaces\IFormCargarUsuarios.cs" />
     <Compile Include="Interfaces\IFormCargarVacunas.cs" />
     <Compile Include="LoginForm.cs">

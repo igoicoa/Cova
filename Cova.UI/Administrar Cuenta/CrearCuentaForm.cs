@@ -81,29 +81,35 @@ namespace Cova.UI
                 domicilioPaciente.Provincia = txt_provincia.Text;
                 domicilioPaciente.Pais = "Argentina";
                 pacienteNuevo.Domicilio = domicilioPaciente;
-            if(!chk_particular.Checked)
-            {
-                BECoberturaMedica coberturaMedicaSeleccionada = (BECoberturaMedica)cmb_coberturaMedica.SelectedItem;
-                BECoberturaMedicaPlan coberturaMedicaPlan = (BECoberturaMedicaPlan)cmb_Plan.SelectedItem;
-                BECoberturaMedicaPaciente coberturaMedicaPaciente = new BECoberturaMedicaPaciente();
-                coberturaMedicaPaciente.CoberturaMedicaId = coberturaMedicaSeleccionada.CoberturaMedicaId;
-                coberturaMedicaPaciente.Plan = coberturaMedicaPlan;
-                coberturaMedicaPaciente.NumeroAfiliado = txt_numeroAfiliado.Text;
-                coberturaMedicaPaciente.FechaVencimiento = dtp_fechaVencimiento.Value;
+                if(!chk_particular.Checked)
+                {
+                    BECoberturaMedica coberturaMedicaSeleccionada = (BECoberturaMedica)cmb_coberturaMedica.SelectedItem;
+                    BECoberturaMedicaPlan coberturaMedicaPlan = (BECoberturaMedicaPlan)cmb_Plan.SelectedItem;
+                    BECoberturaMedicaPaciente coberturaMedicaPaciente = new BECoberturaMedicaPaciente();
+                    coberturaMedicaPaciente.CoberturaMedicaId = coberturaMedicaSeleccionada.CoberturaMedicaId;
+                    coberturaMedicaPaciente.Plan = coberturaMedicaPlan;
+                    coberturaMedicaPaciente.NumeroAfiliado = txt_numeroAfiliado.Text;
+                    coberturaMedicaPaciente.FechaVencimiento = dtp_fechaVencimiento.Value;
 
-                pacienteNuevo.CoberturaMedica = coberturaMedicaPaciente;
+                    pacienteNuevo.CoberturaMedica = coberturaMedicaPaciente;
+                }
+                try
+                {
+                    if (bLPaciente.CrearPaciene(pacienteNuevo))
+                    {
+                        MessageBox.Show("Paciente Creado con exito");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error al crear el paciente");
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-           
-            if (bLPaciente.CrearPaciene(pacienteNuevo))
-            {
-                MessageBox.Show("Paciente Creado con exito");
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Hubo un error al crear el paciente");
-            }
-         }
             else
             {
                 MessageBox.Show("Completar con valores numericos");
@@ -115,39 +121,47 @@ namespace Cova.UI
             int dni, calleNum, Mnacional, Mprovincial ;
             if (int.TryParse(txt_documentoNumero.Text, out dni) && int.TryParse(txt_calleNumero.Text, out calleNum)
                 && int.TryParse(txt_matriculaNacional.Text, out Mnacional) && int.TryParse(txt_matriculaProvincial.Text, out Mprovincial))
-                { 
-            BEMedico medicoNuevo = new BEMedico();
-            BLMedico bLMedico = new BLMedico();
-            medicoNuevo.Apellido = textBoxApellidoCrearCuenta.Text;
-            medicoNuevo.Nombre = txt_CrearCuentaNombre.Text;
-            medicoNuevo.Sexo = radioButtonMasculino_CrearCuenta.Checked ? "M" : "F";
-            medicoNuevo.Telefono = textBoxTelefono_CrearCuenta.Text;
-            medicoNuevo.Email = txt_Email.Text;
-            medicoNuevo.EstadoCivil = textBoxEstadoCivil_CrearCuenta.Text;
-            medicoNuevo.DNI = dni;
-            medicoNuevo.FechaNacimiento = monthCalendarCrearCuenta.SelectionRange.Start;
-            medicoNuevo.Password = HashHelper.HashMD5(textBoxClave_CrearCuenta.Text);
-            BEDomicilio domicilioProfesional = new BEDomicilio();
-            domicilioProfesional.Calle = textBoxCalle_CrearCuenta.Text;
-            domicilioProfesional.Numero = calleNum;
-            domicilioProfesional.Piso = txt_piso.Text;
-            domicilioProfesional.Localidad = txt_localidad.Text;
-            domicilioProfesional.Provincia = txt_provincia.Text;
-            domicilioProfesional.Pais = "Argentina";
-            medicoNuevo.Domicilio = domicilioProfesional;
-            medicoNuevo.MatriculaNacional = Mnacional;
-            medicoNuevo.MatriculaProvincial = Mprovincial;
-            medicoNuevo.Especialidad = (Especialidad)Enum.Parse(typeof(Especialidad), cmb_especialidad.SelectedItem.ToString());
+            { 
+                BEMedico medicoNuevo = new BEMedico();
+                BLMedico bLMedico = new BLMedico();
+                medicoNuevo.Apellido = textBoxApellidoCrearCuenta.Text;
+                medicoNuevo.Nombre = txt_CrearCuentaNombre.Text;
+                medicoNuevo.Sexo = radioButtonMasculino_CrearCuenta.Checked ? "M" : "F";
+                medicoNuevo.Telefono = textBoxTelefono_CrearCuenta.Text;
+                medicoNuevo.Email = txt_Email.Text;
+                medicoNuevo.EstadoCivil = textBoxEstadoCivil_CrearCuenta.Text;
+                medicoNuevo.DNI = dni;
+                medicoNuevo.FechaNacimiento = monthCalendarCrearCuenta.SelectionRange.Start;
+                medicoNuevo.Password = HashHelper.HashMD5(textBoxClave_CrearCuenta.Text);
+                BEDomicilio domicilioProfesional = new BEDomicilio();
+                domicilioProfesional.Calle = textBoxCalle_CrearCuenta.Text;
+                domicilioProfesional.Numero = calleNum;
+                domicilioProfesional.Piso = txt_piso.Text;
+                domicilioProfesional.Localidad = txt_localidad.Text;
+                domicilioProfesional.Provincia = txt_provincia.Text;
+                domicilioProfesional.Pais = "Argentina";
+                medicoNuevo.Domicilio = domicilioProfesional;
+                medicoNuevo.MatriculaNacional = Mnacional;
+                medicoNuevo.MatriculaProvincial = Mprovincial;
+                medicoNuevo.Especialidad = (Especialidad)Enum.Parse(typeof(Especialidad), cmb_especialidad.SelectedItem.ToString());
 
-            if (bLMedico.CrearProfesionalMedico(medicoNuevo))
-            {
-                MessageBox.Show("Profesional Creado con exito");
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Hubo un error al crear el profesional");
-            }
+                try
+                {
+                    if (bLMedico.CrearProfesionalMedico(medicoNuevo))
+                    {
+                        MessageBox.Show("Profesional Creado con exito");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error al crear el profesional");
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                
             }
             else
             {
@@ -161,37 +175,44 @@ namespace Cova.UI
             if (int.TryParse(txt_documentoNumero.Text, out dni) && int.TryParse(txt_calleNumero.Text, out calleNum)
                 && int.TryParse(txt_matriculaNacional.Text, out Mnacional))
             {
-            BEEnfermero enfermeroNuevo = new BEEnfermero();
-            BLEnfermero bLEnfermero = new BLEnfermero();
-            enfermeroNuevo.Apellido = textBoxApellidoCrearCuenta.Text;
-            enfermeroNuevo.Nombre = txt_CrearCuentaNombre.Text;
-            enfermeroNuevo.Sexo = radioButtonMasculino_CrearCuenta.Checked ? "M" : "F";
-            enfermeroNuevo.Telefono = textBoxTelefono_CrearCuenta.Text;
-            enfermeroNuevo.Email = txt_Email.Text;
-            enfermeroNuevo.EstadoCivil = textBoxEstadoCivil_CrearCuenta.Text;
-            enfermeroNuevo.DNI = dni;
-            enfermeroNuevo.FechaNacimiento = monthCalendarCrearCuenta.SelectionRange.Start;
-            enfermeroNuevo.Password = HashHelper.HashMD5(textBoxClave_CrearCuenta.Text);
-            BEDomicilio domicilioProfesional = new BEDomicilio();
-            domicilioProfesional.Calle = textBoxCalle_CrearCuenta.Text;
-            domicilioProfesional.Numero = calleNum;
-            domicilioProfesional.Piso = txt_piso.Text;
-            domicilioProfesional.Localidad = txt_localidad.Text;
-            domicilioProfesional.Provincia = txt_provincia.Text;
-            domicilioProfesional.Pais = "Argentina";
-            enfermeroNuevo.Domicilio = domicilioProfesional;
-            enfermeroNuevo.MatriculaEnfermero = Convert.ToInt32(txt_matriculaNacional.Text);
+                BEEnfermero enfermeroNuevo = new BEEnfermero();
+                BLEnfermero bLEnfermero = new BLEnfermero();
+                enfermeroNuevo.Apellido = textBoxApellidoCrearCuenta.Text;
+                enfermeroNuevo.Nombre = txt_CrearCuentaNombre.Text;
+                enfermeroNuevo.Sexo = radioButtonMasculino_CrearCuenta.Checked ? "M" : "F";
+                enfermeroNuevo.Telefono = textBoxTelefono_CrearCuenta.Text;
+                enfermeroNuevo.Email = txt_Email.Text;
+                enfermeroNuevo.EstadoCivil = textBoxEstadoCivil_CrearCuenta.Text;
+                enfermeroNuevo.DNI = dni;
+                enfermeroNuevo.FechaNacimiento = monthCalendarCrearCuenta.SelectionRange.Start;
+                enfermeroNuevo.Password = HashHelper.HashMD5(textBoxClave_CrearCuenta.Text);
+                BEDomicilio domicilioProfesional = new BEDomicilio();
+                domicilioProfesional.Calle = textBoxCalle_CrearCuenta.Text;
+                domicilioProfesional.Numero = calleNum;
+                domicilioProfesional.Piso = txt_piso.Text;
+                domicilioProfesional.Localidad = txt_localidad.Text;
+                domicilioProfesional.Provincia = txt_provincia.Text;
+                domicilioProfesional.Pais = "Argentina";
+                enfermeroNuevo.Domicilio = domicilioProfesional;
+                enfermeroNuevo.MatriculaEnfermero = Convert.ToInt32(txt_matriculaNacional.Text);
 
-            if (bLEnfermero.CrearProfesionalEnfermero(enfermeroNuevo))
-            {
-                MessageBox.Show("Profesional Creado con exito");
-                this.Close();
+                try
+                {
+                    if (bLEnfermero.CrearProfesionalEnfermero(enfermeroNuevo))
+                    {
+                        MessageBox.Show("Profesional Creado con exito");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error al crear el profesional");
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            else
-            {
-                MessageBox.Show("Hubo un error al crear el profesional");
-            }
-        }
              else
             {
                 MessageBox.Show("Completar con valores numericos");
@@ -222,15 +243,22 @@ namespace Cova.UI
                 domicilioAdministrador.Provincia = txt_provincia.Text;
                 domicilioAdministrador.Pais = "Argentina";
                 administradorNuevo.Domicilio = domicilioAdministrador;
-   
-                if (blAdministrador.CrearAdministrador(administradorNuevo))
+                
+                try
                 {
-                    MessageBox.Show("Administrador Creado con exito");
-                    this.Close();
+                    if (blAdministrador.CrearAdministrador(administradorNuevo))
+                    {
+                        MessageBox.Show("Administrador Creado con exito");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error al crear el Administrador");
+                    }
                 }
-                else
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Hubo un error al crear el Administrador");
+                    MessageBox.Show(ex.Message);
                 }
             }
             else

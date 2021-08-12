@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Cova.BE;
 using Cova.MPP;
+using Cova.Common.Excepciones;
 
 namespace Cova.BL
 {
@@ -13,7 +14,14 @@ namespace Cova.BL
         public bool CrearProfesionalMedico(BEMedico medico)
         {
             MPPMedico mPPMedico = new MPPMedico();
-            return mPPMedico.CrearProfesionalMedico(medico);
+            try
+            {
+                return mPPMedico.CrearProfesionalMedico(medico);
+            }
+            catch(Exception ex)
+            {
+                throw new ErrorAlCrearProfesionalException();
+            }
         }
 
         public IList<BEMedico> BuscarMedicos(string Usuario, string DNI)

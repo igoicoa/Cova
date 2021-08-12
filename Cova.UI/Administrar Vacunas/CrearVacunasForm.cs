@@ -51,9 +51,8 @@ namespace Cova.UI
         {
             if (string.IsNullOrEmpty(txtBox_Nombre_CrearVacuna.Text) || (string.IsNullOrEmpty(rtb_Descripcion_CrearVacunas.Text))
                 || (string.IsNullOrEmpty(rtb_Prospecto_CrearVacunas.Text)) || string.IsNullOrEmpty(rtb_Contraindicaciones_CrearVacunas.Text)
-                || string.IsNullOrEmpty(cb_cantidadDosis_CrearVacunas.Text) || string.IsNullOrEmpty(cb_Stock_CrearVacunas.Text)
-                || string.IsNullOrEmpty(cmb_Laboratorio_CrearVacunas.Text) || string.IsNullOrEmpty(dtp_FechaElaboracion_CrearVacunas.Value.ToString())
-                || string.IsNullOrEmpty(dtp_FechaVecnimiento_CrearVacunas.Value.ToString()))
+                || string.IsNullOrEmpty(cb_cantidadDosis_CrearVacunas.Text) || string.IsNullOrEmpty(txt_EdadMaxima.Text) || string.IsNullOrEmpty(txt_EdadMaxima.Text)
+                || string.IsNullOrEmpty(cmb_Laboratorio_CrearVacunas.Text) )
             {
                 return false;
             }
@@ -77,7 +76,33 @@ namespace Cova.UI
 
         public void CrearVacuna()
         {
-
+            BLVacuna bLVacuna = new BLVacuna();
+            BEVacuna vacunaNueva = new BEVacuna();
+            vacunaNueva.Nombre = txtBox_Nombre_CrearVacuna.Text;
+            vacunaNueva.Prospecto = rtb_Prospecto_CrearVacunas.Text;
+            vacunaNueva.EdadMinimaAplicacion = Convert.ToInt32(txt_EdadMinima.Text);
+            vacunaNueva.EdadMaximaAplicacion = Convert.ToInt32(txt_EdadMaxima.Text);
+            vacunaNueva.Contraindicaciones = rtb_Contraindicaciones_CrearVacunas.Text;
+            vacunaNueva.Descripcion = rtb_Descripcion_CrearVacunas.Text;
+            vacunaNueva.CantidadDosis = Convert.ToInt32(cb_cantidadDosis_CrearVacunas.Text);
+            vacunaNueva.Laboratorio = (BELaboratorio)cmb_Laboratorio_CrearVacunas.SelectedItem;
+            try
+            {
+                if(bLVacuna.CrearVacuna(vacunaNueva))
+                {
+                    MessageBox.Show("Vacuna creada con exito");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error al crear la vacuna");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }
