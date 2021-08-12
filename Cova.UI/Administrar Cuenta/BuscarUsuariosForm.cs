@@ -27,6 +27,10 @@ namespace Cova.UI
         {
             InitializeComponent();
             this._formPadre = formPadre;
+            if(formPadre == null)
+            {
+                this.btn_SeleccionarUsuario_BuscarUsuarios.Visible = false;
+            }
             this._buscarSoloPacientes = buscarSoloPacientes;
             ActualizarForm();
         }

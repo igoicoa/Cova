@@ -349,7 +349,7 @@ namespace Cova.UI
 
         private void verUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BuscarUsuariosForm frmBuscarUsuarios = new BuscarUsuariosForm(false, this);
+            BuscarUsuariosForm frmBuscarUsuarios = new BuscarUsuariosForm(false);
             frmBuscarUsuarios.Show();
         }
 
