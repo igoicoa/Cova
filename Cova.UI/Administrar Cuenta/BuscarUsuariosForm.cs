@@ -130,7 +130,6 @@ namespace Cova.UI
             }
             DataView dataviewMedicos = new DataView(tableMedicos);
             dgv_usuario.DataSource = TraerInformacionFiltrada(dataviewMedicos);
-            //dgv_usuario.DataSource = dataviewMedicos;
             dgv_usuario.Columns[0].Visible = false;
             dgv_usuario.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgv_usuario.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -202,7 +201,6 @@ namespace Cova.UI
             }
             DataView dataviewEnfermeros = new DataView(tableEnfermeros);
             dgv_usuario.DataSource = TraerInformacionFiltrada(dataviewEnfermeros);
-            //dgv_usuario.DataSource = dataviewEnfermeros;
             dgv_usuario.Columns[0].Visible = false;
             dgv_usuario.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgv_usuario.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -290,7 +288,6 @@ namespace Cova.UI
             }
             DataView dataviewPacientes = new DataView(tablePaciente);
             dgv_usuario.DataSource = TraerInformacionFiltrada(dataviewPacientes);
-            //dgv_usuario.DataSource = dataviewPacientes;
             dgv_usuario.Columns[0].Visible = false;
             dgv_usuario.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgv_usuario.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
