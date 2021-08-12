@@ -216,6 +216,7 @@ namespace Cova.UI
             // 
             // cmb_TipoDocumento_CrearCertificado
             // 
+            this.cmb_TipoDocumento_CrearCertificado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_TipoDocumento_CrearCertificado.Enabled = false;
             this.cmb_TipoDocumento_CrearCertificado.FormattingEnabled = true;
             this.cmb_TipoDocumento_CrearCertificado.Items.AddRange(new object[] {
@@ -225,7 +226,6 @@ namespace Cova.UI
             this.cmb_TipoDocumento_CrearCertificado.Name = "cmb_TipoDocumento_CrearCertificado";
             this.cmb_TipoDocumento_CrearCertificado.Size = new System.Drawing.Size(121, 21);
             this.cmb_TipoDocumento_CrearCertificado.TabIndex = 79;
-            this.cmb_TipoDocumento_CrearCertificado.Text = "DNI";
             // 
             // txt_nombre_CrearCertificado
             // 

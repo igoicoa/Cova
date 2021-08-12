@@ -171,6 +171,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "DNI",
@@ -360,6 +361,7 @@
             // 
             // cmb_coberturaMedica
             // 
+            this.cmb_coberturaMedica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_coberturaMedica.FormattingEnabled = true;
             this.cmb_coberturaMedica.Items.AddRange(new object[] {
             "DNI",
@@ -436,6 +438,7 @@
             // 
             // cmb_Plan
             // 
+            this.cmb_Plan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Plan.FormattingEnabled = true;
             this.cmb_Plan.Location = new System.Drawing.Point(171, 77);
             this.cmb_Plan.Name = "cmb_Plan";
@@ -468,6 +471,7 @@
             // 
             // cmb_especialidad
             // 
+            this.cmb_especialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_especialidad.FormattingEnabled = true;
             this.cmb_especialidad.Location = new System.Drawing.Point(24, 143);
             this.cmb_especialidad.Name = "cmb_especialidad";

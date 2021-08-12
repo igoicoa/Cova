@@ -293,6 +293,7 @@ namespace Cova.UI
             "4",
             "5",
             "6"});
+            this.cmb_dosis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_dosis.FormattingEnabled = true;
             this.cmb_dosis.Location = new System.Drawing.Point(67, 150);
             this.cmb_dosis.Name = "cmb_dosis";
@@ -388,6 +389,7 @@ namespace Cova.UI
             // 
             // cmb_TipoDocumento_AplicarVacunas
             // 
+            this.cmb_TipoDocumento_AplicarVacunas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_TipoDocumento_AplicarVacunas.Enabled = false;
             this.cmb_TipoDocumento_AplicarVacunas.FormattingEnabled = true;
             this.cmb_TipoDocumento_AplicarVacunas.Items.AddRange(new object[] {
@@ -397,7 +399,6 @@ namespace Cova.UI
             this.cmb_TipoDocumento_AplicarVacunas.Name = "cmb_TipoDocumento_AplicarVacunas";
             this.cmb_TipoDocumento_AplicarVacunas.Size = new System.Drawing.Size(121, 21);
             this.cmb_TipoDocumento_AplicarVacunas.TabIndex = 174;
-            this.cmb_TipoDocumento_AplicarVacunas.Text = "DNI";
             // 
             // txt_nombre_AplicarVacunas
             // 
@@ -410,6 +411,7 @@ namespace Cova.UI
             // 
             // cmb_centroMedico
             // 
+            this.cmb_centroMedico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_centroMedico.FormattingEnabled = true;
             this.cmb_centroMedico.Location = new System.Drawing.Point(439, 47);
             this.cmb_centroMedico.Name = "cmb_centroMedico";

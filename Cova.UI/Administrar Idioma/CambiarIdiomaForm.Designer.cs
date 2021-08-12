@@ -35,6 +35,7 @@ namespace Cova.UI
             // 
             // cmb_idiomas_CambiarIdioma
             // 
+            this.cmb_idiomas_CambiarIdioma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_idiomas_CambiarIdioma.FormattingEnabled = true;
             this.cmb_idiomas_CambiarIdioma.Location = new System.Drawing.Point(105, 34);
             this.cmb_idiomas_CambiarIdioma.Name = "cmb_idiomas_CambiarIdioma";

@@ -128,6 +128,7 @@
             // 
             // cmb_idiomasLogin
             // 
+            this.cmb_idiomasLogin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_idiomasLogin.FormattingEnabled = true;
             this.cmb_idiomasLogin.Location = new System.Drawing.Point(177, 197);
             this.cmb_idiomasLogin.Name = "cmb_idiomasLogin";

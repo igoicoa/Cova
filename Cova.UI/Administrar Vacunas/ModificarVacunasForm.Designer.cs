@@ -87,6 +87,7 @@ namespace Cova.UI
             // 
             // cmb_Laboratorio_ModificarVacunas
             // 
+            this.cmb_Laboratorio_ModificarVacunas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Laboratorio_ModificarVacunas.FormattingEnabled = true;
             this.cmb_Laboratorio_ModificarVacunas.Location = new System.Drawing.Point(117, 270);
             this.cmb_Laboratorio_ModificarVacunas.Name = "cmb_Laboratorio_ModificarVacunas";
@@ -179,6 +180,7 @@ namespace Cova.UI
             // 
             // cb_CantidadDosis_ModificarVacunas
             // 
+            this.cb_CantidadDosis_ModificarVacunas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_CantidadDosis_ModificarVacunas.FormattingEnabled = true;
             this.cb_CantidadDosis_ModificarVacunas.Location = new System.Drawing.Point(17, 269);
             this.cb_CantidadDosis_ModificarVacunas.Name = "cb_CantidadDosis_ModificarVacunas";
@@ -255,6 +257,7 @@ namespace Cova.UI
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Activo",

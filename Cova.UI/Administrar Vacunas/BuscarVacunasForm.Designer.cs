@@ -108,6 +108,7 @@ namespace Cova.UI
             // 
             // cmb_Laboratorio_BuscarVacunas
             // 
+            this.cmb_Laboratorio_BuscarVacunas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Laboratorio_BuscarVacunas.FormattingEnabled = true;
             this.cmb_Laboratorio_BuscarVacunas.Location = new System.Drawing.Point(289, 60);
             this.cmb_Laboratorio_BuscarVacunas.Name = "cmb_Laboratorio_BuscarVacunas";
@@ -136,6 +137,7 @@ namespace Cova.UI
             // 
             // cmb_vacuna
             // 
+            this.cmb_vacuna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_vacuna.FormattingEnabled = true;
             this.cmb_vacuna.Location = new System.Drawing.Point(17, 60);
             this.cmb_vacuna.Name = "cmb_vacuna";
@@ -160,6 +162,7 @@ namespace Cova.UI
             // 
             // cmb_centroMedico
             // 
+            this.cmb_centroMedico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_centroMedico.FormattingEnabled = true;
             this.cmb_centroMedico.Location = new System.Drawing.Point(719, 60);
             this.cmb_centroMedico.Name = "cmb_centroMedico";

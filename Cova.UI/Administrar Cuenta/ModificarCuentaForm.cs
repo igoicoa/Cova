@@ -195,6 +195,7 @@ namespace Cova.UI
 
         private void btn_BuscarUsuarios_ModificarUsuarios_Click(object sender, EventArgs e)
         {
+            //btn_SeleccionarUsuario_BuscarUsuarios.Visible = false;
             BuscarUsuariosForm frmBuscarUsuarios = new BuscarUsuariosForm(false, this);
             frmBuscarUsuarios.Show();
         }

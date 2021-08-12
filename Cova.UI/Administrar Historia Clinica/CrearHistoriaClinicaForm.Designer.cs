@@ -204,6 +204,7 @@ namespace Cova.UI
             // 
             // cmb_TipoDocumento_CrearHistoriaClinica
             // 
+            this.cmb_TipoDocumento_CrearHistoriaClinica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_TipoDocumento_CrearHistoriaClinica.Enabled = false;
             this.cmb_TipoDocumento_CrearHistoriaClinica.FormattingEnabled = true;
             this.cmb_TipoDocumento_CrearHistoriaClinica.Items.AddRange(new object[] {
@@ -213,7 +214,6 @@ namespace Cova.UI
             this.cmb_TipoDocumento_CrearHistoriaClinica.Name = "cmb_TipoDocumento_CrearHistoriaClinica";
             this.cmb_TipoDocumento_CrearHistoriaClinica.Size = new System.Drawing.Size(121, 21);
             this.cmb_TipoDocumento_CrearHistoriaClinica.TabIndex = 79;
-            this.cmb_TipoDocumento_CrearHistoriaClinica.Text = "DNI";
             // 
             // lbl_TipoDocumento_CrearHistoriaClinica
             // 

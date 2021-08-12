@@ -249,6 +249,7 @@ namespace Cova.UI
             // 
             // comboBoxTipoDocumento_ModificarCuenta
             // 
+            this.comboBoxTipoDocumento_ModificarCuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTipoDocumento_ModificarCuenta.FormattingEnabled = true;
             this.comboBoxTipoDocumento_ModificarCuenta.Items.AddRange(new object[] {
             "DNI",
@@ -380,6 +381,7 @@ namespace Cova.UI
             // 
             // cmb_EstadoModificarCuenta
             // 
+            this.cmb_EstadoModificarCuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_EstadoModificarCuenta.FormattingEnabled = true;
             this.cmb_EstadoModificarCuenta.Items.AddRange(new object[] {
             "Activo",
@@ -522,6 +524,7 @@ namespace Cova.UI
             // 
             // cmb_especialidad
             // 
+            this.cmb_especialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_especialidad.FormattingEnabled = true;
             this.cmb_especialidad.Location = new System.Drawing.Point(24, 143);
             this.cmb_especialidad.Name = "cmb_especialidad";
@@ -637,6 +640,7 @@ namespace Cova.UI
             // 
             // cmb_plan
             // 
+            this.cmb_plan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_plan.FormattingEnabled = true;
             this.cmb_plan.Location = new System.Drawing.Point(171, 77);
             this.cmb_plan.Name = "cmb_plan";
@@ -654,6 +658,7 @@ namespace Cova.UI
             // 
             // cmb_coberturaMedica
             // 
+            this.cmb_coberturaMedica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_coberturaMedica.FormattingEnabled = true;
             this.cmb_coberturaMedica.Items.AddRange(new object[] {
             "DNI",

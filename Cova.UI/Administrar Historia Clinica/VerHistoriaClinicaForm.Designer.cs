@@ -189,6 +189,7 @@ namespace Cova.UI
             // 
             // cmb_TipoDocumento_VerHistoriaClinica
             // 
+            this.cmb_TipoDocumento_VerHistoriaClinica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_TipoDocumento_VerHistoriaClinica.FormattingEnabled = true;
             this.cmb_TipoDocumento_VerHistoriaClinica.Items.AddRange(new object[] {
             "DNI",

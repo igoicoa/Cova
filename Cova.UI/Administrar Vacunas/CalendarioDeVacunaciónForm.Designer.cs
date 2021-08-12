@@ -90,6 +90,7 @@ namespace Cova.UI
             // 
             // cmb_Estado_CalendarioVacunacion
             // 
+            this.cmb_Estado_CalendarioVacunacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Estado_CalendarioVacunacion.FormattingEnabled = true;
             this.cmb_Estado_CalendarioVacunacion.Items.AddRange(new object[] {
             "Pendiente",

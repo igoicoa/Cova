@@ -161,6 +161,7 @@ namespace Cova.UI
             // 
             // cmb_TipoDocumento_CrearReceta
             // 
+            this.cmb_TipoDocumento_CrearReceta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_TipoDocumento_CrearReceta.Enabled = false;
             this.cmb_TipoDocumento_CrearReceta.FormattingEnabled = true;
             this.cmb_TipoDocumento_CrearReceta.Items.AddRange(new object[] {
@@ -170,7 +171,6 @@ namespace Cova.UI
             this.cmb_TipoDocumento_CrearReceta.Name = "cmb_TipoDocumento_CrearReceta";
             this.cmb_TipoDocumento_CrearReceta.Size = new System.Drawing.Size(121, 21);
             this.cmb_TipoDocumento_CrearReceta.TabIndex = 79;
-            this.cmb_TipoDocumento_CrearReceta.Text = "DNI";
             // 
             // lbl_TipoDocumento_CrearReceta
             // 

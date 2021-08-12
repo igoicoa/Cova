@@ -169,6 +169,7 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             // 
             // cmb_TipoDocumento__VerRecetasyCertificados
             // 
+            this.cmb_TipoDocumento__VerRecetasyCertificados.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_TipoDocumento__VerRecetasyCertificados.Enabled = false;
             this.cmb_TipoDocumento__VerRecetasyCertificados.FormattingEnabled = true;
             this.cmb_TipoDocumento__VerRecetasyCertificados.Items.AddRange(new object[] {
@@ -178,7 +179,6 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             this.cmb_TipoDocumento__VerRecetasyCertificados.Name = "cmb_TipoDocumento__VerRecetasyCertificados";
             this.cmb_TipoDocumento__VerRecetasyCertificados.Size = new System.Drawing.Size(121, 21);
             this.cmb_TipoDocumento__VerRecetasyCertificados.TabIndex = 79;
-            this.cmb_TipoDocumento__VerRecetasyCertificados.Text = "DNI";
             // 
             // lbl_TipoDocumento__VerRecetasyCertificados
             // 

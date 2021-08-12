@@ -65,6 +65,7 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             // 
             // cmb_vacuna_ModificarReceta
             // 
+            this.cmb_vacuna_ModificarReceta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_vacuna_ModificarReceta.FormattingEnabled = true;
             this.cmb_vacuna_ModificarReceta.Location = new System.Drawing.Point(15, 249);
             this.cmb_vacuna_ModificarReceta.Name = "cmb_vacuna_ModificarReceta";
@@ -260,6 +261,7 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             // 
             // cmb_TipoDocumento_ModificarReceta
             // 
+            this.cmb_TipoDocumento_ModificarReceta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_TipoDocumento_ModificarReceta.Enabled = false;
             this.cmb_TipoDocumento_ModificarReceta.FormattingEnabled = true;
             this.cmb_TipoDocumento_ModificarReceta.Items.AddRange(new object[] {
@@ -269,7 +271,6 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             this.cmb_TipoDocumento_ModificarReceta.Name = "cmb_TipoDocumento_ModificarReceta";
             this.cmb_TipoDocumento_ModificarReceta.Size = new System.Drawing.Size(121, 21);
             this.cmb_TipoDocumento_ModificarReceta.TabIndex = 79;
-            this.cmb_TipoDocumento_ModificarReceta.Text = "DNI";
             // 
             // lbl_TipoDocumento_CrearReceta
             // 
