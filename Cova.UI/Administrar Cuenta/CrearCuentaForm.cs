@@ -120,7 +120,7 @@ namespace Cova.UI
             }
             else
             {
-                MessageBox.Show("Completar con valores numericos");
+                MessageBox.Show("Completar con valores Correctos");
             }
         }
 
@@ -173,7 +173,7 @@ namespace Cova.UI
             }
             else
             {
-                MessageBox.Show("Completar con valores numericos");
+                MessageBox.Show("Completar con valores Correctos");
             }
         }
 
@@ -223,7 +223,7 @@ namespace Cova.UI
             }
              else
             {
-                MessageBox.Show("Completar con valores numericos");
+                MessageBox.Show("Completar con valores Correctos");
             }
         }
 
@@ -271,7 +271,7 @@ namespace Cova.UI
             }
             else
             {
-                MessageBox.Show("Completar con valores numericos");
+                MessageBox.Show("Completar con valores Correctos");
             }
         }
 
