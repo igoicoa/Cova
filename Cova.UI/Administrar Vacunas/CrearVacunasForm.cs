@@ -33,13 +33,21 @@ namespace Cova.UI
             txtBox_Nombre_CrearVacuna.Clear();
             rtb_Contraindicaciones_CrearVacunas.Clear();
             rtb_Prospecto_CrearVacunas.Clear();
-            cmb_Laboratorio_CrearVacunas.Items.Clear();
+            txt_EdadMaxima.Clear();
+            txt_EdadMinima.Clear();
         }
 
         public void CargarLaboratorios()
         {
             BLLaboratorio bLLaboratorio = new BLLaboratorio();
-            this.laboraorio = bLLaboratorio.ObtenerLaboratorios().ToList();
+            try
+            {
+                this.laboraorio = bLLaboratorio.ObtenerLaboratorios().ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
             this.cmb_Laboratorio_CrearVacunas.DataSource = laboraorio;
             this.cmb_Laboratorio_CrearVacunas.DisplayMember = "Nombre";

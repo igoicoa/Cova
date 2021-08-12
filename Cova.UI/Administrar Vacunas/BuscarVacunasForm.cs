@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Cova.BE;
 using Cova.BL;
+using Cova.Common.Excepciones;
 using Cova.UI.Interfaces;
 
 namespace Cova.UI
@@ -32,7 +33,15 @@ namespace Cova.UI
         public void CargarVacunas()
         {
             BLVacuna bLVacuna = new BLVacuna();
-            this.cmb_vacuna.DataSource = bLVacuna.ObtenerVacunas();
+            try
+            {
+                this.cmb_vacuna.DataSource = bLVacuna.ObtenerVacunas();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
             this.cmb_vacuna.DisplayMember = "Nombre";
             this.cmb_vacuna.ValueMember = "VacunaId";
             this.cmb_vacuna.SelectedIndex = -1;
@@ -41,7 +50,14 @@ namespace Cova.UI
         public void CargarLaboratorios()
         {
             BLLaboratorio bLLaboratorio = new BLLaboratorio();
-            this.cmb_Laboratorio_BuscarVacunas.DataSource = bLLaboratorio.ObtenerLaboratorios();
+            try
+            {
+                this.cmb_Laboratorio_BuscarVacunas.DataSource = bLLaboratorio.ObtenerLaboratorios();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             this.cmb_Laboratorio_BuscarVacunas.DisplayMember = "Nombre";
             this.cmb_Laboratorio_BuscarVacunas.ValueMember = "LaboratorioId";
             this.cmb_Laboratorio_BuscarVacunas.SelectedIndex = -1;
@@ -50,7 +66,15 @@ namespace Cova.UI
         public void CargarCentrosMedicos()
         {
             BLCentroMedico bLCentroMedico = new BLCentroMedico();
-            this.cmb_centroMedico.DataSource = bLCentroMedico.ObtenerCentrosMedicos();
+            try
+            {
+                this.cmb_centroMedico.DataSource = bLCentroMedico.ObtenerCentrosMedicos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             this.cmb_centroMedico.DisplayMember = "Nombre";
             this.cmb_centroMedico.ValueMember = "CentroMedicoId";
             this.cmb_centroMedico.SelectedIndex = -1;
@@ -87,58 +111,65 @@ namespace Cova.UI
             vacunaABuscar.CentroMedico = centroMedico;
 
             BLVacuna bLVacuna = new BLVacuna();
-            this.VacunasDosis = bLVacuna.ObtenerVacunasDeCentroMedicoAAplicar(vacunaABuscar).ToList();
-            DataTable tableVacunas = new DataTable();
-            tableVacunas.Columns.Add("Lote");
-            tableVacunas.Columns.Add("Fecha Elaboracion");
-            tableVacunas.Columns.Add("Fecha Vencimiento");
-            tableVacunas.Columns.Add("VacunaId");
-            tableVacunas.Columns.Add("Nombre Vacuna");
-            tableVacunas.Columns.Add("Descripcion");
-            tableVacunas.Columns.Add("Prospecto");
-            tableVacunas.Columns.Add("Contraindicaciones");
-            tableVacunas.Columns.Add("Cantidad Dosis");
-            tableVacunas.Columns.Add("Edad Minima");
-            tableVacunas.Columns.Add("Edad Maxima");
-            tableVacunas.Columns.Add("LaboratorioId");
-            tableVacunas.Columns.Add("Nombre Laboratorio");
-
-
-            foreach (BEVacunaDosis vacunaDosis in this.VacunasDosis)
+            try
             {
-                DataRow filaVacunas = tableVacunas.NewRow();
-                filaVacunas["Lote"] = vacunaDosis.Lote;
-                filaVacunas["Fecha Elaboracion"] = vacunaDosis.FechaElaboracion;
-                filaVacunas["Fecha Vencimiento"] = vacunaDosis.FechaVencimiento;
-                filaVacunas["VacunaId"] = vacunaDosis.Vacuna.VacunaID;
-                filaVacunas["Nombre Vacuna"] = vacunaDosis.Vacuna.Nombre;
-                filaVacunas["Descripcion"] = vacunaDosis.Vacuna.Descripcion;
-                filaVacunas["Prospecto"] = vacunaDosis.Vacuna.Prospecto;
-                filaVacunas["Contraindicaciones"] = vacunaDosis.Vacuna.Contraindicaciones;
-                filaVacunas["Cantidad Dosis"] = vacunaDosis.Vacuna.CantidadDosis;
-                filaVacunas["Edad Minima"] = vacunaDosis.Vacuna.EdadMinimaAplicacion;
-                filaVacunas["Edad Maxima"] = vacunaDosis.Vacuna.EdadMaximaAplicacion;
-                filaVacunas["LaboratorioId"] = vacunaDosis.Vacuna.Laboratorio.LaboratorioId;
-                filaVacunas["Nombre Laboratorio"] = vacunaDosis.Vacuna.Laboratorio.Nombre;
-                tableVacunas.Rows.Add(filaVacunas);
+                this.VacunasDosis = bLVacuna.ObtenerVacunasDeCentroMedicoAAplicar(vacunaABuscar).ToList();
+
+                DataTable tableVacunas = new DataTable();
+                tableVacunas.Columns.Add("Lote");
+                tableVacunas.Columns.Add("Fecha Elaboracion");
+                tableVacunas.Columns.Add("Fecha Vencimiento");
+                tableVacunas.Columns.Add("VacunaId");
+                tableVacunas.Columns.Add("Nombre Vacuna");
+                tableVacunas.Columns.Add("Descripcion");
+                tableVacunas.Columns.Add("Prospecto");
+                tableVacunas.Columns.Add("Contraindicaciones");
+                tableVacunas.Columns.Add("Cantidad Dosis");
+                tableVacunas.Columns.Add("Edad Minima");
+                tableVacunas.Columns.Add("Edad Maxima");
+                tableVacunas.Columns.Add("LaboratorioId");
+                tableVacunas.Columns.Add("Nombre Laboratorio");
+
+
+                foreach (BEVacunaDosis vacunaDosis in this.VacunasDosis)
+                {
+                    DataRow filaVacunas = tableVacunas.NewRow();
+                    filaVacunas["Lote"] = vacunaDosis.Lote;
+                    filaVacunas["Fecha Elaboracion"] = vacunaDosis.FechaElaboracion;
+                    filaVacunas["Fecha Vencimiento"] = vacunaDosis.FechaVencimiento;
+                    filaVacunas["VacunaId"] = vacunaDosis.Vacuna.VacunaID;
+                    filaVacunas["Nombre Vacuna"] = vacunaDosis.Vacuna.Nombre;
+                    filaVacunas["Descripcion"] = vacunaDosis.Vacuna.Descripcion;
+                    filaVacunas["Prospecto"] = vacunaDosis.Vacuna.Prospecto;
+                    filaVacunas["Contraindicaciones"] = vacunaDosis.Vacuna.Contraindicaciones;
+                    filaVacunas["Cantidad Dosis"] = vacunaDosis.Vacuna.CantidadDosis;
+                    filaVacunas["Edad Minima"] = vacunaDosis.Vacuna.EdadMinimaAplicacion;
+                    filaVacunas["Edad Maxima"] = vacunaDosis.Vacuna.EdadMaximaAplicacion;
+                    filaVacunas["LaboratorioId"] = vacunaDosis.Vacuna.Laboratorio.LaboratorioId;
+                    filaVacunas["Nombre Laboratorio"] = vacunaDosis.Vacuna.Laboratorio.Nombre;
+                    tableVacunas.Rows.Add(filaVacunas);
+                }
+
+                DataView dataviewVacunas = new DataView(tableVacunas);
+                dtg_ListaVacunas_VerVacunas.DataSource = dataviewVacunas;
+                dtg_ListaVacunas_VerVacunas.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dtg_ListaVacunas_VerVacunas.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dtg_ListaVacunas_VerVacunas.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dtg_ListaVacunas_VerVacunas.Columns[3].Visible = false;
+                dtg_ListaVacunas_VerVacunas.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dtg_ListaVacunas_VerVacunas.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dtg_ListaVacunas_VerVacunas.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dtg_ListaVacunas_VerVacunas.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dtg_ListaVacunas_VerVacunas.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dtg_ListaVacunas_VerVacunas.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dtg_ListaVacunas_VerVacunas.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dtg_ListaVacunas_VerVacunas.Columns[11].Visible = false;
+                dtg_ListaVacunas_VerVacunas.Columns[12].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             }
-
-            DataView dataviewVacunas = new DataView(tableVacunas);
-            dtg_ListaVacunas_VerVacunas.DataSource = dataviewVacunas;
-            dtg_ListaVacunas_VerVacunas.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtg_ListaVacunas_VerVacunas.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtg_ListaVacunas_VerVacunas.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtg_ListaVacunas_VerVacunas.Columns[3].Visible = false;
-            dtg_ListaVacunas_VerVacunas.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtg_ListaVacunas_VerVacunas.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtg_ListaVacunas_VerVacunas.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtg_ListaVacunas_VerVacunas.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtg_ListaVacunas_VerVacunas.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtg_ListaVacunas_VerVacunas.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtg_ListaVacunas_VerVacunas.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtg_ListaVacunas_VerVacunas.Columns[11].Visible = false;
-            dtg_ListaVacunas_VerVacunas.Columns[12].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-
+            catch
+            {
+                throw new ErrorAlObtenerVacunasException();
+            }
         }
 
         private void btn_SeleccionarVacunas_BuscarVacunas_Click(object sender, EventArgs e)

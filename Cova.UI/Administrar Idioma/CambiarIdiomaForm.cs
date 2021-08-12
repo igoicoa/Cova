@@ -45,20 +45,7 @@ namespace Cova.UI
 
         private void CambiarIdiomaForm_Load(object sender, EventArgs e)
         {
-            //cmb_idiomas_CambiarIdioma.DataSource = null;
-            //idioma = _idiomaBL.GetAllHabilitados();
-            //idiomasTraducidos.Clear();
-            //cmb_idiomas_CambiarIdioma.SelectedIndexChanged -= comboBox1_SelectedIndexChanged;
-            //foreach (Entities.Idioma idioma in idiomas)
-            //{
-            //    idioma.Nombre = Program.LanguageManager.Traducir(idioma.Nombre);
-            //    idiomasTraducidos.Add(idioma);
-            //}
-
-            //cmb_idiomas_CambiarIdioma.DisplayMember = "Nombre";
-            //cmb_idiomas_CambiarIdioma.DataSource = idiomasTraducidos.AsReadOnly();
-            //cmb_idiomas_CambiarIdioma.SelectedIndex = idiomasTraducidos.FindIndex(item => item.ID == Program.LanguageManager.Idioma.ID);
-            //cmb_idiomas_CambiarIdioma.SelectedIndexChanged += cmb_idiomas_CambiarIdioma_SelectedIndexChanged;
+           
         }
     }
 }

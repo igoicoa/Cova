@@ -31,7 +31,14 @@ namespace Cova.UI
         public void CargarCoberturasMedicas()
         {
             BLCoberturaMedica bLCoberturaMedica = new BLCoberturaMedica();
-            this.coberturasMedicas = bLCoberturaMedica.ObtenerCoberturasMedicas().ToList();
+            try
+            {
+                this.coberturasMedicas = bLCoberturaMedica.ObtenerCoberturasMedicas().ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
             this.cmb_coberturaMedica.DataSource = coberturasMedicas;
             this.cmb_coberturaMedica.DisplayMember = "Nombre";
@@ -196,14 +203,13 @@ namespace Cova.UI
         public bool ValidarTodosLosCamposPaciente()
         {
             if (string.IsNullOrEmpty(txt_apellido.Text) || (string.IsNullOrEmpty(txt_usuario.Text))
-                || (string.IsNullOrEmpty(txt_clave.Text)) || string.IsNullOrEmpty(txt_calle.Text)
+                || string.IsNullOrEmpty(txt_calle.Text) || string.IsNullOrEmpty(txt_numeroAfiliado.Text)
                 || string.IsNullOrEmpty(txt_estadoCivil.Text) || string.IsNullOrEmpty(txt_telefono.Text)
                 || string.IsNullOrEmpty(txt_DNI.Text) || string.IsNullOrEmpty(cmb_plan.Text)
-                || string.IsNullOrEmpty(txt_email.Text) || string.IsNullOrEmpty(ch_particular.Text)
+                || string.IsNullOrEmpty(txt_email.Text) || string.IsNullOrEmpty(cmb_EstadoModificarCuenta.Text)
                 || string.IsNullOrEmpty(txt_localidad.Text) || string.IsNullOrEmpty(cmb_coberturaMedica.Text)
                 || string.IsNullOrEmpty(txt_provincia.Text) || string.IsNullOrEmpty(txt_piso.Text)
-                || string.IsNullOrEmpty(calendar_fechaNacimiento.Text) || string.IsNullOrEmpty(txt_numeroAfiliado.Text)
-                || string.IsNullOrEmpty(txt_numero.Text) || string.IsNullOrEmpty(cmb_EstadoModificarCuenta.Text))
+                || string.IsNullOrEmpty(txt_numero.Text))
             {
                 return false;
             }
@@ -217,14 +223,13 @@ namespace Cova.UI
         public bool ValidarTodosLosCamposMedico()
         {
             if (string.IsNullOrEmpty(txt_apellido.Text) || (string.IsNullOrEmpty(txt_usuario.Text))
-                || (string.IsNullOrEmpty(txt_clave.Text)) || string.IsNullOrEmpty(txt_calle.Text)
+                || string.IsNullOrEmpty(txt_calle.Text) || string.IsNullOrEmpty(txt_numeroAfiliado.Text)
                 || string.IsNullOrEmpty(txt_estadoCivil.Text) || string.IsNullOrEmpty(txt_telefono.Text)
-                || string.IsNullOrEmpty(txt_DNI.Text) || string.IsNullOrEmpty(cmb_especialidad.Text)
-                || string.IsNullOrEmpty(txt_email.Text) || string.IsNullOrEmpty(txt_matriculaProvincial.Text)
-                || string.IsNullOrEmpty(txt_localidad.Text) || string.IsNullOrEmpty(txt_matriculaNacional.Text)
+                || string.IsNullOrEmpty(txt_DNI.Text) || string.IsNullOrEmpty(cmb_plan.Text)
+                || string.IsNullOrEmpty(txt_email.Text) || string.IsNullOrEmpty(cmb_EstadoModificarCuenta.Text)
+                || string.IsNullOrEmpty(txt_localidad.Text) || string.IsNullOrEmpty(txt_numero.Text)
                 || string.IsNullOrEmpty(txt_provincia.Text) || string.IsNullOrEmpty(txt_piso.Text)
-                || string.IsNullOrEmpty(calendar_fechaNacimiento.Text) || string.IsNullOrEmpty(txt_numero.Text)
-                || string.IsNullOrEmpty(cmb_EstadoModificarCuenta.Text))
+                || string.IsNullOrEmpty(txt_matriculaProvincial.Text) || string.IsNullOrEmpty(txt_matriculaNacional.Text))
             {
                 return false;
             }
@@ -237,13 +242,12 @@ namespace Cova.UI
         public bool ValidarTodosLosCamposEnfermero()
         {
             if (string.IsNullOrEmpty(txt_apellido.Text) || (string.IsNullOrEmpty(txt_usuario.Text))
-                || (string.IsNullOrEmpty(txt_clave.Text)) || string.IsNullOrEmpty(txt_calle.Text)
+                || string.IsNullOrEmpty(txt_calle.Text) || string.IsNullOrEmpty(txt_DNI.Text)
                 || string.IsNullOrEmpty(txt_estadoCivil.Text) || string.IsNullOrEmpty(txt_telefono.Text)
-                || string.IsNullOrEmpty(txt_DNI.Text) || string.IsNullOrEmpty(txt_matriculaProvincial.Text)
-                || string.IsNullOrEmpty(txt_email.Text) || string.IsNullOrEmpty(calendar_fechaNacimiento.Text)
-                || string.IsNullOrEmpty(txt_localidad.Text) || string.IsNullOrEmpty(txt_piso.Text)
-                || string.IsNullOrEmpty(txt_provincia.Text) || string.IsNullOrEmpty(txt_numero.Text)
-                || string.IsNullOrEmpty(cmb_EstadoModificarCuenta.Text))
+                || string.IsNullOrEmpty(txt_email.Text) || string.IsNullOrEmpty(cmb_EstadoModificarCuenta.Text)
+                || string.IsNullOrEmpty(txt_localidad.Text) || string.IsNullOrEmpty(txt_numero.Text)
+                || string.IsNullOrEmpty(txt_provincia.Text) || string.IsNullOrEmpty(txt_piso.Text)
+                || string.IsNullOrEmpty (txt_matriculaProvincial.Text))
             {
                 return false;
             }
@@ -256,16 +260,14 @@ namespace Cova.UI
         public bool ValidarTodosLosCamposAdministrador()
         {
             if (string.IsNullOrEmpty(txt_apellido.Text) || (string.IsNullOrEmpty(txt_usuario.Text))
-                || (string.IsNullOrEmpty(txt_clave.Text)) || string.IsNullOrEmpty(txt_calle.Text)
+                || string.IsNullOrEmpty(txt_calle.Text) || string.IsNullOrEmpty(txt_numero.Text)
                 || string.IsNullOrEmpty(txt_estadoCivil.Text) || string.IsNullOrEmpty(txt_telefono.Text)
-                || string.IsNullOrEmpty(txt_DNI.Text) || string.IsNullOrEmpty(calendar_fechaNacimiento.Text)
-                || string.IsNullOrEmpty(txt_email.Text) || string.IsNullOrEmpty(txt_piso.Text)
-                || string.IsNullOrEmpty(txt_localidad.Text) || string.IsNullOrEmpty(txt_numero.Text)
-                || string.IsNullOrEmpty(txt_provincia.Text) || string.IsNullOrEmpty(cmb_EstadoModificarCuenta.Text))
+                || string.IsNullOrEmpty(txt_DNI.Text) || string.IsNullOrEmpty(txt_piso.Text)
+                || string.IsNullOrEmpty(txt_email.Text) || string.IsNullOrEmpty(cmb_EstadoModificarCuenta.Text)
+                || string.IsNullOrEmpty(txt_localidad.Text) || string.IsNullOrEmpty(txt_provincia.Text))
             {
                 return false;
-            }
-            else
+            }else
             {
 
                 return true;
@@ -283,7 +285,6 @@ namespace Cova.UI
             txt_usuario.Clear();
             txt_clave.Clear();
             txt_telefono.Clear();
-            /*pictureBoxImagen_CrearCuenta.Clear();*/
             txt_email.Clear();
             txt_apellido.Clear();
             txt_estadoCivil.Clear();
@@ -381,14 +382,20 @@ namespace Cova.UI
             medicoActualizado.Activo = cmb_EstadoModificarCuenta.Text == "Activo" ? true : false;
 
             BLMedico bLMedico = new BLMedico();
-            if(bLMedico.ActualizarProfesionalMedico(medicoActualizado))
+            try
             {
-                MessageBox.Show("Profesional actualizado con exito");
-            }
-            else
-            {
-                MessageBox.Show("Hubo un error al actualizar el profesional");
-            }
+                if (bLMedico.ActualizarProfesionalMedico(medicoActualizado))
+                {
+                    MessageBox.Show("Profesional actualizado con exito");
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error al actualizar el profesional");
+                }
+            } catch {
+                        
+                    }
+            
         }
 
         public void ActualizarProfesionalEnfermero()

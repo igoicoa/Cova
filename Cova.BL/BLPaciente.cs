@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Cova.BE;
 using Cova.MPP;
+using Cova.Common.Excepciones;
 
 namespace Cova.BL
 {
@@ -12,20 +13,42 @@ namespace Cova.BL
     {
         public bool CrearPaciene(BEPaciente pacienteNuevo) 
         {
-            MPPPaciente mPPPaciente = new MPPPaciente();
-            return mPPPaciente.CrearPaciente(pacienteNuevo);
+            try
+            {
+                MPPPaciente mPPPaciente = new MPPPaciente();
+                return mPPPaciente.CrearPaciente(pacienteNuevo);
+            }
+            catch
+            {
+                throw new ErrorAlCrearPacienteException();
+            }
         }
 
         public IList<BEPaciente> BuscarPacientes(string Usuario, string DNI)
         {
-            MPPPaciente mPPPaciente = new MPPPaciente();
-            return mPPPaciente.BuscarPacientes(Usuario, DNI);
+            try
+            {
+                MPPPaciente mPPPaciente = new MPPPaciente();
+                return mPPPaciente.BuscarPacientes(Usuario, DNI);
+            }
+            catch
+            {
+                throw new ErrorAlBuscarPacienteException();
+            }
         }
 
         public bool ActualizarPaciente(BEPaciente pacienteNuevo)
         {
-            MPPPaciente mPPPaciente = new MPPPaciente();
-            return mPPPaciente.ActualizarPaciente(pacienteNuevo);
+            try
+            {
+                MPPPaciente mPPPaciente = new MPPPaciente();
+                return mPPPaciente.ActualizarPaciente(pacienteNuevo);
+            }
+            catch
+            {
+                throw new ErrorAlActualizarPacienteException();
+            }
+
         }
 
         public IDictionary<bool, List<string>> EstaEnCondicionesDeRecibirVacuna(BEPaciente pacienteAVacunarse, BEVacunaDosis vacunaAAplicar)
@@ -88,20 +111,41 @@ namespace Cova.BL
 
         public bool VacunarPaciente(BEPaciente pacienteAVacunar, BEVacunaDosis vacunaAAplicar)
         {
-            MPPVacuna mPPVacuna = new MPPVacuna();
-            return mPPVacuna.VacunarPaciente(pacienteAVacunar, vacunaAAplicar);
+            try
+            {
+                MPPVacuna mPPVacuna = new MPPVacuna();
+                return mPPVacuna.VacunarPaciente(pacienteAVacunar, vacunaAAplicar);
+            }
+            catch
+            {
+                throw new ErrorAlVacunarPacienteException();
+            }
         }
 
         public IList<BEVacunaDosis> ObtenerVacunasAplicadasEsquemaCompleto(BEPaciente paciente)
         {
-            MPPPaciente mPPPaciente = new MPPPaciente();
-            return mPPPaciente.ObtenerVacunasAplicadasEsquemaCompleto(paciente);
+            try
+            {
+                MPPPaciente mPPPaciente = new MPPPaciente();
+                return mPPPaciente.ObtenerVacunasAplicadasEsquemaCompleto(paciente);
+            }
+            catch
+            {
+                throw new ErrorAlObtenerVacunasAplicadasEsquemaCompletoException();
+            }
         }
 
         public IList<BEVacunaDosis> ObtenerVacunasAplicadasEsquemaIncompleto(BEPaciente paciente)
         {
-            MPPPaciente mPPPaciente = new MPPPaciente();
-            return mPPPaciente.ObtenerVacunasAplicadasEsquemaIncompleto(paciente);
+            try
+            {
+                MPPPaciente mPPPaciente = new MPPPaciente();
+                return mPPPaciente.ObtenerVacunasAplicadasEsquemaIncompleto(paciente);
+            }
+            catch
+            {
+                throw new ErrorAlObtenerVacunasAplicadasEsquemaInCompletoException();
+            }
         }
 
         public IList<BEVacuna> ObtenerVacunasRecetadas()

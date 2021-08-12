@@ -38,10 +38,17 @@ namespace Cova.UI
         public void CargarDatosPacienteLogueado()
         {
             BLPaciente bLPaciente = new BLPaciente();
-            long usuarioId = Sesion.GetInstance.Usuario.UsuarioID;
-            string usuario = Sesion.GetInstance.Usuario.Usuario;
-            this._paciente = bLPaciente.BuscarPacientes(usuario, "").ToList().Where(x => x.UsuarioID == usuarioId).FirstOrDefault();
-            CargarDatosPaciente();
+            try
+            {
+                long usuarioId = Sesion.GetInstance.Usuario.UsuarioID;
+                string usuario = Sesion.GetInstance.Usuario.Usuario;
+                this._paciente = bLPaciente.BuscarPacientes(usuario, "").ToList().Where(x => x.UsuarioID == usuarioId).FirstOrDefault();
+                CargarDatosPaciente();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void CargarVacunasPaciente()
@@ -53,14 +60,27 @@ namespace Cova.UI
         public void CargarVacunasEsquemaCompletoPaciente()
         {
             BLPaciente bLPaciente = new BLPaciente();
-            this._vacunasEsquemaCompleto = bLPaciente.ObtenerVacunasAplicadasEsquemaCompleto(this._paciente).ToList();
-
+            try
+            {
+                this._vacunasEsquemaCompleto = bLPaciente.ObtenerVacunasAplicadasEsquemaCompleto(this._paciente).ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void CargarVacunasEsquemaIncompletoPaciente()
         {
             BLPaciente bLPaciente = new BLPaciente();
-            this._vacunasEsquemaIncompleto = bLPaciente.ObtenerVacunasAplicadasEsquemaIncompleto(this._paciente).ToList();
+            try
+            {
+                this._vacunasEsquemaIncompleto = bLPaciente.ObtenerVacunasAplicadasEsquemaIncompleto(this._paciente).ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void CargarDatosPaciente()
@@ -131,9 +151,12 @@ namespace Cova.UI
             {
                 vacunasAMostrar = this._vacunasEsquemaCompleto;
             } 
-            else
+            else if (cmb_Estado_CalendarioVacunacion.SelectedItem.ToString() == "Pendiente")
             {
                 vacunasAMostrar = this._vacunasEsquemaIncompleto;
+            } else
+            {
+                MessageBox.Show("Completar el estado por el cual desee informarse");
             }
             
             DataTable tableVacunas = new DataTable();

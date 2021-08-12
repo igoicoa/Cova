@@ -108,7 +108,14 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
         public void BuscarRecetas()
         {
             BLReceta bLReceta = new BLReceta();
-            this._recetasPaciente = bLReceta.BuscarRecetas(this._paciente).ToList();
+            try
+            {
+                this._recetasPaciente = bLReceta.BuscarRecetas(this._paciente).ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
             DataTable tableReceta = new DataTable();
             tableReceta.Columns.Add("RecetaId");

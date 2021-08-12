@@ -26,7 +26,14 @@ namespace Cova.UI
         public void CargarCoberturasMedicas()
         {
             BLCoberturaMedica bLCoberturaMedica = new BLCoberturaMedica();
-            this.coberturasMedicas = bLCoberturaMedica.ObtenerCoberturasMedicas().ToList();
+            try
+            {
+                this.coberturasMedicas = bLCoberturaMedica.ObtenerCoberturasMedicas().ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
             this.cmb_coberturaMedica.DataSource = coberturasMedicas;
             this.cmb_coberturaMedica.DisplayMember = "Nombre";
@@ -64,6 +71,7 @@ namespace Cova.UI
             {
                 BEPaciente pacienteNuevo = new BEPaciente();
                 BLPaciente bLPaciente = new BLPaciente();
+
                 pacienteNuevo.Apellido = textBoxApellidoCrearCuenta.Text;
                 pacienteNuevo.Nombre = txt_CrearCuentaNombre.Text;
                 pacienteNuevo.Sexo = radioButtonMasculino_CrearCuenta.Checked ? "M" : "F";

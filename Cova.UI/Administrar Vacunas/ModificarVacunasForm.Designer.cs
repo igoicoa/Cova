@@ -33,11 +33,6 @@ namespace Cova.UI
             this.btn_Limpiar_ModificarVacunas = new System.Windows.Forms.Button();
             this.btn_Cancelar_ModificarVacunas = new System.Windows.Forms.Button();
             this.btn_Modificar_ModificarVacunas = new System.Windows.Forms.Button();
-            this.dtp_FechaVecnimiento_ModificarVacunas = new System.Windows.Forms.DateTimePicker();
-            this.lbl_FechaVencimiento_ModificarVacunas = new System.Windows.Forms.Label();
-            this.dtp_FechaElaboracion_ModificarVacunas = new System.Windows.Forms.DateTimePicker();
-            this.lbl_FechaElaboracion_ModificarVacunas = new System.Windows.Forms.Label();
-            this.lbl_stock_ModificarVacunas = new System.Windows.Forms.Label();
             this.cmb_Laboratorio_ModificarVacunas = new System.Windows.Forms.ComboBox();
             this.lbl_Laboratorio_ModificarVacunas = new System.Windows.Forms.Label();
             this.lbl_CantidadDosis_ModificarVacunas = new System.Windows.Forms.Label();
@@ -52,7 +47,12 @@ namespace Cova.UI
             this.rtb_Descripcion_ModificarVacunas = new System.Windows.Forms.RichTextBox();
             this.rtb_Contraindicaciones_ModificarVacunas = new System.Windows.Forms.RichTextBox();
             this.rtb_Prospecto_ModificarVacunas = new System.Windows.Forms.RichTextBox();
-            this.cb_Stock_ModificarVacunas = new System.Windows.Forms.ComboBox();
+            this.txt_EdadMaxima = new System.Windows.Forms.TextBox();
+            this.txt_EdadMinima = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_Estado = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btn_Limpiar_ModificarVacunas
@@ -85,61 +85,18 @@ namespace Cova.UI
             this.btn_Modificar_ModificarVacunas.Text = "Modificar";
             this.btn_Modificar_ModificarVacunas.UseVisualStyleBackColor = true;
             // 
-            // dtp_FechaVecnimiento_ModificarVacunas
-            // 
-            this.dtp_FechaVecnimiento_ModificarVacunas.Location = new System.Drawing.Point(603, 273);
-            this.dtp_FechaVecnimiento_ModificarVacunas.Name = "dtp_FechaVecnimiento_ModificarVacunas";
-            this.dtp_FechaVecnimiento_ModificarVacunas.Size = new System.Drawing.Size(143, 20);
-            this.dtp_FechaVecnimiento_ModificarVacunas.TabIndex = 130;
-            // 
-            // lbl_FechaVencimiento_ModificarVacunas
-            // 
-            this.lbl_FechaVencimiento_ModificarVacunas.AutoEllipsis = true;
-            this.lbl_FechaVencimiento_ModificarVacunas.AutoSize = true;
-            this.lbl_FechaVencimiento_ModificarVacunas.Location = new System.Drawing.Point(600, 254);
-            this.lbl_FechaVencimiento_ModificarVacunas.Name = "lbl_FechaVencimiento_ModificarVacunas";
-            this.lbl_FechaVencimiento_ModificarVacunas.Size = new System.Drawing.Size(98, 13);
-            this.lbl_FechaVencimiento_ModificarVacunas.TabIndex = 129;
-            this.lbl_FechaVencimiento_ModificarVacunas.Text = "Fecha Vencimiento";
-            // 
-            // dtp_FechaElaboracion_ModificarVacunas
-            // 
-            this.dtp_FechaElaboracion_ModificarVacunas.Location = new System.Drawing.Point(408, 273);
-            this.dtp_FechaElaboracion_ModificarVacunas.Name = "dtp_FechaElaboracion_ModificarVacunas";
-            this.dtp_FechaElaboracion_ModificarVacunas.Size = new System.Drawing.Size(143, 20);
-            this.dtp_FechaElaboracion_ModificarVacunas.TabIndex = 128;
-            // 
-            // lbl_FechaElaboracion_ModificarVacunas
-            // 
-            this.lbl_FechaElaboracion_ModificarVacunas.AutoEllipsis = true;
-            this.lbl_FechaElaboracion_ModificarVacunas.AutoSize = true;
-            this.lbl_FechaElaboracion_ModificarVacunas.Location = new System.Drawing.Point(405, 254);
-            this.lbl_FechaElaboracion_ModificarVacunas.Name = "lbl_FechaElaboracion_ModificarVacunas";
-            this.lbl_FechaElaboracion_ModificarVacunas.Size = new System.Drawing.Size(96, 13);
-            this.lbl_FechaElaboracion_ModificarVacunas.TabIndex = 127;
-            this.lbl_FechaElaboracion_ModificarVacunas.Text = "Fecha Elaboración";
-            // 
-            // lbl_stock_ModificarVacunas
-            // 
-            this.lbl_stock_ModificarVacunas.AutoSize = true;
-            this.lbl_stock_ModificarVacunas.Location = new System.Drawing.Point(127, 254);
-            this.lbl_stock_ModificarVacunas.Name = "lbl_stock_ModificarVacunas";
-            this.lbl_stock_ModificarVacunas.Size = new System.Drawing.Size(35, 13);
-            this.lbl_stock_ModificarVacunas.TabIndex = 125;
-            this.lbl_stock_ModificarVacunas.Text = "Stock";
-            // 
             // cmb_Laboratorio_ModificarVacunas
             // 
             this.cmb_Laboratorio_ModificarVacunas.FormattingEnabled = true;
-            this.cmb_Laboratorio_ModificarVacunas.Location = new System.Drawing.Point(241, 270);
+            this.cmb_Laboratorio_ModificarVacunas.Location = new System.Drawing.Point(117, 270);
             this.cmb_Laboratorio_ModificarVacunas.Name = "cmb_Laboratorio_ModificarVacunas";
-            this.cmb_Laboratorio_ModificarVacunas.Size = new System.Drawing.Size(121, 21);
+            this.cmb_Laboratorio_ModificarVacunas.Size = new System.Drawing.Size(239, 21);
             this.cmb_Laboratorio_ModificarVacunas.TabIndex = 124;
             // 
             // lbl_Laboratorio_ModificarVacunas
             // 
             this.lbl_Laboratorio_ModificarVacunas.AutoSize = true;
-            this.lbl_Laboratorio_ModificarVacunas.Location = new System.Drawing.Point(238, 254);
+            this.lbl_Laboratorio_ModificarVacunas.Location = new System.Drawing.Point(114, 254);
             this.lbl_Laboratorio_ModificarVacunas.Name = "lbl_Laboratorio_ModificarVacunas";
             this.lbl_Laboratorio_ModificarVacunas.Size = new System.Drawing.Size(60, 13);
             this.lbl_Laboratorio_ModificarVacunas.TabIndex = 123;
@@ -252,20 +209,72 @@ namespace Cova.UI
             this.rtb_Prospecto_ModificarVacunas.TabIndex = 139;
             this.rtb_Prospecto_ModificarVacunas.Text = "";
             // 
-            // cb_Stock_ModificarVacunas
+            // txt_EdadMaxima
             // 
-            this.cb_Stock_ModificarVacunas.FormattingEnabled = true;
-            this.cb_Stock_ModificarVacunas.Location = new System.Drawing.Point(130, 269);
-            this.cb_Stock_ModificarVacunas.Name = "cb_Stock_ModificarVacunas";
-            this.cb_Stock_ModificarVacunas.Size = new System.Drawing.Size(89, 21);
-            this.cb_Stock_ModificarVacunas.TabIndex = 140;
+            this.txt_EdadMaxima.Location = new System.Drawing.Point(484, 273);
+            this.txt_EdadMaxima.Name = "txt_EdadMaxima";
+            this.txt_EdadMaxima.Size = new System.Drawing.Size(82, 20);
+            this.txt_EdadMaxima.TabIndex = 143;
+            // 
+            // txt_EdadMinima
+            // 
+            this.txt_EdadMinima.Location = new System.Drawing.Point(380, 272);
+            this.txt_EdadMinima.Name = "txt_EdadMinima";
+            this.txt_EdadMinima.Size = new System.Drawing.Size(82, 20);
+            this.txt_EdadMinima.TabIndex = 142;
+            // 
+            // label2
+            // 
+            this.label2.AutoEllipsis = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(481, 254);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.TabIndex = 141;
+            this.label2.Text = "Edad Maxima";
+            // 
+            // label1
+            // 
+            this.label1.AutoEllipsis = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(377, 254);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.TabIndex = 140;
+            this.label1.Text = "Edad Minima";
+            // 
+            // lbl_Estado
+            // 
+            this.lbl_Estado.AutoEllipsis = true;
+            this.lbl_Estado.AutoSize = true;
+            this.lbl_Estado.Location = new System.Drawing.Point(603, 254);
+            this.lbl_Estado.Name = "lbl_Estado";
+            this.lbl_Estado.Size = new System.Drawing.Size(40, 13);
+            this.lbl_Estado.TabIndex = 144;
+            this.lbl_Estado.Text = "Estado";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.comboBox1.Location = new System.Drawing.Point(606, 269);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(93, 21);
+            this.comboBox1.TabIndex = 145;
             // 
             // ModificarVacunasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 371);
-            this.Controls.Add(this.cb_Stock_ModificarVacunas);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.lbl_Estado);
+            this.Controls.Add(this.txt_EdadMaxima);
+            this.Controls.Add(this.txt_EdadMinima);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.rtb_Prospecto_ModificarVacunas);
             this.Controls.Add(this.rtb_Contraindicaciones_ModificarVacunas);
             this.Controls.Add(this.rtb_Descripcion_ModificarVacunas);
@@ -274,11 +283,6 @@ namespace Cova.UI
             this.Controls.Add(this.btn_Limpiar_ModificarVacunas);
             this.Controls.Add(this.btn_Cancelar_ModificarVacunas);
             this.Controls.Add(this.btn_Modificar_ModificarVacunas);
-            this.Controls.Add(this.dtp_FechaVecnimiento_ModificarVacunas);
-            this.Controls.Add(this.lbl_FechaVencimiento_ModificarVacunas);
-            this.Controls.Add(this.dtp_FechaElaboracion_ModificarVacunas);
-            this.Controls.Add(this.lbl_FechaElaboracion_ModificarVacunas);
-            this.Controls.Add(this.lbl_stock_ModificarVacunas);
             this.Controls.Add(this.cmb_Laboratorio_ModificarVacunas);
             this.Controls.Add(this.lbl_Laboratorio_ModificarVacunas);
             this.Controls.Add(this.lbl_CantidadDosis_ModificarVacunas);
@@ -301,11 +305,6 @@ namespace Cova.UI
         private System.Windows.Forms.Button btn_Limpiar_ModificarVacunas;
         private System.Windows.Forms.Button btn_Cancelar_ModificarVacunas;
         private System.Windows.Forms.Button btn_Modificar_ModificarVacunas;
-        private System.Windows.Forms.DateTimePicker dtp_FechaVecnimiento_ModificarVacunas;
-        private System.Windows.Forms.Label lbl_FechaVencimiento_ModificarVacunas;
-        private System.Windows.Forms.DateTimePicker dtp_FechaElaboracion_ModificarVacunas;
-        private System.Windows.Forms.Label lbl_FechaElaboracion_ModificarVacunas;
-        private System.Windows.Forms.Label lbl_stock_ModificarVacunas;
         private System.Windows.Forms.ComboBox cmb_Laboratorio_ModificarVacunas;
         private System.Windows.Forms.Label lbl_Laboratorio_ModificarVacunas;
         private System.Windows.Forms.Label lbl_CantidadDosis_ModificarVacunas;
@@ -320,6 +319,11 @@ namespace Cova.UI
         private System.Windows.Forms.RichTextBox rtb_Descripcion_ModificarVacunas;
         private System.Windows.Forms.RichTextBox rtb_Contraindicaciones_ModificarVacunas;
         private System.Windows.Forms.RichTextBox rtb_Prospecto_ModificarVacunas;
-        private System.Windows.Forms.ComboBox cb_Stock_ModificarVacunas;
+        private System.Windows.Forms.TextBox txt_EdadMaxima;
+        private System.Windows.Forms.TextBox txt_EdadMinima;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_Estado;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

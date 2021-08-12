@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Cova.BE;
+using Cova.Common.Excepciones;
 using Cova.MPP;
 
 namespace Cova.BL
@@ -9,8 +10,16 @@ namespace Cova.BL
     {
         public IList<BELaboratorio> ObtenerLaboratorios()
         {
-            MPPLaboratorio mPPLaboratorio = new MPPLaboratorio();
-            return mPPLaboratorio.ObtenerLaboratorios();
+            try
+            {
+                MPPLaboratorio mPPLaboratorio = new MPPLaboratorio();
+                return mPPLaboratorio.ObtenerLaboratorios();
+            }
+            catch
+            {
+                throw new ErrorAlObtenerLaboratoriosException();
+            }
+
         }
     }
 }

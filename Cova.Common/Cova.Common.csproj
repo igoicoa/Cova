@@ -41,7 +41,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Excepciones\ErrorAlActualizarPacienteException.cs" />
+    <Compile Include="Excepciones\ErrorAlActualizarProfesionalException.cs" />
+    <Compile Include="Excepciones\ErrorAlActualizarRecetasException.cs" />
+    <Compile Include="Excepciones\ErrorAlBuscarDatosMedicos.cs" />
+    <Compile Include="Excepciones\ErrorAlBuscarPacienteException.cs" />
+    <Compile Include="Excepciones\ErrorAlBuscarRecetasException.cs" />
+    <Compile Include="Excepciones\ErrorAlCargarCoberturasMedicasException.cs" />
+    <Compile Include="Excepciones\ErrorAlCargarDatosMedicos.cs" />
+    <Compile Include="Excepciones\ErrorAlCargarDatosPacienteException.cs" />
+    <Compile Include="Excepciones\ErrorAlCargarVacunas.cs" />
+    <Compile Include="Excepciones\ErrorAlCrearPacienteException.cs" />
     <Compile Include="Excepciones\ErrorAlCrearProfesionalException.cs" />
+    <Compile Include="Excepciones\ErrorAlCrearRecetasException.cs" />
+    <Compile Include="Excepciones\ErrorAlCrearVacunasException.cs" />
+    <Compile Include="Excepciones\ErrorAlObtenerCentrosMedicosException.cs" />
+    <Compile Include="Excepciones\ErrorAlObtenerLaboratoriosException.cs" />
+    <Compile Include="Excepciones\ErrorAlObtenerVacunasAplicadasEsquemaCompletoException.cs" />
+    <Compile Include="Excepciones\ErrorAlObtenerVacunasAplicadasEsquemaInCompletoException.cs" />
+    <Compile Include="Excepciones\ErrorAlObtenerVacunasDeCentroMedicoAAplicarException.cs" />
+    <Compile Include="Excepciones\ErrorAlObtenerVacunasException.cs" />
+    <Compile Include="Excepciones\ErrorAlVacunarPacienteException.cs" />
     <Compile Include="Excepciones\SesionIniciadaException.cs" />
     <Compile Include="Excepciones\SesionNoIniciadaException.cs" />
     <Compile Include="Excepciones\UsuarioInactivoException.cs" />

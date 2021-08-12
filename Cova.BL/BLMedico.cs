@@ -18,7 +18,7 @@ namespace Cova.BL
             {
                 return mPPMedico.CrearProfesionalMedico(medico);
             }
-            catch(Exception ex)
+            catch
             {
                 throw new ErrorAlCrearProfesionalException();
             }
@@ -27,13 +27,28 @@ namespace Cova.BL
         public IList<BEMedico> BuscarMedicos(string Usuario, string DNI)
         {
             MPPMedico mPPMedico = new MPPMedico();
-            return mPPMedico.BuscarMedicos(Usuario, DNI);
+            try
+            {
+                return mPPMedico.BuscarMedicos(Usuario, DNI);
+            }
+            catch
+            {
+                throw new ErrorAlBuscarDatosMedicos();
+            }
+
         }
 
         public bool ActualizarProfesionalMedico(BEMedico medico)
         {
-            MPPMedico mPPMedico = new MPPMedico();
-            return mPPMedico.ActualizarProfesionalMedico(medico);
+            try
+            {
+                MPPMedico mPPMedico = new MPPMedico();
+                return mPPMedico.ActualizarProfesionalMedico(medico);
+            } catch
+            {
+                throw new ErrorAlActualizarProfesionalException();
+            }
+           
         }
     }
 }

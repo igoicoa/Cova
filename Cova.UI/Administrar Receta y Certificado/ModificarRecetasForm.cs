@@ -26,13 +26,27 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             string usuario = Sesion.GetInstance.Usuario.Usuario;
             long usuarioID = Sesion.GetInstance.Usuario.UsuarioID;
             BLMedico bLMedico = new BLMedico();
-            this._usuarioMedico = bLMedico.BuscarMedicos(usuario, "").ToList().Where(x => x.UsuarioID == usuarioID).FirstOrDefault();
+            try
+            {
+                this._usuarioMedico = bLMedico.BuscarMedicos(usuario, "").ToList().Where(x => x.UsuarioID == usuarioID).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void CargarVacunas()
         {
             BLVacuna bLVacuna = new BLVacuna();
-            this.cmb_vacuna_ModificarReceta.DataSource = bLVacuna.ObtenerVacunas();
+            try
+            {
+                this.cmb_vacuna_ModificarReceta.DataSource = bLVacuna.ObtenerVacunas();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             this.cmb_vacuna_ModificarReceta.DisplayMember = "Nombre";
             this.cmb_vacuna_ModificarReceta.ValueMember = "VacunaId";
             this.cmb_vacuna_ModificarReceta.SelectedIndex = -1;
@@ -106,13 +120,20 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             RecetaActualizada.Vacuna = (BEVacuna)cmb_vacuna_ModificarReceta.SelectedItem;
 
             BLReceta bLReceta = new BLReceta();
-            if (bLReceta.ActualizarReceta(RecetaActualizada))
+            try
             {
-                MessageBox.Show("Receta actualizada con exito");
+                if (bLReceta.ActualizarReceta(RecetaActualizada))
+                {
+                    MessageBox.Show("Receta actualizada con exito");
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error al actualizar la Receta");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Hubo un error al actualizar la Receta");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -154,25 +175,34 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
         private void btn_ModificarReceta_ModificarReceta_Click_1(object sender, EventArgs e)
         {
             BLReceta bLReceta = new BLReceta();
-            this._recetaAModificar.FechaPrescripcion = dtp_fecha_ModificarReceta.Value;
-            this._recetaAModificar.Observacion = rtxt_Diagnostico_ModificarReceta.Text;
-            this._recetaAModificar.Vacuna = (BEVacuna)cmb_vacuna_ModificarReceta.SelectedItem;
-            if (ValidarTodosLosCamposReceta())
+            try
             {
-                if (bLReceta.ActualizarReceta(this._recetaAModificar))
+                this._recetaAModificar.FechaPrescripcion = dtp_fecha_ModificarReceta.Value;
+                this._recetaAModificar.Observacion = rtxt_Diagnostico_ModificarReceta.Text;
+                this._recetaAModificar.Vacuna = (BEVacuna)cmb_vacuna_ModificarReceta.SelectedItem;
+                if (ValidarTodosLosCamposReceta())
                 {
-                    MessageBox.Show("Receta modificada con exito");
-                    this.Close();
+                    if (bLReceta.ActualizarReceta(this._recetaAModificar))
+                    {
+                        MessageBox.Show("Receta modificada con exito");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error al modificar la receta");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Hubo un error al modificar la receta");
+                    MessageBox.Show("Debe completar todos los campos");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Debe completar todos los campos");
+                MessageBox.Show(ex.Message);
             }
+
+           
         }
     }
 }

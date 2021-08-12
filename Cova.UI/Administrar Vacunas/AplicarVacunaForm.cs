@@ -27,7 +27,15 @@ namespace Cova.UI
         public void CargarCentrosMedicos()
         {
             BLCentroMedico bLCentroMedico = new BLCentroMedico();
-            this.cmb_centroMedico.DataSource = bLCentroMedico.ObtenerCentrosMedicos();
+            try
+            {
+                this.cmb_centroMedico.DataSource = bLCentroMedico.ObtenerCentrosMedicos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             this.cmb_centroMedico.DisplayMember = "Nombre";
             this.cmb_centroMedico.ValueMember = "CentroMedicoId";
             this.cmb_centroMedico.SelectedIndex = -1;

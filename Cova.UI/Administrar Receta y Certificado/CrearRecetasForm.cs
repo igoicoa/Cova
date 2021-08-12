@@ -23,13 +23,28 @@ namespace Cova.UI
             string usuario = Sesion.GetInstance.Usuario.Usuario;
             long usuarioID = Sesion.GetInstance.Usuario.UsuarioID;
             BLMedico bLMedico = new BLMedico();
-            this._usuarioMedico = bLMedico.BuscarMedicos(usuario, "").ToList().Where(x => x.UsuarioID == usuarioID).FirstOrDefault();
+            try
+            {
+                this._usuarioMedico = bLMedico.BuscarMedicos(usuario, "").ToList().Where(x => x.UsuarioID == usuarioID).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void CargarVacunas()
         {
             BLVacuna bLVacuna = new BLVacuna();
-            this.cmb_vacuna.DataSource = bLVacuna.ObtenerVacunas();
+            try
+            {
+                this.cmb_vacuna.DataSource = bLVacuna.ObtenerVacunas();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
             this.cmb_vacuna.DisplayMember = "Nombre";
             this.cmb_vacuna.ValueMember = "VacunaId";
             this.cmb_vacuna.SelectedIndex = -1;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Cova.BE;
+using Cova.Common.Excepciones;
 using Cova.MPP;
 
 namespace Cova.BL
@@ -9,8 +10,16 @@ namespace Cova.BL
     {
         public IList<BECentroMedico> ObtenerCentrosMedicos()
         {
-            MPPCentroMedico mPPCentroMedico = new MPPCentroMedico();
-            return mPPCentroMedico.ObtenerCentrosMedicos();
+            try
+            {
+                MPPCentroMedico mPPCentroMedico = new MPPCentroMedico();
+                return mPPCentroMedico.ObtenerCentrosMedicos();
+            }
+            catch
+            {
+                throw new ErrorAlObtenerCentrosMedicosException();
+            }
+
         }
 
         public bool crearCentroMedico(BERangoHorario rangosHorarios, string nombre)
