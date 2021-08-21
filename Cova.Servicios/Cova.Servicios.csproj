@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bitacora\Bitacora.cs" />
+    <Compile Include="Bitacora\IBitacora.cs" />
     <Compile Include="Encriptacion\EncriptacionSimetricaHelper.cs" />
     <Compile Include="Encriptacion\HashHelper.cs" />
     <Compile Include="Multiidioma\IIdiomaObserver.cs" />

@@ -70,9 +70,14 @@ namespace Cova.UI
             // 
             // dtg_ListaVacunas_VerVacunas
             // 
+            this.dtg_ListaVacunas_VerVacunas.AllowUserToAddRows = false;
+            this.dtg_ListaVacunas_VerVacunas.AllowUserToDeleteRows = false;
             this.dtg_ListaVacunas_VerVacunas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtg_ListaVacunas_VerVacunas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dtg_ListaVacunas_VerVacunas.Location = new System.Drawing.Point(11, 134);
             this.dtg_ListaVacunas_VerVacunas.Name = "dtg_ListaVacunas_VerVacunas";
+            this.dtg_ListaVacunas_VerVacunas.ReadOnly = true;
+            this.dtg_ListaVacunas_VerVacunas.ShowEditingIcon = false;
             this.dtg_ListaVacunas_VerVacunas.Size = new System.Drawing.Size(930, 304);
             this.dtg_ListaVacunas_VerVacunas.TabIndex = 147;
             // 

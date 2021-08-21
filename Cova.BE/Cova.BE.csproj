@@ -55,6 +55,8 @@
     <Compile Include="BEUsuario.cs" />
     <Compile Include="BEVacuna.cs" />
     <Compile Include="BEVacunaDosis.cs" />
+    <Compile Include="Bitacora\BEBitacora.cs" />
+    <Compile Include="Bitacora\TipoCriticidad.cs" />
     <Compile Include="Enum\DiasSemana.cs" />
     <Compile Include="Enum\Especialidad.cs" />
     <Compile Include="BEMedico.cs" />

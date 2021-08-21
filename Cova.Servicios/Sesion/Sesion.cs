@@ -4,6 +4,7 @@ using Cova.Common.Permisos;
 using Cova.Common.Multiidioma;
 using Cova.Common.Excepciones;
 using Cova.Servicios.Multiidioma;
+using Cova.Servicios.Bitacora;
 using Cova.MPP;
 
 namespace Cova.Servicios.Sesion

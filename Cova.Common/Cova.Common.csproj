@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Excepciones\BitacoraYaCreadaException.cs" />
     <Compile Include="Excepciones\ErrorAlActualizarPacienteException.cs" />
     <Compile Include="Excepciones\ErrorAlActualizarProfesionalException.cs" />
     <Compile Include="Excepciones\ErrorAlActualizarRecetasException.cs" />

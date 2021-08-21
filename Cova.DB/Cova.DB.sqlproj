@@ -124,6 +124,9 @@
     <Build Include="StoredProcedures\s_BuscarRecetaPaciente.sql" />
     <Build Include="StoredProcedures\s_ActualizarReceta.sql" />
     <Build Include="StoredProcedures\s_CrearVacuna.sql" />
+    <Build Include="Tables\Bitacora.sql" />
+    <Build Include="StoredProcedures\s_BitacoraRegistrar.sql" />
+    <Build Include="StoredProcedures\s_BitacoraObtenerRegistros.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />

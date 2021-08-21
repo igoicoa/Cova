@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using Cova.BE;
+using Cova.BE.Bitacora;
 using Cova.MPP;
 using Cova.Servicios.Encriptacion;
 using Cova.Common.Permisos;
 using Cova.Common.Excepciones;
+using Cova.Servicios.Bitacora;
 
 namespace Cova.BL
 {
@@ -19,6 +21,7 @@ namespace Cova.BL
             usuario = mPPUsuario.ObtenerUsuario(usuarioALoguearse);
             if(!usuario.Activo)
             {
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, usuarioALoguearse, TipoCriticidad.Warning, "El usuario a loguear esta inactivo", "Login"));
                 throw new UsuarioInactivoException();
             }
             else if (usuario.Password == claveEncriptada)
@@ -27,9 +30,11 @@ namespace Cova.BL
                 usuarioALoguearse.UltimoLogin = usuario.UltimoLogin;
                 usuarioALoguearse.TipoUsuario = usuario.TipoUsuario;
                 claveCorrecta = true;
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, usuarioALoguearse, TipoCriticidad.Info, "Usuario logueado correctamente", "Login"));
             }
             else
             {
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, usuarioALoguearse, TipoCriticidad.Warning, "Password incorrecto", "Login"));
                 throw new UsuarioPasswordIncorrecto();
             }
 

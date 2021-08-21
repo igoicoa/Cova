@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Cova.BE;
+using Cova.BE.Bitacora;
+using Cova.Servicios.Bitacora;
 using Cova.MPP;
 using Cova.Common.Excepciones;
+using Cova.Servicios.Sesion;
 
 namespace Cova.BL
 {
@@ -18,8 +18,9 @@ namespace Cova.BL
                 MPPPaciente mPPPaciente = new MPPPaciente();
                 return mPPPaciente.CrearPaciente(pacienteNuevo);
             }
-            catch
+            catch(Exception ex)
             {
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al crear el paciente: " + ex.Message, "Crear Paciente"));
                 throw new ErrorAlCrearPacienteException();
             }
         }
