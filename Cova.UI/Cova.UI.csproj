@@ -225,12 +225,6 @@
     <Compile Include="Administrar Historia Clinica\VerHistoriaClinicaForm.Designer.cs">
       <DependentUpon>VerHistoriaClinicaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administrar Historia Clinica\VerHistorialHistoriaClinicaForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Administrar Historia Clinica\VerHistorialHistoriaClinicaForm.Designer.cs">
-      <DependentUpon>VerHistorialHistoriaClinicaForm.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Administrar Idioma\AgregarIdiomaForm.resx">
       <DependentUpon>AgregarIdiomaForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -326,9 +320,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administrar Historia Clinica\VerHistoriaClinicaForm.resx">
       <DependentUpon>VerHistoriaClinicaForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Administrar Historia Clinica\VerHistorialHistoriaClinicaForm.resx">
-      <DependentUpon>VerHistorialHistoriaClinicaForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

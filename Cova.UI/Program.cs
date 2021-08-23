@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Cova.Servicios.Bitacora;
 
 namespace Cova.UI
 {
@@ -15,7 +11,7 @@ namespace Cova.UI
         [STAThread]
         static void Main()
         {
-            //Bitacora.CrearBitacora();
+            Cova.Servicios.Bitacora.Bitacora.CrearBitacora();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());

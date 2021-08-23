@@ -26,5 +26,14 @@ namespace Cova.UI.Bitacora
         {
             txt_Usuario_Bitacora.Clear();
         }
+
+        private void btn_Filtrar_Bitacora_Click(object sender, EventArgs e)
+        {
+            DateTime fechaDesde = new DateTime(dtp_FechaDesde.Value.Year, dtp_FechaDesde.Value.Month, dtp_FechaDesde.Value.Day, 00, 00, 00);
+            DateTime fechaHasta = new DateTime(dtp_FechaHasta.Value.Year, dtp_FechaHasta.Value.Month, dtp_FechaHasta.Value.Day, 23, 59, 59);
+            
+
+            string s = "";
+        }
     }
 }

@@ -217,4 +217,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="BitacoraId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="81ac5d8c-1d32-4bdd-9999-e5f210a2dcdb" ChangeDateTime="08/23/2021 21:47:44">
+    <Property Name="ElementName" Value="[dbo].[AntecedentesPersonales].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[AntecedentesPersonales]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="AntecedenteId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b04bc593-266c-4f26-b718-9c431fb3e883" ChangeDateTime="08/23/2021 21:49:12">
+    <Property Name="ElementName" Value="[dbo].[AntecedentesPersonales_Paciente].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[AntecedentesPersonales_Paciente]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="AntecedentesPersonalesId" />
+  </Operation>
 </Operations>

@@ -100,6 +100,12 @@ EXEC s_CrearCentroMedico 'Sanatorio Anchorena', '112536252', 'sanchorena@gmail.c
 EXEC s_CrearCentroMedico 'Sanatorio Mitre', '112536252', 'sanchorena@gmail.com', 'Mitre',2342,'','CABA','CABA','Argentina'
 EXEC s_CrearCentroMedico 'Sanatorio Trinidad', '112536252', 'sanchorena@gmail.com', 'Santa Fe',2342,'','CABA','CABA','Argentina'
 
+-- Creo antecedentes personales TODO TERMINAR
+INSERT INTO [dbo].[AntecedentesPersonales] (Nombre)
+VALUES
+(''),
+('')
+
 -- Creo dosis de vacunas
 EXEC s_CrearVacunaDosis 'NH1231', 1, '2021-01-01', '2021-02-02', 1
 EXEC s_CrearVacunaDosis 'NH2123', 1, '2021-01-01', '2021-02-02', 1

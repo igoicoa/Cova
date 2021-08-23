@@ -127,6 +127,8 @@
     <Build Include="Tables\Bitacora.sql" />
     <Build Include="StoredProcedures\s_BitacoraRegistrar.sql" />
     <Build Include="StoredProcedures\s_BitacoraObtenerRegistros.sql" />
+    <Build Include="Tables\AntecedentesPersonales.sql" />
+    <Build Include="Tables\AntecedentesPersonales_Paciente.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />
