@@ -148,6 +148,12 @@
     <Compile Include="Administrar Idioma\CambiarIdiomaForm.Designer.cs">
       <DependentUpon>CambiarIdiomaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bitacora\BitacoraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bitacora\BitacoraForm.Designer.cs">
+      <DependentUpon>BitacoraForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\IFormCargarRecetas.cs" />
     <Compile Include="Interfaces\IFormCargarUsuarios.cs" />
     <Compile Include="Interfaces\IFormCargarVacunas.cs" />
@@ -275,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administrar Idioma\CambiarIdiomaForm.resx">
       <DependentUpon>CambiarIdiomaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bitacora\BitacoraForm.resx">
+      <DependentUpon>BitacoraForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

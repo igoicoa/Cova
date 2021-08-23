@@ -15,7 +15,7 @@ namespace Cova.UI
         [STAThread]
         static void Main()
         {
-            Bitacora.CrearBitacora();
+            //Bitacora.CrearBitacora();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());

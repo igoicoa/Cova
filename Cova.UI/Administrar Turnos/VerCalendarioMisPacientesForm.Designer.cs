@@ -106,6 +106,7 @@ namespace Cova.UI
             this.dtg_VerCalendarioPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_VerCalendarioPacientes.Location = new System.Drawing.Point(20, 304);
             this.dtg_VerCalendarioPacientes.Name = "dtg_VerCalendarioPacientes";
+            this.dtg_VerCalendarioPacientes.ReadOnly = true;
             this.dtg_VerCalendarioPacientes.Size = new System.Drawing.Size(785, 321);
             this.dtg_VerCalendarioPacientes.TabIndex = 142;
             // 

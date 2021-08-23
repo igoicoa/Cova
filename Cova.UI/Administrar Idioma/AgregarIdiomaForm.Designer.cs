@@ -44,6 +44,7 @@
             this.dgv_etiquetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_etiquetas.Location = new System.Drawing.Point(12, 99);
             this.dgv_etiquetas.Name = "dgv_etiquetas";
+            this.dgv_etiquetas.ReadOnly = true;
             this.dgv_etiquetas.Size = new System.Drawing.Size(619, 339);
             this.dgv_etiquetas.TabIndex = 0;
             // 

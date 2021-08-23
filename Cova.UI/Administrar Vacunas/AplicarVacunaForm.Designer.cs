@@ -85,7 +85,7 @@ namespace Cova.UI
             // 
             this.dtp_fechaAplicacion_AplicarVacunas.Location = new System.Drawing.Point(119, 62);
             this.dtp_fechaAplicacion_AplicarVacunas.Name = "dtp_fechaAplicacion_AplicarVacunas";
-            this.dtp_fechaAplicacion_AplicarVacunas.Size = new System.Drawing.Size(143, 20);
+            this.dtp_fechaAplicacion_AplicarVacunas.Size = new System.Drawing.Size(216, 20);
             this.dtp_fechaAplicacion_AplicarVacunas.TabIndex = 137;
             // 
             // lbl_FechaAplicacion_AplicarVacuna
@@ -159,7 +159,7 @@ namespace Cova.UI
             // lbl_estado_AplicarVacunas
             // 
             this.lbl_estado_AplicarVacunas.AutoSize = true;
-            this.lbl_estado_AplicarVacunas.Location = new System.Drawing.Point(287, 62);
+            this.lbl_estado_AplicarVacunas.Location = new System.Drawing.Point(380, 62);
             this.lbl_estado_AplicarVacunas.Name = "lbl_estado_AplicarVacunas";
             this.lbl_estado_AplicarVacunas.Size = new System.Drawing.Size(28, 13);
             this.lbl_estado_AplicarVacunas.TabIndex = 144;
@@ -167,7 +167,7 @@ namespace Cova.UI
             // 
             // txt_lote
             // 
-            this.txt_lote.Location = new System.Drawing.Point(349, 59);
+            this.txt_lote.Location = new System.Drawing.Point(442, 59);
             this.txt_lote.Name = "txt_lote";
             this.txt_lote.Size = new System.Drawing.Size(184, 20);
             this.txt_lote.TabIndex = 173;
@@ -208,7 +208,7 @@ namespace Cova.UI
             // 
             // txt_laboratorio
             // 
-            this.txt_laboratorio.Location = new System.Drawing.Point(349, 28);
+            this.txt_laboratorio.Location = new System.Drawing.Point(442, 28);
             this.txt_laboratorio.Name = "txt_laboratorio";
             this.txt_laboratorio.Size = new System.Drawing.Size(184, 20);
             this.txt_laboratorio.TabIndex = 192;
@@ -216,7 +216,7 @@ namespace Cova.UI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(283, 31);
+            this.label4.Location = new System.Drawing.Point(376, 31);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 13);
             this.label4.TabIndex = 191;
@@ -243,7 +243,7 @@ namespace Cova.UI
             // 
             this.label2.AutoEllipsis = true;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(287, 118);
+            this.label2.Location = new System.Drawing.Point(380, 118);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 13);
             this.label2.TabIndex = 187;
@@ -251,9 +251,9 @@ namespace Cova.UI
             // 
             // dtp_fechaVencimiento
             // 
-            this.dtp_fechaVencimiento.Location = new System.Drawing.Point(409, 111);
+            this.dtp_fechaVencimiento.Location = new System.Drawing.Point(502, 111);
             this.dtp_fechaVencimiento.Name = "dtp_fechaVencimiento";
-            this.dtp_fechaVencimiento.Size = new System.Drawing.Size(143, 20);
+            this.dtp_fechaVencimiento.Size = new System.Drawing.Size(216, 20);
             this.dtp_fechaVencimiento.TabIndex = 188;
             // 
             // label1
@@ -270,13 +270,13 @@ namespace Cova.UI
             // 
             this.dtp_fechaElaboracion.Location = new System.Drawing.Point(119, 115);
             this.dtp_fechaElaboracion.Name = "dtp_fechaElaboracion";
-            this.dtp_fechaElaboracion.Size = new System.Drawing.Size(143, 20);
+            this.dtp_fechaElaboracion.Size = new System.Drawing.Size(216, 20);
             this.dtp_fechaElaboracion.TabIndex = 186;
             // 
             // btn_buscarVacuna
             // 
             this.btn_buscarVacuna.BackColor = System.Drawing.Color.MistyRose;
-            this.btn_buscarVacuna.Location = new System.Drawing.Point(576, 28);
+            this.btn_buscarVacuna.Location = new System.Drawing.Point(669, 28);
             this.btn_buscarVacuna.Name = "btn_buscarVacuna";
             this.btn_buscarVacuna.Size = new System.Drawing.Size(103, 23);
             this.btn_buscarVacuna.TabIndex = 184;

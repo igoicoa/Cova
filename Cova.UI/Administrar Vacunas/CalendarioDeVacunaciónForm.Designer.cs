@@ -76,6 +76,7 @@ namespace Cova.UI
             this.dtgv_CalendarioVacunacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_CalendarioVacunacion.Location = new System.Drawing.Point(8, 259);
             this.dtgv_CalendarioVacunacion.Name = "dtgv_CalendarioVacunacion";
+            this.dtgv_CalendarioVacunacion.ReadOnly = true;
             this.dtgv_CalendarioVacunacion.Size = new System.Drawing.Size(790, 324);
             this.dtgv_CalendarioVacunacion.TabIndex = 71;
             // 

@@ -216,6 +216,7 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             this.dtg_Recetas_VerRecetasyCertificados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_Recetas_VerRecetasyCertificados.Location = new System.Drawing.Point(12, 361);
             this.dtg_Recetas_VerRecetasyCertificados.Name = "dtg_Recetas_VerRecetasyCertificados";
+            this.dtg_Recetas_VerRecetasyCertificados.ReadOnly = true;
             this.dtg_Recetas_VerRecetasyCertificados.Size = new System.Drawing.Size(775, 297);
             this.dtg_Recetas_VerRecetasyCertificados.TabIndex = 171;
             // 

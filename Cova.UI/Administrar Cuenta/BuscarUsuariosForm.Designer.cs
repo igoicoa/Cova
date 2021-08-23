@@ -123,6 +123,7 @@ namespace Cova.UI
             this.dgv_usuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_usuario.Location = new System.Drawing.Point(12, 167);
             this.dgv_usuario.Name = "dgv_usuario";
+            this.dgv_usuario.ReadOnly = true;
             this.dgv_usuario.Size = new System.Drawing.Size(776, 244);
             this.dgv_usuario.TabIndex = 137;
             // 

@@ -8,6 +8,7 @@ using Cova.Servicios.Multiidioma;
 using Cova.Common.Excepciones;
 using Cova.BE;
 using Cova.UI.Administrar_Receta_y_Certificado;
+using Cova.UI.Bitacora;
 
 namespace Cova.UI
 {
@@ -473,6 +474,12 @@ namespace Cova.UI
         {
             VerReceta_CertificadoForm frmVerReceta_Certificado = new VerReceta_CertificadoForm();
             frmVerReceta_Certificado.Show();
+        }
+
+        private void bitacoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BitacoraForm frmBitacora = new BitacoraForm();
+            frmBitacora.Show();
         }
     }
 }

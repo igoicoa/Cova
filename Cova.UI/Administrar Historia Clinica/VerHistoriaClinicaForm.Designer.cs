@@ -85,6 +85,7 @@ namespace Cova.UI
             this.dgv_Mostrar_VerHistoriaClinica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Mostrar_VerHistoriaClinica.Location = new System.Drawing.Point(12, 295);
             this.dgv_Mostrar_VerHistoriaClinica.Name = "dgv_Mostrar_VerHistoriaClinica";
+            this.dgv_Mostrar_VerHistoriaClinica.ReadOnly = true;
             this.dgv_Mostrar_VerHistoriaClinica.Size = new System.Drawing.Size(784, 439);
             this.dgv_Mostrar_VerHistoriaClinica.TabIndex = 111;
             // 
