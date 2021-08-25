@@ -231,4 +231,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="AntecedentesPersonalesId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="d8d715d0-0f8c-47d4-aff4-0336163aa7b0" ChangeDateTime="08/25/2021 21:47:17">
+    <Property Name="ElementName" Value="[dbo].[HistoriaClinica].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[HistoriaClinica]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="HistoriaClinicaId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="fdfa2bce-8352-468f-a438-1d34ddad4d19" ChangeDateTime="08/25/2021 21:48:47">
+    <Property Name="ElementName" Value="[dbo].[HistoriaClinica].[MedicoId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[HistoriaClinica]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ProfesionalId" />
+  </Operation>
 </Operations>

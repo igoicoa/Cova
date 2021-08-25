@@ -47,6 +47,7 @@
     <Compile Include="BECoberturaMedicaPaciente.cs" />
     <Compile Include="BEDomicilio.cs" />
     <Compile Include="BEEnfermero.cs" />
+    <Compile Include="BEHistoriaClinica.cs" />
     <Compile Include="BELaboratorio.cs" />
     <Compile Include="BECoberturaMedicaPlan.cs" />
     <Compile Include="BERangoHorario.cs" />

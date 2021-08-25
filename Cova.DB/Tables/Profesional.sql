@@ -10,7 +10,7 @@
     [EstadoCivil]       VARCHAR(15)     NULL,
     [Telefono]          VARCHAR(20)     NULL,
     [Email]             VARCHAR(120)    NOT NULL,
-    [DomicilioId]       bigint          NULL
+    [DomicilioId]       BIGINT          NULL
         CONSTRAINT [FK_Profesional_DomicilioId]
 			FOREIGN KEY REFERENCES [dbo].[Domicilio](DomicilioId)
         INDEX [idx_DomicilioId], 
