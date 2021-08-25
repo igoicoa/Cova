@@ -25,8 +25,7 @@ namespace Cova.UI
 
         private void btn_VerHistoriaClinicaHistorial_ModificarHistoriaClinica_Click(object sender, EventArgs e)
         {
-            VerHistorialHistoriaClinicaForm frmVerHistorialHistoriaClinica = new VerHistorialHistoriaClinicaForm();
-            frmVerHistorialHistoriaClinica.Show();
+         
         }
 
         private void btn_BuscarPacientes_ModificarUsuarios_Click(object sender, EventArgs e)

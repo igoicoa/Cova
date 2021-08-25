@@ -84,6 +84,7 @@ namespace Cova.UI
             // 
             // cmb_Plan_CargarCoberturaMedica
             // 
+            this.cmb_Plan_CargarCoberturaMedica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Plan_CargarCoberturaMedica.FormattingEnabled = true;
             this.cmb_Plan_CargarCoberturaMedica.Location = new System.Drawing.Point(288, 68);
             this.cmb_Plan_CargarCoberturaMedica.Name = "cmb_Plan_CargarCoberturaMedica";
@@ -153,7 +154,7 @@ namespace Cova.UI
             this.lbl_FechaCreacion_CargarCoberturaMedica.TabIndex = 142;
             this.lbl_FechaCreacion_CargarCoberturaMedica.Text = "Fecha de Creación";
             // 
-            // CargarCoberturaMedica
+            // CargarCoberturaMedicaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -171,7 +172,7 @@ namespace Cova.UI
             this.Controls.Add(this.lbl_Plan_CargarCoberturaMedica);
             this.Controls.Add(this.lbl_CargarCoberturaMedica);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "CargarCoberturaMedica";
+            this.Name = "CargarCoberturaMedicaForm";
             this.Text = "CargarCoberturaMedica";
             this.ResumeLayout(false);
             this.PerformLayout();

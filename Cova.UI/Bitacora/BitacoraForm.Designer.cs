@@ -35,7 +35,6 @@ namespace Cova.UI.Bitacora
             this.btn_Cancelar_Bitacora = new System.Windows.Forms.Button();
             this.btn_Filtrar_Bitacora = new System.Windows.Forms.Button();
             this.cmb_Criticidad_Bitacora = new System.Windows.Forms.ComboBox();
-            this.txt_Usuario_Bitacora = new System.Windows.Forms.TextBox();
             this.lbl_Criticidad_Bitacora = new System.Windows.Forms.Label();
             this.lbl_Usuario_Bitacora = new System.Windows.Forms.Label();
             this.lbl_FechaHasta_Bitacora = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@ namespace Cova.UI.Bitacora
             this.dtp_FechaHasta = new System.Windows.Forms.DateTimePicker();
             this.dtp_FechaDesde = new System.Windows.Forms.DateTimePicker();
             this.dgv_Bitacora = new System.Windows.Forms.DataGridView();
+            this.cmb_Usuarios = new System.Windows.Forms.ComboBox();
             this.bg_Filtros_Bitacora.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Bitacora)).BeginInit();
             this.SuspendLayout();
@@ -60,11 +60,11 @@ namespace Cova.UI.Bitacora
             // 
             // bg_Filtros_Bitacora
             // 
+            this.bg_Filtros_Bitacora.Controls.Add(this.cmb_Usuarios);
             this.bg_Filtros_Bitacora.Controls.Add(this.btn_Limpiar_Bitacora);
             this.bg_Filtros_Bitacora.Controls.Add(this.btn_Cancelar_Bitacora);
             this.bg_Filtros_Bitacora.Controls.Add(this.btn_Filtrar_Bitacora);
             this.bg_Filtros_Bitacora.Controls.Add(this.cmb_Criticidad_Bitacora);
-            this.bg_Filtros_Bitacora.Controls.Add(this.txt_Usuario_Bitacora);
             this.bg_Filtros_Bitacora.Controls.Add(this.lbl_Criticidad_Bitacora);
             this.bg_Filtros_Bitacora.Controls.Add(this.lbl_Usuario_Bitacora);
             this.bg_Filtros_Bitacora.Controls.Add(this.lbl_FechaHasta_Bitacora);
@@ -105,7 +105,7 @@ namespace Cova.UI.Bitacora
             this.btn_Filtrar_Bitacora.Name = "btn_Filtrar_Bitacora";
             this.btn_Filtrar_Bitacora.Size = new System.Drawing.Size(75, 23);
             this.btn_Filtrar_Bitacora.TabIndex = 179;
-            this.btn_Filtrar_Bitacora.Text = "Aplicar";
+            this.btn_Filtrar_Bitacora.Text = "Filtrar";
             this.btn_Filtrar_Bitacora.UseVisualStyleBackColor = true;
             this.btn_Filtrar_Bitacora.Click += new System.EventHandler(this.btn_Filtrar_Bitacora_Click);
             // 
@@ -117,15 +117,6 @@ namespace Cova.UI.Bitacora
             this.cmb_Criticidad_Bitacora.Name = "cmb_Criticidad_Bitacora";
             this.cmb_Criticidad_Bitacora.Size = new System.Drawing.Size(132, 21);
             this.cmb_Criticidad_Bitacora.TabIndex = 178;
-            // 
-            // txt_Usuario_Bitacora
-            // 
-            this.txt_Usuario_Bitacora.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_Usuario_Bitacora.Enabled = false;
-            this.txt_Usuario_Bitacora.Location = new System.Drawing.Point(415, 22);
-            this.txt_Usuario_Bitacora.Name = "txt_Usuario_Bitacora";
-            this.txt_Usuario_Bitacora.Size = new System.Drawing.Size(132, 20);
-            this.txt_Usuario_Bitacora.TabIndex = 177;
             // 
             // lbl_Criticidad_Bitacora
             // 
@@ -185,6 +176,16 @@ namespace Cova.UI.Bitacora
             this.dgv_Bitacora.Size = new System.Drawing.Size(754, 321);
             this.dgv_Bitacora.TabIndex = 131;
             // 
+            // cmb_Usuarios
+            // 
+            this.cmb_Usuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Usuarios.FormattingEnabled = true;
+            this.cmb_Usuarios.Location = new System.Drawing.Point(415, 22);
+            this.cmb_Usuarios.Name = "cmb_Usuarios";
+            this.cmb_Usuarios.Size = new System.Drawing.Size(132, 21);
+            this.cmb_Usuarios.TabIndex = 182;
+            this.cmb_Usuarios.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cmb_Usuarios_Format);
+            // 
             // BitacoraForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,11 +214,11 @@ namespace Cova.UI.Bitacora
         private System.Windows.Forms.Label lbl_FechaDesde_Bitacora;
         private System.Windows.Forms.DateTimePicker dtp_FechaHasta;
         private System.Windows.Forms.DateTimePicker dtp_FechaDesde;
-        private System.Windows.Forms.TextBox txt_Usuario_Bitacora;
         private System.Windows.Forms.ComboBox cmb_Criticidad_Bitacora;
         private System.Windows.Forms.Button btn_Limpiar_Bitacora;
         private System.Windows.Forms.Button btn_Cancelar_Bitacora;
         private System.Windows.Forms.Button btn_Filtrar_Bitacora;
         private System.Windows.Forms.DataGridView dgv_Bitacora;
+        private System.Windows.Forms.ComboBox cmb_Usuarios;
     }
 }

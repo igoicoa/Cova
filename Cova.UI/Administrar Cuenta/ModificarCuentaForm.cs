@@ -301,6 +301,9 @@ namespace Cova.UI
 
         private void btnModificar_ModificarCuenta_Click(object sender, EventArgs e)
         {
+            if (rb_administrador_ModificarCuenta== null || rb_enfermero_ModificarCuenta== null
+                || rb_medico_ModificarCuenta== null || rb_paciente_ModificarCuenta== null)
+            { 
             if(rb_medico_ModificarCuenta.Checked)
             {
             
@@ -345,6 +348,10 @@ namespace Cova.UI
                 {
                     MessageBox.Show("Debe completar todos los campos");
                 }
+            }
+            } else
+            {
+                MessageBox.Show("Debe seleccionar un Usuario");
             }
         }
 

@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace Cova.UI
 {
     partial class ModificarCuentaForm
@@ -819,5 +821,6 @@ namespace Cova.UI
         private System.Windows.Forms.Label lbl_coberturaMedica;
         private System.Windows.Forms.Button btn_BuscarUsuarios_ModificarUsuarios;
         private System.Windows.Forms.MonthCalendar calendar_fechaNacimiento;
+        //private EventHandler btnLimpiar_ModificarCuenta_Click;
     }
 }

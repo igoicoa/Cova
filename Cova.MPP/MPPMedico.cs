@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using Cova.BE;
 using Cova.DAL;
 
@@ -92,9 +93,17 @@ namespace Cova.MPP
                 datosUsuario.Add("@Password", medico.Password);
                 return conexionBDD.Escribir(strSQL, datosUsuario);
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-                throw ex;
+                if (ex.Errors[0].Number == 2627)
+                {
+                    throw new Common.Excepciones.ItemExistenteException();
+                }
+                else throw new Exception("Hubo un error al crear el Profesional");
+            }
+            catch
+            {
+                throw new Exception("Hubo un error al crear el Profesional");
             }
         }
 
