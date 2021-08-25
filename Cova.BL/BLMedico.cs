@@ -14,19 +14,21 @@ namespace Cova.BL
 {
     public class BLMedico
     {
-        public void CrearProfesionalMedico(BEMedico medico)
+        public bool CrearProfesionalMedico(BEMedico medico)
         {
-            MPPMedico mPPMedico = new MPPMedico();
-            mPPMedico.CrearProfesionalMedico(medico);
             try
             {
-
+                MPPMedico mPPMedico = new MPPMedico();
+                return mPPMedico.CrearProfesionalMedico(medico);
             }
             catch (Exception ex)
             {
                 Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Crear Profesional Medico: " + ex.Message, "Crear Profesional Medico"));
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se creo el Profesional Medico: " + ex.Message, "Crear Profesional Medico"));
                 throw new ErrorAlCrearProfesionalException();
+            }
+            finally
+            {
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se creo el Profesional Medico" , "Crear Profesional Medico"));
             }
         }
 

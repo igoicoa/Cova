@@ -93,15 +93,7 @@ namespace Cova.MPP
                 datosUsuario.Add("@Password", medico.Password);
                 return conexionBDD.Escribir(strSQL, datosUsuario);
             }
-            catch (SqlException ex)
-            {
-                if (ex.Errors[0].Number == 2627)
-                {
-                    throw new Common.Excepciones.ItemExistenteException();
-                }
-                else throw new Exception("Hubo un error al crear el Profesional");
-            }
-            catch
+            catch (Exception ex)
             {
                 throw new Exception("Hubo un error al crear el Profesional");
             }

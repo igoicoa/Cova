@@ -155,9 +155,15 @@ namespace Cova.UI
 
                 try
                 {
-                    bLMedico.CrearProfesionalMedico(medicoNuevo);
-                    MessageBox.Show("Profesional Creado con exito");
-                    this.Close();
+                    if (bLMedico.CrearProfesionalMedico(medicoNuevo))
+                    {
+                        MessageBox.Show("Profesional Creado con exito");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error al Crear el Profesional");
+                    }
                 }
                 catch(Exception ex)
                 {

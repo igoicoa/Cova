@@ -94,6 +94,7 @@ namespace Cova.UI
 
                 tableUsuarios.Rows.Add(filaUsuario);
             }
+            //todo: agregar administrador
             dgv_usuarios.DataSource = tableUsuarios;
             dgv_usuarios.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgv_usuarios.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;

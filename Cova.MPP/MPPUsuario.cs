@@ -83,6 +83,17 @@ namespace Cova.MPP
 
                             usuarios.Add(profesional);
                         }
+                        else if (Convert.ToString(fila["TipoUsuario"]) == "Administrador")
+                        {
+                            BEAdministrador administrador = new BEAdministrador();
+                            administrador.Apellido = Convert.ToString(fila["Apellido"]);
+                            administrador.Nombre = Convert.ToString(fila["Nombre"]);
+                            administrador.Email = Convert.ToString(fila["Email"]);
+                            administrador.Usuario = Convert.ToString(fila["Usuario"]);
+                            administrador.UsuarioID = Convert.ToInt64(fila["UsuarioID"]);
+
+                            usuarios.Add(administrador);
+                        }
                     }
                 }
             }
