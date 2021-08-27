@@ -54,7 +54,7 @@ namespace Cova.UI
             // btnLimpiar_VerHistoriaClinica
             // 
             this.btnLimpiar_VerHistoriaClinica.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLimpiar_VerHistoriaClinica.Location = new System.Drawing.Point(439, 255);
+            this.btnLimpiar_VerHistoriaClinica.Location = new System.Drawing.Point(370, 255);
             this.btnLimpiar_VerHistoriaClinica.Name = "btnLimpiar_VerHistoriaClinica";
             this.btnLimpiar_VerHistoriaClinica.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar_VerHistoriaClinica.TabIndex = 114;
@@ -63,7 +63,7 @@ namespace Cova.UI
             // 
             // btnCancelar_VerHistoriaClinica
             // 
-            this.btnCancelar_VerHistoriaClinica.Location = new System.Drawing.Point(351, 255);
+            this.btnCancelar_VerHistoriaClinica.Location = new System.Drawing.Point(282, 255);
             this.btnCancelar_VerHistoriaClinica.Name = "btnCancelar_VerHistoriaClinica";
             this.btnCancelar_VerHistoriaClinica.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar_VerHistoriaClinica.TabIndex = 113;
@@ -73,7 +73,7 @@ namespace Cova.UI
             // 
             // btn_Mostrar_VerHistoriaClinica
             // 
-            this.btn_Mostrar_VerHistoriaClinica.Location = new System.Drawing.Point(266, 255);
+            this.btn_Mostrar_VerHistoriaClinica.Location = new System.Drawing.Point(197, 255);
             this.btn_Mostrar_VerHistoriaClinica.Name = "btn_Mostrar_VerHistoriaClinica";
             this.btn_Mostrar_VerHistoriaClinica.Size = new System.Drawing.Size(75, 23);
             this.btn_Mostrar_VerHistoriaClinica.TabIndex = 112;

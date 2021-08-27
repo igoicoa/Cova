@@ -59,18 +59,12 @@ namespace Cova.UI
             this.rb_EnfSangre_ModificarHistoriaClinica = new System.Windows.Forms.RadioButton();
             this.rb_TerapiaPsicologica_ModificarHistoriaClinica = new System.Windows.Forms.RadioButton();
             this.rb_ProblemasCardiacos_ModificarHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.gb_MotivoConsulta_ModificarHistoriaClinica = new System.Windows.Forms.GroupBox();
             this.txt_PesoActual_ModificarHistoriaClinica = new System.Windows.Forms.TextBox();
             this.lbl_PesoActual_CrearHistoriaClinica = new System.Windows.Forms.Label();
-            this.txt_Observacion_ModificarHistoriaClinica = new System.Windows.Forms.TextBox();
-            this.lbl_Observacion_ModificarHistoriaClinica = new System.Windows.Forms.Label();
-            this.btn_VerHistoriaClinicaHistorial_ModificarHistoriaClinica = new System.Windows.Forms.Button();
             this.txt_Medicacion_ModificarHistoriaClinica = new System.Windows.Forms.TextBox();
             this.lbl_TomaMedicamento_ModificarHistoriaClinica = new System.Windows.Forms.Label();
             this.dtp_fechaConsulta_ModificarHistoriaClinica = new System.Windows.Forms.DateTimePicker();
-            this.lbl_FechaConsulta_ModificarHistoriaClinica = new System.Windows.Forms.Label();
-            this.txt_MotivoConsulta_ModificarHistoriaClinica = new System.Windows.Forms.TextBox();
-            this.lbl_MotivoConsulta_ModificarHistoriaClinica = new System.Windows.Forms.Label();
+            this.lbl_FechaModificacionHistoriaClinica = new System.Windows.Forms.Label();
             this.gb_DatosPaciente_ModificarHistoriaClinica = new System.Windows.Forms.GroupBox();
             this.txt_apellido_ModificarHistoriaClinica = new System.Windows.Forms.TextBox();
             this.lbl_Apellido_ModificarHistoriaClinica = new System.Windows.Forms.Label();
@@ -85,14 +79,13 @@ namespace Cova.UI
             this.lbl_TipoDocumento_ModificarHistoriaClinica = new System.Windows.Forms.Label();
             this.lbl_ModificarHistoriaClinica = new System.Windows.Forms.Label();
             this.gb_AntecedentesPersonales_ModificarHistoriaClinica.SuspendLayout();
-            this.gb_MotivoConsulta_ModificarHistoriaClinica.SuspendLayout();
             this.gb_DatosPaciente_ModificarHistoriaClinica.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_Limpiar_ModificarHistoriaClinica
             // 
             this.btn_Limpiar_ModificarHistoriaClinica.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Limpiar_ModificarHistoriaClinica.Location = new System.Drawing.Point(407, 639);
+            this.btn_Limpiar_ModificarHistoriaClinica.Location = new System.Drawing.Point(402, 532);
             this.btn_Limpiar_ModificarHistoriaClinica.Name = "btn_Limpiar_ModificarHistoriaClinica";
             this.btn_Limpiar_ModificarHistoriaClinica.Size = new System.Drawing.Size(75, 23);
             this.btn_Limpiar_ModificarHistoriaClinica.TabIndex = 100;
@@ -102,7 +95,7 @@ namespace Cova.UI
             // 
             // btn_Cancelar_ModificarHistoriaClinica
             // 
-            this.btn_Cancelar_ModificarHistoriaClinica.Location = new System.Drawing.Point(319, 639);
+            this.btn_Cancelar_ModificarHistoriaClinica.Location = new System.Drawing.Point(314, 532);
             this.btn_Cancelar_ModificarHistoriaClinica.Name = "btn_Cancelar_ModificarHistoriaClinica";
             this.btn_Cancelar_ModificarHistoriaClinica.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancelar_ModificarHistoriaClinica.TabIndex = 99;
@@ -112,7 +105,7 @@ namespace Cova.UI
             // 
             // btn_Modificar_ModificarHistoriaClinica
             // 
-            this.btn_Modificar_ModificarHistoriaClinica.Location = new System.Drawing.Point(234, 639);
+            this.btn_Modificar_ModificarHistoriaClinica.Location = new System.Drawing.Point(229, 532);
             this.btn_Modificar_ModificarHistoriaClinica.Name = "btn_Modificar_ModificarHistoriaClinica";
             this.btn_Modificar_ModificarHistoriaClinica.Size = new System.Drawing.Size(75, 23);
             this.btn_Modificar_ModificarHistoriaClinica.TabIndex = 98;
@@ -123,8 +116,10 @@ namespace Cova.UI
             // 
             this.gb_AntecedentesPersonales_ModificarHistoriaClinica.Controls.Add(this.rb_Cirugias_ModificarHistoriaClinica);
             this.gb_AntecedentesPersonales_ModificarHistoriaClinica.Controls.Add(this.rb_InfeccionesdeGarganta_ModificarHistoriaClinica);
+            this.gb_AntecedentesPersonales_ModificarHistoriaClinica.Controls.Add(this.txt_Medicacion_ModificarHistoriaClinica);
             this.gb_AntecedentesPersonales_ModificarHistoriaClinica.Controls.Add(this.rb_Convulsiones_ModificarHistoriaClinica);
             this.gb_AntecedentesPersonales_ModificarHistoriaClinica.Controls.Add(this.rb_EnferPsicologicas_ModificarHistoriaClinica);
+            this.gb_AntecedentesPersonales_ModificarHistoriaClinica.Controls.Add(this.lbl_TomaMedicamento_ModificarHistoriaClinica);
             this.gb_AntecedentesPersonales_ModificarHistoriaClinica.Controls.Add(this.rb_EnfermedadMotriz_ModificarHistoriaClinica);
             this.gb_AntecedentesPersonales_ModificarHistoriaClinica.Controls.Add(this.rb_AftasRepetidas_ModificarHistoriaClinica);
             this.gb_AntecedentesPersonales_ModificarHistoriaClinica.Controls.Add(this.rb_Varicela_ModificarHistoriaClinica);
@@ -146,9 +141,9 @@ namespace Cova.UI
             this.gb_AntecedentesPersonales_ModificarHistoriaClinica.Controls.Add(this.rb_EnfSangre_ModificarHistoriaClinica);
             this.gb_AntecedentesPersonales_ModificarHistoriaClinica.Controls.Add(this.rb_TerapiaPsicologica_ModificarHistoriaClinica);
             this.gb_AntecedentesPersonales_ModificarHistoriaClinica.Controls.Add(this.rb_ProblemasCardiacos_ModificarHistoriaClinica);
-            this.gb_AntecedentesPersonales_ModificarHistoriaClinica.Location = new System.Drawing.Point(5, 434);
+            this.gb_AntecedentesPersonales_ModificarHistoriaClinica.Location = new System.Drawing.Point(6, 243);
             this.gb_AntecedentesPersonales_ModificarHistoriaClinica.Name = "gb_AntecedentesPersonales_ModificarHistoriaClinica";
-            this.gb_AntecedentesPersonales_ModificarHistoriaClinica.Size = new System.Drawing.Size(775, 176);
+            this.gb_AntecedentesPersonales_ModificarHistoriaClinica.Size = new System.Drawing.Size(775, 216);
             this.gb_AntecedentesPersonales_ModificarHistoriaClinica.TabIndex = 97;
             this.gb_AntecedentesPersonales_ModificarHistoriaClinica.TabStop = false;
             this.gb_AntecedentesPersonales_ModificarHistoriaClinica.Text = "Antecedentes Personales";
@@ -428,30 +423,10 @@ namespace Cova.UI
             this.rb_ProblemasCardiacos_ModificarHistoriaClinica.Text = "Problemas Cardiacos";
             this.rb_ProblemasCardiacos_ModificarHistoriaClinica.UseVisualStyleBackColor = true;
             // 
-            // gb_MotivoConsulta_ModificarHistoriaClinica
-            // 
-            this.gb_MotivoConsulta_ModificarHistoriaClinica.Controls.Add(this.txt_PesoActual_ModificarHistoriaClinica);
-            this.gb_MotivoConsulta_ModificarHistoriaClinica.Controls.Add(this.lbl_PesoActual_CrearHistoriaClinica);
-            this.gb_MotivoConsulta_ModificarHistoriaClinica.Controls.Add(this.txt_Observacion_ModificarHistoriaClinica);
-            this.gb_MotivoConsulta_ModificarHistoriaClinica.Controls.Add(this.lbl_Observacion_ModificarHistoriaClinica);
-            this.gb_MotivoConsulta_ModificarHistoriaClinica.Controls.Add(this.btn_VerHistoriaClinicaHistorial_ModificarHistoriaClinica);
-            this.gb_MotivoConsulta_ModificarHistoriaClinica.Controls.Add(this.txt_Medicacion_ModificarHistoriaClinica);
-            this.gb_MotivoConsulta_ModificarHistoriaClinica.Controls.Add(this.lbl_TomaMedicamento_ModificarHistoriaClinica);
-            this.gb_MotivoConsulta_ModificarHistoriaClinica.Controls.Add(this.dtp_fechaConsulta_ModificarHistoriaClinica);
-            this.gb_MotivoConsulta_ModificarHistoriaClinica.Controls.Add(this.lbl_FechaConsulta_ModificarHistoriaClinica);
-            this.gb_MotivoConsulta_ModificarHistoriaClinica.Controls.Add(this.txt_MotivoConsulta_ModificarHistoriaClinica);
-            this.gb_MotivoConsulta_ModificarHistoriaClinica.Controls.Add(this.lbl_MotivoConsulta_ModificarHistoriaClinica);
-            this.gb_MotivoConsulta_ModificarHistoriaClinica.Location = new System.Drawing.Point(5, 243);
-            this.gb_MotivoConsulta_ModificarHistoriaClinica.Name = "gb_MotivoConsulta_ModificarHistoriaClinica";
-            this.gb_MotivoConsulta_ModificarHistoriaClinica.Size = new System.Drawing.Size(776, 171);
-            this.gb_MotivoConsulta_ModificarHistoriaClinica.TabIndex = 96;
-            this.gb_MotivoConsulta_ModificarHistoriaClinica.TabStop = false;
-            this.gb_MotivoConsulta_ModificarHistoriaClinica.Text = "Consulta";
-            // 
             // txt_PesoActual_ModificarHistoriaClinica
             // 
             this.txt_PesoActual_ModificarHistoriaClinica.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_PesoActual_ModificarHistoriaClinica.Location = new System.Drawing.Point(96, 101);
+            this.txt_PesoActual_ModificarHistoriaClinica.Location = new System.Drawing.Point(441, 44);
             this.txt_PesoActual_ModificarHistoriaClinica.Name = "txt_PesoActual_ModificarHistoriaClinica";
             this.txt_PesoActual_ModificarHistoriaClinica.Size = new System.Drawing.Size(50, 20);
             this.txt_PesoActual_ModificarHistoriaClinica.TabIndex = 144;
@@ -460,44 +435,16 @@ namespace Cova.UI
             // 
             this.lbl_PesoActual_CrearHistoriaClinica.AutoEllipsis = true;
             this.lbl_PesoActual_CrearHistoriaClinica.AutoSize = true;
-            this.lbl_PesoActual_CrearHistoriaClinica.Location = new System.Drawing.Point(8, 101);
+            this.lbl_PesoActual_CrearHistoriaClinica.Location = new System.Drawing.Point(438, 27);
             this.lbl_PesoActual_CrearHistoriaClinica.Name = "lbl_PesoActual_CrearHistoriaClinica";
             this.lbl_PesoActual_CrearHistoriaClinica.Size = new System.Drawing.Size(64, 13);
             this.lbl_PesoActual_CrearHistoriaClinica.TabIndex = 143;
             this.lbl_PesoActual_CrearHistoriaClinica.Text = "Peso Actual";
             // 
-            // txt_Observacion_ModificarHistoriaClinica
-            // 
-            this.txt_Observacion_ModificarHistoriaClinica.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_Observacion_ModificarHistoriaClinica.Location = new System.Drawing.Point(96, 68);
-            this.txt_Observacion_ModificarHistoriaClinica.Name = "txt_Observacion_ModificarHistoriaClinica";
-            this.txt_Observacion_ModificarHistoriaClinica.Size = new System.Drawing.Size(674, 20);
-            this.txt_Observacion_ModificarHistoriaClinica.TabIndex = 142;
-            // 
-            // lbl_Observacion_ModificarHistoriaClinica
-            // 
-            this.lbl_Observacion_ModificarHistoriaClinica.AutoSize = true;
-            this.lbl_Observacion_ModificarHistoriaClinica.Location = new System.Drawing.Point(7, 71);
-            this.lbl_Observacion_ModificarHistoriaClinica.Name = "lbl_Observacion_ModificarHistoriaClinica";
-            this.lbl_Observacion_ModificarHistoriaClinica.Size = new System.Drawing.Size(67, 13);
-            this.lbl_Observacion_ModificarHistoriaClinica.TabIndex = 141;
-            this.lbl_Observacion_ModificarHistoriaClinica.Text = "Observación";
-            // 
-            // btn_VerHistoriaClinicaHistorial_ModificarHistoriaClinica
-            // 
-            this.btn_VerHistoriaClinicaHistorial_ModificarHistoriaClinica.BackColor = System.Drawing.Color.MistyRose;
-            this.btn_VerHistoriaClinicaHistorial_ModificarHistoriaClinica.Location = new System.Drawing.Point(287, 133);
-            this.btn_VerHistoriaClinicaHistorial_ModificarHistoriaClinica.Name = "btn_VerHistoriaClinicaHistorial_ModificarHistoriaClinica";
-            this.btn_VerHistoriaClinicaHistorial_ModificarHistoriaClinica.Size = new System.Drawing.Size(108, 23);
-            this.btn_VerHistoriaClinicaHistorial_ModificarHistoriaClinica.TabIndex = 140;
-            this.btn_VerHistoriaClinicaHistorial_ModificarHistoriaClinica.Text = "Ver Historial";
-            this.btn_VerHistoriaClinicaHistorial_ModificarHistoriaClinica.UseVisualStyleBackColor = false;
-            this.btn_VerHistoriaClinicaHistorial_ModificarHistoriaClinica.Click += new System.EventHandler(this.btn_VerHistoriaClinicaHistorial_ModificarHistoriaClinica_Click);
-            // 
             // txt_Medicacion_ModificarHistoriaClinica
             // 
             this.txt_Medicacion_ModificarHistoriaClinica.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_Medicacion_ModificarHistoriaClinica.Location = new System.Drawing.Point(389, 43);
+            this.txt_Medicacion_ModificarHistoriaClinica.Location = new System.Drawing.Point(334, 181);
             this.txt_Medicacion_ModificarHistoriaClinica.Name = "txt_Medicacion_ModificarHistoriaClinica";
             this.txt_Medicacion_ModificarHistoriaClinica.Size = new System.Drawing.Size(381, 20);
             this.txt_Medicacion_ModificarHistoriaClinica.TabIndex = 87;
@@ -505,7 +452,7 @@ namespace Cova.UI
             // lbl_TomaMedicamento_ModificarHistoriaClinica
             // 
             this.lbl_TomaMedicamento_ModificarHistoriaClinica.AutoSize = true;
-            this.lbl_TomaMedicamento_ModificarHistoriaClinica.Location = new System.Drawing.Point(261, 45);
+            this.lbl_TomaMedicamento_ModificarHistoriaClinica.Location = new System.Drawing.Point(206, 183);
             this.lbl_TomaMedicamento_ModificarHistoriaClinica.Name = "lbl_TomaMedicamento_ModificarHistoriaClinica";
             this.lbl_TomaMedicamento_ModificarHistoriaClinica.Size = new System.Drawing.Size(122, 13);
             this.lbl_TomaMedicamento_ModificarHistoriaClinica.TabIndex = 86;
@@ -513,41 +460,26 @@ namespace Cova.UI
             // 
             // dtp_fechaConsulta_ModificarHistoriaClinica
             // 
-            this.dtp_fechaConsulta_ModificarHistoriaClinica.Location = new System.Drawing.Point(96, 39);
+            this.dtp_fechaConsulta_ModificarHistoriaClinica.Location = new System.Drawing.Point(111, 488);
             this.dtp_fechaConsulta_ModificarHistoriaClinica.Name = "dtp_fechaConsulta_ModificarHistoriaClinica";
             this.dtp_fechaConsulta_ModificarHistoriaClinica.Size = new System.Drawing.Size(143, 20);
             this.dtp_fechaConsulta_ModificarHistoriaClinica.TabIndex = 85;
             // 
-            // lbl_FechaConsulta_ModificarHistoriaClinica
+            // lbl_FechaModificacionHistoriaClinica
             // 
-            this.lbl_FechaConsulta_ModificarHistoriaClinica.AutoEllipsis = true;
-            this.lbl_FechaConsulta_ModificarHistoriaClinica.AutoSize = true;
-            this.lbl_FechaConsulta_ModificarHistoriaClinica.Location = new System.Drawing.Point(8, 46);
-            this.lbl_FechaConsulta_ModificarHistoriaClinica.Name = "lbl_FechaConsulta_ModificarHistoriaClinica";
-            this.lbl_FechaConsulta_ModificarHistoriaClinica.Size = new System.Drawing.Size(81, 13);
-            this.lbl_FechaConsulta_ModificarHistoriaClinica.TabIndex = 84;
-            this.lbl_FechaConsulta_ModificarHistoriaClinica.Text = "Fecha Consulta";
-            // 
-            // txt_MotivoConsulta_ModificarHistoriaClinica
-            // 
-            this.txt_MotivoConsulta_ModificarHistoriaClinica.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_MotivoConsulta_ModificarHistoriaClinica.Location = new System.Drawing.Point(96, 13);
-            this.txt_MotivoConsulta_ModificarHistoriaClinica.Name = "txt_MotivoConsulta_ModificarHistoriaClinica";
-            this.txt_MotivoConsulta_ModificarHistoriaClinica.Size = new System.Drawing.Size(674, 20);
-            this.txt_MotivoConsulta_ModificarHistoriaClinica.TabIndex = 83;
-            // 
-            // lbl_MotivoConsulta_ModificarHistoriaClinica
-            // 
-            this.lbl_MotivoConsulta_ModificarHistoriaClinica.AutoSize = true;
-            this.lbl_MotivoConsulta_ModificarHistoriaClinica.Location = new System.Drawing.Point(7, 16);
-            this.lbl_MotivoConsulta_ModificarHistoriaClinica.Name = "lbl_MotivoConsulta_ModificarHistoriaClinica";
-            this.lbl_MotivoConsulta_ModificarHistoriaClinica.Size = new System.Drawing.Size(83, 13);
-            this.lbl_MotivoConsulta_ModificarHistoriaClinica.TabIndex = 82;
-            this.lbl_MotivoConsulta_ModificarHistoriaClinica.Text = "Motivo Consulta";
+            this.lbl_FechaModificacionHistoriaClinica.AutoEllipsis = true;
+            this.lbl_FechaModificacionHistoriaClinica.AutoSize = true;
+            this.lbl_FechaModificacionHistoriaClinica.Location = new System.Drawing.Point(5, 488);
+            this.lbl_FechaModificacionHistoriaClinica.Name = "lbl_FechaModificacionHistoriaClinica";
+            this.lbl_FechaModificacionHistoriaClinica.Size = new System.Drawing.Size(100, 13);
+            this.lbl_FechaModificacionHistoriaClinica.TabIndex = 84;
+            this.lbl_FechaModificacionHistoriaClinica.Text = "Fecha Modificacion";
             // 
             // gb_DatosPaciente_ModificarHistoriaClinica
             // 
+            this.gb_DatosPaciente_ModificarHistoriaClinica.Controls.Add(this.txt_PesoActual_ModificarHistoriaClinica);
             this.gb_DatosPaciente_ModificarHistoriaClinica.Controls.Add(this.txt_apellido_ModificarHistoriaClinica);
+            this.gb_DatosPaciente_ModificarHistoriaClinica.Controls.Add(this.lbl_PesoActual_CrearHistoriaClinica);
             this.gb_DatosPaciente_ModificarHistoriaClinica.Controls.Add(this.lbl_Apellido_ModificarHistoriaClinica);
             this.gb_DatosPaciente_ModificarHistoriaClinica.Controls.Add(this.txt_nombre_ModificarHistoriaClinica);
             this.gb_DatosPaciente_ModificarHistoriaClinica.Controls.Add(this.lbl_Nombre_ModificarHistoriaClinica);
@@ -619,7 +551,7 @@ namespace Cova.UI
             // btn_BuscarPacientes_ModificarUsuarios
             // 
             this.btn_BuscarPacientes_ModificarUsuarios.BackColor = System.Drawing.Color.MistyRose;
-            this.btn_BuscarPacientes_ModificarUsuarios.Location = new System.Drawing.Point(466, 79);
+            this.btn_BuscarPacientes_ModificarUsuarios.Location = new System.Drawing.Point(466, 104);
             this.btn_BuscarPacientes_ModificarUsuarios.Name = "btn_BuscarPacientes_ModificarUsuarios";
             this.btn_BuscarPacientes_ModificarUsuarios.Size = new System.Drawing.Size(103, 23);
             this.btn_BuscarPacientes_ModificarUsuarios.TabIndex = 139;
@@ -680,21 +612,20 @@ namespace Cova.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 669);
+            this.ClientSize = new System.Drawing.Size(793, 581);
             this.Controls.Add(this.gb_DatosPaciente_ModificarHistoriaClinica);
             this.Controls.Add(this.lbl_ModificarHistoriaClinica);
             this.Controls.Add(this.btn_Limpiar_ModificarHistoriaClinica);
             this.Controls.Add(this.btn_Cancelar_ModificarHistoriaClinica);
+            this.Controls.Add(this.dtp_fechaConsulta_ModificarHistoriaClinica);
+            this.Controls.Add(this.lbl_FechaModificacionHistoriaClinica);
             this.Controls.Add(this.btn_Modificar_ModificarHistoriaClinica);
             this.Controls.Add(this.gb_AntecedentesPersonales_ModificarHistoriaClinica);
-            this.Controls.Add(this.gb_MotivoConsulta_ModificarHistoriaClinica);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModificarHistoriaClinicaForm";
             this.Text = "ModificarHistoriaClinica";
             this.gb_AntecedentesPersonales_ModificarHistoriaClinica.ResumeLayout(false);
             this.gb_AntecedentesPersonales_ModificarHistoriaClinica.PerformLayout();
-            this.gb_MotivoConsulta_ModificarHistoriaClinica.ResumeLayout(false);
-            this.gb_MotivoConsulta_ModificarHistoriaClinica.PerformLayout();
             this.gb_DatosPaciente_ModificarHistoriaClinica.ResumeLayout(false);
             this.gb_DatosPaciente_ModificarHistoriaClinica.PerformLayout();
             this.ResumeLayout(false);
@@ -733,18 +664,12 @@ namespace Cova.UI
         private System.Windows.Forms.RadioButton rb_EnfSangre_ModificarHistoriaClinica;
         private System.Windows.Forms.RadioButton rb_TerapiaPsicologica_ModificarHistoriaClinica;
         private System.Windows.Forms.RadioButton rb_ProblemasCardiacos_ModificarHistoriaClinica;
-        private System.Windows.Forms.GroupBox gb_MotivoConsulta_ModificarHistoriaClinica;
         private System.Windows.Forms.TextBox txt_PesoActual_ModificarHistoriaClinica;
         private System.Windows.Forms.Label lbl_PesoActual_CrearHistoriaClinica;
-        private System.Windows.Forms.TextBox txt_Observacion_ModificarHistoriaClinica;
-        private System.Windows.Forms.Label lbl_Observacion_ModificarHistoriaClinica;
-        private System.Windows.Forms.Button btn_VerHistoriaClinicaHistorial_ModificarHistoriaClinica;
         private System.Windows.Forms.TextBox txt_Medicacion_ModificarHistoriaClinica;
         private System.Windows.Forms.Label lbl_TomaMedicamento_ModificarHistoriaClinica;
         private System.Windows.Forms.DateTimePicker dtp_fechaConsulta_ModificarHistoriaClinica;
-        private System.Windows.Forms.Label lbl_FechaConsulta_ModificarHistoriaClinica;
-        private System.Windows.Forms.TextBox txt_MotivoConsulta_ModificarHistoriaClinica;
-        private System.Windows.Forms.Label lbl_MotivoConsulta_ModificarHistoriaClinica;
+        private System.Windows.Forms.Label lbl_FechaModificacionHistoriaClinica;
         private System.Windows.Forms.GroupBox gb_DatosPaciente_ModificarHistoriaClinica;
         private System.Windows.Forms.Button btn_BuscarPacientes_ModificarUsuarios;
         private System.Windows.Forms.TextBox txt_NumeroDocumento_ModificarHistoriaClinica;

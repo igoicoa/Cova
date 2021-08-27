@@ -35,9 +35,7 @@ namespace Cova.UI
             txt_apellido_CrearHistoriaClinica.Clear();
             txt_nombre_CrearHistoriaClinica.Clear();
             txt_Edad_CrearHistoriaClinica.Clear();
-            txt_MotivoConsulta.Clear();
             txt_Medicacion_CrearHistoriaClinica.Clear();
-            txt_Observacion_CrearHistoriaClinica.Clear();
             txt_PesoActual_CrearHistoriaClinica.Clear();
         }
 

@@ -40,8 +40,6 @@ namespace Cova.UI
             txt_PesoActual_ModificarHistoriaClinica.Clear();
             txt_Edad_ModificarHistoriaClinica.Clear();
             txt_Medicacion_ModificarHistoriaClinica.Clear();
-            txt_MotivoConsulta_ModificarHistoriaClinica.Clear();
-            txt_Observacion_ModificarHistoriaClinica.Clear();
             txt_apellido_ModificarHistoriaClinica.Clear();
             txt_nombre_ModificarHistoriaClinica.Clear();
             txt_NumeroDocumento_ModificarHistoriaClinica.Clear();

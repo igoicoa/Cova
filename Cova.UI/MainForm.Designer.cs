@@ -431,6 +431,7 @@
             this.bloquerarPaswordToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.bloquerarPaswordToolStripMenuItem.Tag = "BloquerarContraseña";
             this.bloquerarPaswordToolStripMenuItem.Text = "Bloquerar Contraseña";
+            this.bloquerarPaswordToolStripMenuItem.Visible = false;
             this.bloquerarPaswordToolStripMenuItem.Click += new System.EventHandler(this.bloquerarPaswordToolStripMenuItem_Click);
             // 
             // cambiarContraseñaToolStripMenuItem
@@ -439,6 +440,7 @@
             this.cambiarContraseñaToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.cambiarContraseñaToolStripMenuItem.Tag = "CambiarContraseña";
             this.cambiarContraseñaToolStripMenuItem.Text = "Cambiar Contraseña";
+            this.cambiarContraseñaToolStripMenuItem.Visible = false;
             // 
             // VerDatosToolStripMenuItem
             // 
@@ -459,7 +461,7 @@
             // asignarPermisosToolStripMenuItem
             // 
             this.asignarPermisosToolStripMenuItem.Name = "asignarPermisosToolStripMenuItem";
-            this.asignarPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.asignarPermisosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.asignarPermisosToolStripMenuItem.Tag = "AsignarPermisos";
             this.asignarPermisosToolStripMenuItem.Text = "Asignar Permisos";
             this.asignarPermisosToolStripMenuItem.Visible = false;
@@ -503,14 +505,14 @@
             // contactoToolStripMenuItem
             // 
             this.contactoToolStripMenuItem.Name = "contactoToolStripMenuItem";
-            this.contactoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.contactoToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.contactoToolStripMenuItem.Tag = "Contacto";
             this.contactoToolStripMenuItem.Text = "Contacto";
             // 
             // novedadesToolStripMenuItem
             // 
             this.novedadesToolStripMenuItem.Name = "novedadesToolStripMenuItem";
-            this.novedadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.novedadesToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.novedadesToolStripMenuItem.Tag = "Novedades";
             this.novedadesToolStripMenuItem.Text = "Novedades";
             // 
