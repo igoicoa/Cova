@@ -132,6 +132,7 @@
     <Build Include="Tables\HistoriaClinica.sql" />
     <Build Include="StoredProcedures\s_AgregarHistoriaClinicaAPaciente.sql" />
     <Build Include="StoredProcedures\s_ConsultarHistoriaClinica.sql" />
+    <Build Include="StoredProcedures\s_CargarAntecedentesPersonales.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />

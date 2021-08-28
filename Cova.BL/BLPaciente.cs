@@ -6,6 +6,7 @@ using Cova.Servicios.Bitacora;
 using Cova.MPP;
 using Cova.Common.Excepciones;
 using Cova.Servicios.Sesion;
+using Cova.BE.Enum;
 
 namespace Cova.BL
 {
@@ -176,6 +177,47 @@ namespace Cova.BL
             {
                 Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo vacunas aplicadas esquema incompleto para el Paciente: ", "Obtener Vacunas Aplicadas Esquema Incompleto"));
             }
+        }
+
+        public bool CargarAntecedentesPersonalesPaciente(BEPaciente paciente, IList<AntecedentesPersonales> antecedentes)
+        {
+            bool antecedentesCargados = true;
+            MPPPaciente mPPPaciente = new MPPPaciente();
+            try
+            {
+                foreach (AntecedentesPersonales antecedente in antecedentes)
+                {
+                    antecedentesCargados = mPPPaciente.CargarAntecedentesPersonalesPaciente(paciente, antecedente);
+                    if (!antecedentesCargados)
+                    {
+                        throw new ErrorAlCrearAntecedentesPersonales();
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al cargar antecedentes personales: " + ex.Message, "Crear Antecedentes personales"));
+                throw new ErrorAlCrearAntecedentesPersonales();
+            }
+            Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Antecedentes personales cargados con exito para el paciente: " + paciente.PacienteId, "Crear Antecedentes personales"));
+            return antecedentesCargados;
+        }
+
+        public bool CargarHistoriaClinicaPaciente(BEPaciente paciente, BEProfesional profesional, BEHistoriaClinica historiaClinica)
+        {
+            bool historiaClinicaCargada = false;
+            MPPPaciente mPPPaciente = new MPPPaciente();
+            try
+            {
+                historiaClinicaCargada = mPPPaciente.CargarHistoriaClinicaPaciente(paciente, profesional, historiaClinica);
+            }
+            catch (Exception ex)
+            {
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al cargar antecedentes personales: " + ex.Message, "Crear Antecedentes personales"));
+                throw new ErrorAlCrearAntecedentesPersonales();
+            }
+            Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Historia clinica cargada con exito para el paciente: " + paciente.PacienteId, "Cargar historia clinica paciente"));
+            return historiaClinicaCargada;
         }
 
         public IList<BEVacuna> ObtenerVacunasRecetadas()

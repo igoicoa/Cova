@@ -34,7 +34,7 @@ namespace Cova.BL
             }
             else
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, usuarioALoguearse, TipoCriticidad.Warning, "Password incorrecto", "Login"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, null, TipoCriticidad.Warning, "Password o usuario incorrecto para el usuario: " + usuarioALoguearse.Usuario, "Login"));
                 throw new UsuarioPasswordIncorrecto();
             }
 

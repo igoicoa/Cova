@@ -60,10 +60,13 @@ namespace Cova.MPP
                 ConexionDB conexionBDD = new ConexionDB();
                 string strSQL = @"s_BitacoraRegistrar";
                 datosBitacora.Add("@Fecha", bitacora.Fecha);
-                datosBitacora.Add("@UsuarioId", bitacora.Usuario.UsuarioID);
                 datosBitacora.Add("@Criticidad", bitacora.Criticidad);
                 datosBitacora.Add("@Mensaje", bitacora.Mensaje);
                 datosBitacora.Add("@Funcionalidad", bitacora.Funcionalidad);
+                if(bitacora.Usuario != null)
+                {
+                    datosBitacora.Add("@UsuarioId", bitacora.Usuario.UsuarioID);
+                }
                 return conexionBDD.Escribir(strSQL, datosBitacora);
             }
             catch (Exception ex)

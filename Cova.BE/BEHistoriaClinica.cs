@@ -8,6 +8,6 @@ namespace Cova.BE
         public DateTime Fecha { get; set; }
         public BEMedico Medico { get; set; }
         public string Observacion { get; set; }
-        public string Peso { get; set; }
+        public double Peso { get; set; }
     }
 }

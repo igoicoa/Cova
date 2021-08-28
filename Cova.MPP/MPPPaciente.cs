@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using Cova.BE;
+using Cova.BE.Enum;
 using Cova.DAL;
 
 namespace Cova.MPP
@@ -320,6 +321,45 @@ namespace Cova.MPP
                 throw ex;
             }
             return vacunasDosis;
+        }
+
+        public bool CargarAntecedentesPersonalesPaciente(BEPaciente paciente, AntecedentesPersonales antecedente)
+        {
+            Hashtable datosUsuario = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_CargarAntecedentesPersonales";
+                datosUsuario.Add("@AntecedentesPersonalesId", antecedente);
+                datosUsuario.Add("@PacienteId", paciente.PacienteId);
+
+                return conexionBDD.Escribir(strSQL, datosUsuario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool CargarHistoriaClinicaPaciente(BEPaciente paciente, BEProfesional profesional, BEHistoriaClinica historiaClinica)
+        {
+            Hashtable datosUsuario = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_CargarAntecedentesPersonales";
+                datosUsuario.Add("@PacienteId", paciente.PacienteId);
+                datosUsuario.Add("@ProfesionalId", profesional.ProfesionalId);
+                datosUsuario.Add("@PFecha", historiaClinica.Fecha);
+                datosUsuario.Add("@Observacion", historiaClinica.Observacion);
+                datosUsuario.Add("@Peso", historiaClinica.Peso);
+
+                return conexionBDD.Escribir(strSQL, datosUsuario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

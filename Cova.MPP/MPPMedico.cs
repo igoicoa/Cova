@@ -95,7 +95,7 @@ namespace Cova.MPP
             }
             catch (Exception ex)
             {
-                throw new Exception("Hubo un error al crear el Profesional");
+                throw ex;
             }
         }
 

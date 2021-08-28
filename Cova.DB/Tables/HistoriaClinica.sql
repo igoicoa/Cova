@@ -11,5 +11,6 @@
 		CONSTRAINT [FK_HistoriaClinica_PacienteId]
 			FOREIGN KEY REFERENCES [dbo].[Paciente](PacienteId)
         INDEX [idx_PacienteId], 
-    [Observacion]				VARCHAR(MAX)	NOT NULL
+    [Observacion]				VARCHAR(MAX)	NOT NULL, 
+    [Peso]                      DECIMAL(18, 2)  NULL
 )

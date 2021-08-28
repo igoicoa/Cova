@@ -2,11 +2,11 @@
 	@PacienteId			BIGINT,
 	@ProfesionalId		BIGINT,
 	@PFecha				DATETIME,
-	@Observacion		VARCHAR(MAX)
-
+	@Observacion		VARCHAR(MAX),
+	@Peso				DECIMAL(18,2)
 AS
 BEGIN
-	INSERT INTO [dbo].[HistoriaClinica] (PacienteId, ProfesionalId, Fecha, Observacion)
+	INSERT INTO [dbo].[HistoriaClinica] (PacienteId, ProfesionalId, Fecha, Observacion, Peso)
 	VALUES
-	(@PacienteId, @ProfesionalId, @PFecha, @Observacion)
+	(@PacienteId, @ProfesionalId, @PFecha, @Observacion, @Peso)
 END

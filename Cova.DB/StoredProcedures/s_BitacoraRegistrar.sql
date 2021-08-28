@@ -1,12 +1,12 @@
 ﻿CREATE PROCEDURE [dbo].[s_BitacoraRegistrar]
 	@Fecha			DATETime,
-	@UsuarioId		BIGINT,
 	@Criticidad		VARCHAR(120),
 	@Mensaje		VARCHAR(MAX),
-	@Funcionalidad	VARCHAR(200)
+	@Funcionalidad	VARCHAR(200),
+	@UsuarioId		BIGINT = NULL
 AS
 BEGIN
-	INSERT INTO [dbo].[Bitacora] (Fecha, UsuarioId, Criticidad, Mensaje, Funcionalidad)
+	INSERT INTO [dbo].[Bitacora] (Fecha, Criticidad, Mensaje, Funcionalidad, UsuarioId)
 	VALUES
-	(@Fecha, @UsuarioId, @Criticidad, @Mensaje, @Funcionalidad)
+	(@Fecha, @Criticidad, @Mensaje, @Funcionalidad, @UsuarioId)
 END
