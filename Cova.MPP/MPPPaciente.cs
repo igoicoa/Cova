@@ -341,15 +341,15 @@ namespace Cova.MPP
             }
         }
 
-        public bool CargarHistoriaClinicaPaciente(BEPaciente paciente, BEProfesional profesional, BEHistoriaClinica historiaClinica)
+        public bool CargarHistoriaClinicaPaciente(BEPaciente paciente, BEHistoriaClinica historiaClinica)
         {
             Hashtable datosUsuario = new Hashtable();
             try
             {
                 ConexionDB conexionBDD = new ConexionDB();
-                string strSQL = @"s_CargarAntecedentesPersonales";
+                string strSQL = @"s_AgregarHistoriaClinicaAPaciente";
                 datosUsuario.Add("@PacienteId", paciente.PacienteId);
-                datosUsuario.Add("@ProfesionalId", profesional.ProfesionalId);
+                datosUsuario.Add("@ProfesionalId", historiaClinica.Medico.ProfesionalId);
                 datosUsuario.Add("@PFecha", historiaClinica.Fecha);
                 datosUsuario.Add("@Observacion", historiaClinica.Observacion);
                 datosUsuario.Add("@Peso", historiaClinica.Peso);

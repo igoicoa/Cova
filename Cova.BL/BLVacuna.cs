@@ -37,7 +37,7 @@ namespace Cova.BL
             try
             {
                 Obtenervacunas = mPPVacuna.ObtenerVacunasDeCentroMedicoAAplicar(vacunaABuscar);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se obtuvo las vacunas del centro medico a aplicar: " + vacunaABuscar.Vacuna.VacunaID+ "Obtener Vacunas del centro medico a aplicar"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se obtuvo las vacunas del centro medico a aplicar: " + vacunaABuscar.Vacuna.VacunaID, "Obtener Vacunas del centro medico a aplicar"));
 
             }
             catch (Exception ex)

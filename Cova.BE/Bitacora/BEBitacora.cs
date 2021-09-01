@@ -4,10 +4,6 @@ namespace Cova.BE.Bitacora
 {
     public class BEBitacora
     {
-        private DateTime now;
-        private TipoCriticidad info;
-        private string v;
-
         public long BitacoraId { get; set; }
         public DateTime Fecha { get; set; }
         public BEUsuario Usuario { get; set; }
@@ -27,14 +23,6 @@ namespace Cova.BE.Bitacora
         public BEBitacora()
         {
 
-        }
-
-        public BEBitacora(DateTime now, BEUsuario usuario, TipoCriticidad info, string v)
-        {
-            this.now = now;
-            Usuario = usuario;
-            this.info = info;
-            this.v = v;
         }
     }
 }

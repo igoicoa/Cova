@@ -203,13 +203,13 @@ namespace Cova.BL
             return antecedentesCargados;
         }
 
-        public bool CargarHistoriaClinicaPaciente(BEPaciente paciente, BEProfesional profesional, BEHistoriaClinica historiaClinica)
+        public bool CargarHistoriaClinicaPaciente(BEPaciente paciente, BEHistoriaClinica historiaClinica)
         {
             bool historiaClinicaCargada = false;
             MPPPaciente mPPPaciente = new MPPPaciente();
             try
             {
-                historiaClinicaCargada = mPPPaciente.CargarHistoriaClinicaPaciente(paciente, profesional, historiaClinica);
+                historiaClinicaCargada = mPPPaciente.CargarHistoriaClinicaPaciente(paciente, historiaClinica);
             }
             catch (Exception ex)
             {
