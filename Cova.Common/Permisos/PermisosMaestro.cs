@@ -106,34 +106,28 @@ namespace Cova.Common.Permisos
             //Realizar Restore
             Permiso realizarRestore = new Permiso(TipoPermiso.RealizarRestore);
 
-            //Bloquear Contraseña
-            Permiso bloquearContraseña = new Permiso(TipoPermiso.BloquearPassword);
-
-            //Cambiar Contraseña
-            Permiso cambiarContraseña = new Permiso(TipoPermiso.CambiarPassword);
-
-            //Ver Datos
-            Permiso VerDatos = new Permiso(TipoPermiso.VerDatos);
-
             //Permisos
             Permiso Permisos = new Permiso(TipoPermiso.Permisos);
+            Permiso AsignarPermisos = new Permiso(TipoPermiso.AsignarPermisos);
+
+            FamiliaPermisos familiaPermisos = new FamiliaPermisos(TipoPermiso.AdministrarIdioma);
+            familiaPermisos.AgregarPermiso(Permisos);
+            familiaPermisos.AgregarPermiso(AsignarPermisos);
 
             //Administrar Idioma
             Permiso cambiarIdioma = new Permiso(TipoPermiso.CambiarIdioma);
             Permiso crearIdioma = new Permiso(TipoPermiso.CambiarIdioma);
 
             FamiliaPermisos AdministrarIdioma = new FamiliaPermisos(TipoPermiso.AdministrarIdioma);
-            administrarReceta_Certificado.AgregarPermiso(cambiarIdioma);
-            administrarReceta_Certificado.AgregarPermiso(crearIdioma);
+            AdministrarIdioma.AgregarPermiso(cambiarIdioma);
+            AdministrarIdioma.AgregarPermiso(crearIdioma);
 
             FamiliaPermisos seguridad = new FamiliaPermisos(TipoPermiso.Seguridad);
             seguridad.AgregarPermiso(realizarBackup);
             seguridad.AgregarPermiso(bitacora);
             seguridad.AgregarPermiso(realizarRestore);
-            seguridad.AgregarPermiso(bloquearContraseña);
-            seguridad.AgregarPermiso(cambiarContraseña);
-            seguridad.AgregarPermiso(VerDatos);
             seguridad.AgregarPermiso(Permisos);
+            seguridad.AgregarPermiso(AsignarPermisos);
             seguridad.AgregarPermiso(AdministrarIdioma);
 
             //Informacion

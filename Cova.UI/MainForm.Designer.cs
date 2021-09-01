@@ -67,9 +67,6 @@
             this.realizarBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.realizarRestoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bloquerarPaswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cambiarContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.VerDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.permisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarPermisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -393,9 +390,6 @@
             this.realizarBackupToolStripMenuItem,
             this.bitacoraToolStripMenuItem,
             this.realizarRestoreToolStripMenuItem,
-            this.bloquerarPaswordToolStripMenuItem,
-            this.cambiarContraseñaToolStripMenuItem,
-            this.VerDatosToolStripMenuItem,
             this.permisosToolStripMenuItem,
             this.administrarIdiomaToolStripMenuItem});
             this.seguridadToolStripMenuItem.Name = "seguridadToolStripMenuItem";
@@ -406,14 +400,14 @@
             // realizarBackupToolStripMenuItem
             // 
             this.realizarBackupToolStripMenuItem.Name = "realizarBackupToolStripMenuItem";
-            this.realizarBackupToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.realizarBackupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.realizarBackupToolStripMenuItem.Tag = "RealizarBackup";
             this.realizarBackupToolStripMenuItem.Text = "Realizar Backup";
             // 
             // bitacoraToolStripMenuItem
             // 
             this.bitacoraToolStripMenuItem.Name = "bitacoraToolStripMenuItem";
-            this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bitacoraToolStripMenuItem.Tag = "Bitacora";
             this.bitacoraToolStripMenuItem.Text = "Bitacora";
             this.bitacoraToolStripMenuItem.Click += new System.EventHandler(this.bitacoraToolStripMenuItem_Click);
@@ -421,50 +415,25 @@
             // realizarRestoreToolStripMenuItem
             // 
             this.realizarRestoreToolStripMenuItem.Name = "realizarRestoreToolStripMenuItem";
-            this.realizarRestoreToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.realizarRestoreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.realizarRestoreToolStripMenuItem.Tag = "RealizarRestore";
             this.realizarRestoreToolStripMenuItem.Text = "Realizar Restore";
-            // 
-            // bloquerarPaswordToolStripMenuItem
-            // 
-            this.bloquerarPaswordToolStripMenuItem.Name = "bloquerarPaswordToolStripMenuItem";
-            this.bloquerarPaswordToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.bloquerarPaswordToolStripMenuItem.Tag = "BloquerarContraseña";
-            this.bloquerarPaswordToolStripMenuItem.Text = "Bloquerar Contraseña";
-            this.bloquerarPaswordToolStripMenuItem.Visible = false;
-            this.bloquerarPaswordToolStripMenuItem.Click += new System.EventHandler(this.bloquerarPaswordToolStripMenuItem_Click);
-            // 
-            // cambiarContraseñaToolStripMenuItem
-            // 
-            this.cambiarContraseñaToolStripMenuItem.Name = "cambiarContraseñaToolStripMenuItem";
-            this.cambiarContraseñaToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.cambiarContraseñaToolStripMenuItem.Tag = "CambiarContraseña";
-            this.cambiarContraseñaToolStripMenuItem.Text = "Cambiar Contraseña";
-            this.cambiarContraseñaToolStripMenuItem.Visible = false;
-            // 
-            // VerDatosToolStripMenuItem
-            // 
-            this.VerDatosToolStripMenuItem.Name = "VerDatosToolStripMenuItem";
-            this.VerDatosToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.VerDatosToolStripMenuItem.Tag = "MisDatos";
-            this.VerDatosToolStripMenuItem.Text = "Ver Datos";
             // 
             // permisosToolStripMenuItem
             // 
             this.permisosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.asignarPermisosToolStripMenuItem});
             this.permisosToolStripMenuItem.Name = "permisosToolStripMenuItem";
-            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.permisosToolStripMenuItem.Tag = "Permisos";
             this.permisosToolStripMenuItem.Text = "Permisos";
             // 
             // asignarPermisosToolStripMenuItem
             // 
             this.asignarPermisosToolStripMenuItem.Name = "asignarPermisosToolStripMenuItem";
-            this.asignarPermisosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.asignarPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.asignarPermisosToolStripMenuItem.Tag = "AsignarPermisos";
             this.asignarPermisosToolStripMenuItem.Text = "Asignar Permisos";
-            this.asignarPermisosToolStripMenuItem.Visible = false;
             // 
             // administrarIdiomaToolStripMenuItem
             // 
@@ -472,7 +441,7 @@
             this.cambiarIdiomaToolStripMenuItem,
             this.crearIdiomaToolStripMenuItem});
             this.administrarIdiomaToolStripMenuItem.Name = "administrarIdiomaToolStripMenuItem";
-            this.administrarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.administrarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.administrarIdiomaToolStripMenuItem.Tag = "AdministrarIdioma";
             this.administrarIdiomaToolStripMenuItem.Text = "Administrar Idioma";
             // 
@@ -549,8 +518,6 @@
         private System.Windows.Forms.ToolStripMenuItem realizarBackupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bitacoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem realizarRestoreToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bloquerarPaswordToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cambiarContraseñaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearCuentaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarCuentaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verUsuariosToolStripMenuItem;
@@ -576,7 +543,6 @@
         private System.Windows.Forms.ToolStripMenuItem crearRecetaCertificadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarRecetaCertificadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verRecetasCertificadosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem VerDatosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contactoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem novedadesToolStripMenuItem;

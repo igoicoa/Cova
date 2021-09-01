@@ -14,56 +14,56 @@ namespace Cova.BL
     {
         public bool CrearPaciene(BEPaciente pacienteNuevo) 
         {
+            bool pacienteCreado = false;
             try
             {
                 MPPPaciente mPPPaciente = new MPPPaciente();
-                return mPPPaciente.CrearPaciente(pacienteNuevo);
+                pacienteCreado = mPPPaciente.CrearPaciente(pacienteNuevo);
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "El paciente fue creado: " + pacienteNuevo.Apellido + "," + pacienteNuevo.Nombre, "Crear Paciente"));
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al crear el paciente: " + ex.Message, "Crear Paciente"));
                 throw new ErrorAlCrearPacienteException();
             }
-            finally
-            {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "El paciente fue creado: ", "Crear Paciente"));
-            }
+            return pacienteCreado;
         }
 
         public IList<BEPaciente> BuscarPacientes(string Usuario, string DNI)
         {
+            IList<BEPaciente> paciente;
+            MPPPaciente mPPPaciente = new MPPPaciente();
             try
             {
-                MPPPaciente mPPPaciente = new MPPPaciente();
-                return mPPPaciente.BuscarPacientes(Usuario, DNI);
+                paciente= mPPPaciente.BuscarPacientes(Usuario, DNI);
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se busco el Paciente: ", "Buscar Paciente"));
+
             }
             catch (Exception ex)
             {
                 Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al buscar el paciente: " + ex.Message, "Buscar Paciente"));
                 throw new ErrorAlBuscarPacienteException();
             }
-            finally
-            {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se busco el Paciente: ", "Buscar Paciente"));
-            }
+            return paciente;
         }
 
         public bool ActualizarPaciente(BEPaciente pacienteNuevo)
         {
+            bool PacienteActualizado = false;
             try
             {
                 MPPPaciente mPPPaciente = new MPPPaciente();
-                return mPPPaciente.ActualizarPaciente(pacienteNuevo);
+                PacienteActualizado= mPPPaciente.ActualizarPaciente(pacienteNuevo);
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizo el Paciente: ", "Actualizar Paciente"));
+
             }
             catch (Exception ex)
             {
                 Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Actualizar Paciente: " + ex.Message, "Actualizar Paciente"));
                 throw new ErrorAlActualizarPacienteException();
             }
-            finally
-            {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizo el Paciente: ", "Actualizar Paciente"));
-            }
+            return PacienteActualizado;
 
         }
 

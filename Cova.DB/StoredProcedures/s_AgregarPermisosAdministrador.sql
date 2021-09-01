@@ -4,7 +4,7 @@
 AS
 BEGIN
 	DECLARE @permiso INT = 0;
-	WHILE @permiso < 48
+	WHILE @permiso < 50
 	BEGIN
 		INSERT INTO [dbo].[UsuarioPermiso] (UsuarioID, TipoPermiso)
 		VALUES

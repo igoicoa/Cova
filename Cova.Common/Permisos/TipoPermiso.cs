@@ -57,10 +57,7 @@ namespace Cova.Common.Permisos
         RealizarBackup,
         Bitacora,
         RealizarRestore,
-        BloquearPassword,
-        CambiarPassword,
-        VerDatos,
-
+        
         Permisos,
         AsignarPermisos,
 

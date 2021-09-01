@@ -33,11 +33,11 @@ BEGIN
 	(@IdUsuario, 33),
 	(@IdUsuario, 34),
 	(@IdUsuario, 35),
+	--(@IdUsuario, 39),
 	(@IdUsuario, 40),
 	(@IdUsuario, 41),
+	(@IdUsuario, 42),
 	(@IdUsuario, 44),
-	(@IdUsuario, 45),
-	(@IdUsuario, 47),
-	(@IdUsuario, 48)
+	(@IdUsuario, 45)
 END
 

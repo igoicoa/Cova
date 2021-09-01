@@ -27,10 +27,9 @@ BEGIN
 	(@IdUsuario, 31),
 	(@IdUsuario, 32),
 	(@IdUsuario, 35),
-	(@IdUsuario, 40),
+	--(@IdUsuario, 40),
 	(@IdUsuario, 41),
+	(@IdUsuario, 42),
 	(@IdUsuario, 44),
-	(@IdUsuario, 45),
-	(@IdUsuario, 47),
-	(@IdUsuario, 48)
+	(@IdUsuario, 45)
 END

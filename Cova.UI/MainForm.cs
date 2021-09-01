@@ -188,18 +188,6 @@ namespace Cova.UI
             if (realizarRestoreToolStripMenuItem.Tag != null && traducciones.ContainsKey(realizarRestoreToolStripMenuItem.Tag.ToString()))
                 realizarRestoreToolStripMenuItem.Text = traducciones[realizarRestoreToolStripMenuItem.Tag.ToString()].PalabraTraducida;
 
-            //Bloquear Pasword bloquerarPaswordToolStripMenuItem
-            if (bloquerarPaswordToolStripMenuItem.Tag != null && traducciones.ContainsKey(bloquerarPaswordToolStripMenuItem.Tag.ToString()))
-                bloquerarPaswordToolStripMenuItem.Text = traducciones[bloquerarPaswordToolStripMenuItem.Tag.ToString()].PalabraTraducida;
-
-            //Cambiar Contraseña cambiarContraseñaToolStripMenuItem
-            if (cambiarContraseñaToolStripMenuItem.Tag != null && traducciones.ContainsKey(cambiarContraseñaToolStripMenuItem.Tag.ToString()))
-                cambiarContraseñaToolStripMenuItem.Text = traducciones[cambiarContraseñaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
-
-            //Ver Datos misDatosToolStripMenuItem
-            if (VerDatosToolStripMenuItem.Tag != null && traducciones.ContainsKey(VerDatosToolStripMenuItem.Tag.ToString()))
-                VerDatosToolStripMenuItem.Text = traducciones[VerDatosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
-
             //Permisos permisosToolStripMenuItem
             if (permisosToolStripMenuItem.Tag != null && traducciones.ContainsKey(permisosToolStripMenuItem.Tag.ToString()))
                 permisosToolStripMenuItem.Text = traducciones[permisosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
@@ -272,9 +260,6 @@ namespace Cova.UI
             this.realizarBackupToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.RealizarBackup) : false;
             this.bitacoraToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.Bitacora) : false;
             this.realizarRestoreToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.RealizarRestore) : false;
-            this.bloquerarPaswordToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.BloquearPassword) : false;
-            this.cambiarContraseñaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CambiarPassword) : false;
-            this.VerDatosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.VerDatos) : false;
             this.permisosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.Permisos) : false;
             this.asignarPermisosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AsignarPermisos) : false;
             this.administrarIdiomaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AdministrarIdioma) : false;
