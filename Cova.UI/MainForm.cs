@@ -117,9 +117,6 @@ namespace Cova.UI
             if (calendarioDeTurnosToolStripMenuItem1.Tag != null && traducciones.ContainsKey(calendarioDeTurnosToolStripMenuItem1.Tag.ToString()))
                 calendarioDeTurnosToolStripMenuItem1.Text = traducciones[calendarioDeTurnosToolStripMenuItem1.Tag.ToString()].PalabraTraducida;
 
-            if (verCalendarioDePacientesToolStripMenuItem.Tag != null && traducciones.ContainsKey(verCalendarioDePacientesToolStripMenuItem.Tag.ToString()))
-                verCalendarioDePacientesToolStripMenuItem.Text = traducciones[verCalendarioDePacientesToolStripMenuItem.Tag.ToString()].PalabraTraducida;
-
             if (registrarTurnoToolStripMenuItem1.Tag != null && traducciones.ContainsKey(registrarTurnoToolStripMenuItem1.Tag.ToString()))
                 registrarTurnoToolStripMenuItem1.Text = traducciones[registrarTurnoToolStripMenuItem1.Tag.ToString()].PalabraTraducida;
 
@@ -128,9 +125,6 @@ namespace Cova.UI
 
             if (verMisTurnosToolStripMenuItem.Tag != null && traducciones.ContainsKey(verMisTurnosToolStripMenuItem.Tag.ToString()))
                 verMisTurnosToolStripMenuItem.Text = traducciones[verMisTurnosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
-
-            if (historialDeTurnosToolStripMenuItem.Tag != null && traducciones.ContainsKey(historialDeTurnosToolStripMenuItem.Tag.ToString()))
-                historialDeTurnosToolStripMenuItem.Text = traducciones[historialDeTurnosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
 
             //Administrar Cobertura medica administrarCoberturaMedicaToolStripMenuItem
             if (administrarCoberturaMedicaToolStripMenuItem.Tag != null && traducciones.ContainsKey(administrarCoberturaMedicaToolStripMenuItem.Tag.ToString()))
@@ -151,9 +145,6 @@ namespace Cova.UI
 
             if (crearHistoriaClinicaToolStripMenuItem.Tag != null && traducciones.ContainsKey(crearHistoriaClinicaToolStripMenuItem.Tag.ToString()))
                 crearHistoriaClinicaToolStripMenuItem.Text = traducciones[crearHistoriaClinicaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
-
-            if (modificarHistoriaClinicaToolStripMenuItem.Tag != null && traducciones.ContainsKey(modificarHistoriaClinicaToolStripMenuItem.Tag.ToString()))
-                modificarHistoriaClinicaToolStripMenuItem.Text = traducciones[modificarHistoriaClinicaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
 
             if (verHistoriaClinicaToolStripMenuItem.Tag != null && traducciones.ContainsKey(verHistoriaClinicaToolStripMenuItem.Tag.ToString()))
                 verHistoriaClinicaToolStripMenuItem.Text = traducciones[verHistoriaClinicaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
@@ -234,11 +225,9 @@ namespace Cova.UI
 
             this.administrarTurnosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AdministrarTurnos) : false;
             this.calendarioDeTurnosToolStripMenuItem1.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CalendarioDeTurnos) : false;
-            this.verCalendarioDePacientesToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.VerCalendarioMisPacientes) : false;
             this.registrarTurnoToolStripMenuItem1.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.RegistrarTurno) : false;
             this.cancelarTurnoToolStripMenuItem1.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CancelarTurno) : false;
             this.verMisTurnosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.VerMisTurnos) : false;
-            this.historialDeTurnosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.HistorialTurnos) : false;
 
             this.administrarCoberturaMedicaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AdministrarCoberturaMedica) : false;
             this.crearCoberturaMedicaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CrearCoberturaMedica) : false;
@@ -247,7 +236,6 @@ namespace Cova.UI
 
             this.administrarHistoriaClinicaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AdministrarHistoriaClinica) : false;
             this.crearHistoriaClinicaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CrearHistoriaClinica) : false;
-            this.modificarHistoriaClinicaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.ModificarHistoriaClinica) : false;
             this.verHistoriaClinicaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.VerHistoriaClinica) : false;
 
             this.administrarRecetaCertificadoToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AdministrarReceta_Certificado) : false;
@@ -265,6 +253,7 @@ namespace Cova.UI
             this.administrarIdiomaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AdministrarIdioma) : false;
             this.cambiarIdiomaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CambiarIdioma) : false;
             this.crearIdiomaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CrearIdioma) : false;
+            
             //Menu Informacion
             this.informaciónToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.Informacion) : false;
             this.contactoToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.Contacto) : false;
@@ -403,12 +392,6 @@ namespace Cova.UI
         {
             CrearHistoriaClinicaForm frmCrearHistoriaClinica = new CrearHistoriaClinicaForm();
             frmCrearHistoriaClinica.Show();
-        }
-
-        private void modificarHistoriaClinicaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ModificarHistoriaClinicaForm frmModificarHistoriaClinica = new ModificarHistoriaClinicaForm();
-            frmModificarHistoriaClinica.Show();
         }
 
         private void verHistoriaClinicaToolStripMenuItem_Click(object sender, EventArgs e)

@@ -43,19 +43,15 @@ namespace Cova.Common.Permisos
 
             //Administrar Turnos
             Permiso calendarioTurnos = new Permiso(TipoPermiso.CalendarioDeTurnos);
-            Permiso verCalendarioMisPacientes = new Permiso(TipoPermiso.VerCalendarioMisPacientes);
             Permiso registrarTurno = new Permiso(TipoPermiso.RegistrarTurno);
             Permiso cancelarTurno = new Permiso(TipoPermiso.CancelarTurno);
             Permiso verMisTurnos = new Permiso(TipoPermiso.VerMisTurnos);
-            Permiso historialTurnos = new Permiso(TipoPermiso.HistorialTurnos);
 
             FamiliaPermisos administrarTurnos = new FamiliaPermisos(TipoPermiso.AdministrarTurnos);
             administrarTurnos.AgregarPermiso(calendarioTurnos);
-            administrarTurnos.AgregarPermiso(verCalendarioMisPacientes);
             administrarTurnos.AgregarPermiso(registrarTurno);
             administrarTurnos.AgregarPermiso(cancelarTurno);
             administrarTurnos.AgregarPermiso(verMisTurnos);
-            administrarTurnos.AgregarPermiso(historialTurnos);
 
             //Administrar Cobertura Medica
             Permiso crearCoberturaMedica = new Permiso(TipoPermiso.CrearCoberturaMedica);
@@ -69,12 +65,10 @@ namespace Cova.Common.Permisos
 
             //Administrar Historia Clinica
             Permiso crearHistoriaClinica = new Permiso(TipoPermiso.CrearHistoriaClinica);
-            Permiso modificarHistoriaClinica = new Permiso(TipoPermiso.ModificarHistoriaClinica);
             Permiso verHistoriaClinica = new Permiso(TipoPermiso.VerHistoriaClinica);
 
             FamiliaPermisos administrarHistoriaClinica = new FamiliaPermisos(TipoPermiso.AdministrarHistoriaClinica);
             administrarHistoriaClinica.AgregarPermiso(crearHistoriaClinica);
-            administrarHistoriaClinica.AgregarPermiso(modificarHistoriaClinica);
             administrarHistoriaClinica.AgregarPermiso(verHistoriaClinica);
 
             //Administrar Receta/Certificado

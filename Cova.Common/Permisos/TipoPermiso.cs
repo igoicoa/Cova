@@ -32,11 +32,9 @@ namespace Cova.Common.Permisos
 
         AdministrarTurnos,
         CalendarioDeTurnos,
-        VerCalendarioMisPacientes,
         RegistrarTurno,
         CancelarTurno,
         VerMisTurnos,
-        HistorialTurnos,
 
         AdministrarCoberturaMedica,
         CrearCoberturaMedica,
@@ -45,7 +43,6 @@ namespace Cova.Common.Permisos
 
         AdministrarHistoriaClinica,
         CrearHistoriaClinica,
-        ModificarHistoriaClinica,
         VerHistoriaClinica,
 
         AdministrarReceta_Certificado,

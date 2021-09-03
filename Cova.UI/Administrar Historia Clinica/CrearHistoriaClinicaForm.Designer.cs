@@ -48,33 +48,33 @@ namespace Cova.UI
             this.dtp_fechaAlta_CrearHistoriaClinica = new System.Windows.Forms.DateTimePicker();
             this.lbl_FechaAltaHistoriaClinica = new System.Windows.Forms.Label();
             this.gb_AntecedentesPersonales_CrearHistoriaClinica = new System.Windows.Forms.GroupBox();
+            this.cb_Cirugias_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_AftasRepetidas_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_InfeccionesdeGarganta_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_FiebreReumatica_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_EnferPsicologicas_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_Varicela_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_Convulsiones_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_Diabetes_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_EnfermedadMotriz_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_Sarampion_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_EnfermedadRenal_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_AlergiasaAnestesia = new System.Windows.Forms.CheckBox();
+            this.cb_Dermatitis_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_AlergiasAMedicina_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_Hepatitis_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_AlergiasGenerales_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_TerapiaPsicologica_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_DolordeCabeza_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_Obesidad_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_PerdidadePeso_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_ProblemasCardiacos_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_Epilepsia_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_RadioTerapia_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
+            this.cb_EnfermedadRespiratoria_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
             this.txt_Medicacion_CrearHistoriaClinica = new System.Windows.Forms.TextBox();
+            this.cb_EnfSangre_CrearHistoriaClinica = new System.Windows.Forms.CheckBox();
             this.lbl_TomaMedicamento_CrearHistoriaClinica = new System.Windows.Forms.Label();
-            this.rb_Cirugias_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_InfeccionesdeGarganta_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_Convulsiones_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_EnferPsicologicas_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_EnfermedadMotriz_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_AftasRepetidas_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_Varicela_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_Sarampion_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_AlergiasaAnestesia = new System.Windows.Forms.RadioButton();
-            this.rb_AlergiasAMedicina_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_AlergiasGenerales_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_FiebreReumatica_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_EnfermedadRenal_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_Hepatitis_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_DolordeCabeza_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_PerdidadePeso_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_Epilepsia_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_EnfermedadRespiratoria_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_Dermatitis_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_Diabetes_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_Obesidad_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_RadioTerapia_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_EnfSangre_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_TerapiaPsicologica_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
-            this.rb_ProblemasCardiacos_CrearHistoriaClinica = new System.Windows.Forms.RadioButton();
             this.btnLimpiar_CrearHistoriaClinica = new System.Windows.Forms.Button();
             this.btnCancelar_CrearHistoriaClinica = new System.Windows.Forms.Button();
             this.btnCrear_CrearHistoriaClinica = new System.Windows.Forms.Button();
@@ -259,331 +259,306 @@ namespace Cova.UI
             // 
             // gb_AntecedentesPersonales_CrearHistoriaClinica
             // 
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_Cirugias_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_AftasRepetidas_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_InfeccionesdeGarganta_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_FiebreReumatica_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_EnferPsicologicas_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_Varicela_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_Convulsiones_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_Diabetes_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_EnfermedadMotriz_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_Sarampion_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_EnfermedadRenal_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_AlergiasaAnestesia);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_Dermatitis_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_AlergiasAMedicina_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_Hepatitis_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_AlergiasGenerales_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_TerapiaPsicologica_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_DolordeCabeza_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_Obesidad_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_PerdidadePeso_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_ProblemasCardiacos_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_Epilepsia_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_RadioTerapia_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_EnfermedadRespiratoria_CrearHistoriaClinica);
             this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.txt_Medicacion_CrearHistoriaClinica);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.cb_EnfSangre_CrearHistoriaClinica);
             this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.lbl_TomaMedicamento_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_Cirugias_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_InfeccionesdeGarganta_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_Convulsiones_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_EnferPsicologicas_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_EnfermedadMotriz_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_AftasRepetidas_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_Varicela_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_Sarampion_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_AlergiasaAnestesia);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_AlergiasAMedicina_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_AlergiasGenerales_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_FiebreReumatica_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_EnfermedadRenal_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_Hepatitis_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_DolordeCabeza_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_PerdidadePeso_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_Epilepsia_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_EnfermedadRespiratoria_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_Dermatitis_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_Diabetes_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_Obesidad_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_RadioTerapia_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_EnfSangre_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_TerapiaPsicologica_CrearHistoriaClinica);
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Controls.Add(this.rb_ProblemasCardiacos_CrearHistoriaClinica);
             this.gb_AntecedentesPersonales_CrearHistoriaClinica.Location = new System.Drawing.Point(12, 259);
             this.gb_AntecedentesPersonales_CrearHistoriaClinica.Name = "gb_AntecedentesPersonales_CrearHistoriaClinica";
-            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Size = new System.Drawing.Size(775, 201);
+            this.gb_AntecedentesPersonales_CrearHistoriaClinica.Size = new System.Drawing.Size(775, 219);
             this.gb_AntecedentesPersonales_CrearHistoriaClinica.TabIndex = 92;
             this.gb_AntecedentesPersonales_CrearHistoriaClinica.TabStop = false;
             this.gb_AntecedentesPersonales_CrearHistoriaClinica.Text = "Antecedentes Personales";
             // 
+            // cb_Cirugias_CrearHistoriaClinica
+            // 
+            this.cb_Cirugias_CrearHistoriaClinica.AutoSize = true;
+            this.cb_Cirugias_CrearHistoriaClinica.Location = new System.Drawing.Point(458, 87);
+            this.cb_Cirugias_CrearHistoriaClinica.Name = "cb_Cirugias_CrearHistoriaClinica";
+            this.cb_Cirugias_CrearHistoriaClinica.Size = new System.Drawing.Size(63, 17);
+            this.cb_Cirugias_CrearHistoriaClinica.TabIndex = 125;
+            this.cb_Cirugias_CrearHistoriaClinica.Text = "Cirugias";
+            this.cb_Cirugias_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_AftasRepetidas_CrearHistoriaClinica
+            // 
+            this.cb_AftasRepetidas_CrearHistoriaClinica.AutoSize = true;
+            this.cb_AftasRepetidas_CrearHistoriaClinica.Location = new System.Drawing.Point(318, 135);
+            this.cb_AftasRepetidas_CrearHistoriaClinica.Name = "cb_AftasRepetidas_CrearHistoriaClinica";
+            this.cb_AftasRepetidas_CrearHistoriaClinica.Size = new System.Drawing.Size(101, 17);
+            this.cb_AftasRepetidas_CrearHistoriaClinica.TabIndex = 125;
+            this.cb_AftasRepetidas_CrearHistoriaClinica.Text = "Aftas Repetidas";
+            this.cb_AftasRepetidas_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_InfeccionesdeGarganta_CrearHistoriaClinica
+            // 
+            this.cb_InfeccionesdeGarganta_CrearHistoriaClinica.AutoSize = true;
+            this.cb_InfeccionesdeGarganta_CrearHistoriaClinica.Location = new System.Drawing.Point(458, 64);
+            this.cb_InfeccionesdeGarganta_CrearHistoriaClinica.Name = "cb_InfeccionesdeGarganta_CrearHistoriaClinica";
+            this.cb_InfeccionesdeGarganta_CrearHistoriaClinica.Size = new System.Drawing.Size(143, 17);
+            this.cb_InfeccionesdeGarganta_CrearHistoriaClinica.TabIndex = 124;
+            this.cb_InfeccionesdeGarganta_CrearHistoriaClinica.Text = "Infecciones de Garganta";
+            this.cb_InfeccionesdeGarganta_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_FiebreReumatica_CrearHistoriaClinica
+            // 
+            this.cb_FiebreReumatica_CrearHistoriaClinica.AutoSize = true;
+            this.cb_FiebreReumatica_CrearHistoriaClinica.Location = new System.Drawing.Point(154, 157);
+            this.cb_FiebreReumatica_CrearHistoriaClinica.Name = "cb_FiebreReumatica_CrearHistoriaClinica";
+            this.cb_FiebreReumatica_CrearHistoriaClinica.Size = new System.Drawing.Size(109, 17);
+            this.cb_FiebreReumatica_CrearHistoriaClinica.TabIndex = 119;
+            this.cb_FiebreReumatica_CrearHistoriaClinica.Text = "Fiebre Reumática";
+            this.cb_FiebreReumatica_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_EnferPsicologicas_CrearHistoriaClinica
+            // 
+            this.cb_EnferPsicologicas_CrearHistoriaClinica.AutoSize = true;
+            this.cb_EnferPsicologicas_CrearHistoriaClinica.Location = new System.Drawing.Point(458, 42);
+            this.cb_EnferPsicologicas_CrearHistoriaClinica.Name = "cb_EnferPsicologicas_CrearHistoriaClinica";
+            this.cb_EnferPsicologicas_CrearHistoriaClinica.Size = new System.Drawing.Size(140, 17);
+            this.cb_EnferPsicologicas_CrearHistoriaClinica.TabIndex = 123;
+            this.cb_EnferPsicologicas_CrearHistoriaClinica.Text = "Enfermedad Psicologica";
+            this.cb_EnferPsicologicas_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_Varicela_CrearHistoriaClinica
+            // 
+            this.cb_Varicela_CrearHistoriaClinica.AutoSize = true;
+            this.cb_Varicela_CrearHistoriaClinica.Location = new System.Drawing.Point(318, 112);
+            this.cb_Varicela_CrearHistoriaClinica.Name = "cb_Varicela_CrearHistoriaClinica";
+            this.cb_Varicela_CrearHistoriaClinica.Size = new System.Drawing.Size(64, 17);
+            this.cb_Varicela_CrearHistoriaClinica.TabIndex = 124;
+            this.cb_Varicela_CrearHistoriaClinica.Text = "Varicela";
+            this.cb_Varicela_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_Convulsiones_CrearHistoriaClinica
+            // 
+            this.cb_Convulsiones_CrearHistoriaClinica.AutoSize = true;
+            this.cb_Convulsiones_CrearHistoriaClinica.Location = new System.Drawing.Point(458, 19);
+            this.cb_Convulsiones_CrearHistoriaClinica.Name = "cb_Convulsiones_CrearHistoriaClinica";
+            this.cb_Convulsiones_CrearHistoriaClinica.Size = new System.Drawing.Size(89, 17);
+            this.cb_Convulsiones_CrearHistoriaClinica.TabIndex = 122;
+            this.cb_Convulsiones_CrearHistoriaClinica.Text = "Convulsiones";
+            this.cb_Convulsiones_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_Diabetes_CrearHistoriaClinica
+            // 
+            this.cb_Diabetes_CrearHistoriaClinica.AutoSize = true;
+            this.cb_Diabetes_CrearHistoriaClinica.Location = new System.Drawing.Point(10, 132);
+            this.cb_Diabetes_CrearHistoriaClinica.Name = "cb_Diabetes_CrearHistoriaClinica";
+            this.cb_Diabetes_CrearHistoriaClinica.Size = new System.Drawing.Size(68, 17);
+            this.cb_Diabetes_CrearHistoriaClinica.TabIndex = 111;
+            this.cb_Diabetes_CrearHistoriaClinica.Text = "Diabetes";
+            this.cb_Diabetes_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_EnfermedadMotriz_CrearHistoriaClinica
+            // 
+            this.cb_EnfermedadMotriz_CrearHistoriaClinica.AutoSize = true;
+            this.cb_EnfermedadMotriz_CrearHistoriaClinica.Location = new System.Drawing.Point(318, 157);
+            this.cb_EnfermedadMotriz_CrearHistoriaClinica.Name = "cb_EnfermedadMotriz_CrearHistoriaClinica";
+            this.cb_EnfermedadMotriz_CrearHistoriaClinica.Size = new System.Drawing.Size(114, 17);
+            this.cb_EnfermedadMotriz_CrearHistoriaClinica.TabIndex = 121;
+            this.cb_EnfermedadMotriz_CrearHistoriaClinica.Text = "Enfermedad Motriz";
+            this.cb_EnfermedadMotriz_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_Sarampion_CrearHistoriaClinica
+            // 
+            this.cb_Sarampion_CrearHistoriaClinica.AutoSize = true;
+            this.cb_Sarampion_CrearHistoriaClinica.Location = new System.Drawing.Point(318, 89);
+            this.cb_Sarampion_CrearHistoriaClinica.Name = "cb_Sarampion_CrearHistoriaClinica";
+            this.cb_Sarampion_CrearHistoriaClinica.Size = new System.Drawing.Size(76, 17);
+            this.cb_Sarampion_CrearHistoriaClinica.TabIndex = 123;
+            this.cb_Sarampion_CrearHistoriaClinica.Text = "Sarampión";
+            this.cb_Sarampion_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_EnfermedadRenal_CrearHistoriaClinica
+            // 
+            this.cb_EnfermedadRenal_CrearHistoriaClinica.AutoSize = true;
+            this.cb_EnfermedadRenal_CrearHistoriaClinica.Location = new System.Drawing.Point(154, 134);
+            this.cb_EnfermedadRenal_CrearHistoriaClinica.Name = "cb_EnfermedadRenal_CrearHistoriaClinica";
+            this.cb_EnfermedadRenal_CrearHistoriaClinica.Size = new System.Drawing.Size(114, 17);
+            this.cb_EnfermedadRenal_CrearHistoriaClinica.TabIndex = 118;
+            this.cb_EnfermedadRenal_CrearHistoriaClinica.Text = "Enfermedad Renal";
+            this.cb_EnfermedadRenal_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_AlergiasaAnestesia
+            // 
+            this.cb_AlergiasaAnestesia.AutoSize = true;
+            this.cb_AlergiasaAnestesia.Location = new System.Drawing.Point(318, 66);
+            this.cb_AlergiasaAnestesia.Name = "cb_AlergiasaAnestesia";
+            this.cb_AlergiasaAnestesia.Size = new System.Drawing.Size(121, 17);
+            this.cb_AlergiasaAnestesia.TabIndex = 122;
+            this.cb_AlergiasaAnestesia.Text = "Alergias a Anestesia";
+            this.cb_AlergiasaAnestesia.UseVisualStyleBackColor = true;
+            // 
+            // cb_Dermatitis_CrearHistoriaClinica
+            // 
+            this.cb_Dermatitis_CrearHistoriaClinica.AutoSize = true;
+            this.cb_Dermatitis_CrearHistoriaClinica.Location = new System.Drawing.Point(10, 153);
+            this.cb_Dermatitis_CrearHistoriaClinica.Name = "cb_Dermatitis_CrearHistoriaClinica";
+            this.cb_Dermatitis_CrearHistoriaClinica.Size = new System.Drawing.Size(72, 17);
+            this.cb_Dermatitis_CrearHistoriaClinica.TabIndex = 112;
+            this.cb_Dermatitis_CrearHistoriaClinica.Text = "Dermatitis";
+            this.cb_Dermatitis_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_AlergiasAMedicina_CrearHistoriaClinica
+            // 
+            this.cb_AlergiasAMedicina_CrearHistoriaClinica.AutoSize = true;
+            this.cb_AlergiasAMedicina_CrearHistoriaClinica.Location = new System.Drawing.Point(318, 42);
+            this.cb_AlergiasAMedicina_CrearHistoriaClinica.Name = "cb_AlergiasAMedicina_CrearHistoriaClinica";
+            this.cb_AlergiasAMedicina_CrearHistoriaClinica.Size = new System.Drawing.Size(118, 17);
+            this.cb_AlergiasAMedicina_CrearHistoriaClinica.TabIndex = 121;
+            this.cb_AlergiasAMedicina_CrearHistoriaClinica.Text = "Alergias a Medicina";
+            this.cb_AlergiasAMedicina_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_Hepatitis_CrearHistoriaClinica
+            // 
+            this.cb_Hepatitis_CrearHistoriaClinica.AutoSize = true;
+            this.cb_Hepatitis_CrearHistoriaClinica.Location = new System.Drawing.Point(154, 111);
+            this.cb_Hepatitis_CrearHistoriaClinica.Name = "cb_Hepatitis_CrearHistoriaClinica";
+            this.cb_Hepatitis_CrearHistoriaClinica.Size = new System.Drawing.Size(67, 17);
+            this.cb_Hepatitis_CrearHistoriaClinica.TabIndex = 117;
+            this.cb_Hepatitis_CrearHistoriaClinica.Text = "Hepatitis";
+            this.cb_Hepatitis_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_AlergiasGenerales_CrearHistoriaClinica
+            // 
+            this.cb_AlergiasGenerales_CrearHistoriaClinica.AutoSize = true;
+            this.cb_AlergiasGenerales_CrearHistoriaClinica.Location = new System.Drawing.Point(318, 19);
+            this.cb_AlergiasGenerales_CrearHistoriaClinica.Name = "cb_AlergiasGenerales_CrearHistoriaClinica";
+            this.cb_AlergiasGenerales_CrearHistoriaClinica.Size = new System.Drawing.Size(114, 17);
+            this.cb_AlergiasGenerales_CrearHistoriaClinica.TabIndex = 120;
+            this.cb_AlergiasGenerales_CrearHistoriaClinica.Text = "Alergias Generales";
+            this.cb_AlergiasGenerales_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_TerapiaPsicologica_CrearHistoriaClinica
+            // 
+            this.cb_TerapiaPsicologica_CrearHistoriaClinica.AutoSize = true;
+            this.cb_TerapiaPsicologica_CrearHistoriaClinica.Location = new System.Drawing.Point(10, 42);
+            this.cb_TerapiaPsicologica_CrearHistoriaClinica.Name = "cb_TerapiaPsicologica_CrearHistoriaClinica";
+            this.cb_TerapiaPsicologica_CrearHistoriaClinica.Size = new System.Drawing.Size(119, 17);
+            this.cb_TerapiaPsicologica_CrearHistoriaClinica.TabIndex = 107;
+            this.cb_TerapiaPsicologica_CrearHistoriaClinica.Text = "Terapia Psicologica";
+            this.cb_TerapiaPsicologica_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_DolordeCabeza_CrearHistoriaClinica
+            // 
+            this.cb_DolordeCabeza_CrearHistoriaClinica.AutoSize = true;
+            this.cb_DolordeCabeza_CrearHistoriaClinica.Location = new System.Drawing.Point(154, 88);
+            this.cb_DolordeCabeza_CrearHistoriaClinica.Name = "cb_DolordeCabeza_CrearHistoriaClinica";
+            this.cb_DolordeCabeza_CrearHistoriaClinica.Size = new System.Drawing.Size(105, 17);
+            this.cb_DolordeCabeza_CrearHistoriaClinica.TabIndex = 116;
+            this.cb_DolordeCabeza_CrearHistoriaClinica.Text = "Dolor de Cabeza";
+            this.cb_DolordeCabeza_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_Obesidad_CrearHistoriaClinica
+            // 
+            this.cb_Obesidad_CrearHistoriaClinica.AutoSize = true;
+            this.cb_Obesidad_CrearHistoriaClinica.Location = new System.Drawing.Point(10, 111);
+            this.cb_Obesidad_CrearHistoriaClinica.Name = "cb_Obesidad_CrearHistoriaClinica";
+            this.cb_Obesidad_CrearHistoriaClinica.Size = new System.Drawing.Size(71, 17);
+            this.cb_Obesidad_CrearHistoriaClinica.TabIndex = 110;
+            this.cb_Obesidad_CrearHistoriaClinica.Text = "Obesidad";
+            this.cb_Obesidad_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_PerdidadePeso_CrearHistoriaClinica
+            // 
+            this.cb_PerdidadePeso_CrearHistoriaClinica.AutoSize = true;
+            this.cb_PerdidadePeso_CrearHistoriaClinica.Location = new System.Drawing.Point(154, 65);
+            this.cb_PerdidadePeso_CrearHistoriaClinica.Name = "cb_PerdidadePeso_CrearHistoriaClinica";
+            this.cb_PerdidadePeso_CrearHistoriaClinica.Size = new System.Drawing.Size(104, 17);
+            this.cb_PerdidadePeso_CrearHistoriaClinica.TabIndex = 115;
+            this.cb_PerdidadePeso_CrearHistoriaClinica.Text = "Perdida de Peso";
+            this.cb_PerdidadePeso_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_ProblemasCardiacos_CrearHistoriaClinica
+            // 
+            this.cb_ProblemasCardiacos_CrearHistoriaClinica.AutoSize = true;
+            this.cb_ProblemasCardiacos_CrearHistoriaClinica.Location = new System.Drawing.Point(10, 19);
+            this.cb_ProblemasCardiacos_CrearHistoriaClinica.Name = "cb_ProblemasCardiacos_CrearHistoriaClinica";
+            this.cb_ProblemasCardiacos_CrearHistoriaClinica.Size = new System.Drawing.Size(125, 17);
+            this.cb_ProblemasCardiacos_CrearHistoriaClinica.TabIndex = 106;
+            this.cb_ProblemasCardiacos_CrearHistoriaClinica.Text = "Problemas Cardiacos";
+            this.cb_ProblemasCardiacos_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_Epilepsia_CrearHistoriaClinica
+            // 
+            this.cb_Epilepsia_CrearHistoriaClinica.AutoSize = true;
+            this.cb_Epilepsia_CrearHistoriaClinica.Location = new System.Drawing.Point(154, 42);
+            this.cb_Epilepsia_CrearHistoriaClinica.Name = "cb_Epilepsia_CrearHistoriaClinica";
+            this.cb_Epilepsia_CrearHistoriaClinica.Size = new System.Drawing.Size(68, 17);
+            this.cb_Epilepsia_CrearHistoriaClinica.TabIndex = 114;
+            this.cb_Epilepsia_CrearHistoriaClinica.Text = "Epilepsia";
+            this.cb_Epilepsia_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_RadioTerapia_CrearHistoriaClinica
+            // 
+            this.cb_RadioTerapia_CrearHistoriaClinica.AutoSize = true;
+            this.cb_RadioTerapia_CrearHistoriaClinica.Location = new System.Drawing.Point(10, 88);
+            this.cb_RadioTerapia_CrearHistoriaClinica.Name = "cb_RadioTerapia_CrearHistoriaClinica";
+            this.cb_RadioTerapia_CrearHistoriaClinica.Size = new System.Drawing.Size(93, 17);
+            this.cb_RadioTerapia_CrearHistoriaClinica.TabIndex = 109;
+            this.cb_RadioTerapia_CrearHistoriaClinica.Text = "Radio Terapia";
+            this.cb_RadioTerapia_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
+            // cb_EnfermedadRespiratoria_CrearHistoriaClinica
+            // 
+            this.cb_EnfermedadRespiratoria_CrearHistoriaClinica.AutoSize = true;
+            this.cb_EnfermedadRespiratoria_CrearHistoriaClinica.Location = new System.Drawing.Point(154, 19);
+            this.cb_EnfermedadRespiratoria_CrearHistoriaClinica.Name = "cb_EnfermedadRespiratoria_CrearHistoriaClinica";
+            this.cb_EnfermedadRespiratoria_CrearHistoriaClinica.Size = new System.Drawing.Size(142, 17);
+            this.cb_EnfermedadRespiratoria_CrearHistoriaClinica.TabIndex = 113;
+            this.cb_EnfermedadRespiratoria_CrearHistoriaClinica.Text = "Enfermedad Respiratoria";
+            this.cb_EnfermedadRespiratoria_CrearHistoriaClinica.UseVisualStyleBackColor = true;
+            // 
             // txt_Medicacion_CrearHistoriaClinica
             // 
             this.txt_Medicacion_CrearHistoriaClinica.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_Medicacion_CrearHistoriaClinica.Location = new System.Drawing.Point(332, 171);
+            this.txt_Medicacion_CrearHistoriaClinica.Location = new System.Drawing.Point(134, 190);
             this.txt_Medicacion_CrearHistoriaClinica.Name = "txt_Medicacion_CrearHistoriaClinica";
-            this.txt_Medicacion_CrearHistoriaClinica.Size = new System.Drawing.Size(428, 20);
+            this.txt_Medicacion_CrearHistoriaClinica.Size = new System.Drawing.Size(492, 20);
             this.txt_Medicacion_CrearHistoriaClinica.TabIndex = 89;
+            // 
+            // cb_EnfSangre_CrearHistoriaClinica
+            // 
+            this.cb_EnfSangre_CrearHistoriaClinica.AutoSize = true;
+            this.cb_EnfSangre_CrearHistoriaClinica.Location = new System.Drawing.Point(10, 65);
+            this.cb_EnfSangre_CrearHistoriaClinica.Name = "cb_EnfSangre_CrearHistoriaClinica";
+            this.cb_EnfSangre_CrearHistoriaClinica.Size = new System.Drawing.Size(108, 17);
+            this.cb_EnfSangre_CrearHistoriaClinica.TabIndex = 108;
+            this.cb_EnfSangre_CrearHistoriaClinica.Text = "Enf. de la Sangre";
+            this.cb_EnfSangre_CrearHistoriaClinica.UseVisualStyleBackColor = true;
             // 
             // lbl_TomaMedicamento_CrearHistoriaClinica
             // 
             this.lbl_TomaMedicamento_CrearHistoriaClinica.AutoSize = true;
-            this.lbl_TomaMedicamento_CrearHistoriaClinica.Location = new System.Drawing.Point(204, 173);
+            this.lbl_TomaMedicamento_CrearHistoriaClinica.Location = new System.Drawing.Point(6, 190);
             this.lbl_TomaMedicamento_CrearHistoriaClinica.Name = "lbl_TomaMedicamento_CrearHistoriaClinica";
             this.lbl_TomaMedicamento_CrearHistoriaClinica.Size = new System.Drawing.Size(122, 13);
             this.lbl_TomaMedicamento_CrearHistoriaClinica.TabIndex = 88;
             this.lbl_TomaMedicamento_CrearHistoriaClinica.Text = "¿Que medicación toma?";
-            // 
-            // rb_Cirugias_CrearHistoriaClinica
-            // 
-            this.rb_Cirugias_CrearHistoriaClinica.AutoSize = true;
-            this.rb_Cirugias_CrearHistoriaClinica.Location = new System.Drawing.Point(485, 115);
-            this.rb_Cirugias_CrearHistoriaClinica.Name = "rb_Cirugias_CrearHistoriaClinica";
-            this.rb_Cirugias_CrearHistoriaClinica.Size = new System.Drawing.Size(62, 17);
-            this.rb_Cirugias_CrearHistoriaClinica.TabIndex = 24;
-            this.rb_Cirugias_CrearHistoriaClinica.TabStop = true;
-            this.rb_Cirugias_CrearHistoriaClinica.Text = "Cirugias";
-            this.rb_Cirugias_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_InfeccionesdeGarganta_CrearHistoriaClinica
-            // 
-            this.rb_InfeccionesdeGarganta_CrearHistoriaClinica.AutoSize = true;
-            this.rb_InfeccionesdeGarganta_CrearHistoriaClinica.Location = new System.Drawing.Point(485, 91);
-            this.rb_InfeccionesdeGarganta_CrearHistoriaClinica.Name = "rb_InfeccionesdeGarganta_CrearHistoriaClinica";
-            this.rb_InfeccionesdeGarganta_CrearHistoriaClinica.Size = new System.Drawing.Size(142, 17);
-            this.rb_InfeccionesdeGarganta_CrearHistoriaClinica.TabIndex = 23;
-            this.rb_InfeccionesdeGarganta_CrearHistoriaClinica.TabStop = true;
-            this.rb_InfeccionesdeGarganta_CrearHistoriaClinica.Text = "Infecciones de Garganta";
-            this.rb_InfeccionesdeGarganta_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_Convulsiones_CrearHistoriaClinica
-            // 
-            this.rb_Convulsiones_CrearHistoriaClinica.AutoSize = true;
-            this.rb_Convulsiones_CrearHistoriaClinica.Location = new System.Drawing.Point(485, 44);
-            this.rb_Convulsiones_CrearHistoriaClinica.Name = "rb_Convulsiones_CrearHistoriaClinica";
-            this.rb_Convulsiones_CrearHistoriaClinica.Size = new System.Drawing.Size(88, 17);
-            this.rb_Convulsiones_CrearHistoriaClinica.TabIndex = 22;
-            this.rb_Convulsiones_CrearHistoriaClinica.TabStop = true;
-            this.rb_Convulsiones_CrearHistoriaClinica.Text = "Convulsiones";
-            this.rb_Convulsiones_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_EnferPsicologicas_CrearHistoriaClinica
-            // 
-            this.rb_EnferPsicologicas_CrearHistoriaClinica.AutoSize = true;
-            this.rb_EnferPsicologicas_CrearHistoriaClinica.Location = new System.Drawing.Point(485, 67);
-            this.rb_EnferPsicologicas_CrearHistoriaClinica.Name = "rb_EnferPsicologicas_CrearHistoriaClinica";
-            this.rb_EnferPsicologicas_CrearHistoriaClinica.Size = new System.Drawing.Size(139, 17);
-            this.rb_EnferPsicologicas_CrearHistoriaClinica.TabIndex = 21;
-            this.rb_EnferPsicologicas_CrearHistoriaClinica.TabStop = true;
-            this.rb_EnferPsicologicas_CrearHistoriaClinica.Text = "Enfermedad Psicologica";
-            this.rb_EnferPsicologicas_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_EnfermedadMotriz_CrearHistoriaClinica
-            // 
-            this.rb_EnfermedadMotriz_CrearHistoriaClinica.AutoSize = true;
-            this.rb_EnfermedadMotriz_CrearHistoriaClinica.Location = new System.Drawing.Point(485, 20);
-            this.rb_EnfermedadMotriz_CrearHistoriaClinica.Name = "rb_EnfermedadMotriz_CrearHistoriaClinica";
-            this.rb_EnfermedadMotriz_CrearHistoriaClinica.Size = new System.Drawing.Size(113, 17);
-            this.rb_EnfermedadMotriz_CrearHistoriaClinica.TabIndex = 20;
-            this.rb_EnfermedadMotriz_CrearHistoriaClinica.TabStop = true;
-            this.rb_EnfermedadMotriz_CrearHistoriaClinica.Text = "Enfermedad Motriz";
-            this.rb_EnfermedadMotriz_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_AftasRepetidas_CrearHistoriaClinica
-            // 
-            this.rb_AftasRepetidas_CrearHistoriaClinica.AutoSize = true;
-            this.rb_AftasRepetidas_CrearHistoriaClinica.Location = new System.Drawing.Point(332, 136);
-            this.rb_AftasRepetidas_CrearHistoriaClinica.Name = "rb_AftasRepetidas_CrearHistoriaClinica";
-            this.rb_AftasRepetidas_CrearHistoriaClinica.Size = new System.Drawing.Size(100, 17);
-            this.rb_AftasRepetidas_CrearHistoriaClinica.TabIndex = 19;
-            this.rb_AftasRepetidas_CrearHistoriaClinica.TabStop = true;
-            this.rb_AftasRepetidas_CrearHistoriaClinica.Text = "Aftas Repetidas";
-            this.rb_AftasRepetidas_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_Varicela_CrearHistoriaClinica
-            // 
-            this.rb_Varicela_CrearHistoriaClinica.AutoSize = true;
-            this.rb_Varicela_CrearHistoriaClinica.Location = new System.Drawing.Point(332, 113);
-            this.rb_Varicela_CrearHistoriaClinica.Name = "rb_Varicela_CrearHistoriaClinica";
-            this.rb_Varicela_CrearHistoriaClinica.Size = new System.Drawing.Size(63, 17);
-            this.rb_Varicela_CrearHistoriaClinica.TabIndex = 18;
-            this.rb_Varicela_CrearHistoriaClinica.TabStop = true;
-            this.rb_Varicela_CrearHistoriaClinica.Text = "Varicela";
-            this.rb_Varicela_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_Sarampion_CrearHistoriaClinica
-            // 
-            this.rb_Sarampion_CrearHistoriaClinica.AutoSize = true;
-            this.rb_Sarampion_CrearHistoriaClinica.Location = new System.Drawing.Point(332, 90);
-            this.rb_Sarampion_CrearHistoriaClinica.Name = "rb_Sarampion_CrearHistoriaClinica";
-            this.rb_Sarampion_CrearHistoriaClinica.Size = new System.Drawing.Size(75, 17);
-            this.rb_Sarampion_CrearHistoriaClinica.TabIndex = 17;
-            this.rb_Sarampion_CrearHistoriaClinica.TabStop = true;
-            this.rb_Sarampion_CrearHistoriaClinica.Text = "Sarampión";
-            this.rb_Sarampion_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_AlergiasaAnestesia
-            // 
-            this.rb_AlergiasaAnestesia.AutoSize = true;
-            this.rb_AlergiasaAnestesia.Location = new System.Drawing.Point(332, 67);
-            this.rb_AlergiasaAnestesia.Name = "rb_AlergiasaAnestesia";
-            this.rb_AlergiasaAnestesia.Size = new System.Drawing.Size(120, 17);
-            this.rb_AlergiasaAnestesia.TabIndex = 16;
-            this.rb_AlergiasaAnestesia.TabStop = true;
-            this.rb_AlergiasaAnestesia.Text = "Alergias a Anestesia";
-            this.rb_AlergiasaAnestesia.UseVisualStyleBackColor = true;
-            // 
-            // rb_AlergiasAMedicina_CrearHistoriaClinica
-            // 
-            this.rb_AlergiasAMedicina_CrearHistoriaClinica.AutoSize = true;
-            this.rb_AlergiasAMedicina_CrearHistoriaClinica.Location = new System.Drawing.Point(332, 43);
-            this.rb_AlergiasAMedicina_CrearHistoriaClinica.Name = "rb_AlergiasAMedicina_CrearHistoriaClinica";
-            this.rb_AlergiasAMedicina_CrearHistoriaClinica.Size = new System.Drawing.Size(117, 17);
-            this.rb_AlergiasAMedicina_CrearHistoriaClinica.TabIndex = 15;
-            this.rb_AlergiasAMedicina_CrearHistoriaClinica.TabStop = true;
-            this.rb_AlergiasAMedicina_CrearHistoriaClinica.Text = "Alergias a Medicina";
-            this.rb_AlergiasAMedicina_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_AlergiasGenerales_CrearHistoriaClinica
-            // 
-            this.rb_AlergiasGenerales_CrearHistoriaClinica.AutoSize = true;
-            this.rb_AlergiasGenerales_CrearHistoriaClinica.Location = new System.Drawing.Point(332, 20);
-            this.rb_AlergiasGenerales_CrearHistoriaClinica.Name = "rb_AlergiasGenerales_CrearHistoriaClinica";
-            this.rb_AlergiasGenerales_CrearHistoriaClinica.Size = new System.Drawing.Size(113, 17);
-            this.rb_AlergiasGenerales_CrearHistoriaClinica.TabIndex = 14;
-            this.rb_AlergiasGenerales_CrearHistoriaClinica.TabStop = true;
-            this.rb_AlergiasGenerales_CrearHistoriaClinica.Text = "Alergias Generales";
-            this.rb_AlergiasGenerales_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_FiebreReumatica_CrearHistoriaClinica
-            // 
-            this.rb_FiebreReumatica_CrearHistoriaClinica.AutoSize = true;
-            this.rb_FiebreReumatica_CrearHistoriaClinica.Location = new System.Drawing.Point(163, 153);
-            this.rb_FiebreReumatica_CrearHistoriaClinica.Name = "rb_FiebreReumatica_CrearHistoriaClinica";
-            this.rb_FiebreReumatica_CrearHistoriaClinica.Size = new System.Drawing.Size(108, 17);
-            this.rb_FiebreReumatica_CrearHistoriaClinica.TabIndex = 13;
-            this.rb_FiebreReumatica_CrearHistoriaClinica.TabStop = true;
-            this.rb_FiebreReumatica_CrearHistoriaClinica.Text = "Fiebre Reumática";
-            this.rb_FiebreReumatica_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_EnfermedadRenal_CrearHistoriaClinica
-            // 
-            this.rb_EnfermedadRenal_CrearHistoriaClinica.AutoSize = true;
-            this.rb_EnfermedadRenal_CrearHistoriaClinica.Location = new System.Drawing.Point(163, 136);
-            this.rb_EnfermedadRenal_CrearHistoriaClinica.Name = "rb_EnfermedadRenal_CrearHistoriaClinica";
-            this.rb_EnfermedadRenal_CrearHistoriaClinica.Size = new System.Drawing.Size(113, 17);
-            this.rb_EnfermedadRenal_CrearHistoriaClinica.TabIndex = 12;
-            this.rb_EnfermedadRenal_CrearHistoriaClinica.TabStop = true;
-            this.rb_EnfermedadRenal_CrearHistoriaClinica.Text = "Enfermedad Renal";
-            this.rb_EnfermedadRenal_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_Hepatitis_CrearHistoriaClinica
-            // 
-            this.rb_Hepatitis_CrearHistoriaClinica.AutoSize = true;
-            this.rb_Hepatitis_CrearHistoriaClinica.Location = new System.Drawing.Point(163, 113);
-            this.rb_Hepatitis_CrearHistoriaClinica.Name = "rb_Hepatitis_CrearHistoriaClinica";
-            this.rb_Hepatitis_CrearHistoriaClinica.Size = new System.Drawing.Size(66, 17);
-            this.rb_Hepatitis_CrearHistoriaClinica.TabIndex = 11;
-            this.rb_Hepatitis_CrearHistoriaClinica.TabStop = true;
-            this.rb_Hepatitis_CrearHistoriaClinica.Text = "Hepatitis";
-            this.rb_Hepatitis_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_DolordeCabeza_CrearHistoriaClinica
-            // 
-            this.rb_DolordeCabeza_CrearHistoriaClinica.AutoSize = true;
-            this.rb_DolordeCabeza_CrearHistoriaClinica.Location = new System.Drawing.Point(163, 90);
-            this.rb_DolordeCabeza_CrearHistoriaClinica.Name = "rb_DolordeCabeza_CrearHistoriaClinica";
-            this.rb_DolordeCabeza_CrearHistoriaClinica.Size = new System.Drawing.Size(104, 17);
-            this.rb_DolordeCabeza_CrearHistoriaClinica.TabIndex = 10;
-            this.rb_DolordeCabeza_CrearHistoriaClinica.TabStop = true;
-            this.rb_DolordeCabeza_CrearHistoriaClinica.Text = "Dolor de Cabeza";
-            this.rb_DolordeCabeza_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_PerdidadePeso_CrearHistoriaClinica
-            // 
-            this.rb_PerdidadePeso_CrearHistoriaClinica.AutoSize = true;
-            this.rb_PerdidadePeso_CrearHistoriaClinica.Location = new System.Drawing.Point(163, 67);
-            this.rb_PerdidadePeso_CrearHistoriaClinica.Name = "rb_PerdidadePeso_CrearHistoriaClinica";
-            this.rb_PerdidadePeso_CrearHistoriaClinica.Size = new System.Drawing.Size(103, 17);
-            this.rb_PerdidadePeso_CrearHistoriaClinica.TabIndex = 9;
-            this.rb_PerdidadePeso_CrearHistoriaClinica.TabStop = true;
-            this.rb_PerdidadePeso_CrearHistoriaClinica.Text = "Perdida de Peso";
-            this.rb_PerdidadePeso_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_Epilepsia_CrearHistoriaClinica
-            // 
-            this.rb_Epilepsia_CrearHistoriaClinica.AutoSize = true;
-            this.rb_Epilepsia_CrearHistoriaClinica.Location = new System.Drawing.Point(163, 44);
-            this.rb_Epilepsia_CrearHistoriaClinica.Name = "rb_Epilepsia_CrearHistoriaClinica";
-            this.rb_Epilepsia_CrearHistoriaClinica.Size = new System.Drawing.Size(67, 17);
-            this.rb_Epilepsia_CrearHistoriaClinica.TabIndex = 8;
-            this.rb_Epilepsia_CrearHistoriaClinica.TabStop = true;
-            this.rb_Epilepsia_CrearHistoriaClinica.Text = "Epilepsia";
-            this.rb_Epilepsia_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_EnfermedadRespiratoria_CrearHistoriaClinica
-            // 
-            this.rb_EnfermedadRespiratoria_CrearHistoriaClinica.AutoSize = true;
-            this.rb_EnfermedadRespiratoria_CrearHistoriaClinica.Location = new System.Drawing.Point(163, 20);
-            this.rb_EnfermedadRespiratoria_CrearHistoriaClinica.Name = "rb_EnfermedadRespiratoria_CrearHistoriaClinica";
-            this.rb_EnfermedadRespiratoria_CrearHistoriaClinica.Size = new System.Drawing.Size(141, 17);
-            this.rb_EnfermedadRespiratoria_CrearHistoriaClinica.TabIndex = 7;
-            this.rb_EnfermedadRespiratoria_CrearHistoriaClinica.TabStop = true;
-            this.rb_EnfermedadRespiratoria_CrearHistoriaClinica.Text = "Enfermedad Respiratoria";
-            this.rb_EnfermedadRespiratoria_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_Dermatitis_CrearHistoriaClinica
-            // 
-            this.rb_Dermatitis_CrearHistoriaClinica.AutoSize = true;
-            this.rb_Dermatitis_CrearHistoriaClinica.Location = new System.Drawing.Point(10, 153);
-            this.rb_Dermatitis_CrearHistoriaClinica.Name = "rb_Dermatitis_CrearHistoriaClinica";
-            this.rb_Dermatitis_CrearHistoriaClinica.Size = new System.Drawing.Size(71, 17);
-            this.rb_Dermatitis_CrearHistoriaClinica.TabIndex = 6;
-            this.rb_Dermatitis_CrearHistoriaClinica.TabStop = true;
-            this.rb_Dermatitis_CrearHistoriaClinica.Text = "Dermatitis";
-            this.rb_Dermatitis_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_Diabetes_CrearHistoriaClinica
-            // 
-            this.rb_Diabetes_CrearHistoriaClinica.AutoSize = true;
-            this.rb_Diabetes_CrearHistoriaClinica.Location = new System.Drawing.Point(10, 136);
-            this.rb_Diabetes_CrearHistoriaClinica.Name = "rb_Diabetes_CrearHistoriaClinica";
-            this.rb_Diabetes_CrearHistoriaClinica.Size = new System.Drawing.Size(67, 17);
-            this.rb_Diabetes_CrearHistoriaClinica.TabIndex = 5;
-            this.rb_Diabetes_CrearHistoriaClinica.TabStop = true;
-            this.rb_Diabetes_CrearHistoriaClinica.Text = "Diabetes";
-            this.rb_Diabetes_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_Obesidad_CrearHistoriaClinica
-            // 
-            this.rb_Obesidad_CrearHistoriaClinica.AutoSize = true;
-            this.rb_Obesidad_CrearHistoriaClinica.Location = new System.Drawing.Point(10, 113);
-            this.rb_Obesidad_CrearHistoriaClinica.Name = "rb_Obesidad_CrearHistoriaClinica";
-            this.rb_Obesidad_CrearHistoriaClinica.Size = new System.Drawing.Size(70, 17);
-            this.rb_Obesidad_CrearHistoriaClinica.TabIndex = 4;
-            this.rb_Obesidad_CrearHistoriaClinica.TabStop = true;
-            this.rb_Obesidad_CrearHistoriaClinica.Text = "Obesidad";
-            this.rb_Obesidad_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_RadioTerapia_CrearHistoriaClinica
-            // 
-            this.rb_RadioTerapia_CrearHistoriaClinica.AutoSize = true;
-            this.rb_RadioTerapia_CrearHistoriaClinica.Location = new System.Drawing.Point(10, 90);
-            this.rb_RadioTerapia_CrearHistoriaClinica.Name = "rb_RadioTerapia_CrearHistoriaClinica";
-            this.rb_RadioTerapia_CrearHistoriaClinica.Size = new System.Drawing.Size(92, 17);
-            this.rb_RadioTerapia_CrearHistoriaClinica.TabIndex = 3;
-            this.rb_RadioTerapia_CrearHistoriaClinica.TabStop = true;
-            this.rb_RadioTerapia_CrearHistoriaClinica.Text = "Radio Terapia";
-            this.rb_RadioTerapia_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_EnfSangre_CrearHistoriaClinica
-            // 
-            this.rb_EnfSangre_CrearHistoriaClinica.AutoSize = true;
-            this.rb_EnfSangre_CrearHistoriaClinica.Location = new System.Drawing.Point(10, 67);
-            this.rb_EnfSangre_CrearHistoriaClinica.Name = "rb_EnfSangre_CrearHistoriaClinica";
-            this.rb_EnfSangre_CrearHistoriaClinica.Size = new System.Drawing.Size(107, 17);
-            this.rb_EnfSangre_CrearHistoriaClinica.TabIndex = 2;
-            this.rb_EnfSangre_CrearHistoriaClinica.TabStop = true;
-            this.rb_EnfSangre_CrearHistoriaClinica.Text = "Enf. de la Sangre";
-            this.rb_EnfSangre_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_TerapiaPsicologica_CrearHistoriaClinica
-            // 
-            this.rb_TerapiaPsicologica_CrearHistoriaClinica.AutoSize = true;
-            this.rb_TerapiaPsicologica_CrearHistoriaClinica.Location = new System.Drawing.Point(10, 43);
-            this.rb_TerapiaPsicologica_CrearHistoriaClinica.Name = "rb_TerapiaPsicologica_CrearHistoriaClinica";
-            this.rb_TerapiaPsicologica_CrearHistoriaClinica.Size = new System.Drawing.Size(118, 17);
-            this.rb_TerapiaPsicologica_CrearHistoriaClinica.TabIndex = 1;
-            this.rb_TerapiaPsicologica_CrearHistoriaClinica.TabStop = true;
-            this.rb_TerapiaPsicologica_CrearHistoriaClinica.Text = "Terapia Psicologica";
-            this.rb_TerapiaPsicologica_CrearHistoriaClinica.UseVisualStyleBackColor = true;
-            // 
-            // rb_ProblemasCardiacos_CrearHistoriaClinica
-            // 
-            this.rb_ProblemasCardiacos_CrearHistoriaClinica.AutoSize = true;
-            this.rb_ProblemasCardiacos_CrearHistoriaClinica.Location = new System.Drawing.Point(10, 20);
-            this.rb_ProblemasCardiacos_CrearHistoriaClinica.Name = "rb_ProblemasCardiacos_CrearHistoriaClinica";
-            this.rb_ProblemasCardiacos_CrearHistoriaClinica.Size = new System.Drawing.Size(124, 17);
-            this.rb_ProblemasCardiacos_CrearHistoriaClinica.TabIndex = 0;
-            this.rb_ProblemasCardiacos_CrearHistoriaClinica.TabStop = true;
-            this.rb_ProblemasCardiacos_CrearHistoriaClinica.Text = "Problemas Cardiacos";
-            this.rb_ProblemasCardiacos_CrearHistoriaClinica.UseVisualStyleBackColor = true;
             // 
             // btnLimpiar_CrearHistoriaClinica
             // 
@@ -619,7 +594,7 @@ namespace Cova.UI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(275, 484);
+            this.label1.Location = new System.Drawing.Point(242, 487);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 13);
             this.label1.TabIndex = 104;
@@ -627,9 +602,9 @@ namespace Cova.UI
             // 
             // rtb_obervacion
             // 
-            this.rtb_obervacion.Location = new System.Drawing.Point(276, 503);
+            this.rtb_obervacion.Location = new System.Drawing.Point(245, 503);
             this.rtb_obervacion.Name = "rtb_obervacion";
-            this.rtb_obervacion.Size = new System.Drawing.Size(496, 134);
+            this.rtb_obervacion.Size = new System.Drawing.Size(542, 134);
             this.rtb_obervacion.TabIndex = 105;
             this.rtb_obervacion.Text = "";
             // 
@@ -672,33 +647,8 @@ namespace Cova.UI
         private System.Windows.Forms.DateTimePicker dtp_fechaAlta_CrearHistoriaClinica;
         private System.Windows.Forms.Label lbl_FechaAltaHistoriaClinica;
         private System.Windows.Forms.GroupBox gb_AntecedentesPersonales_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_RadioTerapia_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_EnfSangre_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_TerapiaPsicologica_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_ProblemasCardiacos_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_EnfermedadMotriz_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_AftasRepetidas_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_Varicela_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_Sarampion_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_AlergiasaAnestesia;
-        private System.Windows.Forms.RadioButton rb_AlergiasAMedicina_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_AlergiasGenerales_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_FiebreReumatica_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_EnfermedadRenal_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_Hepatitis_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_DolordeCabeza_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_PerdidadePeso_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_Epilepsia_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_EnfermedadRespiratoria_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_Dermatitis_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_Diabetes_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_Obesidad_CrearHistoriaClinica;
         private System.Windows.Forms.TextBox txt_PesoActual_CrearHistoriaClinica;
         private System.Windows.Forms.Label lbl_PesoActual_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_Cirugias_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_InfeccionesdeGarganta_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_Convulsiones_CrearHistoriaClinica;
-        private System.Windows.Forms.RadioButton rb_EnferPsicologicas_CrearHistoriaClinica;
         private System.Windows.Forms.Button btnLimpiar_CrearHistoriaClinica;
         private System.Windows.Forms.Button btnCancelar_CrearHistoriaClinica;
         private System.Windows.Forms.Button btnCrear_CrearHistoriaClinica;
@@ -712,5 +662,30 @@ namespace Cova.UI
         private System.Windows.Forms.Label lbl_TomaMedicamento_CrearHistoriaClinica;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox rtb_obervacion;
+        private System.Windows.Forms.CheckBox cb_Cirugias_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_AftasRepetidas_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_InfeccionesdeGarganta_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_FiebreReumatica_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_EnferPsicologicas_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_Varicela_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_Convulsiones_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_Diabetes_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_EnfermedadMotriz_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_Sarampion_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_EnfermedadRenal_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_AlergiasaAnestesia;
+        private System.Windows.Forms.CheckBox cb_Dermatitis_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_AlergiasAMedicina_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_Hepatitis_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_AlergiasGenerales_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_TerapiaPsicologica_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_DolordeCabeza_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_Obesidad_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_PerdidadePeso_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_ProblemasCardiacos_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_Epilepsia_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_RadioTerapia_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_EnfermedadRespiratoria_CrearHistoriaClinica;
+        private System.Windows.Forms.CheckBox cb_EnfSangre_CrearHistoriaClinica;
     }
 }

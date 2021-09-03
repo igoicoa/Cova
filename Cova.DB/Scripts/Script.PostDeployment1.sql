@@ -370,16 +370,6 @@ INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
 VALUES
 (@IdiomaInglesId, @EtiquetaId, 'Calendar of Shifts')
 
----- Guardo traduccion para etiqueta menuverCalendarioDePacientes
-INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('verCalendarioDePacientes')
-SET @EtiquetaId = SCOPE_IDENTITY()
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaCastellanoId, @EtiquetaId, 'Ver Calendario De Pacientes')
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaInglesId, @EtiquetaId, 'View Patient Calendar')
-
 ---- Guardo traduccion para etiqueta menuRegistrarTurnos
 INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('RegistrarTurnos')
 SET @EtiquetaId = SCOPE_IDENTITY()
@@ -409,16 +399,6 @@ VALUES
 INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
 VALUES
 (@IdiomaInglesId, @EtiquetaId, 'View My Shifts')
-
----- Guardo traduccion para etiqueta menuHistorialTurnos
-INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('HistorialTurnos')
-SET @EtiquetaId = SCOPE_IDENTITY()
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaCastellanoId, @EtiquetaId, 'Historial Turnos')
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaInglesId, @EtiquetaId, 'Shift History')
 
 -- Guardo traduccion para etiqueta menuAdministrarCoberturamedica
 INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('AdministrarCoberturaMedica')
@@ -481,16 +461,6 @@ INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
 VALUES
 (@IdiomaInglesId, @EtiquetaId, 'Create Clinical History')
 
--- Guardo traduccion para etiqueta menuModificarHistoriaClinica
-INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('ModificarHistoriaClinica')
-SET @EtiquetaId = SCOPE_IDENTITY()
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaCastellanoId, @EtiquetaId, 'Modificar Historia Clinica')
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaInglesId, @EtiquetaId, 'Edit Clinical History')
-
 -- Guardo traduccion para etiqueta menuVerHistoriaClinica
 INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('VerHistoriaClinica')
 SET @EtiquetaId = SCOPE_IDENTITY()
@@ -500,16 +470,6 @@ VALUES
 INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
 VALUES
 (@IdiomaInglesId, @EtiquetaId, 'View Clinical History')
-
--- Guardo traduccion para etiqueta menuVerMiHistoriaClinica
-INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('VerMiHistoriaClinica')
-SET @EtiquetaId = SCOPE_IDENTITY()
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaCastellanoId, @EtiquetaId, 'Ver Mi Historia Clinica')
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaInglesId, @EtiquetaId, 'View My Clinical History')
 
 -- Guardo traduccion para etiqueta menuAdministrarReceta/Certificado
 INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('AdministrarReceta/Certificado')
@@ -543,16 +503,6 @@ VALUES
 
 -- Guardo traduccion para etiqueta menuVerReceta/Certificado
 INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('VerReceta/Certificado')
-SET @EtiquetaId = SCOPE_IDENTITY()
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaCastellanoId, @EtiquetaId, 'Ver Receta o Certificado')
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaInglesId, @EtiquetaId, 'View Recipe or Certificate')
-
--- Guardo traduccion para etiqueta menuVerMiReceta/Certificado
-INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('VerMiReceta/Certificado')
 SET @EtiquetaId = SCOPE_IDENTITY()
 INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
 VALUES
@@ -601,26 +551,6 @@ INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
 VALUES
 (@IdiomaInglesId, @EtiquetaId, 'Perform Restore')
 
--- Guardo traduccion para etiqueta menuBloquerarContraseña
-INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('BloquerarContraseña')
-SET @EtiquetaId = SCOPE_IDENTITY()
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaCastellanoId, @EtiquetaId, 'Bloquerar Contraseña')
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaInglesId, @EtiquetaId, 'Block Password')
-
--- Guardo traduccion para etiqueta menuCambiarContraseña
-INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('CambiarContraseña')
-SET @EtiquetaId = SCOPE_IDENTITY()
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaCastellanoId, @EtiquetaId, 'Cambiar Contraseña')
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaInglesId, @EtiquetaId, 'Change Password')
-
 -- Guardo traduccion para etiqueta menuMisDatos
 INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('MisDatos')
 SET @EtiquetaId = SCOPE_IDENTITY()
@@ -651,25 +581,6 @@ INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
 VALUES
 (@IdiomaInglesId, @EtiquetaId, 'Permissions')
 
--- Guardo traduccion para etiqueta menuCrearPermisos
-INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('CrearPermisos')
-SET @EtiquetaId = SCOPE_IDENTITY()
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaCastellanoId, @EtiquetaId, 'Crear Permisos')
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaInglesId, @EtiquetaId, 'Create Permissions')
-
--- Guardo traduccion para etiqueta menuModificarPermisos
-INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('ModificarPermisos')
-SET @EtiquetaId = SCOPE_IDENTITY()
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaCastellanoId, @EtiquetaId, 'Modificar Permisos')
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaInglesId, @EtiquetaId, 'Edit Permissions')
 
 -- Guardo traduccion para etiqueta menuAsignarPermisos
 INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('AsignarPermisos')

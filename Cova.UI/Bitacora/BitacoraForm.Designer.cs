@@ -31,6 +31,7 @@ namespace Cova.UI.Bitacora
         {
             this.lbl_Bitacora = new System.Windows.Forms.Label();
             this.bg_Filtros_Bitacora = new System.Windows.Forms.GroupBox();
+            this.cmb_Usuarios = new System.Windows.Forms.ComboBox();
             this.btn_Limpiar_Bitacora = new System.Windows.Forms.Button();
             this.btn_Cancelar_Bitacora = new System.Windows.Forms.Button();
             this.btn_Filtrar_Bitacora = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@ namespace Cova.UI.Bitacora
             this.dtp_FechaHasta = new System.Windows.Forms.DateTimePicker();
             this.dtp_FechaDesde = new System.Windows.Forms.DateTimePicker();
             this.dgv_Bitacora = new System.Windows.Forms.DataGridView();
-            this.cmb_Usuarios = new System.Windows.Forms.ComboBox();
             this.bg_Filtros_Bitacora.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Bitacora)).BeginInit();
             this.SuspendLayout();
@@ -77,6 +77,16 @@ namespace Cova.UI.Bitacora
             this.bg_Filtros_Bitacora.TabIndex = 130;
             this.bg_Filtros_Bitacora.TabStop = false;
             this.bg_Filtros_Bitacora.Text = "Filtros";
+            // 
+            // cmb_Usuarios
+            // 
+            this.cmb_Usuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Usuarios.FormattingEnabled = true;
+            this.cmb_Usuarios.Location = new System.Drawing.Point(415, 22);
+            this.cmb_Usuarios.Name = "cmb_Usuarios";
+            this.cmb_Usuarios.Size = new System.Drawing.Size(132, 21);
+            this.cmb_Usuarios.TabIndex = 182;
+            this.cmb_Usuarios.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cmb_Usuarios_Format);
             // 
             // btn_Limpiar_Bitacora
             // 
@@ -176,21 +186,11 @@ namespace Cova.UI.Bitacora
             this.dgv_Bitacora.Size = new System.Drawing.Size(754, 321);
             this.dgv_Bitacora.TabIndex = 131;
             // 
-            // cmb_Usuarios
-            // 
-            this.cmb_Usuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Usuarios.FormattingEnabled = true;
-            this.cmb_Usuarios.Location = new System.Drawing.Point(415, 22);
-            this.cmb_Usuarios.Name = "cmb_Usuarios";
-            this.cmb_Usuarios.Size = new System.Drawing.Size(132, 21);
-            this.cmb_Usuarios.TabIndex = 182;
-            this.cmb_Usuarios.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cmb_Usuarios_Format);
-            // 
             // BitacoraForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 682);
+            this.ClientSize = new System.Drawing.Size(800, 555);
             this.Controls.Add(this.dgv_Bitacora);
             this.Controls.Add(this.bg_Filtros_Bitacora);
             this.Controls.Add(this.lbl_Bitacora);

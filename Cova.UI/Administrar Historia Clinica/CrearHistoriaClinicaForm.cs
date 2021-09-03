@@ -79,15 +79,107 @@ namespace Cova.UI
             try
             {
                 List<AntecedentesPersonales> antecedentes = new List<AntecedentesPersonales>();
-                if (rb_AftasRepetidas_CrearHistoriaClinica.Checked)
+                if (cb_ProblemasCardiacos_CrearHistoriaClinica.Checked)
                 {
-                    antecedentes.Add(AntecedentesPersonales.AftasRepetidas);
+                    antecedentes.Add(AntecedentesPersonales.ProblemasCardiacos);
                 }
-                if (rb_AlergiasaAnestesia.Checked)
+                if (cb_TerapiaPsicologica_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.TerapiaPsicologica);
+                }
+                if (cb_EnfSangre_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.EnfermedadDeLaSangre);
+                }
+                if (cb_RadioTerapia_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.RadioTerapia);
+                }
+                if (cb_Obesidad_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.Obesidad);
+                }
+                if (cb_Diabetes_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.Diabetes);
+                }
+                if (cb_Dermatitis_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.Dermatitis);
+                }
+                if (cb_EnfermedadRespiratoria_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.EnfermedadRespiratoria);
+                }
+                if (cb_Epilepsia_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.Epilepsia);
+                }
+                if (cb_PerdidadePeso_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.PerdidaDePeso);
+                }
+                if (cb_DolordeCabeza_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.DolorDeCabeza);
+                }
+                if (cb_Hepatitis_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.Hepatitis);
+                }
+                if (cb_EnfermedadRenal_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.EnfermedadRenal);
+                }
+                if (cb_FiebreReumatica_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.FiebreReumatica);
+                }
+                if (cb_AlergiasGenerales_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.AlergiasGenerales);
+                }
+                if (cb_AlergiasAMedicina_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.AlergiasAMedicina);
+                }
+                if (cb_AlergiasaAnestesia.Checked)
                 {
                     antecedentes.Add(AntecedentesPersonales.AlergiasAAnestesia);
                 }
-               //TODO Agregar todos antecedentes
+                if (cb_Sarampion_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.Sarampion);
+                }
+                if (cb_Varicela_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.Varicela);
+                }
+                if (cb_AftasRepetidas_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.AftasRepetidas);
+                }
+                if (cb_EnfermedadMotriz_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.EnfermedadMotriz);
+                }
+                if (cb_Convulsiones_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.Convulsiones);
+                }
+                if (cb_EnferPsicologicas_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.EnfermedadPsicologica);
+                }
+                if (cb_InfeccionesdeGarganta_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.InfeccionesDeGarganta);
+                }
+                if (cb_Cirugias_CrearHistoriaClinica.Checked)
+                {
+                    antecedentes.Add(AntecedentesPersonales.Cirugias);
+                }
+
                 antecedentesCargados = bLPaciente.CargarAntecedentesPersonalesPaciente(this._paciente, antecedentes);
             }
             catch (Exception ex)
