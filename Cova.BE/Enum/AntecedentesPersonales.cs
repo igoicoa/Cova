@@ -4,7 +4,7 @@ namespace Cova.BE.Enum
 {
     public enum AntecedentesPersonales
     {
-        ProblemasCardiacos,
+        ProblemasCardiacos = 1,
         TerapiaPsicologica,
         EnfermedadDeLaSangre,
         RadioTerapia,

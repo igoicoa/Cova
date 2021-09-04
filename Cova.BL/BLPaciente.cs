@@ -220,6 +220,25 @@ namespace Cova.BL
             return historiaClinicaCargada;
         }
 
+        public void ObtenerAntecedentesPersonalesPaciente(BEPaciente paciente)
+        {
+            MPPPaciente mPPPaciente = new MPPPaciente();
+            BEHistoriaClinica historiaClinica = new BEHistoriaClinica();
+            try
+            {
+                historiaClinica.Peso = mPPPaciente.ObtenerPesoPaciente(paciente);
+                paciente.AntecedentesPersonales = mPPPaciente.ObtenerAntecedentesPersonalesPaciente(paciente);
+                paciente.HistoriaClinica = new List<BEHistoriaClinica>();
+                paciente.HistoriaClinica.Add(historiaClinica);
+            }
+            catch(Exception ex)
+            {
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al obtener antecedentes personales y peso del paciente: " + paciente.PacienteId + " - "  + ex.Message, "Obtener Antecedentes personales"));
+                throw new ErrorAlCargarAntecedentesPersonalesException();
+            }
+            
+        }
+
         public IList<BEVacuna> ObtenerVacunasRecetadas()
         {
             throw new NotImplementedException();

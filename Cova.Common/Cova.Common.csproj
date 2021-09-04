@@ -53,6 +53,7 @@
     <Compile Include="Excepciones\ErrorAlBuscarRecetasException.cs" />
     <Compile Include="Excepciones\ErrorAlBuscarUsuariosException.cs" />
     <Compile Include="Excepciones\ErrorAlCambiarPasswordException.cs" />
+    <Compile Include="Excepciones\ErrorAlCargarAntecedentesPersonalesException.cs" />
     <Compile Include="Excepciones\ErrorAlCargarCoberturasMedicasException.cs" />
     <Compile Include="Excepciones\ErrorAlCargarDatosProfesional.cs" />
     <Compile Include="Excepciones\ErrorAlCargarDatosPacienteException.cs" />

@@ -361,5 +361,61 @@ namespace Cova.MPP
                 throw ex;
             }
         }
+
+        public decimal ObtenerPesoPaciente(BEPaciente paciente)
+        {
+            decimal peso = 0;
+            DataSet pacienteDS;
+            DataTable pacienteT;
+            Hashtable datosPaciente = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_ObtenerPesoPaciete";
+                datosPaciente.Add("@PacienteId", paciente.PacienteId);
+                pacienteDS = conexionBDD.ObtenerDataSet(strSQL, datosPaciente);
+                pacienteT = pacienteDS.Tables[0];
+                if (pacienteT.Rows.Count > 0)
+                {
+                    foreach (DataRow fila in pacienteT.Rows)
+                    {
+                        peso = Convert.ToDecimal(fila["Peso"]);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return peso;
+        }
+
+        public IList<AntecedentesPersonales> ObtenerAntecedentesPersonalesPaciente(BEPaciente paciente)
+        {
+            List<AntecedentesPersonales> antecedentesPersonales = new List<AntecedentesPersonales>();
+            DataSet pacienteDS;
+            DataTable pacienteT;
+            Hashtable datosPaciente = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_ObtenerAntecedentesPersonalesPaciente";
+                datosPaciente.Add("@PacienteId", paciente.PacienteId);
+                pacienteDS = conexionBDD.ObtenerDataSet(strSQL, datosPaciente);
+                pacienteT = pacienteDS.Tables[0];
+                if (pacienteT.Rows.Count > 0)
+                {
+                    foreach (DataRow fila in pacienteT.Rows)
+                    {
+                        antecedentesPersonales.Add((AntecedentesPersonales)Convert.ToInt32(fila["AntecedentesPersonalesId"]));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return antecedentesPersonales;
+        }
     }
 }

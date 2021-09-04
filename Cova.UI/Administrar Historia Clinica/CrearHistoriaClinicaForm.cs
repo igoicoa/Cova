@@ -57,25 +57,49 @@ namespace Cova.UI
 
         private void btnCrear_CrearHistoriaClinica_Click(object sender, EventArgs e)
         {
-            if(this.ActualizarAntecedentesPersonales() && this.CrearHistoriaClinica())
+            try
             {
-                MessageBox.Show("Antecedentes cargados con exito");
+                this.ActualizarAntecedentesPersonales();
+                this.CrearHistoriaClinica();
+                MessageBox.Show("Historia clinica cargada con exito");
+                this.Close();
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Hubo un error al cargar los antecedentes");
+                MessageBox.Show(ex.Message);
             }
         }
 
         public void ObtenerAntecedentesPersonales()
         {
-            //TODO
+            BLPaciente bLPaciente = new BLPaciente();
+            try
+            {
+                bLPaciente.ObtenerAntecedentesPersonalesPaciente(this._paciente);
+                txt_PesoActual_CrearHistoriaClinica.Text = this._paciente.HistoriaClinica.First().Peso != 0 ? this._paciente.HistoriaClinica.First().Peso.ToString() : "";
+
+                cb_ProblemasCardiacos_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.ProblemasCardiacos) ? true : false;
+                cb_TerapiaPsicologica_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.TerapiaPsicologica) ? true : false;
+                cb_EnfSangre_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.EnfermedadDeLaSangre) ? true : false;
+                cb_RadioTerapia_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.RadioTerapia) ? true : false;
+                cb_Obesidad_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.Obesidad) ? true : false;
+                cb_Diabetes_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.Diabetes) ? true : false;
+                cb_Dermatitis_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.Dermatitis) ? true : false;
+                cb_EnfermedadRespiratoria_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.EnfermedadRespiratoria) ? true : false;
+                cb_Epilepsia_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.Epilepsia) ? true : false;
+                cb_PerdidadePeso_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.PerdidaDePeso) ? true : false;
+                //TODO Terminar
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
-        private bool ActualizarAntecedentesPersonales()
+        private void ActualizarAntecedentesPersonales()
         {
             BLPaciente bLPaciente = new BLPaciente();
-            bool antecedentesCargados = false;
             try
             {
                 List<AntecedentesPersonales> antecedentes = new List<AntecedentesPersonales>();
@@ -180,19 +204,21 @@ namespace Cova.UI
                     antecedentes.Add(AntecedentesPersonales.Cirugias);
                 }
 
-                antecedentesCargados = bLPaciente.CargarAntecedentesPersonalesPaciente(this._paciente, antecedentes);
+                bLPaciente.CargarAntecedentesPersonalesPaciente(this._paciente, antecedentes);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                throw ex;
             }
-            return antecedentesCargados;
         }
 
-        private bool CrearHistoriaClinica()
+        private void CrearHistoriaClinica()
         {
             BLPaciente bLPaciente = new BLPaciente();
-            bool historiaClinicaCargada = false;
+            if (string.IsNullOrEmpty(txt_PesoActual_CrearHistoriaClinica.Text) || string.IsNullOrEmpty(rtb_obervacion.Text))
+            {
+                throw new Exception("Debe completar el peso del paciente y la observacion de la consulta");
+            }
             try
             {
                 BEHistoriaClinica historiaClinica = new BEHistoriaClinica();
@@ -200,13 +226,12 @@ namespace Cova.UI
                 historiaClinica.Observacion = rtb_obervacion.Text;
                 historiaClinica.Peso = Convert.ToDecimal(txt_PesoActual_CrearHistoriaClinica.Text);
                 historiaClinica.Medico = this._usuarioMedico;
-                historiaClinicaCargada = bLPaciente.CargarHistoriaClinicaPaciente(this._paciente, historiaClinica);
+                bLPaciente.CargarHistoriaClinicaPaciente(this._paciente, historiaClinica);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                throw ex;
             }
-            return historiaClinicaCargada;
         }
 
         void IFormCargarUsuarios.CargarUsuarioPaciente(BEPaciente paciente)
@@ -216,6 +241,7 @@ namespace Cova.UI
             this.txt_nombre_CrearHistoriaClinica.Text = paciente.Nombre;
             this.txt_Edad_CrearHistoriaClinica.Text = paciente.Edad.ToString();
             this.txt_NumeroDocumento_CrearHistoriaClinica.Text = paciente.DNI.ToString();
+            ObtenerAntecedentesPersonales();
         }
 
         void IFormCargarUsuarios.CargarUsuarioMedico(BEMedico usuarioAModificar)
