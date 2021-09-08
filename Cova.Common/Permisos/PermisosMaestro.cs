@@ -110,7 +110,7 @@ namespace Cova.Common.Permisos
 
             //Administrar Idioma
             Permiso cambiarIdioma = new Permiso(TipoPermiso.CambiarIdioma);
-            Permiso crearIdioma = new Permiso(TipoPermiso.CambiarIdioma);
+            Permiso crearIdioma = new Permiso(TipoPermiso.CrearIdioma);
 
             FamiliaPermisos AdministrarIdioma = new FamiliaPermisos(TipoPermiso.AdministrarIdioma);
             AdministrarIdioma.AgregarPermiso(cambiarIdioma);

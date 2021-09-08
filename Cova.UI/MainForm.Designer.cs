@@ -400,9 +400,10 @@
             // asignarPermisosToolStripMenuItem
             // 
             this.asignarPermisosToolStripMenuItem.Name = "asignarPermisosToolStripMenuItem";
-            this.asignarPermisosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.asignarPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.asignarPermisosToolStripMenuItem.Tag = "AsignarPermisos";
             this.asignarPermisosToolStripMenuItem.Text = "Asignar Permisos";
+            this.asignarPermisosToolStripMenuItem.Click += new System.EventHandler(this.asignarPermisosToolStripMenuItem_Click_1);
             // 
             // administrarIdiomaToolStripMenuItem
             // 
@@ -417,7 +418,7 @@
             // cambiarIdiomaToolStripMenuItem
             // 
             this.cambiarIdiomaToolStripMenuItem.Name = "cambiarIdiomaToolStripMenuItem";
-            this.cambiarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cambiarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.cambiarIdiomaToolStripMenuItem.Tag = "CambiarIdioma";
             this.cambiarIdiomaToolStripMenuItem.Text = "Cambiar Idioma";
             this.cambiarIdiomaToolStripMenuItem.Click += new System.EventHandler(this.cambiarIdiomaToolStripMenuItem_Click);
@@ -425,7 +426,7 @@
             // crearIdiomaToolStripMenuItem
             // 
             this.crearIdiomaToolStripMenuItem.Name = "crearIdiomaToolStripMenuItem";
-            this.crearIdiomaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.crearIdiomaToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.crearIdiomaToolStripMenuItem.Tag = "CrearIdioma";
             this.crearIdiomaToolStripMenuItem.Text = "Crear Idioma";
             this.crearIdiomaToolStripMenuItem.Click += new System.EventHandler(this.crearIdiomaToolStripMenuItem_Click);

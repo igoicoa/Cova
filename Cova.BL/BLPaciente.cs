@@ -76,6 +76,7 @@ namespace Cova.BL
             {
                 razones.Add("El paciente no tiene receta para la vacuna");
                 estaEnCondicionesDeVacunarse = false;
+
             }
             if(!this.CorrespondeRecibirDosis(pacienteAVacunarse, vacunaAAplicar))
             {

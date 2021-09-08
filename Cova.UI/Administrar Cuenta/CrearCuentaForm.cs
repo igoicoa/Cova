@@ -317,7 +317,7 @@ namespace Cova.UI
             if (string.IsNullOrEmpty(textBoxApellidoCrearCuenta.Text) || (string.IsNullOrEmpty(txt_CrearCuentaNombre.Text))
                 || (string.IsNullOrEmpty(textBoxClave_CrearCuenta.Text)) || string.IsNullOrEmpty(textBoxCalle_CrearCuenta.Text)
                 || string.IsNullOrEmpty(textBoxEstadoCivil_CrearCuenta.Text) || string.IsNullOrEmpty(textBoxTelefono_CrearCuenta.Text)
-                || string.IsNullOrEmpty(txt_documentoNumero.Text) || string.IsNullOrEmpty(txt_matriculaProvincial.Text)
+                || string.IsNullOrEmpty(txt_documentoNumero.Text) || string.IsNullOrEmpty(txt_matriculaNacional.Text)
                 || string.IsNullOrEmpty(txt_Email.Text) || string.IsNullOrEmpty(monthCalendarCrearCuenta.SelectionRange.Start.ToString())
                 || string.IsNullOrEmpty(txt_localidad.Text) || string.IsNullOrEmpty(txt_calleNumero.Text)
                 || string.IsNullOrEmpty(txt_provincia.Text))

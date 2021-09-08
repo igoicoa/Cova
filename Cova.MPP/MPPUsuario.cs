@@ -72,7 +72,7 @@ namespace Cova.MPP
 
                             usuarios.Add(paciente);
                         } 
-                        else if(Convert.ToString(fila["TipoUsuario"]) == "Medico")
+                        else if(Convert.ToString(fila["TipoUsuario"]) == "Profesional")
                         {
                             BEProfesional profesional = new BEProfesional();
                             profesional.Apellido = Convert.ToString(fila["Apellido"]);
@@ -93,6 +93,28 @@ namespace Cova.MPP
                             administrador.UsuarioID = Convert.ToInt64(fila["UsuarioID"]);
 
                             usuarios.Add(administrador);
+                        }
+                        else if (Convert.ToString(fila["TipoUsuario"]) == "Medico")
+                        {
+                            BEMedico medico = new BEMedico();
+                            medico.Apellido = Convert.ToString(fila["Apellido"]);
+                            medico.Nombre = Convert.ToString(fila["Nombre"]);
+                            medico.Email = Convert.ToString(fila["Email"]);
+                            medico.Usuario = Convert.ToString(fila["Usuario"]);
+                            medico.UsuarioID = Convert.ToInt64(fila["UsuarioID"]);
+
+                            usuarios.Add(medico);
+                        }
+                        else if (Convert.ToString(fila["TipoUsuario"]) == "Enfermero")
+                        {
+                            BEEnfermero enfermero = new BEEnfermero();
+                            enfermero.Apellido = Convert.ToString(fila["Apellido"]);
+                            enfermero.Nombre = Convert.ToString(fila["Nombre"]);
+                            enfermero.Email = Convert.ToString(fila["Email"]);
+                            enfermero.Usuario = Convert.ToString(fila["Usuario"]);
+                            enfermero.UsuarioID = Convert.ToInt64(fila["UsuarioID"]);
+
+                            usuarios.Add(enfermero);
                         }
                     }
                 }

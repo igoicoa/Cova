@@ -18,7 +18,7 @@ namespace Cova.BL
             try
             {
                 centromedico = mPPCentroMedico.ObtenerCentrosMedicos();
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo la busqueda del centro medico: ", "Buscar Centro Medico"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo la busqueda del centro medico", "Buscar Centro Medico"));
             }
             catch (Exception ex)
             {

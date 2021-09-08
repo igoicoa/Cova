@@ -298,12 +298,6 @@ namespace Cova.UI
 
         }
 
-        private void asignarPermisosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AsignarPermisosForm frmAsignarPermisos = new AsignarPermisosForm();
-            frmAsignarPermisos.Show();
-        }
-
         private void crearCuentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CrearCuentaForm frmCrearCuenta = new CrearCuentaForm();
@@ -448,6 +442,12 @@ namespace Cova.UI
         {
             BitacoraForm frmBitacora = new BitacoraForm();
             frmBitacora.Show();
+        }
+
+        private void asignarPermisosToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AsignarPermisosForm frmAsignarPermisos = new AsignarPermisosForm();
+            frmAsignarPermisos.Show();
         }
     }
 }
