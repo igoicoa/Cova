@@ -20,4 +20,5 @@
     [Dosis]                 INT             NULL, 
     [ObservacionPaciente]   VARCHAR(MAX)    NULL, 
     [IndicacionMedico]      VARCHAR(MAX)    NULL, 
+    [DVH]                   INT             NOT NULL
 )

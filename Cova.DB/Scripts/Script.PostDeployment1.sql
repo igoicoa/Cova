@@ -130,29 +130,29 @@ VALUES
 ('Cirugias')
 
 -- Creo dosis de vacunas
-EXEC s_CrearVacunaDosis 'NH1231', 1, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'NH2123', 1, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'NH2124', 1, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'NH2125', 1, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'RP1231', 2, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'RP1232', 2, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'RP1233', 2, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'RP1234', 2, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'RP1235', 2, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'RP1236', 2, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'LE3231', 3, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'LE3232', 3, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'LE3233', 3, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'LE3234', 3, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'BR0021', 4, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'BR0022', 4, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'BR0023', 4, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'BR0024', 4, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'CE10024', 5, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'CE10025', 5, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'CE10026', 5, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'CE10027', 5, '2021-01-01', '2021-02-02', 1
-EXEC s_CrearVacunaDosis 'CE10028', 5, '2021-01-01', '2021-02-02', 1
+EXEC s_CrearVacunaDosis 'NH1231', 1, '2021-01-01', '2021-02-02', 1,19688
+EXEC s_CrearVacunaDosis 'NH2123', 1, '2021-01-01', '2021-02-02', 1,19694
+EXEC s_CrearVacunaDosis 'NH2124', 1, '2021-01-01', '2021-02-02', 1,19700
+EXEC s_CrearVacunaDosis 'NH2125', 1, '2021-01-01', '2021-02-02', 1,19706
+EXEC s_CrearVacunaDosis 'RP1231', 2, '2021-01-01', '2021-02-02', 1,19715
+EXEC s_CrearVacunaDosis 'RP1232', 2, '2021-01-01', '2021-02-02', 1,19721
+EXEC s_CrearVacunaDosis 'RP1233', 2, '2021-01-01', '2021-02-02', 1,19727
+EXEC s_CrearVacunaDosis 'RP1234', 2, '2021-01-01', '2021-02-02', 1,19733
+EXEC s_CrearVacunaDosis 'RP1235', 2, '2021-01-01', '2021-02-02', 1,19739
+EXEC s_CrearVacunaDosis 'RP1236', 2, '2021-01-01', '2021-02-02', 1,19745
+EXEC s_CrearVacunaDosis 'LE3231', 3, '2021-01-01', '2021-02-02', 1,19700
+EXEC s_CrearVacunaDosis 'LE3232', 3, '2021-01-01', '2021-02-02', 1,19706
+EXEC s_CrearVacunaDosis 'LE3233', 3, '2021-01-01', '2021-02-02', 1,19712
+EXEC s_CrearVacunaDosis 'LE3234', 3, '2021-01-01', '2021-02-02', 1,19718
+EXEC s_CrearVacunaDosis 'BR0021', 4, '2021-01-01', '2021-02-02', 1,19701
+EXEC s_CrearVacunaDosis 'BR0022', 4, '2021-01-01', '2021-02-02', 1,19707
+EXEC s_CrearVacunaDosis 'BR0023', 4, '2021-01-01', '2021-02-02', 1,19713
+EXEC s_CrearVacunaDosis 'BR0024', 4, '2021-01-01', '2021-02-02', 1,19719
+EXEC s_CrearVacunaDosis 'CE10024', 5, '2021-01-01', '2021-02-02', 1,21112
+EXEC s_CrearVacunaDosis 'CE10025', 5, '2021-01-01', '2021-02-02', 1,21119
+EXEC s_CrearVacunaDosis 'CE10026', 5, '2021-01-01', '2021-02-02', 1,21126
+EXEC s_CrearVacunaDosis 'CE10027', 5, '2021-01-01', '2021-02-02', 1,21133
+EXEC s_CrearVacunaDosis 'CE10028', 5, '2021-01-01', '2021-02-02', 1,21140
 
 -- Creo usuarios de prueba
 -- Pacientes (PWD: paciente123)

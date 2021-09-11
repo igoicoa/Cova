@@ -6,6 +6,7 @@ using Cova.Servicios.Bitacora;
 using Cova.MPP;
 using Cova.Common.Excepciones;
 using Cova.Servicios.Sesion;
+using Cova.Servicios.DigitoVerificador;
 using Cova.BE.Enum;
 
 namespace Cova.BL
@@ -131,7 +132,8 @@ namespace Cova.BL
             try
             {
                 MPPVacuna mPPVacuna = new MPPVacuna();
-                return mPPVacuna.VacunarPaciente(pacienteAVacunar, vacunaAAplicar);
+                int DVH = DigitoVerificador.CalcularDVH(vacunaAAplicar.Lote + vacunaAAplicar.Vacuna.VacunaID + vacunaAAplicar.FechaElaboracion + vacunaAAplicar.FechaVencimiento + vacunaAAplicar.CentroMedico + pacienteAVacunar.PacienteId + vacunaAAplicar.FechaAplicacion + vacunaAAplicar.Dosis + vacunaAAplicar.ObservaionPaciente + vacunaAAplicar.IndicacionMedico);
+                return mPPVacuna.VacunarPaciente(pacienteAVacunar, vacunaAAplicar, DVH);
             }
             catch (Exception ex)
             {

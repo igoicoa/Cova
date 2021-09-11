@@ -128,7 +128,7 @@ namespace Cova.MPP
             return vacunasDosis;
         }
 
-        public bool VacunarPaciente(BEPaciente pacienteAVacunar, BEVacunaDosis vacunaAAplicar)
+        public bool VacunarPaciente(BEPaciente pacienteAVacunar, BEVacunaDosis vacunaAAplicar, int DVH)
         {
             Hashtable datosVacunaDosis = new Hashtable();
             try
@@ -140,6 +140,7 @@ namespace Cova.MPP
                 datosVacunaDosis.Add("@Dosis", vacunaAAplicar.Dosis);
                 datosVacunaDosis.Add("@Lote", vacunaAAplicar.Lote);
                 datosVacunaDosis.Add("@VacunaId", vacunaAAplicar.Vacuna.VacunaID);
+                datosVacunaDosis.Add("@DVH", DVH);
                 return conexionBDD.Escribir(strSQL, datosVacunaDosis);
             }
             catch (Exception ex)

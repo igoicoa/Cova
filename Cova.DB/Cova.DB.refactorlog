@@ -245,4 +245,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ProfesionalId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="80182bec-5f70-4767-955b-f642e979c012" ChangeDateTime="09/11/2021 14:22:16">
+    <Property Name="ElementName" Value="[dbo].[DigitoVerificador].[SumaDVH]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DigitoVerificador]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DVV" />
+  </Operation>
 </Operations>

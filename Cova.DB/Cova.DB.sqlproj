@@ -135,6 +135,10 @@
     <Build Include="StoredProcedures\s_CargarAntecedentesPersonales.sql" />
     <Build Include="StoredProcedures\s_ObtenerPesoPaciete.sql" />
     <Build Include="StoredProcedures\s_ObtenerAntecedentesPersonalesPaciente.sql" />
+    <Build Include="Tables\DigitoVerificador.sql" />
+    <Build Include="StoredProcedures\s_ObtenerSumaDVH.sql" />
+    <Build Include="StoredProcedures\s_ActualizarDVV.sql" />
+    <Build Include="StoredProcedures\s_ObtenerDVV.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />

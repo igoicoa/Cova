@@ -45,6 +45,7 @@
     <Compile Include="MPPBicatora.cs" />
     <Compile Include="MPPCentroMedico.cs" />
     <Compile Include="MPPCoberturaMedica.cs" />
+    <Compile Include="MPPDigitoVerificador.cs" />
     <Compile Include="MPPEnfermero.cs" />
     <Compile Include="MPPLaboratorio.cs" />
     <Compile Include="MPPMedico.cs" />

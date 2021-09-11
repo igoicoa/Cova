@@ -3,9 +3,10 @@
 	@VacunaId			INT,
 	@FechaElaboracion	DATETIME,
 	@FechaVencimiento	DATETIME,
-	@CentroMedicoId		INT
+	@CentroMedicoId		INT,
+	@DVH				INT
 AS
 BEGIN
-	INSERT INTO [dbo].[VacunaDosis] (Lote, VacunaId, FechaElaboracion, FechaVencimiento, CentroMedicoId)
-	VALUES (@Lote, @VacunaId, @FechaElaboracion, @FechaVencimiento, @CentroMedicoId)
+	INSERT INTO [dbo].[VacunaDosis] (Lote, VacunaId, FechaElaboracion, FechaVencimiento, CentroMedicoId, DVH)
+	VALUES (@Lote, @VacunaId, @FechaElaboracion, @FechaVencimiento, @CentroMedicoId, @DVH)
 END
