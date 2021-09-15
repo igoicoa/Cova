@@ -167,6 +167,7 @@ namespace Cova.UI
             // 
             // txt_lote
             // 
+            this.txt_lote.Enabled = false;
             this.txt_lote.Location = new System.Drawing.Point(442, 59);
             this.txt_lote.Name = "txt_lote";
             this.txt_lote.Size = new System.Drawing.Size(184, 20);
@@ -208,6 +209,7 @@ namespace Cova.UI
             // 
             // txt_laboratorio
             // 
+            this.txt_laboratorio.Enabled = false;
             this.txt_laboratorio.Location = new System.Drawing.Point(442, 28);
             this.txt_laboratorio.Name = "txt_laboratorio";
             this.txt_laboratorio.Size = new System.Drawing.Size(184, 20);
@@ -224,6 +226,7 @@ namespace Cova.UI
             // 
             // txt_vacuna
             // 
+            this.txt_vacuna.Enabled = false;
             this.txt_vacuna.Location = new System.Drawing.Point(67, 28);
             this.txt_vacuna.Name = "txt_vacuna";
             this.txt_vacuna.Size = new System.Drawing.Size(195, 20);

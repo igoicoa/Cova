@@ -56,12 +56,12 @@ namespace Cova.BL
             {
                 MPPPaciente mPPPaciente = new MPPPaciente();
                 PacienteActualizado= mPPPaciente.ActualizarPaciente(pacienteNuevo);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizo el Paciente: ", "Actualizar Paciente"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizo el Paciente: " + pacienteNuevo.PacienteId + pacienteNuevo.Apellido, "Actualizar Paciente"));
 
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Actualizar Paciente: " + ex.Message, "Actualizar Paciente"));
+              Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Actualizar Paciente: " + ex.Message, "Actualizar Paciente"));
                 throw new ErrorAlActualizarPacienteException();
             }
             return PacienteActualizado;
@@ -73,6 +73,7 @@ namespace Cova.BL
             Dictionary<bool, List<string>> condicionesPaciente = new Dictionary<bool, List<string>>();
             List<string> razones = new List<string>();
             bool estaEnCondicionesDeVacunarse = true;
+
             if (!this.TieneRecetaMedicaParaAplicarVacuna(pacienteAVacunarse, vacunaAAplicar))
             {
                 razones.Add("El paciente no tiene receta para la vacuna");
@@ -94,20 +95,24 @@ namespace Cova.BL
             {
                 razones.Add("El paciente esta en condiciones de vacunarse");
                 condicionesPaciente.Add(true, razones);
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "El paciente esta en condiciones de vacunarse: " + pacienteAVacunarse.PacienteId + pacienteAVacunarse.ApellidoNombre, "Actualizar Paciente"));
+
             }
             else
             {
                 condicionesPaciente.Add(false, razones);
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "El paciente no esta en condiciones de Vacunarse: ", "Condiciones para Vacunarse"));
             }
             return condicionesPaciente;
         }
 
         private bool TieneRecetaMedicaParaAplicarVacuna(BEPaciente pacienteAVacunarse, BEVacunaDosis vacunaAAplicar)
-        {
+        { //TODO BITACORA
             BLReceta bLReceta = new BLReceta();
             BEReceta recetaVacuna = bLReceta.ObtenerRecetaParaVacunaYPaciente(vacunaAAplicar.Vacuna, pacienteAVacunarse);
 
             return recetaVacuna.RecetaId == 0 ? false : true;
+
         }
 
         private bool CorrespondeRecibirDosis(BEPaciente pacienteAVacunarse, BEVacunaDosis vacunaAAplicar)
@@ -117,7 +122,12 @@ namespace Cova.BL
             cantidadDosisAplicadas = mPPPaciente.ObtenerCantidadDosisAplicadasDeVacunaAPaciente(pacienteAVacunarse, vacunaAAplicar.Vacuna);
             if(vacunaAAplicar.Dosis != (cantidadDosisAplicadas + 1) || vacunaAAplicar.Vacuna.CantidadDosis < vacunaAAplicar.Dosis)
             {
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Al paciente le corresponde recibir la dosis de la vacuna: " + pacienteAVacunarse.PacienteId + pacienteAVacunarse.ApellidoNombre, "Corresponde Recibir Dosis"));
                 return false;
+            }
+            else
+            {
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al recibir la dosis de la vacuna: ", "Corresponde Recibir Dosis"));
             }
             return true;
         }
@@ -129,57 +139,57 @@ namespace Cova.BL
 
         public bool VacunarPaciente(BEPaciente pacienteAVacunar, BEVacunaDosis vacunaAAplicar)
         {
+            bool vacunaPaciente = false;
             try
             {
                 MPPVacuna mPPVacuna = new MPPVacuna();
                 int DVH = DigitoVerificador.CalcularDVH(vacunaAAplicar.Lote + vacunaAAplicar.Vacuna.VacunaID + vacunaAAplicar.FechaElaboracion + vacunaAAplicar.FechaVencimiento + vacunaAAplicar.CentroMedico + pacienteAVacunar.PacienteId + vacunaAAplicar.FechaAplicacion + vacunaAAplicar.Dosis + vacunaAAplicar.ObservaionPaciente + vacunaAAplicar.IndicacionMedico);
-                return mPPVacuna.VacunarPaciente(pacienteAVacunar, vacunaAAplicar, DVH);
+                vacunaPaciente= mPPVacuna.VacunarPaciente(pacienteAVacunar, vacunaAAplicar, DVH);
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Vacuno el Paciente: " + pacienteAVacunar.PacienteId+ pacienteAVacunar.Nombre , "Vacunar Paciente"));
+
             }
             catch (Exception ex)
             {
                 Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Vacunar el Paciente: " + ex.Message, "Vacunar Paciente"));
                 throw new ErrorAlVacunarPacienteException();
             }
-            finally
-            {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Vacuno el Paciente: ", "Vacunar Paciente"));
-            }
+            return vacunaPaciente;
         }
 
         public IList<BEVacunaDosis> ObtenerVacunasAplicadasEsquemaCompleto(BEPaciente paciente)
         {
+            IList<BEVacunaDosis> VacunasDosis;
+            MPPPaciente mPPPaciente = new MPPPaciente();
             try
             {
-                MPPPaciente mPPPaciente = new MPPPaciente();
-                return mPPPaciente.ObtenerVacunasAplicadasEsquemaCompleto(paciente);
+                VacunasDosis= mPPPaciente.ObtenerVacunasAplicadasEsquemaCompleto(paciente);
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo vacunas aplicadas esquema completo para el Paciente: ", "Obtener Vacunas Aplicadas Esquema Completo"));
             }
             catch (Exception ex)
             {
                 Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Obtener Vacunas Aplicadas Esquema Completo: " + ex.Message, "Obtener Vacunas Aplicadas Esquema Completo"));
                 throw new ErrorAlObtenerVacunasAplicadasEsquemaCompletoException();
             }
-            finally
-            {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo vacunas aplicadas esquema completo para el Paciente: ", "Obtener Vacunas Aplicadas Esquema Completo"));
-            }
+            return VacunasDosis;
         }
 
         public IList<BEVacunaDosis> ObtenerVacunasAplicadasEsquemaIncompleto(BEPaciente paciente)
         {
+            IList<BEVacunaDosis> vacunaDosis;
+            MPPPaciente mPPPaciente = new MPPPaciente();
+
             try
             {
-                MPPPaciente mPPPaciente = new MPPPaciente();
-                return mPPPaciente.ObtenerVacunasAplicadasEsquemaIncompleto(paciente);
+                vacunaDosis= mPPPaciente.ObtenerVacunasAplicadasEsquemaIncompleto(paciente);
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo la busqueda de vacunas aplicadas esquema incompleto: ", "Obtener Vacunas Aplicadas Esquema Incompleto"));
+
             }
             catch (Exception ex)
             {
                 Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Obtener Vacunas Aplicadas Esquema incompleto: " + ex.Message, "Obtener Vacunas Aplicadas Esquema Incompleto"));
                 throw new ErrorAlObtenerVacunasAplicadasEsquemaInCompletoException();
             }
-            finally
-            {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo vacunas aplicadas esquema incompleto para el Paciente: ", "Obtener Vacunas Aplicadas Esquema Incompleto"));
-            }
+            return vacunaDosis;
         }
 
         public bool CargarAntecedentesPersonalesPaciente(BEPaciente paciente, IList<AntecedentesPersonales> antecedentes)
