@@ -154,6 +154,13 @@ EXEC s_CrearVacunaDosis 'CE10026', 5, '2021-01-01', '2021-02-02', 1,21126
 EXEC s_CrearVacunaDosis 'CE10027', 5, '2021-01-01', '2021-02-02', 1,21133
 EXEC s_CrearVacunaDosis 'CE10028', 5, '2021-01-01', '2021-02-02', 1,21140
 
+--Inicializo DVV de VacunaDosis
+DECLARE @SumaDVH BIGINT = (SELECT SUM(DVH) FROM [dbo].[VacunaDosis]);
+INSERT INTO [dbo].[DigitoVerificador] (Entidad, DVV)
+VALUES
+('VacunaDosis', @SumaDVH)
+GO
+
 -- Creo usuarios de prueba
 -- Pacientes (PWD: paciente123)
 EXEC s_CrearPaciente 'Gonzalez', 'Juan', 32382278, '1987-02-21', 'M', 'Soltero', '1123423452', 'jgonzalez@hotmail.com','San Martin',123,'','Quilmes','Buenos Aires','Argentina', 5, 1, '1234323424', '2023-01-02','B6-0F-15-38-5B-90-5B-E9-C9-77-C5-9A-A3-42-0F-D2'
