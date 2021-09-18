@@ -14,10 +14,10 @@ namespace Cova.BE
         public DateTime FechaVencimiento { get; set; }
         public BECentroMedico CentroMedico { get; set; }        
         public BEPaciente Paciente { get; set; }
-        public DateTime FechaAplicacion { get; set; }
-        public int Dosis { get; set; }
-        public string ObservaionPaciente { get; set; }
+        public DateTime? FechaAplicacion { get; set; }
+        public int? Dosis { get; set; }
+        public string ObservacionPaciente { get; set; }
         public string IndicacionMedico { get; set; }
-        public int CentroMedicoAplicacionId { get; set; }
+        public int DVH { get; set; }
     }
 }

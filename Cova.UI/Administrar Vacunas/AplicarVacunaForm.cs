@@ -135,6 +135,9 @@ namespace Cova.UI
                 {
                     BLPaciente blPaciente = new BLPaciente();
                     this._vacunaAAplicar.FechaAplicacion = dtp_fechaAplicacion_AplicarVacunas.Value;
+                    BECentroMedico bECentroMedico = new BECentroMedico();
+                    bECentroMedico.CentroMedicoId = (int)cmb_centroMedico.SelectedValue;
+                    this._vacunaAAplicar.CentroMedico = bECentroMedico;
                     this._vacunaAAplicar.Dosis = Convert.ToInt32(cmb_dosis.Text);
                     Dictionary<bool, List<string>> correspondeRecibirDosis = (Dictionary<bool, List<string>>)blPaciente.EstaEnCondicionesDeRecibirVacuna(this._pacienteAVacunar, this._vacunaAAplicar);
                     if(correspondeRecibirDosis.ContainsKey(false))

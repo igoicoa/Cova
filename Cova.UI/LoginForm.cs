@@ -5,6 +5,7 @@ using Cova.Common.Multiidioma;
 using Cova.BL;
 using Cova.Servicios.Sesion;
 using Cova.Servicios.Multiidioma;
+using Cova.Servicios.DigitoVerificador;
 
 namespace Cova.UI
 {
@@ -41,15 +42,37 @@ namespace Cova.UI
                 if (usuarioBL.Login(ref usuario))
                 {
                     Sesion.Login(usuario, idiomaElegido);
-                    MessageBox.Show("Usuario logueado correctamente");
-                    this._MainForm.InicializarMainForm();
-                    this.Close();
+                    if(ValidarIntegridadBDD())
+                    {
+                        MessageBox.Show("Usuario logueado correctamente");
+                        this._MainForm.InicializarMainForm();
+                        this.Close();
+                    }
+                    else
+                    {
+                        if(Sesion.GetInstance.Usuario.TipoUsuario == BE.Enum.TipoUsuario.Administrador)
+                        {
+                            MessageBox.Show("Hay un error de integridad en las tablas de BDD. Realice los arreglos necesarios en la BDD");
+                            this._MainForm.InicializarModoRestoreBDD();
+                            this.Close();
+                        } 
+                        else
+                        {
+                            MessageBox.Show("Hay un error de integridad en las tablas de BDD. Contactese con su administrador");
+                            this.Close();
+                        }
+                    }
                 }
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private bool ValidarIntegridadBDD()
+        {
+            return (DigitoVerificador.ValidarDVV("VacunaDosis") && DigitoVerificador.ValidarDVH("VacunaDosis"));
         }
     }
 }

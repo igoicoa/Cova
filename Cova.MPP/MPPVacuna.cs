@@ -52,6 +52,55 @@ namespace Cova.MPP
             return vacunas;
         }
 
+        public IList<BEVacunaDosis> ObtenerVacunasDosis()
+        {
+            List<BEVacunaDosis> vacunasDosis = new List<BEVacunaDosis>();
+            DataSet vacunasDosisDS;
+            DataTable vacunasDosisT;
+            Hashtable datosVacunaDosis = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_ObtenerVacunasDosis";
+                vacunasDosisDS = conexionBDD.ObtenerDataSet(strSQL, datosVacunaDosis);
+                vacunasDosisT = vacunasDosisDS.Tables[0];
+                if (vacunasDosisT.Rows.Count > 0)
+                {
+                    foreach (DataRow fila in vacunasDosisT.Rows)
+                    {
+                        BEVacunaDosis vacunaDosis = new BEVacunaDosis();
+                        vacunaDosis.Lote = Convert.ToString(fila["Lote"]);
+                        vacunaDosis.FechaElaboracion = Convert.ToDateTime(fila["FechaElaboracion"]);
+                        vacunaDosis.FechaVencimiento = Convert.ToDateTime(fila["FechaVencimiento"]);
+
+                        BECentroMedico centroMedico = new BECentroMedico();
+                        centroMedico.CentroMedicoId = Convert.ToInt32(fila["CentroMedicoId"]);
+                        vacunaDosis.CentroMedico = centroMedico;
+
+                        BEVacuna vacuna = new BEVacuna();
+                        vacuna.VacunaID = Convert.ToInt32(fila["VacunaId"]);
+                        vacunaDosis.Vacuna = vacuna;
+
+                        BEPaciente paciente = new BEPaciente();
+                        paciente.PacienteId = fila["PacienteId"] is DBNull ? -1 : Convert.ToInt32(fila["PacienteId"]);
+                        vacunaDosis.Paciente = paciente;
+                        vacunaDosis.FechaAplicacion = fila["FechaAplicacion"] is DBNull ? (DateTime?)null : Convert.ToDateTime(fila["FechaAplicacion"]);
+                        vacunaDosis.Dosis = fila["Dosis"] is DBNull ? (int?)null : Convert.ToInt32(fila["Dosis"]);
+                        vacunaDosis.ObservacionPaciente = fila["ObservacionPaciente"] is DBNull ? string.Empty : Convert.ToString(fila["ObservacionPaciente"]);
+                        vacunaDosis.IndicacionMedico = fila["IndicacionMedico"] is DBNull ? string.Empty : Convert.ToString(fila["IndicacionMedico"]);
+                        vacunaDosis.DVH = Convert.ToInt32(fila["DVH"]);
+
+                        vacunasDosis.Add(vacunaDosis);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return vacunasDosis;
+        }
+
         public bool CrearVacuna(BEVacuna vacunaNueva)
         {
             Hashtable datosVacunaDosis = new Hashtable();

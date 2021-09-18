@@ -184,7 +184,7 @@ namespace Cova.UI
                 filaVacunas["Fecha Aplicacion"] = vacunaDosis.FechaAplicacion;
                 filaVacunas["Fecha Elaboracion"] = vacunaDosis.FechaElaboracion;
                 filaVacunas["Fecha Vencimiento"] = vacunaDosis.FechaVencimiento;
-                filaVacunas["Observacion Paciente"] = vacunaDosis.ObservaionPaciente;
+                filaVacunas["Observacion Paciente"] = vacunaDosis.ObservacionPaciente;
                 filaVacunas["Indicacion Medico"] = vacunaDosis.IndicacionMedico;
                 filaVacunas["Descripcion"] = vacunaDosis.Vacuna.Descripcion;
                 filaVacunas["Contraindicaciones"] = vacunaDosis.Vacuna.Contraindicaciones;

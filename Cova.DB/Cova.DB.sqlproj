@@ -139,6 +139,7 @@
     <Build Include="StoredProcedures\s_ObtenerSumaDVH.sql" />
     <Build Include="StoredProcedures\s_ActualizarDVV.sql" />
     <Build Include="StoredProcedures\s_ObtenerDVV.sql" />
+    <Build Include="StoredProcedures\s_ObtenerVacunasDosis.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />

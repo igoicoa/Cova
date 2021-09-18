@@ -42,11 +42,30 @@ namespace Cova.Servicios.DigitoVerificador
             }
         }
 
-        public static bool ValidarDVH(string atributos, string entidad)
+        public static bool ValidarDVH(string entidad)
         {
-            MPPDigitoVerificador mPPDigitoVerificador = new MPPDigitoVerificador();
-            int DVH = mPPDigitoVerificador.ObtenerDVH(entidad);
-            return CalcularDVH(atributos) != DVH;
+            switch (entidad)
+            {
+                case "VacunaDosis":
+                    return ValidarDVHVacunaDosis();
+                default:
+                    return true;
+            }
+        }
+
+        private static bool ValidarDVHVacunaDosis()
+        {
+            MPPVacuna mPPVacuna = new MPPVacuna();
+            IList<BEVacunaDosis> vacunasDosis = mPPVacuna.ObtenerVacunasDosis();
+            foreach(BEVacunaDosis vacunaDosis in vacunasDosis)
+            {
+                int DVH = CalcularDVH(vacunaDosis.Lote + vacunaDosis.Vacuna.VacunaID + vacunaDosis.FechaElaboracion.ToString() + vacunaDosis.FechaVencimiento.ToString() + vacunaDosis.CentroMedico.CentroMedicoId.ToString() + (vacunaDosis.Paciente.PacienteId == -1 ? string.Empty : vacunaDosis.Paciente.PacienteId.ToString()) + (vacunaDosis.FechaAplicacion is null ? string.Empty : vacunaDosis.FechaAplicacion.ToString()) + (vacunaDosis.Dosis == null ? string.Empty : vacunaDosis.Dosis.ToString()) + vacunaDosis.ObservacionPaciente + vacunaDosis.IndicacionMedico);
+                if(DVH != vacunaDosis.DVH)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public static bool ValidarDVV(string entidad)

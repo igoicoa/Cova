@@ -109,9 +109,10 @@ namespace Cova.BL
         private bool TieneRecetaMedicaParaAplicarVacuna(BEPaciente pacienteAVacunarse, BEVacunaDosis vacunaAAplicar)
         { 
             BLReceta bLReceta = new BLReceta();
+            BEReceta recetaVacuna = new BEReceta();
             try
             {
-                BEReceta recetaVacuna = bLReceta.ObtenerRecetaParaVacunaYPaciente(vacunaAAplicar.Vacuna, pacienteAVacunarse);
+                recetaVacuna = bLReceta.ObtenerRecetaParaVacunaYPaciente(vacunaAAplicar.Vacuna, pacienteAVacunarse);
             }
             catch(Exception ex)
             {
@@ -150,8 +151,9 @@ namespace Cova.BL
             try
             {
                 MPPVacuna mPPVacuna = new MPPVacuna();
-                int DVH = DigitoVerificador.CalcularDVH(vacunaAAplicar.Lote + vacunaAAplicar.Vacuna.VacunaID + vacunaAAplicar.FechaElaboracion + vacunaAAplicar.FechaVencimiento + vacunaAAplicar.CentroMedico + pacienteAVacunar.PacienteId + vacunaAAplicar.FechaAplicacion + vacunaAAplicar.Dosis + vacunaAAplicar.ObservaionPaciente + vacunaAAplicar.IndicacionMedico);
-                vacunaPaciente= mPPVacuna.VacunarPaciente(pacienteAVacunar, vacunaAAplicar, DVH);
+                int DVH = DigitoVerificador.CalcularDVH(vacunaAAplicar.Lote + vacunaAAplicar.Vacuna.VacunaID.ToString() + vacunaAAplicar.FechaElaboracion.ToString() + vacunaAAplicar.FechaVencimiento.ToString() + vacunaAAplicar.CentroMedico.CentroMedicoId.ToString() + pacienteAVacunar.PacienteId.ToString() + vacunaAAplicar.FechaAplicacion.ToString() + vacunaAAplicar.Dosis.ToString() + vacunaAAplicar.ObservacionPaciente + vacunaAAplicar.IndicacionMedico);
+                vacunaPaciente = mPPVacuna.VacunarPaciente(pacienteAVacunar, vacunaAAplicar, DVH);
+                DigitoVerificador.ActualizarDVV("VacunaDosis");
                 Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Vacuno el Paciente: " + pacienteAVacunar.PacienteId+ pacienteAVacunar.Nombre , "Vacunar Paciente"));
 
             }

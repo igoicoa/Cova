@@ -23,6 +23,15 @@ namespace Cova.UI
 
         public void InicializarMainForm()
         {
+            TraducirMenu();
+            if (Sesion.GetInstance != null)
+                this.MostrarComponentes();
+            else
+                this.MostrarComponentes(false);
+        }
+
+        private void TraducirMenu()
+        {
             if (Sesion.GetInstance != null)
             {
                 Sesion.GetInstance.ManejadorIdioma.SuscribirObservador(this);
@@ -32,10 +41,6 @@ namespace Cova.UI
             {
                 this.Traducir();
             }
-            if (Sesion.GetInstance != null)
-                this.MostrarComponentes();
-            else
-                this.MostrarComponentes(false);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -258,12 +263,19 @@ namespace Cova.UI
             this.administrarIdiomaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AdministrarIdioma) : false;
             this.cambiarIdiomaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CambiarIdioma) : false;
             this.crearIdiomaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CrearIdioma) : false;
-            this.controlDeCambioToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.Controlde_Cambio) : false;
+            this.controlDeCambioToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.ControlDeCambio) : false;
 
             //Menu Informacion
             this.informaciónToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.Informacion) : false;
             this.contactoToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.Contacto) : false;
             this.novedadesToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.Novedades) : false;
+        }
+
+        internal void InicializarModoRestoreBDD(bool cargarPermisosUsuario = true)
+        {
+            TraducirMenu();
+            this.seguridadToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.Seguridad) : false;
+            this.realizarRestoreToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.RealizarRestore) : false;
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
