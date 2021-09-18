@@ -622,6 +622,16 @@ INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
 VALUES
 (@IdiomaInglesId, @EtiquetaId, 'Change Language')
 
+-- Guardo traduccion para etiqueta menuControldeCambio
+INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('Controlde_Cambio')
+SET @EtiquetaId = SCOPE_IDENTITY()
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaCastellanoId, @EtiquetaId, 'Control de Cambio')
+INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
+VALUES
+(@IdiomaInglesId, @EtiquetaId, 'Change Control')
+
 -- Guardo traduccion para etiqueta menuInformacion
 INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('Informacion')
 SET @EtiquetaId = SCOPE_IDENTITY()

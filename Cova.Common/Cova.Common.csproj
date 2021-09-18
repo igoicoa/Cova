@@ -48,6 +48,7 @@
     <Compile Include="Excepciones\ErrorAlActualizarRecetasException.cs" />
     <Compile Include="Excepciones\ErrorAlAgregarPermisoException.cs" />
     <Compile Include="Excepciones\ErrorAlBuscarAdministrador.cs" />
+    <Compile Include="Excepciones\ErrorAlBuscarBitacoraException.cs" />
     <Compile Include="Excepciones\ErrorAlBuscarDatosMedicos.cs" />
     <Compile Include="Excepciones\ErrorAlBuscarPacienteException.cs" />
     <Compile Include="Excepciones\ErrorAlBuscarRecetasException.cs" />

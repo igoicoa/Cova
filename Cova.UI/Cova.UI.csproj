@@ -154,6 +154,12 @@
     <Compile Include="Bitacora\BitacoraForm.Designer.cs">
       <DependentUpon>BitacoraForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control de Cambios\ControlDeCambioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control de Cambios\ControlDeCambioForm.Designer.cs">
+      <DependentUpon>ControlDeCambioForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\IFormCargarRecetas.cs" />
     <Compile Include="Interfaces\IFormCargarUsuarios.cs" />
     <Compile Include="Interfaces\IFormCargarVacunas.cs" />
@@ -219,6 +225,12 @@
     <Compile Include="Administrar Historia Clinica\VerHistoriaClinicaForm.Designer.cs">
       <DependentUpon>VerHistoriaClinicaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Realizar Backup\RealizarBackupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Realizar Backup\RealizarBackupForm.Designer.cs">
+      <DependentUpon>RealizarBackupForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Administrar Idioma\AgregarIdiomaForm.resx">
       <DependentUpon>AgregarIdiomaForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +285,9 @@
     <EmbeddedResource Include="Bitacora\BitacoraForm.resx">
       <DependentUpon>BitacoraForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control de Cambios\ControlDeCambioForm.resx">
+      <DependentUpon>ControlDeCambioForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,6 +327,9 @@
     <EmbeddedResource Include="Administrar Historia Clinica\VerHistoriaClinicaForm.resx">
       <DependentUpon>VerHistoriaClinicaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Realizar Backup\RealizarBackupForm.resx">
+      <DependentUpon>RealizarBackupForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -343,5 +361,6 @@
       <Name>Cova.Servicios</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -72,6 +72,7 @@
             this.informaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contactoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novedadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.controlDeCambioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -360,7 +361,8 @@
             this.bitacoraToolStripMenuItem,
             this.realizarRestoreToolStripMenuItem,
             this.permisosToolStripMenuItem,
-            this.administrarIdiomaToolStripMenuItem});
+            this.administrarIdiomaToolStripMenuItem,
+            this.controlDeCambioToolStripMenuItem});
             this.seguridadToolStripMenuItem.Name = "seguridadToolStripMenuItem";
             this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.seguridadToolStripMenuItem.Tag = "Seguridad";
@@ -400,7 +402,7 @@
             // asignarPermisosToolStripMenuItem
             // 
             this.asignarPermisosToolStripMenuItem.Name = "asignarPermisosToolStripMenuItem";
-            this.asignarPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.asignarPermisosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.asignarPermisosToolStripMenuItem.Tag = "AsignarPermisos";
             this.asignarPermisosToolStripMenuItem.Text = "Asignar Permisos";
             this.asignarPermisosToolStripMenuItem.Click += new System.EventHandler(this.asignarPermisosToolStripMenuItem_Click_1);
@@ -444,16 +446,24 @@
             // contactoToolStripMenuItem
             // 
             this.contactoToolStripMenuItem.Name = "contactoToolStripMenuItem";
-            this.contactoToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.contactoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.contactoToolStripMenuItem.Tag = "Contacto";
             this.contactoToolStripMenuItem.Text = "Contacto";
             // 
             // novedadesToolStripMenuItem
             // 
             this.novedadesToolStripMenuItem.Name = "novedadesToolStripMenuItem";
-            this.novedadesToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.novedadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.novedadesToolStripMenuItem.Tag = "Novedades";
             this.novedadesToolStripMenuItem.Text = "Novedades";
+            // 
+            // controlDeCambioToolStripMenuItem
+            // 
+            this.controlDeCambioToolStripMenuItem.Name = "controlDeCambioToolStripMenuItem";
+            this.controlDeCambioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.contactoToolStripMenuItem.Tag = "Controlde_Cambio";
+            this.controlDeCambioToolStripMenuItem.Text = "Control de Cambio";
+            this.controlDeCambioToolStripMenuItem.Click += new System.EventHandler(this.controlDeCambioToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -519,6 +529,7 @@
         private System.Windows.Forms.ToolStripMenuItem crearIdiomaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verCoberturasMedicasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asignarPermisosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem controlDeCambioToolStripMenuItem;
     }
 }
 

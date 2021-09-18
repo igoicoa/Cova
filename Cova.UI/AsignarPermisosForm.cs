@@ -94,7 +94,18 @@ namespace Cova.UI
 
                 tableUsuarios.Rows.Add(filaUsuario);
             }
-            //todo: agregar administrador
+            foreach (BEAdministrador usuario in usuarios.OfType<BEAdministrador>())
+            {
+                DataRow filaUsuario = tableUsuarios.NewRow();
+                filaUsuario["Apellido"] = usuario.Apellido;
+                filaUsuario["Nombre"] = usuario.Nombre;
+                filaUsuario["Email"] = usuario.Email;
+                filaUsuario["Usuario"] = usuario.Usuario;
+                filaUsuario["Tipo Usuario"] = "Administrador";
+                filaUsuario["UsuarioID"] = usuario.UsuarioID;
+
+                tableUsuarios.Rows.Add(filaUsuario);
+            }
             dgv_usuarios.DataSource = tableUsuarios;
             dgv_usuarios.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgv_usuarios.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -102,7 +113,6 @@ namespace Cova.UI
             dgv_usuarios.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgv_usuarios.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgv_usuarios.Columns[5].Visible = true;
-
         }
 
         private void btn_seleccionar_Click(object sender, System.EventArgs e)

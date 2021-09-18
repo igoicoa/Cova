@@ -61,6 +61,7 @@ namespace Cova.Common.Permisos
         AdministrarIdioma,
         CambiarIdioma,
         CrearIdioma,
+        Controlde_Cambio,
 
         //Informacion
         Contacto,

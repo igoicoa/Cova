@@ -116,6 +116,9 @@ namespace Cova.Common.Permisos
             AdministrarIdioma.AgregarPermiso(cambiarIdioma);
             AdministrarIdioma.AgregarPermiso(crearIdioma);
 
+            //Control Cambio
+            Permiso controlde_cambio = new Permiso(TipoPermiso.ControldeCambio);
+
             FamiliaPermisos seguridad = new FamiliaPermisos(TipoPermiso.Seguridad);
             seguridad.AgregarPermiso(realizarBackup);
             seguridad.AgregarPermiso(bitacora);
@@ -123,6 +126,7 @@ namespace Cova.Common.Permisos
             seguridad.AgregarPermiso(Permisos);
             seguridad.AgregarPermiso(AsignarPermisos);
             seguridad.AgregarPermiso(AdministrarIdioma);
+            seguridad.AgregarPermiso(controlde_cambio);
 
             //Informacion
             //Contacto

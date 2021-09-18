@@ -9,6 +9,7 @@ using Cova.Common.Excepciones;
 using Cova.BE;
 using Cova.UI.Administrar_Receta_y_Certificado;
 using Cova.UI.Bitacora;
+using Cova.UI.Control_de_Cambios;
 
 namespace Cova.UI
 {
@@ -195,6 +196,10 @@ namespace Cova.UI
 
             if (crearIdiomaToolStripMenuItem.Tag != null && traducciones.ContainsKey(crearIdiomaToolStripMenuItem.Tag.ToString()))
                 crearIdiomaToolStripMenuItem.Text = traducciones[crearIdiomaToolStripMenuItem.Tag.ToString()].PalabraTraducida;
+            
+            //Control de Cambio
+            if (controlDeCambioToolStripMenuItem.Tag != null && traducciones.ContainsKey(controlDeCambioToolStripMenuItem.Tag.ToString()))
+                controlDeCambioToolStripMenuItem.Text = traducciones[controlDeCambioToolStripMenuItem.Tag.ToString()].PalabraTraducida;
 
             //Informacion informaciónToolStripMenuItem
             if (informaciónToolStripMenuItem.Tag != null && traducciones.ContainsKey(informaciónToolStripMenuItem.Tag.ToString()))
@@ -253,7 +258,8 @@ namespace Cova.UI
             this.administrarIdiomaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AdministrarIdioma) : false;
             this.cambiarIdiomaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CambiarIdioma) : false;
             this.crearIdiomaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CrearIdioma) : false;
-            
+            this.controlDeCambioToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.Controlde_Cambio) : false;
+
             //Menu Informacion
             this.informaciónToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.Informacion) : false;
             this.contactoToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.Contacto) : false;
@@ -448,6 +454,12 @@ namespace Cova.UI
         {
             AsignarPermisosForm frmAsignarPermisos = new AsignarPermisosForm();
             frmAsignarPermisos.Show();
+        }
+
+        private void controlDeCambioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ControlDeCambioForm frmControlCambio = new ControlDeCambioForm();
+            frmControlCambio.Show();
         }
     }
 }

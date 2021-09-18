@@ -88,7 +88,22 @@ namespace Cova.UI
                 cb_EnfermedadRespiratoria_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.EnfermedadRespiratoria) ? true : false;
                 cb_Epilepsia_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.Epilepsia) ? true : false;
                 cb_PerdidadePeso_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.PerdidaDePeso) ? true : false;
-                //TODO Terminar
+
+                cb_DolordeCabeza_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.DolorDeCabeza) ? true : false;
+                cb_Hepatitis_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.Hepatitis) ? true : false;
+                cb_EnfermedadRenal_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.EnfermedadRenal) ? true : false;
+                cb_FiebreReumatica_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.FiebreReumatica) ? true : false;
+                cb_AlergiasGenerales_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.AlergiasGenerales) ? true : false;
+                cb_AlergiasAMedicina_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.AlergiasAMedicina) ? true : false;
+                cb_AlergiasaAnestesia.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.AlergiasAAnestesia) ? true : false;
+                cb_Sarampion_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.Sarampion) ? true : false;
+                cb_Varicela_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.Varicela) ? true : false;
+                cb_AftasRepetidas_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.AftasRepetidas) ? true : false;
+                cb_EnfermedadMotriz_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.EnfermedadMotriz) ? true : false;
+                cb_Convulsiones_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.Convulsiones) ? true : false;
+                cb_EnferPsicologicas_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.EnfermedadPsicologica) ? true : false;
+                cb_InfeccionesdeGarganta_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.InfeccionesDeGarganta) ? true : false;
+                cb_Cirugias_CrearHistoriaClinica.Checked = this._paciente.AntecedentesPersonales.Contains(AntecedentesPersonales.Cirugias) ? true : false;
             }
             catch(Exception ex)
             {

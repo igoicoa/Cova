@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Cova.BE.Bitacora;
 using Cova.MPP;
 using Cova.Common.Excepciones;
+using Cova.Servicios.Bitacora;
+using Cova.Servicios.Sesion;
 
 namespace Cova.BL
 {
@@ -18,12 +20,11 @@ namespace Cova.BL
                 MPPBicatora mPPBitacora = new MPPBicatora();
                 return mPPBitacora.BuscarBitacora(bitacoraABuscar, fechaDesde, fechaHasta);
             }
-            catch
+            catch (Exception ex)
             {
-                //todo: Cargar excepcion
-                throw new Exception();
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al buscar la bitacora: " + ex.Message, "Actualizar Paciente"));
+                throw new ErrorAlBuscarBitacoraException();
             }
-
         }
     }
 }

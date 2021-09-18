@@ -31,7 +31,7 @@ BEGIN
 	(@IdUsuario, 38),
 	(@IdUsuario, 39),
 	(@IdUsuario, 40),
-	(@IdUsuario, 41),
-	(@IdUsuario, 42)
+	(@IdUsuario, 42),
+	(@IdUsuario, 43)
 END
 
