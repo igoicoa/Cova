@@ -167,7 +167,7 @@ namespace Cova.UI.Realizar_Backup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 223);
+            this.ClientSize = new System.Drawing.Size(846, 202);
             this.Controls.Add(this.btn_IniciarRestore_RealizarRestore);
             this.Controls.Add(this.gb_RealizarRestore);
             this.Controls.Add(this.lbl_RealizarRestore);
