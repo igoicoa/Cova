@@ -41,8 +41,6 @@ namespace Cova.UI
             this.txt_Nombre_BuscarCoberturaMedica = new System.Windows.Forms.TextBox();
             this.lbl_Nombre_BuscarCoberturaMedica = new System.Windows.Forms.Label();
             this.lbl_Plan_BuscarCoberturaMedica = new System.Windows.Forms.Label();
-            this.lbl_IDCoberturaMedica_BuscarCoberturaMedica = new System.Windows.Forms.Label();
-            this.txt_IDCobertura_BuscarCoberturaMedica = new System.Windows.Forms.TextBox();
             this.dtg_ListarCoberturasMedicas_BuscarCoberturaMedica = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_ListarCoberturasMedicas_BuscarCoberturaMedica)).BeginInit();
             this.SuspendLayout();
@@ -102,7 +100,7 @@ namespace Cova.UI
             // txt_Telefono_BuscarCoberturaMedica
             // 
             this.txt_Telefono_BuscarCoberturaMedica.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_Telefono_BuscarCoberturaMedica.Location = new System.Drawing.Point(595, 66);
+            this.txt_Telefono_BuscarCoberturaMedica.Location = new System.Drawing.Point(443, 65);
             this.txt_Telefono_BuscarCoberturaMedica.Name = "txt_Telefono_BuscarCoberturaMedica";
             this.txt_Telefono_BuscarCoberturaMedica.Size = new System.Drawing.Size(181, 20);
             this.txt_Telefono_BuscarCoberturaMedica.TabIndex = 166;
@@ -111,7 +109,7 @@ namespace Cova.UI
             // 
             this.lbl_Telefono_BuscarCoberturaMedica.AutoEllipsis = true;
             this.lbl_Telefono_BuscarCoberturaMedica.AutoSize = true;
-            this.lbl_Telefono_BuscarCoberturaMedica.Location = new System.Drawing.Point(592, 49);
+            this.lbl_Telefono_BuscarCoberturaMedica.Location = new System.Drawing.Point(440, 48);
             this.lbl_Telefono_BuscarCoberturaMedica.Name = "lbl_Telefono_BuscarCoberturaMedica";
             this.lbl_Telefono_BuscarCoberturaMedica.Size = new System.Drawing.Size(49, 13);
             this.lbl_Telefono_BuscarCoberturaMedica.TabIndex = 165;
@@ -123,7 +121,7 @@ namespace Cova.UI
             this.cmb_Plan_BuscarCoberturaMedica.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cmb_Plan_BuscarCoberturaMedica.Location = new System.Drawing.Point(438, 65);
+            this.cmb_Plan_BuscarCoberturaMedica.Location = new System.Drawing.Point(286, 64);
             this.cmb_Plan_BuscarCoberturaMedica.Name = "cmb_Plan_BuscarCoberturaMedica";
             this.cmb_Plan_BuscarCoberturaMedica.Size = new System.Drawing.Size(121, 21);
             this.cmb_Plan_BuscarCoberturaMedica.TabIndex = 164;
@@ -131,7 +129,7 @@ namespace Cova.UI
             // txt_Nombre_BuscarCoberturaMedica
             // 
             this.txt_Nombre_BuscarCoberturaMedica.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_Nombre_BuscarCoberturaMedica.Location = new System.Drawing.Point(155, 66);
+            this.txt_Nombre_BuscarCoberturaMedica.Location = new System.Drawing.Point(3, 65);
             this.txt_Nombre_BuscarCoberturaMedica.Name = "txt_Nombre_BuscarCoberturaMedica";
             this.txt_Nombre_BuscarCoberturaMedica.Size = new System.Drawing.Size(232, 20);
             this.txt_Nombre_BuscarCoberturaMedica.TabIndex = 163;
@@ -139,7 +137,7 @@ namespace Cova.UI
             // lbl_Nombre_BuscarCoberturaMedica
             // 
             this.lbl_Nombre_BuscarCoberturaMedica.AutoSize = true;
-            this.lbl_Nombre_BuscarCoberturaMedica.Location = new System.Drawing.Point(152, 49);
+            this.lbl_Nombre_BuscarCoberturaMedica.Location = new System.Drawing.Point(0, 48);
             this.lbl_Nombre_BuscarCoberturaMedica.Name = "lbl_Nombre_BuscarCoberturaMedica";
             this.lbl_Nombre_BuscarCoberturaMedica.Size = new System.Drawing.Size(44, 13);
             this.lbl_Nombre_BuscarCoberturaMedica.TabIndex = 162;
@@ -148,28 +146,11 @@ namespace Cova.UI
             // lbl_Plan_BuscarCoberturaMedica
             // 
             this.lbl_Plan_BuscarCoberturaMedica.AutoSize = true;
-            this.lbl_Plan_BuscarCoberturaMedica.Location = new System.Drawing.Point(435, 49);
+            this.lbl_Plan_BuscarCoberturaMedica.Location = new System.Drawing.Point(283, 48);
             this.lbl_Plan_BuscarCoberturaMedica.Name = "lbl_Plan_BuscarCoberturaMedica";
             this.lbl_Plan_BuscarCoberturaMedica.Size = new System.Drawing.Size(28, 13);
             this.lbl_Plan_BuscarCoberturaMedica.TabIndex = 161;
             this.lbl_Plan_BuscarCoberturaMedica.Text = "Plan";
-            // 
-            // lbl_IDCoberturaMedica_BuscarCoberturaMedica
-            // 
-            this.lbl_IDCoberturaMedica_BuscarCoberturaMedica.AutoSize = true;
-            this.lbl_IDCoberturaMedica_BuscarCoberturaMedica.Location = new System.Drawing.Point(14, 49);
-            this.lbl_IDCoberturaMedica_BuscarCoberturaMedica.Name = "lbl_IDCoberturaMedica_BuscarCoberturaMedica";
-            this.lbl_IDCoberturaMedica_BuscarCoberturaMedica.Size = new System.Drawing.Size(105, 13);
-            this.lbl_IDCoberturaMedica_BuscarCoberturaMedica.TabIndex = 169;
-            this.lbl_IDCoberturaMedica_BuscarCoberturaMedica.Text = "ID Cobertura Medica";
-            // 
-            // txt_IDCobertura_BuscarCoberturaMedica
-            // 
-            this.txt_IDCobertura_BuscarCoberturaMedica.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_IDCobertura_BuscarCoberturaMedica.Location = new System.Drawing.Point(17, 65);
-            this.txt_IDCobertura_BuscarCoberturaMedica.Name = "txt_IDCobertura_BuscarCoberturaMedica";
-            this.txt_IDCobertura_BuscarCoberturaMedica.Size = new System.Drawing.Size(102, 20);
-            this.txt_IDCobertura_BuscarCoberturaMedica.TabIndex = 170;
             // 
             // dtg_ListarCoberturasMedicas_BuscarCoberturaMedica
             // 
@@ -179,14 +160,12 @@ namespace Cova.UI
             this.dtg_ListarCoberturasMedicas_BuscarCoberturaMedica.Size = new System.Drawing.Size(791, 306);
             this.dtg_ListarCoberturasMedicas_BuscarCoberturaMedica.TabIndex = 171;
             // 
-            // BuscarCoberturaMedica
+            // BuscarCoberturaMedicaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dtg_ListarCoberturasMedicas_BuscarCoberturaMedica);
-            this.Controls.Add(this.txt_IDCobertura_BuscarCoberturaMedica);
-            this.Controls.Add(this.lbl_IDCoberturaMedica_BuscarCoberturaMedica);
             this.Controls.Add(this.txt_Telefono_BuscarCoberturaMedica);
             this.Controls.Add(this.lbl_Telefono_BuscarCoberturaMedica);
             this.Controls.Add(this.cmb_Plan_BuscarCoberturaMedica);
@@ -199,7 +178,7 @@ namespace Cova.UI
             this.Controls.Add(this.btn_Buscar_BuscarCoberturaMedica);
             this.Controls.Add(this.lbl_BuscarCoberturaMedica);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "BuscarCoberturaMedica";
+            this.Name = "BuscarCoberturaMedicaForm";
             this.Text = "BuscarCoberturaMedica";
             ((System.ComponentModel.ISupportInitialize)(this.dtg_ListarCoberturasMedicas_BuscarCoberturaMedica)).EndInit();
             this.ResumeLayout(false);
@@ -220,8 +199,6 @@ namespace Cova.UI
         private System.Windows.Forms.TextBox txt_Nombre_BuscarCoberturaMedica;
         private System.Windows.Forms.Label lbl_Nombre_BuscarCoberturaMedica;
         private System.Windows.Forms.Label lbl_Plan_BuscarCoberturaMedica;
-        private System.Windows.Forms.Label lbl_IDCoberturaMedica_BuscarCoberturaMedica;
-        private System.Windows.Forms.TextBox txt_IDCobertura_BuscarCoberturaMedica;
         private System.Windows.Forms.DataGridView dtg_ListarCoberturasMedicas_BuscarCoberturaMedica;
     }
 }

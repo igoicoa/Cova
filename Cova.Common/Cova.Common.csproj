@@ -43,12 +43,14 @@
   <ItemGroup>
     <Compile Include="Excepciones\BitacoraYaCreadaException.cs" />
     <Compile Include="Excepciones\ErrorAlActualizarAdministradorException.cs" />
+    <Compile Include="Excepciones\ErrorAlActualizarCertificadoException.cs" />
     <Compile Include="Excepciones\ErrorAlActualizarPacienteException.cs" />
     <Compile Include="Excepciones\ErrorAlActualizarProfesionalException.cs" />
     <Compile Include="Excepciones\ErrorAlActualizarRecetasException.cs" />
     <Compile Include="Excepciones\ErrorAlAgregarPermisoException.cs" />
     <Compile Include="Excepciones\ErrorAlBuscarAdministrador.cs" />
     <Compile Include="Excepciones\ErrorAlBuscarBitacoraException.cs" />
+    <Compile Include="Excepciones\ErrorAlBuscarCertificadoException.cs" />
     <Compile Include="Excepciones\ErrorAlBuscarDatosMedicos.cs" />
     <Compile Include="Excepciones\ErrorAlBuscarPacienteException.cs" />
     <Compile Include="Excepciones\ErrorAlBuscarRecetasException.cs" />
@@ -60,6 +62,7 @@
     <Compile Include="Excepciones\ErrorAlCargarDatosPacienteException.cs" />
     <Compile Include="Excepciones\ErrorAlCargarVacunas.cs" />
     <Compile Include="Excepciones\ErrorAlCrearAntecedentesPersonales.cs" />
+    <Compile Include="Excepciones\ErrorAlCrearCertificadoException.cs" />
     <Compile Include="Excepciones\ErrorAlCrearPacienteException.cs" />
     <Compile Include="Excepciones\ErrorAlCrearProfesionalException.cs" />
     <Compile Include="Excepciones\ErrorAlCrearRecetasException.cs" />

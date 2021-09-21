@@ -29,5 +29,12 @@ namespace Cova.UI
             frmModificarRecetas.Show();
             this.Close();
         }
+
+        private void rb_Certificado_CrearRecetayCertificado_CheckedChanged(object sender, EventArgs e)
+        {
+            ModificarCertificadoForm frmModificarCertificado = new ModificarCertificadoForm();
+            frmModificarCertificado.Show();
+            this.Close();
+        }
     }
 }

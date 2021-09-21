@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BEAdministrador.cs" />
     <Compile Include="BECentroMedico.cs" />
+    <Compile Include="BECertificado.cs" />
     <Compile Include="BECoberturaMedica.cs" />
     <Compile Include="BECoberturaMedicaPaciente.cs" />
     <Compile Include="BEDomicilio.cs" />

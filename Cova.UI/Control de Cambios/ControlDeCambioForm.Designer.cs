@@ -102,6 +102,7 @@ namespace Cova.UI.Control_de_Cambios
             this.btn_Cancelar_ControlCambios.TabIndex = 180;
             this.btn_Cancelar_ControlCambios.Text = "Cancelar";
             this.btn_Cancelar_ControlCambios.UseVisualStyleBackColor = true;
+            this.btn_Cancelar_ControlCambios.Click += new System.EventHandler(this.btn_Cancelar_ControlCambios_Click);
             // 
             // btn_Filtrar_ControlCambios
             // 

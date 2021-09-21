@@ -16,5 +16,10 @@ namespace Cova.UI.Control_de_Cambios
         {
             InitializeComponent();
         }
+
+        private void btn_Cancelar_ControlCambios_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

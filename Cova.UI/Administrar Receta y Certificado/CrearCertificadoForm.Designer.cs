@@ -83,6 +83,7 @@ namespace Cova.UI
             this.btnCrearReceta_CrearCertificado.TabIndex = 110;
             this.btnCrearReceta_CrearCertificado.Text = "Crear";
             this.btnCrearReceta_CrearCertificado.UseVisualStyleBackColor = true;
+            this.btnCrearReceta_CrearCertificado.Click += new System.EventHandler(this.btnCrearReceta_CrearCertificado_Click);
             // 
             // dtp_fecha_CrearCertificado
             // 

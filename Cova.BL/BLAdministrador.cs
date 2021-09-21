@@ -25,7 +25,7 @@ namespace Cova.BL
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Crear el Administrador: " + ex.Message, "Crear Administrador"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Crear el Administrador: " + administrador.Apellido + " - " + administrador.Nombre + " - " + ex.Message, "Crear Administrador"));
                 throw new ErrorCrearAdministradorException();
             }
             return AdministradorCreado;
@@ -39,11 +39,11 @@ namespace Cova.BL
             try
             {
                 administrador= mPPAdministrador.BuscarAdministrador(Usuario, DNI);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo la busqueda del administrador: ", "Buscar Administrador"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo la busqueda del administrador", "Buscar Administrador"));
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al buscar el administrador: " + ex.Message, "Buscar Administrador"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al buscar el administrador"  + ex.Message, "Buscar Administrador"));
                 throw new ErrorAlBuscarAdministrador();
             }
             return administrador;
@@ -60,7 +60,7 @@ namespace Cova.BL
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al actualizar el Administrador: " + ex.Message, "Actualizar Administrador"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al actualizar el Administrador: " + administrador.Apellido + " - " + administrador.Nombre + " - " + ex.Message, "Actualizar Administrador"));
                 throw new ErrorAlActualizarAdministradorException();
             }
             return AdministradorActualizado;

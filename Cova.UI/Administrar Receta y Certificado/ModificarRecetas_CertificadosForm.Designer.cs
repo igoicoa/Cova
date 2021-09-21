@@ -59,6 +59,7 @@ namespace Cova.UI
             this.rb_Certificado_CrearRecetayCertificado.TabStop = true;
             this.rb_Certificado_CrearRecetayCertificado.Text = "Certificado";
             this.rb_Certificado_CrearRecetayCertificado.UseVisualStyleBackColor = true;
+            this.rb_Certificado_CrearRecetayCertificado.CheckedChanged += new System.EventHandler(this.rb_Certificado_CrearRecetayCertificado_CheckedChanged);
             // 
             // rb_Receta_CrearRecetayCertificado
             // 

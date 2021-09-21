@@ -69,10 +69,10 @@
             this.administrarIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.controlDeCambioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contactoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novedadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.controlDeCambioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -374,6 +374,7 @@
             this.realizarBackupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.realizarBackupToolStripMenuItem.Tag = "RealizarBackup";
             this.realizarBackupToolStripMenuItem.Text = "Realizar Backup";
+            this.realizarBackupToolStripMenuItem.Click += new System.EventHandler(this.realizarBackupToolStripMenuItem_Click);
             // 
             // bitacoraToolStripMenuItem
             // 
@@ -389,6 +390,7 @@
             this.realizarRestoreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.realizarRestoreToolStripMenuItem.Tag = "RealizarRestore";
             this.realizarRestoreToolStripMenuItem.Text = "Realizar Restore";
+            this.realizarRestoreToolStripMenuItem.Click += new System.EventHandler(this.realizarRestoreToolStripMenuItem_Click);
             // 
             // permisosToolStripMenuItem
             // 
@@ -433,6 +435,13 @@
             this.crearIdiomaToolStripMenuItem.Text = "Crear Idioma";
             this.crearIdiomaToolStripMenuItem.Click += new System.EventHandler(this.crearIdiomaToolStripMenuItem_Click);
             // 
+            // controlDeCambioToolStripMenuItem
+            // 
+            this.controlDeCambioToolStripMenuItem.Name = "controlDeCambioToolStripMenuItem";
+            this.controlDeCambioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.controlDeCambioToolStripMenuItem.Text = "Control de Cambio";
+            this.controlDeCambioToolStripMenuItem.Click += new System.EventHandler(this.controlDeCambioToolStripMenuItem_Click);
+            // 
             // informaciónToolStripMenuItem
             // 
             this.informaciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -446,24 +455,16 @@
             // contactoToolStripMenuItem
             // 
             this.contactoToolStripMenuItem.Name = "contactoToolStripMenuItem";
-            this.contactoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.contactoToolStripMenuItem.Tag = "Contacto";
+            this.contactoToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.contactoToolStripMenuItem.Tag = "Controlde_Cambio";
             this.contactoToolStripMenuItem.Text = "Contacto";
             // 
             // novedadesToolStripMenuItem
             // 
             this.novedadesToolStripMenuItem.Name = "novedadesToolStripMenuItem";
-            this.novedadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.novedadesToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.novedadesToolStripMenuItem.Tag = "Novedades";
             this.novedadesToolStripMenuItem.Text = "Novedades";
-            // 
-            // controlDeCambioToolStripMenuItem
-            // 
-            this.controlDeCambioToolStripMenuItem.Name = "controlDeCambioToolStripMenuItem";
-            this.controlDeCambioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.contactoToolStripMenuItem.Tag = "Controlde_Cambio";
-            this.controlDeCambioToolStripMenuItem.Text = "Control de Cambio";
-            this.controlDeCambioToolStripMenuItem.Click += new System.EventHandler(this.controlDeCambioToolStripMenuItem_Click);
             // 
             // MainForm
             // 

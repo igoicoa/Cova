@@ -89,7 +89,11 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
 
         private void btn_Limpiar_ModificarReceta_Click(object sender, EventArgs e)
         {
-            
+            txt_apellido_ModificarReceta.Clear();
+            txt_Edad_ModificarReceta.Clear();
+            txt_nombre_ModificarReceta.Clear();
+            txt_NumeroDocumento_ModificarReceta.Clear();
+            rtxt_Diagnostico_ModificarReceta.Clear();
         }
 
         private void btn_ModificarReceta_ModificarReceta_Click(object sender, EventArgs e)

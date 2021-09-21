@@ -22,7 +22,7 @@ namespace Cova.BL
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Crear Profesional Medico: " + ex.Message, "Crear Profesional Medico"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Crear Profesional Medico: " + medico.Apellido + " - " + medico.Nombre + " - " + ex.Message, "Crear Profesional Medico"));
                 throw new ErrorAlCrearProfesionalException();
             }
             return profesionalCreado;
@@ -56,7 +56,7 @@ namespace Cova.BL
             } 
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al crear el Profesional: " + ex.Message, "Actualizar Profesional"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al crear el Profesional: " + medico.Apellido + " - " + medico.Nombre + " - " + ex.Message, "Actualizar Profesional"));
                 throw new ErrorAlActualizarProfesionalException();
             }
             return profesionalActualizado;

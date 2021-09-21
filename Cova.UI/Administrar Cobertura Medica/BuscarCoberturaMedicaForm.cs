@@ -27,7 +27,6 @@ namespace Cova.UI
             txt_Nombre_BuscarCoberturaMedica.Clear();
             cmb_Plan_BuscarCoberturaMedica.Items.Clear();
             txt_Telefono_BuscarCoberturaMedica.Clear();
-            txt_IDCobertura_BuscarCoberturaMedica.Clear();
         }
     }
 }

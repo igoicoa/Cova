@@ -1,4 +1,6 @@
 ﻿using Cova.BE;
+using Cova.BL;
+using Cova.Servicios.Sesion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +15,40 @@ namespace Cova.UI
 {
     public partial class CrearCertificadoForm : Form, IFormCargarUsuarios
     {
+        private BEPaciente _pacienteACertificar;
+        private BEMedico _usuarioMedico;
         public CrearCertificadoForm()
         {
             InitializeComponent();
+            CargarDatosMedico();
+        }
+        public void CargarDatosMedico()
+        {
+            string usuario = Sesion.GetInstance.Usuario.Usuario;
+            long usuarioID = Sesion.GetInstance.Usuario.UsuarioID;
+            BLMedico bLMedico = new BLMedico();
+            try
+            {
+                this._usuarioMedico = bLMedico.BuscarMedicos(usuario, "").ToList().Where(x => x.UsuarioID == usuarioID).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public bool ValidarTodosLosCamposReceta()
+        {
+            if (string.IsNullOrEmpty(txt_apellido_CrearCertificado.Text) || (string.IsNullOrEmpty(txt_nombre_CrearCertificado.Text))
+                || (string.IsNullOrEmpty(txt_Edad_CrearCertificado.Text)) || string.IsNullOrEmpty(txt_NumeroDocumento_CrearCertificado.Text)
+                || string.IsNullOrEmpty(richTextBox1.Text) || string.IsNullOrEmpty(dtp_fecha_CrearCertificado.Value.ToString()))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         private void btn_Cancelar_CrearCertificado_Click(object sender, EventArgs e)
@@ -28,6 +61,7 @@ namespace Cova.UI
             txt_Edad_CrearCertificado.Clear();
             txt_NumeroDocumento_CrearCertificado.Clear();
             txt_apellido_CrearCertificado.Clear();
+            txt_nombre_CrearCertificado.Clear();
         }
 
         private void btn_BuscarPacientes_CrearCertificado_Click(object sender, EventArgs e)
@@ -36,24 +70,59 @@ namespace Cova.UI
             frmBuscarUsuarios.Show();
         }
 
-        void IFormCargarUsuarios.CargarUsuarioMedico(BEMedico usuarioAModificar)
+        public void CargarUsuarioPaciente(BEPaciente pacienteACertificar)
+        {
+            this._pacienteACertificar = pacienteACertificar;
+            txt_apellido_CrearCertificado.Text = pacienteACertificar.Apellido;
+            txt_nombre_CrearCertificado.Text = pacienteACertificar.Nombre;
+            txt_Edad_CrearCertificado.Text = pacienteACertificar.Edad.ToString();
+            txt_NumeroDocumento_CrearCertificado.Text = pacienteACertificar.DNI.ToString();
+        }
+        public void CargarUsuarioAdministrador(BEAdministrador usuarioAModificar)
         {
             throw new NotImplementedException();
         }
 
-        void IFormCargarUsuarios.CargarUsuarioEnfermero(BEEnfermero usuarioAModificar)
+        public void CargarUsuarioEnfermero(BEEnfermero usuarioAModificar)
         {
             throw new NotImplementedException();
         }
 
-        void IFormCargarUsuarios.CargarUsuarioPaciente(BEPaciente usuarioAModificar)
+        public void CargarUsuarioMedico(BEMedico usuarioAModificar)
         {
             throw new NotImplementedException();
         }
-
-        void IFormCargarUsuarios.CargarUsuarioAdministrador(BEAdministrador usuarioAModificar)
+        private void btnCrearReceta_CrearCertificado_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (ValidarTodosLosCamposReceta())
+                {
+                    BLCertificado blCertificado = new BLCertificado();
+                    BECertificado certificado = new BECertificado();
+                    certificado.FechaPrescripcion = dtp_fecha_CrearCertificado.Value;
+                    certificado.Paciente = this._pacienteACertificar;
+                    certificado.Medico = this._usuarioMedico;
+                    certificado.Observacion = richTextBox1.Text;
+                    if (blCertificado.CrearReceta(certificado))
+                    {
+                        MessageBox.Show("El certificado fue creado con exito");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrió un error al crear el certificado");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe completar todos los campos");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

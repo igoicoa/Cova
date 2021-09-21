@@ -31,7 +31,6 @@ namespace Cova.UI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarCoberturaMedicaForm));
             this.lbl_ModificarCoberturaMedica = new System.Windows.Forms.Label();
-            this.mc_FechaCreacion_ModificarCoberturaMedica = new System.Windows.Forms.MonthCalendar();
             this.lbl_FechaCreacion_ModificarCoberturaMedica = new System.Windows.Forms.Label();
             this.btn_Limpiar_ModificarCoberturaMedica = new System.Windows.Forms.Button();
             this.btn_Cancelar_ModificarCoberturaMedica = new System.Windows.Forms.Button();
@@ -45,6 +44,7 @@ namespace Cova.UI
             this.btn_BuscarCoberturaMedica_ModificarCoberturaMedica = new System.Windows.Forms.Button();
             this.cmb_Estado_ModificarCoberturaMedica = new System.Windows.Forms.ComboBox();
             this.lbl_Estado_ModificarCoberturaMedica = new System.Windows.Forms.Label();
+            this.dtp_FechaCreacion = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lbl_ModificarCoberturaMedica
@@ -58,12 +58,6 @@ namespace Cova.UI
             this.lbl_ModificarCoberturaMedica.TabIndex = 132;
             this.lbl_ModificarCoberturaMedica.Text = "Modificar Cobertura Medica";
             this.lbl_ModificarCoberturaMedica.UseWaitCursor = true;
-            // 
-            // mc_FechaCreacion_ModificarCoberturaMedica
-            // 
-            this.mc_FechaCreacion_ModificarCoberturaMedica.Location = new System.Drawing.Point(15, 122);
-            this.mc_FechaCreacion_ModificarCoberturaMedica.Name = "mc_FechaCreacion_ModificarCoberturaMedica";
-            this.mc_FechaCreacion_ModificarCoberturaMedica.TabIndex = 154;
             // 
             // lbl_FechaCreacion_ModificarCoberturaMedica
             // 
@@ -173,7 +167,7 @@ namespace Cova.UI
             this.cmb_Estado_ModificarCoberturaMedica.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cmb_Estado_ModificarCoberturaMedica.Location = new System.Drawing.Point(300, 138);
+            this.cmb_Estado_ModificarCoberturaMedica.Location = new System.Drawing.Point(300, 116);
             this.cmb_Estado_ModificarCoberturaMedica.Name = "cmb_Estado_ModificarCoberturaMedica";
             this.cmb_Estado_ModificarCoberturaMedica.Size = new System.Drawing.Size(121, 21);
             this.cmb_Estado_ModificarCoberturaMedica.TabIndex = 157;
@@ -181,21 +175,28 @@ namespace Cova.UI
             // lbl_Estado_ModificarCoberturaMedica
             // 
             this.lbl_Estado_ModificarCoberturaMedica.AutoSize = true;
-            this.lbl_Estado_ModificarCoberturaMedica.Location = new System.Drawing.Point(297, 122);
+            this.lbl_Estado_ModificarCoberturaMedica.Location = new System.Drawing.Point(297, 100);
             this.lbl_Estado_ModificarCoberturaMedica.Name = "lbl_Estado_ModificarCoberturaMedica";
             this.lbl_Estado_ModificarCoberturaMedica.Size = new System.Drawing.Size(40, 13);
             this.lbl_Estado_ModificarCoberturaMedica.TabIndex = 156;
             this.lbl_Estado_ModificarCoberturaMedica.Text = "Estado";
             // 
+            // dtp_FechaCreacion
+            // 
+            this.dtp_FechaCreacion.Location = new System.Drawing.Point(12, 116);
+            this.dtp_FechaCreacion.Name = "dtp_FechaCreacion";
+            this.dtp_FechaCreacion.Size = new System.Drawing.Size(219, 20);
+            this.dtp_FechaCreacion.TabIndex = 158;
+            // 
             // ModificarCoberturaMedicaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 296);
+            this.ClientSize = new System.Drawing.Size(810, 256);
+            this.Controls.Add(this.dtp_FechaCreacion);
             this.Controls.Add(this.cmb_Estado_ModificarCoberturaMedica);
             this.Controls.Add(this.lbl_Estado_ModificarCoberturaMedica);
             this.Controls.Add(this.btn_BuscarCoberturaMedica_ModificarCoberturaMedica);
-            this.Controls.Add(this.mc_FechaCreacion_ModificarCoberturaMedica);
             this.Controls.Add(this.lbl_FechaCreacion_ModificarCoberturaMedica);
             this.Controls.Add(this.btn_Limpiar_ModificarCoberturaMedica);
             this.Controls.Add(this.btn_Cancelar_ModificarCoberturaMedica);
@@ -218,7 +219,6 @@ namespace Cova.UI
         #endregion
 
         private System.Windows.Forms.Label lbl_ModificarCoberturaMedica;
-        private System.Windows.Forms.MonthCalendar mc_FechaCreacion_ModificarCoberturaMedica;
         private System.Windows.Forms.Label lbl_FechaCreacion_ModificarCoberturaMedica;
         private System.Windows.Forms.Button btn_Limpiar_ModificarCoberturaMedica;
         private System.Windows.Forms.Button btn_Cancelar_ModificarCoberturaMedica;
@@ -232,5 +232,6 @@ namespace Cova.UI
         private System.Windows.Forms.Button btn_BuscarCoberturaMedica_ModificarCoberturaMedica;
         private System.Windows.Forms.ComboBox cmb_Estado_ModificarCoberturaMedica;
         private System.Windows.Forms.Label lbl_Estado_ModificarCoberturaMedica;
+        private System.Windows.Forms.DateTimePicker dtp_FechaCreacion;
     }
 }

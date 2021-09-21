@@ -10,6 +10,8 @@ using Cova.BE;
 using Cova.UI.Administrar_Receta_y_Certificado;
 using Cova.UI.Bitacora;
 using Cova.UI.Control_de_Cambios;
+using Cova.UI.Realizar_Restore;
+using Cova.UI.Realizar_Backup;
 
 namespace Cova.UI
 {
@@ -396,7 +398,7 @@ namespace Cova.UI
 
         private void verCoberturasMedicasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VerCoberturaMedicaForm frmVerCoberturaMedica = new VerCoberturaMedicaForm();
+            BuscarCoberturaMedicaForm frmVerCoberturaMedica = new BuscarCoberturaMedicaForm();
             frmVerCoberturaMedica.Show();
         }
 
@@ -472,6 +474,18 @@ namespace Cova.UI
         {
             ControlDeCambioForm frmControlCambio = new ControlDeCambioForm();
             frmControlCambio.Show();
+        }
+
+        private void realizarRestoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RealizarRestoreForm frmRealizarRestore = new RealizarRestoreForm();
+            frmRealizarRestore.Show();
+        }
+
+        private void realizarBackupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RealizarBackupForm frmRealizarbackup = new RealizarBackupForm();
+            frmRealizarbackup.Show();
         }
     }
 }

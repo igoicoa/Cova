@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cova.UI.Realizar_Backup
+namespace Cova.UI.Realizar_Restore
 {
-    public partial class RealizarBackupForm : Form
+    public partial class RealizarRestoreForm : Form
     {
-        public RealizarBackupForm()
+        public RealizarRestoreForm()
         {
             InitializeComponent();
         }
 
-        private void btn_Cancelar_RealizarBackup_Click(object sender, EventArgs e)
+        private void btn_Cancelar_RealizarRestore_Click(object sender, EventArgs e)
         {
             this.Close();
         }

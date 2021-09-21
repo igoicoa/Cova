@@ -52,6 +52,12 @@
     <Compile Include="Administrar Idioma\AgregarIdiomaForm.Designer.cs">
       <DependentUpon>AgregarIdiomaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Administrar Receta y Certificado\ModificarCertificadoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrar Receta y Certificado\ModificarCertificadoForm.Designer.cs">
+      <DependentUpon>ModificarCertificadoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Administrar Receta y Certificado\ModificarRecetasForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,7 @@
     <Compile Include="Control de Cambios\ControlDeCambioForm.Designer.cs">
       <DependentUpon>ControlDeCambioForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IFormCargarCertificados.cs" />
     <Compile Include="Interfaces\IFormCargarRecetas.cs" />
     <Compile Include="Interfaces\IFormCargarUsuarios.cs" />
     <Compile Include="Interfaces\IFormCargarVacunas.cs" />
@@ -213,12 +220,6 @@
     <Compile Include="Administrar Turnos\VerCalendarioMisPacientesForm.Designer.cs">
       <DependentUpon>VerCalendarioMisPacientesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administrar Cobertura Medica\VerCoberturaMedicaForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Administrar Cobertura Medica\VerCoberturaMedicaForm.Designer.cs">
-      <DependentUpon>VerCoberturaMedicaForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Administrar Historia Clinica\VerHistoriaClinicaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,8 +232,17 @@
     <Compile Include="Realizar Backup\RealizarBackupForm.Designer.cs">
       <DependentUpon>RealizarBackupForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Realizar Restore\RealizarRestoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Realizar Restore\RealizarRestoreForm.Designer.cs">
+      <DependentUpon>RealizarRestoreForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Administrar Idioma\AgregarIdiomaForm.resx">
       <DependentUpon>AgregarIdiomaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrar Receta y Certificado\ModificarCertificadoForm.resx">
+      <DependentUpon>ModificarCertificadoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administrar Receta y Certificado\ModificarRecetasForm.resx">
       <DependentUpon>ModificarRecetasForm.cs</DependentUpon>
@@ -321,14 +331,14 @@
     <EmbeddedResource Include="Administrar Turnos\VerCalendarioMisPacientesForm.resx">
       <DependentUpon>VerCalendarioMisPacientesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Administrar Cobertura Medica\VerCoberturaMedicaForm.resx">
-      <DependentUpon>VerCoberturaMedicaForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Administrar Historia Clinica\VerHistoriaClinicaForm.resx">
       <DependentUpon>VerHistoriaClinicaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Realizar Backup\RealizarBackupForm.resx">
       <DependentUpon>RealizarBackupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Realizar Restore\RealizarRestoreForm.resx">
+      <DependentUpon>RealizarRestoreForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

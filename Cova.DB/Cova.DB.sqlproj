@@ -140,6 +140,7 @@
     <Build Include="StoredProcedures\s_ActualizarDVV.sql" />
     <Build Include="StoredProcedures\s_ObtenerDVV.sql" />
     <Build Include="StoredProcedures\s_ObtenerVacunasDosis.sql" />
+    <Build Include="Tables\Certificado.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />
@@ -149,5 +150,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="StoredProcedures\s_ActualizarAdministrador.sql" />
+    <None Include="StoredProcedures\s_ActualizarCertificado.sql" />
+    <None Include="StoredProcedures\s_BuscarCertificadoPaciente.sql" />
+    <None Include="StoredProcedures\s_CrearCertificado.sql" />
   </ItemGroup>
 </Project>

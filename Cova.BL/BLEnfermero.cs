@@ -25,7 +25,7 @@ namespace Cova.BL
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Crear Profesional enfermero: " + ex.Message, "Crear Profesional Enfermero"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Crear Profesional enfermero: " + enfermero.Apellido + " - " + enfermero.Nombre + " - " + ex.Message, "Crear Profesional Enfermero"));
                 throw new ErrorAlCrearProfesionalException();
             }
             return profesionalCreado;
@@ -39,11 +39,11 @@ namespace Cova.BL
             try
             {
                 enfermero = mPPEnfermero.BuscarEnfermeros(Usuario, DNI);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo la busqueda del enfermero: ", "Buscar Medicos"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo la busqueda del enfermero", "Buscar Medicos"));
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al buscar el enfermero: " + ex.Message, "Buscar Medicos"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al buscar el enfermero" + ex.Message, "Buscar Medicos"));
                 throw new ErrorAlCargarDatosProfesional();
             }
             return enfermero;
@@ -61,7 +61,7 @@ namespace Cova.BL
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al actualizar Profesional enfermero: " + ex.Message, "Actualizar Profesional Enfermero"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al actualizar Profesional enfermero: " + enfermero.Apellido + " - " + enfermero.Nombre + " - " + ex.Message, "Actualizar Profesional Enfermero"));
                 throw new ErrorAlActualizarProfesionalException();
             }
             return Actualizarprofesional;

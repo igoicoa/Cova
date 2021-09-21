@@ -40,8 +40,8 @@ namespace Cova.UI
             this.btn_Limpiar_CargarCoberturaMedica = new System.Windows.Forms.Button();
             this.btn_Cancelar_CargarCoberturaMedica = new System.Windows.Forms.Button();
             this.btn_Crear_CargarCoberturaMedica = new System.Windows.Forms.Button();
-            this.mc_FechaCreacion_CargarCoberturaMedica = new System.Windows.Forms.MonthCalendar();
             this.lbl_FechaCreacion_CargarCoberturaMedica = new System.Windows.Forms.Label();
+            this.dtp_FechaCreacion = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lbl_CargarCoberturaMedica
@@ -112,7 +112,7 @@ namespace Cova.UI
             // btn_Limpiar_CargarCoberturaMedica
             // 
             this.btn_Limpiar_CargarCoberturaMedica.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Limpiar_CargarCoberturaMedica.Location = new System.Drawing.Point(461, 216);
+            this.btn_Limpiar_CargarCoberturaMedica.Location = new System.Drawing.Point(322, 171);
             this.btn_Limpiar_CargarCoberturaMedica.Name = "btn_Limpiar_CargarCoberturaMedica";
             this.btn_Limpiar_CargarCoberturaMedica.Size = new System.Drawing.Size(75, 23);
             this.btn_Limpiar_CargarCoberturaMedica.TabIndex = 141;
@@ -122,7 +122,7 @@ namespace Cova.UI
             // 
             // btn_Cancelar_CargarCoberturaMedica
             // 
-            this.btn_Cancelar_CargarCoberturaMedica.Location = new System.Drawing.Point(373, 216);
+            this.btn_Cancelar_CargarCoberturaMedica.Location = new System.Drawing.Point(234, 171);
             this.btn_Cancelar_CargarCoberturaMedica.Name = "btn_Cancelar_CargarCoberturaMedica";
             this.btn_Cancelar_CargarCoberturaMedica.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancelar_CargarCoberturaMedica.TabIndex = 140;
@@ -132,18 +132,13 @@ namespace Cova.UI
             // 
             // btn_Crear_CargarCoberturaMedica
             // 
-            this.btn_Crear_CargarCoberturaMedica.Location = new System.Drawing.Point(288, 216);
+            this.btn_Crear_CargarCoberturaMedica.Location = new System.Drawing.Point(149, 171);
             this.btn_Crear_CargarCoberturaMedica.Name = "btn_Crear_CargarCoberturaMedica";
             this.btn_Crear_CargarCoberturaMedica.Size = new System.Drawing.Size(75, 23);
             this.btn_Crear_CargarCoberturaMedica.TabIndex = 139;
             this.btn_Crear_CargarCoberturaMedica.Text = "Crear";
             this.btn_Crear_CargarCoberturaMedica.UseVisualStyleBackColor = true;
-            // 
-            // mc_FechaCreacion_CargarCoberturaMedica
-            // 
-            this.mc_FechaCreacion_CargarCoberturaMedica.Location = new System.Drawing.Point(3, 128);
-            this.mc_FechaCreacion_CargarCoberturaMedica.Name = "mc_FechaCreacion_CargarCoberturaMedica";
-            this.mc_FechaCreacion_CargarCoberturaMedica.TabIndex = 143;
+            this.btn_Crear_CargarCoberturaMedica.Click += new System.EventHandler(this.btn_Crear_CargarCoberturaMedica_Click);
             // 
             // lbl_FechaCreacion_CargarCoberturaMedica
             // 
@@ -154,12 +149,19 @@ namespace Cova.UI
             this.lbl_FechaCreacion_CargarCoberturaMedica.TabIndex = 142;
             this.lbl_FechaCreacion_CargarCoberturaMedica.Text = "Fecha de Creación";
             // 
+            // dtp_FechaCreacion
+            // 
+            this.dtp_FechaCreacion.Location = new System.Drawing.Point(5, 122);
+            this.dtp_FechaCreacion.Name = "dtp_FechaCreacion";
+            this.dtp_FechaCreacion.Size = new System.Drawing.Size(219, 20);
+            this.dtp_FechaCreacion.TabIndex = 159;
+            // 
             // CargarCoberturaMedicaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 300);
-            this.Controls.Add(this.mc_FechaCreacion_CargarCoberturaMedica);
+            this.ClientSize = new System.Drawing.Size(656, 217);
+            this.Controls.Add(this.dtp_FechaCreacion);
             this.Controls.Add(this.lbl_FechaCreacion_CargarCoberturaMedica);
             this.Controls.Add(this.btn_Limpiar_CargarCoberturaMedica);
             this.Controls.Add(this.btn_Cancelar_CargarCoberturaMedica);
@@ -191,7 +193,7 @@ namespace Cova.UI
         private System.Windows.Forms.Button btn_Limpiar_CargarCoberturaMedica;
         private System.Windows.Forms.Button btn_Cancelar_CargarCoberturaMedica;
         private System.Windows.Forms.Button btn_Crear_CargarCoberturaMedica;
-        private System.Windows.Forms.MonthCalendar mc_FechaCreacion_CargarCoberturaMedica;
         private System.Windows.Forms.Label lbl_FechaCreacion_CargarCoberturaMedica;
+        private System.Windows.Forms.DateTimePicker dtp_FechaCreacion;
     }
 }
