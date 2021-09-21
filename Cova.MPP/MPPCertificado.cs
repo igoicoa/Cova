@@ -29,7 +29,7 @@ namespace Cova.MPP
             }
         }
 
-        public bool ActualizarReceta(BECertificado certificado)
+        public bool ActualizarCertificado(BECertificado certificado)
         {
             Hashtable datosCertificado = new Hashtable();
             try
@@ -38,8 +38,6 @@ namespace Cova.MPP
                 string strSQL = @"s_ActualizarCertificado";
                 datosCertificado.Add("@CertificadoId", certificado.CertificadoId);
                 datosCertificado.Add("@FechaPrescripcion", certificado.FechaPrescripcion);
-                datosCertificado.Add("@PacienteId", certificado.Paciente.PacienteId);
-                datosCertificado.Add("@ProfesionalId", certificado.Medico.ProfesionalId);
                 datosCertificado.Add("@Observacion", certificado.Observacion);
 
                 return conexionBDD.Escribir(strSQL, datosCertificado);
@@ -52,7 +50,7 @@ namespace Cova.MPP
 
         public IList<BECertificado> BuscarCertificados(BEPaciente paciente)
         {
-            List<BECertificado> certificado = new List<BECertificado>();
+            List<BECertificado> certificados = new List<BECertificado>();
             DataSet certificadosDS;
             DataTable certificadosT;
             Hashtable datoscertificados = new Hashtable();
@@ -67,9 +65,9 @@ namespace Cova.MPP
                 {
                     foreach (DataRow fila in certificadosT.Rows)
                     {
-                        BECertificado certificados = new BECertificado();
-                        certificados.Paciente = paciente;
-                        certificados.CertificadoId = Convert.ToInt32(fila["CertificadoId"]);
+                        BECertificado certificado = new BECertificado();
+                        certificado.Paciente = paciente;
+                        certificado.CertificadoId = Convert.ToInt32(fila["CertificadoId"]);
 
                         BEMedico medico = new BEMedico();
                         medico.ProfesionalId = Convert.ToInt32(fila["ProfesionalId"]);
@@ -78,11 +76,11 @@ namespace Cova.MPP
                         medico.MatriculaNacional = Convert.ToInt32(fila["MatriculaNacional"]);
                         medico.MatriculaProvincial = Convert.ToInt32(fila["MatriculaProvincial"]);
 
-                        certificados.Medico = medico;
-                        certificados.FechaPrescripcion = Convert.ToDateTime(fila["FechaPrescripcion"]);
-                        certificados.Observacion = Convert.ToString(fila["Observacion"]);
+                        certificado.Medico = medico;
+                        certificado.FechaPrescripcion = Convert.ToDateTime(fila["FechaPrescripcion"]);
+                        certificado.Observacion = Convert.ToString(fila["Observacion"]);
 
-                        certificado.Add(certificados);
+                        certificados.Add(certificado);
                     }
                 }
             }
@@ -90,7 +88,7 @@ namespace Cova.MPP
             {
                 throw ex;
             }
-            return certificado;
+            return certificados;
         }
     }
 }

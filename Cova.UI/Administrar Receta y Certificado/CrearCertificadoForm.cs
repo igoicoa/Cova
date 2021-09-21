@@ -104,7 +104,7 @@ namespace Cova.UI
                     certificado.Paciente = this._pacienteACertificar;
                     certificado.Medico = this._usuarioMedico;
                     certificado.Observacion = richTextBox1.Text;
-                    if (blCertificado.CrearReceta(certificado))
+                    if (blCertificado.CrearCertificado(certificado))
                     {
                         MessageBox.Show("El certificado fue creado con exito");
                         this.Close();

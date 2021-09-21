@@ -301,55 +301,56 @@ namespace Cova.UI
 
         private void btnModificar_ModificarCuenta_Click(object sender, EventArgs e)
         {
-            if (rb_administrador_ModificarCuenta== null || rb_enfermero_ModificarCuenta== null
-                || rb_medico_ModificarCuenta== null || rb_paciente_ModificarCuenta== null)
+            if (rb_administrador_ModificarCuenta.Checked || rb_enfermero_ModificarCuenta.Checked
+                || rb_medico_ModificarCuenta.Checked || rb_paciente_ModificarCuenta.Checked)
             { 
-            if(rb_medico_ModificarCuenta.Checked)
-            {
+                if(rb_medico_ModificarCuenta.Checked)
+                {
             
-                if (ValidarTodosLosCamposMedico())
-                {
-                    ActualizarProfesionalMedico();
+                    if (ValidarTodosLosCamposMedico())
+                    {
+                        ActualizarProfesionalMedico();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe completar todos los campos");
+                    }
                 }
-                else
+                else if(rb_enfermero_ModificarCuenta.Checked)
                 {
-                    MessageBox.Show("Debe completar todos los campos");
+                    if (ValidarTodosLosCamposEnfermero())
+                    {
+                        ActualizarProfesionalEnfermero();
+                    } 
+                    else
+                    {
+                        MessageBox.Show("Debe completar todos los campos");
+                    }
                 }
-            }
-            else if(rb_enfermero_ModificarCuenta.Checked)
-            {
-                if (ValidarTodosLosCamposEnfermero())
+                else if(rb_paciente_ModificarCuenta.Checked)
                 {
-                    ActualizarProfesionalEnfermero();
+                    if (ValidarTodosLosCamposPaciente())
+                    {
+                        ActualizarPaciente();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe completar todos los campos");
+                    }
                 } 
-                else
+                else if(rb_administrador_ModificarCuenta.Checked)
                 {
-                    MessageBox.Show("Debe completar todos los campos");
-                }
-            }
-            else if(rb_paciente_ModificarCuenta.Checked)
-            {
-                if (ValidarTodosLosCamposPaciente())
-                {
-                    ActualizarPaciente();
-                }
-                else
-                {
-                    MessageBox.Show("Debe completar todos los campos");
+                    if (ValidarTodosLosCamposAdministrador())
+                    {
+                        ActualizarAdministrador();
+                    } 
+                    else
+                    {
+                        MessageBox.Show("Debe completar todos los campos");
+                    }
                 }
             } 
-            else if(rb_administrador_ModificarCuenta.Checked)
-            {
-                if (ValidarTodosLosCamposAdministrador())
-                {
-                    ActualizarAdministrador();
-                } 
-                else
-                {
-                    MessageBox.Show("Debe completar todos los campos");
-                }
-            }
-            } else
+            else
             {
                 MessageBox.Show("Debe seleccionar un Usuario");
             }

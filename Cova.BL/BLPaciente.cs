@@ -19,7 +19,7 @@ namespace Cova.BL
             try
             {
                 MPPPaciente mPPPaciente = new MPPPaciente();
-                pacienteCreado = mPPPaciente.CrearPaciente(pacienteNuevo);
+                pacienteCreado = mPPPaciente.CrearPaciente(pacienteNuevo, Sesion.GetInstance.Usuario.UsuarioID);
                 Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "El paciente fue creado: " + pacienteNuevo.Apellido + "," + pacienteNuevo.Nombre, "Crear Paciente"));
 
             }
@@ -55,7 +55,7 @@ namespace Cova.BL
             try
             {
                 MPPPaciente mPPPaciente = new MPPPaciente();
-                PacienteActualizado= mPPPaciente.ActualizarPaciente(pacienteNuevo);
+                PacienteActualizado= mPPPaciente.ActualizarPaciente(pacienteNuevo, Sesion.GetInstance.Usuario.UsuarioID);
                 Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizo el Paciente: " + pacienteNuevo.PacienteId + " - " + pacienteNuevo.Apellido, "Actualizar Paciente"));
 
             }

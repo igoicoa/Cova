@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Cova.BE.Bitacora;
 using Cova.Common.Excepciones;
 using Cova.MPP;
-using Cova.Servicios;
 using Cova.Servicios.Bitacora;
 using Cova.Servicios.Sesion;
 
@@ -12,7 +11,7 @@ namespace Cova.BL
 {
    public class BLCertificado
     {
-        public bool CrearReceta(BECertificado certificado)
+        public bool CrearCertificado(BECertificado certificado)
         {
             bool CertificadoCreada = false;
             try
@@ -37,7 +36,7 @@ namespace Cova.BL
             try
             {
                 MPPCertificado mPPCertificado = new MPPCertificado();
-                CertificadoActualizada = mPPCertificado.ActualizarReceta(certificado);
+                CertificadoActualizada = mPPCertificado.ActualizarCertificado(certificado);
                 Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizó el Certificado: " + certificado.CertificadoId + "," + certificado.Paciente.ApellidoNombre, "Actualizar Certificado"));
 
             }

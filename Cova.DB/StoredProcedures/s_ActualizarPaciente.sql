@@ -19,7 +19,8 @@
 	@CoberturaMedicaNumeroAfiliado		VARCHAR(100) = NULL,
 	@CoberturaMedicaFechaVencimiento	DATETIME = NULL,
 	@Activo								BIT,
-	@Password							VARCHAR(50) = NULL
+	@Password							VARCHAR(50) = NULL,
+	@UsuarioModificadorId				BIGINT
 
 AS
 BEGIN
@@ -27,7 +28,8 @@ BEGIN
 	BEGIN TRY
 		DECLARE @DomicilioId			BIGINT,
 				@CoberturaPacienteId	BIGINT,
-				@PacienteId				BIGINT
+				@PacienteId				BIGINT,
+				@TipoCambio				VARCHAR(100)
 
 		SET @PacienteId = (SELECT PacienteId 
 						   FROM [dbo].[Paciente] p
@@ -101,6 +103,19 @@ BEGIN
 				[Password] = @Password
 			WHERE UsuarioID = @UsuarioId
 		END
+
+		IF(@Activo = 1)
+		BEGIN
+			SET @TipoCambio = 'MODIFICACION'
+		END
+		ELSE
+		BEGIN
+			SET @TipoCambio = 'BAJA'
+		END
+
+		INSERT INTO [ControlCambio_Paciente] (Apellido, Nombre, DNI, FechaNacimiento, Sexo, EstadoCivil, Telefono, Email, Calle, Numero, Piso, Localidad, Provincia, Pais, CoberturaMedicaId, CoberturaMedicaPlanId, NumeroAfiliado, FechaVencimiento, UsuarioModificadorId, FechaModificacion, TipoCambio)
+		VALUES
+		(@Apellido, @Nombre, @DNI, @FechaNacimiento, @Sexo, @EstadoCivil, @Telefono, @Email, @Calle, @Numero, @Piso, @Localidad, @Provincia, @Pais, @CoberturaMedicaId, @CoberturaMedicaPlanId, @CoberturaMedicaNumeroAfiliado, @CoberturaMedicaFechaVencimiento, @UsuarioModificadorId, GETDATE(), @TipoCambio)
 
 		COMMIT TRANSACTION;
 	END TRY

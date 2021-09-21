@@ -17,7 +17,8 @@
 	@CoberturaMedicaPlanId				INT = NULL,
 	@CoberturaMedicaNumeroAfiliado		VARCHAR(100) = NULL,
 	@CoberturaMedicaFechaVencimiento	DATETIME = NULL,
-	@Password							VARCHAR(50)
+	@Password							VARCHAR(50),
+	@UsuarioModificadorId				BIGINT
 
 AS
 BEGIN
@@ -57,5 +58,9 @@ BEGIN
 	VALUES
 	(@Apellido, @Nombre, @DNI, @FechaNacimiento, @Sexo, @EstadoCivil, @Telefono,  @Email, @IdCoberturaMedicaPaciente, @IdUsuario, @IdDomicilio)
 
+	INSERT INTO [dbo].[ControlCambio_Paciente] (Apellido, Nombre, DNI, FechaNacimiento, Sexo, EstadoCivil, Telefono, Email, Calle, Numero, Piso, Localidad, Provincia, Pais, CoberturaMedicaId, CoberturaMedicaPlanId, NumeroAfiliado, FechaVencimiento, UsuarioModificadorId, FechaModificacion, TipoCambio)
+	VALUES
+	(@Apellido, @Nombre, @DNI, @FechaNacimiento, @Sexo, @EstadoCivil, @Telefono, @Email, @Calle, @Numero, @Piso, @Localidad, @Provincia, @Pais, @CoberturaMedicaId, @CoberturaMedicaPlanId, @CoberturaMedicaNumeroAfiliado, @CoberturaMedicaFechaVencimiento, @UsuarioModificadorId, GETDATE(), 'CREACION')
+	
 	EXEC [dbo].[s_AgregarPermisosPaciente] @IDUsuario
 END

@@ -11,9 +11,7 @@ BEGIN
 	   ,m.MatriculaProvincial AS MatriculaProvincial
 	   ,c.FechaPrescripcion
 	   ,c.Observacion
-	   ,c.VacunaId
-	   ,v.Nombre AS VacunaNombre
-	FROM [dbo].[Receta] r
+	FROM [dbo].[Certificado] c
 	INNER JOIN [dbo].[Paciente] p ON p.PacienteId = c.PacienteId
 	INNER JOIN [dbo].[Profesional] pr ON pr.ProfesionalId = c.ProfesionalId
 	INNER JOIN [dbo].[Medico] m ON m.ProfesionalId = pr.ProfesionalId
