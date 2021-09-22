@@ -166,7 +166,6 @@
     <Compile Include="Control de Cambios\ControlDeCambioForm.Designer.cs">
       <DependentUpon>ControlDeCambioForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\IFormCargarCertificados.cs" />
     <Compile Include="Interfaces\IFormCargarRecetas.cs" />
     <Compile Include="Interfaces\IFormCargarUsuarios.cs" />
     <Compile Include="Interfaces\IFormCargarVacunas.cs" />

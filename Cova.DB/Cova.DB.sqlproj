@@ -143,6 +143,8 @@
     <Build Include="Tables\Certificado.sql" />
     <Build Include="StoredProcedures\s_CrearCertificado.sql" />
     <Build Include="Tables\ControlCambio_Paciente.sql" />
+    <Build Include="StoredProcedures\s_BuscarCertificadoPaciente.sql" />
+    <Build Include="StoredProcedures\s_ActualizarCertificado.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />
@@ -152,7 +154,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="StoredProcedures\s_ActualizarAdministrador.sql" />
-    <None Include="StoredProcedures\s_ActualizarCertificado.sql" />
-    <None Include="StoredProcedures\s_BuscarCertificadoPaciente.sql" />
   </ItemGroup>
 </Project>

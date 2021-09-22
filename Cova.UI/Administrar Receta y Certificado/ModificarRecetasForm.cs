@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Cova.UI.Administrar_Receta_y_Certificado
 {
-    public partial class ModificarRecetasForm : Form, IFormCargarRecetas
+    public partial class ModificarRecetasForm : Form, IFormCargarRecetasCertificados
     {
         private BEMedico _usuarioMedico;
         private BEPaciente _pacienteAModificarRecetar;
@@ -158,7 +158,7 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
 
         private void button1_Click(object sender, EventArgs e)
         {
-            VerReceta_CertificadoForm frmVerReceta_Certificado = new VerReceta_CertificadoForm(this);
+            VerReceta_CertificadoForm frmVerReceta_Certificado = new VerReceta_CertificadoForm(this, true);
             frmVerReceta_Certificado.Show();
         }
 
@@ -207,6 +207,11 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             }
 
            
+        }
+
+        public void CargarCertificadoPaciente(BECertificado certificado, BEPaciente paciente)
+        {
+            throw new NotImplementedException();
         }
     }
 }

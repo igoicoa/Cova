@@ -2,8 +2,9 @@
 
 namespace Cova.UI.Interfaces
 {
-    public interface IFormCargarRecetas
+    public interface IFormCargarRecetasCertificados
     {
         void CargarRecetaPaciente(BEReceta receta, BEPaciente paciente);
+        void CargarCertificadoPaciente(BECertificado certificado, BEPaciente paciente);
     }
 }

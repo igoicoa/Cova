@@ -13,17 +13,28 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
 {
     public partial class VerReceta_CertificadoForm : Form, IFormCargarUsuarios
     {
-        private IFormCargarRecetas _formPadre;
+        private IFormCargarRecetasCertificados _formPadre;
+        private bool _esReceta;
         private BEPaciente _paciente;
         private List<BEReceta> _recetasPaciente;
+        private List<BECertificado> _certificadosPaciente;
 
-        public VerReceta_CertificadoForm(IFormCargarRecetas formPadre = null)
+        public VerReceta_CertificadoForm(IFormCargarRecetasCertificados formPadre = null, bool esReceta = true)
         {
             InitializeComponent();
             this._formPadre = formPadre;
+            this._esReceta = esReceta;
+            if(this._esReceta)
+            {
+                this.btn_SeleccionarRecetaCertificado.Text = "Seleccionar Receta";
+            } 
+            else
+            {
+                this.btn_SeleccionarRecetaCertificado.Text = "Seleccionar Certificado";
+            }
             if (this._formPadre == null)
             {
-                this.btn_SeleccionarReceta.Visible = false;
+                this.btn_SeleccionarRecetaCertificado.Visible = false;
             }
             if(Sesion.GetInstance != null)
             {
@@ -81,7 +92,7 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
         }
         private void btn_Mostrar__VerRecetasyCertificados_Click(object sender, EventArgs e)
         {
-            if (chb_Receta_VerRecetasyCertificados.Checked)
+            if (this._esReceta)
             {
                 if (ValidarTodosLosCamposReceta_Certificado())
                 {
@@ -92,11 +103,11 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
                     MessageBox.Show("Debe completar todos los campos");
                 }
             }
-            else if (chb_Certificado_VerRecetayCertificado.Checked)
+            else
             {
                 if (ValidarTodosLosCamposReceta_Certificado())
                 {
-                    this.BuscarCertificado();
+                    this.BuscarCertificados();
                 }
                 else
                 {
@@ -153,17 +164,65 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             dtg_Recetas_VerRecetasyCertificados.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
-        public void BuscarCertificado()
+        public void BuscarCertificados()
         {
+            BLCertificado bLCertificado = new BLCertificado();
+            try
+            {
+                this._certificadosPaciente = bLCertificado.BuscarCertificados(this._paciente).ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
+            DataTable tableCertificado = new DataTable();
+            tableCertificado.Columns.Add("CertificadoId");
+            tableCertificado.Columns.Add("FechaPrescripcion");
+            tableCertificado.Columns.Add("Observacion");
+            tableCertificado.Columns.Add("Medico Nombre");
+            tableCertificado.Columns.Add("Medico Apellido");
+            tableCertificado.Columns.Add("Medico MN");
+            tableCertificado.Columns.Add("Medico MP");
+
+            foreach (BECertificado certificado in this._certificadosPaciente)
+            {
+                DataRow filaCertificado = tableCertificado.NewRow();
+                filaCertificado["CertificadoId"] = certificado.CertificadoId;
+                filaCertificado["FechaPrescripcion"] = certificado.FechaPrescripcion;
+                filaCertificado["Observacion"] = certificado.Observacion;
+                filaCertificado["Medico Nombre"] = certificado.Medico.Nombre;
+                filaCertificado["Medico Apellido"] = certificado.Medico.Apellido;
+                filaCertificado["Medico MN"] = certificado.Medico.MatriculaNacional;
+                filaCertificado["Medico MP"] = certificado.Medico.MatriculaProvincial;
+
+                tableCertificado.Rows.Add(filaCertificado);
+            }
+            DataView dataviewCertificados = new DataView(tableCertificado);
+            dtg_Recetas_VerRecetasyCertificados.DataSource = dataviewCertificados;
+            dtg_Recetas_VerRecetasyCertificados.Columns[0].Visible = false;
+            dtg_Recetas_VerRecetasyCertificados.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtg_Recetas_VerRecetasyCertificados.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtg_Recetas_VerRecetasyCertificados.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtg_Recetas_VerRecetasyCertificados.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtg_Recetas_VerRecetasyCertificados.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtg_Recetas_VerRecetasyCertificados.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
-        private void btn_SeleccionarUsuario_BuscarUsuarios_Click(object sender, EventArgs e)
+        private void btn_SeleccionarRecetaCertificado_Click(object sender, EventArgs e)
         {
             if (dtg_Recetas_VerRecetasyCertificados.SelectedRows.Count != 0)
             {
-                long recetaId = Convert.ToInt64(dtg_Recetas_VerRecetasyCertificados.SelectedRows[0].Cells["RecetaId"].Value);
-                this._formPadre.CargarRecetaPaciente(this._recetasPaciente.Where(x => x.RecetaId == recetaId).FirstOrDefault(), this._paciente);
+                if(this._esReceta)
+                {
+                    long recetaId = Convert.ToInt64(dtg_Recetas_VerRecetasyCertificados.SelectedRows[0].Cells["RecetaId"].Value);
+                    this._formPadre.CargarRecetaPaciente(this._recetasPaciente.Where(x => x.RecetaId == recetaId).FirstOrDefault(), this._paciente);
+                }
+                else
+                {
+                    long certificadoId = Convert.ToInt64(dtg_Recetas_VerRecetasyCertificados.SelectedRows[0].Cells["CertificadoId"].Value);
+                    this._formPadre.CargarCertificadoPaciente(this._certificadosPaciente.Where(x => x.CertificadoId == certificadoId).FirstOrDefault(), this._paciente);
+                }
                 this.Close();
             }
         }

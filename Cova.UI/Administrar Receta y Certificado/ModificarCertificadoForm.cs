@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Cova.UI.Administrar_Receta_y_Certificado
 {
-    public partial class ModificarCertificadoForm : Form, IFormCargarCertificados
+    public partial class ModificarCertificadoForm : Form, IFormCargarRecetasCertificados
     {
         private BEMedico _usuarioMedico;
         private BEPaciente _pacienteAModificarCertificado;
@@ -76,8 +76,8 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
 
         private void btn__ModificarCertificado_Click(object sender, EventArgs e)
         {
-            //VerReceta_CertificadoForm frmVerReceta_Certificado = new VerReceta_CertificadoForm(this);
-            //frmVerReceta_Certificado.Show();
+            VerReceta_CertificadoForm frmVerReceta_Certificado = new VerReceta_CertificadoForm(this, false);
+            frmVerReceta_Certificado.Show();
         }
 
         private void btn_ModificarCertificado_Click(object sender, EventArgs e)
@@ -91,12 +91,12 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
                 {
                     if (bLCertificado.ActualizarCertificado(this._certificadoAModificar))
                     {
-                        MessageBox.Show("Receta modificada con exito");
+                        MessageBox.Show("Certificado modificada con exito");
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Hubo un error al modificar la receta");
+                        MessageBox.Show("Hubo un error al modificar el certificado");
                     }
                 }
                 else
@@ -147,5 +147,9 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             }
         }
 
+        public void CargarRecetaPaciente(BEReceta receta, BEPaciente paciente)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

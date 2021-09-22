@@ -42,13 +42,11 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             this.lbl_NumeroDocumento__VerRecetasyCertificados = new System.Windows.Forms.Label();
             this.cmb_TipoDocumento__VerRecetasyCertificados = new System.Windows.Forms.ComboBox();
             this.lbl_TipoDocumento__VerRecetasyCertificados = new System.Windows.Forms.Label();
-            this.chb_Certificado_VerRecetayCertificado = new System.Windows.Forms.CheckBox();
-            this.chb_Receta_VerRecetasyCertificados = new System.Windows.Forms.CheckBox();
             this.dtg_Recetas_VerRecetasyCertificados = new System.Windows.Forms.DataGridView();
             this.btn_Limpiar__VerRecetasyCertificados = new System.Windows.Forms.Button();
             this.btn_Cancelar__VerRecetasyCertificados = new System.Windows.Forms.Button();
             this.btn_Mostrar__VerRecetasyCertificados = new System.Windows.Forms.Button();
-            this.btn_SeleccionarReceta = new System.Windows.Forms.Button();
+            this.btn_SeleccionarRecetaCertificado = new System.Windows.Forms.Button();
             this.gb_DatosPaciente__VerRecetasyCertificados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Recetas_VerRecetasyCertificados)).BeginInit();
             this.SuspendLayout();
@@ -189,32 +187,10 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             this.lbl_TipoDocumento__VerRecetasyCertificados.TabIndex = 78;
             this.lbl_TipoDocumento__VerRecetasyCertificados.Text = "Tipo de documento";
             // 
-            // chb_Certificado_VerRecetayCertificado
-            // 
-            this.chb_Certificado_VerRecetayCertificado.AutoSize = true;
-            this.chb_Certificado_VerRecetayCertificado.Location = new System.Drawing.Point(84, 251);
-            this.chb_Certificado_VerRecetayCertificado.Name = "chb_Certificado_VerRecetayCertificado";
-            this.chb_Certificado_VerRecetayCertificado.Size = new System.Drawing.Size(76, 17);
-            this.chb_Certificado_VerRecetayCertificado.TabIndex = 167;
-            this.chb_Certificado_VerRecetayCertificado.Text = "Certificado";
-            this.chb_Certificado_VerRecetayCertificado.UseVisualStyleBackColor = true;
-            // 
-            // chb_Receta_VerRecetasyCertificados
-            // 
-            this.chb_Receta_VerRecetasyCertificados.AutoSize = true;
-            this.chb_Receta_VerRecetasyCertificados.Checked = true;
-            this.chb_Receta_VerRecetasyCertificados.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chb_Receta_VerRecetasyCertificados.Location = new System.Drawing.Point(17, 251);
-            this.chb_Receta_VerRecetasyCertificados.Name = "chb_Receta_VerRecetasyCertificados";
-            this.chb_Receta_VerRecetasyCertificados.Size = new System.Drawing.Size(61, 17);
-            this.chb_Receta_VerRecetasyCertificados.TabIndex = 166;
-            this.chb_Receta_VerRecetasyCertificados.Text = "Receta";
-            this.chb_Receta_VerRecetasyCertificados.UseVisualStyleBackColor = true;
-            // 
             // dtg_Recetas_VerRecetasyCertificados
             // 
             this.dtg_Recetas_VerRecetasyCertificados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_Recetas_VerRecetasyCertificados.Location = new System.Drawing.Point(12, 361);
+            this.dtg_Recetas_VerRecetasyCertificados.Location = new System.Drawing.Point(12, 284);
             this.dtg_Recetas_VerRecetasyCertificados.Name = "dtg_Recetas_VerRecetasyCertificados";
             this.dtg_Recetas_VerRecetasyCertificados.ReadOnly = true;
             this.dtg_Recetas_VerRecetasyCertificados.Size = new System.Drawing.Size(775, 297);
@@ -223,7 +199,7 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             // btn_Limpiar__VerRecetasyCertificados
             // 
             this.btn_Limpiar__VerRecetasyCertificados.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Limpiar__VerRecetasyCertificados.Location = new System.Drawing.Point(417, 301);
+            this.btn_Limpiar__VerRecetasyCertificados.Location = new System.Drawing.Point(340, 241);
             this.btn_Limpiar__VerRecetasyCertificados.Name = "btn_Limpiar__VerRecetasyCertificados";
             this.btn_Limpiar__VerRecetasyCertificados.Size = new System.Drawing.Size(75, 23);
             this.btn_Limpiar__VerRecetasyCertificados.TabIndex = 178;
@@ -233,7 +209,7 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             // 
             // btn_Cancelar__VerRecetasyCertificados
             // 
-            this.btn_Cancelar__VerRecetasyCertificados.Location = new System.Drawing.Point(336, 301);
+            this.btn_Cancelar__VerRecetasyCertificados.Location = new System.Drawing.Point(259, 241);
             this.btn_Cancelar__VerRecetasyCertificados.Name = "btn_Cancelar__VerRecetasyCertificados";
             this.btn_Cancelar__VerRecetasyCertificados.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancelar__VerRecetasyCertificados.TabIndex = 177;
@@ -243,7 +219,7 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             // 
             // btn_Mostrar__VerRecetasyCertificados
             // 
-            this.btn_Mostrar__VerRecetasyCertificados.Location = new System.Drawing.Point(252, 301);
+            this.btn_Mostrar__VerRecetasyCertificados.Location = new System.Drawing.Point(175, 241);
             this.btn_Mostrar__VerRecetasyCertificados.Name = "btn_Mostrar__VerRecetasyCertificados";
             this.btn_Mostrar__VerRecetasyCertificados.Size = new System.Drawing.Size(78, 23);
             this.btn_Mostrar__VerRecetasyCertificados.TabIndex = 176;
@@ -251,26 +227,24 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
             this.btn_Mostrar__VerRecetasyCertificados.UseVisualStyleBackColor = true;
             this.btn_Mostrar__VerRecetasyCertificados.Click += new System.EventHandler(this.btn_Mostrar__VerRecetasyCertificados_Click);
             // 
-            // btn_SeleccionarReceta
+            // btn_SeleccionarRecetaCertificado
             // 
-            this.btn_SeleccionarReceta.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_SeleccionarReceta.Location = new System.Drawing.Point(498, 301);
-            this.btn_SeleccionarReceta.Name = "btn_SeleccionarReceta";
-            this.btn_SeleccionarReceta.Size = new System.Drawing.Size(113, 23);
-            this.btn_SeleccionarReceta.TabIndex = 179;
-            this.btn_SeleccionarReceta.Text = "Seleccionar Receta";
-            this.btn_SeleccionarReceta.UseVisualStyleBackColor = true;
-            this.btn_SeleccionarReceta.Click += new System.EventHandler(this.btn_SeleccionarUsuario_BuscarUsuarios_Click);
+            this.btn_SeleccionarRecetaCertificado.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_SeleccionarRecetaCertificado.Location = new System.Drawing.Point(421, 241);
+            this.btn_SeleccionarRecetaCertificado.Name = "btn_SeleccionarRecetaCertificado";
+            this.btn_SeleccionarRecetaCertificado.Size = new System.Drawing.Size(110, 23);
+            this.btn_SeleccionarRecetaCertificado.TabIndex = 179;
+            this.btn_SeleccionarRecetaCertificado.Text = "Seleccionar";
+            this.btn_SeleccionarRecetaCertificado.UseVisualStyleBackColor = true;
+            this.btn_SeleccionarRecetaCertificado.Click += new System.EventHandler(this.btn_SeleccionarRecetaCertificado_Click);
             // 
             // VerReceta_CertificadoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 682);
-            this.Controls.Add(this.btn_SeleccionarReceta);
-            this.Controls.Add(this.chb_Certificado_VerRecetayCertificado);
+            this.Controls.Add(this.btn_SeleccionarRecetaCertificado);
             this.Controls.Add(this.btn_Limpiar__VerRecetasyCertificados);
-            this.Controls.Add(this.chb_Receta_VerRecetasyCertificados);
             this.Controls.Add(this.btn_Cancelar__VerRecetasyCertificados);
             this.Controls.Add(this.btn_Mostrar__VerRecetasyCertificados);
             this.Controls.Add(this.dtg_Recetas_VerRecetasyCertificados);
@@ -301,12 +275,10 @@ namespace Cova.UI.Administrar_Receta_y_Certificado
         private System.Windows.Forms.Label lbl_NumeroDocumento__VerRecetasyCertificados;
         private System.Windows.Forms.ComboBox cmb_TipoDocumento__VerRecetasyCertificados;
         private System.Windows.Forms.Label lbl_TipoDocumento__VerRecetasyCertificados;
-        private System.Windows.Forms.CheckBox chb_Certificado_VerRecetayCertificado;
-        private System.Windows.Forms.CheckBox chb_Receta_VerRecetasyCertificados;
         private System.Windows.Forms.DataGridView dtg_Recetas_VerRecetasyCertificados;
         private System.Windows.Forms.Button btn_Limpiar__VerRecetasyCertificados;
         private System.Windows.Forms.Button btn_Cancelar__VerRecetasyCertificados;
         private System.Windows.Forms.Button btn_Mostrar__VerRecetasyCertificados;
-        private System.Windows.Forms.Button btn_SeleccionarReceta;
+        private System.Windows.Forms.Button btn_SeleccionarRecetaCertificado;
     }
 }

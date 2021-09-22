@@ -421,5 +421,36 @@ namespace Cova.MPP
             }
             return antecedentesPersonales;
         }
+
+        public IList<BEHistoriaClinica> ObtenerHistoriaClinicaPaciente(BEPaciente paciente)
+        {
+            List<BEHistoriaClinica> historiasClinica = new List<BEHistoriaClinica>();
+            DataSet pacienteDS;
+            DataTable pacienteT;
+            Hashtable datosPaciente = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_ObtenerHistoriaClinicaPaciente"; //TODO Crear SP
+                datosPaciente.Add("@PacienteId", paciente.PacienteId);
+                pacienteDS = conexionBDD.ObtenerDataSet(strSQL, datosPaciente);
+                pacienteT = pacienteDS.Tables[0];
+                if (pacienteT.Rows.Count > 0)
+                {
+                    foreach (DataRow fila in pacienteT.Rows)
+                    {
+                        BEHistoriaClinica historiaClinica = new BEHistoriaClinica();
+                        //TODO
+
+                        historiasClinica.Add(historiaClinica);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return historiasClinica;
+        }
     }
 }

@@ -33,15 +33,15 @@ namespace Cova.UI
             this.lbl_CargarCoberturaMedica = new System.Windows.Forms.Label();
             this.txt_Nombre_CargarCoberturaMedica = new System.Windows.Forms.TextBox();
             this.lbl_Nombre_CargarCoberturaMedica = new System.Windows.Forms.Label();
-            this.lbl_Plan_CargarCoberturaMedica = new System.Windows.Forms.Label();
-            this.cmb_Plan_CargarCoberturaMedica = new System.Windows.Forms.ComboBox();
-            this.txt_Telefono_CargarCoberturaMedica = new System.Windows.Forms.TextBox();
-            this.lbl_Telefono_CargarCoberturaMedica = new System.Windows.Forms.Label();
             this.btn_Limpiar_CargarCoberturaMedica = new System.Windows.Forms.Button();
             this.btn_Cancelar_CargarCoberturaMedica = new System.Windows.Forms.Button();
             this.btn_Crear_CargarCoberturaMedica = new System.Windows.Forms.Button();
-            this.lbl_FechaCreacion_CargarCoberturaMedica = new System.Windows.Forms.Label();
-            this.dtp_FechaCreacion = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_NombrePlan = new System.Windows.Forms.TextBox();
+            this.rtb_planes = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_CargarCoberturaMedica
@@ -73,46 +73,10 @@ namespace Cova.UI
             this.lbl_Nombre_CargarCoberturaMedica.TabIndex = 134;
             this.lbl_Nombre_CargarCoberturaMedica.Text = "Nombre";
             // 
-            // lbl_Plan_CargarCoberturaMedica
-            // 
-            this.lbl_Plan_CargarCoberturaMedica.AutoSize = true;
-            this.lbl_Plan_CargarCoberturaMedica.Location = new System.Drawing.Point(285, 52);
-            this.lbl_Plan_CargarCoberturaMedica.Name = "lbl_Plan_CargarCoberturaMedica";
-            this.lbl_Plan_CargarCoberturaMedica.Size = new System.Drawing.Size(28, 13);
-            this.lbl_Plan_CargarCoberturaMedica.TabIndex = 132;
-            this.lbl_Plan_CargarCoberturaMedica.Text = "Plan";
-            // 
-            // cmb_Plan_CargarCoberturaMedica
-            // 
-            this.cmb_Plan_CargarCoberturaMedica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Plan_CargarCoberturaMedica.FormattingEnabled = true;
-            this.cmb_Plan_CargarCoberturaMedica.Location = new System.Drawing.Point(288, 68);
-            this.cmb_Plan_CargarCoberturaMedica.Name = "cmb_Plan_CargarCoberturaMedica";
-            this.cmb_Plan_CargarCoberturaMedica.Size = new System.Drawing.Size(121, 21);
-            this.cmb_Plan_CargarCoberturaMedica.TabIndex = 136;
-            // 
-            // txt_Telefono_CargarCoberturaMedica
-            // 
-            this.txt_Telefono_CargarCoberturaMedica.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_Telefono_CargarCoberturaMedica.Location = new System.Drawing.Point(445, 69);
-            this.txt_Telefono_CargarCoberturaMedica.Name = "txt_Telefono_CargarCoberturaMedica";
-            this.txt_Telefono_CargarCoberturaMedica.Size = new System.Drawing.Size(181, 20);
-            this.txt_Telefono_CargarCoberturaMedica.TabIndex = 138;
-            // 
-            // lbl_Telefono_CargarCoberturaMedica
-            // 
-            this.lbl_Telefono_CargarCoberturaMedica.AutoEllipsis = true;
-            this.lbl_Telefono_CargarCoberturaMedica.AutoSize = true;
-            this.lbl_Telefono_CargarCoberturaMedica.Location = new System.Drawing.Point(442, 52);
-            this.lbl_Telefono_CargarCoberturaMedica.Name = "lbl_Telefono_CargarCoberturaMedica";
-            this.lbl_Telefono_CargarCoberturaMedica.Size = new System.Drawing.Size(49, 13);
-            this.lbl_Telefono_CargarCoberturaMedica.TabIndex = 137;
-            this.lbl_Telefono_CargarCoberturaMedica.Text = "Telefono";
-            // 
             // btn_Limpiar_CargarCoberturaMedica
             // 
             this.btn_Limpiar_CargarCoberturaMedica.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Limpiar_CargarCoberturaMedica.Location = new System.Drawing.Point(322, 171);
+            this.btn_Limpiar_CargarCoberturaMedica.Location = new System.Drawing.Point(326, 283);
             this.btn_Limpiar_CargarCoberturaMedica.Name = "btn_Limpiar_CargarCoberturaMedica";
             this.btn_Limpiar_CargarCoberturaMedica.Size = new System.Drawing.Size(75, 23);
             this.btn_Limpiar_CargarCoberturaMedica.TabIndex = 141;
@@ -122,7 +86,7 @@ namespace Cova.UI
             // 
             // btn_Cancelar_CargarCoberturaMedica
             // 
-            this.btn_Cancelar_CargarCoberturaMedica.Location = new System.Drawing.Point(234, 171);
+            this.btn_Cancelar_CargarCoberturaMedica.Location = new System.Drawing.Point(238, 283);
             this.btn_Cancelar_CargarCoberturaMedica.Name = "btn_Cancelar_CargarCoberturaMedica";
             this.btn_Cancelar_CargarCoberturaMedica.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancelar_CargarCoberturaMedica.TabIndex = 140;
@@ -132,7 +96,7 @@ namespace Cova.UI
             // 
             // btn_Crear_CargarCoberturaMedica
             // 
-            this.btn_Crear_CargarCoberturaMedica.Location = new System.Drawing.Point(149, 171);
+            this.btn_Crear_CargarCoberturaMedica.Location = new System.Drawing.Point(153, 283);
             this.btn_Crear_CargarCoberturaMedica.Name = "btn_Crear_CargarCoberturaMedica";
             this.btn_Crear_CargarCoberturaMedica.Size = new System.Drawing.Size(75, 23);
             this.btn_Crear_CargarCoberturaMedica.TabIndex = 139;
@@ -140,38 +104,75 @@ namespace Cova.UI
             this.btn_Crear_CargarCoberturaMedica.UseVisualStyleBackColor = true;
             this.btn_Crear_CargarCoberturaMedica.Click += new System.EventHandler(this.btn_Crear_CargarCoberturaMedica_Click);
             // 
-            // lbl_FechaCreacion_CargarCoberturaMedica
+            // label1
             // 
-            this.lbl_FechaCreacion_CargarCoberturaMedica.AutoSize = true;
-            this.lbl_FechaCreacion_CargarCoberturaMedica.Location = new System.Drawing.Point(2, 106);
-            this.lbl_FechaCreacion_CargarCoberturaMedica.Name = "lbl_FechaCreacion_CargarCoberturaMedica";
-            this.lbl_FechaCreacion_CargarCoberturaMedica.Size = new System.Drawing.Size(97, 13);
-            this.lbl_FechaCreacion_CargarCoberturaMedica.TabIndex = 142;
-            this.lbl_FechaCreacion_CargarCoberturaMedica.Text = "Fecha de Creación";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(5, 122);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.TabIndex = 142;
+            this.label1.Text = "Nombre Plan";
             // 
-            // dtp_FechaCreacion
+            // label2
             // 
-            this.dtp_FechaCreacion.Location = new System.Drawing.Point(5, 122);
-            this.dtp_FechaCreacion.Name = "dtp_FechaCreacion";
-            this.dtp_FechaCreacion.Size = new System.Drawing.Size(219, 20);
-            this.dtp_FechaCreacion.TabIndex = 159;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(473, 87);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 143;
+            this.label2.Text = "Planes";
+            // 
+            // txt_NombrePlan
+            // 
+            this.txt_NombrePlan.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_NombrePlan.Location = new System.Drawing.Point(5, 138);
+            this.txt_NombrePlan.Name = "txt_NombrePlan";
+            this.txt_NombrePlan.Size = new System.Drawing.Size(232, 20);
+            this.txt_NombrePlan.TabIndex = 144;
+            // 
+            // rtb_planes
+            // 
+            this.rtb_planes.Location = new System.Drawing.Point(476, 103);
+            this.rtb_planes.Name = "rtb_planes";
+            this.rtb_planes.ReadOnly = true;
+            this.rtb_planes.Size = new System.Drawing.Size(200, 176);
+            this.rtb_planes.TabIndex = 145;
+            this.rtb_planes.Text = "";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(308, 148);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 146;
+            this.button1.Text = "Agregar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(308, 196);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 147;
+            this.button2.Text = "Quitar";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // CargarCoberturaMedicaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 217);
-            this.Controls.Add(this.dtp_FechaCreacion);
-            this.Controls.Add(this.lbl_FechaCreacion_CargarCoberturaMedica);
+            this.ClientSize = new System.Drawing.Size(745, 318);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.rtb_planes);
+            this.Controls.Add(this.txt_NombrePlan);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Limpiar_CargarCoberturaMedica);
             this.Controls.Add(this.btn_Cancelar_CargarCoberturaMedica);
             this.Controls.Add(this.btn_Crear_CargarCoberturaMedica);
-            this.Controls.Add(this.txt_Telefono_CargarCoberturaMedica);
-            this.Controls.Add(this.lbl_Telefono_CargarCoberturaMedica);
-            this.Controls.Add(this.cmb_Plan_CargarCoberturaMedica);
             this.Controls.Add(this.txt_Nombre_CargarCoberturaMedica);
             this.Controls.Add(this.lbl_Nombre_CargarCoberturaMedica);
-            this.Controls.Add(this.lbl_Plan_CargarCoberturaMedica);
             this.Controls.Add(this.lbl_CargarCoberturaMedica);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CargarCoberturaMedicaForm";
@@ -186,14 +187,14 @@ namespace Cova.UI
         private System.Windows.Forms.Label lbl_CargarCoberturaMedica;
         private System.Windows.Forms.TextBox txt_Nombre_CargarCoberturaMedica;
         private System.Windows.Forms.Label lbl_Nombre_CargarCoberturaMedica;
-        private System.Windows.Forms.Label lbl_Plan_CargarCoberturaMedica;
-        private System.Windows.Forms.ComboBox cmb_Plan_CargarCoberturaMedica;
-        private System.Windows.Forms.TextBox txt_Telefono_CargarCoberturaMedica;
-        private System.Windows.Forms.Label lbl_Telefono_CargarCoberturaMedica;
         private System.Windows.Forms.Button btn_Limpiar_CargarCoberturaMedica;
         private System.Windows.Forms.Button btn_Cancelar_CargarCoberturaMedica;
         private System.Windows.Forms.Button btn_Crear_CargarCoberturaMedica;
-        private System.Windows.Forms.Label lbl_FechaCreacion_CargarCoberturaMedica;
-        private System.Windows.Forms.DateTimePicker dtp_FechaCreacion;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txt_NombrePlan;
+        private System.Windows.Forms.RichTextBox rtb_planes;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
