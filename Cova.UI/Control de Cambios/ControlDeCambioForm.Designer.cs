@@ -35,8 +35,6 @@ namespace Cova.UI.Control_de_Cambios
             this.btn_Limpiar_ControlCambios = new System.Windows.Forms.Button();
             this.btn_Cancelar_ControlCambios = new System.Windows.Forms.Button();
             this.btn_Filtrar_ControlCambios = new System.Windows.Forms.Button();
-            this.cmb_Criticidad_ControlCambios = new System.Windows.Forms.ComboBox();
-            this.lbl_Criticidad_ControlCambios = new System.Windows.Forms.Label();
             this.lbl_Usuario_ControlCambios = new System.Windows.Forms.Label();
             this.lbl_FechaHasta_ControlCambios = new System.Windows.Forms.Label();
             this.lbl_FechaDesde_ControlCambios = new System.Windows.Forms.Label();
@@ -50,7 +48,7 @@ namespace Cova.UI.Control_de_Cambios
             // dgv_ControlCambios
             // 
             this.dgv_ControlCambios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_ControlCambios.Location = new System.Drawing.Point(17, 223);
+            this.dgv_ControlCambios.Location = new System.Drawing.Point(12, 204);
             this.dgv_ControlCambios.Name = "dgv_ControlCambios";
             this.dgv_ControlCambios.Size = new System.Drawing.Size(754, 321);
             this.dgv_ControlCambios.TabIndex = 134;
@@ -61,8 +59,6 @@ namespace Cova.UI.Control_de_Cambios
             this.bg_Filtros_ControlCambios.Controls.Add(this.btn_Limpiar_ControlCambios);
             this.bg_Filtros_ControlCambios.Controls.Add(this.btn_Cancelar_ControlCambios);
             this.bg_Filtros_ControlCambios.Controls.Add(this.btn_Filtrar_ControlCambios);
-            this.bg_Filtros_ControlCambios.Controls.Add(this.cmb_Criticidad_ControlCambios);
-            this.bg_Filtros_ControlCambios.Controls.Add(this.lbl_Criticidad_ControlCambios);
             this.bg_Filtros_ControlCambios.Controls.Add(this.lbl_Usuario_ControlCambios);
             this.bg_Filtros_ControlCambios.Controls.Add(this.lbl_FechaHasta_ControlCambios);
             this.bg_Filtros_ControlCambios.Controls.Add(this.lbl_FechaDesde_ControlCambios);
@@ -70,7 +66,7 @@ namespace Cova.UI.Control_de_Cambios
             this.bg_Filtros_ControlCambios.Controls.Add(this.dtp_FechaDesde_ControlCambios);
             this.bg_Filtros_ControlCambios.Location = new System.Drawing.Point(17, 46);
             this.bg_Filtros_ControlCambios.Name = "bg_Filtros_ControlCambios";
-            this.bg_Filtros_ControlCambios.Size = new System.Drawing.Size(597, 138);
+            this.bg_Filtros_ControlCambios.Size = new System.Drawing.Size(728, 138);
             this.bg_Filtros_ControlCambios.TabIndex = 133;
             this.bg_Filtros_ControlCambios.TabStop = false;
             this.bg_Filtros_ControlCambios.Text = "Filtros";
@@ -79,7 +75,7 @@ namespace Cova.UI.Control_de_Cambios
             // 
             this.cmb_Usuarios_ControlCambios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Usuarios_ControlCambios.FormattingEnabled = true;
-            this.cmb_Usuarios_ControlCambios.Location = new System.Drawing.Point(415, 22);
+            this.cmb_Usuarios_ControlCambios.Location = new System.Drawing.Point(439, 25);
             this.cmb_Usuarios_ControlCambios.Name = "cmb_Usuarios_ControlCambios";
             this.cmb_Usuarios_ControlCambios.Size = new System.Drawing.Size(132, 21);
             this.cmb_Usuarios_ControlCambios.TabIndex = 182;
@@ -112,24 +108,7 @@ namespace Cova.UI.Control_de_Cambios
             this.btn_Filtrar_ControlCambios.TabIndex = 179;
             this.btn_Filtrar_ControlCambios.Text = "Filtrar";
             this.btn_Filtrar_ControlCambios.UseVisualStyleBackColor = true;
-            // 
-            // cmb_Criticidad_ControlCambios
-            // 
-            this.cmb_Criticidad_ControlCambios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Criticidad_ControlCambios.FormattingEnabled = true;
-            this.cmb_Criticidad_ControlCambios.Location = new System.Drawing.Point(415, 64);
-            this.cmb_Criticidad_ControlCambios.Name = "cmb_Criticidad_ControlCambios";
-            this.cmb_Criticidad_ControlCambios.Size = new System.Drawing.Size(132, 21);
-            this.cmb_Criticidad_ControlCambios.TabIndex = 178;
-            // 
-            // lbl_Criticidad_ControlCambios
-            // 
-            this.lbl_Criticidad_ControlCambios.AutoSize = true;
-            this.lbl_Criticidad_ControlCambios.Location = new System.Drawing.Point(366, 66);
-            this.lbl_Criticidad_ControlCambios.Name = "lbl_Criticidad_ControlCambios";
-            this.lbl_Criticidad_ControlCambios.Size = new System.Drawing.Size(50, 13);
-            this.lbl_Criticidad_ControlCambios.TabIndex = 136;
-            this.lbl_Criticidad_ControlCambios.Text = "Criticidad";
+            this.btn_Filtrar_ControlCambios.Click += new System.EventHandler(this.btn_Filtrar_ControlCambios_Click);
             // 
             // lbl_Usuario_ControlCambios
             // 
@@ -209,8 +188,6 @@ namespace Cova.UI.Control_de_Cambios
         private System.Windows.Forms.Button btn_Limpiar_ControlCambios;
         private System.Windows.Forms.Button btn_Cancelar_ControlCambios;
         private System.Windows.Forms.Button btn_Filtrar_ControlCambios;
-        private System.Windows.Forms.ComboBox cmb_Criticidad_ControlCambios;
-        private System.Windows.Forms.Label lbl_Criticidad_ControlCambios;
         private System.Windows.Forms.Label lbl_Usuario_ControlCambios;
         private System.Windows.Forms.Label lbl_FechaHasta_ControlCambios;
         private System.Windows.Forms.Label lbl_FechaDesde_ControlCambios;

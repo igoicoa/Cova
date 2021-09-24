@@ -79,6 +79,7 @@ namespace Cova.UI
             this.btn_Mostrar_VerHistoriaClinica.TabIndex = 112;
             this.btn_Mostrar_VerHistoriaClinica.Text = "Mostrar";
             this.btn_Mostrar_VerHistoriaClinica.UseVisualStyleBackColor = true;
+            this.btn_Mostrar_VerHistoriaClinica.Click += new System.EventHandler(this.btn_Mostrar_VerHistoriaClinica_Click);
             // 
             // dgv_Mostrar_VerHistoriaClinica
             // 
@@ -88,6 +89,7 @@ namespace Cova.UI
             this.dgv_Mostrar_VerHistoriaClinica.ReadOnly = true;
             this.dgv_Mostrar_VerHistoriaClinica.Size = new System.Drawing.Size(784, 439);
             this.dgv_Mostrar_VerHistoriaClinica.TabIndex = 111;
+            this.dgv_Mostrar_VerHistoriaClinica.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_Mostrar_VerHistoriaClinica_CellFormatting);
             // 
             // gb_DatosPaciente_VerHistorialHistoriaClinica
             // 

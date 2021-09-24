@@ -24,9 +24,6 @@ namespace Cova.UI
 
         private void btn_Limpiar_BuscarCoberturaMedica_Click(object sender, EventArgs e)
         {
-            txt_Nombre_BuscarCoberturaMedica.Clear();
-            cmb_Plan_BuscarCoberturaMedica.Items.Clear();
-            txt_Telefono_BuscarCoberturaMedica.Clear();
         }
     }
 }

@@ -35,7 +35,9 @@ namespace Cova.UI.Realizar_Restore
             this.btn_Examinar_RealizarRestore = new System.Windows.Forms.Button();
             this.lbl_Ruta_RealizarRestore = new System.Windows.Forms.Label();
             this.lbl_RealizarRestore = new System.Windows.Forms.Label();
+            this.dgv_ControlCambios = new System.Windows.Forms.DataGridView();
             this.gb_RealizarRestore.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ControlCambios)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_IniciarRestore_RealizarRestore
@@ -98,11 +100,20 @@ namespace Cova.UI.Realizar_Restore
             this.lbl_RealizarRestore.TabIndex = 184;
             this.lbl_RealizarRestore.Text = "Realizar Restore";
             // 
+            // dgv_ControlCambios
+            // 
+            this.dgv_ControlCambios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ControlCambios.Location = new System.Drawing.Point(17, 192);
+            this.dgv_ControlCambios.Name = "dgv_ControlCambios";
+            this.dgv_ControlCambios.Size = new System.Drawing.Size(803, 343);
+            this.dgv_ControlCambios.TabIndex = 187;
+            // 
             // RealizarRestoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 189);
+            this.ClientSize = new System.Drawing.Size(876, 557);
+            this.Controls.Add(this.dgv_ControlCambios);
             this.Controls.Add(this.btn_IniciarRestore_RealizarRestore);
             this.Controls.Add(this.gb_RealizarRestore);
             this.Controls.Add(this.lbl_RealizarRestore);
@@ -110,6 +121,7 @@ namespace Cova.UI.Realizar_Restore
             this.Text = "RealizarRestoreForm";
             this.gb_RealizarRestore.ResumeLayout(false);
             this.gb_RealizarRestore.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ControlCambios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,5 +135,6 @@ namespace Cova.UI.Realizar_Restore
         private System.Windows.Forms.Button btn_Examinar_RealizarRestore;
         private System.Windows.Forms.Label lbl_Ruta_RealizarRestore;
         private System.Windows.Forms.Label lbl_RealizarRestore;
+        private System.Windows.Forms.DataGridView dgv_ControlCambios;
     }
 }

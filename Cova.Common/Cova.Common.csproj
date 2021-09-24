@@ -60,6 +60,7 @@
     <Compile Include="Excepciones\ErrorAlCargarCoberturasMedicasException.cs" />
     <Compile Include="Excepciones\ErrorAlCargarDatosProfesional.cs" />
     <Compile Include="Excepciones\ErrorAlCargarDatosPacienteException.cs" />
+    <Compile Include="Excepciones\ErrorAlCargarHistoriaClinicaException.cs" />
     <Compile Include="Excepciones\ErrorAlCargarVacunas.cs" />
     <Compile Include="Excepciones\ErrorAlCrearAntecedentesPersonales.cs" />
     <Compile Include="Excepciones\ErrorAlCrearCertificadoException.cs" />

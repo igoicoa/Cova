@@ -36,12 +36,12 @@ namespace Cova.UI
             this.btn_Limpiar_CargarCoberturaMedica = new System.Windows.Forms.Button();
             this.btn_Cancelar_CargarCoberturaMedica = new System.Windows.Forms.Button();
             this.btn_Crear_CargarCoberturaMedica = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_NombrePlan = new System.Windows.Forms.Label();
+            this.lbl_Planes = new System.Windows.Forms.Label();
             this.txt_NombrePlan = new System.Windows.Forms.TextBox();
             this.rtb_planes = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Agregar = new System.Windows.Forms.Button();
+            this.btn_Quitar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_CargarCoberturaMedica
@@ -104,23 +104,23 @@ namespace Cova.UI
             this.btn_Crear_CargarCoberturaMedica.UseVisualStyleBackColor = true;
             this.btn_Crear_CargarCoberturaMedica.Click += new System.EventHandler(this.btn_Crear_CargarCoberturaMedica_Click);
             // 
-            // label1
+            // lbl_NombrePlan
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 122);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 13);
-            this.label1.TabIndex = 142;
-            this.label1.Text = "Nombre Plan";
+            this.lbl_NombrePlan.AutoSize = true;
+            this.lbl_NombrePlan.Location = new System.Drawing.Point(5, 122);
+            this.lbl_NombrePlan.Name = "lbl_NombrePlan";
+            this.lbl_NombrePlan.Size = new System.Drawing.Size(68, 13);
+            this.lbl_NombrePlan.TabIndex = 142;
+            this.lbl_NombrePlan.Text = "Nombre Plan";
             // 
-            // label2
+            // lbl_Planes
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(473, 87);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
-            this.label2.TabIndex = 143;
-            this.label2.Text = "Planes";
+            this.lbl_Planes.AutoSize = true;
+            this.lbl_Planes.Location = new System.Drawing.Point(473, 87);
+            this.lbl_Planes.Name = "lbl_Planes";
+            this.lbl_Planes.Size = new System.Drawing.Size(39, 13);
+            this.lbl_Planes.TabIndex = 143;
+            this.lbl_Planes.Text = "Planes";
             // 
             // txt_NombrePlan
             // 
@@ -139,35 +139,35 @@ namespace Cova.UI
             this.rtb_planes.TabIndex = 145;
             this.rtb_planes.Text = "";
             // 
-            // button1
+            // btn_Agregar
             // 
-            this.button1.Location = new System.Drawing.Point(308, 148);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 146;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Agregar.Location = new System.Drawing.Point(308, 148);
+            this.btn_Agregar.Name = "btn_Agregar";
+            this.btn_Agregar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Agregar.TabIndex = 146;
+            this.btn_Agregar.Text = "Agregar";
+            this.btn_Agregar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btn_Quitar
             // 
-            this.button2.Location = new System.Drawing.Point(308, 196);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 147;
-            this.button2.Text = "Quitar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Quitar.Location = new System.Drawing.Point(308, 196);
+            this.btn_Quitar.Name = "btn_Quitar";
+            this.btn_Quitar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Quitar.TabIndex = 147;
+            this.btn_Quitar.Text = "Quitar";
+            this.btn_Quitar.UseVisualStyleBackColor = true;
             // 
             // CargarCoberturaMedicaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(745, 318);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Quitar);
+            this.Controls.Add(this.btn_Agregar);
             this.Controls.Add(this.rtb_planes);
             this.Controls.Add(this.txt_NombrePlan);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_Planes);
+            this.Controls.Add(this.lbl_NombrePlan);
             this.Controls.Add(this.btn_Limpiar_CargarCoberturaMedica);
             this.Controls.Add(this.btn_Cancelar_CargarCoberturaMedica);
             this.Controls.Add(this.btn_Crear_CargarCoberturaMedica);
@@ -190,11 +190,11 @@ namespace Cova.UI
         private System.Windows.Forms.Button btn_Limpiar_CargarCoberturaMedica;
         private System.Windows.Forms.Button btn_Cancelar_CargarCoberturaMedica;
         private System.Windows.Forms.Button btn_Crear_CargarCoberturaMedica;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_NombrePlan;
+        private System.Windows.Forms.Label lbl_Planes;
         private System.Windows.Forms.TextBox txt_NombrePlan;
         private System.Windows.Forms.RichTextBox rtb_planes;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Agregar;
+        private System.Windows.Forms.Button btn_Quitar;
     }
 }

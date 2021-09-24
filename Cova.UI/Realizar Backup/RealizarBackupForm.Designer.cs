@@ -35,7 +35,9 @@ namespace Cova.UI.Realizar_Backup
             this.lbl_Ruta_RealizarBackup = new System.Windows.Forms.Label();
             this.lbl_RealizarBackup = new System.Windows.Forms.Label();
             this.btn_IniciarBackup_RealizarRestore = new System.Windows.Forms.Button();
+            this.dgv_ControlCambios = new System.Windows.Forms.DataGridView();
             this.gb_Filtros_Bitacora.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ControlCambios)).BeginInit();
             this.SuspendLayout();
             // 
             // gb_Filtros_Bitacora
@@ -98,11 +100,20 @@ namespace Cova.UI.Realizar_Backup
             this.btn_IniciarBackup_RealizarRestore.Text = "Iniciar Backup";
             this.btn_IniciarBackup_RealizarRestore.UseVisualStyleBackColor = true;
             // 
+            // dgv_ControlCambios
+            // 
+            this.dgv_ControlCambios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ControlCambios.Location = new System.Drawing.Point(17, 182);
+            this.dgv_ControlCambios.Name = "dgv_ControlCambios";
+            this.dgv_ControlCambios.Size = new System.Drawing.Size(803, 397);
+            this.dgv_ControlCambios.TabIndex = 181;
+            // 
             // RealizarBackupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 202);
+            this.ClientSize = new System.Drawing.Size(869, 621);
+            this.Controls.Add(this.dgv_ControlCambios);
             this.Controls.Add(this.btn_IniciarBackup_RealizarRestore);
             this.Controls.Add(this.gb_Filtros_Bitacora);
             this.Controls.Add(this.lbl_RealizarBackup);
@@ -110,6 +121,7 @@ namespace Cova.UI.Realizar_Backup
             this.Text = "RealizarBackupForm";
             this.gb_Filtros_Bitacora.ResumeLayout(false);
             this.gb_Filtros_Bitacora.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ControlCambios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,5 +135,6 @@ namespace Cova.UI.Realizar_Backup
         private System.Windows.Forms.Label lbl_Ruta_RealizarBackup;
         private System.Windows.Forms.Label lbl_RealizarBackup;
         private System.Windows.Forms.Button btn_IniciarBackup_RealizarRestore;
+        private System.Windows.Forms.DataGridView dgv_ControlCambios;
     }
 }

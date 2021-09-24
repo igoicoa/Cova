@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Bitacora\Bitacora.cs" />
     <Compile Include="Bitacora\IBitacora.cs" />
+    <Compile Include="ControlDeCambio\ControlDeCambio.cs" />
     <Compile Include="DigitoVerificador\DigitoVerificador.cs" />
     <Compile Include="Encriptacion\EncriptacionSimetricaHelper.cs" />
     <Compile Include="Encriptacion\HashHelper.cs" />

@@ -145,6 +145,8 @@
     <Build Include="Tables\ControlCambio_Paciente.sql" />
     <Build Include="StoredProcedures\s_BuscarCertificadoPaciente.sql" />
     <Build Include="StoredProcedures\s_ActualizarCertificado.sql" />
+    <Build Include="StoredProcedures\s_ObtenerControlCambios.sql" />
+    <Build Include="StoredProcedures\s_ObtenerHistoriaClinicaPaciente.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />

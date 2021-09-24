@@ -26,8 +26,6 @@ namespace Cova.UI
         private void btn_Limpiar_CargarCoberturaMedica_Click(object sender, EventArgs e)
         {
             txt_Nombre_CargarCoberturaMedica.Clear();
-            cmb_Plan_CargarCoberturaMedica.Items.Clear();
-            txt_Telefono_CargarCoberturaMedica.Clear();
         }
 
         private void btn_Crear_CargarCoberturaMedica_Click(object sender, EventArgs e)

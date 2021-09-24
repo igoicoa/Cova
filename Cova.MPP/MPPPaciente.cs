@@ -431,7 +431,7 @@ namespace Cova.MPP
             try
             {
                 ConexionDB conexionBDD = new ConexionDB();
-                string strSQL = @"s_ObtenerHistoriaClinicaPaciente"; //TODO Crear SP
+                string strSQL = @"s_ObtenerHistoriaClinicaPaciente";
                 datosPaciente.Add("@PacienteId", paciente.PacienteId);
                 pacienteDS = conexionBDD.ObtenerDataSet(strSQL, datosPaciente);
                 pacienteT = pacienteDS.Tables[0];
@@ -440,8 +440,15 @@ namespace Cova.MPP
                     foreach (DataRow fila in pacienteT.Rows)
                     {
                         BEHistoriaClinica historiaClinica = new BEHistoriaClinica();
-                        //TODO
-
+                        historiaClinica.HistoriaClinicaId= Convert.ToInt32(fila["HistoriaClinicaId"]);
+                        historiaClinica.Fecha = Convert.ToDateTime(fila["Fecha"]);
+                        BEMedico medico = new BEMedico();
+                        medico.ProfesionalId = Convert.ToInt32(fila["ProfesionalId"]);
+                        historiaClinica.Medico= medico;
+                        BEPaciente Paciente = new BEPaciente();
+                        Paciente.PacienteId = Convert.ToInt32(fila["PacienteId"]);
+                        historiaClinica.Observacion = Convert.ToString(fila["Observacion"]);
+                        historiaClinica.Peso = Convert.ToInt32(fila["Peso"]);
                         historiasClinica.Add(historiaClinica);
                     }
                 }
