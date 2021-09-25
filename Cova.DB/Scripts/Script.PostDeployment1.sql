@@ -162,6 +162,8 @@ VALUES
 GO
 
 -- Creo usuarios de prueba
+-- Admin User (User: Admin - PWD: test123)
+EXEC s_CrearAdministrador 'Dmin', 'Admin', 34928392, '1989-09-21', 'F', 'Soltera', '1182736253','ssalas@hotmail.com','Roca',213,'','Munro','Buenos Aires','Argentina','CC-03-E7-47-A6-AF-BB-CB-F8-BE-76-68-AC-FE-BE-E5'
 -- Pacientes (PWD: paciente123)
 EXEC s_CrearPaciente 'Gonzalez', 'Juan', 32382278, '1987-02-21', 'M', 'Soltero', '1123423452', 'jgonzalez@hotmail.com','San Martin',123,'','Quilmes','Buenos Aires','Argentina', 5, 1, '1234323424', '2023-01-02','B6-0F-15-38-5B-90-5B-E9-C9-77-C5-9A-A3-42-0F-D2', 1
 EXEC s_CrearPaciente 'Lopez', 'Pedro', 31938278, '1986-04-18', 'M', 'Soltero', '1126376283', 'plopez@hotmail.com','Belgrano',2342,'2 A','CABA','CABA','Argentina', 8, 2, '302229329382834', '2022-08-01','B6-0F-15-38-5B-90-5B-E9-C9-77-C5-9A-A3-42-0F-D2', 1
@@ -173,8 +175,6 @@ EXEC s_CrearProfesionalMedico 'Perez', 'Jose Luis', 28384374, '1981-05-21', 'M',
 -- Enfermeros (PWD: enfermero123)
 EXEC s_CrearProfesionalEnfermero 'Vargas', 'Pablo', 29327384, '1982-07-30', 'M', 'Soltero', '1182533324','pvargas@gmail.com','Palaa',2134,'','Avellaneda','Buenos Aires','Argentina', 29182736,'0E-C2-CB-0E-1D-1A-7C-5B-2A-CB-1C-2E-B3-8B-08-20'
 EXEC s_CrearProfesionalEnfermero 'Salas', 'Sofia', 34928392, '1989-09-21', 'F', 'Soltera', '1182736253','ssalas@hotmail.com','Roca',213,'','Munro','Buenos Aires','Argentina', 38292832,'0E-C2-CB-0E-1D-1A-7C-5B-2A-CB-1C-2E-B3-8B-08-20'
--- Admin User (User: Admin - PWD: test123)
-EXEC s_CrearAdministrador 'Dmin', 'Admin', 34928392, '1989-09-21', 'F', 'Soltera', '1182736253','ssalas@hotmail.com','Roca',213,'','Munro','Buenos Aires','Argentina','CC-03-E7-47-A6-AF-BB-CB-F8-BE-76-68-AC-FE-BE-E5'
 
 -- DICCIONARIO MULTI IDIOMA
 DECLARE @IdiomaCastellanoId INT,

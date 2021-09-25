@@ -1,14 +1,12 @@
-﻿using Cova.BE;
+﻿using Cova.BE.ControlCambios;
+using Cova.BE;
 using Cova.BL;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Cova.Servicios.ControlDeCambio;
 
 namespace Cova.UI.Control_de_Cambios
 {
@@ -30,49 +28,35 @@ namespace Cova.UI.Control_de_Cambios
         {
             DateTime fechaDesde = new DateTime(dtp_FechaDesde_ControlCambios.Value.Year, dtp_FechaDesde_ControlCambios.Value.Month, dtp_FechaDesde_ControlCambios.Value.Day, 00, 00, 00);
             DateTime fechaHasta = new DateTime(dtp_FechaHasta_ControlCambios.Value.Year, dtp_FechaHasta_ControlCambios.Value.Month, dtp_FechaHasta_ControlCambios.Value.Day, 23, 59, 59);
-            string s = "";
 
-            //BEC bitacoraABuscar = new BEBitacora();
-            //bitacoraABuscar.Usuario = (BEUsuario)cmb_Usuarios.SelectedItem;
-            //bitacoraABuscar.Criticidad = (TipoCriticidad)cmb_Criticidad_Bitacora.SelectedItem;
-            //BLBitacora buscarbitacora = new BLBitacora();
+            ControlDeCambio controlDeCambio = new ControlDeCambio();
+            
+            try
+            {
+                //TODO Completar todas las filas
+                List<BEControlDeCambioPaciente> pacientes = controlDeCambio.ObtenerControlDeCambioPaciente().ToList();
+                DataTable tableControlDeCambios = new DataTable();
+                tableControlDeCambios.Columns.Add("BitacoraID");
+                tableControlDeCambios.Columns.Add("Fecha");
 
-            //try
-            //{
-            //    this.Bitacora = buscarbitacora.BuscarBitacora(bitacoraABuscar, fechaDesde, fechaHasta).ToList();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+                foreach (BEControlDeCambioPaciente paciente in pacientes)
+                {
+                    DataRow filaControlDeCambios = tableControlDeCambios.NewRow();
+                    filaControlDeCambios["Apellido"] = paciente.Paciente.Apellido;
+                    filaControlDeCambios["Nombre"] = paciente.Paciente.Nombre;
 
-            //DataTable tableBitacora = new DataTable();
-            //tableBitacora.Columns.Add("BitacoraID");
-            //tableBitacora.Columns.Add("Fecha");
-            //tableBitacora.Columns.Add("Criticidad");
-            //tableBitacora.Columns.Add("Usuario");
-            //tableBitacora.Columns.Add("Mensaje");
-            //tableBitacora.Columns.Add("Funcionalidad");
-
-            //foreach (BEBitacora bitacora in this.Bitacora)
-            //{
-            //    DataRow filaBitacora = tableBitacora.NewRow();
-            //    filaBitacora["BitacoraID"] = bitacora.BitacoraId;
-            //    filaBitacora["Fecha"] = bitacora.Fecha;
-            //    filaBitacora["Criticidad"] = bitacora.Criticidad;
-            //    filaBitacora["Usuario"] = bitacora.Usuario.UsuarioID;
-            //    filaBitacora["Mensaje"] = bitacora.Mensaje;
-            //    filaBitacora["Funcionalidad"] = bitacora.Funcionalidad;
-            //    tableBitacora.Rows.Add(filaBitacora);
-            //}
-            //DataView dataviewBitacora = new DataView(tableBitacora);
-            //dgv_Bitacora.DataSource = dataviewBitacora;
-            //dgv_Bitacora.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dgv_Bitacora.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dgv_Bitacora.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dgv_Bitacora.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dgv_Bitacora.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dgv_Bitacora.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    tableControlDeCambios.Rows.Add(filaControlDeCambios);
+                }
+                DataView dataviewControlDeCambios = new DataView(tableControlDeCambios);
+                dgv_ControlCambios.DataSource = dataviewControlDeCambios;
+                dgv_ControlCambios.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgv_ControlCambios.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void cmb_Usuarios_ControlCambios_SelectedIndexChanged(object sender, ListControlConvertEventArgs e)

@@ -59,6 +59,7 @@
     <Compile Include="BEVacunaDosis.cs" />
     <Compile Include="Bitacora\BEBitacora.cs" />
     <Compile Include="Bitacora\TipoCriticidad.cs" />
+    <Compile Include="ControlCambios\BEControlDeCambioPaciente.cs" />
     <Compile Include="DigitoVerificador\BEDigitoVerificador.cs" />
     <Compile Include="Enum\AntecedentesPersonales.cs" />
     <Compile Include="Enum\DiasSemana.cs" />

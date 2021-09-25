@@ -259,4 +259,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ControlCambioId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="f0e0cc82-8a56-4ffb-93c9-266938311163" ChangeDateTime="09/25/2021 13:54:36">
+    <Property Name="ElementName" Value="[dbo].[ControlCambio_Paciente].[PacienteId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ControlCambio_Paciente]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UsuarioId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="90f4acd2-c130-4425-936e-c0f9abd48b82" ChangeDateTime="09/25/2021 14:23:49">
+    <Property Name="ElementName" Value="[dbo].[Backups].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Backups]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="BackupId" />
+  </Operation>
 </Operations>
