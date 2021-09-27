@@ -68,7 +68,7 @@ namespace Cova.UI.Bitacora
                 filaBitacora["BitacoraID"] = bitacora.BitacoraId;
                 filaBitacora["Fecha"] = bitacora.Fecha;
                 filaBitacora["Criticidad"] = bitacora.Criticidad;
-                filaBitacora["Usuario"] = bitacora.Usuario.UsuarioID;
+                filaBitacora["Usuario"] = bitacora.Usuario.Usuario;
                 filaBitacora["Mensaje"] = bitacora.Mensaje;
                 filaBitacora["Funcionalidad"] = bitacora.Funcionalidad;
                 tableBitacora.Rows.Add(filaBitacora);

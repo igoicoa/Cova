@@ -79,6 +79,7 @@ namespace Cova.UI.Control_de_Cambios
             this.cmb_Usuarios_ControlCambios.Name = "cmb_Usuarios_ControlCambios";
             this.cmb_Usuarios_ControlCambios.Size = new System.Drawing.Size(132, 21);
             this.cmb_Usuarios_ControlCambios.TabIndex = 182;
+            this.cmb_Usuarios_ControlCambios.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cmb_Usuarios_ControlCambios_Format);
             // 
             // btn_Limpiar_ControlCambios
             // 
