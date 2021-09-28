@@ -29,56 +29,14 @@ namespace Cova.UI.Realizar_Backup
         /// </summary>
         private void InitializeComponent()
         {
-            this.gb_Filtros_Bitacora = new System.Windows.Forms.GroupBox();
-            this.btn_Cancelar_RealizarBackup = new System.Windows.Forms.Button();
-            this.btn_Examinar_RealizarBackup = new System.Windows.Forms.Button();
-            this.lbl_Ruta_RealizarBackup = new System.Windows.Forms.Label();
             this.lbl_RealizarBackup = new System.Windows.Forms.Label();
             this.btn_IniciarBackup_RealizarRestore = new System.Windows.Forms.Button();
-            this.dgv_ControlCambios = new System.Windows.Forms.DataGridView();
-            this.gb_Filtros_Bitacora.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ControlCambios)).BeginInit();
+            this.dgv_Backups = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_nombre = new System.Windows.Forms.TextBox();
+            this.btn_IniciarRestore = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Backups)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gb_Filtros_Bitacora
-            // 
-            this.gb_Filtros_Bitacora.Controls.Add(this.btn_Cancelar_RealizarBackup);
-            this.gb_Filtros_Bitacora.Controls.Add(this.btn_Examinar_RealizarBackup);
-            this.gb_Filtros_Bitacora.Controls.Add(this.lbl_Ruta_RealizarBackup);
-            this.gb_Filtros_Bitacora.Location = new System.Drawing.Point(17, 46);
-            this.gb_Filtros_Bitacora.Name = "gb_Filtros_Bitacora";
-            this.gb_Filtros_Bitacora.Size = new System.Drawing.Size(313, 88);
-            this.gb_Filtros_Bitacora.TabIndex = 132;
-            this.gb_Filtros_Bitacora.TabStop = false;
-            this.gb_Filtros_Bitacora.Text = "Filtros";
-            // 
-            // btn_Cancelar_RealizarBackup
-            // 
-            this.btn_Cancelar_RealizarBackup.Location = new System.Drawing.Point(219, 54);
-            this.btn_Cancelar_RealizarBackup.Name = "btn_Cancelar_RealizarBackup";
-            this.btn_Cancelar_RealizarBackup.Size = new System.Drawing.Size(75, 23);
-            this.btn_Cancelar_RealizarBackup.TabIndex = 180;
-            this.btn_Cancelar_RealizarBackup.Text = "Cancelar";
-            this.btn_Cancelar_RealizarBackup.UseVisualStyleBackColor = true;
-            this.btn_Cancelar_RealizarBackup.Click += new System.EventHandler(this.btn_Cancelar_RealizarBackup_Click);
-            // 
-            // btn_Examinar_RealizarBackup
-            // 
-            this.btn_Examinar_RealizarBackup.Location = new System.Drawing.Point(219, 25);
-            this.btn_Examinar_RealizarBackup.Name = "btn_Examinar_RealizarBackup";
-            this.btn_Examinar_RealizarBackup.Size = new System.Drawing.Size(75, 23);
-            this.btn_Examinar_RealizarBackup.TabIndex = 179;
-            this.btn_Examinar_RealizarBackup.Text = "Examinar";
-            this.btn_Examinar_RealizarBackup.UseVisualStyleBackColor = true;
-            // 
-            // lbl_Ruta_RealizarBackup
-            // 
-            this.lbl_Ruta_RealizarBackup.AutoSize = true;
-            this.lbl_Ruta_RealizarBackup.Location = new System.Drawing.Point(6, 25);
-            this.lbl_Ruta_RealizarBackup.Name = "lbl_Ruta_RealizarBackup";
-            this.lbl_Ruta_RealizarBackup.Size = new System.Drawing.Size(63, 13);
-            this.lbl_Ruta_RealizarBackup.TabIndex = 133;
-            this.lbl_Ruta_RealizarBackup.Text = "Ruta:     C:/";
             // 
             // lbl_RealizarBackup
             // 
@@ -93,48 +51,73 @@ namespace Cova.UI.Realizar_Backup
             // 
             // btn_IniciarBackup_RealizarRestore
             // 
-            this.btn_IniciarBackup_RealizarRestore.Location = new System.Drawing.Point(106, 153);
+            this.btn_IniciarBackup_RealizarRestore.Location = new System.Drawing.Point(20, 107);
             this.btn_IniciarBackup_RealizarRestore.Name = "btn_IniciarBackup_RealizarRestore";
             this.btn_IniciarBackup_RealizarRestore.Size = new System.Drawing.Size(90, 23);
             this.btn_IniciarBackup_RealizarRestore.TabIndex = 180;
             this.btn_IniciarBackup_RealizarRestore.Text = "Iniciar Backup";
             this.btn_IniciarBackup_RealizarRestore.UseVisualStyleBackColor = true;
+            this.btn_IniciarBackup_RealizarRestore.Click += new System.EventHandler(this.btn_IniciarBackup_RealizarRestore_Click);
             // 
-            // dgv_ControlCambios
+            // dgv_Backups
             // 
-            this.dgv_ControlCambios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_ControlCambios.Location = new System.Drawing.Point(17, 182);
-            this.dgv_ControlCambios.Name = "dgv_ControlCambios";
-            this.dgv_ControlCambios.Size = new System.Drawing.Size(803, 397);
-            this.dgv_ControlCambios.TabIndex = 181;
+            this.dgv_Backups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Backups.Location = new System.Drawing.Point(12, 155);
+            this.dgv_Backups.Name = "dgv_Backups";
+            this.dgv_Backups.Size = new System.Drawing.Size(803, 397);
+            this.dgv_Backups.TabIndex = 181;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 182;
+            this.label1.Text = "Nombre:";
+            // 
+            // txt_nombre
+            // 
+            this.txt_nombre.Location = new System.Drawing.Point(70, 60);
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(144, 20);
+            this.txt_nombre.TabIndex = 183;
+            // 
+            // btn_IniciarRestore
+            // 
+            this.btn_IniciarRestore.Location = new System.Drawing.Point(379, 107);
+            this.btn_IniciarRestore.Name = "btn_IniciarRestore";
+            this.btn_IniciarRestore.Size = new System.Drawing.Size(90, 23);
+            this.btn_IniciarRestore.TabIndex = 184;
+            this.btn_IniciarRestore.Text = "Iniciar Restore";
+            this.btn_IniciarRestore.UseVisualStyleBackColor = true;
+            this.btn_IniciarRestore.Click += new System.EventHandler(this.btn_IniciarRestore_Click);
             // 
             // RealizarBackupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 621);
-            this.Controls.Add(this.dgv_ControlCambios);
+            this.Controls.Add(this.btn_IniciarRestore);
+            this.Controls.Add(this.txt_nombre);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dgv_Backups);
             this.Controls.Add(this.btn_IniciarBackup_RealizarRestore);
-            this.Controls.Add(this.gb_Filtros_Bitacora);
             this.Controls.Add(this.lbl_RealizarBackup);
             this.Name = "RealizarBackupForm";
             this.Text = "RealizarBackupForm";
-            this.gb_Filtros_Bitacora.ResumeLayout(false);
-            this.gb_Filtros_Bitacora.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ControlCambios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Backups)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox gb_Filtros_Bitacora;
-        private System.Windows.Forms.Button btn_Cancelar_RealizarBackup;
-        private System.Windows.Forms.Button btn_Examinar_RealizarBackup;
-        private System.Windows.Forms.Label lbl_Ruta_RealizarBackup;
         private System.Windows.Forms.Label lbl_RealizarBackup;
         private System.Windows.Forms.Button btn_IniciarBackup_RealizarRestore;
-        private System.Windows.Forms.DataGridView dgv_ControlCambios;
+        private System.Windows.Forms.DataGridView dgv_Backups;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txt_nombre;
+        private System.Windows.Forms.Button btn_IniciarRestore;
     }
 }
