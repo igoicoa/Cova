@@ -231,12 +231,6 @@
     <Compile Include="Realizar Backup\RealizarBackupForm.Designer.cs">
       <DependentUpon>RealizarBackupForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Realizar Restore\RealizarRestoreForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Realizar Restore\RealizarRestoreForm.Designer.cs">
-      <DependentUpon>RealizarRestoreForm.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Administrar Idioma\AgregarIdiomaForm.resx">
       <DependentUpon>AgregarIdiomaForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -335,9 +329,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Realizar Backup\RealizarBackupForm.resx">
       <DependentUpon>RealizarBackupForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Realizar Restore\RealizarRestoreForm.resx">
-      <DependentUpon>RealizarRestoreForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

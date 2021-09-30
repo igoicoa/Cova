@@ -61,9 +61,13 @@ namespace Cova.UI.Realizar_Backup
             // 
             // dgv_Backups
             // 
+            this.dgv_Backups.AllowUserToAddRows = false;
+            this.dgv_Backups.AllowUserToDeleteRows = false;
             this.dgv_Backups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Backups.Location = new System.Drawing.Point(12, 155);
+            this.dgv_Backups.MultiSelect = false;
             this.dgv_Backups.Name = "dgv_Backups";
+            this.dgv_Backups.ReadOnly = true;
             this.dgv_Backups.Size = new System.Drawing.Size(803, 397);
             this.dgv_Backups.TabIndex = 181;
             // 

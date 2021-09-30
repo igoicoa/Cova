@@ -10,7 +10,6 @@ using Cova.BE;
 using Cova.UI.Administrar_Receta_y_Certificado;
 using Cova.UI.Bitacora;
 using Cova.UI.Control_de_Cambios;
-using Cova.UI.Realizar_Restore;
 using Cova.UI.Realizar_Backup;
 
 namespace Cova.UI
@@ -183,10 +182,6 @@ namespace Cova.UI
             if (bitacoraToolStripMenuItem.Tag != null && traducciones.ContainsKey(bitacoraToolStripMenuItem.Tag.ToString()))
                 bitacoraToolStripMenuItem.Text = traducciones[bitacoraToolStripMenuItem.Tag.ToString()].PalabraTraducida;
 
-            //Realizar Restore realizarRestoreToolStripMenuItem
-            if (realizarRestoreToolStripMenuItem.Tag != null && traducciones.ContainsKey(realizarRestoreToolStripMenuItem.Tag.ToString()))
-                realizarRestoreToolStripMenuItem.Text = traducciones[realizarRestoreToolStripMenuItem.Tag.ToString()].PalabraTraducida;
-
             //Permisos permisosToolStripMenuItem
             if (permisosToolStripMenuItem.Tag != null && traducciones.ContainsKey(permisosToolStripMenuItem.Tag.ToString()))
                 permisosToolStripMenuItem.Text = traducciones[permisosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
@@ -259,7 +254,6 @@ namespace Cova.UI
             this.seguridadToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.Seguridad) : false;
             this.realizarBackupToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.RealizarBackup) : false;
             this.bitacoraToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.Bitacora) : false;
-            this.realizarRestoreToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.RealizarRestore) : false;
             this.permisosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.Permisos) : false;
             this.asignarPermisosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AsignarPermisos) : false;
             this.administrarIdiomaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AdministrarIdioma) : false;
@@ -277,7 +271,6 @@ namespace Cova.UI
         {
             TraducirMenu();
             this.seguridadToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.Seguridad) : false;
-            this.realizarRestoreToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.RealizarRestore) : false;
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
@@ -474,12 +467,6 @@ namespace Cova.UI
         {
             ControlDeCambioForm frmControlCambio = new ControlDeCambioForm();
             frmControlCambio.Show();
-        }
-
-        private void realizarRestoreToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RealizarRestoreForm frmRealizarRestore = new RealizarRestoreForm();
-            frmRealizarRestore.Show();
         }
 
         private void realizarBackupToolStripMenuItem_Click(object sender, EventArgs e)

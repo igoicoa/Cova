@@ -63,7 +63,6 @@
             this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.realizarBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.realizarRestoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.permisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarPermisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -359,7 +358,6 @@
             this.seguridadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.realizarBackupToolStripMenuItem,
             this.bitacoraToolStripMenuItem,
-            this.realizarRestoreToolStripMenuItem,
             this.permisosToolStripMenuItem,
             this.administrarIdiomaToolStripMenuItem,
             this.controlDeCambioToolStripMenuItem});
@@ -384,14 +382,6 @@
             this.bitacoraToolStripMenuItem.Text = "Bitacora";
             this.bitacoraToolStripMenuItem.Click += new System.EventHandler(this.bitacoraToolStripMenuItem_Click);
             // 
-            // realizarRestoreToolStripMenuItem
-            // 
-            this.realizarRestoreToolStripMenuItem.Name = "realizarRestoreToolStripMenuItem";
-            this.realizarRestoreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.realizarRestoreToolStripMenuItem.Tag = "RealizarRestore";
-            this.realizarRestoreToolStripMenuItem.Text = "Realizar Restore";
-            this.realizarRestoreToolStripMenuItem.Click += new System.EventHandler(this.realizarRestoreToolStripMenuItem_Click);
-            // 
             // permisosToolStripMenuItem
             // 
             this.permisosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -404,7 +394,7 @@
             // asignarPermisosToolStripMenuItem
             // 
             this.asignarPermisosToolStripMenuItem.Name = "asignarPermisosToolStripMenuItem";
-            this.asignarPermisosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.asignarPermisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.asignarPermisosToolStripMenuItem.Tag = "AsignarPermisos";
             this.asignarPermisosToolStripMenuItem.Text = "Asignar Permisos";
             this.asignarPermisosToolStripMenuItem.Click += new System.EventHandler(this.asignarPermisosToolStripMenuItem_Click_1);
@@ -498,7 +488,6 @@
         private System.Windows.Forms.ToolStripMenuItem seguridadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem realizarBackupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bitacoraToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem realizarRestoreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearCuentaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarCuentaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verUsuariosToolStripMenuItem;

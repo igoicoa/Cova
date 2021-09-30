@@ -94,8 +94,10 @@ namespace Cova.UI.Realizar_Backup
                 if (dgv_Backups.SelectedRows.Count != 0)
                 {
                     int backupId = Convert.ToInt32(dgv_Backups.SelectedRows[0].Cells["BackupId"].Value);
+                    string archivo = Convert.ToString(dgv_Backups.SelectedRows[0].Cells["Archivo"].Value);
                     BEBackup backup = new BEBackup();
                     backup.BackupId = backupId;
+                    backup.Archivo = archivo;
                     if (Backup.RealizarRestore(backup))
                     {
                         MessageBox.Show("Restore realizado con exito");

@@ -32,14 +32,10 @@ namespace Cova.MPP
 
         public bool RealizarRestore(BEBackup backup)
         {
-            Hashtable datosUsuario = new Hashtable();
             try
             {
                 ConexionDB conexionBDD = new ConexionDB();
-                string strSQL = @"s_RealizarRestore";
-                datosUsuario.Add("@BackupId", backup.BackupId);
-
-                return conexionBDD.EjecutarSP(strSQL, datosUsuario);
+                return conexionBDD.RealizarRestore(backup.Archivo);
             }
             catch (Exception ex)
             {

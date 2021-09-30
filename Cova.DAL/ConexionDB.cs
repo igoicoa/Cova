@@ -8,9 +8,10 @@ namespace Cova.DAL
     public class ConexionDB
     {
         private SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Cova;Integrated Security=True");
+        private SqlConnection connectionMaster = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True");
         private SqlTransaction transaccion;
 
-        public string obtenerStringConexion()
+        public string ObtenerStringConexion()
         {
             return this.connection.ConnectionString;
         }
@@ -164,6 +165,35 @@ namespace Cova.DAL
             finally
             {
                 connection.Close();
+            }
+        }
+
+        public bool RealizarRestore(string archivo)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                connectionMaster.Open();
+                cmd.Connection = connectionMaster;
+                cmd.CommandText = "ALTER DATABASE COVA SET SINGLE_USER WITH ROLLBACK IMMEDIATE; RESTORE DATABASE COVA FROM DISK = '" + archivo + "' ";
+
+                int respuesta = cmd.ExecuteNonQuery();
+                if (respuesta == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connectionMaster.Close();
             }
         }
 
