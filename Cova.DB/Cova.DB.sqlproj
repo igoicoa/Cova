@@ -150,6 +150,7 @@
     <Build Include="Tables\Backups.sql" />
     <Build Include="StoredProcedures\s_ObtenerBackups.sql" />
     <Build Include="StoredProcedures\s_RealizarBackup.sql" />
+    <Build Include="StoredProcedures\s_RealizarRestore.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />

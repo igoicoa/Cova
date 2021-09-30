@@ -22,7 +22,7 @@ namespace Cova.MPP
                 datosUsuario.Add("@Archivo", backup.Archivo);
                 datosUsuario.Add("@UsuarioId", backup.Usuario.UsuarioID);
 
-                return conexionBDD.Escribir(strSQL, datosUsuario);
+                return conexionBDD.EjecutarSP(strSQL, datosUsuario);
             }
             catch (Exception ex)
             {
@@ -39,7 +39,7 @@ namespace Cova.MPP
                 string strSQL = @"s_RealizarRestore";
                 datosUsuario.Add("@BackupId", backup.BackupId);
 
-                return conexionBDD.Escribir(strSQL, datosUsuario);
+                return conexionBDD.EjecutarSP(strSQL, datosUsuario);
             }
             catch (Exception ex)
             {

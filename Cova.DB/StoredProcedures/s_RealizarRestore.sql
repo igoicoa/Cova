@@ -1,0 +1,19 @@
+﻿CREATE PROCEDURE [dbo].[s_RealizarRestore]
+	@BackupId		INT
+AS
+BEGIN
+	DECLARE @Archivo VARCHAR(500),
+		    @strSQL VARCHAR(MAX);
+	BEGIN TRY
+		SET @Archivo = (SELECT BackupId FROM [dbo].[Backups] WHERE BackupId = @BackupId)
+
+		SET @strSQL = 'Use COVA; ALTER DATABASE COVA SET OFFLINE WITH ROLLBACK IMMEDIATE  ' +
+					  'RESTORE DATABASE COVA FROM DISK = ''' + @Archivo + ''' ' +
+                      'ALTER DATABASE COVA SET ONLINE WITH ROLLBACK IMMEDIATE'
+
+		EXEC(@strSQL)
+	END TRY
+	BEGIN CATCH
+		RETURN -1
+	END CATCH
+END

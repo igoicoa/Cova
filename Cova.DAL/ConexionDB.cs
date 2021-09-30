@@ -119,16 +119,51 @@ namespace Cova.DAL
                     return true;
                 }
             }
-
             catch (SqlException ex)
             {
                 transaccion.Rollback();
                 throw ex;
             }
-
             finally
             { 
                 connection.Close(); 
+            }
+        }
+
+        public bool EjecutarSP(string Consulta_SQL, Hashtable hdatos)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                connection.Open();
+                cmd.Connection = connection;
+                cmd.CommandText = Consulta_SQL;
+                cmd.CommandType = CommandType.StoredProcedure;
+                if ((hdatos != null))
+                {
+                    foreach (string dato in hdatos.Keys)
+                    {
+                        cmd.Parameters.AddWithValue(dato, hdatos[dato]);
+                    }
+                }
+
+                int respuesta = cmd.ExecuteNonQuery();
+                if (respuesta == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
             }
         }
 

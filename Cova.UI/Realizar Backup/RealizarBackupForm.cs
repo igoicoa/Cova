@@ -74,6 +74,7 @@ namespace Cova.UI.Realizar_Backup
                 if (Backup.RealizarBakup(backup))
                 {
                     MessageBox.Show("Backup realizado con exito");
+                    CargarBackups();
                 }
                 else
                 {
