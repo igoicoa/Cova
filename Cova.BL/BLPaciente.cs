@@ -76,18 +76,18 @@ namespace Cova.BL
                 { 
                     if (this.ExistePaciente(pacienteActualizado))
                     {
-                        Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Warning, "No se puede crear paciente. Ya existe un paciente con el DNI: " + pacienteNuevo.DNI, "Crear Paciente"));
+                        Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Warning, "No se puede crear paciente. Ya existe un paciente con el DNI: " + pacienteActualizado.DNI, "Crear Paciente"));
                         throw new PacienteYaExisteException();
                     }
                 }
                 MPPPaciente mPPPaciente = new MPPPaciente();
                 PacienteActualizado= mPPPaciente.ActualizarPaciente(pacienteActualizado, Sesion.GetInstance.Usuario.UsuarioID);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizo el Paciente: " + pacienteNuevo.PacienteId + " - " + pacienteNuevo.Apellido, "Actualizar Paciente"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizo el Paciente: " + pacienteActualizado.PacienteId + " - " + pacienteActualizado.Apellido, "Actualizar Paciente"));
 
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Actualizar Paciente: " + pacienteNuevo.PacienteId + " - " + pacienteNuevo.ApellidoNombre + " - " + ex.Message, "Actualizar Paciente"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Actualizar Paciente: " + pacienteActualizado.PacienteId + " - " + pacienteActualizado.ApellidoNombre + " - " + ex.Message, "Actualizar Paciente"));
                 throw new ErrorAlActualizarPacienteException();
             }
             return PacienteActualizado;

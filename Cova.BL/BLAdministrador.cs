@@ -19,7 +19,7 @@ namespace Cova.BL
             {
                 if (this.ExisteAdministrador(administrador))
                 {
-                    Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Warning, "No se puede crear paciente. Ya existe un paciente con el DNI: " + pacienteNuevo.DNI, "Crear Paciente"));
+                    Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Warning, "No se puede crear paciente. Ya existe un paciente con el DNI: " + administrador.DNI, "Crear Paciente"));
                     throw new AdministradorYaExisteException();
                 }
                 MPPAdministrador mPPAdministrador = new MPPAdministrador();
@@ -74,16 +74,16 @@ namespace Cova.BL
                 {
                     if (this.ExisteAdministrador(administradorActualizado))
                     {
-                        Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Warning, "No se puede crear paciente. Ya existe un paciente con el DNI: " + pacienteNuevo.DNI, "Crear Paciente"));
+                        Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Warning, "No se puede crear paciente. Ya existe un paciente con el DNI: " + administradorActualizado.DNI, "Crear Paciente"));
                         throw new AdministradorYaExisteException();
                     }
                 }
                 AdministradorActualizado = mPPAdministrador.ActualizarAdministrador(administradorActualizado); ;
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizó el Administrador: " + administrador.Apellido + ", " + administrador.Nombre, "Actualizar Administrador"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizó el Administrador: " + administradorActualizado.Apellido + ", " + administradorActualizado.Nombre, "Actualizar Administrador"));
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al actualizar el Administrador: " + administrador.Apellido + " - " + administrador.Nombre + " - " + ex.Message, "Actualizar Administrador"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al actualizar el Administrador: " + administradorActualizado.Apellido + " - " + administradorActualizado.Nombre + " - " + ex.Message, "Actualizar Administrador"));
                 throw new ErrorAlActualizarAdministradorException();
             }
             return AdministradorActualizado;

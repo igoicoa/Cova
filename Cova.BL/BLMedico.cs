@@ -58,11 +58,11 @@ namespace Cova.BL
             {
                 MPPMedico mPPMedico = new MPPMedico();
                 profesionalActualizado = mPPMedico.ActualizarProfesionalMedico(medicoActualizado);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "El Profesional: " + medico.ProfesionalId + "fue actualizado con exito", "Actualizar Profesional"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "El Profesional: " + medicoActualizado.ProfesionalId + "fue actualizado con exito", "Actualizar Profesional"));
             } 
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al crear el Profesional: " + medico.Apellido + " - " + medico.Nombre + " - " + ex.Message, "Actualizar Profesional"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al crear el Profesional: " + medicoActualizado.Apellido + " - " + medicoActualizado.Nombre + " - " + ex.Message, "Actualizar Profesional"));
                 throw new ErrorAlActualizarProfesionalException();
             }
             return profesionalActualizado;

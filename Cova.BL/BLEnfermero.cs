@@ -62,11 +62,11 @@ namespace Cova.BL
             {
                 MPPEnfermero mPPEnfermero = new MPPEnfermero();
                 Actualizarprofesional = mPPEnfermero.ActualizarProfesionalEnfermero(enfermeroActualizado);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizó el Profesional enfermero: " + enfermero.Apellido + ", " + enfermero.Nombre, "Actualizar Profesional Enfermero"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizó el Profesional enfermero: " + enfermeroAActualizar.Apellido + ", " + enfermeroAActualizar.Nombre, "Actualizar Profesional Enfermero"));
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al actualizar Profesional enfermero: " + enfermero.Apellido + " - " + enfermero.Nombre + " - " + ex.Message, "Actualizar Profesional Enfermero"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al actualizar Profesional enfermero: " + enfermeroAActualizar.Apellido + " - " + enfermeroAActualizar.Nombre + " - " + ex.Message, "Actualizar Profesional Enfermero"));
                 throw new ErrorAlActualizarProfesionalException();
             }
             return Actualizarprofesional;
