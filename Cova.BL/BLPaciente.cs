@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cova.BE;
 using Cova.BE.Bitacora;
 using Cova.Servicios.Bitacora;
@@ -18,6 +19,11 @@ namespace Cova.BL
             bool pacienteCreado = false;
             try
             {
+                if (this.ExistePaciente(pacienteNuevo))
+                {
+                    Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Warning, "No se puede crear paciente. Ya existe un paciente con el DNI: " + pacienteNuevo.DNI, "Crear Paciente"));
+                    throw new PacienteYaExisteException();
+                }
                 MPPPaciente mPPPaciente = new MPPPaciente();
                 pacienteCreado = mPPPaciente.CrearPaciente(pacienteNuevo, Sesion.GetInstance.Usuario.UsuarioID);
                 Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "El paciente fue creado: " + pacienteNuevo.Apellido + "," + pacienteNuevo.Nombre, "Crear Paciente"));
@@ -25,10 +31,22 @@ namespace Cova.BL
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al crear el paciente" + ex.Message, "Crear Paciente"));
-                throw new ErrorAlCrearPacienteException();
+                if (ex.GetType() == new PacienteYaExisteException().GetType())
+                {
+                    throw ex;
+                }
+                else
+                {
+                    Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al crear el paciente" + ex.Message, "Crear Paciente"));
+                    throw new ErrorAlCrearPacienteException();
+                }
             }
             return pacienteCreado;
+        }
+
+        public bool ExistePaciente(BEPaciente pacienteNuevo)
+        {
+            return this.BuscarPacientes("", pacienteNuevo.DNI.ToString()).Count() == 0 ? false : true;
         }
 
         public IList<BEPaciente> BuscarPacientes(string Usuario, string DNI)
@@ -49,13 +67,21 @@ namespace Cova.BL
             return paciente;
         }
 
-        public bool ActualizarPaciente(BEPaciente pacienteNuevo)
+        public bool ActualizarPaciente(BEPaciente pacienteAActualizar, BEPaciente pacienteActualizado)
         {
             bool PacienteActualizado = false;
             try
             {
+                if(pacienteAActualizar.DNI != pacienteActualizado.DNI)
+                { 
+                    if (this.ExistePaciente(pacienteActualizado))
+                    {
+                        Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Warning, "No se puede crear paciente. Ya existe un paciente con el DNI: " + pacienteNuevo.DNI, "Crear Paciente"));
+                        throw new PacienteYaExisteException();
+                    }
+                }
                 MPPPaciente mPPPaciente = new MPPPaciente();
-                PacienteActualizado= mPPPaciente.ActualizarPaciente(pacienteNuevo, Sesion.GetInstance.Usuario.UsuarioID);
+                PacienteActualizado= mPPPaciente.ActualizarPaciente(pacienteActualizado, Sesion.GetInstance.Usuario.UsuarioID);
                 Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizo el Paciente: " + pacienteNuevo.PacienteId + " - " + pacienteNuevo.Apellido, "Actualizar Paciente"));
 
             }

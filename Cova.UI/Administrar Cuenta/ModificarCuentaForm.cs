@@ -11,7 +11,11 @@ namespace Cova.UI
     public partial class ModificarCuentaForm : Form, IFormCargarUsuarios
     {
         private List<BECoberturaMedica> coberturasMedicas;
-        private long _usuarioId;
+        private BEPaciente _pacienteAActualizar;
+        private BEMedico _medicoAActualizar;
+        private BEEnfermero _enfermeroAActualizar;
+        private BEAdministrador _administradorAActualizar;
+
         public ModificarCuentaForm()
         {
             InitializeComponent();
@@ -71,7 +75,7 @@ namespace Cova.UI
 
         public void CargarUsuarioMedico(BEMedico usuarioAModificar)
         {
-            this._usuarioId = usuarioAModificar.UsuarioID;
+            this._medicoAActualizar = usuarioAModificar;
             rb_medico_ModificarCuenta.Checked = true;
             txt_DNI.Text = usuarioAModificar.DNI.ToString();
             txt_usuario.Text = usuarioAModificar.Usuario.ToString();
@@ -100,7 +104,7 @@ namespace Cova.UI
 
         public void CargarUsuarioEnfermero(BEEnfermero usuarioAModificar)
         {
-            this._usuarioId = usuarioAModificar.UsuarioID;
+            this._enfermeroAActualizar = usuarioAModificar;
             rb_enfermero_ModificarCuenta.Checked = true;
             txt_DNI.Text = usuarioAModificar.DNI.ToString();
             txt_usuario.Text = usuarioAModificar.Usuario.ToString();
@@ -128,7 +132,7 @@ namespace Cova.UI
 
         public void CargarUsuarioPaciente(BEPaciente usuarioAModificar)
         {
-            this._usuarioId = usuarioAModificar.UsuarioID;
+            this._pacienteAActualizar = usuarioAModificar;
             rb_paciente_ModificarCuenta.Checked = true;
             txt_DNI.Text = usuarioAModificar.DNI.ToString();
             txt_usuario.Text = usuarioAModificar.Usuario.ToString();
@@ -170,7 +174,7 @@ namespace Cova.UI
 
         public void CargarUsuarioAdministrador(BEAdministrador usuarioAModificar)
         {
-            this._usuarioId = usuarioAModificar.UsuarioID;
+            this._administradorAActualizar = usuarioAModificar;
             rb_administrador_ModificarCuenta.Checked = true;
             txt_DNI.Text = usuarioAModificar.DNI.ToString();
             txt_usuario.Text = usuarioAModificar.Usuario.ToString();
@@ -361,7 +365,7 @@ namespace Cova.UI
             BEMedico medicoActualizado = new BEMedico();
             BEDomicilio domicilio = new BEDomicilio();
 
-            medicoActualizado.UsuarioID = this._usuarioId;
+            medicoActualizado.UsuarioID = this._medicoAActualizar.UsuarioID;
             medicoActualizado.Nombre = txt_nombre.Text;
             medicoActualizado.Apellido = txt_apellido.Text;
             medicoActualizado.DNI = Convert.ToInt32 (txt_DNI.Text);
@@ -390,7 +394,7 @@ namespace Cova.UI
             BLMedico bLMedico = new BLMedico();
             try
             {
-                if (bLMedico.ActualizarProfesionalMedico(medicoActualizado))
+                if (bLMedico.ActualizarProfesionalMedico(this._medicoAActualizar, medicoActualizado))
                 {
                     MessageBox.Show("Profesional actualizado con exito");
                     this.Close();
@@ -412,7 +416,7 @@ namespace Cova.UI
             BEEnfermero enfermeroActualizado = new BEEnfermero();
             BEDomicilio domicilio = new BEDomicilio();
 
-            enfermeroActualizado.UsuarioID = this._usuarioId;
+            enfermeroActualizado.UsuarioID = this._enfermeroAActualizar.UsuarioID;
             enfermeroActualizado.Nombre = txt_nombre.Text;
             enfermeroActualizado.Apellido = txt_apellido.Text;
             enfermeroActualizado.DNI = Convert.ToInt32(txt_DNI.Text);
@@ -440,7 +444,7 @@ namespace Cova.UI
             BLEnfermero bLEnfermero = new BLEnfermero();
             try
             {
-                if (bLEnfermero.ActualizarProfesionalEnfermero(enfermeroActualizado))
+                if (bLEnfermero.ActualizarProfesionalEnfermero(this._enfermeroAActualizar, enfermeroActualizado))
                 {
                     MessageBox.Show("Profesional actualizado con exito");
                     this.Close();
@@ -461,7 +465,7 @@ namespace Cova.UI
             BEPaciente pacienteActualizado = new BEPaciente();
             BEDomicilio domicilio = new BEDomicilio();
 
-            pacienteActualizado.UsuarioID = this._usuarioId;
+            pacienteActualizado.UsuarioID = this._pacienteAActualizar.UsuarioID;
             pacienteActualizado.Nombre = txt_nombre.Text;
             pacienteActualizado.Apellido = txt_apellido.Text;
             pacienteActualizado.DNI = Convert.ToInt32(txt_DNI.Text);
@@ -500,7 +504,7 @@ namespace Cova.UI
             BLPaciente bLPaciente = new BLPaciente();
             try
             {
-                if (bLPaciente.ActualizarPaciente(pacienteActualizado))
+                if (bLPaciente.ActualizarPaciente(this._pacienteAActualizar, pacienteActualizado))
                 {
                     MessageBox.Show("Paciente actualizado con exito");
                     this.Close();
@@ -521,7 +525,7 @@ namespace Cova.UI
             BEAdministrador administradorActualizado = new BEAdministrador();
             BEDomicilio domicilio = new BEDomicilio();
 
-            administradorActualizado.UsuarioID = this._usuarioId;
+            administradorActualizado.UsuarioID = this._administradorAActualizar.UsuarioID;
             administradorActualizado.Nombre = txt_nombre.Text;
             administradorActualizado.Apellido = txt_apellido.Text;
             administradorActualizado.DNI = Convert.ToInt32(txt_DNI.Text);
@@ -547,7 +551,7 @@ namespace Cova.UI
             BLAdministrador bLAdministrador = new BLAdministrador();
             try
             {
-                if (bLAdministrador.ActualizarAdministrador(administradorActualizado))
+                if (bLAdministrador.ActualizarAdministrador(this._administradorAActualizar, administradorActualizado))
                 {
                     MessageBox.Show("Administrador actualizado con exito");
                     this.Close();

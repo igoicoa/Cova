@@ -31,6 +31,11 @@ namespace Cova.BL
             return profesionalCreado;
         }
 
+        public bool ExisteEnfermero(BEEnfermero enfermeroNuevo)
+        {
+            return this.BuscarEnfermeros("", enfermeroNuevo.DNI.ToString()).Count() == 0 ? false : true;
+        }
+
         public IList<BEEnfermero> BuscarEnfermeros(string Usuario, string DNI)
         {
 
@@ -50,13 +55,13 @@ namespace Cova.BL
 
         }
 
-        public bool ActualizarProfesionalEnfermero(BEEnfermero enfermero)
+        public bool ActualizarProfesionalEnfermero(BEEnfermero enfermeroAActualizar, BEEnfermero enfermeroActualizado)
         {
             bool Actualizarprofesional = false;
             try
             {
                 MPPEnfermero mPPEnfermero = new MPPEnfermero();
-                Actualizarprofesional = mPPEnfermero.ActualizarProfesionalEnfermero(enfermero);
+                Actualizarprofesional = mPPEnfermero.ActualizarProfesionalEnfermero(enfermeroActualizado);
                 Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizó el Profesional enfermero: " + enfermero.Apellido + ", " + enfermero.Nombre, "Actualizar Profesional Enfermero"));
             }
             catch (Exception ex)

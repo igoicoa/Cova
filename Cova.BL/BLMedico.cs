@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cova.BE;
 using Cova.MPP;
 using Cova.Common.Excepciones;
@@ -28,6 +29,11 @@ namespace Cova.BL
             return profesionalCreado;
         }
 
+        public bool ExisteMedico(BEMedico medicoNuevo)
+        {
+            return this.BuscarMedicos("", medicoNuevo.DNI.ToString()).Count() == 0 ? false : true;
+        }
+
         public IList<BEMedico> BuscarMedicos(string Usuario, string DNI)
         {
             IList<BEMedico> medicos;
@@ -45,13 +51,13 @@ namespace Cova.BL
             return medicos;
         }
 
-        public bool ActualizarProfesionalMedico(BEMedico medico)
+        public bool ActualizarProfesionalMedico(BEMedico medicoAActualizar, BEMedico medicoActualizado)
         {
             bool profesionalActualizado = false;
             try
             {
                 MPPMedico mPPMedico = new MPPMedico();
-                profesionalActualizado = mPPMedico.ActualizarProfesionalMedico(medico);
+                profesionalActualizado = mPPMedico.ActualizarProfesionalMedico(medicoActualizado);
                 Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "El Profesional: " + medico.ProfesionalId + "fue actualizado con exito", "Actualizar Profesional"));
             } 
             catch (Exception ex)
