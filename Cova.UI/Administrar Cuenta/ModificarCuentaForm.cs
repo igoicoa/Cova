@@ -249,7 +249,7 @@ namespace Cova.UI
                 || string.IsNullOrEmpty(txt_email.Text) || string.IsNullOrEmpty(cmb_EstadoModificarCuenta.Text)
                 || string.IsNullOrEmpty(txt_localidad.Text) || string.IsNullOrEmpty(txt_numero.Text)
                 || string.IsNullOrEmpty(txt_provincia.Text)
-                || string.IsNullOrEmpty (txt_matriculaProvincial.Text))
+                || string.IsNullOrEmpty (txt_matriculaNacional.Text))
             {
                 return false;
             }
@@ -430,7 +430,7 @@ namespace Cova.UI
             enfermeroActualizado.Email = txt_email.Text;
             enfermeroActualizado.EstadoCivil = txt_estadoCivil.Text;
             enfermeroActualizado.MatriculaEnfermero = Convert.ToInt32(txt_matriculaNacional.Text);
-            enfermeroActualizado.MatriculaEnfermero = Convert.ToInt32(txt_matriculaProvincial.Text);
+            enfermeroActualizado.MatriculaEnfermero = Convert.ToInt32(txt_matriculaNacional.Text);
             domicilio.Calle = txt_calle.Text;
             domicilio.Numero = Convert.ToInt32(txt_numero.Text);
             domicilio.Piso = txt_piso.Text;

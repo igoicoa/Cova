@@ -548,36 +548,6 @@ INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
 VALUES
 (@IdiomaInglesId, @EtiquetaId, 'Binnacle')
 
--- Guardo traduccion para etiqueta menuRealizarRestore
-INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('RealizarRestore')
-SET @EtiquetaId = SCOPE_IDENTITY()
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaCastellanoId, @EtiquetaId, 'Realizar Restore')
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaInglesId, @EtiquetaId, 'Perform Restore')
-
--- Guardo traduccion para etiqueta menuMisDatos
-INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('MisDatos')
-SET @EtiquetaId = SCOPE_IDENTITY()
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaCastellanoId, @EtiquetaId, 'Mis Datos')
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaInglesId, @EtiquetaId, 'My Data')
-
--- Guardo traduccion para etiqueta menuVerMisDatos
-INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('VerMisDatos')
-SET @EtiquetaId = SCOPE_IDENTITY()
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaCastellanoId, @EtiquetaId, 'Ver Mis Datos')
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaInglesId, @EtiquetaId, 'View My Data')
-
 -- Guardo traduccion para etiqueta menuPermisos
 INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('Permisos')
 SET @EtiquetaId = SCOPE_IDENTITY()

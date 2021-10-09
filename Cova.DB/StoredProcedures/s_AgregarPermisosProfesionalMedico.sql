@@ -17,8 +17,6 @@ BEGIN
 	(@IdUsuario, 15),
 	(@IdUsuario, 16),
 	(@IdUsuario, 17),
-	(@IdUsuario, 18),
-	(@IdUsuario, 19),
 	(@IdUsuario, 20),
 	(@IdUsuario, 21),
 	(@IdUsuario, 26),
@@ -28,10 +26,9 @@ BEGIN
 	(@IdUsuario, 30),
 	(@IdUsuario, 31),
 	(@IdUsuario, 32),
+	(@IdUsuario, 37),
 	(@IdUsuario, 38),
-	(@IdUsuario, 39),
-	(@IdUsuario, 40),
-	(@IdUsuario, 42),
-	(@IdUsuario, 43)
+	(@IdUsuario, 41),
+	(@IdUsuario, 42)
 END
 

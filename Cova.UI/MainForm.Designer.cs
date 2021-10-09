@@ -430,6 +430,7 @@
             this.controlDeCambioToolStripMenuItem.Name = "controlDeCambioToolStripMenuItem";
             this.controlDeCambioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.controlDeCambioToolStripMenuItem.Text = "Control de Cambio";
+            this.controlDeCambioToolStripMenuItem.Tag = "Controlde_Cambio";
             this.controlDeCambioToolStripMenuItem.Click += new System.EventHandler(this.controlDeCambioToolStripMenuItem_Click);
             // 
             // informaciónToolStripMenuItem
@@ -446,7 +447,7 @@
             // 
             this.contactoToolStripMenuItem.Name = "contactoToolStripMenuItem";
             this.contactoToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.contactoToolStripMenuItem.Tag = "Controlde_Cambio";
+            this.contactoToolStripMenuItem.Tag = "Contacto";
             this.contactoToolStripMenuItem.Text = "Contacto";
             // 
             // novedadesToolStripMenuItem

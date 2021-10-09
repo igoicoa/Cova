@@ -19,12 +19,14 @@ BEGIN
 	(@IdUsuario, 19),
 	(@IdUsuario, 20),
 	(@IdUsuario, 21),
+	(@IdUsuario, 22),
+	(@IdUsuario, 25),
+	(@IdUsuario, 26),
 	(@IdUsuario, 28),
 	(@IdUsuario, 29),
 	(@IdUsuario, 32),
+	(@IdUsuario, 37),
 	(@IdUsuario, 38),
-	(@IdUsuario, 39),
-	(@IdUsuario, 40),
-	(@IdUsuario, 42),
-	(@IdUsuario, 43)
+	(@IdUsuario, 41),
+	(@IdUsuario, 42)
 END

@@ -32,14 +32,14 @@ namespace Cova.Common.Permisos
             Permiso crearVacuna = new Permiso(TipoPermiso.CrearVacunas);
             Permiso modificarVacunas = new Permiso(TipoPermiso.ModificarVacunas);
             Permiso verVacunas = new Permiso(TipoPermiso.VerVacunas);
-            Permiso AplicarVacuna = new Permiso(TipoPermiso.AplicarVacuna);
+            Permiso aplicarVacuna = new Permiso(TipoPermiso.AplicarVacuna);
 
             FamiliaPermisos administrarVacunas = new FamiliaPermisos(TipoPermiso.AdministrarVacunas);
             administrarVacunas.AgregarPermiso(calendarioVacunacion);
             administrarVacunas.AgregarPermiso(crearVacuna);
             administrarVacunas.AgregarPermiso(modificarVacunas);
             administrarVacunas.AgregarPermiso(verVacunas);
-            administrarVacunas.AgregarPermiso(AplicarVacuna);
+            administrarVacunas.AgregarPermiso(aplicarVacuna);
 
             //Administrar Turnos
             Permiso calendarioTurnos = new Permiso(TipoPermiso.CalendarioDeTurnos);
@@ -56,12 +56,12 @@ namespace Cova.Common.Permisos
             //Administrar Cobertura Medica
             Permiso crearCoberturaMedica = new Permiso(TipoPermiso.CrearCoberturaMedica);
             Permiso modificarCoberturaMedica = new Permiso(TipoPermiso.ModificarCoberturaMedica);
-            Permiso VerCoberturaMedica = new Permiso(TipoPermiso.VerCoberturaMedica);
+            Permiso verCoberturaMedica = new Permiso(TipoPermiso.VerCoberturaMedica);
 
             FamiliaPermisos administrarCoberturaMedica = new FamiliaPermisos(TipoPermiso.AdministrarCoberturaMedica);
             administrarCoberturaMedica.AgregarPermiso(crearCoberturaMedica);
             administrarCoberturaMedica.AgregarPermiso(modificarCoberturaMedica);
-            administrarCoberturaMedica.AgregarPermiso(VerCoberturaMedica);
+            administrarCoberturaMedica.AgregarPermiso(verCoberturaMedica);
 
             //Administrar Historia Clinica
             Permiso crearHistoriaClinica = new Permiso(TipoPermiso.CrearHistoriaClinica);
@@ -97,16 +97,13 @@ namespace Cova.Common.Permisos
             //Bitacora
             Permiso bitacora = new Permiso(TipoPermiso.Bitacora);
 
-            //Realizar Restore
-            Permiso realizarRestore = new Permiso(TipoPermiso.RealizarRestore);
-
             //Permisos
-            Permiso Permisos = new Permiso(TipoPermiso.Permisos);
-            Permiso AsignarPermisos = new Permiso(TipoPermiso.AsignarPermisos);
+            //Permiso permisos = new Permiso(TipoPermiso.Permisos);
+            Permiso asignarPermisos = new Permiso(TipoPermiso.AsignarPermisos);
 
-            FamiliaPermisos familiaPermisos = new FamiliaPermisos(TipoPermiso.AdministrarIdioma);
-            familiaPermisos.AgregarPermiso(Permisos);
-            familiaPermisos.AgregarPermiso(AsignarPermisos);
+            FamiliaPermisos familiaPermisos = new FamiliaPermisos(TipoPermiso.Permisos);
+            //familiaPermisos.AgregarPermiso(permisos);
+            familiaPermisos.AgregarPermiso(asignarPermisos);
 
             //Administrar Idioma
             Permiso cambiarIdioma = new Permiso(TipoPermiso.CambiarIdioma);
@@ -122,9 +119,8 @@ namespace Cova.Common.Permisos
             FamiliaPermisos seguridad = new FamiliaPermisos(TipoPermiso.Seguridad);
             seguridad.AgregarPermiso(realizarBackup);
             seguridad.AgregarPermiso(bitacora);
-            seguridad.AgregarPermiso(realizarRestore);
-            seguridad.AgregarPermiso(Permisos);
-            seguridad.AgregarPermiso(AsignarPermisos);
+            seguridad.AgregarPermiso(familiaPermisos);
+            seguridad.AgregarPermiso(asignarPermisos);
             seguridad.AgregarPermiso(AdministrarIdioma);
             seguridad.AgregarPermiso(controlde_cambio);
 
