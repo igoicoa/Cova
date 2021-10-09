@@ -39,9 +39,10 @@ namespace Cova.UI
             this.lbl_NombrePlan = new System.Windows.Forms.Label();
             this.lbl_Planes = new System.Windows.Forms.Label();
             this.txt_NombrePlan = new System.Windows.Forms.TextBox();
-            this.rtb_planes = new System.Windows.Forms.RichTextBox();
             this.btn_Agregar = new System.Windows.Forms.Button();
             this.btn_Quitar = new System.Windows.Forms.Button();
+            this.dgv_planes = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_planes)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_CargarCoberturaMedica
@@ -130,15 +131,6 @@ namespace Cova.UI
             this.txt_NombrePlan.Size = new System.Drawing.Size(232, 20);
             this.txt_NombrePlan.TabIndex = 144;
             // 
-            // rtb_planes
-            // 
-            this.rtb_planes.Location = new System.Drawing.Point(476, 103);
-            this.rtb_planes.Name = "rtb_planes";
-            this.rtb_planes.ReadOnly = true;
-            this.rtb_planes.Size = new System.Drawing.Size(200, 176);
-            this.rtb_planes.TabIndex = 145;
-            this.rtb_planes.Text = "";
-            // 
             // btn_Agregar
             // 
             this.btn_Agregar.Location = new System.Drawing.Point(308, 148);
@@ -147,6 +139,7 @@ namespace Cova.UI
             this.btn_Agregar.TabIndex = 146;
             this.btn_Agregar.Text = "Agregar";
             this.btn_Agregar.UseVisualStyleBackColor = true;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // btn_Quitar
             // 
@@ -156,15 +149,24 @@ namespace Cova.UI
             this.btn_Quitar.TabIndex = 147;
             this.btn_Quitar.Text = "Quitar";
             this.btn_Quitar.UseVisualStyleBackColor = true;
+            this.btn_Quitar.Click += new System.EventHandler(this.btn_Quitar_Click);
+            // 
+            // dgv_planes
+            // 
+            this.dgv_planes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_planes.Location = new System.Drawing.Point(476, 113);
+            this.dgv_planes.Name = "dgv_planes";
+            this.dgv_planes.Size = new System.Drawing.Size(240, 165);
+            this.dgv_planes.TabIndex = 148;
             // 
             // CargarCoberturaMedicaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(745, 318);
+            this.Controls.Add(this.dgv_planes);
             this.Controls.Add(this.btn_Quitar);
             this.Controls.Add(this.btn_Agregar);
-            this.Controls.Add(this.rtb_planes);
             this.Controls.Add(this.txt_NombrePlan);
             this.Controls.Add(this.lbl_Planes);
             this.Controls.Add(this.lbl_NombrePlan);
@@ -177,6 +179,7 @@ namespace Cova.UI
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CargarCoberturaMedicaForm";
             this.Text = "CargarCoberturaMedica";
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_planes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,8 +196,8 @@ namespace Cova.UI
         private System.Windows.Forms.Label lbl_NombrePlan;
         private System.Windows.Forms.Label lbl_Planes;
         private System.Windows.Forms.TextBox txt_NombrePlan;
-        private System.Windows.Forms.RichTextBox rtb_planes;
         private System.Windows.Forms.Button btn_Agregar;
         private System.Windows.Forms.Button btn_Quitar;
+        private System.Windows.Forms.DataGridView dgv_planes;
     }
 }

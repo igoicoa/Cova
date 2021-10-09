@@ -30,6 +30,33 @@ namespace Cova.BL
             }
             return coberturamedica;
         }
+
+        public bool CrearCoberturaMedica(BECoberturaMedica coberturaMedica)
+        {
+            bool coberturaCreada = false;
+            try
+            {
+                MPPCoberturaMedica mPPCoberturaMedica = new MPPCoberturaMedica();
+                coberturaCreada = mPPCoberturaMedica.AgregarCoberturaMedica(coberturaMedica);
+                if(!coberturaCreada)
+                {
+                    return false;
+                }
+                foreach(BECoberturaMedicaPlan plan in coberturaMedica.Plan)
+                {
+                    coberturaCreada = mPPCoberturaMedica.AgregarPlan(coberturaMedica.Nombre, plan.Nombre);
+                    if (!coberturaCreada)
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            return coberturaCreada;
+        }
     }
     
 }

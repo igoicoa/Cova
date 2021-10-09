@@ -73,5 +73,38 @@ namespace Cova.MPP
             }
             return coberturasMedicas;
         }
+
+        public bool AgregarCoberturaMedica(BECoberturaMedica coberturaMedica)
+        {
+            Hashtable datosCoberturaMedica = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_AgregarCoberturaMedica";
+                datosCoberturaMedica.Add("@coberturaNombre", coberturaMedica.Nombre);
+                return conexionBDD.Escribir(strSQL, datosCoberturaMedica);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool AgregarPlan(string coberturaMedicaNombre, string planNombre)
+        {
+            Hashtable datosCoberturaMedicaPlan = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_AgregarCoberturaMedicaPlan";
+                datosCoberturaMedicaPlan.Add("@@coberturaNombre", coberturaMedicaNombre);
+                datosCoberturaMedicaPlan.Add("@@coberturaNombre", planNombre);
+                return conexionBDD.Escribir(strSQL, datosCoberturaMedicaPlan);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
