@@ -35,15 +35,15 @@ namespace Cova.UI.Control_de_Cambios
             {
                 List<BEControlDeCambioPaciente> pacientes = controlDeCambio.ObtenerControlDeCambioPaciente().ToList();
                 DataTable tableControlDeCambios = new DataTable();
-                tableControlDeCambios.Columns.Add("FechaModificacion");
-                tableControlDeCambios.Columns.Add("TipoCambio");
-                tableControlDeCambios.Columns.Add("UsuarioModificador");
+                tableControlDeCambios.Columns.Add("Fecha Modificacion");
+                tableControlDeCambios.Columns.Add("Tipo Cambio");
+                tableControlDeCambios.Columns.Add("Usuario Modificador");
                 tableControlDeCambios.Columns.Add("Nombre");
                 tableControlDeCambios.Columns.Add("Apellido");
                 tableControlDeCambios.Columns.Add("DNI");
-                tableControlDeCambios.Columns.Add("FechaNacimiento");
+                tableControlDeCambios.Columns.Add("Fecha Nacimiento");
                 tableControlDeCambios.Columns.Add("Sexo");
-                tableControlDeCambios.Columns.Add("EstadoCivil");
+                tableControlDeCambios.Columns.Add("Estado Civil");
                 tableControlDeCambios.Columns.Add("Telefono");
                 tableControlDeCambios.Columns.Add("Email");
                 tableControlDeCambios.Columns.Add("Calle");
@@ -52,23 +52,23 @@ namespace Cova.UI.Control_de_Cambios
                 tableControlDeCambios.Columns.Add("Localidad");
                 tableControlDeCambios.Columns.Add("Provincia");
                 tableControlDeCambios.Columns.Add("Pais");
-                tableControlDeCambios.Columns.Add("CoberturaMedica");
-                tableControlDeCambios.Columns.Add("CoberturaMedicaPlanId");
-                tableControlDeCambios.Columns.Add("NumeroAfiliado");
-                tableControlDeCambios.Columns.Add("FechaVencimiento");
+                tableControlDeCambios.Columns.Add("Cobertura Medica");
+                tableControlDeCambios.Columns.Add("Plan");
+                tableControlDeCambios.Columns.Add("Numero Afiliado");
+                tableControlDeCambios.Columns.Add("Fecha Vencimiento");
 
                 foreach (BEControlDeCambioPaciente paciente in pacientes)
                 {
                     DataRow filaControlDeCambios = tableControlDeCambios.NewRow();
-                    filaControlDeCambios["FechaModificacion"] = paciente.FechaModificacion;
-                    filaControlDeCambios["TipoCambio"] = paciente.TipoCambio;
-                    filaControlDeCambios["UsuarioModificador"] = paciente.UsuarioModificador.Usuario;
+                    filaControlDeCambios["Fecha Modificacion"] = paciente.FechaModificacion;
+                    filaControlDeCambios["Tipo Cambio"] = paciente.TipoCambio;
+                    filaControlDeCambios["Usuario Modificador"] = paciente.UsuarioModificador.Usuario;
                     filaControlDeCambios["Nombre"] = paciente.Paciente.Nombre;
                     filaControlDeCambios["Apellido"] = paciente.Paciente.Apellido;
                     filaControlDeCambios["DNI"] = paciente.Paciente.DNI;
-                    filaControlDeCambios["FechaNacimiento"] = paciente.Paciente.FechaNacimiento;
+                    filaControlDeCambios["Fecha Nacimiento"] = paciente.Paciente.FechaNacimiento;
                     filaControlDeCambios["Sexo"] = paciente.Paciente.Sexo;
-                    filaControlDeCambios["EstadoCivil"] = paciente.Paciente.EstadoCivil;
+                    filaControlDeCambios["Estado Civil"] = paciente.Paciente.EstadoCivil;
                     filaControlDeCambios["Telefono"] = paciente.Paciente.Telefono;
                     filaControlDeCambios["Email"] = paciente.Paciente.Email;
                     filaControlDeCambios["Calle"] = paciente.Paciente.Domicilio.Calle;
@@ -77,13 +77,23 @@ namespace Cova.UI.Control_de_Cambios
                     filaControlDeCambios["Localidad"] = paciente.Paciente.Domicilio.Localidad;
                     filaControlDeCambios["Provincia"] = paciente.Paciente.Domicilio.Provincia;
                     filaControlDeCambios["Pais"] = paciente.Paciente.Domicilio.Pais;
-                    filaControlDeCambios["CoberturaMedica"] = paciente.Paciente.CoberturaMedica.CoberturaMedicaId;
-                    filaControlDeCambios["CoberturaMedicaPlanId"] = paciente.Paciente.CoberturaMedica.Plan.Nombre;
-                    filaControlDeCambios["NumeroAfiliado"] = paciente.Paciente.CoberturaMedica.NumeroAfiliado;
-                    filaControlDeCambios["FechaVencimiento"] = paciente.Paciente.CoberturaMedica.FechaVencimiento;
-
+                    if (paciente.Paciente.CoberturaMedica != null)
+                    {
+                        filaControlDeCambios["Cobertura Medica"] = paciente.Paciente.CoberturaMedica.Nombre;
+                        filaControlDeCambios["Plan"] = paciente.Paciente.CoberturaMedica.Plan.Nombre;
+                        filaControlDeCambios["Numero Afiliado"] = paciente.Paciente.CoberturaMedica.NumeroAfiliado;
+                        filaControlDeCambios["Fecha Vencimiento"] = paciente.Paciente.CoberturaMedica.FechaVencimiento;
+                    }
+                    else
+                    {
+                        filaControlDeCambios["Cobertura Medica"] = "-";
+                        filaControlDeCambios["Plan"] = "-";
+                        filaControlDeCambios["Numero Afiliado"] = "-";
+                        filaControlDeCambios["Fecha Vencimiento"] = "-";
+                    }
                     tableControlDeCambios.Rows.Add(filaControlDeCambios);
                 }
+
                 DataView dataviewControlDeCambios = new DataView(tableControlDeCambios);
                 dgv_ControlCambios.DataSource = dataviewControlDeCambios;
                 dgv_ControlCambios.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;

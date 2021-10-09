@@ -21,6 +21,11 @@ namespace Cova.UI
             CargarCentrosMedicos();
             CargarVacunas();
             CargarLaboratorios();
+            if (formPadre == null)
+            {
+                this.btn_SeleccionarVacunas_BuscarVacunas.Visible = false;
+            }
+
             this._formPadre = formPadre;
             if (CentroMedicoId != null)
             {
