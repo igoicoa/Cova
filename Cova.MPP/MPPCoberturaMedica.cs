@@ -97,8 +97,8 @@ namespace Cova.MPP
             {
                 ConexionDB conexionBDD = new ConexionDB();
                 string strSQL = @"s_AgregarCoberturaMedicaPlan";
-                datosCoberturaMedicaPlan.Add("@@coberturaNombre", coberturaMedicaNombre);
-                datosCoberturaMedicaPlan.Add("@@coberturaNombre", planNombre);
+                datosCoberturaMedicaPlan.Add("@CoberturaNombre", coberturaMedicaNombre);
+                datosCoberturaMedicaPlan.Add("@CoberturaPlanNombre", planNombre);
                 return conexionBDD.Escribir(strSQL, datosCoberturaMedicaPlan);
             }
             catch (Exception ex)

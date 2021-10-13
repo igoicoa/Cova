@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Cova.BE;
 using Cova.BE.Bitacora;
 using Cova.Common.Excepciones;
@@ -56,6 +53,29 @@ namespace Cova.BL
                 throw ex;
             }
             return coberturaCreada;
+        }
+
+        public bool ModificarCoberturaMedica(BECoberturaMedica coberturaMedica)
+        {
+            bool coberturaModificada = false;
+            try
+            {
+                MPPCoberturaMedica mPPCoberturaMedica = new MPPCoberturaMedica();
+                //UPDATE
+                foreach (BECoberturaMedicaPlan plan in coberturaMedica.Plan)
+                {
+                    coberturaModificada = mPPCoberturaMedica.AgregarPlan(coberturaMedica.Nombre, plan.Nombre);
+                    if (!coberturaModificada)
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return coberturaModificada;
         }
     }
     

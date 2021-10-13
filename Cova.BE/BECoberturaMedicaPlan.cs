@@ -10,5 +10,10 @@ namespace Cova.BE
     {
         public int PlanId { get; set; }
         public string Nombre { get; set; }
+
+        public BECoberturaMedicaPlan(string nombre)
+        {
+            this.Nombre = nombre;
+        }
     }
 }

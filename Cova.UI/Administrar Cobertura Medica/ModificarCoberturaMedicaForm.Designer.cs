@@ -37,12 +37,13 @@ namespace Cova.UI
             this.btn_BuscarCoberturaMedica_ModificarCoberturaMedica = new System.Windows.Forms.Button();
             this.btn_Quitar_ModificarCoberturaMedica = new System.Windows.Forms.Button();
             this.btn_Agregar_ModificarCoberturaMedica = new System.Windows.Forms.Button();
-            this.rtb_planes_ModificarCoberturaMedica = new System.Windows.Forms.RichTextBox();
             this.txt_NombrePlan__ModificarCoberturaMedica = new System.Windows.Forms.TextBox();
             this.lbl_Plan_ModificarCoberturaMedica = new System.Windows.Forms.Label();
             this.lbl_NombrePlan_ModificarCoberturaMedica = new System.Windows.Forms.Label();
             this.txt_Nombre_ModificarCoberturaMedica = new System.Windows.Forms.TextBox();
             this.lbl_Nombre_ModificarCoberturaMedica = new System.Windows.Forms.Label();
+            this.dgv_planes = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_planes)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_ModificarCoberturaMedica
@@ -86,6 +87,7 @@ namespace Cova.UI
             this.btn_Modificar_ModificarCoberturaMedica.TabIndex = 150;
             this.btn_Modificar_ModificarCoberturaMedica.Text = "Modificar";
             this.btn_Modificar_ModificarCoberturaMedica.UseVisualStyleBackColor = true;
+            this.btn_Modificar_ModificarCoberturaMedica.Click += new System.EventHandler(this.btn_Modificar_ModificarCoberturaMedica_Click);
             // 
             // btn_BuscarCoberturaMedica_ModificarCoberturaMedica
             // 
@@ -106,6 +108,7 @@ namespace Cova.UI
             this.btn_Quitar_ModificarCoberturaMedica.TabIndex = 166;
             this.btn_Quitar_ModificarCoberturaMedica.Text = "Quitar";
             this.btn_Quitar_ModificarCoberturaMedica.UseVisualStyleBackColor = true;
+            this.btn_Quitar_ModificarCoberturaMedica.Click += new System.EventHandler(this.btn_Quitar_ModificarCoberturaMedica_Click);
             // 
             // btn_Agregar_ModificarCoberturaMedica
             // 
@@ -115,15 +118,7 @@ namespace Cova.UI
             this.btn_Agregar_ModificarCoberturaMedica.TabIndex = 165;
             this.btn_Agregar_ModificarCoberturaMedica.Text = "Agregar";
             this.btn_Agregar_ModificarCoberturaMedica.UseVisualStyleBackColor = true;
-            // 
-            // rtb_planes_ModificarCoberturaMedica
-            // 
-            this.rtb_planes_ModificarCoberturaMedica.Location = new System.Drawing.Point(488, 85);
-            this.rtb_planes_ModificarCoberturaMedica.Name = "rtb_planes_ModificarCoberturaMedica";
-            this.rtb_planes_ModificarCoberturaMedica.ReadOnly = true;
-            this.rtb_planes_ModificarCoberturaMedica.Size = new System.Drawing.Size(200, 176);
-            this.rtb_planes_ModificarCoberturaMedica.TabIndex = 164;
-            this.rtb_planes_ModificarCoberturaMedica.Text = "";
+            this.btn_Agregar_ModificarCoberturaMedica.Click += new System.EventHandler(this.btn_Agregar_ModificarCoberturaMedica_Click);
             // 
             // txt_NombrePlan__ModificarCoberturaMedica
             // 
@@ -168,14 +163,22 @@ namespace Cova.UI
             this.lbl_Nombre_ModificarCoberturaMedica.TabIndex = 156;
             this.lbl_Nombre_ModificarCoberturaMedica.Text = "Nombre";
             // 
+            // dgv_planes
+            // 
+            this.dgv_planes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_planes.Location = new System.Drawing.Point(468, 85);
+            this.dgv_planes.Name = "dgv_planes";
+            this.dgv_planes.Size = new System.Drawing.Size(240, 165);
+            this.dgv_planes.TabIndex = 167;
+            // 
             // ModificarCoberturaMedicaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(720, 296);
+            this.Controls.Add(this.dgv_planes);
             this.Controls.Add(this.btn_Quitar_ModificarCoberturaMedica);
             this.Controls.Add(this.btn_Agregar_ModificarCoberturaMedica);
-            this.Controls.Add(this.rtb_planes_ModificarCoberturaMedica);
             this.Controls.Add(this.txt_NombrePlan__ModificarCoberturaMedica);
             this.Controls.Add(this.lbl_Plan_ModificarCoberturaMedica);
             this.Controls.Add(this.lbl_NombrePlan_ModificarCoberturaMedica);
@@ -189,6 +192,7 @@ namespace Cova.UI
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModificarCoberturaMedicaForm";
             this.Text = "ModificarCoberturaMedica";
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_planes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,11 +207,11 @@ namespace Cova.UI
         private System.Windows.Forms.Button btn_BuscarCoberturaMedica_ModificarCoberturaMedica;
         private System.Windows.Forms.Button btn_Quitar_ModificarCoberturaMedica;
         private System.Windows.Forms.Button btn_Agregar_ModificarCoberturaMedica;
-        private System.Windows.Forms.RichTextBox rtb_planes_ModificarCoberturaMedica;
         private System.Windows.Forms.TextBox txt_NombrePlan__ModificarCoberturaMedica;
         private System.Windows.Forms.Label lbl_Plan_ModificarCoberturaMedica;
         private System.Windows.Forms.Label lbl_NombrePlan_ModificarCoberturaMedica;
         private System.Windows.Forms.TextBox txt_Nombre_ModificarCoberturaMedica;
         private System.Windows.Forms.Label lbl_Nombre_ModificarCoberturaMedica;
+        private System.Windows.Forms.DataGridView dgv_planes;
     }
 }

@@ -60,6 +60,7 @@ namespace Cova.UI
             this.btn_SeleccionarCobertura_BuscarCoberturaMedica.TabIndex = 160;
             this.btn_SeleccionarCobertura_BuscarCoberturaMedica.Text = "Seleccionar Cobertura";
             this.btn_SeleccionarCobertura_BuscarCoberturaMedica.UseVisualStyleBackColor = true;
+            this.btn_SeleccionarCobertura_BuscarCoberturaMedica.Click += new System.EventHandler(this.btn_SeleccionarCobertura_BuscarCoberturaMedica_Click);
             // 
             // btn_Limpiar_BuscarCoberturaMedica
             // 

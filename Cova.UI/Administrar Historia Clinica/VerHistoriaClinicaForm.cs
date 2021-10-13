@@ -1,14 +1,9 @@
 ﻿using Cova.BE;
 using Cova.BL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Cova.Servicios.Sesion;
 
 namespace Cova.UI
 {
@@ -18,6 +13,18 @@ namespace Cova.UI
         public VerHistoriaClinicaForm()
         {
             InitializeComponent();
+            if(Sesion.GetInstance.Usuario.TipoUsuario == BE.Enum.TipoUsuario.Paciente)
+            {
+                BLPaciente bLPaciente = new BLPaciente();
+                btn_BuscarPacientes_VerHistoriaClinica.Visible = false;
+                long usuarioId = Sesion.GetInstance.Usuario.UsuarioID;
+                string usuario = Sesion.GetInstance.Usuario.Usuario;
+                this._paciente = bLPaciente.BuscarPacientes(usuario, "").ToList().Where(x => x.UsuarioID == usuarioId).FirstOrDefault();
+                this.txt_apellido_VerHistoriaClinica.Text = this._paciente.Apellido;
+                this.txt_nombre_VerHistoriaClinica.Text = this._paciente.Nombre;
+                this.txt_Edad_VerHistoriaClinica.Text = this._paciente.Edad.ToString();
+                this.txt_NumeroDocumento_VerHistoriaClinica.Text = this._paciente.DNI.ToString();
+            }
         }
 
         private void btnCancelar_VerHistoriaClinica_Click(object sender, EventArgs e)

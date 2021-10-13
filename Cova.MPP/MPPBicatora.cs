@@ -65,7 +65,10 @@ namespace Cova.MPP
                 datosBitacora.Add("@Funcionalidad", bitacora.Funcionalidad);
                 if(bitacora.Usuario != null)
                 {
-                    datosBitacora.Add("@UsuarioId", bitacora.Usuario.UsuarioID);
+                    if(bitacora.Usuario.UsuarioID != 0)
+                    {
+                        datosBitacora.Add("@UsuarioId", bitacora.Usuario.UsuarioID);
+                    }
                 }
                 return conexionBDD.Escribir(strSQL, datosBitacora);
             }
