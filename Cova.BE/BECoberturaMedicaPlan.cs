@@ -15,5 +15,10 @@ namespace Cova.BE
         {
             this.Nombre = nombre;
         }
+
+        public BECoberturaMedicaPlan()
+        {
+
+        }
     }
 }
