@@ -17,8 +17,7 @@ namespace Cova.Servicios.ControlDeCambio
             }
             catch(Exception ex)
             {
-                //TODO agrega excepcion y loguear error
-                throw ex;
+                throw new ErrorAlObteneControlDeCambioPacienteException(); 
             }
         }
     }

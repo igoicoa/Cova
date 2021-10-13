@@ -143,7 +143,7 @@ namespace Cova.BL
             catch(Exception ex)
             {
                 Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al consultar receta de vacunacion Paciente: " + pacienteAVacunarse.PacienteId + " - " + pacienteAVacunarse.ApellidoNombre + " - " + ex.Message, "Vacunacion Paciente"));
-                throw new ErrorAlActualizarPacienteException();//TODO Modificar excepcion
+                throw new ErrorAlConsultarRecetaException();
             }
 
             return recetaVacuna.RecetaId == 0 ? false : true;

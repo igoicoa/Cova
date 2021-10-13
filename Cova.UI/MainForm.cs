@@ -294,6 +294,7 @@ namespace Cova.UI
             try
             {
                 Sesion.Logout();
+                MessageBox.Show("Sesión finalizada exitosamente.");
             }
             catch(SesionNoIniciadaException ex)
             {

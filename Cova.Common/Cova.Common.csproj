@@ -63,6 +63,7 @@
     <Compile Include="Excepciones\ErrorAlCargarDatosPacienteException.cs" />
     <Compile Include="Excepciones\ErrorAlCargarHistoriaClinicaException.cs" />
     <Compile Include="Excepciones\ErrorAlCargarVacunas.cs" />
+    <Compile Include="Excepciones\ErrorAlConsultarRecetaException.cs" />
     <Compile Include="Excepciones\ErrorAlCrearAntecedentesPersonales.cs" />
     <Compile Include="Excepciones\ErrorAlCrearCertificadoException.cs" />
     <Compile Include="Excepciones\ErrorAlCrearPacienteException.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Excepciones\ErrorAlCrearRecetasException.cs" />
     <Compile Include="Excepciones\ErrorAlCrearVacunasException.cs" />
     <Compile Include="Excepciones\ErrorAlEliminarPermisoException.cs" />
+    <Compile Include="Excepciones\ErrorAlObteneControlDeCambioPacienteException.cs" />
     <Compile Include="Excepciones\ErrorAlObtenerCentrosMedicosException.cs" />
     <Compile Include="Excepciones\ErrorAlObtenerLaboratoriosException.cs" />
     <Compile Include="Excepciones\ErrorAlObtenerPermisosException.cs" />
