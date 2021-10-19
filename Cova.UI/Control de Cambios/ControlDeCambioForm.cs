@@ -35,6 +35,7 @@ namespace Cova.UI.Control_de_Cambios
             {
                 List<BEControlDeCambioPaciente> pacientes = controlDeCambio.ObtenerControlDeCambioPaciente().ToList();
                 DataTable tableControlDeCambios = new DataTable();
+                tableControlDeCambios.Columns.Add("ControlCambioId");
                 tableControlDeCambios.Columns.Add("Fecha Modificacion");
                 tableControlDeCambios.Columns.Add("Tipo Cambio");
                 tableControlDeCambios.Columns.Add("Usuario Modificador");
@@ -60,6 +61,7 @@ namespace Cova.UI.Control_de_Cambios
                 foreach (BEControlDeCambioPaciente paciente in pacientes)
                 {
                     DataRow filaControlDeCambios = tableControlDeCambios.NewRow();
+                    filaControlDeCambios["ControlCambioId"] = paciente.ControlCambioId;
                     filaControlDeCambios["Fecha Modificacion"] = paciente.FechaModificacion;
                     filaControlDeCambios["Tipo Cambio"] = paciente.TipoCambio;
                     filaControlDeCambios["Usuario Modificador"] = paciente.UsuarioModificador.Usuario;
@@ -96,7 +98,7 @@ namespace Cova.UI.Control_de_Cambios
 
                 DataView dataviewControlDeCambios = new DataView(tableControlDeCambios);
                 dgv_ControlCambios.DataSource = dataviewControlDeCambios;
-                dgv_ControlCambios.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgv_ControlCambios.Columns[0].Visible = false;
                 dgv_ControlCambios.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 dgv_ControlCambios.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 dgv_ControlCambios.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -117,6 +119,7 @@ namespace Cova.UI.Control_de_Cambios
                 dgv_ControlCambios.Columns[18].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 dgv_ControlCambios.Columns[19].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 dgv_ControlCambios.Columns[20].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgv_ControlCambios.Columns[21].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             }
             catch (Exception ex)
             {
@@ -130,6 +133,17 @@ namespace Cova.UI.Control_de_Cambios
             if (e.ListItem == null) return;
             BEUsuario usuario = (BEUsuario)e.ListItem;
             e.Value = $"{usuario.UsuarioID} (- {usuario.Usuario})";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dgv_ControlCambios.SelectedRows.Count != 0)
+            {
+                long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[0].Cells["ControlCambioId"].Value);
+                //TODO Implementar metodo en Control de cambio para updetear usuario con COntrolCambioId
+
+                this.Close();
+            }
         }
     }
 }

@@ -2,7 +2,8 @@
 
 AS
 BEGIN
-	SELECT cp.Nombre
+	SELECT cp.ControlCambioId
+	   ,cp.Nombre
 	   ,cp.Apellido
 	   ,cp.DNI
 	   ,cp.FechaNacimiento

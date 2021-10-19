@@ -41,6 +41,7 @@ namespace Cova.UI.Control_de_Cambios
             this.dtp_FechaHasta_ControlCambios = new System.Windows.Forms.DateTimePicker();
             this.dtp_FechaDesde_ControlCambios = new System.Windows.Forms.DateTimePicker();
             this.lbl_ControlCambios = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ControlCambios)).BeginInit();
             this.bg_Filtros_ControlCambios.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +56,7 @@ namespace Cova.UI.Control_de_Cambios
             // 
             // bg_Filtros_ControlCambios
             // 
+            this.bg_Filtros_ControlCambios.Controls.Add(this.button1);
             this.bg_Filtros_ControlCambios.Controls.Add(this.cmb_Usuarios_ControlCambios);
             this.bg_Filtros_ControlCambios.Controls.Add(this.btn_Limpiar_ControlCambios);
             this.bg_Filtros_ControlCambios.Controls.Add(this.btn_Cancelar_ControlCambios);
@@ -163,6 +165,17 @@ namespace Cova.UI.Control_de_Cambios
             this.lbl_ControlCambios.TabIndex = 132;
             this.lbl_ControlCambios.Text = "Control de Cambios";
             // 
+            // button1
+            // 
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(439, 100);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 183;
+            this.button1.Text = "Restaurar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ControlDeCambioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,5 +208,6 @@ namespace Cova.UI.Control_de_Cambios
         private System.Windows.Forms.DateTimePicker dtp_FechaHasta_ControlCambios;
         private System.Windows.Forms.DateTimePicker dtp_FechaDesde_ControlCambios;
         private System.Windows.Forms.Label lbl_ControlCambios;
+        private System.Windows.Forms.Button button1;
     }
 }

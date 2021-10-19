@@ -28,6 +28,8 @@ namespace Cova.MPP
                     {
                         BEControlDeCambioPaciente bEControlDeCambioPaciente = new BEControlDeCambioPaciente();
 
+                        bEControlDeCambioPaciente.ControlCambioId = Convert.ToInt64(fila["ControlCambioId"]);
+
                         BEPaciente paciente = new BEPaciente();
                         paciente.Nombre = Convert.ToString(fila["Nombre"]);
                         paciente.Apellido = Convert.ToString(fila["Apellido"]);

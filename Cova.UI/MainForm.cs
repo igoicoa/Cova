@@ -555,7 +555,7 @@ namespace Cova.UI
 
         private void realizarBackupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RealizarBackupForm frmRealizarbackup = new RealizarBackupForm();
+            RealizarBackupForm frmRealizarbackup = new RealizarBackupForm(this);
             frmRealizarbackup.Show();
         }
 
@@ -564,7 +564,7 @@ namespace Cova.UI
             return (DigitoVerificador.ValidarDVV("VacunaDosis") && DigitoVerificador.ValidarDVH("VacunaDosis"));
         }
 
-        private void OcultarComponentes()
+        public void OcultarComponentes()
         {
             //Menu Administrar
             this.administrarToolStripMenuItem.Enabled = false;

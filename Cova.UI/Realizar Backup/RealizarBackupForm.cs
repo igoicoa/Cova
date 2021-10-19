@@ -13,8 +13,11 @@ namespace Cova.UI.Realizar_Backup
     public partial class RealizarBackupForm : Form
     {
         private List<BEBackup> _backups;
-        public RealizarBackupForm()
+        private MainForm _mainForm;
+
+        public RealizarBackupForm(MainForm mainForm)
         {
+            this._mainForm = mainForm;
             InitializeComponent();
             CargarBackups();
         }
@@ -49,7 +52,8 @@ namespace Cova.UI.Realizar_Backup
                 dgv_Backups.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 dgv_Backups.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 dgv_Backups.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgv_Backups.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;            }
+                dgv_Backups.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
             catch(Exception ex)
             {
                 MessageBox.Show("Huo un error al cargar los backups");
@@ -74,7 +78,7 @@ namespace Cova.UI.Realizar_Backup
                 if (Backup.RealizarBakup(backup))
                 {
                     MessageBox.Show("Backup realizado con exito");
-                    CargarBackups();
+                    this.CargarBackups();
                 }
                 else
                 {
@@ -100,7 +104,10 @@ namespace Cova.UI.Realizar_Backup
                     backup.Archivo = archivo;
                     if (Backup.RealizarRestore(backup))
                     {
-                        MessageBox.Show("Restore realizado con exito");
+                        MessageBox.Show("Restore realizado con exito. Debe volver a iniciar sesion");
+                        Sesion.Logout();
+                        this._mainForm.OcultarComponentes();
+                        this.Close();
                     }
                     else
                     {
