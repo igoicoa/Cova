@@ -11,6 +11,7 @@ using Cova.UI.Administrar_Receta_y_Certificado;
 using Cova.UI.Bitacora;
 using Cova.UI.Control_de_Cambios;
 using Cova.UI.Realizar_Backup;
+using Cova.Servicios.DigitoVerificador;
 
 namespace Cova.UI
 {
@@ -271,6 +272,7 @@ namespace Cova.UI
         {
             TraducirMenu();
             this.seguridadToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.Seguridad) : false;
+            this.realizarBackupToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.RealizarBackup) : false;
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
@@ -294,6 +296,7 @@ namespace Cova.UI
             try
             {
                 Sesion.Logout();
+                this.OcultarComponentes();
                 MessageBox.Show("Sesión finalizada exitosamente.");
             }
             catch(SesionNoIniciadaException ex)
@@ -338,32 +341,112 @@ namespace Cova.UI
 
         private void calendarioDeVacunaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CalendarioDeVacunaciónForm frmCalendarioVacunacion = new CalendarioDeVacunaciónForm();
-            frmCalendarioVacunacion.Show();
+            if(!ValidarIntegridadBDD())
+            {
+                OcultarComponentes();
+                if (Sesion.GetInstance.Usuario.TipoUsuario == BE.Enum.TipoUsuario.Administrador)
+                {
+                    this.InicializarModoRestoreBDD();
+                    MessageBox.Show("Hay un error de integridad en las tablas de BDD. Realice los arreglos necesarios en la BDD");
+                }
+                else
+                {
+                    MessageBox.Show("Hay un error de integridad en las tablas de BDD. Contactese con su administrador");
+                }
+            }
+            else
+            {
+                CalendarioDeVacunaciónForm frmCalendarioVacunacion = new CalendarioDeVacunaciónForm();
+                frmCalendarioVacunacion.Show();
+            }
         }
 
         private void crearVacunasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CrearVacunasForm frmCrearVacunas = new CrearVacunasForm();
-            frmCrearVacunas.Show();
+            if (!ValidarIntegridadBDD())
+            {
+                OcultarComponentes();
+                if (Sesion.GetInstance.Usuario.TipoUsuario == BE.Enum.TipoUsuario.Administrador)
+                {
+                    this.InicializarModoRestoreBDD();
+                    MessageBox.Show("Hay un error de integridad en las tablas de BDD. Realice los arreglos necesarios en la BDD");
+                }
+                else
+                {
+                    MessageBox.Show("Hay un error de integridad en las tablas de BDD. Contactese con su administrador");
+                }
+            }
+            else
+            {
+                CrearVacunasForm frmCrearVacunas = new CrearVacunasForm();
+                frmCrearVacunas.Show();
+            }
         }
 
         private void modificarVacunasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ModificarVacunasForm frmModificarVacunas = new ModificarVacunasForm();
-            frmModificarVacunas.Show();
+            if (!ValidarIntegridadBDD())
+            {
+                OcultarComponentes();
+                if (Sesion.GetInstance.Usuario.TipoUsuario == BE.Enum.TipoUsuario.Administrador)
+                {
+                    this.InicializarModoRestoreBDD();
+                    MessageBox.Show("Hay un error de integridad en las tablas de BDD. Realice los arreglos necesarios en la BDD");
+                }
+                else
+                {
+                    MessageBox.Show("Hay un error de integridad en las tablas de BDD. Contactese con su administrador");
+                }
+            }
+            else
+            {
+                ModificarVacunasForm frmModificarVacunas = new ModificarVacunasForm();
+                frmModificarVacunas.Show();
+            }
         }
 
         private void verVacunasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BuscarVacunasForm frmVerVacunas = new BuscarVacunasForm();
-            frmVerVacunas.Show();
+            if (!ValidarIntegridadBDD())
+            {
+                OcultarComponentes();
+                if (Sesion.GetInstance.Usuario.TipoUsuario == BE.Enum.TipoUsuario.Administrador)
+                {
+                    this.InicializarModoRestoreBDD();
+                    MessageBox.Show("Hay un error de integridad en las tablas de BDD. Realice los arreglos necesarios en la BDD");
+                }
+                else
+                {
+                    MessageBox.Show("Hay un error de integridad en las tablas de BDD. Contactese con su administrador");
+                }
+            }
+            else
+            {
+                BuscarVacunasForm frmVerVacunas = new BuscarVacunasForm();
+                frmVerVacunas.Show();
+            }
         }
 
         private void aplicarVacunaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AplicarVacunaForm frmAplicarVacuna = new AplicarVacunaForm();
-            frmAplicarVacuna.Show();
+            if (!ValidarIntegridadBDD())
+            {
+                OcultarComponentes();
+                if (Sesion.GetInstance.Usuario.TipoUsuario == BE.Enum.TipoUsuario.Administrador)
+                {
+                    this.InicializarModoRestoreBDD();
+                    MessageBox.Show("Hay un error de integridad en las tablas de BDD. Realice los arreglos necesarios en la BDD");
+                }
+                else
+                {
+                    MessageBox.Show("Hay un error de integridad en las tablas de BDD. Contactese con su administrador");
+                }
+            }
+            else
+            {
+                AplicarVacunaForm frmAplicarVacuna = new AplicarVacunaForm();
+                frmAplicarVacuna.Show();
+            }
         }
 
         private void verCalendarioDePacientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -474,6 +557,64 @@ namespace Cova.UI
         {
             RealizarBackupForm frmRealizarbackup = new RealizarBackupForm();
             frmRealizarbackup.Show();
+        }
+
+        private bool ValidarIntegridadBDD()
+        {
+            return (DigitoVerificador.ValidarDVV("VacunaDosis") && DigitoVerificador.ValidarDVH("VacunaDosis"));
+        }
+
+        private void OcultarComponentes()
+        {
+            //Menu Administrar
+            this.administrarToolStripMenuItem.Enabled = false;
+            this.administrarCuentaToolStripMenuItem.Enabled = false;
+            this.crearCuentaToolStripMenuItem.Enabled = false;
+            this.modificarCuentaToolStripMenuItem.Enabled = false;
+            this.verUsuariosToolStripMenuItem.Enabled = false;
+
+            this.administrarVacunasToolStripMenuItem.Enabled = false;
+            this.calendarioDeVacunaciónToolStripMenuItem.Enabled = false;
+            this.crearVacunasToolStripMenuItem.Enabled = false;
+            this.modificarVacunasToolStripMenuItem.Enabled = false;
+            this.verVacunasToolStripMenuItem.Enabled = false;
+            this.aplicarVacunaToolStripMenuItem.Enabled = false;
+
+            this.administrarTurnosToolStripMenuItem.Enabled = false;
+            this.calendarioDeTurnosToolStripMenuItem1.Enabled = false;
+            this.registrarTurnoToolStripMenuItem1.Enabled = false;
+            this.cancelarTurnoToolStripMenuItem1.Enabled = false;
+            this.verMisTurnosToolStripMenuItem.Enabled = false;
+
+            this.administrarCoberturaMedicaToolStripMenuItem.Enabled = false;
+            this.crearCoberturaMedicaToolStripMenuItem.Enabled = false;
+            this.modificarCoberturaMedicaToolStripMenuItem.Enabled = false;
+            this.verCoberturasMedicasToolStripMenuItem.Enabled = false;
+
+            this.administrarHistoriaClinicaToolStripMenuItem.Enabled = false;
+            this.crearHistoriaClinicaToolStripMenuItem.Enabled = false;
+            this.verHistoriaClinicaToolStripMenuItem.Enabled = false;
+
+            this.administrarRecetaCertificadoToolStripMenuItem.Enabled = false;
+            this.crearRecetaCertificadoToolStripMenuItem.Enabled = false;
+            this.modificarRecetaCertificadoToolStripMenuItem.Enabled = false;
+            this.verRecetasCertificadosToolStripMenuItem.Enabled = false;
+
+            //Menu Seguridad
+            this.seguridadToolStripMenuItem.Enabled = false;
+            this.realizarBackupToolStripMenuItem.Enabled = false;
+            this.bitacoraToolStripMenuItem.Enabled = false;
+            this.permisosToolStripMenuItem.Enabled = false;
+            this.asignarPermisosToolStripMenuItem.Enabled = false;
+            this.administrarIdiomaToolStripMenuItem.Enabled = false;
+            this.cambiarIdiomaToolStripMenuItem.Enabled = false;
+            this.crearIdiomaToolStripMenuItem.Enabled = false;
+            this.controlDeCambioToolStripMenuItem.Enabled = false;
+
+            //Menu Informacion
+            this.informaciónToolStripMenuItem.Enabled = false;
+            this.contactoToolStripMenuItem.Enabled = false;
+            this.novedadesToolStripMenuItem.Enabled = false;
         }
     }
 }
