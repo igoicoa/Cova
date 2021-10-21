@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cova.BE;
 using Cova.BE.Bitacora;
 using Cova.Common.Excepciones;
@@ -60,8 +61,13 @@ namespace Cova.BL
             bool coberturaModificada = false;
             try
             {
+                if(!this.ValidarCoberturaMedicaModificada(coberturaMedica))
+                {
+                    throw new PlanCoberturaEnUsoException();
+                }
                 MPPCoberturaMedica mPPCoberturaMedica = new MPPCoberturaMedica();
-                //UPDATE
+                mPPCoberturaMedica.ActualizarCoberturaMedica(coberturaMedica);
+                mPPCoberturaMedica.EliminarPlanesCoberturaMedica(coberturaMedica);
                 foreach (BECoberturaMedicaPlan plan in coberturaMedica.Plan)
                 {
                     coberturaModificada = mPPCoberturaMedica.AgregarPlan(coberturaMedica.Nombre, plan.Nombre);
@@ -76,6 +82,23 @@ namespace Cova.BL
                 throw ex;
             }
             return coberturaModificada;
+        }
+
+        /*PRE: Recibe una cobertura medica modificada con sus planes actualizados
+         *POST: Devuelve true si los planes actuales pueden ser modificados (los eliminados no estan siendo usados por pacientes). Caso contrario devuevle false.
+        */
+        private bool ValidarCoberturaMedicaModificada(BECoberturaMedica coberturaMedica)
+        {
+            MPPCoberturaMedica mPPCoberturaMedica = new MPPCoberturaMedica();
+            List<BECoberturaMedicaPlan> planesEnUso = mPPCoberturaMedica.ObtenerPlanesEnUsoDeCoberturaMedica(coberturaMedica);
+            foreach(BECoberturaMedicaPlan plan in planesEnUso)
+            {
+                if(!coberturaMedica.Plan.Any(c => c.PlanId == plan.PlanId))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
     

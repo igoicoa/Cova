@@ -16,6 +16,17 @@ namespace Cova.UI
         public ModificarCoberturaMedicaForm()
         {
             InitializeComponent();
+            CargarTablaPlanes();
+        }
+
+        public void CargarTablaPlanes()
+        {
+            DataTable tableplanes = new DataTable();
+            tableplanes.Columns.Add("Nombre Plan");
+            this._dataviewPlanes = new DataView(tableplanes);
+            dgv_planes.DataSource = this._dataviewPlanes;
+            dgv_planes.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgv_planes.Visible = false;
         }
 
         private void btn_Cancelar_ModificarCoberturaMedica_Click(object sender, EventArgs e)
@@ -40,11 +51,11 @@ namespace Cova.UI
             this.txt_Nombre_ModificarCoberturaMedica.Text = cobertura.Nombre;
             foreach(BECoberturaMedicaPlan plan in cobertura.Plan)
             {
-                this._coberturaAModificar.Plan.Add(new BECoberturaMedicaPlan(plan.Nombre));
                 DataRow filaPlan = this._dataviewPlanes.Table.NewRow();
                 filaPlan["Nombre Plan"] = plan.Nombre;
                 this._dataviewPlanes.Table.Rows.Add(filaPlan);
             }
+            this.dgv_planes.Visible = true;
         }
 
         private void btn_Agregar_ModificarCoberturaMedica_Click(object sender, EventArgs e)

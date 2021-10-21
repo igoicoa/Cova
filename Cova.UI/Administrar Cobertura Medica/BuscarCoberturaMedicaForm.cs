@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using System.Linq;
 using Cova.BE;
 using Cova.UI.Interfaces;
+using Cova.BL;
+using System.Data;
 
 namespace Cova.UI
 {
@@ -29,6 +31,28 @@ namespace Cova.UI
 
         private void btn_Limpiar_BuscarCoberturaMedica_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btn_Buscar_BuscarCoberturaMedica_Click(object sender, EventArgs e)
+        {
+            BLCoberturaMedica bLCoberturaMedica = new BLCoberturaMedica();
+            this._coberturasMedicas = bLCoberturaMedica.ObtenerCoberturasMedicas().ToList();
+            DataTable tableCoberturas = new DataTable();
+            tableCoberturas.Columns.Add("CoberturaMedicaId");
+            tableCoberturas.Columns.Add("Nombre");
+
+            foreach (BECoberturaMedica coberturaMedica in this._coberturasMedicas)
+            {
+                DataRow filaVacunas = tableCoberturas.NewRow();
+                filaVacunas["CoberturaMedicaId"] = coberturaMedica.CoberturaMedicaId;
+                filaVacunas["Nombre"] = coberturaMedica.Nombre;
+                tableCoberturas.Rows.Add(filaVacunas);
+            }
+
+            DataView dataviewCoberturas = new DataView(tableCoberturas);
+            dtg_ListarCoberturasMedicas_BuscarCoberturaMedica.DataSource = dataviewCoberturas;
+            dtg_ListarCoberturasMedicas_BuscarCoberturaMedica.Columns[0].Visible = false;
+            dtg_ListarCoberturasMedicas_BuscarCoberturaMedica.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
         private void btn_SeleccionarCobertura_BuscarCoberturaMedica_Click(object sender, EventArgs e)

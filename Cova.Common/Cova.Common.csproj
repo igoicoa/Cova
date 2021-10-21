@@ -83,6 +83,7 @@
     <Compile Include="Excepciones\ErrorCrearAdministradorException.cs" />
     <Compile Include="Excepciones\ItemExistenteException.cs" />
     <Compile Include="Excepciones\PacienteYaExisteException.cs" />
+    <Compile Include="Excepciones\PlanCoberturaEnUsoException.cs" />
     <Compile Include="Excepciones\SesionIniciadaException.cs" />
     <Compile Include="Excepciones\SesionNoIniciadaException.cs" />
     <Compile Include="Excepciones\UsuarioInactivoException.cs" />

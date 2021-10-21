@@ -152,6 +152,9 @@
     <Build Include="StoredProcedures\s_RealizarBackup.sql" />
     <Build Include="StoredProcedures\s_AgregarCoberturaMedica.sql" />
     <Build Include="StoredProcedures\s_AgregarCoberturaMedicaPlan.sql" />
+    <Build Include="StoredProcedures\s_ObtenerPlanesCoberturaEnUso.sql" />
+    <Build Include="StoredProcedures\s_EliminarPlanesCoberturaMedica.sql" />
+    <Build Include="StoredProcedures\s_ActualizarCoberturaMedica.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />
