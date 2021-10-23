@@ -1,7 +1,7 @@
 ﻿using Cova.BE;
 using Cova.UI.Interfaces;
 using System;
-using System.Collections.Generic;
+using System.Linq;
 using System.Data;
 using System.Windows.Forms;
 using Cova.BL;
@@ -47,6 +47,7 @@ namespace Cova.UI
 
         public void CargarCobertura(BECoberturaMedica cobertura)
         {
+            this._dataviewPlanes.Table.Clear();
             this._coberturaAModificar = cobertura;
             this.txt_Nombre_ModificarCoberturaMedica.Text = cobertura.Nombre;
             foreach(BECoberturaMedicaPlan plan in cobertura.Plan)
@@ -76,7 +77,7 @@ namespace Cova.UI
             if (dgv_planes.SelectedRows.Count != 0)
             {
                 string plan = Convert.ToString(dgv_planes.SelectedRows[0].Cells["Nombre Plan"].Value);
-                this._coberturaAModificar.Plan.Remove(new BECoberturaMedicaPlan(plan));
+                this._coberturaAModificar.Plan = this._coberturaAModificar.Plan.Where(x => x.Nombre != plan).ToList();
                 dgv_planes.Rows.Remove(dgv_planes.SelectedRows[0]);
             }
             else

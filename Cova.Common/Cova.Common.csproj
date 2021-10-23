@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Excepciones\AdministradorYaExisteException.cs" />
     <Compile Include="Excepciones\BitacoraYaCreadaException.cs" />
+    <Compile Include="Excepciones\CoberturaMedicaYaExisteException.cs" />
     <Compile Include="Excepciones\ErrorAlActualizarAdministradorException.cs" />
     <Compile Include="Excepciones\ErrorAlActualizarCertificadoException.cs" />
     <Compile Include="Excepciones\ErrorAlActualizarPacienteException.cs" />

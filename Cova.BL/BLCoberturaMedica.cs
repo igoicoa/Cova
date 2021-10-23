@@ -32,17 +32,22 @@ namespace Cova.BL
         public bool CrearCoberturaMedica(BECoberturaMedica coberturaMedica)
         {
             bool coberturaCreada = false;
+            MPPCoberturaMedica mPPCoberturaMedica = new MPPCoberturaMedica();
             try
             {
-                MPPCoberturaMedica mPPCoberturaMedica = new MPPCoberturaMedica();
+                if(mPPCoberturaMedica.ObtenerCoberturasMedicas().Where(x => x.Nombre == coberturaMedica.Nombre).FirstOrDefault() != null)
+                {
+                    throw new CoberturaMedicaYaExisteException();
+                }
                 coberturaCreada = mPPCoberturaMedica.AgregarCoberturaMedica(coberturaMedica);
+                coberturaMedica.CoberturaMedicaId = mPPCoberturaMedica.ObtenerCoberturasMedicas().Where(x => x.Nombre == coberturaMedica.Nombre).FirstOrDefault().CoberturaMedicaId;
                 if(!coberturaCreada)
                 {
                     return false;
                 }
                 foreach(BECoberturaMedicaPlan plan in coberturaMedica.Plan)
                 {
-                    coberturaCreada = mPPCoberturaMedica.AgregarPlan(coberturaMedica.Nombre, plan.Nombre);
+                    coberturaCreada = mPPCoberturaMedica.AgregarPlan(coberturaMedica.CoberturaMedicaId, plan.Nombre);
                     if (!coberturaCreada)
                     {
                         return false;
@@ -59,21 +64,47 @@ namespace Cova.BL
         public bool ModificarCoberturaMedica(BECoberturaMedica coberturaMedica)
         {
             bool coberturaModificada = false;
+            MPPCoberturaMedica mPPCoberturaMedica = new MPPCoberturaMedica();
+            List<BECoberturaMedicaPlan> planesActuales = mPPCoberturaMedica.ObtenerCoberturasMedicas().Where(x => x.CoberturaMedicaId == coberturaMedica.CoberturaMedicaId).FirstOrDefault().Plan.ToList();
             try
             {
-                if(!this.ValidarCoberturaMedicaModificada(coberturaMedica))
+                if (mPPCoberturaMedica.ObtenerCoberturasMedicas().Where(x => x.Nombre == coberturaMedica.Nombre).FirstOrDefault() != null)
                 {
-                    throw new PlanCoberturaEnUsoException();
+                    throw new CoberturaMedicaYaExisteException();
                 }
-                MPPCoberturaMedica mPPCoberturaMedica = new MPPCoberturaMedica();
+
+                List<BECoberturaMedicaPlan> planesEnUso = mPPCoberturaMedica.ObtenerPlanesEnUsoDeCoberturaMedica(coberturaMedica);
+                foreach (BECoberturaMedicaPlan plan in planesEnUso)
+                {
+                    if (!coberturaMedica.Plan.Any(c => c.PlanId == plan.PlanId))
+                    {
+                        throw new PlanCoberturaEnUsoException();
+                    }
+                }
+
+                foreach (BECoberturaMedicaPlan planActual in planesActuales)
+                {
+                    if (!planesEnUso.Any(c => c.PlanId == planActual.PlanId))
+                    {
+                        coberturaModificada = mPPCoberturaMedica.EliminarPlanCoberturaMedica(planActual);
+                        if (!coberturaModificada)
+                        {
+                            return false;
+                        }
+                    }
+                }
+
                 mPPCoberturaMedica.ActualizarCoberturaMedica(coberturaMedica);
-                mPPCoberturaMedica.EliminarPlanesCoberturaMedica(coberturaMedica);
+
                 foreach (BECoberturaMedicaPlan plan in coberturaMedica.Plan)
                 {
-                    coberturaModificada = mPPCoberturaMedica.AgregarPlan(coberturaMedica.Nombre, plan.Nombre);
-                    if (!coberturaModificada)
+                    if(!planesEnUso.Any(c => c.PlanId == plan.PlanId))
                     {
-                        return false;
+                        coberturaModificada = mPPCoberturaMedica.AgregarPlan(coberturaMedica.CoberturaMedicaId, plan.Nombre);
+                        if (!coberturaModificada)
+                        {
+                            return false;
+                        }
                     }
                 }
             }
@@ -84,22 +115,6 @@ namespace Cova.BL
             return coberturaModificada;
         }
 
-        /*PRE: Recibe una cobertura medica modificada con sus planes actualizados
-         *POST: Devuelve true si los planes actuales pueden ser modificados (los eliminados no estan siendo usados por pacientes). Caso contrario devuevle false.
-        */
-        private bool ValidarCoberturaMedicaModificada(BECoberturaMedica coberturaMedica)
-        {
-            MPPCoberturaMedica mPPCoberturaMedica = new MPPCoberturaMedica();
-            List<BECoberturaMedicaPlan> planesEnUso = mPPCoberturaMedica.ObtenerPlanesEnUsoDeCoberturaMedica(coberturaMedica);
-            foreach(BECoberturaMedicaPlan plan in planesEnUso)
-            {
-                if(!coberturaMedica.Plan.Any(c => c.PlanId == plan.PlanId))
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
     }
     
 }

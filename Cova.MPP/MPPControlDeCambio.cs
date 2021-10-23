@@ -31,6 +31,7 @@ namespace Cova.MPP
                         bEControlDeCambioPaciente.ControlCambioId = Convert.ToInt64(fila["ControlCambioId"]);
 
                         BEPaciente paciente = new BEPaciente();
+                        paciente.PacienteId = Convert.ToInt64(fila["PacienteId"]);
                         paciente.Nombre = Convert.ToString(fila["Nombre"]);
                         paciente.Apellido = Convert.ToString(fila["Apellido"]);
                         paciente.DNI = Convert.ToInt32(fila["DNI"]);
@@ -80,6 +81,23 @@ namespace Cova.MPP
                 throw ex;
             }
             return pacientes;
+        }
+
+        public bool RestaurarPaciente(long controlDeCambioId, long usuarioModificador)
+        {
+            Hashtable datosControlDeCambio = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_RestaurarPaciente"; 
+                datosControlDeCambio.Add("@ControlDeCambioId", controlDeCambioId);
+                datosControlDeCambio.Add("@UsuarioModificador", usuarioModificador);
+                return conexionBDD.Escribir(strSQL, datosControlDeCambio);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

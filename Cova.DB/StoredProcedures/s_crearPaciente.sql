@@ -26,6 +26,7 @@ BEGIN
 	DECLARE @IdUsuario					BIGINT,
 			@IdCoberturaMedicaPaciente	BIGINT = NULL,
 			@IdDomicilio				BIGINT,
+			@IdPaciente					BIGINT,
 			@NombreUsuario				VARCHAR(30),
 			@ContadorNombre				INT = 0
 
@@ -57,10 +58,11 @@ BEGIN
 	INSERT INTO [dbo].[Paciente] (Apellido, Nombre, DNI, FechaNacimiento, Sexo, EstadoCivil, Telefono, Email, CoberturaMedicaPacienteId, UsuarioID, DomicilioId)
 	VALUES
 	(@Apellido, @Nombre, @DNI, @FechaNacimiento, @Sexo, @EstadoCivil, @Telefono,  @Email, @IdCoberturaMedicaPaciente, @IdUsuario, @IdDomicilio)
+	SET @IdPaciente = SCOPE_IDENTITY();
 
-	INSERT INTO [dbo].[ControlCambio_Paciente] (Apellido, Nombre, DNI, FechaNacimiento, Sexo, EstadoCivil, Telefono, Email, Calle, Numero, Piso, Localidad, Provincia, Pais, CoberturaMedicaId, CoberturaMedicaPlanId, NumeroAfiliado, FechaVencimiento, UsuarioModificadorId, FechaModificacion, TipoCambio)
+	INSERT INTO [dbo].[ControlCambio_Paciente] (Apellido, PacienteId, Nombre, DNI, FechaNacimiento, Sexo, EstadoCivil, Telefono, Email, Calle, Numero, Piso, Localidad, Provincia, Pais, CoberturaMedicaId, CoberturaMedicaPlanId, NumeroAfiliado, FechaVencimiento, UsuarioModificadorId, FechaModificacion, TipoCambio)
 	VALUES
-	(@Apellido, @Nombre, @DNI, @FechaNacimiento, @Sexo, @EstadoCivil, @Telefono, @Email, @Calle, @Numero, @Piso, @Localidad, @Provincia, @Pais, @CoberturaMedicaId, @CoberturaMedicaPlanId, @CoberturaMedicaNumeroAfiliado, @CoberturaMedicaFechaVencimiento, @UsuarioModificadorId, GETDATE(), 'CREACION')
+	(@Apellido, @IdPaciente, @Nombre, @DNI, @FechaNacimiento, @Sexo, @EstadoCivil, @Telefono, @Email, @Calle, @Numero, @Piso, @Localidad, @Provincia, @Pais, @CoberturaMedicaId, @CoberturaMedicaPlanId, @CoberturaMedicaNumeroAfiliado, @CoberturaMedicaFechaVencimiento, @UsuarioModificadorId, GETDATE(), 'CREACION')
 	
 	EXEC [dbo].[s_AgregarPermisosPaciente] @IDUsuario
 END

@@ -156,6 +156,7 @@ namespace Cova.UI
             this.dgv_planes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_planes.Location = new System.Drawing.Point(476, 113);
             this.dgv_planes.Name = "dgv_planes";
+            this.dgv_planes.ReadOnly = true;
             this.dgv_planes.Size = new System.Drawing.Size(240, 165);
             this.dgv_planes.TabIndex = 148;
             // 

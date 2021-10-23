@@ -90,14 +90,14 @@ namespace Cova.MPP
             }
         }
 
-        public bool AgregarPlan(string coberturaMedicaNombre, string planNombre)
+        public bool AgregarPlan(int coberturaMedicaId, string planNombre)
         {
             Hashtable datosCoberturaMedicaPlan = new Hashtable();
             try
             {
                 ConexionDB conexionBDD = new ConexionDB();
                 string strSQL = @"s_AgregarCoberturaMedicaPlan";
-                datosCoberturaMedicaPlan.Add("@CoberturaNombre", coberturaMedicaNombre);
+                datosCoberturaMedicaPlan.Add("@CoberturaMedicaId", coberturaMedicaId);
                 datosCoberturaMedicaPlan.Add("@CoberturaPlanNombre", planNombre);
                 return conexionBDD.Escribir(strSQL, datosCoberturaMedicaPlan);
             }
@@ -106,6 +106,23 @@ namespace Cova.MPP
                 throw ex;
             }
         }
+
+        public bool EliminarPlanCoberturaMedica(BECoberturaMedicaPlan plan)
+        {
+            Hashtable datosPlanCoberturaMedica = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_EliminarPlanCoberturaMedica";
+                datosPlanCoberturaMedica.Add("@PlanId", plan.PlanId);
+                return conexionBDD.Escribir(strSQL, datosPlanCoberturaMedica);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public bool EliminarPlanesCoberturaMedica(BECoberturaMedica coberturaMedica)
         {
             Hashtable datosCoberturaMedica = new Hashtable();

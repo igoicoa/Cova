@@ -20,5 +20,18 @@ namespace Cova.Servicios.ControlDeCambio
                 throw new ErrorAlObteneControlDeCambioPacienteException(); 
             }
         }
+
+        public bool RestaurarPaciente(long controlDeCambioId)
+        {
+            try
+            {
+                MPPControlDeCambio mPPControlCambio = new MPPControlDeCambio();
+                return mPPControlCambio.RestaurarPaciente(controlDeCambioId, Sesion.Sesion.GetInstance.Usuario.UsuarioID);
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorAlObteneControlDeCambioPacienteException();
+            }
+        }
     }
 }

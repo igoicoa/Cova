@@ -155,6 +155,8 @@
     <Build Include="StoredProcedures\s_ObtenerPlanesCoberturaEnUso.sql" />
     <Build Include="StoredProcedures\s_EliminarPlanesCoberturaMedica.sql" />
     <Build Include="StoredProcedures\s_ActualizarCoberturaMedica.sql" />
+    <Build Include="StoredProcedures\s_EliminarPlanCoberturaMedica.sql" />
+    <Build Include="StoredProcedures\s_RestaurarPaciente.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />
