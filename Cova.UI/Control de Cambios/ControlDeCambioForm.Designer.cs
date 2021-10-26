@@ -31,17 +31,15 @@ namespace Cova.UI.Control_de_Cambios
         {
             this.dgv_ControlCambios = new System.Windows.Forms.DataGridView();
             this.bg_Filtros_ControlCambios = new System.Windows.Forms.GroupBox();
-            this.cmb_Usuarios_ControlCambios = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn_Limpiar_ControlCambios = new System.Windows.Forms.Button();
             this.btn_Cancelar_ControlCambios = new System.Windows.Forms.Button();
             this.btn_Filtrar_ControlCambios = new System.Windows.Forms.Button();
-            this.lbl_Usuario_ControlCambios = new System.Windows.Forms.Label();
             this.lbl_FechaHasta_ControlCambios = new System.Windows.Forms.Label();
             this.lbl_FechaDesde_ControlCambios = new System.Windows.Forms.Label();
             this.dtp_FechaHasta_ControlCambios = new System.Windows.Forms.DateTimePicker();
             this.dtp_FechaDesde_ControlCambios = new System.Windows.Forms.DateTimePicker();
             this.lbl_ControlCambios = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ControlCambios)).BeginInit();
             this.bg_Filtros_ControlCambios.SuspendLayout();
             this.SuspendLayout();
@@ -57,11 +55,9 @@ namespace Cova.UI.Control_de_Cambios
             // bg_Filtros_ControlCambios
             // 
             this.bg_Filtros_ControlCambios.Controls.Add(this.button1);
-            this.bg_Filtros_ControlCambios.Controls.Add(this.cmb_Usuarios_ControlCambios);
             this.bg_Filtros_ControlCambios.Controls.Add(this.btn_Limpiar_ControlCambios);
             this.bg_Filtros_ControlCambios.Controls.Add(this.btn_Cancelar_ControlCambios);
             this.bg_Filtros_ControlCambios.Controls.Add(this.btn_Filtrar_ControlCambios);
-            this.bg_Filtros_ControlCambios.Controls.Add(this.lbl_Usuario_ControlCambios);
             this.bg_Filtros_ControlCambios.Controls.Add(this.lbl_FechaHasta_ControlCambios);
             this.bg_Filtros_ControlCambios.Controls.Add(this.lbl_FechaDesde_ControlCambios);
             this.bg_Filtros_ControlCambios.Controls.Add(this.dtp_FechaHasta_ControlCambios);
@@ -73,15 +69,16 @@ namespace Cova.UI.Control_de_Cambios
             this.bg_Filtros_ControlCambios.TabStop = false;
             this.bg_Filtros_ControlCambios.Text = "Filtros";
             // 
-            // cmb_Usuarios_ControlCambios
+            // button1
             // 
-            this.cmb_Usuarios_ControlCambios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Usuarios_ControlCambios.FormattingEnabled = true;
-            this.cmb_Usuarios_ControlCambios.Location = new System.Drawing.Point(439, 25);
-            this.cmb_Usuarios_ControlCambios.Name = "cmb_Usuarios_ControlCambios";
-            this.cmb_Usuarios_ControlCambios.Size = new System.Drawing.Size(132, 21);
-            this.cmb_Usuarios_ControlCambios.TabIndex = 182;
-            this.cmb_Usuarios_ControlCambios.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cmb_Usuarios_ControlCambios_Format);
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(439, 100);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 183;
+            this.button1.Text = "Restaurar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_Limpiar_ControlCambios
             // 
@@ -112,15 +109,6 @@ namespace Cova.UI.Control_de_Cambios
             this.btn_Filtrar_ControlCambios.Text = "Filtrar";
             this.btn_Filtrar_ControlCambios.UseVisualStyleBackColor = true;
             this.btn_Filtrar_ControlCambios.Click += new System.EventHandler(this.btn_Filtrar_ControlCambios_Click);
-            // 
-            // lbl_Usuario_ControlCambios
-            // 
-            this.lbl_Usuario_ControlCambios.AutoSize = true;
-            this.lbl_Usuario_ControlCambios.Location = new System.Drawing.Point(366, 25);
-            this.lbl_Usuario_ControlCambios.Name = "lbl_Usuario_ControlCambios";
-            this.lbl_Usuario_ControlCambios.Size = new System.Drawing.Size(43, 13);
-            this.lbl_Usuario_ControlCambios.TabIndex = 135;
-            this.lbl_Usuario_ControlCambios.Text = "Usuario";
             // 
             // lbl_FechaHasta_ControlCambios
             // 
@@ -165,17 +153,6 @@ namespace Cova.UI.Control_de_Cambios
             this.lbl_ControlCambios.TabIndex = 132;
             this.lbl_ControlCambios.Text = "Control de Cambios";
             // 
-            // button1
-            // 
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(439, 100);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 183;
-            this.button1.Text = "Restaurar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // ControlDeCambioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,11 +175,9 @@ namespace Cova.UI.Control_de_Cambios
 
         private System.Windows.Forms.DataGridView dgv_ControlCambios;
         private System.Windows.Forms.GroupBox bg_Filtros_ControlCambios;
-        private System.Windows.Forms.ComboBox cmb_Usuarios_ControlCambios;
         private System.Windows.Forms.Button btn_Limpiar_ControlCambios;
         private System.Windows.Forms.Button btn_Cancelar_ControlCambios;
         private System.Windows.Forms.Button btn_Filtrar_ControlCambios;
-        private System.Windows.Forms.Label lbl_Usuario_ControlCambios;
         private System.Windows.Forms.Label lbl_FechaHasta_ControlCambios;
         private System.Windows.Forms.Label lbl_FechaDesde_ControlCambios;
         private System.Windows.Forms.DateTimePicker dtp_FechaHasta_ControlCambios;

@@ -16,7 +16,6 @@ namespace Cova.UI.Control_de_Cambios
         {
             InitializeComponent();
             BLUsuario bLUsuario = new BLUsuario();
-            cmb_Usuarios_ControlCambios.DataSource = bLUsuario.BuscarUsuarios("", "");
         }
 
         private void btn_Cancelar_ControlCambios_Click(object sender, EventArgs e)
@@ -128,19 +127,32 @@ namespace Cova.UI.Control_de_Cambios
             
         }
 
-        private void cmb_Usuarios_ControlCambios_Format(object sender, ListControlConvertEventArgs e)
-        {
-            if (e.ListItem == null) return;
-            BEUsuario usuario = (BEUsuario)e.ListItem;
-            e.Value = $"{usuario.UsuarioID} (- {usuario.Usuario})";
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (dgv_ControlCambios.SelectedRows.Count != 0)
             {
                 long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[0].Cells["ControlCambioId"].Value);
-                //TODO Implementar metodo en Control de cambio para updetear usuario con COntrolCambioId
+                DateTime FechaModificacion = Convert.ToDateTime(dgv_ControlCambios.SelectedRows[1].Cells["FechaModificacion"].Value);
+                long tipoCambio = Convert.ToInt64(dgv_ControlCambios.SelectedRows[2].Cells["tipoCambio"].Value);
+                long usuarioModificador = Convert.ToInt64(dgv_ControlCambios.SelectedRows[3].Cells["usuarioModificador"].Value);
+                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[4].Cells["ControlCambioId"].Value);
+                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[5].Cells["ControlCambioId"].Value);
+                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[6].Cells["ControlCambioId"].Value);
+                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[7].Cells["ControlCambioId"].Value);
+                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[8].Cells["ControlCambioId"].Value);
+                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[9].Cells["ControlCambioId"].Value);
+                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[10].Cells["ControlCambioId"].Value);
+                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[11].Cells["ControlCambioId"].Value);
+                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[12].Cells["ControlCambioId"].Value);
+                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[13].Cells["ControlCambioId"].Value);
+                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[14].Cells["ControlCambioId"].Value);
+                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[15].Cells["ControlCambioId"].Value);
+                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[16].Cells["ControlCambioId"].Value);
+                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[17].Cells["ControlCambioId"].Value);
+                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[18].Cells["ControlCambioId"].Value);
+                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[19].Cells["ControlCambioId"].Value);
+                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[20].Cells["ControlCambioId"].Value);
+                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[21].Cells["ControlCambioId"].Value);
 
                 this.Close();
             }

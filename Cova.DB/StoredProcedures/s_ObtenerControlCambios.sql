@@ -3,6 +3,7 @@
 AS
 BEGIN
 	SELECT cp.ControlCambioId
+	   ,cp.PacienteId
 	   ,cp.Nombre
 	   ,cp.Apellido
 	   ,cp.DNI
