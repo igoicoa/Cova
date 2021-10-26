@@ -43,12 +43,11 @@ BEGIN
 			@Pais								= c.Pais,
 			@CoberturaMedicaId					= c.CoberturaMedicaId,
 			@CoberturaMedicaPlanId				= c.CoberturaMedicaPlanId,
-			@CoberturaMedicaNumeroAfiliado		= c.CoberturaMedicaNumeroAfiliado,
-			@CoberturaMedicaFechaVencimiento	= c.CoberturaMedicaFechaVencimiento,
-			@Activo								= c.Activo,
-			@UsuarioModificadorId				= @UsuarioModificador
-	FROM [dbo].[ControlDeCambio_Paciete] c
-	WHERE c.ControlDeCambioId = @ControlDeCambioId
+			@CoberturaMedicaNumeroAfiliado		= c.NumeroAfiliado,
+			@CoberturaMedicaFechaVencimiento	= c.FechaVencimiento,
+			@Activo								= c.Activo
+	FROM [dbo].[ControlCambio_Paciente] c
+	WHERE c.ControlCambioId = @ControlDeCambioId
 
 	EXEC[dbo].[s_ActualizarPaciente]	 @UsuarioId
 										,@Apellido	
@@ -70,5 +69,6 @@ BEGIN
 										,@CoberturaMedicaNumeroAfiliado
 										,@CoberturaMedicaFechaVencimiento
 										,@Activo
-										,@UsuarioModificadorId
+										,NULL
+										,@UsuarioModificador
 END

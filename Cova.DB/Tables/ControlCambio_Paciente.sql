@@ -3,6 +3,8 @@
 	[ControlCambioId]			BIGINT			NOT NULL	IDENTITY(1,1)
 		CONSTRAINT	[PK_ControlCambio_PacienteId]	PRIMARY KEY CLUSTERED,
     [PacienteId]                BIGINT          NOT NULL,
+    [UsuarioId]                 BIGINT          NOT NULL,
+    [Activo]                    BIT             NULL,
 	[Nombre]		            VARCHAR(120)	NULL, 
     [Apellido]		            VARCHAR(120)	NULL, 
     [DNI]                       INT             NULL, 

@@ -60,9 +60,9 @@ BEGIN
 	(@Apellido, @Nombre, @DNI, @FechaNacimiento, @Sexo, @EstadoCivil, @Telefono,  @Email, @IdCoberturaMedicaPaciente, @IdUsuario, @IdDomicilio)
 	SET @IdPaciente = SCOPE_IDENTITY();
 
-	INSERT INTO [dbo].[ControlCambio_Paciente] (Apellido, PacienteId, Nombre, DNI, FechaNacimiento, Sexo, EstadoCivil, Telefono, Email, Calle, Numero, Piso, Localidad, Provincia, Pais, CoberturaMedicaId, CoberturaMedicaPlanId, NumeroAfiliado, FechaVencimiento, UsuarioModificadorId, FechaModificacion, TipoCambio)
+	INSERT INTO [dbo].[ControlCambio_Paciente] (Apellido, PacienteId, UsuarioId, Activo, Nombre, DNI, FechaNacimiento, Sexo, EstadoCivil, Telefono, Email, Calle, Numero, Piso, Localidad, Provincia, Pais, CoberturaMedicaId, CoberturaMedicaPlanId, NumeroAfiliado, FechaVencimiento, UsuarioModificadorId, FechaModificacion, TipoCambio)
 	VALUES
-	(@Apellido, @IdPaciente, @Nombre, @DNI, @FechaNacimiento, @Sexo, @EstadoCivil, @Telefono, @Email, @Calle, @Numero, @Piso, @Localidad, @Provincia, @Pais, @CoberturaMedicaId, @CoberturaMedicaPlanId, @CoberturaMedicaNumeroAfiliado, @CoberturaMedicaFechaVencimiento, @UsuarioModificadorId, GETDATE(), 'CREACION')
+	(@Apellido, @IdPaciente, @IdUsuario, 1, @Nombre, @DNI, @FechaNacimiento, @Sexo, @EstadoCivil, @Telefono, @Email, @Calle, @Numero, @Piso, @Localidad, @Provincia, @Pais, @CoberturaMedicaId, @CoberturaMedicaPlanId, @CoberturaMedicaNumeroAfiliado, @CoberturaMedicaFechaVencimiento, @UsuarioModificadorId, GETDATE(), 'CREACION')
 	
 	EXEC [dbo].[s_AgregarPermisosPaciente] @IDUsuario
 END

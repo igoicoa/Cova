@@ -131,30 +131,28 @@ namespace Cova.UI.Control_de_Cambios
         {
             if (dgv_ControlCambios.SelectedRows.Count != 0)
             {
-                long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[0].Cells["ControlCambioId"].Value);
-                DateTime FechaModificacion = Convert.ToDateTime(dgv_ControlCambios.SelectedRows[1].Cells["FechaModificacion"].Value);
-                long tipoCambio = Convert.ToInt64(dgv_ControlCambios.SelectedRows[2].Cells["tipoCambio"].Value);
-                long usuarioModificador = Convert.ToInt64(dgv_ControlCambios.SelectedRows[3].Cells["usuarioModificador"].Value);
-                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[4].Cells["ControlCambioId"].Value);
-                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[5].Cells["ControlCambioId"].Value);
-                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[6].Cells["ControlCambioId"].Value);
-                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[7].Cells["ControlCambioId"].Value);
-                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[8].Cells["ControlCambioId"].Value);
-                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[9].Cells["ControlCambioId"].Value);
-                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[10].Cells["ControlCambioId"].Value);
-                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[11].Cells["ControlCambioId"].Value);
-                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[12].Cells["ControlCambioId"].Value);
-                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[13].Cells["ControlCambioId"].Value);
-                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[14].Cells["ControlCambioId"].Value);
-                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[15].Cells["ControlCambioId"].Value);
-                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[16].Cells["ControlCambioId"].Value);
-                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[17].Cells["ControlCambioId"].Value);
-                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[18].Cells["ControlCambioId"].Value);
-                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[19].Cells["ControlCambioId"].Value);
-                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[20].Cells["ControlCambioId"].Value);
-                //long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[21].Cells["ControlCambioId"].Value);
-
-                this.Close();
+                try
+                {
+                    long controlCambioId = Convert.ToInt64(dgv_ControlCambios.SelectedRows[0].Cells["ControlCambioId"].Value);
+                    ControlDeCambio controlDeCambio = new ControlDeCambio();
+                    if(controlDeCambio.RestaurarPaciente(controlCambioId))
+                    {
+                        MessageBox.Show("Paciente restaurado con exito");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error al restaurar el paciente");
+                    }
+                    this.Close();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un usuario a restaurar");
             }
         }
     }

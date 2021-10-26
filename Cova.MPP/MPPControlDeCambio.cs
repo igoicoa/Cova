@@ -32,6 +32,7 @@ namespace Cova.MPP
 
                         BEPaciente paciente = new BEPaciente();
                         paciente.PacienteId = Convert.ToInt64(fila["PacienteId"]);
+                        paciente.UsuarioID = Convert.ToInt64(fila["UsuarioId"]);
                         paciente.Nombre = Convert.ToString(fila["Nombre"]);
                         paciente.Apellido = Convert.ToString(fila["Apellido"]);
                         paciente.DNI = Convert.ToInt32(fila["DNI"]);
@@ -67,6 +68,7 @@ namespace Cova.MPP
                         bEControlDeCambioPaciente.Paciente = paciente;
 
                         BEUsuario usuarioModificador = new BEUsuario();
+                        usuarioModificador.UsuarioID = Convert.ToInt64(fila["UsuarioModificadorId"]);
                         usuarioModificador.Usuario = Convert.ToString(fila["UsuarioModificador"]);
                         bEControlDeCambioPaciente.UsuarioModificador = usuarioModificador;
                         bEControlDeCambioPaciente.FechaModificacion = Convert.ToDateTime(fila["FechaModificacion"]);

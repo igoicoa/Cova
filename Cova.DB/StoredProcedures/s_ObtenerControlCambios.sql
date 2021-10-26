@@ -4,6 +4,7 @@ AS
 BEGIN
 	SELECT cp.ControlCambioId
 	   ,cp.PacienteId
+	   ,cp.UsuarioId
 	   ,cp.Nombre
 	   ,cp.Apellido
 	   ,cp.DNI
@@ -22,7 +23,7 @@ BEGIN
 	   ,cmp.Nombre AS [Plan]
 	   ,cp.NumeroAfiliado
 	   ,cp.FechaVencimiento
-	   ,u.UsuarioID
+	   ,u.UsuarioID AS UsuarioModificadorId
 	   ,u.Usuario AS UsuarioModificador
 	   ,cp.FechaModificacion
 	   ,cp.TipoCambio
