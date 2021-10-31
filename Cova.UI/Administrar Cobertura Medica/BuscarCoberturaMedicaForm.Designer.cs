@@ -54,7 +54,7 @@ namespace Cova.UI
             // btn_SeleccionarCobertura_BuscarCoberturaMedica
             // 
             this.btn_SeleccionarCobertura_BuscarCoberturaMedica.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_SeleccionarCobertura_BuscarCoberturaMedica.Location = new System.Drawing.Point(281, 59);
+            this.btn_SeleccionarCobertura_BuscarCoberturaMedica.Location = new System.Drawing.Point(212, 117);
             this.btn_SeleccionarCobertura_BuscarCoberturaMedica.Name = "btn_SeleccionarCobertura_BuscarCoberturaMedica";
             this.btn_SeleccionarCobertura_BuscarCoberturaMedica.Size = new System.Drawing.Size(136, 23);
             this.btn_SeleccionarCobertura_BuscarCoberturaMedica.TabIndex = 160;
@@ -65,7 +65,7 @@ namespace Cova.UI
             // btn_Limpiar_BuscarCoberturaMedica
             // 
             this.btn_Limpiar_BuscarCoberturaMedica.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Limpiar_BuscarCoberturaMedica.Location = new System.Drawing.Point(423, 59);
+            this.btn_Limpiar_BuscarCoberturaMedica.Location = new System.Drawing.Point(233, 168);
             this.btn_Limpiar_BuscarCoberturaMedica.Name = "btn_Limpiar_BuscarCoberturaMedica";
             this.btn_Limpiar_BuscarCoberturaMedica.Size = new System.Drawing.Size(78, 23);
             this.btn_Limpiar_BuscarCoberturaMedica.TabIndex = 159;
@@ -75,7 +75,7 @@ namespace Cova.UI
             // 
             // btn_Cancelar_BuscarCoberturaMedica
             // 
-            this.btn_Cancelar_BuscarCoberturaMedica.Location = new System.Drawing.Point(507, 59);
+            this.btn_Cancelar_BuscarCoberturaMedica.Location = new System.Drawing.Point(233, 216);
             this.btn_Cancelar_BuscarCoberturaMedica.Name = "btn_Cancelar_BuscarCoberturaMedica";
             this.btn_Cancelar_BuscarCoberturaMedica.Size = new System.Drawing.Size(78, 23);
             this.btn_Cancelar_BuscarCoberturaMedica.TabIndex = 158;
@@ -85,7 +85,7 @@ namespace Cova.UI
             // 
             // btn_Buscar_BuscarCoberturaMedica
             // 
-            this.btn_Buscar_BuscarCoberturaMedica.Location = new System.Drawing.Point(200, 59);
+            this.btn_Buscar_BuscarCoberturaMedica.Location = new System.Drawing.Point(236, 69);
             this.btn_Buscar_BuscarCoberturaMedica.Name = "btn_Buscar_BuscarCoberturaMedica";
             this.btn_Buscar_BuscarCoberturaMedica.Size = new System.Drawing.Size(75, 23);
             this.btn_Buscar_BuscarCoberturaMedica.TabIndex = 157;
@@ -96,16 +96,16 @@ namespace Cova.UI
             // dtg_ListarCoberturasMedicas_BuscarCoberturaMedica
             // 
             this.dtg_ListarCoberturasMedicas_BuscarCoberturaMedica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_ListarCoberturasMedicas_BuscarCoberturaMedica.Location = new System.Drawing.Point(12, 88);
+            this.dtg_ListarCoberturasMedicas_BuscarCoberturaMedica.Location = new System.Drawing.Point(12, 50);
             this.dtg_ListarCoberturasMedicas_BuscarCoberturaMedica.Name = "dtg_ListarCoberturasMedicas_BuscarCoberturaMedica";
-            this.dtg_ListarCoberturasMedicas_BuscarCoberturaMedica.Size = new System.Drawing.Size(791, 306);
+            this.dtg_ListarCoberturasMedicas_BuscarCoberturaMedica.Size = new System.Drawing.Size(194, 341);
             this.dtg_ListarCoberturasMedicas_BuscarCoberturaMedica.TabIndex = 171;
             // 
             // BuscarCoberturaMedicaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 401);
+            this.ClientSize = new System.Drawing.Size(354, 403);
             this.Controls.Add(this.dtg_ListarCoberturasMedicas_BuscarCoberturaMedica);
             this.Controls.Add(this.btn_SeleccionarCobertura_BuscarCoberturaMedica);
             this.Controls.Add(this.btn_Limpiar_BuscarCoberturaMedica);
