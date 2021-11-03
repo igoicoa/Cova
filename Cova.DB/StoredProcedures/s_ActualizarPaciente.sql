@@ -110,7 +110,7 @@ BEGIN
 		END
 		ELSE
 		BEGIN
-			SET @TipoCambio = 'BAJA'
+			SET @TipoCambio = 'INACTIVO'
 		END
 
 		INSERT INTO [ControlCambio_Paciente] (Apellido, PacienteId, UsuarioId, Activo, Nombre, DNI, FechaNacimiento, Sexo, EstadoCivil, Telefono, Email, Calle, Numero, Piso, Localidad, Provincia, Pais, CoberturaMedicaId, CoberturaMedicaPlanId, NumeroAfiliado, FechaVencimiento, UsuarioModificadorId, FechaModificacion, TipoCambio)

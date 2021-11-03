@@ -18,7 +18,7 @@ namespace Cova.MPP
             try
             {
                 ConexionDB conexionBDD = new ConexionDB();
-                string strSQL = @"s_BuscarMedico";
+                string strSQL = @"s_BuscarAdministrador";
                 datosAdministrador.Add("@Usuario", usuario);
                 datosAdministrador.Add("@DNI", DNI);
                 administradorDS = conexionBDD.ObtenerDataSet(strSQL, datosAdministrador);

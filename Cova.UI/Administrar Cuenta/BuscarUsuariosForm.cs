@@ -315,7 +315,70 @@ namespace Cova.UI
 
         public void BuscarAdministrador(string usuario, string DNI)
         {
+             BLAdministrador bLAdministrador = new BLAdministrador();
+            try
+            {
+                this.Administradores = bLAdministrador.BuscarAdministrador(usuario, DNI).ToList();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
+            DataTable tableAdministrador = new DataTable();
+            tableAdministrador.Columns.Add("UsuarioID");
+            tableAdministrador.Columns.Add("Nombre");
+            tableAdministrador.Columns.Add("Apellido");
+            tableAdministrador.Columns.Add("DNI");
+            tableAdministrador.Columns.Add("Fecha Nacimiento");
+            tableAdministrador.Columns.Add("Sexo");
+            tableAdministrador.Columns.Add("Estado Civil");
+            tableAdministrador.Columns.Add("Telefono");
+            tableAdministrador.Columns.Add("Email");
+            tableAdministrador.Columns.Add("Calle");
+            tableAdministrador.Columns.Add("Numero");
+            tableAdministrador.Columns.Add("Piso");
+            tableAdministrador.Columns.Add("Localidad");
+            tableAdministrador.Columns.Add("Provincia");
+            tableAdministrador.Columns.Add("Pais");
+
+            foreach (BEAdministrador administrador in this.Administradores)
+            {
+                DataRow filaAdministrador = tableAdministrador.NewRow();
+                filaAdministrador["UsuarioID"] = administrador.UsuarioID;
+                filaAdministrador["Nombre"] = administrador.Nombre;
+                filaAdministrador["Apellido"] = administrador.Apellido;
+                filaAdministrador["DNI"] = administrador.DNI;
+                filaAdministrador["Fecha Nacimiento"] = administrador.FechaNacimiento;
+                filaAdministrador["Sexo"] = administrador.Sexo;
+                filaAdministrador["Estado Civil"] = administrador.EstadoCivil;
+                filaAdministrador["Telefono"] = administrador.Telefono;
+                filaAdministrador["Email"] = administrador.Email;
+                filaAdministrador["Calle"] = administrador.Domicilio.Calle;
+                filaAdministrador["Numero"] = administrador.Domicilio.Numero;
+                filaAdministrador["Piso"] = administrador.Domicilio.Piso;
+                filaAdministrador["Localidad"] = administrador.Domicilio.Localidad;
+                filaAdministrador["Provincia"] = administrador.Domicilio.Provincia;
+                filaAdministrador["Pais"] = administrador.Domicilio.Pais;
+
+                tableAdministrador.Rows.Add(filaAdministrador);
+            }
+            DataView dataviewAdministrador = new DataView(tableAdministrador);
+            dgv_usuario.DataSource = TraerInformacionFiltrada(dataviewAdministrador);
+            dgv_usuario.Columns[0].Visible = false;
+            dgv_usuario.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[11].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[12].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_usuario.Columns[13].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
         private void btn_Cancelar_BuscarUsuario_Click(object sender, EventArgs e)
