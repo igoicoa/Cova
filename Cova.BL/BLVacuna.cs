@@ -73,5 +73,23 @@ namespace Cova.BL
             }
             return VacunaCreada;
         }
+
+        public bool ModificarVacuna(BEVacuna vacunaAModificar)
+        {
+            bool vacunaModificada = false;
+            try
+            {
+                MPPVacuna mPPVacuna = new MPPVacuna();
+                vacunaModificada = mPPVacuna.ModificarVacuna(vacunaAModificar);
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "La vacuna: " + vacunaAModificar.VacunaID + "fue modificada con exito", "Modificar Vacuna"));
+
+            }
+            catch (Exception ex)
+            {
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al modificar la vacuna: " + ex.Message, "Modificar Vacuna"));
+                throw new ErrorAlCrearVacunasException();
+            }
+            return vacunaModificada;
+        }
     }
 }

@@ -124,6 +124,30 @@ namespace Cova.MPP
             }
         }
 
+        public bool ModificarVacuna(BEVacuna vacunaAModificar)
+        {
+            Hashtable datosVacuna = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_ActualizarVacuna";
+                datosVacuna.Add("@VacunaId", vacunaAModificar.VacunaID);
+                datosVacuna.Add("@Nombre", vacunaAModificar.Nombre);
+                datosVacuna.Add("@Descripcion", vacunaAModificar.Descripcion);
+                datosVacuna.Add("@Prospecto", vacunaAModificar.Prospecto);
+                datosVacuna.Add("@Contraindicaciones", vacunaAModificar.Contraindicaciones);
+                datosVacuna.Add("@CantidadDosis", vacunaAModificar.CantidadDosis);
+                datosVacuna.Add("@LaboratorioId", vacunaAModificar.Laboratorio.LaboratorioId);
+                datosVacuna.Add("@EdadMinimaAplicacion", vacunaAModificar.EdadMinimaAplicacion);
+                datosVacuna.Add("@EdadMaximaAplicacion", vacunaAModificar.EdadMaximaAplicacion);
+                return conexionBDD.Escribir(strSQL, datosVacuna);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public IList<BEVacunaDosis> ObtenerVacunasDeCentroMedicoAAplicar(BEVacunaDosis vacunaABuscar)
         {
             List<BEVacunaDosis> vacunasDosis = new List<BEVacunaDosis>();

@@ -42,8 +42,7 @@ namespace Cova.UI
             this.txt_Nombre_ModificarVacunas = new System.Windows.Forms.TextBox();
             this.lbl_Nombre_ModificarVacunas = new System.Windows.Forms.Label();
             this.lbl_ModificarVacunas = new System.Windows.Forms.Label();
-            this.btn_Buscar_ModificarVacunas = new System.Windows.Forms.Button();
-            this.cb_CantidadDosis_ModificarVacunas = new System.Windows.Forms.ComboBox();
+            this.cmb_CantidadDosis_ModificarVacunas = new System.Windows.Forms.ComboBox();
             this.rtb_Descripcion_ModificarVacunas = new System.Windows.Forms.RichTextBox();
             this.rtb_Contraindicaciones_ModificarVacunas = new System.Windows.Forms.RichTextBox();
             this.rtb_Prospecto_ModificarVacunas = new System.Windows.Forms.RichTextBox();
@@ -53,6 +52,8 @@ namespace Cova.UI
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_Estado = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmb_Vacunas = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btn_Limpiar_ModificarVacunas
@@ -84,6 +85,7 @@ namespace Cova.UI
             this.btn_Modificar_ModificarVacunas.TabIndex = 132;
             this.btn_Modificar_ModificarVacunas.Text = "Modificar";
             this.btn_Modificar_ModificarVacunas.UseVisualStyleBackColor = true;
+            this.btn_Modificar_ModificarVacunas.Click += new System.EventHandler(this.btn_Modificar_ModificarVacunas_Click);
             // 
             // cmb_Laboratorio_ModificarVacunas
             // 
@@ -167,25 +169,35 @@ namespace Cova.UI
             this.lbl_ModificarVacunas.TabIndex = 109;
             this.lbl_ModificarVacunas.Text = "Modificar Vacunas";
             // 
-            // btn_Buscar_ModificarVacunas
+            // cmb_CantidadDosis_ModificarVacunas
             // 
-            this.btn_Buscar_ModificarVacunas.BackColor = System.Drawing.Color.MistyRose;
-            this.btn_Buscar_ModificarVacunas.Location = new System.Drawing.Point(532, 63);
-            this.btn_Buscar_ModificarVacunas.Name = "btn_Buscar_ModificarVacunas";
-            this.btn_Buscar_ModificarVacunas.Size = new System.Drawing.Size(103, 23);
-            this.btn_Buscar_ModificarVacunas.TabIndex = 135;
-            this.btn_Buscar_ModificarVacunas.Text = "Buscar Vacunas";
-            this.btn_Buscar_ModificarVacunas.UseVisualStyleBackColor = false;
-            this.btn_Buscar_ModificarVacunas.Click += new System.EventHandler(this.btn_Buscar_ModificarVacunas_Click);
-            // 
-            // cb_CantidadDosis_ModificarVacunas
-            // 
-            this.cb_CantidadDosis_ModificarVacunas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_CantidadDosis_ModificarVacunas.FormattingEnabled = true;
-            this.cb_CantidadDosis_ModificarVacunas.Location = new System.Drawing.Point(17, 269);
-            this.cb_CantidadDosis_ModificarVacunas.Name = "cb_CantidadDosis_ModificarVacunas";
-            this.cb_CantidadDosis_ModificarVacunas.Size = new System.Drawing.Size(75, 21);
-            this.cb_CantidadDosis_ModificarVacunas.TabIndex = 136;
+            this.cmb_CantidadDosis_ModificarVacunas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_CantidadDosis_ModificarVacunas.FormattingEnabled = true;
+            this.cmb_CantidadDosis_ModificarVacunas.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
+            this.cmb_CantidadDosis_ModificarVacunas.Location = new System.Drawing.Point(17, 269);
+            this.cmb_CantidadDosis_ModificarVacunas.Name = "cmb_CantidadDosis_ModificarVacunas";
+            this.cmb_CantidadDosis_ModificarVacunas.Size = new System.Drawing.Size(75, 21);
+            this.cmb_CantidadDosis_ModificarVacunas.TabIndex = 136;
             // 
             // rtb_Descripcion_ModificarVacunas
             // 
@@ -267,11 +279,32 @@ namespace Cova.UI
             this.comboBox1.Size = new System.Drawing.Size(93, 21);
             this.comboBox1.TabIndex = 145;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(473, 66);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.TabIndex = 146;
+            this.label3.Text = "Vacuna";
+            // 
+            // cmb_Vacunas
+            // 
+            this.cmb_Vacunas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Vacunas.FormattingEnabled = true;
+            this.cmb_Vacunas.Location = new System.Drawing.Point(523, 62);
+            this.cmb_Vacunas.Name = "cmb_Vacunas";
+            this.cmb_Vacunas.Size = new System.Drawing.Size(239, 21);
+            this.cmb_Vacunas.TabIndex = 147;
+            this.cmb_Vacunas.SelectedIndexChanged += new System.EventHandler(this.cmb_Vacunas_SelectedIndexChanged);
+            // 
             // ModificarVacunasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 371);
+            this.Controls.Add(this.cmb_Vacunas);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lbl_Estado);
             this.Controls.Add(this.txt_EdadMaxima);
@@ -281,8 +314,7 @@ namespace Cova.UI
             this.Controls.Add(this.rtb_Prospecto_ModificarVacunas);
             this.Controls.Add(this.rtb_Contraindicaciones_ModificarVacunas);
             this.Controls.Add(this.rtb_Descripcion_ModificarVacunas);
-            this.Controls.Add(this.cb_CantidadDosis_ModificarVacunas);
-            this.Controls.Add(this.btn_Buscar_ModificarVacunas);
+            this.Controls.Add(this.cmb_CantidadDosis_ModificarVacunas);
             this.Controls.Add(this.btn_Limpiar_ModificarVacunas);
             this.Controls.Add(this.btn_Cancelar_ModificarVacunas);
             this.Controls.Add(this.btn_Modificar_ModificarVacunas);
@@ -317,8 +349,7 @@ namespace Cova.UI
         private System.Windows.Forms.TextBox txt_Nombre_ModificarVacunas;
         private System.Windows.Forms.Label lbl_Nombre_ModificarVacunas;
         private System.Windows.Forms.Label lbl_ModificarVacunas;
-        private System.Windows.Forms.Button btn_Buscar_ModificarVacunas;
-        private System.Windows.Forms.ComboBox cb_CantidadDosis_ModificarVacunas;
+        private System.Windows.Forms.ComboBox cmb_CantidadDosis_ModificarVacunas;
         private System.Windows.Forms.RichTextBox rtb_Descripcion_ModificarVacunas;
         private System.Windows.Forms.RichTextBox rtb_Contraindicaciones_ModificarVacunas;
         private System.Windows.Forms.RichTextBox rtb_Prospecto_ModificarVacunas;
@@ -328,5 +359,7 @@ namespace Cova.UI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_Estado;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmb_Vacunas;
     }
 }
