@@ -175,7 +175,7 @@ namespace Cova.DAL
                 SqlCommand cmd = new SqlCommand();
                 connectionMaster.Open();
                 cmd.Connection = connectionMaster;
-                cmd.CommandText = "ALTER DATABASE COVA SET SINGLE_USER WITH ROLLBACK IMMEDIATE; RESTORE DATABASE COVA FROM DISK = '" + archivo + "' ";
+                cmd.CommandText = "ALTER DATABASE COVA SET SINGLE_USER WITH ROLLBACK IMMEDIATE; RESTORE DATABASE COVA FROM DISK = '" + archivo + "' WITH REPLACE";
 
                 int respuesta = cmd.ExecuteNonQuery();
                 if (respuesta == 0)
