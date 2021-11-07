@@ -59,6 +59,7 @@
     <Compile Include="MPPPermiso.cs" />
     <Compile Include="MPPReceta.cs" />
     <Compile Include="MPPTraductor.cs" />
+    <Compile Include="MPPTurno.cs" />
     <Compile Include="MPPUsuario.cs" />
     <Compile Include="MPPVacuna.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

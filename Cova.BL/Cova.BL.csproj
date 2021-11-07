@@ -52,6 +52,7 @@
     <Compile Include="BLPaciente.cs" />
     <Compile Include="BLProfesional.cs" />
     <Compile Include="BLReceta.cs" />
+    <Compile Include="BLTurno.cs" />
     <Compile Include="BLUsuario.cs" />
     <Compile Include="BLVacuna.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

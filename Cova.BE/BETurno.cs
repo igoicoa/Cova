@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cova.BE
 {
@@ -11,6 +7,9 @@ namespace Cova.BE
         public  long TurnoId { get; set; }
         public DateTime FechaTurno { get; set; }
         public BECentroMedico CentroMedico { get; set; }
-
+        public BEProfesional Profesional { get; set; }
+        public BEPaciente Paciente { get; set; }
+        public bool Asistio { get; set; }
+        public string Comentarios { get; set; }
     }
 }
