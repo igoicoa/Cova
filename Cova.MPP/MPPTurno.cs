@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using Cova.BE;
 using Cova.DAL;
 
@@ -116,6 +115,58 @@ namespace Cova.MPP
                 throw ex;
             }
             return turnos;
+        }
+
+        public bool GenerarTurno(BETurno turno)
+        {
+            Hashtable datosTurno = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_GenerarTurno";
+                datosTurno.Add("@ProfesionalId", turno.Profesional.ProfesionalId);
+                datosTurno.Add("@PacienteId", turno.Paciente.PacienteId);
+                datosTurno.Add("@CentroMedicoId", turno.CentroMedico.CentroMedicoId);
+                datosTurno.Add("@Fecha", turno.FechaTurno);
+                datosTurno.Add("@Comentarios", turno.Comentarios);
+                return conexionBDD.Escribir(strSQL, datosTurno);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool CancelarTurno(BETurno turno)
+        {
+            Hashtable datosTurno = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_CancelarTurno";
+                datosTurno.Add("@TurnoId", turno.TurnoId);
+                return conexionBDD.Escribir(strSQL, datosTurno);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool AsistioTurno(BETurno turno)
+        {
+            Hashtable datosTurno = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_AsistioTurno";
+                datosTurno.Add("@TurnoId", turno.TurnoId);
+                return conexionBDD.Escribir(strSQL, datosTurno);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

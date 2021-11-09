@@ -45,6 +45,9 @@ BEGIN
 	LEFT JOIN CoberturaMedica c ON cpa.CoberturaMedicaId = c.CoberturaMedicaId
 	LEFT JOIN CoberturaMedicaPlan cp ON cpa.CoberturaMedicaPlanId = cp.PlanId
 	INNER JOIN [dbo].[CentroMedico] cm ON cm.CentroMedicoId = t.CentroMedicoId
-	WHERE t.PacienteId = @PacienteId AND t.Fecha BETWEEN @FechaDesde AND @FechaHasta
+	WHERE (t.PacienteId = @PacienteId OR @PacienteId IS NULL) AND 
+		  (t.ProfesionalId = @ProfesionalId OR @ProfesionalId IS NULL) AND
+		  (m.Especialidad = @Especialidad OR @Especialidad IS NULL) AND
+		  (t.Fecha BETWEEN @FechaDesde AND @FechaHasta)
 
 END

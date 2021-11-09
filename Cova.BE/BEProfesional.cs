@@ -18,5 +18,6 @@ namespace Cova.BE
         public string Telefono { get; set; }
         public string Email { get; set; }
         public BEDomicilio Domicilio { get; set; }
+        public IList<BETurnoDisponible> TurnosDisponibles { get; set; }
     }
 }

@@ -17,14 +17,26 @@ namespace Cova.BL
             bool profesionalCreado = false;
             try
             {
+                if (this.ExisteMedico(medico))
+                {
+                    Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Warning, "No se puede crear paciente. Ya existe un paciente con el DNI: " + pacienteNuevo.DNI, "Crear Paciente"));
+                    throw new ProfesionalYaExisteException();
+                }
                 MPPMedico mPPMedico = new MPPMedico();
                 profesionalCreado = mPPMedico.CrearProfesionalMedico(medico);
                 Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se creo el Profesional Medico: " + medico.Apellido + ", " + medico.Nombre, "Crear Profesional Medico"));
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Crear Profesional Medico: " + medico.Apellido + " - " + medico.Nombre + " - " + ex.Message, "Crear Profesional Medico"));
-                throw new ErrorAlCrearProfesionalException();
+                if (ex.GetType() == new ProfesionalYaExisteException().GetType())
+                {
+                    throw ex;
+                }
+                else
+                {
+                    Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Crear Profesional Medico: " + medico.Apellido + " - " + medico.Nombre + " - " + ex.Message, "Crear Profesional Medico"));
+                    throw new ErrorAlCrearPacienteException();
+                }
             }
             return profesionalCreado;
         }

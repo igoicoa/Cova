@@ -55,6 +55,7 @@
     <Compile Include="BERangoHorario.cs" />
     <Compile Include="BEReceta.cs" />
     <Compile Include="BETurno.cs" />
+    <Compile Include="BETurnoDisponible.cs" />
     <Compile Include="BEUsuario.cs" />
     <Compile Include="BEVacuna.cs" />
     <Compile Include="BEVacunaDosis.cs" />

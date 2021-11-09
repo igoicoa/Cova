@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constantes\Constantes.cs" />
     <Compile Include="Excepciones\AdministradorYaExisteException.cs" />
     <Compile Include="Excepciones\BitacoraYaCreadaException.cs" />
     <Compile Include="Excepciones\CoberturaMedicaYaExisteException.cs" />
@@ -56,8 +57,10 @@
     <Compile Include="Excepciones\ErrorAlBuscarDatosMedicos.cs" />
     <Compile Include="Excepciones\ErrorAlBuscarPacienteException.cs" />
     <Compile Include="Excepciones\ErrorAlBuscarRecetasException.cs" />
+    <Compile Include="Excepciones\ErrorAlBuscarTurnosException.cs" />
     <Compile Include="Excepciones\ErrorAlBuscarUsuariosException.cs" />
     <Compile Include="Excepciones\ErrorAlCambiarPasswordException.cs" />
+    <Compile Include="Excepciones\ErrorAlCancelarTurnoException.cs" />
     <Compile Include="Excepciones\ErrorAlCargarAntecedentesPersonalesException.cs" />
     <Compile Include="Excepciones\ErrorAlCargarCoberturasMedicasException.cs" />
     <Compile Include="Excepciones\ErrorAlCargarDatosProfesional.cs" />
@@ -72,6 +75,7 @@
     <Compile Include="Excepciones\ErrorAlCrearRecetasException.cs" />
     <Compile Include="Excepciones\ErrorAlCrearVacunasException.cs" />
     <Compile Include="Excepciones\ErrorAlEliminarPermisoException.cs" />
+    <Compile Include="Excepciones\ErrorAlGenerarTurnoException.cs" />
     <Compile Include="Excepciones\ErrorAlObteneControlDeCambioPacienteException.cs" />
     <Compile Include="Excepciones\ErrorAlObtenerCentrosMedicosException.cs" />
     <Compile Include="Excepciones\ErrorAlObtenerLaboratoriosException.cs" />
@@ -85,8 +89,10 @@
     <Compile Include="Excepciones\ItemExistenteException.cs" />
     <Compile Include="Excepciones\PacienteYaExisteException.cs" />
     <Compile Include="Excepciones\PlanCoberturaEnUsoException.cs" />
+    <Compile Include="Excepciones\ProfesionalYaExisteException.cs" />
     <Compile Include="Excepciones\SesionIniciadaException.cs" />
     <Compile Include="Excepciones\SesionNoIniciadaException.cs" />
+    <Compile Include="Excepciones\TurnoNoDisponibleException.cs" />
     <Compile Include="Excepciones\UsuarioInactivoException.cs" />
     <Compile Include="Excepciones\UsuarioPasswordIncorrecto.cs" />
     <Compile Include="Excepciones\VacunaYaExistenteException.cs" />
