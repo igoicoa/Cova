@@ -31,6 +31,21 @@ namespace Cova.UI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarTurnoForm));
             this.lbl_RegistrarTurnos = new System.Windows.Forms.Label();
+            this.dgv_RegistrarTurnos = new System.Windows.Forms.DataGridView();
+            this.gb_Filtros = new System.Windows.Forms.GroupBox();
+            this.cmb_Profesional = new System.Windows.Forms.ComboBox();
+            this.btn_Limpiar = new System.Windows.Forms.Button();
+            this.btn_Cancelar = new System.Windows.Forms.Button();
+            this.btn_Filtrar = new System.Windows.Forms.Button();
+            this.cmb_Criticidad_Bitacora = new System.Windows.Forms.ComboBox();
+            this.lbl_Especialidad = new System.Windows.Forms.Label();
+            this.lbl_Profesional = new System.Windows.Forms.Label();
+            this.lbl_FechaHasta_Bitacora = new System.Windows.Forms.Label();
+            this.lbl_FechaDesde_Bitacora = new System.Windows.Forms.Label();
+            this.dtp_FechaHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtp_FechaDesde = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_RegistrarTurnos)).BeginInit();
+            this.gb_Filtros.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_RegistrarTurnos
@@ -45,15 +60,144 @@ namespace Cova.UI
             this.lbl_RegistrarTurnos.Text = "Registrar Turnos";
             this.lbl_RegistrarTurnos.UseWaitCursor = true;
             // 
-            // RegistrarTurno
+            // dgv_RegistrarTurnos
+            // 
+            this.dgv_RegistrarTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_RegistrarTurnos.Location = new System.Drawing.Point(12, 226);
+            this.dgv_RegistrarTurnos.Name = "dgv_RegistrarTurnos";
+            this.dgv_RegistrarTurnos.Size = new System.Drawing.Size(754, 426);
+            this.dgv_RegistrarTurnos.TabIndex = 133;
+            // 
+            // gb_Filtros
+            // 
+            this.gb_Filtros.Controls.Add(this.cmb_Profesional);
+            this.gb_Filtros.Controls.Add(this.btn_Limpiar);
+            this.gb_Filtros.Controls.Add(this.btn_Cancelar);
+            this.gb_Filtros.Controls.Add(this.btn_Filtrar);
+            this.gb_Filtros.Controls.Add(this.cmb_Criticidad_Bitacora);
+            this.gb_Filtros.Controls.Add(this.lbl_Especialidad);
+            this.gb_Filtros.Controls.Add(this.lbl_Profesional);
+            this.gb_Filtros.Controls.Add(this.lbl_FechaHasta_Bitacora);
+            this.gb_Filtros.Controls.Add(this.lbl_FechaDesde_Bitacora);
+            this.gb_Filtros.Controls.Add(this.dtp_FechaHasta);
+            this.gb_Filtros.Controls.Add(this.dtp_FechaDesde);
+            this.gb_Filtros.Location = new System.Drawing.Point(12, 49);
+            this.gb_Filtros.Name = "gb_Filtros";
+            this.gb_Filtros.Size = new System.Drawing.Size(647, 138);
+            this.gb_Filtros.TabIndex = 132;
+            this.gb_Filtros.TabStop = false;
+            this.gb_Filtros.Text = "Filtros";
+            // 
+            // cmb_Profesional
+            // 
+            this.cmb_Profesional.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Profesional.FormattingEnabled = true;
+            this.cmb_Profesional.Location = new System.Drawing.Point(431, 22);
+            this.cmb_Profesional.Name = "cmb_Profesional";
+            this.cmb_Profesional.Size = new System.Drawing.Size(132, 21);
+            this.cmb_Profesional.TabIndex = 182;
+            // 
+            // btn_Limpiar
+            // 
+            this.btn_Limpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Limpiar.Location = new System.Drawing.Point(351, 100);
+            this.btn_Limpiar.Name = "btn_Limpiar";
+            this.btn_Limpiar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Limpiar.TabIndex = 181;
+            this.btn_Limpiar.Text = "Limpiar";
+            this.btn_Limpiar.UseVisualStyleBackColor = true;
+            // 
+            // btn_Cancelar
+            // 
+            this.btn_Cancelar.Location = new System.Drawing.Point(270, 100);
+            this.btn_Cancelar.Name = "btn_Cancelar";
+            this.btn_Cancelar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Cancelar.TabIndex = 180;
+            this.btn_Cancelar.Text = "Cancelar";
+            this.btn_Cancelar.UseVisualStyleBackColor = true;
+            // 
+            // btn_Filtrar
+            // 
+            this.btn_Filtrar.Location = new System.Drawing.Point(184, 100);
+            this.btn_Filtrar.Name = "btn_Filtrar";
+            this.btn_Filtrar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Filtrar.TabIndex = 179;
+            this.btn_Filtrar.Text = "Filtrar";
+            this.btn_Filtrar.UseVisualStyleBackColor = true;
+            // 
+            // cmb_Criticidad_Bitacora
+            // 
+            this.cmb_Criticidad_Bitacora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Criticidad_Bitacora.FormattingEnabled = true;
+            this.cmb_Criticidad_Bitacora.Location = new System.Drawing.Point(432, 63);
+            this.cmb_Criticidad_Bitacora.Name = "cmb_Criticidad_Bitacora";
+            this.cmb_Criticidad_Bitacora.Size = new System.Drawing.Size(132, 21);
+            this.cmb_Criticidad_Bitacora.TabIndex = 178;
+            // 
+            // lbl_Especialidad
+            // 
+            this.lbl_Especialidad.AutoSize = true;
+            this.lbl_Especialidad.Location = new System.Drawing.Point(359, 67);
+            this.lbl_Especialidad.Name = "lbl_Especialidad";
+            this.lbl_Especialidad.Size = new System.Drawing.Size(67, 13);
+            this.lbl_Especialidad.TabIndex = 136;
+            this.lbl_Especialidad.Text = "Especialidad";
+            // 
+            // lbl_Profesional
+            // 
+            this.lbl_Profesional.AutoSize = true;
+            this.lbl_Profesional.Location = new System.Drawing.Point(357, 22);
+            this.lbl_Profesional.Name = "lbl_Profesional";
+            this.lbl_Profesional.Size = new System.Drawing.Size(59, 13);
+            this.lbl_Profesional.TabIndex = 135;
+            this.lbl_Profesional.Text = "Profesional";
+            // 
+            // lbl_FechaHasta_Bitacora
+            // 
+            this.lbl_FechaHasta_Bitacora.AutoSize = true;
+            this.lbl_FechaHasta_Bitacora.Location = new System.Drawing.Point(6, 67);
+            this.lbl_FechaHasta_Bitacora.Name = "lbl_FechaHasta_Bitacora";
+            this.lbl_FechaHasta_Bitacora.Size = new System.Drawing.Size(68, 13);
+            this.lbl_FechaHasta_Bitacora.TabIndex = 134;
+            this.lbl_FechaHasta_Bitacora.Text = "Fecha Hasta";
+            // 
+            // lbl_FechaDesde_Bitacora
+            // 
+            this.lbl_FechaDesde_Bitacora.AutoSize = true;
+            this.lbl_FechaDesde_Bitacora.Location = new System.Drawing.Point(6, 25);
+            this.lbl_FechaDesde_Bitacora.Name = "lbl_FechaDesde_Bitacora";
+            this.lbl_FechaDesde_Bitacora.Size = new System.Drawing.Size(71, 13);
+            this.lbl_FechaDesde_Bitacora.TabIndex = 133;
+            this.lbl_FechaDesde_Bitacora.Text = "Fecha Desde";
+            // 
+            // dtp_FechaHasta
+            // 
+            this.dtp_FechaHasta.Location = new System.Drawing.Point(99, 60);
+            this.dtp_FechaHasta.Name = "dtp_FechaHasta";
+            this.dtp_FechaHasta.Size = new System.Drawing.Size(219, 20);
+            this.dtp_FechaHasta.TabIndex = 132;
+            // 
+            // dtp_FechaDesde
+            // 
+            this.dtp_FechaDesde.Location = new System.Drawing.Point(99, 25);
+            this.dtp_FechaDesde.Name = "dtp_FechaDesde";
+            this.dtp_FechaDesde.Size = new System.Drawing.Size(219, 20);
+            this.dtp_FechaDesde.TabIndex = 131;
+            // 
+            // RegistrarTurnoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(870, 721);
+            this.Controls.Add(this.dgv_RegistrarTurnos);
+            this.Controls.Add(this.gb_Filtros);
             this.Controls.Add(this.lbl_RegistrarTurnos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "RegistrarTurno";
+            this.Name = "RegistrarTurnoForm";
             this.Text = "RegistrarTurno";
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_RegistrarTurnos)).EndInit();
+            this.gb_Filtros.ResumeLayout(false);
+            this.gb_Filtros.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -62,5 +206,18 @@ namespace Cova.UI
         #endregion
 
         private System.Windows.Forms.Label lbl_RegistrarTurnos;
+        private System.Windows.Forms.DataGridView dgv_RegistrarTurnos;
+        private System.Windows.Forms.GroupBox gb_Filtros;
+        private System.Windows.Forms.ComboBox cmb_Profesional;
+        private System.Windows.Forms.Button btn_Limpiar;
+        private System.Windows.Forms.Button btn_Cancelar;
+        private System.Windows.Forms.Button btn_Filtrar;
+        private System.Windows.Forms.ComboBox cmb_Criticidad_Bitacora;
+        private System.Windows.Forms.Label lbl_Especialidad;
+        private System.Windows.Forms.Label lbl_Profesional;
+        private System.Windows.Forms.Label lbl_FechaHasta_Bitacora;
+        private System.Windows.Forms.Label lbl_FechaDesde_Bitacora;
+        private System.Windows.Forms.DateTimePicker dtp_FechaHasta;
+        private System.Windows.Forms.DateTimePicker dtp_FechaDesde;
     }
 }
