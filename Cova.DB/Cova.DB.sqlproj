@@ -166,6 +166,9 @@
     <Build Include="StoredProcedures\s_CancelarTurno.sql" />
     <Build Include="StoredProcedures\s_AsistioTurno.sql" />
     <Build Include="Tables\TurnoDisponible.sql" />
+    <Build Include="StoredProcedures\s_ObtenerTurnosDisponibles.sql" />
+    <Build Include="StoredProcedures\s_EliminarTurnosDisponibles.sql" />
+    <Build Include="StoredProcedures\s_AgregarTurnoDisponible.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />

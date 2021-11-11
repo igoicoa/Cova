@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using Cova.BE;
+using Cova.BE.Enum;
 using Cova.DAL;
 
 namespace Cova.MPP
@@ -168,5 +169,75 @@ namespace Cova.MPP
                 throw ex;
             }
         }
+
+        public IList<BETurnoDisponible> ObtenerTurnosDisponibles(BEProfesional profesional)
+        {
+            List<BETurnoDisponible> turnosDisponibles = new List<BETurnoDisponible>();
+            DataSet turnosDS;
+            DataTable turnoT;
+            Hashtable datosTurno = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_ObtenerTurnosDisponibles";
+                datosTurno.Add("@ProfesionalId", profesional.ProfesionalId);
+                turnosDS = conexionBDD.ObtenerDataSet(strSQL, datosTurno);
+                turnoT = turnosDS.Tables[0];
+                if (turnoT.Rows.Count > 0)
+                {
+                    foreach (DataRow fila in turnoT.Rows)
+                    {
+                        BETurnoDisponible turno = new BETurnoDisponible();
+                        turno.TurnoDisponibleId = Convert.ToInt64(fila["TurnoDisponibleId"]);
+                        turno.DiaSemana = (DiasSemana)Enum.Parse(typeof(DiasSemana), Convert.ToString(fila["DiaSemana"]));
+                        turno.HoraDesde = Convert.ToDateTime(fila["HoraDesde"]);
+                        turno.HoraHasta = Convert.ToDateTime(fila["HoraHasta"]);
+
+                        turnosDisponibles.Add(turno);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return turnosDisponibles;
+        }
+
+        public bool EliminarTurnosDisponiblesProfesional(BEProfesional profesional)
+        {
+            Hashtable datosTurno = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_EliminarTurnosDisponibles";
+                datosTurno.Add("@ProfesionalId", profesional.ProfesionalId);
+                return conexionBDD.Escribir(strSQL, datosTurno);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool AgregarTurnoDisponible(BETurnoDisponible turnoDisponible, long profesionalId)
+        {
+            Hashtable datosTurno = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_AgregarTurnoDisponible";
+                datosTurno.Add("@ProfesionalId", profesionalId);
+                datosTurno.Add("@turnoDisponible", turnoDisponible.DiaSemana);
+                datosTurno.Add("@HoraDesde", turnoDisponible.HoraDesde);
+                datosTurno.Add("@HoraHasta", turnoDisponible.HoraHasta);
+                return conexionBDD.Escribir(strSQL, datosTurno);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        
     }
 }

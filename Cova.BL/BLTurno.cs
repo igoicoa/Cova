@@ -13,7 +13,7 @@ namespace Cova.BL
 {
     public class BLTurno
     {
-        public IList<BETurno> ObtenerTurnos(BEPaciente pacienteTurno, BEProfesional profesionalTurno, Especialidad especialidad, DateTime fechaDesde, DateTime fechaHasta)
+        public IList<BETurno> ObtenerTurnos(BEPaciente pacienteTurno = null, BEProfesional profesionalTurno = null, Especialidad? especialidad = null, DateTime? fechaDesde = null, DateTime? fechaHasta = null)
         {
             IList<BETurno> turnos;
             MPPTurno mPPTurno = new MPPTurno();

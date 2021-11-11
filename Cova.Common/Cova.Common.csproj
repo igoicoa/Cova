@@ -50,6 +50,7 @@
     <Compile Include="Excepciones\ErrorAlActualizarPacienteException.cs" />
     <Compile Include="Excepciones\ErrorAlActualizarProfesionalException.cs" />
     <Compile Include="Excepciones\ErrorAlActualizarRecetasException.cs" />
+    <Compile Include="Excepciones\ErrorAlActualizarTurnosDisponiblesException.cs" />
     <Compile Include="Excepciones\ErrorAlAgregarPermisoException.cs" />
     <Compile Include="Excepciones\ErrorAlBuscarAdministrador.cs" />
     <Compile Include="Excepciones\ErrorAlBuscarBitacoraException.cs" />
