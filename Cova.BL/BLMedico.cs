@@ -19,7 +19,7 @@ namespace Cova.BL
             {
                 if (this.ExisteMedico(medico))
                 {
-                    Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Warning, "No se puede crear paciente. Ya existe un paciente con el DNI: " + pacienteNuevo.DNI, "Crear Paciente"));
+                    Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Warning, "No se puede crear medico. Ya existe un medico con el DNI: " + medico.DNI, "Crear Medico"));
                     throw new ProfesionalYaExisteException();
                 }
                 MPPMedico mPPMedico = new MPPMedico();
@@ -44,6 +44,23 @@ namespace Cova.BL
         public bool ExisteMedico(BEMedico medicoNuevo)
         {
             return this.BuscarMedicos("", medicoNuevo.DNI.ToString()).Count() == 0 ? false : true;
+        }
+
+        public IList<BEMedico> BuscarMedicos(string apellido, string nombre, Especialidad especialidad)
+        {
+            IList<BEMedico> medicos;
+            MPPMedico mPPMedico = new MPPMedico();
+            try
+            {
+                medicos = mPPMedico.BuscarMedicos(apellido, nombre, especialidad);
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo la busqueda del medico: ", "Buscar Medicos"));
+            }
+            catch (Exception ex)
+            {
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al buscar el medico: " + ex.Message, "Buscar Medicos"));
+                throw new ErrorAlBuscarDatosMedicos();
+            }
+            return medicos;
         }
 
         public IList<BEMedico> BuscarMedicos(string Usuario, string DNI)

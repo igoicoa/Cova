@@ -11,5 +11,14 @@ namespace Cova.BE
         public BEPaciente Paciente { get; set; }
         public bool Asistio { get; set; }
         public string Comentarios { get; set; }
+        public BETurno()
+        {
+
+        }
+        public BETurno(BEProfesional profesional, DateTime fechaTurno)
+        {
+            this.Profesional = profesional;
+            this.FechaTurno = fechaTurno;
+        }
     }
 }

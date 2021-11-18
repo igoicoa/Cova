@@ -189,7 +189,7 @@ namespace Cova.MPP
                     {
                         BETurnoDisponible turno = new BETurnoDisponible();
                         turno.TurnoDisponibleId = Convert.ToInt64(fila["TurnoDisponibleId"]);
-                        turno.DiaSemana = (DiasSemana)Enum.Parse(typeof(DiasSemana), Convert.ToString(fila["DiaSemana"]));
+                        turno.DiaSemana = (DayOfWeek)Enum.Parse(typeof(DayOfWeek), Convert.ToString(fila["DiaSemana"]));
                         turno.HoraDesde = Convert.ToDateTime(fila["HoraDesde"]);
                         turno.HoraHasta = Convert.ToDateTime(fila["HoraHasta"]);
 

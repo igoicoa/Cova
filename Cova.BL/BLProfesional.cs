@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Cova.BE;
 using Cova.BE.Bitacora;
 using Cova.MPP;
 using Cova.Servicios.Bitacora;
 using Cova.Servicios.Sesion;
 using Cova.Common.Excepciones;
+using Cova.Common.Utils;
 
 namespace Cova.BL
 {
@@ -57,11 +56,11 @@ namespace Cova.BL
             {
                 turnosDisponibles = mPPTurno.ObtenerTurnosDisponibles(profesional);
                 profesional.TurnosDisponibles = turnosDisponibles;
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se obtuvieron los turnos disponibles de: " + profesionalId, "Obtener turnos disponibles"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se obtuvieron los turnos disponibles de: " + profesional.ProfesionalId, "Obtener turnos disponibles"));
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al obtener los turnos disponibles de: " + profesionalId + " - " + ex.Message, "Obtener turnos disponibles"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al obtener los turnos disponibles de: " + profesional.ProfesionalId + " - " + ex.Message, "Obtener turnos disponibles"));
                 throw new ErrorAlBuscarDatosMedicos();
             }
         }
@@ -70,15 +69,26 @@ namespace Cova.BL
         {
             IList<BETurno> turnosLibres = new List<BETurno>();
             BLTurno bLTurno = new BLTurno();
-            bLTurno.ObtenerTurnos(null, profesional, null, fechaDesde, fechaHasta);
             try
             {
-                
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se obtuvieron los turnos disponibles de: " + profesionalId, "Obtener turnos disponibles"));
+                this.CargarTurnosDisponibles(profesional);
+                IList<BETurno> turnosOcupados = bLTurno.ObtenerTurnos(null, profesional, null, fechaDesde, fechaHasta);
+                foreach (DateTime dia in CalendarioUtils.ObtenerRangoHorario(fechaDesde, fechaHasta))
+                {
+                    if(profesional.TurnosDisponibles.Where(x => x.DiaSemana == dia.DayOfWeek && x.HoraDesde.Hour == dia.Hour).Any())
+                    {
+                        if(!turnosOcupados.Where(x => x.FechaTurno == dia).Any())
+                        {
+                            BETurno turnoLibre = new BETurno(profesional, dia);
+                            turnosLibres.Add(turnoLibre);
+                        }
+                    }
+                }
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se obtuvieron los turnos disponibles de: " + profesional.ProfesionalId, "Obtener turnos disponibles"));
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al obtener los turnos disponibles de: " + profesionalId + " - " + ex.Message, "Obtener turnos disponibles"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al obtener los turnos disponibles de: " + profesional.ProfesionalId + " - " + ex.Message, "Obtener turnos disponibles"));
                 throw new ErrorAlBuscarDatosMedicos();
             }
             return turnosLibres;

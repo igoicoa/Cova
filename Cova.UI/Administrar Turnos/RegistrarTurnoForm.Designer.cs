@@ -33,17 +33,15 @@ namespace Cova.UI
             this.lbl_RegistrarTurnos = new System.Windows.Forms.Label();
             this.dgv_RegistrarTurnos = new System.Windows.Forms.DataGridView();
             this.gb_Filtros = new System.Windows.Forms.GroupBox();
-            this.cmb_Profesional = new System.Windows.Forms.ComboBox();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.btn_Filtrar = new System.Windows.Forms.Button();
-            this.cmb_Criticidad_Bitacora = new System.Windows.Forms.ComboBox();
-            this.lbl_Especialidad = new System.Windows.Forms.Label();
-            this.lbl_Profesional = new System.Windows.Forms.Label();
             this.lbl_FechaHasta_Bitacora = new System.Windows.Forms.Label();
             this.lbl_FechaDesde_Bitacora = new System.Windows.Forms.Label();
             this.dtp_FechaHasta = new System.Windows.Forms.DateTimePicker();
             this.dtp_FechaDesde = new System.Windows.Forms.DateTimePicker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_BuscarProfesional = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_RegistrarTurnos)).BeginInit();
             this.gb_Filtros.SuspendLayout();
             this.SuspendLayout();
@@ -70,13 +68,11 @@ namespace Cova.UI
             // 
             // gb_Filtros
             // 
-            this.gb_Filtros.Controls.Add(this.cmb_Profesional);
+            this.gb_Filtros.Controls.Add(this.btn_BuscarProfesional);
+            this.gb_Filtros.Controls.Add(this.textBox1);
             this.gb_Filtros.Controls.Add(this.btn_Limpiar);
             this.gb_Filtros.Controls.Add(this.btn_Cancelar);
             this.gb_Filtros.Controls.Add(this.btn_Filtrar);
-            this.gb_Filtros.Controls.Add(this.cmb_Criticidad_Bitacora);
-            this.gb_Filtros.Controls.Add(this.lbl_Especialidad);
-            this.gb_Filtros.Controls.Add(this.lbl_Profesional);
             this.gb_Filtros.Controls.Add(this.lbl_FechaHasta_Bitacora);
             this.gb_Filtros.Controls.Add(this.lbl_FechaDesde_Bitacora);
             this.gb_Filtros.Controls.Add(this.dtp_FechaHasta);
@@ -87,15 +83,6 @@ namespace Cova.UI
             this.gb_Filtros.TabIndex = 132;
             this.gb_Filtros.TabStop = false;
             this.gb_Filtros.Text = "Filtros";
-            // 
-            // cmb_Profesional
-            // 
-            this.cmb_Profesional.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Profesional.FormattingEnabled = true;
-            this.cmb_Profesional.Location = new System.Drawing.Point(431, 22);
-            this.cmb_Profesional.Name = "cmb_Profesional";
-            this.cmb_Profesional.Size = new System.Drawing.Size(132, 21);
-            this.cmb_Profesional.TabIndex = 182;
             // 
             // btn_Limpiar
             // 
@@ -124,33 +111,7 @@ namespace Cova.UI
             this.btn_Filtrar.TabIndex = 179;
             this.btn_Filtrar.Text = "Filtrar";
             this.btn_Filtrar.UseVisualStyleBackColor = true;
-            // 
-            // cmb_Criticidad_Bitacora
-            // 
-            this.cmb_Criticidad_Bitacora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Criticidad_Bitacora.FormattingEnabled = true;
-            this.cmb_Criticidad_Bitacora.Location = new System.Drawing.Point(432, 63);
-            this.cmb_Criticidad_Bitacora.Name = "cmb_Criticidad_Bitacora";
-            this.cmb_Criticidad_Bitacora.Size = new System.Drawing.Size(132, 21);
-            this.cmb_Criticidad_Bitacora.TabIndex = 178;
-            // 
-            // lbl_Especialidad
-            // 
-            this.lbl_Especialidad.AutoSize = true;
-            this.lbl_Especialidad.Location = new System.Drawing.Point(359, 67);
-            this.lbl_Especialidad.Name = "lbl_Especialidad";
-            this.lbl_Especialidad.Size = new System.Drawing.Size(67, 13);
-            this.lbl_Especialidad.TabIndex = 136;
-            this.lbl_Especialidad.Text = "Especialidad";
-            // 
-            // lbl_Profesional
-            // 
-            this.lbl_Profesional.AutoSize = true;
-            this.lbl_Profesional.Location = new System.Drawing.Point(357, 22);
-            this.lbl_Profesional.Name = "lbl_Profesional";
-            this.lbl_Profesional.Size = new System.Drawing.Size(59, 13);
-            this.lbl_Profesional.TabIndex = 135;
-            this.lbl_Profesional.Text = "Profesional";
+            this.btn_Filtrar.Click += new System.EventHandler(this.btn_Filtrar_Click);
             // 
             // lbl_FechaHasta_Bitacora
             // 
@@ -184,6 +145,22 @@ namespace Cova.UI
             this.dtp_FechaDesde.Size = new System.Drawing.Size(219, 20);
             this.dtp_FechaDesde.TabIndex = 131;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(423, 22);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(206, 20);
+            this.textBox1.TabIndex = 182;
+            // 
+            // btn_BuscarProfesional
+            // 
+            this.btn_BuscarProfesional.Location = new System.Drawing.Point(423, 57);
+            this.btn_BuscarProfesional.Name = "btn_BuscarProfesional";
+            this.btn_BuscarProfesional.Size = new System.Drawing.Size(121, 23);
+            this.btn_BuscarProfesional.TabIndex = 183;
+            this.btn_BuscarProfesional.Text = "Buscar Profesional";
+            this.btn_BuscarProfesional.UseVisualStyleBackColor = true;
+            // 
             // RegistrarTurnoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,16 +185,14 @@ namespace Cova.UI
         private System.Windows.Forms.Label lbl_RegistrarTurnos;
         private System.Windows.Forms.DataGridView dgv_RegistrarTurnos;
         private System.Windows.Forms.GroupBox gb_Filtros;
-        private System.Windows.Forms.ComboBox cmb_Profesional;
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button btn_Cancelar;
         private System.Windows.Forms.Button btn_Filtrar;
-        private System.Windows.Forms.ComboBox cmb_Criticidad_Bitacora;
-        private System.Windows.Forms.Label lbl_Especialidad;
-        private System.Windows.Forms.Label lbl_Profesional;
         private System.Windows.Forms.Label lbl_FechaHasta_Bitacora;
         private System.Windows.Forms.Label lbl_FechaDesde_Bitacora;
         private System.Windows.Forms.DateTimePicker dtp_FechaHasta;
         private System.Windows.Forms.DateTimePicker dtp_FechaDesde;
+        private System.Windows.Forms.Button btn_BuscarProfesional;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

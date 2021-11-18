@@ -19,5 +19,19 @@ namespace Cova.BE
         public string Email { get; set; }
         public BEDomicilio Domicilio { get; set; }
         public IList<BETurnoDisponible> TurnosDisponibles { get; set; }
+        public int Edad
+        {
+            get
+            {
+                return Convert.ToInt32(((DateTime.Now - FechaNacimiento).TotalDays / 365));
+            }
+        }
+        public string ApellidoNombre
+        {
+            get
+            {
+                return this.Apellido + ", " + this.Nombre;
+            }
+        }
     }
 }

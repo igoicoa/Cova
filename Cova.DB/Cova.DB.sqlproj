@@ -169,6 +169,7 @@
     <Build Include="StoredProcedures\s_ObtenerTurnosDisponibles.sql" />
     <Build Include="StoredProcedures\s_EliminarTurnosDisponibles.sql" />
     <Build Include="StoredProcedures\s_AgregarTurnoDisponible.sql" />
+    <Build Include="StoredProcedures\s_BusquedaMedico.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Cova.DB.refactorlog" />
