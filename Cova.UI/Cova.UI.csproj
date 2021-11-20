@@ -173,6 +173,7 @@
       <DependentUpon>ControlDeCambioForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IFormCargarCoberturas.cs" />
+    <Compile Include="Interfaces\IFormCargarMedicos.cs" />
     <Compile Include="Interfaces\IFormCargarRecetas.cs" />
     <Compile Include="Interfaces\IFormCargarUsuarios.cs" />
     <Compile Include="Interfaces\IFormCargarVacunas.cs" />

@@ -58,6 +58,7 @@ namespace Cova.MPP
                         turno.TurnoId = Convert.ToInt64(fila["TurnoId"]);
                         turno.Comentarios = Convert.ToString(fila["Comentarios"]);
                         turno.Asistio = Convert.ToBoolean(fila["Asistio"]);
+                        turno.FechaTurno = Convert.ToDateTime(fila["FechaTurno"]);
 
                         BEMedico medico = new BEMedico();
                         medico.ProfesionalId = Convert.ToInt64(fila["ProfesionalId"]);

@@ -33,6 +33,8 @@ namespace Cova.UI
             this.lbl_RegistrarTurnos = new System.Windows.Forms.Label();
             this.dgv_RegistrarTurnos = new System.Windows.Forms.DataGridView();
             this.gb_Filtros = new System.Windows.Forms.GroupBox();
+            this.btn_BuscarProfesional = new System.Windows.Forms.Button();
+            this.txt_profesional = new System.Windows.Forms.TextBox();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.btn_Filtrar = new System.Windows.Forms.Button();
@@ -40,8 +42,7 @@ namespace Cova.UI
             this.lbl_FechaDesde_Bitacora = new System.Windows.Forms.Label();
             this.dtp_FechaHasta = new System.Windows.Forms.DateTimePicker();
             this.dtp_FechaDesde = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btn_BuscarProfesional = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_RegistrarTurnos)).BeginInit();
             this.gb_Filtros.SuspendLayout();
             this.SuspendLayout();
@@ -68,8 +69,9 @@ namespace Cova.UI
             // 
             // gb_Filtros
             // 
+            this.gb_Filtros.Controls.Add(this.label1);
             this.gb_Filtros.Controls.Add(this.btn_BuscarProfesional);
-            this.gb_Filtros.Controls.Add(this.textBox1);
+            this.gb_Filtros.Controls.Add(this.txt_profesional);
             this.gb_Filtros.Controls.Add(this.btn_Limpiar);
             this.gb_Filtros.Controls.Add(this.btn_Cancelar);
             this.gb_Filtros.Controls.Add(this.btn_Filtrar);
@@ -79,10 +81,29 @@ namespace Cova.UI
             this.gb_Filtros.Controls.Add(this.dtp_FechaDesde);
             this.gb_Filtros.Location = new System.Drawing.Point(12, 49);
             this.gb_Filtros.Name = "gb_Filtros";
-            this.gb_Filtros.Size = new System.Drawing.Size(647, 138);
+            this.gb_Filtros.Size = new System.Drawing.Size(772, 138);
             this.gb_Filtros.TabIndex = 132;
             this.gb_Filtros.TabStop = false;
             this.gb_Filtros.Text = "Filtros";
+            // 
+            // btn_BuscarProfesional
+            // 
+            this.btn_BuscarProfesional.Location = new System.Drawing.Point(419, 26);
+            this.btn_BuscarProfesional.Name = "btn_BuscarProfesional";
+            this.btn_BuscarProfesional.Size = new System.Drawing.Size(121, 23);
+            this.btn_BuscarProfesional.TabIndex = 183;
+            this.btn_BuscarProfesional.Text = "Buscar Profesional";
+            this.btn_BuscarProfesional.UseVisualStyleBackColor = true;
+            this.btn_BuscarProfesional.Click += new System.EventHandler(this.btn_BuscarProfesional_Click);
+            // 
+            // txt_profesional
+            // 
+            this.txt_profesional.Enabled = false;
+            this.txt_profesional.Location = new System.Drawing.Point(514, 60);
+            this.txt_profesional.Name = "txt_profesional";
+            this.txt_profesional.ReadOnly = true;
+            this.txt_profesional.Size = new System.Drawing.Size(240, 20);
+            this.txt_profesional.TabIndex = 182;
             // 
             // btn_Limpiar
             // 
@@ -91,8 +112,9 @@ namespace Cova.UI
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 23);
             this.btn_Limpiar.TabIndex = 181;
-            this.btn_Limpiar.Text = "Limpiar";
+            this.btn_Limpiar.Text = "Reservar";
             this.btn_Limpiar.UseVisualStyleBackColor = true;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
             // btn_Cancelar
             // 
@@ -109,7 +131,7 @@ namespace Cova.UI
             this.btn_Filtrar.Name = "btn_Filtrar";
             this.btn_Filtrar.Size = new System.Drawing.Size(75, 23);
             this.btn_Filtrar.TabIndex = 179;
-            this.btn_Filtrar.Text = "Filtrar";
+            this.btn_Filtrar.Text = "Buscar";
             this.btn_Filtrar.UseVisualStyleBackColor = true;
             this.btn_Filtrar.Click += new System.EventHandler(this.btn_Filtrar_Click);
             // 
@@ -145,21 +167,14 @@ namespace Cova.UI
             this.dtp_FechaDesde.Size = new System.Drawing.Size(219, 20);
             this.dtp_FechaDesde.TabIndex = 131;
             // 
-            // textBox1
+            // label1
             // 
-            this.textBox1.Location = new System.Drawing.Point(423, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(206, 20);
-            this.textBox1.TabIndex = 182;
-            // 
-            // btn_BuscarProfesional
-            // 
-            this.btn_BuscarProfesional.Location = new System.Drawing.Point(423, 57);
-            this.btn_BuscarProfesional.Name = "btn_BuscarProfesional";
-            this.btn_BuscarProfesional.Size = new System.Drawing.Size(121, 23);
-            this.btn_BuscarProfesional.TabIndex = 183;
-            this.btn_BuscarProfesional.Text = "Buscar Profesional";
-            this.btn_BuscarProfesional.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(416, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.TabIndex = 184;
+            this.label1.Text = "Profesional";
             // 
             // RegistrarTurnoForm
             // 
@@ -193,6 +208,7 @@ namespace Cova.UI
         private System.Windows.Forms.DateTimePicker dtp_FechaHasta;
         private System.Windows.Forms.DateTimePicker dtp_FechaDesde;
         private System.Windows.Forms.Button btn_BuscarProfesional;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_profesional;
+        private System.Windows.Forms.Label label1;
     }
 }

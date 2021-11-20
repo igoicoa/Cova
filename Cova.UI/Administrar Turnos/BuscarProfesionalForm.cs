@@ -1,16 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 using Cova.BE;
 using Cova.BL;
+using Cova.UI.Interfaces;
 
 namespace Cova.UI.Administrar_Turnos
 {
     public partial class BuscarProfesionalForm : Form
     {
-        public BuscarProfesionalForm()
+        private IFormCargarMedicos _formPadre;
+        private List<BEMedico> _medicos;
+        public BuscarProfesionalForm(IFormCargarMedicos formPadre = null)
         {
+            this._formPadre = formPadre;
             InitializeComponent();
             CargarEspecialidades();
         }
@@ -19,7 +24,6 @@ namespace Cova.UI.Administrar_Turnos
         {
             this.cmb_especialidad.DataSource = Enum.GetNames(typeof(Especialidad));
             this.cmb_especialidad.SelectedIndex = -1;
-            this.cmb_especialidad.SelectedIndex = 0;
         }
 
         private void btn_Buscar_Click(object sender, EventArgs e)
@@ -29,14 +33,18 @@ namespace Cova.UI.Administrar_Turnos
             {
                 string profesionalApellido = txt_profesionalApellido.Text;
                 string profesionalNombre = txt_profesionalNombre.Text;
-                Especialidad profesionalEspecialidad = (Especialidad)Enum.Parse(typeof(Especialidad), cmb_especialidad.SelectedItem.ToString());
-
-                if (string.IsNullOrEmpty(profesionalApellido) || string.IsNullOrEmpty(profesionalNombre) || cmb_especialidad.SelectedIndex != 0)
+                Especialidad? profesionalEspecialidad = null;
+                if (this.cmb_especialidad.SelectedIndex != -1)
+                {
+                    profesionalEspecialidad = (Especialidad)Enum.Parse(typeof(Especialidad), cmb_especialidad.SelectedItem.ToString());
+                }
+                    
+                if (string.IsNullOrEmpty(profesionalApellido) && string.IsNullOrEmpty(profesionalNombre) && cmb_especialidad.SelectedIndex == -1)
                 {
                     MessageBox.Show("Debe escribir al menos 1 criterio de busqueda");
                     return;
                 }
-                List<BEMedico> medicos = (List<BEMedico>)bLProfesional.BuscarMedicos(profesionalApellido, profesionalNombre, profesionalEspecialidad);
+                this._medicos = (List<BEMedico>)bLProfesional.BuscarMedicos(profesionalApellido, profesionalNombre, profesionalEspecialidad);
                 DataTable tableMedicos = new DataTable();
                 tableMedicos.Columns.Add("ProfesionalId");
                 tableMedicos.Columns.Add("Nombre");
@@ -47,10 +55,10 @@ namespace Cova.UI.Administrar_Turnos
                 tableMedicos.Columns.Add("Matricula Nacional");
                 tableMedicos.Columns.Add("Matricula Provincial");
 
-                foreach (BEMedico medico in medicos)
+                foreach (BEMedico medico in this._medicos)
                 {
                     DataRow filaMedico = tableMedicos.NewRow();
-                    filaMedico["ProfesionalId"] = medico.UsuarioID;
+                    filaMedico["ProfesionalId"] = medico.ProfesionalId;
                     filaMedico["Nombre"] = medico.Nombre;
                     filaMedico["Apellido"] = medico.Apellido;
                     filaMedico["Fecha Nacimiento"] = medico.FechaNacimiento;
@@ -74,6 +82,23 @@ namespace Cova.UI.Administrar_Turnos
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_Seleccionar_Click(object sender, EventArgs e)
+        {
+            if (this._formPadre != null)
+            {
+                if (dgv_medicos.SelectedRows.Count != 0)
+                {
+                    long profesionalId = Convert.ToInt64(dgv_medicos.SelectedRows[0].Cells["ProfesionalId"].Value);
+                    this._formPadre.CargarUsuarioMedico(this._medicos.Where(x => x.ProfesionalId == profesionalId).FirstOrDefault());
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un medico");
+                }
             }
         }
     }

@@ -46,7 +46,7 @@ namespace Cova.BL
             return this.BuscarMedicos("", medicoNuevo.DNI.ToString()).Count() == 0 ? false : true;
         }
 
-        public IList<BEMedico> BuscarMedicos(string apellido, string nombre, Especialidad especialidad)
+        public IList<BEMedico> BuscarMedicos(string apellido, string nombre, Especialidad? especialidad = null)
         {
             IList<BEMedico> medicos;
             MPPMedico mPPMedico = new MPPMedico();

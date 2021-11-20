@@ -9,6 +9,7 @@ BEGIN
 	SELECT  t.TurnoId					AS TurnoId
 		   ,t.Comentarios				AS Comentarios
 		   ,t.Asistio					AS Asistio
+		   ,t.Fecha						AS FechaTurno
 		   ,m.ProfesionalId				AS ProfesionalId
 		   ,pr.Apellido					AS ProfesionalApellido
 		   ,pr.Nombre					AS ProfesionalNombre

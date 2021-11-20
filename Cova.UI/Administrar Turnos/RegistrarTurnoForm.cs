@@ -6,10 +6,12 @@ using System.Linq;
 using System.Windows.Forms;
 using Cova.BE;
 using Cova.BL;
+using Cova.UI.Administrar_Turnos;
+using Cova.UI.Interfaces;
 
 namespace Cova.UI
 {
-    public partial class RegistrarTurnoForm : Form
+    public partial class RegistrarTurnoForm : Form, IFormCargarMedicos
     {
         private BEProfesional _profesional;
         public RegistrarTurnoForm()
@@ -35,8 +37,8 @@ namespace Cova.UI
                 {
                     DataRow filaTurno = tableTurnos.NewRow();
                     filaTurno["Profesional"] = turno.Profesional.ApellidoNombre;
-                    filaTurno["Dia Turno"] = turno.FechaTurno.Day;
-                    filaTurno["Hora Turno"] = turno.FechaTurno.Hour;
+                    filaTurno["Dia Turno"] = turno.FechaTurno.DayOfWeek + " " + turno.FechaTurno.Day;
+                    filaTurno["Hora Turno"] = turno.FechaTurno.Hour + ":" + turno.FechaTurno.Minute;
 
                     tableTurnos.Rows.Add(filaTurno);
                 }
@@ -53,5 +55,21 @@ namespace Cova.UI
             }
         }
 
+        public void CargarUsuarioMedico(BEMedico medico)
+        {
+            this._profesional = medico;
+            this.txt_profesional.Text = medico.ApellidoNombre;
+        }
+
+        private void btn_BuscarProfesional_Click(object sender, EventArgs e)
+        {
+            BuscarProfesionalForm frmBuscarProfesional = new BuscarProfesionalForm(this);
+            frmBuscarProfesional.Show();
+        }
+
+        private void btn_Limpiar_Click(object sender, EventArgs e)
+        {
+            //TODO Reserva el turno seleccionado
+        }
     }
 }

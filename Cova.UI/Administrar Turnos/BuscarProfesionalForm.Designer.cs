@@ -128,6 +128,7 @@
             this.btn_Seleccionar.TabIndex = 193;
             this.btn_Seleccionar.Text = "Seleccionar";
             this.btn_Seleccionar.UseVisualStyleBackColor = true;
+            this.btn_Seleccionar.Click += new System.EventHandler(this.btn_Seleccionar_Click);
             // 
             // BuscarProfesionalForm
             // 

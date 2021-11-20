@@ -66,7 +66,7 @@ namespace Cova.MPP
             return medicos;
         }
 
-        public IList<BEMedico> BuscarMedicos(string apellido, string nombre, Especialidad especialidad)
+        public IList<BEMedico> BuscarMedicos(string apellido, string nombre, Especialidad? especialidad = null)
         {
             List<BEMedico> medicos = new List<BEMedico>();
             DataSet medicosDS;
@@ -78,7 +78,14 @@ namespace Cova.MPP
                 string strSQL = @"s_BusquedaMedico";
                 datosMedico.Add("@Apellido", apellido);
                 datosMedico.Add("@Nombre", nombre);
-                datosMedico.Add("@Especialidad", especialidad);
+                if(especialidad != null)
+                {
+                    datosMedico.Add("@Especialidad", especialidad.ToString());
+                }
+                else
+                {
+                    datosMedico.Add("@Especialidad", "");
+                }
                 medicosDS = conexionBDD.ObtenerDataSet(strSQL, datosMedico);
                 medicoT = medicosDS.Tables[0];
                 if (medicoT.Rows.Count > 0)
