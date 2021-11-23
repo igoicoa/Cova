@@ -4,6 +4,8 @@ using System;
 using System.Linq;
 using System.Windows.Forms;
 using Cova.Servicios.Sesion;
+using Aspose.Pdf;
+using Microsoft.Win32;
 
 namespace Cova.UI
 {
@@ -89,6 +91,53 @@ namespace Cova.UI
             {
                 e.Value = historiaclinica.Medico.ProfesionalId;
             }
+        }
+
+        private void bttn_Exportar_Click(object sender, EventArgs e)
+        {
+            BLPaciente bLPaciente = new BLPaciente();
+            var historiaclinica= bLPaciente.ObtenerHistoriaClinicaPaciente(_paciente);
+            string descargas = Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString();
+            var document = new Document()
+            {
+                PageInfo = new PageInfo()
+                {
+                    Margin = new MarginInfo(28, 28, 28, 28)
+                }
+            };
+
+            var table = new Table()
+            {
+                ColumnWidths = "25% 25% 25% 25%",
+                DefaultCellPadding = new MarginInfo(10, 5, 5, 5),
+                Border = new BorderInfo(BorderSide.All),
+                DefaultCellBorder = new BorderInfo(BorderSide.All, .2f, Color.Black)
+            };
+
+            Row row1 = table.Rows.Add();
+            row1.Cells.Add("HistoriaClinicaId");
+            row1.Cells.Add("Fecha");
+            row1.Cells.Add("Profesional");
+            row1.Cells.Add("Paciente");
+            row1.Cells.Add("Observacion");
+            row1.Cells.Add("Peso");
+
+            foreach (BEHistoriaClinica registrohclinica in historiaclinica)
+            {
+                Row row2 = table.Rows.Add();
+                row2.Cells.Add(registrohclinica.HistoriaClinicaId.ToString());
+                row2.Cells.Add(registrohclinica.Fecha.ToString());
+                row2.Cells.Add(registrohclinica.Medico.ProfesionalId.ToString());
+                row2.Cells.Add(_paciente.ApellidoNombre.ToString());
+                row2.Cells.Add(registrohclinica.Observacion.ToString());
+                row2.Cells.Add(registrohclinica.Peso.ToString());
+            }
+            document.Pages.Add();
+            //fitTableToPageWidth(table);
+            document.Pages[1].Paragraphs.Add(table); //aspose.pdf indexes start at 1
+            document.Pages[1].Rect = new Rectangle(0, 0, 421, 595); // A5 size
+            document.Save(descargas + $"\\reporte.pdf");
+            MessageBox.Show("Se realizó la descarga del Reporte de forma correcta");
         }
     }
 }

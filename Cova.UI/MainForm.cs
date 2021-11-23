@@ -616,5 +616,10 @@ namespace Cova.UI
             this.contactoToolStripMenuItem.Enabled = false;
             this.novedadesToolStripMenuItem.Enabled = false;
         }
+
+        private void novedadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "file://C:\\Users\\Lenovo Thinkpad\\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\\Attachments\\Mis documentos\\UAI\\Trabajo de Campo y Diploma\\Proyecto\\Documentacion Funcional\\Ayuda en Linea\\Ayuda en Linea.chm");
+        }
     }
 }

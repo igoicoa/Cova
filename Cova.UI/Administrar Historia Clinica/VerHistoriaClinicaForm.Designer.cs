@@ -47,6 +47,7 @@ namespace Cova.UI
             this.cmb_TipoDocumento_VerHistoriaClinica = new System.Windows.Forms.ComboBox();
             this.lbl_TipoDocumento_VerHistoriaClinica = new System.Windows.Forms.Label();
             this.lbl_VerHistorial = new System.Windows.Forms.Label();
+            this.bttn_Exportar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Mostrar_VerHistoriaClinica)).BeginInit();
             this.gb_DatosPaciente_VerHistorialHistoriaClinica.SuspendLayout();
             this.SuspendLayout();
@@ -222,11 +223,23 @@ namespace Cova.UI
             this.lbl_VerHistorial.TabIndex = 109;
             this.lbl_VerHistorial.Text = "Ver Historia Clinica";
             // 
+            // bttn_Exportar
+            // 
+            this.bttn_Exportar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bttn_Exportar.Location = new System.Drawing.Point(467, 255);
+            this.bttn_Exportar.Name = "bttn_Exportar";
+            this.bttn_Exportar.Size = new System.Drawing.Size(75, 23);
+            this.bttn_Exportar.TabIndex = 115;
+            this.bttn_Exportar.Text = "Exportar";
+            this.bttn_Exportar.UseVisualStyleBackColor = true;
+            this.bttn_Exportar.Click += new System.EventHandler(this.bttn_Exportar_Click);
+            // 
             // VerHistoriaClinicaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 738);
+            this.Controls.Add(this.bttn_Exportar);
             this.Controls.Add(this.btnLimpiar_VerHistoriaClinica);
             this.Controls.Add(this.btnCancelar_VerHistoriaClinica);
             this.Controls.Add(this.btn_Mostrar_VerHistoriaClinica);
@@ -263,5 +276,6 @@ namespace Cova.UI
         private System.Windows.Forms.TextBox txt_nombre_VerHistoriaClinica;
         private System.Windows.Forms.Label lbl_Nombre_VerHistoriaClinica;
         private System.Windows.Forms.Button btn_BuscarPacientes_VerHistoriaClinica;
+        private System.Windows.Forms.Button bttn_Exportar;
     }
 }
