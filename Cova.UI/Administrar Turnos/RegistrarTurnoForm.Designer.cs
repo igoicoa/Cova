@@ -33,6 +33,7 @@ namespace Cova.UI
             this.lbl_RegistrarTurnos = new System.Windows.Forms.Label();
             this.dgv_RegistrarTurnos = new System.Windows.Forms.DataGridView();
             this.gb_Filtros = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btn_BuscarProfesional = new System.Windows.Forms.Button();
             this.txt_profesional = new System.Windows.Forms.TextBox();
             this.btn_Limpiar = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@ namespace Cova.UI
             this.lbl_FechaDesde_Bitacora = new System.Windows.Forms.Label();
             this.dtp_FechaHasta = new System.Windows.Forms.DateTimePicker();
             this.dtp_FechaDesde = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_RegistrarTurnos)).BeginInit();
             this.gb_Filtros.SuspendLayout();
             this.SuspendLayout();
@@ -85,6 +85,15 @@ namespace Cova.UI
             this.gb_Filtros.TabIndex = 132;
             this.gb_Filtros.TabStop = false;
             this.gb_Filtros.Text = "Filtros";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(416, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.TabIndex = 184;
+            this.label1.Text = "Profesional";
             // 
             // btn_BuscarProfesional
             // 
@@ -166,15 +175,6 @@ namespace Cova.UI
             this.dtp_FechaDesde.Name = "dtp_FechaDesde";
             this.dtp_FechaDesde.Size = new System.Drawing.Size(219, 20);
             this.dtp_FechaDesde.TabIndex = 131;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(416, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
-            this.label1.TabIndex = 184;
-            this.label1.Text = "Profesional";
             // 
             // RegistrarTurnoForm
             // 

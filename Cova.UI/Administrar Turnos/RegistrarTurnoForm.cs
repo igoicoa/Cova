@@ -23,6 +23,11 @@ namespace Cova.UI
         {
             DateTime fechaDesde = dtp_FechaDesde.Value;
             DateTime fechaHasta = dtp_FechaHasta.Value;
+            if(this._profesional == null)
+            {
+                MessageBox.Show("Debe buscar un profesional para ver los turnos disponibles");
+                return;
+            }
             try
             {
                 BLProfesional bLProfesional = new BLProfesional();
@@ -30,6 +35,7 @@ namespace Cova.UI
 
                 DataTable tableTurnos = new DataTable();
                 tableTurnos.Columns.Add("Profesional");
+                tableTurnos.Columns.Add("FechaTurno");
                 tableTurnos.Columns.Add("Dia Turno");
                 tableTurnos.Columns.Add("Hora Turno");
                 
@@ -37,6 +43,7 @@ namespace Cova.UI
                 {
                     DataRow filaTurno = tableTurnos.NewRow();
                     filaTurno["Profesional"] = turno.Profesional.ApellidoNombre;
+                    filaTurno["FechaTurno"] = turno.FechaTurno;
                     filaTurno["Dia Turno"] = turno.FechaTurno.DayOfWeek + " " + turno.FechaTurno.Day;
                     filaTurno["Hora Turno"] = turno.FechaTurno.Hour + ":" + turno.FechaTurno.Minute;
 
@@ -46,8 +53,9 @@ namespace Cova.UI
                 DataView dataviewTurnos = new DataView(tableTurnos);
                 dgv_RegistrarTurnos.DataSource = dataviewTurnos;
                 dgv_RegistrarTurnos.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgv_RegistrarTurnos.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgv_RegistrarTurnos.Columns[1].Visible = false;
                 dgv_RegistrarTurnos.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgv_RegistrarTurnos.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             }
             catch(Exception ex)
             {
@@ -69,7 +77,19 @@ namespace Cova.UI
 
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
-            //TODO Reserva el turno seleccionado
+            if (dgv_RegistrarTurnos.SelectedRows.Count != 0)
+            {
+                BETurno turnoNuevo = new BETurno();
+                BLTurno bLTurno = new BLTurno();
+                DateTime fechaTurno = (DateTime)(dgv_RegistrarTurnos.SelectedRows[0].Cells["FechaTurno"].Value);
+                turnoNuevo.Profesional = this._profesional;
+                turnoNuevo.FechaTurno = fechaTurno;
+                BECentroMedico bECentroMedico = new BECentroMedico();
+                bECentroMedico.CentroMedicoId = 1;
+                turnoNuevo.CentroMedico = bECentroMedico;
+                bLTurno.GenerarTurno(turnoNuevo);
+                this.Close();
+            }
         }
     }
 }
