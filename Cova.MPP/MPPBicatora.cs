@@ -5,9 +5,6 @@ using System.Data;
 using Cova.BE.Bitacora;
 using Cova.BE;
 using Cova.DAL;
-using Microsoft.Win32;
-using System.IO;
-using Newtonsoft.Json;
 
 namespace Cova.MPP
 {
@@ -75,11 +72,6 @@ namespace Cova.MPP
                     }
                 }
                 EstadoOKEscribir= conexionBDD.Escribir(strSQL, datosBitacora);
-                if (bitacora.Criticidad== TipoCriticidad.Error)
-                {
-                    SerializarError(bitacora);
-                }
-
                 return EstadoOKEscribir;
             }
             catch (Exception ex)
@@ -88,12 +80,5 @@ namespace Cova.MPP
             }
         }
 
-        private void SerializarError(object obj)
-        {
-            string downloadPath = Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString();
-            string pathToSave = downloadPath + @"\SistemaCova\Errores";
-            Directory.CreateDirectory(pathToSave);
-            File.WriteAllText(pathToSave + $"\\${Guid.NewGuid()}.json", JsonConvert.SerializeObject(obj, Formatting.Indented));
-        }
     }
 }

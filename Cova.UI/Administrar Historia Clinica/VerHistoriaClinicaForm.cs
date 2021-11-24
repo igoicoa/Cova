@@ -108,7 +108,7 @@ namespace Cova.UI
 
             var table = new Table()
             {
-                ColumnWidths = "25% 25% 25% 25%",
+                ColumnWidths = "15% 15% 15% 15% 15% 15%",
                 DefaultCellPadding = new MarginInfo(10, 5, 5, 5),
                 Border = new BorderInfo(BorderSide.All),
                 DefaultCellBorder = new BorderInfo(BorderSide.All, .2f, Color.Black)
