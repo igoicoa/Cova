@@ -30,40 +30,37 @@ namespace Cova.UI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerCalendarioMisPacientesForm));
-            this.lbl_VerCalendariodePacientes = new System.Windows.Forms.Label();
-            this.dtp_fechaDesde_AplicarVacunas = new System.Windows.Forms.DateTimePicker();
+            this.lbl_VerCalendarioTurnos = new System.Windows.Forms.Label();
+            this.dtp_fechaDesde = new System.Windows.Forms.DateTimePicker();
             this.lbl_FechaDesde_VerCalendariodePacientes = new System.Windows.Forms.Label();
-            this.dtp_FechaHAsta_VerCalendariodePacientes = new System.Windows.Forms.DateTimePicker();
+            this.dtp_FechaHasta = new System.Windows.Forms.DateTimePicker();
             this.lbl_FechaHasta_VerCalendariodePacientes = new System.Windows.Forms.Label();
             this.dtg_VerCalendarioPacientes = new System.Windows.Forms.DataGridView();
-            this.btn_Limpiar_VerCalendariodePacientes = new System.Windows.Forms.Button();
-            this.btn_Cancelar_VerCalendariodePacientes = new System.Windows.Forms.Button();
             this.btn_Buscar_VerCalendariodePacientes = new System.Windows.Forms.Button();
-            this.lbl_Estado_VerCalendariodePacientes = new System.Windows.Forms.Label();
-            this.cmb_estado_VerCalendariodePacientes = new System.Windows.Forms.ComboBox();
             this.gb_Filtros = new System.Windows.Forms.GroupBox();
+            this.btn_cancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_VerCalendarioPacientes)).BeginInit();
             this.gb_Filtros.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lbl_VerCalendariodePacientes
+            // lbl_VerCalendarioTurnos
             // 
-            this.lbl_VerCalendariodePacientes.AutoSize = true;
-            this.lbl_VerCalendariodePacientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_VerCalendariodePacientes.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.lbl_VerCalendariodePacientes.Location = new System.Drawing.Point(12, 9);
-            this.lbl_VerCalendariodePacientes.Name = "lbl_VerCalendariodePacientes";
-            this.lbl_VerCalendariodePacientes.Size = new System.Drawing.Size(309, 25);
-            this.lbl_VerCalendariodePacientes.TabIndex = 129;
-            this.lbl_VerCalendariodePacientes.Text = "Ver calendario de Pacientes";
-            this.lbl_VerCalendariodePacientes.UseWaitCursor = true;
+            this.lbl_VerCalendarioTurnos.AutoSize = true;
+            this.lbl_VerCalendarioTurnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_VerCalendarioTurnos.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.lbl_VerCalendarioTurnos.Location = new System.Drawing.Point(12, 9);
+            this.lbl_VerCalendarioTurnos.Name = "lbl_VerCalendarioTurnos";
+            this.lbl_VerCalendarioTurnos.Size = new System.Drawing.Size(309, 25);
+            this.lbl_VerCalendarioTurnos.TabIndex = 129;
+            this.lbl_VerCalendarioTurnos.Text = "Ver calendario de Pacientes";
+            this.lbl_VerCalendarioTurnos.UseWaitCursor = true;
             // 
-            // dtp_fechaDesde_AplicarVacunas
+            // dtp_fechaDesde
             // 
-            this.dtp_fechaDesde_AplicarVacunas.Location = new System.Drawing.Point(83, 25);
-            this.dtp_fechaDesde_AplicarVacunas.Name = "dtp_fechaDesde_AplicarVacunas";
-            this.dtp_fechaDesde_AplicarVacunas.Size = new System.Drawing.Size(214, 20);
-            this.dtp_fechaDesde_AplicarVacunas.TabIndex = 139;
+            this.dtp_fechaDesde.Location = new System.Drawing.Point(83, 25);
+            this.dtp_fechaDesde.Name = "dtp_fechaDesde";
+            this.dtp_fechaDesde.Size = new System.Drawing.Size(214, 20);
+            this.dtp_fechaDesde.TabIndex = 139;
             // 
             // lbl_FechaDesde_VerCalendariodePacientes
             // 
@@ -75,12 +72,12 @@ namespace Cova.UI
             this.lbl_FechaDesde_VerCalendariodePacientes.TabIndex = 138;
             this.lbl_FechaDesde_VerCalendariodePacientes.Text = "Fecha Desde";
             // 
-            // dtp_FechaHAsta_VerCalendariodePacientes
+            // dtp_FechaHasta
             // 
-            this.dtp_FechaHAsta_VerCalendariodePacientes.Location = new System.Drawing.Point(83, 66);
-            this.dtp_FechaHAsta_VerCalendariodePacientes.Name = "dtp_FechaHAsta_VerCalendariodePacientes";
-            this.dtp_FechaHAsta_VerCalendariodePacientes.Size = new System.Drawing.Size(214, 20);
-            this.dtp_FechaHAsta_VerCalendariodePacientes.TabIndex = 141;
+            this.dtp_FechaHasta.Location = new System.Drawing.Point(83, 66);
+            this.dtp_FechaHasta.Name = "dtp_FechaHasta";
+            this.dtp_FechaHasta.Size = new System.Drawing.Size(214, 20);
+            this.dtp_FechaHasta.TabIndex = 141;
             // 
             // lbl_FechaHasta_VerCalendariodePacientes
             // 
@@ -95,76 +92,46 @@ namespace Cova.UI
             // dtg_VerCalendarioPacientes
             // 
             this.dtg_VerCalendarioPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_VerCalendarioPacientes.Location = new System.Drawing.Point(17, 234);
+            this.dtg_VerCalendarioPacientes.Location = new System.Drawing.Point(17, 195);
             this.dtg_VerCalendarioPacientes.Name = "dtg_VerCalendarioPacientes";
             this.dtg_VerCalendarioPacientes.ReadOnly = true;
-            this.dtg_VerCalendarioPacientes.Size = new System.Drawing.Size(785, 321);
+            this.dtg_VerCalendarioPacientes.Size = new System.Drawing.Size(785, 360);
             this.dtg_VerCalendarioPacientes.TabIndex = 142;
-            // 
-            // btn_Limpiar_VerCalendariodePacientes
-            // 
-            this.btn_Limpiar_VerCalendariodePacientes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Limpiar_VerCalendariodePacientes.Location = new System.Drawing.Point(352, 119);
-            this.btn_Limpiar_VerCalendariodePacientes.Name = "btn_Limpiar_VerCalendariodePacientes";
-            this.btn_Limpiar_VerCalendariodePacientes.Size = new System.Drawing.Size(75, 23);
-            this.btn_Limpiar_VerCalendariodePacientes.TabIndex = 151;
-            this.btn_Limpiar_VerCalendariodePacientes.Text = "Limpiar";
-            this.btn_Limpiar_VerCalendariodePacientes.UseVisualStyleBackColor = true;
-            // 
-            // btn_Cancelar_VerCalendariodePacientes
-            // 
-            this.btn_Cancelar_VerCalendariodePacientes.Location = new System.Drawing.Point(271, 119);
-            this.btn_Cancelar_VerCalendariodePacientes.Name = "btn_Cancelar_VerCalendariodePacientes";
-            this.btn_Cancelar_VerCalendariodePacientes.Size = new System.Drawing.Size(75, 23);
-            this.btn_Cancelar_VerCalendariodePacientes.TabIndex = 150;
-            this.btn_Cancelar_VerCalendariodePacientes.Text = "Cancelar";
-            this.btn_Cancelar_VerCalendariodePacientes.UseVisualStyleBackColor = true;
-            this.btn_Cancelar_VerCalendariodePacientes.Click += new System.EventHandler(this.btn_Cancelar_VerCalendariodePacientes_Click);
             // 
             // btn_Buscar_VerCalendariodePacientes
             // 
-            this.btn_Buscar_VerCalendariodePacientes.Location = new System.Drawing.Point(185, 119);
+            this.btn_Buscar_VerCalendariodePacientes.Location = new System.Drawing.Point(126, 106);
             this.btn_Buscar_VerCalendariodePacientes.Name = "btn_Buscar_VerCalendariodePacientes";
             this.btn_Buscar_VerCalendariodePacientes.Size = new System.Drawing.Size(75, 23);
             this.btn_Buscar_VerCalendariodePacientes.TabIndex = 149;
             this.btn_Buscar_VerCalendariodePacientes.Text = "Buscar";
             this.btn_Buscar_VerCalendariodePacientes.UseVisualStyleBackColor = true;
-            // 
-            // lbl_Estado_VerCalendariodePacientes
-            // 
-            this.lbl_Estado_VerCalendariodePacientes.AutoEllipsis = true;
-            this.lbl_Estado_VerCalendariodePacientes.AutoSize = true;
-            this.lbl_Estado_VerCalendariodePacientes.Location = new System.Drawing.Point(328, 25);
-            this.lbl_Estado_VerCalendariodePacientes.Name = "lbl_Estado_VerCalendariodePacientes";
-            this.lbl_Estado_VerCalendariodePacientes.Size = new System.Drawing.Size(40, 13);
-            this.lbl_Estado_VerCalendariodePacientes.TabIndex = 152;
-            this.lbl_Estado_VerCalendariodePacientes.Text = "Estado";
-            // 
-            // cmb_estado_VerCalendariodePacientes
-            // 
-            this.cmb_estado_VerCalendariodePacientes.FormattingEnabled = true;
-            this.cmb_estado_VerCalendariodePacientes.Location = new System.Drawing.Point(374, 21);
-            this.cmb_estado_VerCalendariodePacientes.Name = "cmb_estado_VerCalendariodePacientes";
-            this.cmb_estado_VerCalendariodePacientes.Size = new System.Drawing.Size(96, 21);
-            this.cmb_estado_VerCalendariodePacientes.TabIndex = 153;
+            this.btn_Buscar_VerCalendariodePacientes.Click += new System.EventHandler(this.btn_Buscar_VerCalendariodePacientes_Click);
             // 
             // gb_Filtros
             // 
+            this.gb_Filtros.Controls.Add(this.btn_cancelar);
             this.gb_Filtros.Controls.Add(this.lbl_FechaDesde_VerCalendariodePacientes);
-            this.gb_Filtros.Controls.Add(this.btn_Limpiar_VerCalendariodePacientes);
-            this.gb_Filtros.Controls.Add(this.cmb_estado_VerCalendariodePacientes);
-            this.gb_Filtros.Controls.Add(this.btn_Cancelar_VerCalendariodePacientes);
-            this.gb_Filtros.Controls.Add(this.dtp_fechaDesde_AplicarVacunas);
+            this.gb_Filtros.Controls.Add(this.dtp_fechaDesde);
             this.gb_Filtros.Controls.Add(this.btn_Buscar_VerCalendariodePacientes);
-            this.gb_Filtros.Controls.Add(this.lbl_Estado_VerCalendariodePacientes);
             this.gb_Filtros.Controls.Add(this.lbl_FechaHasta_VerCalendariodePacientes);
-            this.gb_Filtros.Controls.Add(this.dtp_FechaHAsta_VerCalendariodePacientes);
+            this.gb_Filtros.Controls.Add(this.dtp_FechaHasta);
             this.gb_Filtros.Location = new System.Drawing.Point(17, 49);
             this.gb_Filtros.Name = "gb_Filtros";
-            this.gb_Filtros.Size = new System.Drawing.Size(661, 166);
+            this.gb_Filtros.Size = new System.Drawing.Size(393, 140);
             this.gb_Filtros.TabIndex = 154;
             this.gb_Filtros.TabStop = false;
             this.gb_Filtros.Text = "Filtros";
+            // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.Location = new System.Drawing.Point(222, 106);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancelar.TabIndex = 150;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // VerCalendarioMisPacientesForm
             // 
@@ -173,10 +140,10 @@ namespace Cova.UI
             this.ClientSize = new System.Drawing.Size(873, 619);
             this.Controls.Add(this.gb_Filtros);
             this.Controls.Add(this.dtg_VerCalendarioPacientes);
-            this.Controls.Add(this.lbl_VerCalendariodePacientes);
+            this.Controls.Add(this.lbl_VerCalendarioTurnos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VerCalendarioMisPacientesForm";
-            this.Text = "VerCalendarioMisPacientes";
+            this.Text = "Mis Turnos";
             ((System.ComponentModel.ISupportInitialize)(this.dtg_VerCalendarioPacientes)).EndInit();
             this.gb_Filtros.ResumeLayout(false);
             this.gb_Filtros.PerformLayout();
@@ -187,17 +154,14 @@ namespace Cova.UI
 
         #endregion
 
-        private System.Windows.Forms.Label lbl_VerCalendariodePacientes;
-        private System.Windows.Forms.DateTimePicker dtp_fechaDesde_AplicarVacunas;
+        private System.Windows.Forms.Label lbl_VerCalendarioTurnos;
+        private System.Windows.Forms.DateTimePicker dtp_fechaDesde;
         private System.Windows.Forms.Label lbl_FechaDesde_VerCalendariodePacientes;
-        private System.Windows.Forms.DateTimePicker dtp_FechaHAsta_VerCalendariodePacientes;
+        private System.Windows.Forms.DateTimePicker dtp_FechaHasta;
         private System.Windows.Forms.Label lbl_FechaHasta_VerCalendariodePacientes;
         private System.Windows.Forms.DataGridView dtg_VerCalendarioPacientes;
-        private System.Windows.Forms.Button btn_Limpiar_VerCalendariodePacientes;
-        private System.Windows.Forms.Button btn_Cancelar_VerCalendariodePacientes;
         private System.Windows.Forms.Button btn_Buscar_VerCalendariodePacientes;
-        private System.Windows.Forms.Label lbl_Estado_VerCalendariodePacientes;
-        private System.Windows.Forms.ComboBox cmb_estado_VerCalendariodePacientes;
         private System.Windows.Forms.GroupBox gb_Filtros;
+        private System.Windows.Forms.Button btn_cancelar;
     }
 }

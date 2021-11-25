@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -8,6 +7,7 @@ using Cova.BE;
 using Cova.BL;
 using Cova.UI.Administrar_Turnos;
 using Cova.UI.Interfaces;
+using Cova.Servicios.Sesion;
 
 namespace Cova.UI
 {
@@ -75,20 +75,40 @@ namespace Cova.UI
             frmBuscarProfesional.Show();
         }
 
-        private void btn_Limpiar_Click(object sender, EventArgs e)
+        private void btn_Reservar_Click(object sender, EventArgs e)
         {
             if (dgv_RegistrarTurnos.SelectedRows.Count != 0)
             {
-                BETurno turnoNuevo = new BETurno();
-                BLTurno bLTurno = new BLTurno();
-                DateTime fechaTurno = (DateTime)(dgv_RegistrarTurnos.SelectedRows[0].Cells["FechaTurno"].Value);
-                turnoNuevo.Profesional = this._profesional;
-                turnoNuevo.FechaTurno = fechaTurno;
-                BECentroMedico bECentroMedico = new BECentroMedico();
-                bECentroMedico.CentroMedicoId = 1;
-                turnoNuevo.CentroMedico = bECentroMedico;
-                bLTurno.GenerarTurno(turnoNuevo);
-                this.Close();
+                try
+                {
+                    BLPaciente blPaciente = new BLPaciente();
+                    string usuario = Sesion.GetInstance.Usuario.Usuario;
+                    long usuarioId = Sesion.GetInstance.Usuario.UsuarioID;
+                    BEPaciente paciente = blPaciente.BuscarPacientes(usuario, "").ToList().Where(x => x.UsuarioID == usuarioId).FirstOrDefault();
+                    BETurno turnoNuevo = new BETurno();
+                    BLTurno bLTurno = new BLTurno();
+                    string fecha = dgv_RegistrarTurnos.SelectedRows[0].Cells["FechaTurno"].Value.ToString();
+                    DateTime fechaTurno = Convert.ToDateTime(fecha);
+                    turnoNuevo.Profesional = this._profesional;
+                    turnoNuevo.FechaTurno = fechaTurno;
+                    turnoNuevo.Paciente = paciente;
+                    BECentroMedico bECentroMedico = new BECentroMedico();
+                    bECentroMedico.CentroMedicoId = 1;
+                    turnoNuevo.CentroMedico = bECentroMedico;
+                    if (bLTurno.GenerarTurno(turnoNuevo))
+                    {
+                        MessageBox.Show("Turno generado exitosamente");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error al generar el turno");
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

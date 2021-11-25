@@ -130,7 +130,14 @@ namespace Cova.MPP
                 datosTurno.Add("@PacienteId", turno.Paciente.PacienteId);
                 datosTurno.Add("@CentroMedicoId", turno.CentroMedico.CentroMedicoId);
                 datosTurno.Add("@Fecha", turno.FechaTurno);
-                datosTurno.Add("@Comentarios", turno.Comentarios);
+                if(turno.Comentarios is null)
+                {
+                    datosTurno.Add("@Comentarios", "");
+                }
+                else
+                {
+                    datosTurno.Add("@Comentarios", turno.Comentarios);
+                }
                 return conexionBDD.Escribir(strSQL, datosTurno);
             }
             catch (Exception ex)

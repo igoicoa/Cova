@@ -122,14 +122,8 @@ namespace Cova.UI
             if (administrarTurnosToolStripMenuItem.Tag != null && traducciones.ContainsKey(administrarTurnosToolStripMenuItem.Tag.ToString()))
                 administrarTurnosToolStripMenuItem.Text = traducciones[administrarTurnosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
 
-            if (calendarioDeTurnosToolStripMenuItem1.Tag != null && traducciones.ContainsKey(calendarioDeTurnosToolStripMenuItem1.Tag.ToString()))
-                calendarioDeTurnosToolStripMenuItem1.Text = traducciones[calendarioDeTurnosToolStripMenuItem1.Tag.ToString()].PalabraTraducida;
-
             if (registrarTurnoToolStripMenuItem1.Tag != null && traducciones.ContainsKey(registrarTurnoToolStripMenuItem1.Tag.ToString()))
                 registrarTurnoToolStripMenuItem1.Text = traducciones[registrarTurnoToolStripMenuItem1.Tag.ToString()].PalabraTraducida;
-
-            if (cancelarTurnoToolStripMenuItem1.Tag != null && traducciones.ContainsKey(cancelarTurnoToolStripMenuItem1.Tag.ToString()))
-                cancelarTurnoToolStripMenuItem1.Text = traducciones[cancelarTurnoToolStripMenuItem1.Tag.ToString()].PalabraTraducida;
 
             if (verMisTurnosToolStripMenuItem.Tag != null && traducciones.ContainsKey(verMisTurnosToolStripMenuItem.Tag.ToString()))
                 verMisTurnosToolStripMenuItem.Text = traducciones[verMisTurnosToolStripMenuItem.Tag.ToString()].PalabraTraducida;
@@ -232,9 +226,7 @@ namespace Cova.UI
             this.aplicarVacunaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AplicarVacuna) : false;
 
             this.administrarTurnosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AdministrarTurnos) : false;
-            this.calendarioDeTurnosToolStripMenuItem1.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CalendarioDeTurnos) : false;
             this.registrarTurnoToolStripMenuItem1.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.RegistrarTurno) : false;
-            this.cancelarTurnoToolStripMenuItem1.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.CancelarTurno) : false;
             this.verMisTurnosToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.VerMisTurnos) : false;
 
             this.administrarCoberturaMedicaToolStripMenuItem.Enabled = cargarPermisosUsuario ? Sesion.TienePermiso(TipoPermiso.AdministrarCoberturaMedica) : false;
@@ -581,9 +573,7 @@ namespace Cova.UI
             this.aplicarVacunaToolStripMenuItem.Enabled = false;
 
             this.administrarTurnosToolStripMenuItem.Enabled = false;
-            this.calendarioDeTurnosToolStripMenuItem1.Enabled = false;
             this.registrarTurnoToolStripMenuItem1.Enabled = false;
-            this.cancelarTurnoToolStripMenuItem1.Enabled = false;
             this.verMisTurnosToolStripMenuItem.Enabled = false;
 
             this.administrarCoberturaMedicaToolStripMenuItem.Enabled = false;
@@ -621,5 +611,12 @@ namespace Cova.UI
         {
             Help.ShowHelp(this, "file://C:\\Users\\Lenovo Thinkpad\\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\\Attachments\\Mis documentos\\UAI\\Trabajo de Campo y Diploma\\Proyecto\\Documentacion Funcional\\Ayuda en Linea\\Ayuda en Linea.chm");
         }
+
+        private void verMisTurnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VerCalendarioMisPacientesForm verCalendarioMisPacientesForm = new VerCalendarioMisPacientesForm();
+            verCalendarioMisPacientesForm.Show();
+        }
+
     }
 }

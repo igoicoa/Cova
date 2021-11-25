@@ -36,7 +36,7 @@ namespace Cova.UI
             this.label1 = new System.Windows.Forms.Label();
             this.btn_BuscarProfesional = new System.Windows.Forms.Button();
             this.txt_profesional = new System.Windows.Forms.TextBox();
-            this.btn_Limpiar = new System.Windows.Forms.Button();
+            this.btn_Reservar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.btn_Filtrar = new System.Windows.Forms.Button();
             this.lbl_FechaHasta_Bitacora = new System.Windows.Forms.Label();
@@ -72,7 +72,7 @@ namespace Cova.UI
             this.gb_Filtros.Controls.Add(this.label1);
             this.gb_Filtros.Controls.Add(this.btn_BuscarProfesional);
             this.gb_Filtros.Controls.Add(this.txt_profesional);
-            this.gb_Filtros.Controls.Add(this.btn_Limpiar);
+            this.gb_Filtros.Controls.Add(this.btn_Reservar);
             this.gb_Filtros.Controls.Add(this.btn_Cancelar);
             this.gb_Filtros.Controls.Add(this.btn_Filtrar);
             this.gb_Filtros.Controls.Add(this.lbl_FechaHasta_Bitacora);
@@ -114,16 +114,16 @@ namespace Cova.UI
             this.txt_profesional.Size = new System.Drawing.Size(240, 20);
             this.txt_profesional.TabIndex = 182;
             // 
-            // btn_Limpiar
+            // btn_Reservar
             // 
-            this.btn_Limpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Limpiar.Location = new System.Drawing.Point(351, 100);
-            this.btn_Limpiar.Name = "btn_Limpiar";
-            this.btn_Limpiar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Limpiar.TabIndex = 181;
-            this.btn_Limpiar.Text = "Reservar";
-            this.btn_Limpiar.UseVisualStyleBackColor = true;
-            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
+            this.btn_Reservar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Reservar.Location = new System.Drawing.Point(351, 100);
+            this.btn_Reservar.Name = "btn_Reservar";
+            this.btn_Reservar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Reservar.TabIndex = 181;
+            this.btn_Reservar.Text = "Reservar";
+            this.btn_Reservar.UseVisualStyleBackColor = true;
+            this.btn_Reservar.Click += new System.EventHandler(this.btn_Reservar_Click);
             // 
             // btn_Cancelar
             // 
@@ -200,7 +200,7 @@ namespace Cova.UI
         private System.Windows.Forms.Label lbl_RegistrarTurnos;
         private System.Windows.Forms.DataGridView dgv_RegistrarTurnos;
         private System.Windows.Forms.GroupBox gb_Filtros;
-        private System.Windows.Forms.Button btn_Limpiar;
+        private System.Windows.Forms.Button btn_Reservar;
         private System.Windows.Forms.Button btn_Cancelar;
         private System.Windows.Forms.Button btn_Filtrar;
         private System.Windows.Forms.Label lbl_FechaHasta_Bitacora;

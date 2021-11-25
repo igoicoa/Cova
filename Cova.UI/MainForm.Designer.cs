@@ -45,9 +45,7 @@
             this.verVacunasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aplicarVacunaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarTurnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.calendarioDeTurnosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarTurnoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cancelarTurnoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.verMisTurnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarCoberturaMedicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearCoberturaMedicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -220,42 +218,27 @@
             // administrarTurnosToolStripMenuItem
             // 
             this.administrarTurnosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.calendarioDeTurnosToolStripMenuItem1,
             this.registrarTurnoToolStripMenuItem1,
-            this.cancelarTurnoToolStripMenuItem1,
             this.verMisTurnosToolStripMenuItem});
             this.administrarTurnosToolStripMenuItem.Name = "administrarTurnosToolStripMenuItem";
             this.administrarTurnosToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.administrarTurnosToolStripMenuItem.Tag = "administrarturnos";
             this.administrarTurnosToolStripMenuItem.Text = "Administrar Turnos";
             // 
-            // calendarioDeTurnosToolStripMenuItem1
-            // 
-            this.calendarioDeTurnosToolStripMenuItem1.Name = "calendarioDeTurnosToolStripMenuItem1";
-            this.calendarioDeTurnosToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
-            this.calendarioDeTurnosToolStripMenuItem1.Tag = "CalendariodeTurnos";
-            this.calendarioDeTurnosToolStripMenuItem1.Text = "Calendario de Turnos";
-            // 
             // registrarTurnoToolStripMenuItem1
             // 
             this.registrarTurnoToolStripMenuItem1.Name = "registrarTurnoToolStripMenuItem1";
-            this.registrarTurnoToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
-            this.registrarTurnoToolStripMenuItem1.Text = "RegistrarTurnos";
+            this.registrarTurnoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.registrarTurnoToolStripMenuItem1.Text = "Registrar Turnos";
             this.registrarTurnoToolStripMenuItem1.Click += new System.EventHandler(this.registrarTurnoToolStripMenuItem1_Click);
-            // 
-            // cancelarTurnoToolStripMenuItem1
-            // 
-            this.cancelarTurnoToolStripMenuItem1.Name = "cancelarTurnoToolStripMenuItem1";
-            this.cancelarTurnoToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
-            this.cancelarTurnoToolStripMenuItem1.Tag = "CancelarTurnos";
-            this.cancelarTurnoToolStripMenuItem1.Text = "Cancelar Turnos";
             // 
             // verMisTurnosToolStripMenuItem
             // 
             this.verMisTurnosToolStripMenuItem.Name = "verMisTurnosToolStripMenuItem";
-            this.verMisTurnosToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.verMisTurnosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verMisTurnosToolStripMenuItem.Tag = "VerMisturnos";
             this.verMisTurnosToolStripMenuItem.Text = "Ver Mis Turnos";
+            this.verMisTurnosToolStripMenuItem.Click += new System.EventHandler(this.verMisTurnosToolStripMenuItem_Click);
             // 
             // administrarCoberturaMedicaToolStripMenuItem
             // 
@@ -446,14 +429,14 @@
             // contactoToolStripMenuItem
             // 
             this.contactoToolStripMenuItem.Name = "contactoToolStripMenuItem";
-            this.contactoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.contactoToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.contactoToolStripMenuItem.Tag = "Contacto";
             this.contactoToolStripMenuItem.Text = "Contacto";
             // 
             // novedadesToolStripMenuItem
             // 
             this.novedadesToolStripMenuItem.Name = "novedadesToolStripMenuItem";
-            this.novedadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.novedadesToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.novedadesToolStripMenuItem.Tag = "Novedades";
             this.novedadesToolStripMenuItem.Text = "Novedades";
             this.novedadesToolStripMenuItem.Click += new System.EventHandler(this.novedadesToolStripMenuItem_Click);
@@ -498,9 +481,7 @@
         private System.Windows.Forms.ToolStripMenuItem modificarVacunasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verVacunasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aplicarVacunaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem calendarioDeTurnosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem registrarTurnoToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem cancelarTurnoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem verMisTurnosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administrarCoberturaMedicaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearCoberturaMedicaToolStripMenuItem;
