@@ -55,7 +55,7 @@ namespace Cova.BL
                 MPPUsuario mPPUsuario = new MPPUsuario();
                 string claveNuevaEncriptada = HashHelper.Hash256(nuevoPassword);
                 cambiarPassword = mPPUsuario.ActualizarPassword(usuario, claveNuevaEncriptada);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se cambio la Password Exitosamente de la cuenta: " + usuario.UsuarioID, "Cambiar Password"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se cambio la Password Exitosamente de la cuenta: " + usuario, "Cambiar Password"));
             }
             catch (Exception ex)
             {
