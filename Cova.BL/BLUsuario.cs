@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cova.BE;
 using Cova.BE.Bitacora;
 using Cova.MPP;
@@ -8,11 +9,15 @@ using Cova.Common.Permisos;
 using Cova.Common.Excepciones;
 using Cova.Servicios.Bitacora;
 using Cova.Servicios.Sesion;
+using Cova.Servicios.Email;
 
 namespace Cova.BL
 {
     public class BLUsuario
     {
+        private static Random random = new Random();
+        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
         public bool Login(ref BEUsuario usuarioALoguearse)
         {
             bool claveCorrecta = false;
@@ -42,14 +47,14 @@ namespace Cova.BL
             return claveCorrecta;
         }
 
-        public bool CambiarPassword(BEUsuario usuario, string nuevoPassword)
+        public bool CambiarPassword(string usuario, string nuevoPassword)
         {
             bool cambiarPassword = false;
             try
             {
                 MPPUsuario mPPUsuario = new MPPUsuario();
                 string claveNuevaEncriptada = HashHelper.Hash256(nuevoPassword);
-                cambiarPassword = mPPUsuario.ActualizarPassword(usuario.Usuario, claveNuevaEncriptada);
+                cambiarPassword = mPPUsuario.ActualizarPassword(usuario, claveNuevaEncriptada);
                 Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se cambio la Password Exitosamente de la cuenta: " + usuario.UsuarioID, "Cambiar Password"));
             }
             catch (Exception ex)
@@ -58,6 +63,28 @@ namespace Cova.BL
                 throw new ErrorAlCambiarPasswordException();
             }
             return cambiarPassword;
+        }
+
+        public bool RecuperarPassword(string usuario, string emailUsuario)
+        {
+            bool recuperarPwd = false;
+            try
+            {
+                string claveProvisoria = new string(Enumerable.Repeat(chars, 10).Select(s => s[random.Next(s.Length)]).ToArray());
+                if (this.CambiarPassword(usuario, claveProvisoria))
+                {
+                    string body = "Su contraseña provisoria es: " + claveProvisoria;
+                    EmailSender.SendEmail(emailUsuario, usuario, "Recuperacion contraseña", body);
+                    recuperarPwd = true;
+                    Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se recupero la contraseña del usuario " + usuario, "Recuperar Contraseña"));
+                }
+            }
+            catch(Exception ex)
+            {
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al recuperar contraseña del usuario " + usuario + " - " + ex.Message, "Recuperar Contraseña"));
+                throw new ErrorAlBuscarUsuariosException();
+            }
+            return recuperarPwd;
         }
 
         public ComponentePermiso ObtenerPermisosUsuario(long usuarioID)
@@ -115,6 +142,23 @@ namespace Cova.BL
                 throw new ErrorAlEliminarPermisoException();
             }
             return EliminarPermiso;
+        }
+
+        public string ObtenerEmailUsuario(string usuario, string email)
+        {
+            string emailUsuario = "";
+            MPPUsuario mPPUsuario = new MPPUsuario();
+            try
+            {
+                emailUsuario = mPPUsuario.ObtenerEmailUsuario(usuario, email);
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo el mail del usuario " + usuario, "Obtener Email Usuario"));
+            }
+            catch (Exception ex)
+            {
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al obtener el email del usuario " + usuario + " - " + ex.Message, "Obtener Email Usuario"));
+                throw new ErrorAlBuscarUsuariosException();
+            }
+            return emailUsuario;
         }
     }
 }

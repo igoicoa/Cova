@@ -126,6 +126,35 @@ namespace Cova.MPP
             return usuarios;
         }
 
+        public string ObtenerEmailUsuario(string usuario, string email)
+        {
+            string emailUsuario = "";
+            DataSet usuarioDS;
+            DataTable usuarioT;
+            Hashtable datosUsuario = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_ObtenerEmailUsuario";
+                datosUsuario.Add("@Usuario", usuario);
+                datosUsuario.Add("@Email", email);
+                usuarioDS = conexionBDD.ObtenerDataSet(strSQL, datosUsuario);
+                usuarioT = usuarioDS.Tables[0];
+                if (usuarioT.Rows.Count > 0)
+                {
+                    foreach (DataRow fila in usuarioT.Rows)
+                    {
+                        emailUsuario = Convert.ToString(fila["ReturnEmail"]);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return emailUsuario;
+        }
+
         public bool ActualizarPassword(string usuario, string claveNuevaEncriptada)
         {
             return true;

@@ -74,5 +74,12 @@ namespace Cova.UI
         {
             return (DigitoVerificador.ValidarDVV("VacunaDosis") && DigitoVerificador.ValidarDVH("VacunaDosis"));
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RecuperarPasswordForm recuperarPasswordForm = new RecuperarPasswordForm();
+            recuperarPasswordForm.Show();
+            this.Close();
+        }
     }
 }
