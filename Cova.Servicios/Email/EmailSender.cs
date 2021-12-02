@@ -38,7 +38,6 @@ namespace Cova.Servicios.Email
             }
             catch(Exception ex)
             {
-                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al enviar el email a " + destinatarioMail + " - " + destinatarioNombre + " - " + ex.Message, "Enviar Email"));
                 throw ex;
             }
         }

@@ -55,11 +55,11 @@ namespace Cova.BL
                 MPPUsuario mPPUsuario = new MPPUsuario();
                 string claveNuevaEncriptada = HashHelper.Hash256(nuevoPassword);
                 cambiarPassword = mPPUsuario.ActualizarPassword(usuario, claveNuevaEncriptada);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se cambio la Password Exitosamente de la cuenta: " + usuario, "Cambiar Password"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se cambio la Password Exitosamente de la cuenta: " + usuario, "Cambiar Password"));
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al cambiar la Password: " + ex.Message, "Cambiar Password"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al cambiar la Password: " + ex.Message, "Cambiar Password"));
                 throw new ErrorAlCambiarPasswordException();
             }
             return cambiarPassword;
@@ -76,12 +76,10 @@ namespace Cova.BL
                     string body = "Su contraseña provisoria es: " + claveProvisoria;
                     EmailSender.SendEmail(emailUsuario, usuario, "Recuperacion contraseña", body);
                     recuperarPwd = true;
-                    Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se recupero la contraseña del usuario " + usuario, "Recuperar Contraseña"));
                 }
             }
             catch(Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al recuperar contraseña del usuario " + usuario + " - " + ex.Message, "Recuperar Contraseña"));
                 throw new ErrorAlBuscarUsuariosException();
             }
             return recuperarPwd;
@@ -151,11 +149,9 @@ namespace Cova.BL
             try
             {
                 emailUsuario = mPPUsuario.ObtenerEmailUsuario(usuario, email);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo el mail del usuario " + usuario, "Obtener Email Usuario"));
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al obtener el email del usuario " + usuario + " - " + ex.Message, "Obtener Email Usuario"));
                 throw new ErrorAlBuscarUsuariosException();
             }
             return emailUsuario;
