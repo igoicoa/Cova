@@ -609,7 +609,7 @@ namespace Cova.UI
 
         private void novedadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, "file://C:\\Users\\Lenovo Thinkpad\\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\\Attachments\\Mis documentos\\UAI\\Trabajo de Campo y Diploma\\Proyecto\\Documentacion Funcional\\Ayuda en Linea\\Ayuda en Linea.chm");
+            Help.ShowHelp(this, "file://C:\\Users\\Lenovo Thinkpad\\source\\repos\\Cova\\Cova.UI\\bin\\Debug\\Ayuda en Linea\\Ayuda en Linea.chm");
         }
 
         private void verMisTurnosToolStripMenuItem_Click(object sender, EventArgs e)

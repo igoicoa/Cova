@@ -95,7 +95,7 @@ namespace Cova.UI
             this.dtg_VerCalendarioPacientes.Location = new System.Drawing.Point(17, 195);
             this.dtg_VerCalendarioPacientes.Name = "dtg_VerCalendarioPacientes";
             this.dtg_VerCalendarioPacientes.ReadOnly = true;
-            this.dtg_VerCalendarioPacientes.Size = new System.Drawing.Size(785, 360);
+            this.dtg_VerCalendarioPacientes.Size = new System.Drawing.Size(304, 311);
             this.dtg_VerCalendarioPacientes.TabIndex = 142;
             // 
             // btn_Buscar_VerCalendariodePacientes
@@ -137,7 +137,7 @@ namespace Cova.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(873, 619);
+            this.ClientSize = new System.Drawing.Size(432, 544);
             this.Controls.Add(this.gb_Filtros);
             this.Controls.Add(this.dtg_VerCalendarioPacientes);
             this.Controls.Add(this.lbl_VerCalendarioTurnos);

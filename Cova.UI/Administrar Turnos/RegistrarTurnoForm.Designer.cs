@@ -62,9 +62,9 @@ namespace Cova.UI
             // dgv_RegistrarTurnos
             // 
             this.dgv_RegistrarTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_RegistrarTurnos.Location = new System.Drawing.Point(12, 226);
+            this.dgv_RegistrarTurnos.Location = new System.Drawing.Point(209, 203);
             this.dgv_RegistrarTurnos.Name = "dgv_RegistrarTurnos";
-            this.dgv_RegistrarTurnos.Size = new System.Drawing.Size(754, 426);
+            this.dgv_RegistrarTurnos.Size = new System.Drawing.Size(364, 275);
             this.dgv_RegistrarTurnos.TabIndex = 133;
             // 
             // gb_Filtros
@@ -180,7 +180,7 @@ namespace Cova.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(870, 721);
+            this.ClientSize = new System.Drawing.Size(870, 485);
             this.Controls.Add(this.dgv_RegistrarTurnos);
             this.Controls.Add(this.gb_Filtros);
             this.Controls.Add(this.lbl_RegistrarTurnos);
