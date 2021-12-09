@@ -157,7 +157,19 @@ namespace Cova.MPP
 
         public bool ActualizarPassword(string usuario, string claveNuevaEncriptada)
         {
-            return true;
+            Hashtable datosUsuario = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_ActualizarPasswordUsuario";
+                datosUsuario.Add("@Usuario", usuario);
+                datosUsuario.Add("@NuevoPassword", claveNuevaEncriptada);
+                return conexionBDD.Escribir(strSQL, datosUsuario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

@@ -295,6 +295,10 @@ namespace Cova.UI
             {
                 MessageBox.Show(ex.Message);
             }
+            finally
+            {
+                this.HabilitarLogin();
+            }
         }
 
         private void bloquerarPaswordToolStripMenuItem_Click(object sender, EventArgs e)
@@ -616,6 +620,16 @@ namespace Cova.UI
         {
             VerCalendarioMisPacientesForm verCalendarioMisPacientesForm = new VerCalendarioMisPacientesForm();
             verCalendarioMisPacientesForm.Show();
+        }
+
+        public void DeshabilitarLogin()
+        {
+            this.loginToolStripMenuItem.Enabled = false;
+        }
+
+        public void HabilitarLogin()
+        {
+            this.loginToolStripMenuItem.Enabled = true;
         }
 
     }

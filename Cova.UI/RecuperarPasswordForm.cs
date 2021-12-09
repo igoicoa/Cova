@@ -33,6 +33,7 @@ namespace Cova.UI
                     if(bLUsuario.RecuperarPassword(usuario, emailUsuario))
                     {
                         MessageBox.Show("Se ha enviado una contraseña provisoria a " + emailUsuario);
+                        this.Close();
                     }
                     else
                     {

@@ -14,7 +14,7 @@
 	@Provincia				VARCHAR(120),
 	@Pais					VARCHAR(120),
 	@MatriculaEnfermero		INT,
-	@Password				VARCHAR(50)
+	@Password				VARCHAR(250)
 
 AS
 BEGIN

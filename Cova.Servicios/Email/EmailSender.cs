@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Net;
 using System.Net.Mail;
-using Cova.Servicios.Bitacora;
-using Cova.BE.Bitacora;
-using Cova.Servicios.Sesion;
 
 namespace Cova.Servicios.Email
 {
@@ -12,18 +9,18 @@ namespace Cova.Servicios.Email
         public static void SendEmail(string destinatarioMail, string destinatarioNombre, string asunto, string body)
         {
             var fromPassword = "2021sistemacova";
-            var fromAddress = new MailAddress("sistemacova2021@gmail.com", "Sistema Cova");
+            var fromAddress = new MailAddress("sistemacova2021@outlook.com", "Sistema Cova");
             var toAddress = new MailAddress(destinatarioMail, destinatarioNombre);
 
             try
             {
                 var smtp = new SmtpClient
                 {
-                    Host = "smtp.gmail.com",
+                    Host = "smtp.outlook.com",
                     Port = 587,
                     EnableSsl = true,
-                    DeliveryMethod = SmtpDeliveryMethod.Network,
                     UseDefaultCredentials = false,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
                     Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
                 };
 

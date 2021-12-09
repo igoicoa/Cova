@@ -17,7 +17,7 @@
 	@CoberturaMedicaPlanId				INT = NULL,
 	@CoberturaMedicaNumeroAfiliado		VARCHAR(100) = NULL,
 	@CoberturaMedicaFechaVencimiento	DATETIME = NULL,
-	@Password							VARCHAR(50),
+	@Password							VARCHAR(250),
 	@UsuarioModificadorId				BIGINT
 
 AS

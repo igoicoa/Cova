@@ -46,6 +46,7 @@ namespace Cova.UI
                     {
                         MessageBox.Show("Usuario logueado correctamente");
                         this._MainForm.InicializarMainForm();
+                        this._MainForm.DeshabilitarLogin();
                         this.Close();
                     }
                     else

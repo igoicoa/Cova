@@ -16,7 +16,7 @@
 	@MatriculaNacional		INT,
 	@MatriculaProvincial	INT,
 	@Especialidad			VARCHAR(150),
-	@Password				VARCHAR(50)
+	@Password				VARCHAR(250)
 
 AS
 BEGIN

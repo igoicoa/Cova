@@ -13,7 +13,7 @@
 	@Localidad							VARCHAR(120),
 	@Provincia							VARCHAR(120),
 	@Pais								VARCHAR(120),
-	@Password							VARCHAR(50)
+	@Password							VARCHAR(250)
 
 AS
 BEGIN
