@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cova.BE;
 using Cova.BL;
@@ -44,16 +39,23 @@ namespace Cova.UI
 
         public void CargarPlanesCobertura()
         {
-            BECoberturaMedica coberturaMedica = (BECoberturaMedica)cmb_coberturaMedica.SelectedItem;
-
-            if(coberturaMedica != null)
+            try
             {
-                List<BECoberturaMedicaPlan> planes = coberturaMedica.Plan.ToList();
-                this.cmb_Plan.DataSource = planes;
-                this.cmb_Plan.DisplayMember = "Nombre";
-                this.cmb_Plan.ValueMember = "PlanId";
-                this.cmb_Plan.SelectedIndex = -1;
-                this.cmb_Plan.SelectedIndex = 0;
+                BECoberturaMedica coberturaMedica = (BECoberturaMedica)cmb_coberturaMedica.SelectedItem;
+
+                if (coberturaMedica != null)
+                {
+                    List<BECoberturaMedicaPlan> planes = coberturaMedica.Plan.ToList();
+                    this.cmb_Plan.DataSource = planes;
+                    this.cmb_Plan.DisplayMember = "Nombre";
+                    this.cmb_Plan.ValueMember = "PlanId";
+                    this.cmb_Plan.SelectedIndex = -1;
+                    this.cmb_Plan.SelectedIndex = 0;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

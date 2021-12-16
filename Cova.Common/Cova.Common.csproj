@@ -86,6 +86,7 @@
     <Compile Include="Excepciones\ErrorAlObtenerVacunasDeCentroMedicoAAplicarException.cs" />
     <Compile Include="Excepciones\ErrorAlObtenerVacunasException.cs" />
     <Compile Include="Excepciones\ErrorAlVacunarPacienteException.cs" />
+    <Compile Include="Excepciones\ErrorConexionBDD.cs" />
     <Compile Include="Excepciones\ErrorCrearAdministradorException.cs" />
     <Compile Include="Excepciones\ItemExistenteException.cs" />
     <Compile Include="Excepciones\PacienteYaExisteException.cs" />

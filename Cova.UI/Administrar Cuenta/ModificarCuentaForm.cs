@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using Cova.BE;
 using Cova.BL;
 using Cova.Servicios.Encriptacion;
+using Cova.Servicios.Sesion;
 
 namespace Cova.UI
 {
@@ -22,6 +23,36 @@ namespace Cova.UI
             CargarCoberturasMedicas();
             CargarEspecialidades();
             InhabilitarRb();
+            CargarUsuario();
+        }
+
+        private void CargarUsuario()
+        {
+            if(Sesion.GetInstance.Usuario.TipoUsuario == BE.Enum.TipoUsuario.Paciente)
+            {
+                BLPaciente bLPaciente = new BLPaciente();
+                btn_BuscarUsuarios_ModificarUsuarios.Visible = false;
+                long usuarioId = Sesion.GetInstance.Usuario.UsuarioID;
+                string usuario = Sesion.GetInstance.Usuario.Usuario;
+                BEPaciente pacienteAActualizar = bLPaciente.BuscarPacientes(usuario, "").ToList().Where(x => x.UsuarioID == usuarioId).FirstOrDefault();
+                this.CargarUsuarioPaciente(pacienteAActualizar);
+            } else if(Sesion.GetInstance.Usuario.TipoUsuario == BE.Enum.TipoUsuario.Medico)
+            {
+                BLMedico bLMedico = new BLMedico();
+                btn_BuscarUsuarios_ModificarUsuarios.Visible = false;
+                long usuarioId = Sesion.GetInstance.Usuario.UsuarioID;
+                string usuario = Sesion.GetInstance.Usuario.Usuario;
+                BEMedico medicoAActualizar = bLMedico.BuscarMedicos(usuario, "").ToList().Where(x => x.UsuarioID == usuarioId).FirstOrDefault();
+                this.CargarUsuarioMedico(medicoAActualizar);
+            } else if(Sesion.GetInstance.Usuario.TipoUsuario == BE.Enum.TipoUsuario.Enfermero)
+            {
+                BLEnfermero bLEnfermero = new BLEnfermero();
+                btn_BuscarUsuarios_ModificarUsuarios.Visible = false;
+                long usuarioId = Sesion.GetInstance.Usuario.UsuarioID;
+                string usuario = Sesion.GetInstance.Usuario.Usuario;
+                BEEnfermero enfermeroAActualizar = bLEnfermero.BuscarEnfermeros(usuario, "").ToList().Where(x => x.UsuarioID == usuarioId).FirstOrDefault();
+                this.CargarUsuarioEnfermero(enfermeroAActualizar);
+            }
         }
 
         public void InhabilitarRb()

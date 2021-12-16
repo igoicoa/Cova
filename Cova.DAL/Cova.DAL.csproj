@@ -44,5 +44,11 @@
     <Compile Include="ConexionDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cova.Common\Cova.Common.csproj">
+      <Project>{413a882e-0398-4b5c-a902-783b478f378d}</Project>
+      <Name>Cova.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

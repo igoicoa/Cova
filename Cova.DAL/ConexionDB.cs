@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections;
+using Cova.Common.Excepciones;
 
 namespace Cova.DAL
 {
@@ -47,7 +48,7 @@ namespace Cova.DAL
             }
             catch (SqlException ex)
             {
-                throw ex;
+                throw new ErrorConexionBDD();
             }
             return respuesta;
         }
@@ -80,7 +81,7 @@ namespace Cova.DAL
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new ErrorConexionBDD();
             }
             finally
             {
@@ -123,7 +124,7 @@ namespace Cova.DAL
             catch (SqlException ex)
             {
                 transaccion.Rollback();
-                throw ex;
+                throw new ErrorConexionBDD();
             }
             finally
             { 
@@ -160,7 +161,7 @@ namespace Cova.DAL
             }
             catch (SqlException ex)
             {
-                throw ex;
+                throw new ErrorConexionBDD();
             }
             finally
             {
@@ -189,7 +190,7 @@ namespace Cova.DAL
             }
             catch (SqlException ex)
             {
-                throw ex;
+                throw new ErrorConexionBDD();
             }
             finally
             {
