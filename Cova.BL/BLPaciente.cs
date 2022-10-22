@@ -14,7 +14,7 @@ namespace Cova.BL
 {
     public class BLPaciente
     {
-        public bool CrearPaciene(BEPaciente pacienteNuevo) 
+        public bool CrearPaciente(BEPaciente pacienteNuevo) 
         {
             bool pacienteCreado = false;
             try
@@ -56,7 +56,7 @@ namespace Cova.BL
             try
             {
                 paciente= mPPPaciente.BuscarPacientes(Usuario, DNI);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se busco el Paciente", "Buscar Paciente"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se busco el Paciente", "Buscar Paciente"));
 
             }
             catch (Exception ex)
