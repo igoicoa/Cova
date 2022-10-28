@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cova.UI", "Cova.UI\Cova.UI.csproj", "{2D0A3929-D553-4AF2-996B-EB3B3385EE55}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cova.BE", "Cova.BE\Cova.BE.csproj", "{2A51AEED-BA94-4EAB-B45E-504135F79A83}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cova.BL", "Cova.BL\Cova.BL.csproj", "{FE7B2201-A15B-49FF-89F3-E37C223B4A41}"
@@ -29,10 +27,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2D0A3929-D553-4AF2-996B-EB3B3385EE55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D0A3929-D553-4AF2-996B-EB3B3385EE55}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D0A3929-D553-4AF2-996B-EB3B3385EE55}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D0A3929-D553-4AF2-996B-EB3B3385EE55}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2A51AEED-BA94-4EAB-B45E-504135F79A83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2A51AEED-BA94-4EAB-B45E-504135F79A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A51AEED-BA94-4EAB-B45E-504135F79A83}.Release|Any CPU.ActiveCfg = Release|Any CPU

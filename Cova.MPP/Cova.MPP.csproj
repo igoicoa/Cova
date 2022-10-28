@@ -48,7 +48,6 @@
     <Compile Include="MPPCertificado.cs" />
     <Compile Include="MPPCoberturaMedica.cs" />
     <Compile Include="MPPControlDeCambio.cs" />
-    <Compile Include="MPPDigitoVerificador.cs" />
     <Compile Include="MPPEnfermero.cs" />
     <Compile Include="MPPLaboratorio.cs" />
     <Compile Include="MPPMedico.cs" />

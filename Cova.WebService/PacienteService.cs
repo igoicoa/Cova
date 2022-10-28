@@ -56,10 +56,10 @@ namespace Cova.WebService
             }
         }
 
-        public PacienteDto BorrarPaciente(int usuarioId)
-        {
-            return usuarioId;
-        }
+        //public PacienteDto BorrarPaciente(int usuarioId)
+        //{
+        //    return usuarioId;
+        //}
 
         private static PacienteDto Mapear(BEPaciente paciente)
         {

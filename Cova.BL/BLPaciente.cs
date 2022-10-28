@@ -7,7 +7,6 @@ using Cova.Servicios.Bitacora;
 using Cova.MPP;
 using Cova.Common.Excepciones;
 using Cova.Servicios.Sesion;
-using Cova.Servicios.DigitoVerificador;
 using Cova.BE.Enum;
 
 namespace Cova.BL
@@ -177,9 +176,6 @@ namespace Cova.BL
             try
             {
                 MPPVacuna mPPVacuna = new MPPVacuna();
-                int DVH = DigitoVerificador.CalcularDVH(vacunaAAplicar.Lote + vacunaAAplicar.Vacuna.VacunaID.ToString() + vacunaAAplicar.FechaElaboracion.ToString() + vacunaAAplicar.FechaVencimiento.ToString() + vacunaAAplicar.CentroMedico.CentroMedicoId.ToString() + pacienteAVacunar.PacienteId.ToString() + vacunaAAplicar.FechaAplicacion.ToString() + vacunaAAplicar.Dosis.ToString() + vacunaAAplicar.ObservacionPaciente + vacunaAAplicar.IndicacionMedico);
-                vacunaPaciente = mPPVacuna.VacunarPaciente(pacienteAVacunar, vacunaAAplicar, DVH);
-                DigitoVerificador.ActualizarDVV("VacunaDosis");
                 Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Vacuno el Paciente: " + pacienteAVacunar.PacienteId + " - " + pacienteAVacunar.Nombre , "Vacunar Paciente"));
 
             }

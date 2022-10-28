@@ -21,11 +21,72 @@ namespace Cova.WebAPI.Controllers
         }
 
         [HttpGet]
+        [Route("{usuarioId:int}")]
+        public MedicoDto GetMedico(int usuarioId)
+        {
+            return this.profesionalService.GetMedico(usuarioId);
+        }
+
+        [HttpPost]
+        [Route("")]
+        public MedicoDto CrearProfesionalMedico([FromBody] MedicoDto medico)
+        {
+            return this.profesionalService.CrearProfesionalMedico(medico);
+        }
+
+        [HttpPut]
+        [Route("{usuarioId:int}")]
+        public MedicoDto ActualizarProfesionalMedico([FromBody] MedicoDto medico)
+        {
+            return this.profesionalService.ActualizarProfesionalMedico(medico);
+        }
+
+        [HttpDelete]
+        [Route("{usuarioId:int}")]
+        public MedicoDto BorrarMedico(int usuarioId)
+        {
+            return this.profesionalService.BorrarMedico(usuarioId);
+        }
+
+//ENFERMERO
+        [HttpGet]
         [Route("/enfermero")]
         public IList<EnfermeroDto> GetProfesionalesEnfermeros()
         {
             return this.profesionalService.GetProfesionalesEnfermeros();
         }
 
+        [HttpGet]
+        [Route("{usuarioId:int}")]
+        public EnfermeroDto GetEnfermero(int usuarioId)
+        {
+            return this.profesionalService.GetEnfermero(usuarioId);
+        }
+
+        [HttpPost]
+        [Route("")]
+        public EnfermeroDto CrearProfesionalEnfermero([FromBody] EnfermeroDto enfermero)
+        {
+            return this.profesionalService.CrearProfesionalMedico(enfermero);
+        }
+
+        [HttpPut]
+        [Route("{usuarioId:int}")]
+        public EnfermeroDto ActualizarProfesionalEnfermero([FromBody] EnfermeroDto enfermero)
+        {
+            return this.profesionalService.ActualizarProfesionalMedico(enfermero);
+
+        }
+
+        [HttpDelete]
+        [Route("{usuarioId:int}")]
+        public EnfermeroDto BorrarEnfermero(int usuarioId)
+        {
+            return this.profesionalService.BorrarEnfermero(usuarioId);
+        }
+
+
     }
 }
+
+

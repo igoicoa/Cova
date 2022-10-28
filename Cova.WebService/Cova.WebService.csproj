@@ -41,18 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CertificadoService.cs" />
+    <Compile Include="AdministradorService.cs" />
+    <Compile Include="Dtos\AdministradorDto.cs" />
+    <Compile Include="Dtos\CertificadoDto.cs" />
     <Compile Include="Dtos\CoberturaMedicaPacienteDto.cs" />
     <Compile Include="Dtos\CoberturaMedicaPlanDto.cs" />
     <Compile Include="Dtos\DomicilioDto.cs" />
     <Compile Include="Dtos\EnfermeroDto.cs" />
     <Compile Include="Dtos\MedicoDto.cs" />
     <Compile Include="Dtos\ProfesionalDto.cs" />
+    <Compile Include="Dtos\RecetaDto.cs" />
     <Compile Include="Dtos\TurnosDisponibleDto.cs" />
     <Compile Include="Dtos\UsuarioDto.cs" />
     <Compile Include="PacienteService.cs" />
     <Compile Include="Dtos\PacienteDto.cs" />
     <Compile Include="ProfesionalService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecetaService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cova.BE\Cova.BE.csproj">
