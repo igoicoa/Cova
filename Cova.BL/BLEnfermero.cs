@@ -71,5 +71,23 @@ namespace Cova.BL
             }
             return Actualizarprofesional;
         }
+
+        public bool InactivarEnfermero(BEEnfermero enfermeroAInactivar)
+        {
+            bool EnfermeroInactivado = false;
+            try
+            {
+                MPPEnfermero mPPEnfermero = new MPPEnfermero();
+                EnfermeroInactivado = mPPEnfermero.InactivarEnfermero(enfermeroAInactivar);
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizo el Paciente: " + pacienteActualizado.PacienteId + " - " + pacienteActualizado.Apellido, "Actualizar Paciente"));
+
+            }
+            catch (Exception ex)
+            {
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Actualizar Paciente: " + pacienteActualizado.PacienteId + " - " + pacienteActualizado.ApellidoNombre + " - " + ex.Message, "Actualizar Paciente"));
+                throw new ErrorAlActualizarPacienteException();
+            }
+            return EnfermeroInactivado;
+        }
     }
 }

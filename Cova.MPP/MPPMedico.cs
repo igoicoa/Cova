@@ -197,5 +197,22 @@ namespace Cova.MPP
                 throw ex;
             }
         }
+
+        public bool InactivarMedico(BEMedico medico)
+        {
+            Hashtable datosUsuario = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_InactivarUsuario";
+                datosUsuario.Add("@UsuarioId", medico.UsuarioID);
+
+                return conexionBDD.Escribir(strSQL, datosUsuario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

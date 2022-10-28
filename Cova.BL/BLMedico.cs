@@ -96,5 +96,23 @@ namespace Cova.BL
             }
             return profesionalActualizado;
         }
+
+        public bool InactivarMedico(BEMedico medicoAInactivar)
+        {
+            bool MedicoInactivado = false;
+            try
+            {
+                MPPMedico mPPMedico = new MPPMedico();
+                MedicoInactivado = mPPMedico.InactivarMedico(medicoAInactivar);
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizo el Paciente: " + pacienteActualizado.PacienteId + " - " + pacienteActualizado.Apellido, "Actualizar Paciente"));
+
+            }
+            catch (Exception ex)
+            {
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Actualizar Paciente: " + pacienteActualizado.PacienteId + " - " + pacienteActualizado.ApellidoNombre + " - " + ex.Message, "Actualizar Paciente"));
+                throw new ErrorAlActualizarPacienteException();
+            }
+            return MedicoInactivado;
+        }
     }
 }

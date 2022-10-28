@@ -41,10 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CertificadoService.cs" />
-    <Compile Include="AdministradorService.cs" />
-    <Compile Include="Dtos\AdministradorDto.cs" />
-    <Compile Include="Dtos\CertificadoDto.cs" />
     <Compile Include="Dtos\CoberturaMedicaPacienteDto.cs" />
     <Compile Include="Dtos\CoberturaMedicaPlanDto.cs" />
     <Compile Include="Dtos\DomicilioDto.cs" />

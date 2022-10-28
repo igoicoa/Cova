@@ -15,16 +15,16 @@ namespace Cova.WebAPI.Controllers
 
         [HttpGet]
         [Route("")]
-        public IList<RecetaDto> GetReceta()
+        public IList<RecetaDto> GetRecetas()
         {
-            return this.recetaService.GetReceta();
+            return this.recetaService.GetRecetas();
         }
 
         [HttpGet]
-        [Route("{recetaId:int}")]
-        public RecetaDto GetReceta(int recetaId)
+        [Route("/paciente{usuarioId:int}")]
+        public IList<RecetaDto> GetRecetasUsuario(int pacienteId)
         {
-            return this.recetaService.GetReceta(recetaId);
+            return this.recetaService.GetRecetasUsuario(pacienteId);
         }
 
         [HttpPost]

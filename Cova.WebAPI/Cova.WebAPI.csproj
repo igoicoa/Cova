@@ -116,8 +116,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AdministradorController.cs" />
-    <Compile Include="Controllers\CertificadoController.cs" />
     <Compile Include="Controllers\PacienteController.cs" />
     <Compile Include="Controllers\ProfesionalController.cs" />
     <Compile Include="Controllers\RecetaController.cs" />

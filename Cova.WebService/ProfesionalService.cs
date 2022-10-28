@@ -51,10 +51,21 @@ namespace Cova.WebService
             }
         }
 
-        //public MedicoDto BorrarMedico(int usuarioId)
-        //{
-        //    return usuarioId;
-        //}
+        public MedicoDto BorrarMedico(int usuarioId)
+        {
+            BEMedico beMedico = new BEMedico();
+            beMedico.UsuarioID = usuarioId;
+            if (this.blMedico.InactivarMedico(beMedico))
+            {
+                MedicoDto medicoDto = new MedicoDto();
+                medicoDto.UsuarioID = usuarioId;
+                return medicoDto;
+            }
+            else
+            {
+                return new MedicoDto();
+            }
+        }
 
         private static MedicoDto Mapear(BEMedico medico)
         {
@@ -118,10 +129,21 @@ namespace Cova.WebService
             }
         }
 
-        //public MedicoDto BorrarEnfermero (int usuarioId)
-        //{
-        //    return usuarioId;
-        //}
+        public EnfermeroDto BorrarEnfermero(int usuarioId)
+        {
+            BEEnfermero beEnfermero = new BEEnfermero();
+            beEnfermero.UsuarioID = usuarioId;
+            if (this.bLEnfermero.InactivarEnfermero(beEnfermero))
+            {
+                EnfermeroDto enfermeroDto = new EnfermeroDto();
+                enfermeroDto.UsuarioID = usuarioId;
+                return enfermeroDto;
+            }
+            else
+            {
+                return new EnfermeroDto();
+            }
+        }
 
         private static EnfermeroDto Mapear(BEEnfermero enfermero)
         {

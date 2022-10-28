@@ -160,6 +160,23 @@ namespace Cova.MPP
             }
         }
 
+        public bool InactivarPaciente(BEPaciente paciente)
+        {
+            Hashtable datosUsuario = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_InactivarUsuario";
+                datosUsuario.Add("@UsuarioId", paciente.UsuarioID);
+
+                return conexionBDD.Escribir(strSQL, datosUsuario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public int ObtenerCantidadDosisAplicadasDeVacunaAPaciente(BEPaciente paciente, BEVacuna vacuna)
         {
             int cantidadDosisAplicadas = 0;

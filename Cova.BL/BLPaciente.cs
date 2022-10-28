@@ -93,6 +93,24 @@ namespace Cova.BL
 
         }
 
+        public bool InactivarPaciente(BEPaciente pacienteAInactivar)
+        {
+            bool PacienteInactivado = false;
+            try
+            {
+                MPPPaciente mPPPaciente = new MPPPaciente();
+                PacienteInactivado = mPPPaciente.InactivarPaciente(pacienteAInactivar);
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizo el Paciente: " + pacienteActualizado.PacienteId + " - " + pacienteActualizado.Apellido, "Actualizar Paciente"));
+
+            }
+            catch (Exception ex)
+            {
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Actualizar Paciente: " + pacienteActualizado.PacienteId + " - " + pacienteActualizado.ApellidoNombre + " - " + ex.Message, "Actualizar Paciente"));
+                throw new ErrorAlActualizarPacienteException();
+            }
+            return PacienteInactivado;
+        }
+
         public IDictionary<bool, List<string>> EstaEnCondicionesDeRecibirVacuna(BEPaciente pacienteAVacunarse, BEVacunaDosis vacunaAAplicar)
         {
             Dictionary<bool, List<string>> condicionesPaciente = new Dictionary<bool, List<string>>();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cova.WebService.Dtos
 {
-    public class ProfesionalDto
+    public class ProfesionalDto : UsuarioDto
     {
         public long ProfesionalId { get; set; }
         public string Apellido { get; set; }

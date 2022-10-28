@@ -13,9 +13,9 @@ namespace Cova.WebService
     {
         private BLReceta bLReceta = new BLReceta();
 
-        public IList<RecetaDto> GetReceta()
+        public IList<RecetaDto> GetRecetas()
         {
-            IList<BEReceta> recetas = this.bLReceta.BuscarRecetas();
+            IList<BEReceta> recetas = this.bLReceta.BuscarRecetas(new BEPaciente());
             IList<RecetaDto> recetaDtos = new List<RecetaDto>();
 
             foreach (BEReceta receta in recetas)
@@ -25,17 +25,23 @@ namespace Cova.WebService
             return recetaDtos;
         }
 
-        public RecetaDto GetReceta(int recetaId)
+        public IList<RecetaDto> GetRecetasUsuario(int pacienteId)
         {
-            IList<BEReceta> recetas = this.bLReceta.BuscarRecetas();
-            RecetaDto recetaDtos = Mapear(recetas.FirstOrDefault(x => x.RecetaId == recetaId));
+            BEPaciente bEPaciente = new BEPaciente();
+            bEPaciente.PacienteId = pacienteId;
+            IList<BEReceta> recetas = this.bLReceta.BuscarRecetas(bEPaciente);
+            IList<RecetaDto> recetasDtos = new List<RecetaDto>();
+            foreach (BEReceta receta in recetas)
+            {
+                recetasDtos.Add(Mapear(receta));
+            }
 
-            return recetaDtos;
+            return recetasDtos;
         }
 
         public RecetaDto CrearReceta(RecetaDto recetaDtos)
         {
-            if (this.bLReceta.ActualizarReceta(Mapear(receta)))
+            if (this.bLReceta.CrearReceta(Mapear(recetaDtos)))
             {
                 return recetaDtos;
             }
@@ -47,7 +53,7 @@ namespace Cova.WebService
 
         public RecetaDto ActualizarReceta(RecetaDto receta)
         {
-            if (this.bLReceta.ActualizarReceta(Mapear(receta), Mapear(receta)))
+            if (this.bLReceta.ActualizarReceta(Mapear(receta)))
             {
                 return receta;
             }
@@ -62,28 +68,28 @@ namespace Cova.WebService
         //    return certificadoId;
         //}
 
-        private static RecetaDto Mapear(BEReceta receta, BEMedico medico, BEPaciente paciente)
+        private static RecetaDto Mapear(BEReceta receta)
         {
             RecetaDto recetaDto = new RecetaDto();
             MedicoDto medicoDto = new MedicoDto();
             PacienteDto pacienteDto = new PacienteDto();
-            medicoDto.ProfesionalId = medico.ProfesionalId;
+            medicoDto.ProfesionalId = receta.Medico.ProfesionalId;
             recetaDto.FechaPrescripcion = receta.FechaPrescripcion;
             recetaDto.Observacion = receta.Observacion;
-            pacienteDto.PacienteId = paciente.PacienteId;
+            pacienteDto.PacienteId = receta.Paciente.PacienteId;
 
             return recetaDto;
         }
 
-        private static BEReceta Mapear(RecetaDto recetaDto, MedicoDto medicoDto, PacienteDto pacienteDto)
+        private static BEReceta Mapear(RecetaDto recetaDto)
         {
             BEReceta receta = new BEReceta();
             BEPaciente paciente = new BEPaciente();
             BEMedico medico = new BEMedico();
-            medico.ProfesionalId = medicoDto.ProfesionalId;
+            medico.ProfesionalId = recetaDto.Medico.ProfesionalId;
             receta.FechaPrescripcion = recetaDto.FechaPrescripcion;
             receta.Observacion = recetaDto.Observacion;
-            paciente.PacienteId = pacienteDto.PacienteId;
+            paciente.PacienteId = recetaDto.Paciente.PacienteId;
 
             return receta;
         }
