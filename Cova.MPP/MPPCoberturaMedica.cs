@@ -139,6 +139,22 @@ namespace Cova.MPP
             }
         }
 
+        public bool EliminarCoberturaMedica(BECoberturaMedica coberturaMedica)
+        {
+            Hashtable datosCoberturaMedica = new Hashtable();
+            try
+            {
+                ConexionDB conexionBDD = new ConexionDB();
+                string strSQL = @"s_EliminarCoberturaMedica";
+                datosCoberturaMedica.Add("@CoberturaMedicaId", coberturaMedica.CoberturaMedicaId);
+                return conexionBDD.Escribir(strSQL, datosCoberturaMedica);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public bool ActualizarCoberturaMedica(BECoberturaMedica coberturaMedica)
         {
             Hashtable datosCoberturaMedica = new Hashtable();

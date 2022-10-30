@@ -10,7 +10,7 @@ namespace Cova.MPP
 {
     public class MPPMedico
     {
-        public IList<BEMedico> BuscarMedicos(string usuario, string DNI)
+        public IList<BEMedico> BuscarMedicos(long usuarioId, string usuario, string DNI)
         {
             List<BEMedico> medicos = new List<BEMedico>();
             DataSet medicosDS;
@@ -20,6 +20,7 @@ namespace Cova.MPP
             {
                 ConexionDB conexionBDD = new ConexionDB();
                 string strSQL = @"s_BuscarMedico";
+                datosMedico.Add("@UsuarioId", usuarioId);
                 datosMedico.Add("@Usuario", usuario);
                 datosMedico.Add("@DNI", DNI);
                 medicosDS = conexionBDD.ObtenerDataSet(strSQL, datosMedico);

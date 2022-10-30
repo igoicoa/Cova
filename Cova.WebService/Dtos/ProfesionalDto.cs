@@ -18,5 +18,6 @@ namespace Cova.WebService.Dtos
         public string Telefono { get; set; }
         public string Email { get; set; }
         public DomicilioDto Domicilio { get; set; }
+        public IList<TurnosDisponibleDto> TurnosDisponibles { get; set; }
     }
 }

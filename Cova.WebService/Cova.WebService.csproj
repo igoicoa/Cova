@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoberturaService.cs" />
+    <Compile Include="Dtos\CentroMedicoDto.cs" />
+    <Compile Include="Dtos\CoberturaMedicaDto.cs" />
     <Compile Include="Dtos\CoberturaMedicaPacienteDto.cs" />
     <Compile Include="Dtos\CoberturaMedicaPlanDto.cs" />
     <Compile Include="Dtos\DomicilioDto.cs" />
@@ -50,6 +52,7 @@
     <Compile Include="Dtos\ProfesionalDto.cs" />
     <Compile Include="Dtos\RecetaDto.cs" />
     <Compile Include="Dtos\TurnosDisponibleDto.cs" />
+    <Compile Include="Dtos\TurnoDto.cs" />
     <Compile Include="Dtos\UsuarioDto.cs" />
     <Compile Include="PacienteService.cs" />
     <Compile Include="Dtos\PacienteDto.cs" />

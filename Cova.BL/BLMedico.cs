@@ -63,13 +63,13 @@ namespace Cova.BL
             return medicos;
         }
 
-        public IList<BEMedico> BuscarMedicos(string Usuario, string DNI)
+        public IList<BEMedico> BuscarMedicos(long usuarioId, string usuario, string DNI)
         {
             IList<BEMedico> medicos;
             MPPMedico mPPMedico = new MPPMedico();
             try
             {
-                medicos = mPPMedico.BuscarMedicos(Usuario, DNI);
+                medicos = mPPMedico.BuscarMedicos(usuarioId, usuario, DNI);
                 Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo la busqueda del medico: ", "Buscar Medicos"));
             }
             catch (Exception ex)

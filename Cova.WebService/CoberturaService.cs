@@ -12,37 +12,32 @@ namespace Cova.WebService
     {
         private BLCoberturaMedica bLCoberturaMedica = new BLCoberturaMedica();
 
-        public IList<CoberturaMedicaPlanDto> GetCoberturas()
+        public IList<CoberturaMedicaDto> GetCoberturas()
         {
-            IList<BECoberturaMedica> recetas = this.BLCoberturaMedica.ObtenerCoberturasMedicas(new BECoberturaMedica());
-            IList<RecetaDto> recetaDtos = new List<RecetaDto>();
+            IList<BECoberturaMedica> coberturas = this.bLCoberturaMedica.ObtenerCoberturasMedicas();
+            IList<CoberturaMedicaDto> coberturasDtos = new List<CoberturaMedicaDto>();
 
-            foreach (BEReceta receta in recetas)
+            foreach (BECoberturaMedica cobertura in coberturas)
             {
-                recetaDtos.Add(Mapear(receta));
+                coberturasDtos.Add(Mapear(cobertura));
             }
-            return recetaDtos;
+            return coberturasDtos;
         }
 
-        public IList<RecetaDto> GetCobertura(int pacienteId)
+        public CoberturaMedicaDto GetCobertura(int coberturaId)
         {
-            BEPaciente bEPaciente = new BEPaciente();
-            bEPaciente.PacienteId = pacienteId;
-            IList<BEReceta> recetas = this.BLCoberturaMedica.BuscarRecetas(bEPaciente);
-            IList<RecetaDto> recetasDtos = new List<RecetaDto>();
-            foreach (BEReceta receta in recetas)
-            {
-                recetasDtos.Add(Mapear(receta));
-            }
+            List<BECoberturaMedica> coberturasMedica = bLCoberturaMedica.ObtenerCoberturasMedicas().ToList();
+            BECoberturaMedica coberturaMedica = coberturasMedica.Where(x => x.CoberturaMedicaId == coberturaId).FirstOrDefault();
+            CoberturaMedicaDto coberturaMedicaDto = Mapear(coberturaMedica);
 
-            return recetasDtos;
+            return coberturaMedicaDto;
         }
 
-        public RecetaDto CrearCobertura(RecetaDto recetaDtos)
+        public CoberturaMedicaDto CrearCobertura(CoberturaMedicaDto coberturaMedicaDto)
         {
-            if (this.bLReceta.CrearReceta(Mapear(recetaDtos)))
+            if (this.bLCoberturaMedica.CrearCoberturaMedica(Mapear(coberturaMedicaDto)))
             {
-                return recetaDtos;
+                return coberturaMedicaDto;
             }
             else
             {
@@ -50,30 +45,30 @@ namespace Cova.WebService
             }
         }
 
-        public RecetaDto ActualizarCobertura(RecetaDto receta)
+        public CoberturaMedicaDto ActualizarCobertura(CoberturaMedicaDto coberturaMedicaDto)
         {
-            if (this.bLReceta.ActualizarReceta(Mapear(receta)))
+            if (this.bLCoberturaMedica.ModificarCoberturaMedica(Mapear(coberturaMedicaDto)))
             {
-                return receta;
+                return coberturaMedicaDto;
             }
             else
             {
                 return null;
             }
         }
-        public PacienteDto BorrarCobertura(int usuarioId)
+        public CoberturaMedicaDto BorrarCobertura(int coberturaMedicaId)
         {
-            BEPaciente bEPaciente = new BEPaciente();
-            bEPaciente.UsuarioID = usuarioId;
-            if (this.bLPaciente.InactivarPaciente(bEPaciente))
+            BECoberturaMedica bECoberturaMedica = new BECoberturaMedica();
+            bECoberturaMedica.CoberturaMedicaId = coberturaMedicaId;
+            if (this.bLCoberturaMedica.EliminarCoberturaMedica(bECoberturaMedica))
             {
-                PacienteDto pacienteDto = new PacienteDto();
-                pacienteDto.UsuarioID = usuarioId;
-                return pacienteDto;
+                CoberturaMedicaDto coberturaMedicaDto = new CoberturaMedicaDto();
+                coberturaMedicaDto.CoberturaMedicaId = coberturaMedicaId;
+                return coberturaMedicaDto;
             }
             else
             {
-                return new PacienteDto();
+                return new CoberturaMedicaDto();
             }
         }
 

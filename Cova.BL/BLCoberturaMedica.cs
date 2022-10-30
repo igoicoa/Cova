@@ -61,6 +61,22 @@ namespace Cova.BL
             return coberturaCreada;
         }
 
+        public bool EliminarCoberturaMedica(BECoberturaMedica coberturaMedica)
+        {
+            bool coberturaMedicaEliminada = false;
+            MPPCoberturaMedica mPPCoberturaMedica = new MPPCoberturaMedica();
+            try
+            {
+
+                coberturaMedicaEliminada = mPPCoberturaMedica.EliminarCoberturaMedica(coberturaMedica);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return coberturaMedicaEliminada;
+        }
+
         public bool ModificarCoberturaMedica(BECoberturaMedica coberturaMedica)
         {
             bool coberturaModificada = false;

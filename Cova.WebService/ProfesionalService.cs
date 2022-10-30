@@ -19,36 +19,49 @@ namespace Cova.WebService
         {
             return new List<MedicoDto>();
         }
-        public MedicoDto GetProfesionalMedicoHorarios(int usuarioId)
-        {
-            IList<BEMedico> medicos = this.blMedico.BuscarMedicos("", "");
-            MedicoDto medicoDto = Mapear(medicos.Where(x => x.UsuarioID == usuarioId).FirstOrDefault());
-
-            return medicoDto;
-        }
 
         public MedicoDto GetProfesionalMedico(int usuarioId)
         {
-            IList<BEMedico> medicos = this.blMedico.BuscarMedicos("", "");
+            IList<BEMedico> medicos = this.blMedico.BuscarMedicos(usuarioId, "", "");
             MedicoDto medicoDto = Mapear(medicos.Where(x => x.UsuarioID == usuarioId).FirstOrDefault());
 
             return medicoDto;
         }
 
-        public MedicoDto GuardarProfesionalMedicoHorarios(int usuarioId)
+        public IList<TurnosDisponibleDto> GetProfesionalMedicoHorarios(int usuarioId)
         {
-            IList<BEMedico> medicos = this.blMedico.BuscarMedicos("", "");
+            IList<BEMedico> medicos = this.blMedico.BuscarMedicos(usuarioId, "", "");
             MedicoDto medicoDto = Mapear(medicos.Where(x => x.UsuarioID == usuarioId).FirstOrDefault());
+            IList<TurnosDisponibleDto> horariosMedico = medicoDto.TurnosDisponibles;
 
-            return medicoDto;
+            return horariosMedico;
         }
 
-        public MedicoDto GetProfesionalMedicoTurnosDisponibles(int usuarioId, DateTime fechadesde, DateTime fechahasta)
+        public ProfesionalDto GuardarProfesionalMedicoHorarios(int profesionalId, IList<TurnosDisponibleDto> turnosDisponiblesDto)
         {
-            IList<BEMedico> medicos = this.blMedico.BuscarMedicos("", "");
-            MedicoDto medicoDto = Mapear(medicos.Where(x => x.UsuarioID == usuarioId).FirstOrDefault());
+            BEProfesional bEProfesional = new BEProfesional();
+            bEProfesional.ProfesionalId = profesionalId;
+            bEProfesional.TurnosDisponibles = Mapear(turnosDisponiblesDto);
+            ProfesionalDto profesionalDto = new ProfesionalDto();
+            profesionalDto.ProfesionalId = profesionalId;
+            profesionalDto.TurnosDisponibles = turnosDisponiblesDto;
+            if (this.bLProfesional.ActualizarTurnosDisponibles(bEProfesional))
+            {
+                return profesionalDto;
+            }
+            else
+            {
+                return null;
+            }
+        }
 
-            return medicoDto;
+        public IList<TurnoDto> GetProfesionalMedicoTurnosDisponibles(int profesionalId, DateTime fechadesde, DateTime fechahasta)
+        {
+            BEProfesional bEProfesional = new BEProfesional();
+            bEProfesional.ProfesionalId = profesionalId;
+            IList<TurnoDto> turnosDisponibles = Mapear(this.bLProfesional.ObtenerTurnosLibres(bEProfesional, fechadesde, fechahasta).ToList());
+
+            return turnosDisponibles;
         }
 
         public MedicoDto CrearProfesionalMedico(MedicoDto medico)
