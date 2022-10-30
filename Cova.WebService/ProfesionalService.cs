@@ -19,7 +19,31 @@ namespace Cova.WebService
         {
             return new List<MedicoDto>();
         }
-        public MedicoDto GetMedico(int usuarioId)
+        public MedicoDto GetProfesionalMedicoHorarios(int usuarioId)
+        {
+            IList<BEMedico> medicos = this.blMedico.BuscarMedicos("", "");
+            MedicoDto medicoDto = Mapear(medicos.Where(x => x.UsuarioID == usuarioId).FirstOrDefault());
+
+            return medicoDto;
+        }
+
+        public MedicoDto GetProfesionalMedico(int usuarioId)
+        {
+            IList<BEMedico> medicos = this.blMedico.BuscarMedicos("", "");
+            MedicoDto medicoDto = Mapear(medicos.Where(x => x.UsuarioID == usuarioId).FirstOrDefault());
+
+            return medicoDto;
+        }
+
+        public MedicoDto GuardarProfesionalMedicoHorarios(int usuarioId)
+        {
+            IList<BEMedico> medicos = this.blMedico.BuscarMedicos("", "");
+            MedicoDto medicoDto = Mapear(medicos.Where(x => x.UsuarioID == usuarioId).FirstOrDefault());
+
+            return medicoDto;
+        }
+
+        public MedicoDto GetProfesionalMedicoTurnosDisponibles(int usuarioId, DateTime fechadesde, DateTime fechahasta)
         {
             IList<BEMedico> medicos = this.blMedico.BuscarMedicos("", "");
             MedicoDto medicoDto = Mapear(medicos.Where(x => x.UsuarioID == usuarioId).FirstOrDefault());
@@ -51,7 +75,7 @@ namespace Cova.WebService
             }
         }
 
-        public MedicoDto BorrarMedico(int usuarioId)
+        public MedicoDto BorrarProfesionalMedico(int usuarioId)
         {
             BEMedico beMedico = new BEMedico();
             beMedico.UsuarioID = usuarioId;
@@ -70,23 +94,52 @@ namespace Cova.WebService
         private static MedicoDto Mapear(BEMedico medico)
         {
             MedicoDto medicoDto = new MedicoDto();
-            medicoDto.ProfesionalId = medico.ProfesionalId; //llamo al profesional ID y no al usuario ID
+            DomicilioDto domicilioDto = new DomicilioDto();
+            medicoDto.ProfesionalId = medico.ProfesionalId;
             medicoDto.Apellido = medico.Apellido;
             medicoDto.Nombre = medico.Nombre;
+            medicoDto.DNI = medico.DNI;
+            medicoDto.FechaNacimiento = medico.FechaNacimiento;
             medicoDto.Sexo = medico.Sexo;
-
+            medicoDto.EstadoCivil = medico.EstadoCivil;
+            medicoDto.Telefono = medico.Telefono;
+            medicoDto.Email = medico.Email;
+            medicoDto.Domicilio = domicilioDto;
+            medicoDto.Domicilio.Calle = domicilioDto.Calle;
+            medicoDto.Domicilio.Numero = domicilioDto.Numero;
+            medicoDto.Domicilio.Piso = domicilioDto.Piso;
+            medicoDto.Domicilio.Localidad = domicilioDto.Localidad;
+            medicoDto.Domicilio.Provincia = domicilioDto.Provincia;
+            medicoDto.Domicilio.Pais = domicilioDto.Pais;
+            medicoDto.MatriculaNacional = medico.MatriculaNacional;
+            medicoDto.MatriculaProvincial = medico.MatriculaProvincial;
+            medicoDto.Especialidad = medico.Especialidad.ToString();
             return medicoDto;
         }
 
         private static BEMedico Mapear(MedicoDto medicoDto)
         {
             BEMedico medico = new BEMedico();
-            medico.ProfesionalId = medicoDto.ProfesionalId; //llamo al profesional ID y no al usuario ID
+            BEDomicilio domicilio = new BEDomicilio();
+            medico.ProfesionalId = medicoDto.ProfesionalId;
             medico.Apellido = medicoDto.Apellido;
             medico.Nombre = medicoDto.Nombre;
+            medico.DNI = medicoDto.DNI;
+            medico.FechaNacimiento = medicoDto.FechaNacimiento;
             medico.Sexo = medicoDto.Sexo;
+            medico.EstadoCivil = medicoDto.EstadoCivil;
+            medico.Telefono = medicoDto.Telefono;
+            medico.Email = medicoDto.Email;
+            medico.Domicilio = domicilio;
+            medico.Domicilio.Calle = medicoDto.Domicilio.Calle;
+            medico.Domicilio.Numero = medicoDto.Domicilio.Numero;
+            medico.Domicilio.Piso = medicoDto.Domicilio.Piso;
+            medico.Domicilio.Localidad = medicoDto.Domicilio.Localidad;
+            medico.Domicilio.Provincia = medicoDto.Domicilio.Provincia;
+            medico.Domicilio.Pais = medicoDto.Domicilio.Pais;
+            medico.MatriculaNacional = medicoDto.MatriculaNacional;
+            medico.MatriculaProvincial = medicoDto.MatriculaProvincial;
             //medico.Especialidad = medicoDto.Especialidad;
-
 
             return medico;
         }
@@ -97,7 +150,7 @@ namespace Cova.WebService
             return new List<EnfermeroDto>();
         }
 
-        public EnfermeroDto GetEnfermero (int usuarioId)
+        public EnfermeroDto GetProfesionalEnfermero(int usuarioId)
         {
             IList<BEEnfermero> enfermeros = this.bLEnfermero.BuscarEnfermeros("", "");
             EnfermeroDto enfermeroDto = Mapear(enfermeros.Where(x => x.UsuarioID == usuarioId).FirstOrDefault());
@@ -129,7 +182,7 @@ namespace Cova.WebService
             }
         }
 
-        public EnfermeroDto BorrarEnfermero(int usuarioId)
+        public EnfermeroDto BorrarProfesionalEnfermero(int usuarioId)
         {
             BEEnfermero beEnfermero = new BEEnfermero();
             beEnfermero.UsuarioID = usuarioId;
@@ -148,10 +201,24 @@ namespace Cova.WebService
         private static EnfermeroDto Mapear(BEEnfermero enfermero)
         {
             EnfermeroDto enfermeroDto = new EnfermeroDto();
-            enfermeroDto.ProfesionalId = enfermero.ProfesionalId; //llamo al profesional ID y no al usuario ID
+            DomicilioDto domicilioDto = new DomicilioDto();
+            enfermeroDto.ProfesionalId = enfermero.ProfesionalId;
             enfermeroDto.Apellido = enfermero.Apellido;
             enfermeroDto.Nombre = enfermero.Nombre;
+            enfermeroDto.DNI = enfermero.DNI;
+            enfermeroDto.FechaNacimiento = enfermero.FechaNacimiento;
             enfermeroDto.Sexo = enfermero.Sexo;
+            enfermeroDto.EstadoCivil = enfermero.EstadoCivil;
+            enfermeroDto.Telefono = enfermero.Telefono;
+            enfermeroDto.Email = enfermero.Email;
+            enfermeroDto.Domicilio = domicilioDto;
+            enfermeroDto.Domicilio.Calle = domicilioDto.Calle;
+            enfermeroDto.Domicilio.Numero = domicilioDto.Numero;
+            enfermeroDto.Domicilio.Piso = domicilioDto.Piso;
+            enfermeroDto.Domicilio.Localidad = domicilioDto.Localidad;
+            enfermeroDto.Domicilio.Provincia = domicilioDto.Provincia;
+            enfermeroDto.Domicilio.Pais = domicilioDto.Pais;
+            enfermeroDto.MatriculaEnfermero = enfermero.MatriculaEnfermero;
 
             return enfermeroDto;
         }
@@ -159,10 +226,24 @@ namespace Cova.WebService
         private static BEEnfermero Mapear(EnfermeroDto enfermeroDto)
         {
             BEEnfermero enfermero = new BEEnfermero();
-            enfermero.ProfesionalId = enfermeroDto.ProfesionalId; //llamo al profesional ID y no al usuario ID
+            BEDomicilio domicilio = new BEDomicilio();
+            enfermero.ProfesionalId = enfermeroDto.ProfesionalId;
             enfermero.Apellido = enfermeroDto.Apellido;
             enfermero.Nombre = enfermeroDto.Nombre;
+            enfermero.DNI = enfermeroDto.DNI;
+            enfermero.FechaNacimiento = enfermeroDto.FechaNacimiento;
             enfermero.Sexo = enfermeroDto.Sexo;
+            enfermero.EstadoCivil = enfermeroDto.EstadoCivil;
+            enfermero.Telefono = enfermeroDto.Telefono;
+            enfermero.Email = enfermeroDto.Email;
+            enfermero.Domicilio = domicilio;
+            enfermero.Domicilio.Calle = domicilio.Calle;
+            enfermero.Domicilio.Numero = domicilio.Numero;
+            enfermero.Domicilio.Piso = domicilio.Piso;
+            enfermero.Domicilio.Localidad = domicilio.Localidad;
+            enfermero.Domicilio.Provincia = domicilio.Provincia;
+            enfermero.Domicilio.Pais = domicilio.Pais;
+            enfermero.MatriculaEnfermero = enfermeroDto.MatriculaEnfermero;
 
             return enfermero;
         }

@@ -79,12 +79,12 @@ namespace Cova.BL
             {
                 MPPEnfermero mPPEnfermero = new MPPEnfermero();
                 EnfermeroInactivado = mPPEnfermero.InactivarEnfermero(enfermeroAInactivar);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizo el Paciente: " + pacienteActualizado.PacienteId + " - " + pacienteActualizado.Apellido, "Actualizar Paciente"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se inactivo el enfermero: " + enfermeroAInactivar.ProfesionalId + " - " + enfermeroAInactivar.Apellido, "Inactivar enfermero"));
 
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Actualizar Paciente: " + pacienteActualizado.PacienteId + " - " + pacienteActualizado.ApellidoNombre + " - " + ex.Message, "Actualizar Paciente"));
+                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al inactivar enfermero: " + enfermeroAInactivar.ProfesionalId + " - " + enfermeroAInactivar.ApellidoNombre + " - " + ex.Message, "Inactivar enfermero"));
                 throw new ErrorAlActualizarPacienteException();
             }
             return EnfermeroInactivado;

@@ -116,9 +116,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CoberturaMedicaController.cs" />
     <Compile Include="Controllers\PacienteController.cs" />
     <Compile Include="Controllers\ProfesionalController.cs" />
     <Compile Include="Controllers\RecetaController.cs" />
+    <Compile Include="Controllers\TurnoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

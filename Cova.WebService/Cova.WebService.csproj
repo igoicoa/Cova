@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoberturaService.cs" />
     <Compile Include="Dtos\CoberturaMedicaPacienteDto.cs" />
     <Compile Include="Dtos\CoberturaMedicaPlanDto.cs" />
     <Compile Include="Dtos\DomicilioDto.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="ProfesionalService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecetaService.cs" />
+    <Compile Include="TurnoService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cova.BE\Cova.BE.csproj">

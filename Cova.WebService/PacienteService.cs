@@ -74,10 +74,31 @@ namespace Cova.WebService
         private static PacienteDto Mapear(BEPaciente paciente)
         {
             PacienteDto pacienteDto = new PacienteDto();
+            DomicilioDto domicilioDto = new DomicilioDto();
+            CoberturaMedicaPacienteDto coberturaMedicaPacienteDto = new CoberturaMedicaPacienteDto();
+            CoberturaMedicaPlanDto coberturaMedicaPlanDto = new CoberturaMedicaPlanDto();
             pacienteDto.UsuarioID = paciente.UsuarioID;
             pacienteDto.Apellido = paciente.Apellido;
             pacienteDto.Nombre = paciente.Nombre;
+            pacienteDto.DNI = paciente.DNI;
+            pacienteDto.FechaNacimiento = paciente.FechaNacimiento;
             pacienteDto.Sexo = paciente.Sexo;
+            pacienteDto.EstadoCivil = paciente.EstadoCivil;
+            pacienteDto.Telefono = paciente.Telefono;
+            pacienteDto.Email = paciente.Email;
+            pacienteDto.Domicilio = domicilioDto;
+            pacienteDto.Domicilio.Calle = domicilioDto.Calle;
+            pacienteDto.Domicilio.Numero = domicilioDto.Numero;
+            pacienteDto.Domicilio.Piso = domicilioDto.Piso;
+            pacienteDto.Domicilio.Localidad = domicilioDto.Localidad;
+            pacienteDto.Domicilio.Provincia = domicilioDto.Provincia;
+            pacienteDto.Domicilio.Pais = domicilioDto.Pais;
+            pacienteDto.CoberturaMedica = coberturaMedicaPacienteDto;
+            pacienteDto.CoberturaMedica.Nombre = coberturaMedicaPacienteDto.Nombre;
+            pacienteDto.CoberturaMedica.NumeroAfiliado = coberturaMedicaPacienteDto.NumeroAfiliado;
+            pacienteDto.CoberturaMedica.FechaVencimiento = coberturaMedicaPacienteDto.FechaVencimiento;
+            pacienteDto.CoberturaMedica.Plan = coberturaMedicaPlanDto;
+            pacienteDto.CoberturaMedica.Nombre = coberturaMedicaPlanDto.Nombre;
 
             return pacienteDto;
         }
@@ -85,10 +106,31 @@ namespace Cova.WebService
         private static BEPaciente Mapear(PacienteDto pacienteDto)
         {
             BEPaciente paciente = new BEPaciente();
+            BEDomicilio domicilio = new BEDomicilio();
+            BECoberturaMedicaPaciente coberturaMedicaPaciente = new BECoberturaMedicaPaciente();
+            BECoberturaMedicaPlan coberturaMedicaPlan = new BECoberturaMedicaPlan();
             paciente.UsuarioID = pacienteDto.UsuarioID;
             paciente.Apellido = pacienteDto.Apellido;
             paciente.Nombre = pacienteDto.Nombre;
-            paciente.Sexo = pacienteDto.Sexo;
+            paciente.DNI = pacienteDto.DNI;
+            paciente.FechaNacimiento = pacienteDto.FechaNacimiento;
+            paciente.Sexo = paciente.Sexo;
+            paciente.EstadoCivil = pacienteDto.EstadoCivil;
+            paciente.Telefono = pacienteDto.Telefono;
+            paciente.Email = pacienteDto.Telefono;
+            paciente.Domicilio = domicilio;
+            paciente.Domicilio.Calle = domicilio.Calle;
+            paciente.Domicilio.Numero = domicilio.Numero;
+            paciente.Domicilio.Piso = domicilio.Piso;
+            paciente.Domicilio.Localidad = domicilio.Localidad;
+            paciente.Domicilio.Provincia = domicilio.Provincia;
+            paciente.Domicilio.Pais = domicilio.Pais;
+            paciente.CoberturaMedica = coberturaMedicaPaciente;
+            paciente.CoberturaMedica.Nombre = coberturaMedicaPaciente.Nombre;
+            paciente.CoberturaMedica.NumeroAfiliado = coberturaMedicaPaciente.NumeroAfiliado;
+            paciente.CoberturaMedica.FechaVencimiento = coberturaMedicaPaciente.FechaVencimiento;
+            paciente.CoberturaMedica.Plan= coberturaMedicaPlan;
+            paciente.CoberturaMedica.Nombre = coberturaMedicaPlan.Nombre;
 
             return paciente;
         }

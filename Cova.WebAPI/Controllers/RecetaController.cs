@@ -40,12 +40,5 @@ namespace Cova.WebAPI.Controllers
         {
             return this.recetaService.ActualizarReceta(receta);
         }
-
-        //[HttpDelete]
-        //[Route("{recetaId:int}")]
-        //public RecetaDto BorrarReceta(int recetaId)
-        //{
-        //    return this.RecetaDto.BorrarReceta(recetaId);
-        //}
     }
 }
