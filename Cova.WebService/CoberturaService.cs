@@ -72,5 +72,27 @@ namespace Cova.WebService
             }
         }
 
+        private static CoberturaMedicaDto Mapear(BECoberturaMedica coberturaMedica)
+        {
+            CoberturaMedicaDto coberturaMedicaDto = new CoberturaMedicaDto();
+            CoberturaMedicaPacienteDto coberturaMedicaPacienteDto = new CoberturaMedicaPacienteDto();
+            List < CoberturaMedicaPlanDto> coberturaMedicaPlanDto = new List<CoberturaMedicaPlanDto>();
+            coberturaMedicaDto.CoberturaMedicaId = coberturaMedica.CoberturaMedicaId;
+            coberturaMedicaDto.Nombre = coberturaMedica.Nombre;
+            coberturaMedicaDto.Plan = coberturaMedicaPlanDto;
+
+            return coberturaMedicaDto;
+        }
+        private static BECoberturaMedica Mapear(CoberturaMedicaDto coberturaMedicaDto)
+        {
+            BECoberturaMedica coberturaMedica = new BECoberturaMedica();
+            List<BECoberturaMedicaPlan> coberturaMedicaPlan = new List <BECoberturaMedicaPlan>();
+            coberturaMedica.CoberturaMedicaId = coberturaMedicaDto.CoberturaMedicaId;
+            coberturaMedica.Nombre = coberturaMedicaDto.Nombre;
+            coberturaMedica.Plan = (List < BECoberturaMedicaPlan >) coberturaMedicaDto.Plan;
+            
+            return coberturaMedica;
+        }
+
     }
 }

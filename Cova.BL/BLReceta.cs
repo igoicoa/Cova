@@ -62,7 +62,7 @@ namespace Cova.BL
             try
             {
                 recetas=  mPPReceta.BuscarRecetas(paciente);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se busco la Receta de: " + paciente.DNI, "Buscar Receta"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se busco la Receta de: " + paciente.DNI, "Buscar Receta"));
 
             }
             catch (Exception ex)

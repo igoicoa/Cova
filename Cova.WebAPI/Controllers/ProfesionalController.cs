@@ -14,28 +14,28 @@ namespace Cova.WebAPI.Controllers
         public ProfesionalService profesionalService = new ProfesionalService();
 
         [HttpGet]
-        [Route("/medico")]
+        [Route("Medico")]
         public IList<MedicoDto> GetProfesionalesMedicos()
         {
             return this.profesionalService.GetProfesionalesMedicos();
         }
 
         [HttpGet]
-        [Route("{usuarioId:int}")]
+        [Route("Medico/{usuarioId:int}")]
         public MedicoDto GetProfesionalMedico(int usuarioId)
         {
             return this.profesionalService.GetProfesionalMedico(usuarioId);
         }
 
         [HttpGet]
-        [Route("{usuarioId:int}")]
+        [Route("Medico/horarios/{usuarioId:int}")]
         public IList<TurnosDisponibleDto> GetProfesionalMedicoHorarios(int usuarioId)
         {
             return this.profesionalService.GetProfesionalMedicoHorarios(usuarioId);
         }
 
         [HttpPost]
-        [Route("/medico/{profesionalId:int}/horarios")]
+        [Route("Medico/{profesionalId:int}/horarios")]
         public ProfesionalDto GuardarProfesionalMedicoHorarios(int profesionalId, IList<TurnosDisponibleDto> turnosDisponibles)
         {
             return this.profesionalService.GuardarProfesionalMedicoHorarios(profesionalId, turnosDisponibles);
@@ -49,14 +49,14 @@ namespace Cova.WebAPI.Controllers
         }
 
         [HttpPost]
-        [Route("")]
+        //[Route("")]
         public MedicoDto CrearProfesionalMedico([FromBody] MedicoDto medico)
         {
             return this.profesionalService.CrearProfesionalMedico(medico);
         }
 
         [HttpPut]
-        [Route("{usuarioId:int}")]
+        [Route("Medico/{usuarioId:int}")]
         public MedicoDto ActualizarProfesionalMedico([FromBody] MedicoDto medico)
         {
             return this.profesionalService.ActualizarProfesionalMedico(medico);
@@ -71,28 +71,28 @@ namespace Cova.WebAPI.Controllers
 
 //ENFERMERO
         [HttpGet]
-        [Route("/enfermero")]
+        [Route("Enfermero")]
         public IList<EnfermeroDto> GetProfesionalesEnfermeros()
         {
             return this.profesionalService.GetProfesionalesEnfermeros();
         }
 
         [HttpGet]
-        [Route("{usuarioId:int}")]
+        [Route("Enfermero/{usuarioId:int}")]
         public EnfermeroDto GetProfesionalEnfermero(int usuarioId)
         {
             return this.profesionalService.GetProfesionalEnfermero(usuarioId);
         }
 
         [HttpPost]
-        [Route("")]
+        [Route("Enfermero")]
         public EnfermeroDto CrearProfesionalEnfermero([FromBody] EnfermeroDto enfermero)
         {
             return this.profesionalService.CrearProfesionalEnfermero(enfermero);
         }
 
         [HttpPut]
-        [Route("{usuarioId:int}")]
+        [Route("Enfermero/{usuarioId:int}")]
         public EnfermeroDto ActualizarProfesionalEnfermero([FromBody] EnfermeroDto enfermero)
         {
             return this.profesionalService.ActualizarProfesionalEnfermero(enfermero);
@@ -100,7 +100,7 @@ namespace Cova.WebAPI.Controllers
         }
 
         [HttpDelete]
-        [Route("{usuarioId:int}")]
+        [Route("Enfermero/{usuarioId:int}")]
         public EnfermeroDto BorrarProfesionalEnfermero(int usuarioId)
         {
             return this.profesionalService.BorrarProfesionalEnfermero(usuarioId);

@@ -14,28 +14,28 @@ namespace Cova.WebAPI.Controllers
         public RecetaService recetaService = new RecetaService();
 
         [HttpGet]
-        [Route("")]
+        //Route("")]
         public IList<RecetaDto> GetRecetas()
         {
             return this.recetaService.GetRecetas();
         }
 
         [HttpGet]
-        [Route("/paciente{usuarioId:int}")]
+        [Route("Paciente/{usuarioId:int}")]
         public IList<RecetaDto> GetRecetasUsuario(int pacienteId)
         {
             return this.recetaService.GetRecetasUsuario(pacienteId);
         }
 
         [HttpPost]
-        [Route("")]
+        //[Route("")]
         public RecetaDto CrearReceta ([FromBody] RecetaDto receta)
         {
             return this.recetaService.CrearReceta(receta);
         }
 
         [HttpPut]
-        [Route("{recetaId:int}")]
+        [Route("{RecetaId:int}")]
         public RecetaDto ActualizarReceta([FromBody] RecetaDto receta)
         {
             return this.recetaService.ActualizarReceta(receta);

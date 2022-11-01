@@ -19,7 +19,7 @@ namespace Cova.BL
             try
             {
                 coberturamedica = mPPCoberturaMedica.ObtenerCoberturasMedicas();
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo la cobertura medica", "Buscar Cobertura Medica"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo la cobertura medica", "Buscar Cobertura Medica"));
             }
             catch (Exception ex)
             {

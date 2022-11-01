@@ -11,41 +11,41 @@ namespace Cova.WebAPI.Controllers
     [RoutePrefix("api/turno")]
     public class TurnoController : ApiController
     {
-        public TurnoService TurnosDisponibleDto = new TurnoService();
+        public TurnoService turnoService = new TurnoService();
 
         [HttpGet]
         [Route("")]
-        public IList<TurnosDisponibleDto> GetTurnos()
+        public IList<TurnoDto> GetTurnos()
         {
-            return this.TurnosDisponibleDto.GetTurnos();
+            return this.turnoService.GetTurnos();
         }
 
         [HttpGet]
-        [Route("/paciente{usuarioId:int}")]
-        public IList<TurnosDisponibleDto> GetTurnosUsuario(int usuarioId)
+        [Route("/paciente{pacienteId:int}")]
+        public IList<TurnoDto> GetTurnosUsuario(int pacienteId)
         {
-            return this.TurnosDisponibleDto.GetTurnosUsuario(usuarioId);
+            return this.turnoService.GetTurnosUsuario(pacienteId);
         }
 
         [HttpPost]
         [Route("")]
-        public TurnosDisponibleDto CrearTurno([FromBody] TurnosDisponibleDto turnosDisponible)
+        public TurnoDto CrearTurno([FromBody] TurnoDto turnoDto)
         {
-            return this.TurnosDisponibleDto.CrearTurno(turnosDisponible);
+            return this.turnoService.CrearTurno(turnoDto);
         }
 
         [HttpPut]
         [Route("{turnoId:int}")]
-        public TurnosDisponibleDto ActualizarTurno([FromBody] TurnosDisponibleDto turnosDisponible)
+        public TurnoDto ActualizarTurno([FromBody] TurnoDto turnoDto)
         {
-            return this.TurnosDisponibleDto.ActualizarTurno(turnosDisponible);
+            return this.turnoService.ActualizarTurno(turnoDto);
         }
 
         [HttpDelete]
         [Route("{turnoId:int}")]
-        public PacienteDto Borrarturno(int turnoId)
+        public TurnoDto Borrarturno(int turnoId)
         {
-            return this.TurnosDisponibleDto.Borrarturno(turnoId);
+            return this.turnoService.Borrarturno(turnoId);
         }
     }
 }
