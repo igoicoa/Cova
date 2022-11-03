@@ -27,20 +27,18 @@ namespace Cova.WebService
 
         public IList<TurnoDto> GetTurnosUsuario(int pacienteId)
         {
-            BETurno bETurno = new BETurno();
-            IList<BETurno> turnos = this.bLTurno.ObtenerTurnos();
-            IList<TurnosDisponibleDto> turnosDtos = new List<TurnosDisponibleDto>();
-            foreach (BETurno turno in turnos)
+            IList<TurnosDisponibleDto> turnosdisponibleDtos = new List<TurnosDisponibleDto>();
+            foreach (BETurnoDisponible turno in turnos)
             {
-                turnosDtos.Add(Mapear(turno));
+                turnosdisponibleDtos.Add(Mapear(turnos));
             }
 
-            return turnosDtos;
+            return turnosdisponibleDtos;
         }
 
         public TurnoDto CrearTurno(TurnoDto turnoDtos)
         {
-            if (this.bLTurno.CrearTurno(Mapear(turnoDtos)))
+            if (this.bLTurno.GenerarTurno(Mapear(turnoDtos)))
             {
                 return turnoDtos;
             }
@@ -52,7 +50,7 @@ namespace Cova.WebService
 
         public TurnoDto ActualizarTurno(TurnoDto turno)
         {
-            if (this.bLTurno.ObtenerTurnos(Mapear(turno)))
+            if (this.bLTurno.AsistioTurno(Mapear(turno)))
             {
                 return turno;
             }
@@ -77,7 +75,7 @@ namespace Cova.WebService
             }
         }
 
-        private static BETurno Mapear(BETurno turno)
+        private static TurnoDto Mapear(BETurno turno)
         {
             TurnoDto turnoDto = new TurnoDto();
             CentroMedicoDto centroMedicoDto = new CentroMedicoDto();

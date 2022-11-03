@@ -55,11 +55,11 @@ namespace Cova.WebService
             }
         }
 
-        public IList<TurnoDto> GetProfesionalMedicoTurnosDisponibles(int profesionalId, DateTime fechadesde, DateTime fechahasta)
+        public IList<TurnosDisponibleDto> GetProfesionalMedicoTurnosDisponibles(int profesionalId, DateTime fechadesde, DateTime fechahasta)
         {
             BEProfesional bEProfesional = new BEProfesional();
             bEProfesional.ProfesionalId = profesionalId;
-            IList<TurnoDto> turnosDisponibles = Mapear(this.bLProfesional.ObtenerTurnosLibres(bEProfesional, fechadesde, fechahasta).ToList());
+            IList<TurnosDisponibleDto> turnosDisponibles = Mapear(this.bLProfesional.ObtenerTurnosLibres(bEProfesional, fechadesde, fechahasta));
 
             return turnosDisponibles;
         }
