@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Cova.WebService.Dtos;
 using Cova.BL;
 using Cova.BE;
+using Cova.BE.Enum;
 
 namespace Cova.WebService
 {
@@ -94,7 +95,7 @@ namespace Cova.WebService
             pacienteDto.Domicilio.Provincia = paciente.Domicilio.Provincia;
             pacienteDto.Domicilio.Pais = paciente.Domicilio.Pais;
             pacienteDto.CoberturaMedica = coberturaMedicaPacienteDto;
-            if (paciente.CoberturaMedica != null)
+            if (pacienteDto.CoberturaMedica != null)
             {
                 pacienteDto.CoberturaMedica = coberturaMedicaPacienteDto;
                 pacienteDto.CoberturaMedica.CoberturaMedicaId = paciente.CoberturaMedica.CoberturaMedicaId;
@@ -138,19 +139,22 @@ namespace Cova.WebService
             paciente.Domicilio.Provincia = pacienteDto.Domicilio.Provincia;
             paciente.Domicilio.Pais = pacienteDto.Domicilio.Pais;
             paciente.CoberturaMedica = coberturaMedicaPaciente;
-            paciente.CoberturaMedica.CoberturaMedicaId = pacienteDto.CoberturaMedica.CoberturaMedicaId;
-            paciente.CoberturaMedica.Nombre = pacienteDto.CoberturaMedica.Nombre;
-            paciente.CoberturaMedica.NumeroAfiliado = pacienteDto.CoberturaMedica.NumeroAfiliado;
-            paciente.CoberturaMedica.FechaVencimiento = pacienteDto.CoberturaMedica.FechaVencimiento;
-            paciente.CoberturaMedica.Plan= coberturaMedicaPlan;
-            paciente.CoberturaMedica.Plan.PlanId = pacienteDto.CoberturaMedica.Plan.PlanId;
-            paciente.CoberturaMedica.Plan.Nombre = pacienteDto.CoberturaMedica.Plan.Nombre;
+            if (paciente.CoberturaMedica != null)
+            {
+                paciente.CoberturaMedica.CoberturaMedicaId = pacienteDto.CoberturaMedica.CoberturaMedicaId;
+                paciente.CoberturaMedica.Nombre = pacienteDto.CoberturaMedica.Nombre;
+                paciente.CoberturaMedica.NumeroAfiliado = pacienteDto.CoberturaMedica.NumeroAfiliado;
+                paciente.CoberturaMedica.FechaVencimiento = pacienteDto.CoberturaMedica.FechaVencimiento;
+                paciente.CoberturaMedica.Plan= coberturaMedicaPlan;
+                paciente.CoberturaMedica.Plan.PlanId = pacienteDto.CoberturaMedica.Plan.PlanId;
+                paciente.CoberturaMedica.Plan.Nombre = pacienteDto.CoberturaMedica.Plan.Nombre;
+            }
             paciente.Usuario = pacienteDto.Usuario;
             paciente.UsuarioID = pacienteDto.UsuarioID;
             paciente.Password = pacienteDto.Password;
             paciente.UltimoLogin = pacienteDto.UltimoLogin;
             paciente.Activo = pacienteDto.Activo;
-            //paciente.TipoUsuario = pacienteDto.TipoUsuario;
+            paciente.TipoUsuario = TipoUsuario.Paciente;
 
             return paciente;
         }

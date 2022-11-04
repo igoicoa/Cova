@@ -165,9 +165,9 @@ GO
 -- Admin User (User: Admin - PWD: test123)
 EXEC s_CrearAdministrador 'Dmin', 'Admin', 34928392, '1989-09-21', 'F', 'Soltera', '1182736253','ssalas@hotmail.com','Roca',213,'','Munro','Buenos Aires','Argentina','CC-03-E7-47-A6-AF-BB-CB-F8-BE-76-68-AC-FE-BE-E5'
 -- Pacientes (PWD: paciente123)
-EXEC s_CrearPaciente 'Gonzalez', 'Juan', 32382278, '1987-02-21', 'M', 'Soltero', '1123423452', 'jgonzalez@hotmail.com','San Martin',123,'','Quilmes','Buenos Aires','Argentina', 5, 1, '1234323424', '2023-01-02','B6-0F-15-38-5B-90-5B-E9-C9-77-C5-9A-A3-42-0F-D2', 1
-EXEC s_CrearPaciente 'Lopez', 'Pedro', 31938278, '1986-04-18', 'M', 'Soltero', '1126376283', 'plopez@hotmail.com','Belgrano',2342,'2 A','CABA','CABA','Argentina', 8, 2, '302229329382834', '2022-08-01','B6-0F-15-38-5B-90-5B-E9-C9-77-C5-9A-A3-42-0F-D2', 1
-EXEC s_CrearPaciente 'Fernandez', 'Maria', 35263728, '1991-07-15', 'F', 'Soltera', '1126399837', 'mfernandez@hotmail.com','Ciudad de la Paz',3321,'3 B','CABA','CABA','Argentina', 6, 2, '2736352637483', '2023-04-01','B6-0F-15-38-5B-90-5B-E9-C9-77-C5-9A-A3-42-0F-D2', 1
+EXEC s_CrearPaciente 'Gonzalez', 'Juan', 32382278, '1987-02-21', 'M', 'Soltero', '1123423452', 'jgonzalez@hotmail.com','San Martin',123,'','Quilmes','Buenos Aires','Argentina', 5, 1, '1234323424', '2023-01-02','B6-0F-15-38-5B-90-5B-E9-C9-77-C5-9A-A3-42-0F-D2'
+EXEC s_CrearPaciente 'Lopez', 'Pedro', 31938278, '1986-04-18', 'M', 'Soltero', '1126376283', 'plopez@hotmail.com','Belgrano',2342,'2 A','CABA','CABA','Argentina', 8, 2, '302229329382834', '2022-08-01','B6-0F-15-38-5B-90-5B-E9-C9-77-C5-9A-A3-42-0F-D2'
+EXEC s_CrearPaciente 'Fernandez', 'Maria', 35263728, '1991-07-15', 'F', 'Soltera', '1126399837', 'mfernandez@hotmail.com','Ciudad de la Paz',3321,'3 B','CABA','CABA','Argentina', 6, 2, '2736352637483', '2023-04-01','B6-0F-15-38-5B-90-5B-E9-C9-77-C5-9A-A3-42-0F-D2'
 -- Medicos (PWD: medico123)
 EXEC s_CrearProfesionalMedico 'Rojas', 'Daniel', 2593776, '1973-08-12', 'M', 'Casado', '1126352435','drojas@gmail.com','Lavalle',1453,'6 C','CABA','CABA','Argentina', 123943, 643234, 'Neumonologia','D7-A3-95-61-4E-B5-F8-8F-59-5D-4A-DA-63-89-48-F9'
 EXEC s_CrearProfesionalMedico 'Lopez', 'Ricardo', 16827367, '1968-10-15', 'M', 'Casado', '1125333826','rlopez@gmail.com','9 de Julio',1242,'','Vicente Lopez','Buenos Aires','Argentina', 382726, 293728, 'Cardiologia','D7-A3-95-61-4E-B5-F8-8F-59-5D-4A-DA-63-89-48-F9'
@@ -598,16 +598,6 @@ VALUES
 INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
 VALUES
 (@IdiomaInglesId, @EtiquetaId, 'Change Language')
-
--- Guardo traduccion para etiqueta menuControldeCambio
-INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('Controlde_Cambio')
-SET @EtiquetaId = SCOPE_IDENTITY()
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaCastellanoId, @EtiquetaId, 'Control de Cambio')
-INSERT INTO [dbo].[Traduccion] (IdiomaId, EtiquetaId, Traduccion)
-VALUES
-(@IdiomaInglesId, @EtiquetaId, 'Change Control')
 
 -- Guardo traduccion para etiqueta menuInformacion
 INSERT INTO [dbo].[Etiqueta] (Nombre) VALUES ('Informacion')

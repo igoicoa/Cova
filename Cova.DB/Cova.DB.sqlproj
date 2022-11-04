@@ -156,7 +156,6 @@
     <Build Include="StoredProcedures\s_EliminarPlanesCoberturaMedica.sql" />
     <Build Include="StoredProcedures\s_ActualizarCoberturaMedica.sql" />
     <Build Include="StoredProcedures\s_EliminarPlanCoberturaMedica.sql" />
-    <Build Include="StoredProcedures\s_RestaurarPaciente.sql" />
     <Build Include="StoredProcedures\s_BuscarAdministrador.sql" />
     <Build Include="StoredProcedures\s_ActualizarVacuna.sql" />
     <Build Include="Tables\Turno.sql" />

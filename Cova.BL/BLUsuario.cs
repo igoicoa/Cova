@@ -27,7 +27,7 @@ namespace Cova.BL
             usuario = mPPUsuario.ObtenerUsuario(usuarioALoguearse);
             if(!usuario.Activo)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, usuarioALoguearse, TipoCriticidad.Warning, "El usuario a loguear esta inactivo", "Login"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, usuarioALoguearse, TipoCriticidad.Warning, "El usuario a loguear esta inactivo", "Login"));
                 throw new UsuarioInactivoException();
             }
             else if (usuario.Password == claveEncriptada)
@@ -36,11 +36,11 @@ namespace Cova.BL
                 usuarioALoguearse.UltimoLogin = usuario.UltimoLogin;
                 usuarioALoguearse.TipoUsuario = usuario.TipoUsuario;
                 claveCorrecta = true;
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, usuarioALoguearse, TipoCriticidad.Info, "Usuario logueado correctamente: " + usuario.UsuarioID, "Login"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, usuarioALoguearse, TipoCriticidad.Info, "Usuario logueado correctamente: " + usuario.UsuarioID, "Login"));
             }
             else
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, null, TipoCriticidad.Warning, "Password o usuario incorrecto para el usuario: " + usuarioALoguearse.Usuario, "Login"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, null, TipoCriticidad.Warning, "Password o usuario incorrecto para el usuario: " + usuarioALoguearse.Usuario, "Login"));
                 throw new UsuarioPasswordIncorrecto();
             }
 
@@ -98,11 +98,11 @@ namespace Cova.BL
             try
             {
                 usuarios = mPPUsuario.BuscarUsuarios(nombreABuscar, ApellidoABuscar);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo la busqueda del usuario ", "Buscar Usuarios"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo la busqueda del usuario ", "Buscar Usuarios"));
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al buscar el usuario " + ex.Message, "Buscar Usuarios"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al buscar el usuario " + ex.Message, "Buscar Usuarios"));
                 throw new ErrorAlBuscarUsuariosException();
             }
             return usuarios;
@@ -115,11 +115,11 @@ namespace Cova.BL
             {
                 MPPPermiso mPPPermiso = new MPPPermiso();
                 AgregarPermiso = mPPPermiso.AgregarPermisoUsuario(usuarioID, permisoAAgregar);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se agrego el permiso ", "Agregar Permiso"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se agrego el permiso ", "Agregar Permiso"));
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al agregar el permiso: " + ex.Message, "Agregar Permiso"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al agregar el permiso: " + ex.Message, "Agregar Permiso"));
                 throw new ErrorAlAgregarPermisoException();
             }
             return AgregarPermiso;
@@ -132,11 +132,11 @@ namespace Cova.BL
             {
                 MPPPermiso mPPPermiso = new MPPPermiso();
                 EliminarPermiso = mPPPermiso.EliminarPermisoUsuario(usuarioID, permisoAAgregar);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se eliminó el permiso: ", "Agregar Permiso"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se eliminó el permiso: ", "Agregar Permiso"));
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al eliminar el permiso: " + ex.Message, "Eliminar Permiso"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al eliminar el permiso: " + ex.Message, "Eliminar Permiso"));
                 throw new ErrorAlEliminarPermisoException();
             }
             return EliminarPermiso;

@@ -77,7 +77,6 @@
     <Compile Include="Excepciones\ErrorAlCrearVacunasException.cs" />
     <Compile Include="Excepciones\ErrorAlEliminarPermisoException.cs" />
     <Compile Include="Excepciones\ErrorAlGenerarTurnoException.cs" />
-    <Compile Include="Excepciones\ErrorAlObteneControlDeCambioPacienteException.cs" />
     <Compile Include="Excepciones\ErrorAlObtenerCentrosMedicosException.cs" />
     <Compile Include="Excepciones\ErrorAlObtenerLaboratoriosException.cs" />
     <Compile Include="Excepciones\ErrorAlObtenerPermisosException.cs" />

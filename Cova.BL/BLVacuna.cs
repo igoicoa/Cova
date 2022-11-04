@@ -19,12 +19,12 @@ namespace Cova.BL
             try
             {
                 vacunas = mPPVacuna.ObtenerVacunas();
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo las vacunas: ", "Obtener Vacunas"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo las vacunas: ", "Obtener Vacunas"));
 
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al obtener las vacunas: " + ex.Message, "Obtener Vacunas"));
+                // Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al obtener las vacunas: " + ex.Message, "Obtener Vacunas"));
                 throw new ErrorAlObtenerVacunasException();
             }
             return vacunas;
@@ -37,12 +37,12 @@ namespace Cova.BL
             try
             {
                 Obtenervacunas = mPPVacuna.ObtenerVacunasDeCentroMedicoAAplicar(vacunaABuscar);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se obtuvo las vacunas del centro medico a aplicar: " + vacunaABuscar.Vacuna.VacunaID, "Obtener Vacunas del centro medico a aplicar"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se obtuvo las vacunas del centro medico a aplicar: " + vacunaABuscar.Vacuna.VacunaID, "Obtener Vacunas del centro medico a aplicar"));
 
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al obtener las vacunas del centro medico a aplicar: " + ex.Message, "Obtener Vacunas del centro medico a aplicar"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al obtener las vacunas del centro medico a aplicar: " + ex.Message, "Obtener Vacunas del centro medico a aplicar"));
                 throw new ErrorAlObtenerVacunasDeCentroMedicoAAplicarException();
             }
             return Obtenervacunas;
@@ -63,12 +63,12 @@ namespace Cova.BL
                 }
                 MPPVacuna mPPVacuna = new MPPVacuna();
                 VacunaCreada = mPPVacuna.CrearVacuna(vacunaNueva);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "La vacuna: " + vacunaNueva.VacunaID + "fue creada con exito", "Crear Vacuna"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "La vacuna: " + vacunaNueva.VacunaID + "fue creada con exito", "Crear Vacuna"));
 
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al crear la vacuna: " + ex.Message, "Crear Vacuna"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al crear la vacuna: " + ex.Message, "Crear Vacuna"));
                 throw new ErrorAlCrearVacunasException();
             }
             return VacunaCreada;
@@ -81,12 +81,12 @@ namespace Cova.BL
             {
                 MPPVacuna mPPVacuna = new MPPVacuna();
                 vacunaModificada = mPPVacuna.ModificarVacuna(vacunaAModificar);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "La vacuna: " + vacunaAModificar.VacunaID + "fue modificada con exito", "Modificar Vacuna"));
+                // Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "La vacuna: " + vacunaAModificar.VacunaID + "fue modificada con exito", "Modificar Vacuna"));
 
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al modificar la vacuna: " + ex.Message, "Modificar Vacuna"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al modificar la vacuna: " + ex.Message, "Modificar Vacuna"));
                 throw new ErrorAlCrearVacunasException();
             }
             return vacunaModificada;

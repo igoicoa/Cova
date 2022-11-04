@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Cova.WebService.Dtos;
 using Cova.BL;
 using Cova.BE;
+using Cova.BE.Enum;
 
 namespace Cova.WebService
 {
@@ -109,12 +110,15 @@ namespace Cova.WebService
             recetaDto.Paciente.Domicilio.Provincia = receta.Paciente.Domicilio.Provincia;
             recetaDto.Paciente.Domicilio.Pais = receta.Paciente.Domicilio.Pais;
             recetaDto.Paciente.CoberturaMedica = coberturaMedicaPacienteDto;
-            recetaDto.Paciente.CoberturaMedica.Nombre = receta.Paciente.CoberturaMedica.Nombre;
-            recetaDto.Paciente.CoberturaMedica.NumeroAfiliado = receta.Paciente.CoberturaMedica.NumeroAfiliado;
-            recetaDto.Paciente.CoberturaMedica.FechaVencimiento = receta.Paciente.CoberturaMedica.FechaVencimiento;
-            recetaDto.Paciente.CoberturaMedica.Plan = coberturaMedicaPlanDto;
-            recetaDto.Paciente.CoberturaMedica.Plan.PlanId = receta.Paciente.CoberturaMedica.Plan.PlanId;
-            recetaDto.Paciente.CoberturaMedica.Plan.Nombre = receta.Paciente.CoberturaMedica.Plan.Nombre;
+            if (recetaDto.Paciente.CoberturaMedica != null)
+            {
+                recetaDto.Paciente.CoberturaMedica.Nombre = receta.Paciente.CoberturaMedica.Nombre;
+                recetaDto.Paciente.CoberturaMedica.NumeroAfiliado = receta.Paciente.CoberturaMedica.NumeroAfiliado;
+                recetaDto.Paciente.CoberturaMedica.FechaVencimiento = receta.Paciente.CoberturaMedica.FechaVencimiento;
+                recetaDto.Paciente.CoberturaMedica.Plan = coberturaMedicaPlanDto;
+                recetaDto.Paciente.CoberturaMedica.Plan.PlanId = receta.Paciente.CoberturaMedica.Plan.PlanId;
+                recetaDto.Paciente.CoberturaMedica.Plan.Nombre = receta.Paciente.CoberturaMedica.Plan.Nombre;
+            }
             recetaDto.Paciente.Usuario = receta.Paciente.Usuario;
             recetaDto.Paciente.UsuarioID = receta.Paciente.UsuarioID;
             recetaDto.Paciente.Password = receta.Paciente.Password;
@@ -150,7 +154,7 @@ namespace Cova.WebService
             receta.Medico.Domicilio.Pais = recetaDto.Medico.Domicilio.Pais;
             receta.Medico.MatriculaNacional = recetaDto.Medico.MatriculaNacional;
             receta.Medico.MatriculaProvincial = recetaDto.Medico.MatriculaProvincial;
-            //medico.Especialidad = medicoDto.Especialidad;
+            receta.Medico.Especialidad = (Especialidad)int.Parse(recetaDto.Medico.Especialidad);
             receta.FechaPrescripcion = recetaDto.FechaPrescripcion;
             receta.Observacion = recetaDto.Observacion;
             receta.Paciente = paciente;
@@ -182,7 +186,7 @@ namespace Cova.WebService
             receta.Paciente.Password = recetaDto.Paciente.Password;
             receta.Paciente.UltimoLogin = recetaDto.Paciente.UltimoLogin;
             receta.Paciente.Activo = recetaDto.Paciente.Activo;
-            //receta.Paciente.TipoUsuario = paciente.TipoUsuario.ToString();
+            receta.Paciente.TipoUsuario = (TipoUsuario)int.Parse(paciente.TipoUsuario.ToString());
 
             return receta;
         }

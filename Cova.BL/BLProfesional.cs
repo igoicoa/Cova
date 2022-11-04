@@ -31,7 +31,7 @@ namespace Cova.BL
                         throw new ErrorAlActualizarTurnosDisponiblesException();
                     }
                 }
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Los turnos del Profesional: " + profesional.ProfesionalId + "fueron actualizado con exito", "Actualizar Turnos Disponibles"));
+                // Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Los turnos del Profesional: " + profesional.ProfesionalId + "fueron actualizado con exito", "Actualizar Turnos Disponibles"));
             }
             catch (Exception ex)
             {
@@ -41,7 +41,7 @@ namespace Cova.BL
                 }
                 else
                 {
-                    Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al actualizar los turnos del profesional:  " + profesional.ProfesionalId + " - " + ex.Message, "Actualizar Turnos Disponibles"));
+                    //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al actualizar los turnos del profesional:  " + profesional.ProfesionalId + " - " + ex.Message, "Actualizar Turnos Disponibles"));
                     throw new ErrorAlActualizarProfesionalException();
                 }
             }
@@ -56,11 +56,11 @@ namespace Cova.BL
             {
                 turnosDisponibles = mPPTurno.ObtenerTurnosDisponibles(profesional);
                 profesional.TurnosDisponibles = turnosDisponibles;
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se obtuvieron los turnos disponibles de: " + profesional.ProfesionalId, "Obtener turnos disponibles"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se obtuvieron los turnos disponibles de: " + profesional.ProfesionalId, "Obtener turnos disponibles"));
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al obtener los turnos disponibles de: " + profesional.ProfesionalId + " - " + ex.Message, "Obtener turnos disponibles"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al obtener los turnos disponibles de: " + profesional.ProfesionalId + " - " + ex.Message, "Obtener turnos disponibles"));
                 throw new ErrorAlBuscarDatosMedicos();
             }
         }
@@ -84,11 +84,11 @@ namespace Cova.BL
                         }
                     }
                 }
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se obtuvieron los turnos disponibles de: " + profesional.ProfesionalId, "Obtener turnos disponibles"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se obtuvieron los turnos disponibles de: " + profesional.ProfesionalId, "Obtener turnos disponibles"));
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al obtener los turnos disponibles de: " + profesional.ProfesionalId + " - " + ex.Message, "Obtener turnos disponibles"));
+                // Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al obtener los turnos disponibles de: " + profesional.ProfesionalId + " - " + ex.Message, "Obtener turnos disponibles"));
                 throw new ErrorAlBuscarDatosMedicos();
             }
             return turnosLibres;

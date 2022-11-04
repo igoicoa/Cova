@@ -121,11 +121,14 @@ namespace Cova.WebService
             turnoDto.Paciente.Domicilio.Provincia = domicilioDto.Provincia;
             turnoDto.Paciente.Domicilio.Pais = domicilioDto.Pais;
             turnoDto.Paciente.CoberturaMedica = coberturaMedicaPacienteDto;
-            turnoDto.Paciente.CoberturaMedica.Nombre = coberturaMedicaPacienteDto.Nombre;
-            turnoDto.Paciente.CoberturaMedica.NumeroAfiliado = coberturaMedicaPacienteDto.NumeroAfiliado;
-            turnoDto.Paciente.CoberturaMedica.FechaVencimiento = coberturaMedicaPacienteDto.FechaVencimiento;
-            turnoDto.Paciente.CoberturaMedica.Plan = coberturaMedicaPacienteDto.Plan;
-            turnoDto.Paciente.CoberturaMedica.Nombre = coberturaMedicaPacienteDto.Nombre;
+            if (turnoDto.Paciente.CoberturaMedica != null)
+            {
+                turnoDto.Paciente.CoberturaMedica.Nombre = coberturaMedicaPacienteDto.Nombre;
+                turnoDto.Paciente.CoberturaMedica.NumeroAfiliado = coberturaMedicaPacienteDto.NumeroAfiliado;
+                turnoDto.Paciente.CoberturaMedica.FechaVencimiento = coberturaMedicaPacienteDto.FechaVencimiento;
+                turnoDto.Paciente.CoberturaMedica.Plan = coberturaMedicaPacienteDto.Plan;
+                turnoDto.Paciente.CoberturaMedica.Nombre = coberturaMedicaPacienteDto.Nombre;
+            }
             turnoDto.Profesional = medicoDto;
             turnoDto.Profesional.ProfesionalId = medicoDto.ProfesionalId;
             turnoDto.Profesional.Apellido = medicoDto.Apellido;
@@ -192,11 +195,16 @@ namespace Cova.WebService
             turno.Paciente.Domicilio.Provincia = domicilio.Provincia;
             turno.Paciente.Domicilio.Pais = domicilio.Pais;
             turno.Paciente.CoberturaMedica = coberturaMedicaPaciente;
-            turno.Paciente.CoberturaMedica.Nombre = coberturaMedicaPaciente.Nombre;
-            turno.Paciente.CoberturaMedica.NumeroAfiliado = coberturaMedicaPaciente.NumeroAfiliado;
-            turno.Paciente.CoberturaMedica.FechaVencimiento = coberturaMedicaPaciente.FechaVencimiento;
-            turno.Paciente.CoberturaMedica.Plan = coberturaMedicaPaciente.Plan;
-            turno.Paciente.CoberturaMedica.Nombre = coberturaMedicaPaciente.Nombre;
+            if (paciente.CoberturaMedica != null)
+            {
+                turno.Paciente.CoberturaMedica.CoberturaMedicaId = coberturaMedicaPaciente.CoberturaMedicaId;
+                turno.Paciente.CoberturaMedica.Nombre = coberturaMedicaPaciente.Nombre;
+                turno.Paciente.CoberturaMedica.NumeroAfiliado = coberturaMedicaPaciente.NumeroAfiliado;
+                turno.Paciente.CoberturaMedica.FechaVencimiento = coberturaMedicaPaciente.FechaVencimiento;
+                turno.Paciente.CoberturaMedica.Plan = coberturaMedicaPlan;
+                turno.Paciente.CoberturaMedica.Plan.PlanId = coberturaMedicaPaciente.Plan.PlanId;
+                turno.Paciente.CoberturaMedica.Nombre = coberturaMedicaPaciente.Nombre;
+            }
             turno.Profesional = medico;
             turno.Profesional.ProfesionalId = medico.ProfesionalId;
             turno.Profesional.Apellido = medico.Apellido;

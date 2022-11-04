@@ -18,11 +18,11 @@ namespace Cova.BL
             try
             {
                 centromedico = mPPCentroMedico.ObtenerCentrosMedicos();
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo la busqueda del centro medico", "Buscar Centro Medico"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo la busqueda del centro medico", "Buscar Centro Medico"));
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al buscar el centro medico: " + ex.Message, "Buscar Centro Medico"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al buscar el centro medico: " + ex.Message, "Buscar Centro Medico"));
                 throw new ErrorAlObtenerCentrosMedicosException();
             }
             return centromedico;

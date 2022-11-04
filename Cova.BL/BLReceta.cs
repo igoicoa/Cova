@@ -25,12 +25,12 @@ namespace Cova.BL
             {
                 MPPReceta mPPReceta = new MPPReceta();
                 RecetaCreada= mPPReceta.CrearReceta(receta);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se creo la Receta: " + receta.RecetaId, "Crear Receta"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se creo la Receta: " + receta.RecetaId, "Crear Receta"));
 
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al crear la Receta para: " + receta.Paciente.DNI+ ex.Message, "Crear Receta"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al crear la Receta para: " + receta.Paciente.DNI+ ex.Message, "Crear Receta"));
                 throw new ErrorAlCrearRecetasException();
             }
             return RecetaCreada;
@@ -44,12 +44,12 @@ namespace Cova.BL
             {
                 MPPReceta mPPReceta = new MPPReceta();
                 RecetaActualizada = mPPReceta.ActualizarReceta(receta);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizó la Receta: " + receta.RecetaId, "Actualizar Receta"));
+                // Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizó la Receta: " + receta.RecetaId, "Actualizar Receta"));
 
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al actualizar la Receta: " + receta.Paciente.DNI + ex.Message, "Actualizar Receta"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al actualizar la Receta: " + receta.Paciente.DNI + ex.Message, "Actualizar Receta"));
                 throw new ErrorAlActualizarRecetasException();
             }
             return RecetaActualizada;
@@ -67,7 +67,7 @@ namespace Cova.BL
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al buscar la Receta de: " + paciente.DNI + ex.Message, "Buscar Receta"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al buscar la Receta de: " + paciente.DNI + ex.Message, "Buscar Receta"));
                 throw new ErrorAlBuscarRecetasException();
             }
             return recetas;

@@ -8,7 +8,7 @@ using Cova.WebService.Dtos;
 
 namespace Cova.WebAPI.Controllers
 {
-    [RoutePrefix("api/profesional")]
+    [RoutePrefix("api/Profesional")]
     public class ProfesionalController : ApiController
     {
         public ProfesionalService profesionalService = new ProfesionalService();

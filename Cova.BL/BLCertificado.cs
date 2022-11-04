@@ -18,12 +18,12 @@ namespace Cova.BL
             {
                 MPPCertificado mPPCertificado = new MPPCertificado();
                 CertificadoCreada = mPPCertificado.CrearCertificado(certificado);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se creo el Certificado: " + certificado.CertificadoId + "," + certificado.Paciente.ApellidoNombre, "Crear Certificado"));
+                // Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se creo el Certificado: " + certificado.CertificadoId + "," + certificado.Paciente.ApellidoNombre, "Crear Certificado"));
 
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al crear el Certificado para: " + certificado.Paciente.Apellido + " - " + certificado.Paciente.Nombre + " - " + ex.Message, "Crear Certificado"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al crear el Certificado para: " + certificado.Paciente.Apellido + " - " + certificado.Paciente.Nombre + " - " + ex.Message, "Crear Certificado"));
                 throw new ErrorAlCrearCertificadoException();
             }
             return CertificadoCreada;
@@ -37,12 +37,12 @@ namespace Cova.BL
             {
                 MPPCertificado mPPCertificado = new MPPCertificado();
                 CertificadoActualizada = mPPCertificado.ActualizarCertificado(certificado);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizó el Certificado: " + certificado.CertificadoId + "," + certificado.Paciente.ApellidoNombre, "Actualizar Certificado"));
+                // Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se actualizó el Certificado: " + certificado.CertificadoId + "," + certificado.Paciente.ApellidoNombre, "Actualizar Certificado"));
 
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al actualizar el Certificado de: " + certificado.Paciente.Apellido + " - " + certificado.Paciente.Nombre + " - "  + ex.Message, "Actualizar Certificado"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al actualizar el Certificado de: " + certificado.Paciente.Apellido + " - " + certificado.Paciente.Nombre + " - "  + ex.Message, "Actualizar Certificado"));
                 throw new ErrorAlActualizarCertificadoException();
             }
             return CertificadoActualizada;
@@ -55,12 +55,12 @@ namespace Cova.BL
             try
             {
                 certificados = mPPCertificado.BuscarCertificados(paciente);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se busco el Certificado de: " + paciente.PacienteId, "Buscar el Certificado"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se busco el Certificado de: " + paciente.PacienteId, "Buscar el Certificado"));
 
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al buscar el Certificado de: " + paciente.Apellido + " - " + paciente.Nombre + " - " + ex.Message, "Buscar el Certificado"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al buscar el Certificado de: " + paciente.Apellido + " - " + paciente.Nombre + " - " + ex.Message, "Buscar el Certificado"));
                 throw new ErrorAlBuscarCertificadoException();
             }
             return certificados;

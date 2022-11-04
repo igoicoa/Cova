@@ -47,7 +47,6 @@
     <Compile Include="Backup\Backup.cs" />
     <Compile Include="Bitacora\Bitacora.cs" />
     <Compile Include="Bitacora\IBitacora.cs" />
-    <Compile Include="ControlDeCambio\ControlDeCambio.cs" />
     <Compile Include="Email\EmailSender.cs" />
     <Compile Include="Encriptacion\EncriptacionSimetricaHelper.cs" />
     <Compile Include="Encriptacion\HashHelper.cs" />

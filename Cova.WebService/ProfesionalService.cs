@@ -16,7 +16,15 @@ namespace Cova.WebService
 
         public IList<MedicoDto> GetProfesionalesMedicos() 
         {
-            return new List<MedicoDto>();
+            IList<BEMedico> medicos = this.blMedico.BuscarMedicos("", "");
+            IList<MedicoDto> medicoDto = new List<MedicoDto>();
+
+            foreach (BEMedico medico in medicos)
+            {
+                medicoDto.Add(Mapear(medico));
+            }
+            return medicoDto;
+            //return new List<MedicoDto>();
         }
 
         public MedicoDto GetProfesionalMedico(int usuarioId)
@@ -171,7 +179,7 @@ namespace Cova.WebService
             medico.Password = medicoDto.Password;
             medico.UltimoLogin = medicoDto.UltimoLogin;
             medico.Activo = medicoDto.Activo;
-            medico.TipoUsuario = (TipoUsuario)int.Parse(medicoDto.TipoUsuario);
+            medico.TipoUsuario = TipoUsuario.Medico;
 
             return medico;
         }
@@ -179,7 +187,14 @@ namespace Cova.WebService
         //ENFERMERO
         public IList<EnfermeroDto> GetProfesionalesEnfermeros()
         {
-            return new List<EnfermeroDto>();
+            IList<BEEnfermero> enfermeros = this.bLEnfermero.BuscarEnfermeros("", "");
+            IList<EnfermeroDto> enfermeroDto = new List<EnfermeroDto>();
+
+            foreach (BEEnfermero enfermero in enfermeros)
+            {
+                enfermeroDto.Add(Mapear(enfermero));
+            }
+            return enfermeroDto;
         }
 
         public EnfermeroDto GetProfesionalEnfermero(int usuarioId)
@@ -287,7 +302,7 @@ namespace Cova.WebService
             enfermero.Password = enfermeroDto.Password;
             enfermero.UltimoLogin = enfermeroDto.UltimoLogin;
             enfermero.Activo = enfermeroDto.Activo;
-            enfermero.TipoUsuario = (TipoUsuario) int.Parse(enfermeroDto.TipoUsuario);
+            enfermero.TipoUsuario = TipoUsuario.Enfermero;
 
             return enfermero;
         }
@@ -357,13 +372,16 @@ namespace Cova.WebService
             bEPaciente.Telefono = turnoDto.Paciente.Telefono;
             bEPaciente.Email = turnoDto.Paciente.Telefono;
             bEPaciente.CoberturaMedica = new BECoberturaMedicaPaciente();
-            bEPaciente.CoberturaMedica.CoberturaMedicaId = turnoDto.Paciente.CoberturaMedica.CoberturaMedicaId;
-            bEPaciente.CoberturaMedica.Nombre = turnoDto.Paciente.CoberturaMedica.Nombre;
-            bEPaciente.CoberturaMedica.NumeroAfiliado = turnoDto.Paciente.CoberturaMedica.NumeroAfiliado;
-            bEPaciente.CoberturaMedica.FechaVencimiento = turnoDto.Paciente.CoberturaMedica.FechaVencimiento;
-            bEPaciente.CoberturaMedica.Plan = new BECoberturaMedicaPlan();
-            bEPaciente.CoberturaMedica.Plan.PlanId = turnoDto.Paciente.CoberturaMedica.Plan.PlanId;
-            bEPaciente.CoberturaMedica.Plan.Nombre = turnoDto.Paciente.CoberturaMedica.Plan.Nombre;
+            if (bEPaciente.CoberturaMedica != null)
+            {
+                bEPaciente.CoberturaMedica.CoberturaMedicaId = turnoDto.Paciente.CoberturaMedica.CoberturaMedicaId;
+                bEPaciente.CoberturaMedica.Nombre = turnoDto.Paciente.CoberturaMedica.Nombre;
+                bEPaciente.CoberturaMedica.NumeroAfiliado = turnoDto.Paciente.CoberturaMedica.NumeroAfiliado;
+                bEPaciente.CoberturaMedica.FechaVencimiento = turnoDto.Paciente.CoberturaMedica.FechaVencimiento;
+                bEPaciente.CoberturaMedica.Plan = new BECoberturaMedicaPlan();
+                bEPaciente.CoberturaMedica.Plan.PlanId = turnoDto.Paciente.CoberturaMedica.Plan.PlanId;
+                bEPaciente.CoberturaMedica.Plan.Nombre = turnoDto.Paciente.CoberturaMedica.Plan.Nombre;
+            }
             bEPaciente.Usuario = turnoDto.Paciente.Usuario;
             bEPaciente.UsuarioID = turnoDto.Paciente.UsuarioID;
             turno.Paciente = bEPaciente;
@@ -415,13 +433,16 @@ namespace Cova.WebService
             turnoDto.Paciente.Telefono = turno.Paciente.Telefono;
             turnoDto.Paciente.Email = turno.Paciente.Telefono;
             turnoDto.Paciente.CoberturaMedica = new CoberturaMedicaPacienteDto();
-            turnoDto.Paciente.CoberturaMedica.CoberturaMedicaId = turno.Paciente.CoberturaMedica.CoberturaMedicaId;
-            turnoDto.Paciente.CoberturaMedica.Nombre = turno.Paciente.CoberturaMedica.Nombre;
-            turnoDto.Paciente.CoberturaMedica.NumeroAfiliado = turno.Paciente.CoberturaMedica.NumeroAfiliado;
-            turnoDto.Paciente.CoberturaMedica.FechaVencimiento = turno.Paciente.CoberturaMedica.FechaVencimiento;
-            turnoDto.Paciente.CoberturaMedica.Plan = new CoberturaMedicaPlanDto();
-            turnoDto.Paciente.CoberturaMedica.Plan.PlanId = turno.Paciente.CoberturaMedica.Plan.PlanId;
-            turnoDto.Paciente.CoberturaMedica.Plan.Nombre = turno.Paciente.CoberturaMedica.Plan.Nombre;
+            if (turnoDto.Paciente.CoberturaMedica != null)
+            {
+                turnoDto.Paciente.CoberturaMedica.CoberturaMedicaId = turno.Paciente.CoberturaMedica.CoberturaMedicaId;
+                turnoDto.Paciente.CoberturaMedica.Nombre = turno.Paciente.CoberturaMedica.Nombre;
+                turnoDto.Paciente.CoberturaMedica.NumeroAfiliado = turno.Paciente.CoberturaMedica.NumeroAfiliado;
+                turnoDto.Paciente.CoberturaMedica.FechaVencimiento = turno.Paciente.CoberturaMedica.FechaVencimiento;
+                turnoDto.Paciente.CoberturaMedica.Plan = new CoberturaMedicaPlanDto();
+                turnoDto.Paciente.CoberturaMedica.Plan.PlanId = turno.Paciente.CoberturaMedica.Plan.PlanId;
+                turnoDto.Paciente.CoberturaMedica.Plan.Nombre = turno.Paciente.CoberturaMedica.Plan.Nombre;
+            }
             turnoDto.Paciente.Usuario = turno.Paciente.Usuario;
             turnoDto.Paciente.UsuarioID = turno.Paciente.UsuarioID;
 

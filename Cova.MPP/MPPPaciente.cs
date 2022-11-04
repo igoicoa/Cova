@@ -77,7 +77,7 @@ namespace Cova.MPP
             return pacientes;
         }
 
-        public bool CrearPaciente(BEPaciente paciente, long usuarioModificadorId)
+        public bool CrearPaciente(BEPaciente paciente)
         {
             Hashtable datosUsuario = new Hashtable();
             try
@@ -106,7 +106,7 @@ namespace Cova.MPP
                     datosUsuario.Add("@CoberturaMedicaFechaVencimiento", paciente.CoberturaMedica.FechaVencimiento);
                 }
                 datosUsuario.Add("@Password", paciente.Password);
-                datosUsuario.Add("@UsuarioModificadorId", usuarioModificadorId);
+                //datosUsuario.Add("@UsuarioModificadorId", usuarioModificadorId);
 
                 return conexionBDD.Escribir(strSQL, datosUsuario);
             }
@@ -116,7 +116,7 @@ namespace Cova.MPP
             }
         }
 
-        public bool ActualizarPaciente(BEPaciente paciente, long usuarioModificadorId)
+        public bool ActualizarPaciente(BEPaciente paciente)
         {
             Hashtable datosUsuario = new Hashtable();
             try
@@ -150,7 +150,7 @@ namespace Cova.MPP
                 {
                     datosUsuario.Add("@Password", paciente.Password);
                 }
-                datosUsuario.Add("@UsuarioModificadorId", usuarioModificadorId);
+                //datosUsuario.Add("@UsuarioModificadorId", usuarioModificadorId);
 
                 return conexionBDD.Escribir(strSQL, datosUsuario);
             }

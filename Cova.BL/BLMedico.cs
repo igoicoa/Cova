@@ -19,12 +19,12 @@ namespace Cova.BL
             {
                 if (this.ExisteMedico(medico))
                 {
-                    Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Warning, "No se puede crear medico. Ya existe un medico con el DNI: " + medico.DNI, "Crear Medico"));
+                    // Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Warning, "No se puede crear medico. Ya existe un medico con el DNI: " + medico.DNI, "Crear Medico"));
                     throw new ProfesionalYaExisteException();
                 }
                 MPPMedico mPPMedico = new MPPMedico();
                 profesionalCreado = mPPMedico.CrearProfesionalMedico(medico);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se creo el Profesional Medico: " + medico.Apellido + ", " + medico.Nombre, "Crear Profesional Medico"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se creo el Profesional Medico: " + medico.Apellido + ", " + medico.Nombre, "Crear Profesional Medico"));
             }
             catch (Exception ex)
             {
@@ -34,7 +34,7 @@ namespace Cova.BL
                 }
                 else
                 {
-                    Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Crear Profesional Medico: " + medico.Apellido + " - " + medico.Nombre + " - " + ex.Message, "Crear Profesional Medico"));
+                    // Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Crear Profesional Medico: " + medico.Apellido + " - " + medico.Nombre + " - " + ex.Message, "Crear Profesional Medico"));
                     throw new ErrorAlCrearPacienteException();
                 }
             }
@@ -53,11 +53,11 @@ namespace Cova.BL
             try
             {
                 medicos = mPPMedico.BuscarMedicos(apellido, nombre, especialidad);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo la busqueda del medico: ", "Buscar Medicos"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo la busqueda del medico: ", "Buscar Medicos"));
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al buscar el medico: " + ex.Message, "Buscar Medicos"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al buscar el medico: " + ex.Message, "Buscar Medicos"));
                 throw new ErrorAlBuscarDatosMedicos();
             }
             return medicos;
@@ -70,11 +70,11 @@ namespace Cova.BL
             try
             {
                 medicos = mPPMedico.BuscarMedicos(usuarioId, usuario, DNI);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo la busqueda del medico: ", "Buscar Medicos"));
+                // Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se Obtuvo la busqueda del medico: ", "Buscar Medicos"));
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al buscar el medico: " + ex.Message, "Buscar Medicos"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al buscar el medico: " + ex.Message, "Buscar Medicos"));
                 throw new ErrorAlBuscarDatosMedicos();
             }
             return medicos;
@@ -87,11 +87,11 @@ namespace Cova.BL
             {
                 MPPMedico mPPMedico = new MPPMedico();
                 profesionalActualizado = mPPMedico.ActualizarProfesionalMedico(medicoActualizado);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "El Profesional: " + medicoActualizado.ProfesionalId + "fue actualizado con exito", "Actualizar Profesional"));
-            } 
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "El Profesional: " + medicoActualizado.ProfesionalId + "fue actualizado con exito", "Actualizar Profesional"));
+            }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al crear el Profesional: " + medicoActualizado.Apellido + " - " + medicoActualizado.Nombre + " - " + ex.Message, "Actualizar Profesional"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al crear el Profesional: " + medicoActualizado.Apellido + " - " + medicoActualizado.Nombre + " - " + ex.Message, "Actualizar Profesional"));
                 throw new ErrorAlActualizarProfesionalException();
             }
             return profesionalActualizado;
@@ -104,12 +104,12 @@ namespace Cova.BL
             {
                 MPPMedico mPPMedico = new MPPMedico();
                 MedicoInactivado = mPPMedico.InactivarMedico(medicoAInactivar);
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se inactivó el Medico: " + medicoAInactivar.ProfesionalId + " - " + medicoAInactivar.Apellido, "Inactivar Medico"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se inactivó el Medico: " + medicoAInactivar.ProfesionalId + " - " + medicoAInactivar.Apellido, "Inactivar Medico"));
 
             }
             catch (Exception ex)
             {
-                Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al inactivó el Medico: " + medicoAInactivar.ProfesionalId + " - " + medicoAInactivar.ApellidoNombre + " - " + ex.Message, "Inactivar Medico"));
+                //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al inactivó el Medico: " + medicoAInactivar.ProfesionalId + " - " + medicoAInactivar.ApellidoNombre + " - " + ex.Message, "Inactivar Medico"));
                 throw new ErrorAlActualizarPacienteException();
             }
             return MedicoInactivado;
