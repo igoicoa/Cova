@@ -70,6 +70,10 @@
       <Project>{fe7b2201-a15b-49ff-89f3-e37c223b4a41}</Project>
       <Name>Cova.BL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cova.Servicios\Cova.Servicios.csproj">
+      <Project>{bc43feb2-c54e-4d4e-b491-a8820ed31031}</Project>
+      <Name>Cova.Servicios</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

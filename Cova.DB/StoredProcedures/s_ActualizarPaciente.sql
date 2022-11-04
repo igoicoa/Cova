@@ -112,10 +112,6 @@ BEGIN
 			SET @TipoCambio = 'INACTIVO'
 		END
 
-		INSERT INTO [ControlCambio_Paciente] (Apellido, PacienteId, UsuarioId, Activo, Nombre, DNI, FechaNacimiento, Sexo, EstadoCivil, Telefono, Email, Calle, Numero, Piso, Localidad, Provincia, Pais, CoberturaMedicaId, CoberturaMedicaPlanId, NumeroAfiliado, FechaVencimiento, FechaModificacion, TipoCambio)
-		VALUES
-		(@Apellido, @PacienteId, @UsuarioId, @Activo, @Nombre, @DNI, @FechaNacimiento, @Sexo, @EstadoCivil, @Telefono, @Email, @Calle, @Numero, @Piso, @Localidad, @Provincia, @Pais, @CoberturaMedicaId, @CoberturaMedicaPlanId, @CoberturaMedicaNumeroAfiliado, @CoberturaMedicaFechaVencimiento, GETDATE(), @TipoCambio)
-
 		COMMIT TRANSACTION;
 	END TRY
 	BEGIN CATCH

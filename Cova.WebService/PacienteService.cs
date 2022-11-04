@@ -7,6 +7,7 @@ using Cova.WebService.Dtos;
 using Cova.BL;
 using Cova.BE;
 using Cova.BE.Enum;
+using Cova.Servicios.Encriptacion;
 
 namespace Cova.WebService
 {
@@ -36,7 +37,9 @@ namespace Cova.WebService
 
         public PacienteDto CrearPaciente(PacienteDto paciente)
         {
-            if(this.bLPaciente.CrearPaciente(Mapear(paciente)))
+            BEPaciente bEPaciente = Mapear(paciente);
+            bEPaciente.Password = HashHelper.HashMD5(paciente.Apellido.Substring(0, 4) + paciente.Nombre.Substring(0, 4));
+            if (this.bLPaciente.CrearPaciente(bEPaciente))
             {
                 return paciente;
             } else
@@ -127,10 +130,10 @@ namespace Cova.WebService
             paciente.Nombre = pacienteDto.Nombre;
             paciente.DNI = pacienteDto.DNI;
             paciente.FechaNacimiento = pacienteDto.FechaNacimiento;
-            paciente.Sexo = paciente.Sexo;
+            paciente.Sexo = pacienteDto.Sexo;
             paciente.EstadoCivil = pacienteDto.EstadoCivil;
             paciente.Telefono = pacienteDto.Telefono;
-            paciente.Email = pacienteDto.Telefono;
+            paciente.Email = pacienteDto.Email;
             paciente.Domicilio = domicilio;
             paciente.Domicilio.Calle = pacienteDto.Domicilio.Calle;
             paciente.Domicilio.Numero = pacienteDto.Domicilio.Numero;
