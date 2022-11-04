@@ -34,19 +34,19 @@ namespace Cova.WebAPI.Controllers
             return this.profesionalService.GetProfesionalMedicoHorarios(usuarioId);
         }
 
-        [HttpPost]
-        [Route("Medico/{profesionalId:int}/horarios")]
-        public ProfesionalDto GuardarProfesionalMedicoHorarios(int profesionalId, IList<TurnosDisponibleDto> turnosDisponibles)
-        {
-            return this.profesionalService.GuardarProfesionalMedicoHorarios(profesionalId, turnosDisponibles);
-        }
+        //[HttpPost]
+        //[Route("Medico/{profesionalId:int}/horarios")]
+        //public ProfesionalDto GuardarProfesionalMedicoHorarios(int profesionalId, IList<TurnosDisponibleDto> turnosDisponibles)
+        //{
+        //    return this.profesionalService.GuardarProfesionalMedicoHorarios(profesionalId, turnosDisponibles);
+        //}
 
-        [HttpGet]
-        [Route("{usuarioId:int}")]
-        public IList<TurnoDto> GetProfesionalMedicoTurnosDisponibles(int usuarioId, DateTime fechadesde, DateTime fechahasta)
-        {
-            return this.profesionalService.GetProfesionalMedicoTurnosDisponibles(usuarioId, fechadesde, fechahasta);
-        }
+        //[HttpGet]
+        //[Route("{usuarioId:int}")]
+        //public IList<TurnoDto> GetProfesionalMedicoTurnosDisponibles(int usuarioId, DateTime fechadesde, DateTime fechahasta)
+        //{
+        //    return this.profesionalService.GetProfesionalMedicoTurnosDisponibles(usuarioId, fechadesde, fechahasta);
+        //}
 
         [HttpPost]
         //[Route("")]

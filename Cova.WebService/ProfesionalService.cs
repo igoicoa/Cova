@@ -118,15 +118,21 @@ namespace Cova.WebService
             medicoDto.Telefono = medico.Telefono;
             medicoDto.Email = medico.Email;
             medicoDto.Domicilio = domicilioDto;
-            medicoDto.Domicilio.Calle = domicilioDto.Calle;
-            medicoDto.Domicilio.Numero = domicilioDto.Numero;
-            medicoDto.Domicilio.Piso = domicilioDto.Piso;
-            medicoDto.Domicilio.Localidad = domicilioDto.Localidad;
-            medicoDto.Domicilio.Provincia = domicilioDto.Provincia;
-            medicoDto.Domicilio.Pais = domicilioDto.Pais;
+            medicoDto.Domicilio.Calle = medico.Domicilio.Calle;
+            medicoDto.Domicilio.Numero = medico.Domicilio.Numero;
+            medicoDto.Domicilio.Piso = medico.Domicilio.Piso;
+            medicoDto.Domicilio.Localidad = medico.Domicilio.Localidad;
+            medicoDto.Domicilio.Provincia = medico.Domicilio.Provincia;
+            medicoDto.Domicilio.Pais = medico.Domicilio.Pais;
             medicoDto.MatriculaNacional = medico.MatriculaNacional;
             medicoDto.MatriculaProvincial = medico.MatriculaProvincial;
             medicoDto.Especialidad = medico.Especialidad.ToString();
+            medicoDto.Usuario = medico.Usuario;
+            medicoDto.UsuarioID = medico.UsuarioID;
+            medicoDto.Password = medico.Password;
+            medicoDto.UltimoLogin = medico.UltimoLogin;
+            medicoDto.Activo = medico.Activo;
+            medicoDto.TipoUsuario = medico.TipoUsuario.ToString();
             return medicoDto;
         }
 
@@ -152,7 +158,13 @@ namespace Cova.WebService
             medico.Domicilio.Pais = medicoDto.Domicilio.Pais;
             medico.MatriculaNacional = medicoDto.MatriculaNacional;
             medico.MatriculaProvincial = medicoDto.MatriculaProvincial;
-            //medico.Especialidad = medicoDto.Especialidad;
+            medico.Especialidad = medicoDto.Especialidad;
+            medico.Usuario = medicoDto.Usuario;
+            medico.UsuarioID = medicoDto.UsuarioID;
+            medico.Password = medicoDto.Password;
+            medico.UltimoLogin = medicoDto.UltimoLogin;
+            medico.Activo = medicoDto.Activo;
+            medico.TipoUsuario = medicoDto.TipoUsuario;
 
             return medico;
         }
@@ -225,13 +237,19 @@ namespace Cova.WebService
             enfermeroDto.Telefono = enfermero.Telefono;
             enfermeroDto.Email = enfermero.Email;
             enfermeroDto.Domicilio = domicilioDto;
-            enfermeroDto.Domicilio.Calle = domicilioDto.Calle;
-            enfermeroDto.Domicilio.Numero = domicilioDto.Numero;
-            enfermeroDto.Domicilio.Piso = domicilioDto.Piso;
-            enfermeroDto.Domicilio.Localidad = domicilioDto.Localidad;
-            enfermeroDto.Domicilio.Provincia = domicilioDto.Provincia;
-            enfermeroDto.Domicilio.Pais = domicilioDto.Pais;
+            enfermeroDto.Domicilio.Calle = enfermero.Domicilio.Calle;
+            enfermeroDto.Domicilio.Numero = enfermero.Domicilio.Numero;
+            enfermeroDto.Domicilio.Piso = enfermero.Domicilio.Piso;
+            enfermeroDto.Domicilio.Localidad = enfermero.Domicilio.Localidad;
+            enfermeroDto.Domicilio.Provincia = enfermero.Domicilio.Provincia;
+            enfermeroDto.Domicilio.Pais = enfermero.Domicilio.Pais;
             enfermeroDto.MatriculaEnfermero = enfermero.MatriculaEnfermero;
+            enfermeroDto.Usuario = enfermero.Usuario;
+            enfermeroDto.UsuarioID = enfermero.UsuarioID;
+            enfermeroDto.Password = enfermero.Password;
+            enfermeroDto.UltimoLogin = enfermero.UltimoLogin;
+            enfermeroDto.Activo = enfermero.Activo;
+            enfermeroDto.TipoUsuario = enfermero.TipoUsuario.ToString();
 
             return enfermeroDto;
         }
@@ -250,13 +268,19 @@ namespace Cova.WebService
             enfermero.Telefono = enfermeroDto.Telefono;
             enfermero.Email = enfermeroDto.Email;
             enfermero.Domicilio = domicilio;
-            enfermero.Domicilio.Calle = domicilio.Calle;
-            enfermero.Domicilio.Numero = domicilio.Numero;
-            enfermero.Domicilio.Piso = domicilio.Piso;
-            enfermero.Domicilio.Localidad = domicilio.Localidad;
-            enfermero.Domicilio.Provincia = domicilio.Provincia;
-            enfermero.Domicilio.Pais = domicilio.Pais;
+            enfermero.Domicilio.Calle = enfermero.Domicilio.Calle;
+            enfermero.Domicilio.Numero = enfermero.Domicilio.Numero;
+            enfermero.Domicilio.Piso = enfermero.Domicilio.Piso;
+            enfermero.Domicilio.Localidad = enfermero.Domicilio.Localidad;
+            enfermero.Domicilio.Provincia = enfermero.Domicilio.Provincia;
+            enfermero.Domicilio.Pais = enfermero.Domicilio.Pais;
             enfermero.MatriculaEnfermero = enfermeroDto.MatriculaEnfermero;
+            enfermero.Usuario = enfermeroDto.Usuario;
+            enfermero.UsuarioID = enfermeroDto.UsuarioID;
+            enfermero.Password = enfermeroDto.Password;
+            enfermero.UltimoLogin = enfermeroDto.UltimoLogin;
+            enfermero.Activo = enfermeroDto.Activo;
+            enfermero.TipoUsuario = enfermeroDto.TipoUsuario;
 
             return enfermero;
         }

@@ -27,13 +27,14 @@ namespace Cova.WebService
 
         public IList<TurnoDto> GetTurnosUsuario(int pacienteId)
         {
-            IList<TurnosDisponibleDto> turnosdisponibleDtos = new List<TurnosDisponibleDto>();
-            foreach (BETurnoDisponible turno in turnos)
-            {
-                turnosdisponibleDtos.Add(Mapear(turnos));
-            }
+            IList<BETurno> turnos = this.bLTurno.ObtenerTurnos();//TURNO POR PACIENTE???????
+            IList<TurnoDto> turnoDtos = new List<TurnoDto>();
 
-            return turnosdisponibleDtos;
+            foreach (BETurno turno in turnos)
+            {
+                turnoDtos.Add(Mapear(turno));
+            }
+            return turnoDtos;
         }
 
         public TurnoDto CrearTurno(TurnoDto turnoDtos)

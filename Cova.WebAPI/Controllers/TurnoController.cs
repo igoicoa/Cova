@@ -21,7 +21,7 @@ namespace Cova.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("/paciente{pacienteId:int}")]
+        [Route("paciente/{pacienteId:int}")]
         public IList<TurnoDto> GetTurnosUsuario(int pacienteId)
         {
             return this.turnoService.GetTurnosUsuario(pacienteId);
