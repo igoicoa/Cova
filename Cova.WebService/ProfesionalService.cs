@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Cova.BL;
 using Cova.BE;
 using Cova.WebService.Dtos;
+using Cova.BE.Enum;
 
 namespace Cova.WebService
 {
@@ -28,20 +27,24 @@ namespace Cova.WebService
             return medicoDto;
         }
 
-        public IList<TurnosDisponibleDto> GetProfesionalMedicoHorarios(int usuarioId)
+        public IList<TurnoDisponibleDto> GetProfesionalMedicoHorarios(int usuarioId)
         {
             IList<BEMedico> medicos = this.blMedico.BuscarMedicos(usuarioId, "", "");
             MedicoDto medicoDto = Mapear(medicos.Where(x => x.UsuarioID == usuarioId).FirstOrDefault());
-            IList<TurnosDisponibleDto> horariosMedico = medicoDto.TurnosDisponibles;
+            IList<TurnoDisponibleDto> horariosMedico = medicoDto.TurnosDisponibles;
 
             return horariosMedico;
         }
 
-        public ProfesionalDto GuardarProfesionalMedicoHorarios(int profesionalId, IList<TurnosDisponibleDto> turnosDisponiblesDto)
+        public ProfesionalDto GuardarProfesionalMedicoHorarios(int profesionalId, IList<TurnoDisponibleDto> turnosDisponiblesDto)
         {
             BEProfesional bEProfesional = new BEProfesional();
             bEProfesional.ProfesionalId = profesionalId;
-            bEProfesional.TurnosDisponibles = Mapear(turnosDisponiblesDto);
+            bEProfesional.TurnosDisponibles = new List<BETurnoDisponible>();
+            foreach(TurnoDisponibleDto turnoDisponible in turnosDisponiblesDto)
+            {
+                bEProfesional.TurnosDisponibles.Add(Mapear(turnoDisponible));
+            }
             ProfesionalDto profesionalDto = new ProfesionalDto();
             profesionalDto.ProfesionalId = profesionalId;
             profesionalDto.TurnosDisponibles = turnosDisponiblesDto;
@@ -55,13 +58,17 @@ namespace Cova.WebService
             }
         }
 
-        public IList<TurnosDisponibleDto> GetProfesionalMedicoTurnosDisponibles(int profesionalId, DateTime fechadesde, DateTime fechahasta)
+        public IList<TurnoDto> GetProfesionalMedicoTurnosDisponibles(int profesionalId, DateTime fechadesde, DateTime fechahasta)
         {
             BEProfesional bEProfesional = new BEProfesional();
             bEProfesional.ProfesionalId = profesionalId;
-            IList<TurnosDisponibleDto> turnosDisponibles = Mapear(this.bLProfesional.ObtenerTurnosLibres(bEProfesional, fechadesde, fechahasta));
-
-            return turnosDisponibles;
+            List<BETurno> turnosDisponibles = this.bLProfesional.ObtenerTurnosLibres(bEProfesional, fechadesde, fechahasta).ToList();
+            IList<TurnoDto> turnosProfesional = new List<TurnoDto>();
+            foreach(BETurno turno in turnosDisponibles)
+            {
+                turnosProfesional.Add(Mapear(turno));
+            }
+            return turnosProfesional;
         }
 
         public MedicoDto CrearProfesionalMedico(MedicoDto medico)
@@ -158,13 +165,13 @@ namespace Cova.WebService
             medico.Domicilio.Pais = medicoDto.Domicilio.Pais;
             medico.MatriculaNacional = medicoDto.MatriculaNacional;
             medico.MatriculaProvincial = medicoDto.MatriculaProvincial;
-            medico.Especialidad = medicoDto.Especialidad;
+            medico.Especialidad = (Especialidad)int.Parse(medicoDto.Especialidad);
             medico.Usuario = medicoDto.Usuario;
             medico.UsuarioID = medicoDto.UsuarioID;
             medico.Password = medicoDto.Password;
             medico.UltimoLogin = medicoDto.UltimoLogin;
             medico.Activo = medicoDto.Activo;
-            medico.TipoUsuario = medicoDto.TipoUsuario;
+            medico.TipoUsuario = (TipoUsuario)int.Parse(medicoDto.TipoUsuario);
 
             return medico;
         }
@@ -280,9 +287,150 @@ namespace Cova.WebService
             enfermero.Password = enfermeroDto.Password;
             enfermero.UltimoLogin = enfermeroDto.UltimoLogin;
             enfermero.Activo = enfermeroDto.Activo;
-            enfermero.TipoUsuario = enfermeroDto.TipoUsuario;
+            enfermero.TipoUsuario = (TipoUsuario) int.Parse(enfermeroDto.TipoUsuario);
 
             return enfermero;
+        }
+
+        private static BETurnoDisponible Mapear(TurnoDisponibleDto turnoDisponibleDto)
+        {
+            BETurnoDisponible turnoDisponible = new BETurnoDisponible();
+            turnoDisponible.TurnoDisponibleId = turnoDisponibleDto.TurnoDisponibleId;
+            turnoDisponible.DiaSemana = turnoDisponibleDto.DiaSemana;
+            turnoDisponible.HoraDesde = turnoDisponibleDto.HoraDesde;
+            turnoDisponible.HoraHasta = turnoDisponibleDto.HoraHasta;
+
+            return turnoDisponible;
+        }
+
+        private static TurnoDisponibleDto Mapear(BETurnoDisponible bETurnoDisponible)
+        {
+            TurnoDisponibleDto turnoDisponibleDto = new TurnoDisponibleDto();
+            turnoDisponibleDto.TurnoDisponibleId = bETurnoDisponible.TurnoDisponibleId;
+            turnoDisponibleDto.DiaSemana = bETurnoDisponible.DiaSemana;
+            turnoDisponibleDto.HoraDesde = bETurnoDisponible.HoraDesde;
+            turnoDisponibleDto.HoraHasta = bETurnoDisponible.HoraHasta;
+
+            return turnoDisponibleDto;
+        }
+
+        private static BETurno Mapear(TurnoDto turnoDto)
+        {
+            BETurno turno = new BETurno();
+            BECentroMedico centroMedico = new BECentroMedico();
+            BEDomicilio domicilio = new BEDomicilio();
+            BEDomicilio domicilioProfesional = new BEDomicilio();
+            BEProfesional bEProfesional = new BEProfesional();
+            BEPaciente bEPaciente = new BEPaciente();
+
+            centroMedico.CentroMedicoId = turnoDto.CentroMedico.CentroMedicoId;
+            centroMedico.Nombre = turnoDto.CentroMedico.Nombre;
+            centroMedico.Domicilio = domicilio;
+            centroMedico.Domicilio.Calle = turnoDto.CentroMedico.Domicilio.Calle;
+            centroMedico.Domicilio.Numero = turnoDto.CentroMedico.Domicilio.Numero;
+            centroMedico.Domicilio.Piso = turnoDto.CentroMedico.Domicilio.Piso;
+            centroMedico.Domicilio.Localidad = turnoDto.CentroMedico.Domicilio.Localidad;
+            centroMedico.Domicilio.Provincia = turnoDto.CentroMedico.Domicilio.Provincia;
+            centroMedico.Domicilio.Pais = turnoDto.CentroMedico.Domicilio.Pais;
+            turno.CentroMedico = centroMedico;
+
+            bEProfesional.ProfesionalId = turnoDto.Profesional.ProfesionalId;
+            bEProfesional.Apellido = turnoDto.Profesional.Apellido;
+            bEProfesional.Nombre = turnoDto.Profesional.Nombre;
+            bEProfesional.Domicilio = domicilioProfesional;
+            bEProfesional.Domicilio.Calle = turnoDto.Profesional.Domicilio.Calle;
+            bEProfesional.Domicilio.Numero = turnoDto.Profesional.Domicilio.Numero;
+            bEProfesional.Domicilio.Piso = turnoDto.Profesional.Domicilio.Piso;
+            bEProfesional.Domicilio.Localidad = turnoDto.Profesional.Domicilio.Localidad;
+            bEProfesional.Domicilio.Provincia = turnoDto.Profesional.Domicilio.Provincia;
+            bEProfesional.Domicilio.Pais = turnoDto.Profesional.Domicilio.Pais;
+            turno.Profesional = bEProfesional;
+
+            bEPaciente.PacienteId = turnoDto.Paciente.PacienteId;
+            bEPaciente.UsuarioID = turnoDto.Paciente.UsuarioID;
+            bEPaciente.Apellido = turnoDto.Paciente.Apellido;
+            bEPaciente.Nombre = turnoDto.Paciente.Nombre;
+            bEPaciente.DNI = turnoDto.Paciente.DNI;
+            bEPaciente.FechaNacimiento = turnoDto.Paciente.FechaNacimiento;
+            bEPaciente.Sexo = turnoDto.Paciente.Sexo;
+            bEPaciente.EstadoCivil = turnoDto.Paciente.EstadoCivil;
+            bEPaciente.Telefono = turnoDto.Paciente.Telefono;
+            bEPaciente.Email = turnoDto.Paciente.Telefono;
+            bEPaciente.CoberturaMedica = new BECoberturaMedicaPaciente();
+            bEPaciente.CoberturaMedica.CoberturaMedicaId = turnoDto.Paciente.CoberturaMedica.CoberturaMedicaId;
+            bEPaciente.CoberturaMedica.Nombre = turnoDto.Paciente.CoberturaMedica.Nombre;
+            bEPaciente.CoberturaMedica.NumeroAfiliado = turnoDto.Paciente.CoberturaMedica.NumeroAfiliado;
+            bEPaciente.CoberturaMedica.FechaVencimiento = turnoDto.Paciente.CoberturaMedica.FechaVencimiento;
+            bEPaciente.CoberturaMedica.Plan = new BECoberturaMedicaPlan();
+            bEPaciente.CoberturaMedica.Plan.PlanId = turnoDto.Paciente.CoberturaMedica.Plan.PlanId;
+            bEPaciente.CoberturaMedica.Plan.Nombre = turnoDto.Paciente.CoberturaMedica.Plan.Nombre;
+            bEPaciente.Usuario = turnoDto.Paciente.Usuario;
+            bEPaciente.UsuarioID = turnoDto.Paciente.UsuarioID;
+            turno.Paciente = bEPaciente;
+
+            turno.TurnoId = turnoDto.TurnoId;
+            turno.FechaTurno = turnoDto.FechaTurno;
+            turno.Asistio = turnoDto.Asistio;
+            turno.Comentarios = turnoDto.Comentarios;
+
+            return turno;
+        }
+
+        private static TurnoDto Mapear(BETurno turno)
+        {
+            TurnoDto turnoDto = new TurnoDto();
+
+            turnoDto.CentroMedico = new CentroMedicoDto();
+            turnoDto.CentroMedico.CentroMedicoId = turno.CentroMedico.CentroMedicoId;
+            turnoDto.CentroMedico.Nombre = turno.CentroMedico.Nombre;
+            turnoDto.CentroMedico.Domicilio = new DomicilioDto();
+            turnoDto.CentroMedico.Domicilio.Calle = turno.CentroMedico.Domicilio.Calle;
+            turnoDto.CentroMedico.Domicilio.Numero = turno.CentroMedico.Domicilio.Numero;
+            turnoDto.CentroMedico.Domicilio.Piso = turno.CentroMedico.Domicilio.Piso;
+            turnoDto.CentroMedico.Domicilio.Localidad = turno.CentroMedico.Domicilio.Localidad;
+            turnoDto.CentroMedico.Domicilio.Provincia = turno.CentroMedico.Domicilio.Provincia;
+            turnoDto.CentroMedico.Domicilio.Pais = turno.CentroMedico.Domicilio.Pais;
+
+            turnoDto.Profesional = new ProfesionalDto();
+            turnoDto.Profesional.ProfesionalId = turno.Profesional.ProfesionalId;
+            turnoDto.Profesional.Apellido = turno.Profesional.Apellido;
+            turnoDto.Profesional.Nombre = turno.Profesional.Nombre;
+            turnoDto.Profesional.Domicilio = new DomicilioDto();
+            turnoDto.Profesional.Domicilio.Calle = turno.Profesional.Domicilio.Calle;
+            turnoDto.Profesional.Domicilio.Numero = turno.Profesional.Domicilio.Numero;
+            turnoDto.Profesional.Domicilio.Piso = turno.Profesional.Domicilio.Piso;
+            turnoDto.Profesional.Domicilio.Localidad = turno.Profesional.Domicilio.Localidad;
+            turnoDto.Profesional.Domicilio.Provincia = turno.Profesional.Domicilio.Provincia;
+            turnoDto.Profesional.Domicilio.Pais = turno.Profesional.Domicilio.Pais;
+
+            turnoDto.Paciente = new PacienteDto();
+            turnoDto.Paciente.PacienteId = turno.Paciente.PacienteId;
+            turnoDto.Paciente.UsuarioID = turno.Paciente.UsuarioID;
+            turnoDto.Paciente.Apellido = turno.Paciente.Apellido;
+            turnoDto.Paciente.Nombre = turno.Paciente.Nombre;
+            turnoDto.Paciente.DNI = turno.Paciente.DNI;
+            turnoDto.Paciente.FechaNacimiento = turno.Paciente.FechaNacimiento;
+            turnoDto.Paciente.Sexo = turno.Paciente.Sexo;
+            turnoDto.Paciente.EstadoCivil = turno.Paciente.EstadoCivil;
+            turnoDto.Paciente.Telefono = turno.Paciente.Telefono;
+            turnoDto.Paciente.Email = turno.Paciente.Telefono;
+            turnoDto.Paciente.CoberturaMedica = new CoberturaMedicaPacienteDto();
+            turnoDto.Paciente.CoberturaMedica.CoberturaMedicaId = turno.Paciente.CoberturaMedica.CoberturaMedicaId;
+            turnoDto.Paciente.CoberturaMedica.Nombre = turno.Paciente.CoberturaMedica.Nombre;
+            turnoDto.Paciente.CoberturaMedica.NumeroAfiliado = turno.Paciente.CoberturaMedica.NumeroAfiliado;
+            turnoDto.Paciente.CoberturaMedica.FechaVencimiento = turno.Paciente.CoberturaMedica.FechaVencimiento;
+            turnoDto.Paciente.CoberturaMedica.Plan = new CoberturaMedicaPlanDto();
+            turnoDto.Paciente.CoberturaMedica.Plan.PlanId = turno.Paciente.CoberturaMedica.Plan.PlanId;
+            turnoDto.Paciente.CoberturaMedica.Plan.Nombre = turno.Paciente.CoberturaMedica.Plan.Nombre;
+            turnoDto.Paciente.Usuario = turno.Paciente.Usuario;
+            turnoDto.Paciente.UsuarioID = turno.Paciente.UsuarioID;
+
+            turnoDto.TurnoId = turno.TurnoId;
+            turnoDto.FechaTurno = turno.FechaTurno;
+            turnoDto.Asistio = turno.Asistio;
+            turnoDto.Comentarios = turno.Comentarios;
+
+            return turnoDto;
         }
 
     }

@@ -94,13 +94,17 @@ namespace Cova.WebService
             pacienteDto.Domicilio.Provincia = paciente.Domicilio.Provincia;
             pacienteDto.Domicilio.Pais = paciente.Domicilio.Pais;
             pacienteDto.CoberturaMedica = coberturaMedicaPacienteDto;
-            pacienteDto.CoberturaMedica.CoberturaMedicaId = paciente.CoberturaMedica.CoberturaMedicaId;
-            pacienteDto.CoberturaMedica.Nombre = paciente.CoberturaMedica.Nombre;
-            pacienteDto.CoberturaMedica.NumeroAfiliado = paciente.CoberturaMedica.NumeroAfiliado;
-            pacienteDto.CoberturaMedica.FechaVencimiento = paciente.CoberturaMedica.FechaVencimiento;
-            pacienteDto.CoberturaMedica.Plan = coberturaMedicaPlanDto;
-            pacienteDto.CoberturaMedica.Plan.PlanId = paciente.CoberturaMedica.Plan.PlanId;
-            pacienteDto.CoberturaMedica.Plan.Nombre = paciente.CoberturaMedica.Plan.Nombre;
+            if (paciente.CoberturaMedica != null)
+            {
+                pacienteDto.CoberturaMedica = coberturaMedicaPacienteDto;
+                pacienteDto.CoberturaMedica.CoberturaMedicaId = paciente.CoberturaMedica.CoberturaMedicaId;
+                pacienteDto.CoberturaMedica.Nombre = paciente.CoberturaMedica.Nombre;
+                pacienteDto.CoberturaMedica.NumeroAfiliado = paciente.CoberturaMedica.NumeroAfiliado;
+                pacienteDto.CoberturaMedica.FechaVencimiento = paciente.CoberturaMedica.FechaVencimiento;
+                pacienteDto.CoberturaMedica.Plan = coberturaMedicaPlanDto;
+                pacienteDto.CoberturaMedica.Plan.PlanId = paciente.CoberturaMedica.Plan.PlanId;
+                pacienteDto.CoberturaMedica.Plan.Nombre = paciente.CoberturaMedica.Plan.Nombre;
+            }
             pacienteDto.Usuario = paciente.Usuario;
             pacienteDto.UsuarioID = paciente.UsuarioID;
             pacienteDto.Password = paciente.Password;

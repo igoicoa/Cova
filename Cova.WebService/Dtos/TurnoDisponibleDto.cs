@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cova.WebService.Dtos
 {
-    public class TurnosDisponibleDto
+    public class TurnoDisponibleDto
     {
         public long TurnoDisponibleId { get; set; }
         public DayOfWeek DiaSemana { get; set; }

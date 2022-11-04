@@ -51,7 +51,7 @@
     <Compile Include="Dtos\MedicoDto.cs" />
     <Compile Include="Dtos\ProfesionalDto.cs" />
     <Compile Include="Dtos\RecetaDto.cs" />
-    <Compile Include="Dtos\TurnosDisponibleDto.cs" />
+    <Compile Include="Dtos\TurnoDisponibleDto.cs" />
     <Compile Include="Dtos\TurnoDto.cs" />
     <Compile Include="Dtos\UsuarioDto.cs" />
     <Compile Include="PacienteService.cs" />
