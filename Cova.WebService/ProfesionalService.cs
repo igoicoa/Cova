@@ -177,8 +177,7 @@ namespace Cova.WebService
             medico.Domicilio.Pais = medicoDto.Domicilio.Pais;
             medico.MatriculaNacional = medicoDto.MatriculaNacional;
             medico.MatriculaProvincial = medicoDto.MatriculaProvincial;
-            //medico.Especialidad = (Especialidad)int.Parse(medicoDto.Especialidad);
-            medico.Especialidad = (Especialidad)Enum.Parse(typeof(Especialidad), medicoDto.Especialidad);
+            medico.Especialidad = (Especialidad)Enum.Parse(typeof(Especialidad), medicoDto.Especialidad.ToString());
             medico.Usuario = medicoDto.Usuario;
             medico.UsuarioID = medicoDto.UsuarioID;
             medico.Password = medicoDto.Password;

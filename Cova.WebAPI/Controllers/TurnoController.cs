@@ -8,7 +8,7 @@ using Cova.WebService.Dtos;
 
 namespace Cova.WebAPI.Controllers
 {
-    [RoutePrefix("api/turno")]
+    [RoutePrefix("api/Turno")]
     public class TurnoController : ApiController
     {
         public TurnoService turnoService = new TurnoService();

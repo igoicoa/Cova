@@ -8,13 +8,13 @@ using Cova.WebService.Dtos;
 
 namespace Cova.WebAPI.Controllers
 {
-    [RoutePrefix("api/CoberturaMedica")]
+    [RoutePrefix("api/Cobertura")]
     public class CoberturaMedicaController : ApiController
     {
         public CoberturaService coberturaService = new CoberturaService();
 
         [HttpGet]
-        //[Route("")]
+        [Route("")]
         public IList<CoberturaMedicaDto> GetCoberturas()
         {
             return this.coberturaService.GetCoberturas();
@@ -28,7 +28,7 @@ namespace Cova.WebAPI.Controllers
         }
 
         [HttpPost]
-        //[Route("")]
+        [Route("")]
         public CoberturaMedicaDto CrearCobertura([FromBody] CoberturaMedicaDto cobertura)
         {
             return this.coberturaService.CrearCobertura(cobertura);

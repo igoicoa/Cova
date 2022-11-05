@@ -75,7 +75,6 @@ namespace Cova.WebService
         private static CoberturaMedicaDto Mapear(BECoberturaMedica coberturaMedica)
         {
             CoberturaMedicaDto coberturaMedicaDto = new CoberturaMedicaDto();
-            CoberturaMedicaPacienteDto coberturaMedicaPacienteDto = new CoberturaMedicaPacienteDto();
             List < CoberturaMedicaPlanDto> coberturaMedicaPlanDto = new List<CoberturaMedicaPlanDto>();
             coberturaMedicaDto.CoberturaMedicaId = coberturaMedica.CoberturaMedicaId;
             coberturaMedicaDto.Nombre = coberturaMedica.Nombre;

@@ -14,7 +14,7 @@ namespace Cova.WebAPI.Controllers
         public PacienteService pacienteService = new PacienteService();
 
         [HttpGet]
-        //[Route("")]
+        [Route("")]
         public IList<PacienteDto> GetPacientes()
         {
             return this.pacienteService.GetPacientes();

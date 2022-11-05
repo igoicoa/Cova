@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using Cova.BE;
+using Cova.BE.Enum;
 using Cova.DAL;
 
 namespace Cova.MPP
@@ -50,6 +51,7 @@ namespace Cova.MPP
 
                         enfermero.Domicilio = domicilio;
                         enfermero.MatriculaEnfermero = Convert.ToInt32(fila["MatriculaEnfermero"]);
+                        enfermero.TipoUsuario = TipoUsuario.Enfermero;
                         enfermero.Activo = Convert.ToBoolean(fila["Activo"]);
 
                         enfermeros.Add(enfermero);

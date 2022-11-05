@@ -19,14 +19,25 @@ namespace Cova.BL
             bool profesionalCreado = false;
             try
             {
+                if (this.ExisteEnfermero(enfermero))
+                {
+                    throw new ProfesionalYaExisteException();
+                }
                 MPPEnfermero mPPEnfermero = new MPPEnfermero();
                 profesionalCreado = mPPEnfermero.CrearProfesionalEnfermero(enfermero);
                 //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se creo el Profesional enfermero: " + enfermero.Apellido + ", " + enfermero.Nombre, "Crear Profesional Enfermero"));
             }
             catch (Exception ex)
             {
-                // Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Crear Profesional enfermero: " + enfermero.Apellido + " - " + enfermero.Nombre + " - " + ex.Message, "Crear Profesional Enfermero"));
-                throw new ErrorAlCrearProfesionalException();
+                if (ex.GetType() == new ProfesionalYaExisteException().GetType())
+                {
+                    throw ex;
+                }
+                else
+                {
+                    // Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Crear Profesional enfermero: " + enfermero.Apellido + " - " + enfermero.Nombre + " - " + ex.Message, "Crear Profesional Enfermero"));
+                    throw new ErrorAlCrearProfesionalException();
+                }
             }
             return profesionalCreado;
         }

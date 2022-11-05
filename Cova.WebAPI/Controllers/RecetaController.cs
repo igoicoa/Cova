@@ -22,7 +22,7 @@ namespace Cova.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("Receta/{pacienteId:int}")]
+        [Route("paciente/{pacienteId:int}")]
         public IList<RecetaDto> GetRecetasUsuario(int pacienteId)
         {
             return this.recetaService.GetRecetasUsuario(pacienteId);

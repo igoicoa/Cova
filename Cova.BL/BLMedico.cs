@@ -35,7 +35,7 @@ namespace Cova.BL
                 else
                 {
                     // Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Error, "Hubo un error al Crear Profesional Medico: " + medico.Apellido + " - " + medico.Nombre + " - " + ex.Message, "Crear Profesional Medico"));
-                    throw new ErrorAlCrearPacienteException();
+                    throw new ErrorAlCrearProfesionalException();
                 }
             }
             return profesionalCreado;

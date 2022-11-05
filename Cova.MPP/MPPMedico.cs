@@ -56,6 +56,7 @@ namespace Cova.MPP
                         medico.MatriculaNacional = Convert.ToInt32(fila["MatriculaNacional"]);
                         medico.MatriculaProvincial = Convert.ToInt32(fila["MatriculaProvincial"]);
                         medico.Especialidad = (Especialidad)Enum.Parse(typeof(Especialidad), Convert.ToString(fila["Especialidad"]));
+                        medico.TipoUsuario = TipoUsuario.Medico;
                         medico.Activo = Convert.ToBoolean(fila["Activo"]);
 
                         medicos.Add(medico);
@@ -121,6 +122,7 @@ namespace Cova.MPP
                         medico.MatriculaProvincial = Convert.ToInt32(fila["MatriculaProvincial"]);
                         medico.Especialidad = (Especialidad)Enum.Parse(typeof(Especialidad), Convert.ToString(fila["Especialidad"]));
                         medico.TipoUsuario = TipoUsuario.Medico;
+                        medico.Activo = Convert.ToBoolean(fila["Activo"]);
                         medicos.Add(medico);
                     }
                 }
