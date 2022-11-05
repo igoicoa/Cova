@@ -36,7 +36,7 @@ namespace Cova.WebAPI.Controllers
 
         [HttpPut]
         [Route("{usuarioId:int}")]
-        public PacienteDto ActualizarPaciente([FromBody] PacienteDto paciente)
+        public PacienteDto ActualizarPaciente(int usuarioId, [FromBody] PacienteDto paciente)
         {
             return this.pacienteService.ActulizarPaciente(paciente);
         }
