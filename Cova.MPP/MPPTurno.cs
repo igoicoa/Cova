@@ -236,7 +236,7 @@ namespace Cova.MPP
                 ConexionDB conexionBDD = new ConexionDB();
                 string strSQL = @"s_AgregarTurnoDisponible";
                 datosTurno.Add("@ProfesionalId", profesionalId);
-                datosTurno.Add("@turnoDisponible", turnoDisponible.DiaSemana);
+                datosTurno.Add("@DiaSemana", turnoDisponible.DiaSemana.ToString());
                 datosTurno.Add("@HoraDesde", turnoDisponible.HoraDesde);
                 datosTurno.Add("@HoraHasta", turnoDisponible.HoraHasta);
                 return conexionBDD.Escribir(strSQL, datosTurno);

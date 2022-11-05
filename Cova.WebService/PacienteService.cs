@@ -67,7 +67,7 @@ namespace Cova.WebService
             if(this.bLPaciente.InactivarPaciente(bEPaciente))
             {
                 PacienteDto pacienteDto = new PacienteDto();
-                pacienteDto.UsuarioID = usuarioId;
+                pacienteDto.UsuarioId = usuarioId;
                 return pacienteDto;
             } else
             {
@@ -110,7 +110,7 @@ namespace Cova.WebService
                 pacienteDto.CoberturaMedica.Plan.Nombre = paciente.CoberturaMedica.Plan.Nombre;
             }
             pacienteDto.Usuario = paciente.Usuario;
-            pacienteDto.UsuarioID = paciente.UsuarioID;
+            pacienteDto.UsuarioId = paciente.UsuarioID;
             pacienteDto.Password = paciente.Password;
             pacienteDto.UltimoLogin = paciente.UltimoLogin;
             pacienteDto.Activo = paciente.Activo;
@@ -125,7 +125,7 @@ namespace Cova.WebService
             BEDomicilio domicilio = new BEDomicilio();
             BECoberturaMedicaPaciente coberturaMedicaPaciente = new BECoberturaMedicaPaciente();
             BECoberturaMedicaPlan coberturaMedicaPlan = new BECoberturaMedicaPlan();
-            paciente.UsuarioID = pacienteDto.UsuarioID;
+            paciente.UsuarioID = pacienteDto.UsuarioId;
             paciente.Apellido = pacienteDto.Apellido;
             paciente.Nombre = pacienteDto.Nombre;
             paciente.DNI = pacienteDto.DNI;
@@ -153,7 +153,7 @@ namespace Cova.WebService
                 paciente.CoberturaMedica.Plan.Nombre = pacienteDto.CoberturaMedica.Plan.Nombre;
             }
             paciente.Usuario = pacienteDto.Usuario;
-            paciente.UsuarioID = pacienteDto.UsuarioID;
+            paciente.UsuarioID = pacienteDto.UsuarioId;
             paciente.Password = pacienteDto.Password;
             paciente.UltimoLogin = pacienteDto.UltimoLogin;
             paciente.Activo = pacienteDto.Activo;

@@ -157,7 +157,7 @@ namespace Cova.MPP
                 datosUsuario.Add("@Pais", medico.Domicilio.Pais);
                 datosUsuario.Add("@MatriculaNacional", medico.MatriculaNacional);
                 datosUsuario.Add("@MatriculaProvincial", medico.MatriculaProvincial);
-                datosUsuario.Add("@Especialidad", medico.Especialidad);
+                datosUsuario.Add("@Especialidad", medico.Especialidad.ToString());
                 datosUsuario.Add("@Password", medico.Password);
                 return conexionBDD.Escribir(strSQL, datosUsuario);
             }

@@ -8,7 +8,7 @@ namespace Cova.WebService.Dtos
 {
     public class UsuarioDto
     {
-        public long UsuarioID { get; set; }
+        public long UsuarioId { get; set; }
         public string Usuario { get; set; }
         public string Password { get; set; }
         public DateTime? UltimoLogin { get; set; }

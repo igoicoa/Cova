@@ -113,7 +113,7 @@ namespace Cova.WebService
             if (this.blMedico.InactivarMedico(beMedico))
             {
                 MedicoDto medicoDto = new MedicoDto();
-                medicoDto.UsuarioID = usuarioId;
+                medicoDto.UsuarioId = usuarioId;
                 return medicoDto;
             }
             else
@@ -146,7 +146,7 @@ namespace Cova.WebService
             medicoDto.MatriculaProvincial = medico.MatriculaProvincial;
             medicoDto.Especialidad = medico.Especialidad.ToString();
             medicoDto.Usuario = medico.Usuario;
-            medicoDto.UsuarioID = medico.UsuarioID;
+            medicoDto.UsuarioId = medico.UsuarioID;
             medicoDto.Password = medico.Password;
             medicoDto.UltimoLogin = medico.UltimoLogin;
             medicoDto.Activo = medico.Activo;
@@ -179,7 +179,7 @@ namespace Cova.WebService
             medico.MatriculaProvincial = medicoDto.MatriculaProvincial;
             medico.Especialidad = (Especialidad)Enum.Parse(typeof(Especialidad), medicoDto.Especialidad.ToString());
             medico.Usuario = medicoDto.Usuario;
-            medico.UsuarioID = medicoDto.UsuarioID;
+            medico.UsuarioID = medicoDto.UsuarioId;
             medico.Password = medicoDto.Password;
             medico.UltimoLogin = medicoDto.UltimoLogin;
             medico.Activo = medicoDto.Activo;
@@ -242,7 +242,7 @@ namespace Cova.WebService
             if (this.bLEnfermero.InactivarEnfermero(beEnfermero))
             {
                 EnfermeroDto enfermeroDto = new EnfermeroDto();
-                enfermeroDto.UsuarioID = usuarioId;
+                enfermeroDto.UsuarioId = usuarioId;
                 return enfermeroDto;
             }
             else
@@ -273,7 +273,7 @@ namespace Cova.WebService
             enfermeroDto.Domicilio.Pais = enfermero.Domicilio.Pais;
             enfermeroDto.MatriculaEnfermero = enfermero.MatriculaEnfermero;
             enfermeroDto.Usuario = enfermero.Usuario;
-            enfermeroDto.UsuarioID = enfermero.UsuarioID;
+            enfermeroDto.UsuarioId = enfermero.UsuarioID;
             enfermeroDto.Password = enfermero.Password;
             enfermeroDto.UltimoLogin = enfermero.UltimoLogin;
             enfermeroDto.Activo = enfermero.Activo;
@@ -304,7 +304,7 @@ namespace Cova.WebService
             enfermero.Domicilio.Pais = enfermero.Domicilio.Pais;
             enfermero.MatriculaEnfermero = enfermeroDto.MatriculaEnfermero;
             enfermero.Usuario = enfermeroDto.Usuario;
-            enfermero.UsuarioID = enfermeroDto.UsuarioID;
+            enfermero.UsuarioID = enfermeroDto.UsuarioId;
             enfermero.Password = enfermeroDto.Password;
             enfermero.UltimoLogin = enfermeroDto.UltimoLogin;
             enfermero.Activo = enfermeroDto.Activo;
@@ -317,7 +317,7 @@ namespace Cova.WebService
         {
             BETurnoDisponible turnoDisponible = new BETurnoDisponible();
             turnoDisponible.TurnoDisponibleId = turnoDisponibleDto.TurnoDisponibleId;
-            turnoDisponible.DiaSemana = turnoDisponibleDto.DiaSemana;
+            turnoDisponible.DiaSemana = (DayOfWeek)Enum.Parse(typeof(DayOfWeek), turnoDisponibleDto.DiaSemana);
             turnoDisponible.HoraDesde = turnoDisponibleDto.HoraDesde;
             turnoDisponible.HoraHasta = turnoDisponibleDto.HoraHasta;
 
@@ -328,7 +328,7 @@ namespace Cova.WebService
         {
             TurnoDisponibleDto turnoDisponibleDto = new TurnoDisponibleDto();
             turnoDisponibleDto.TurnoDisponibleId = bETurnoDisponible.TurnoDisponibleId;
-            turnoDisponibleDto.DiaSemana = bETurnoDisponible.DiaSemana;
+            turnoDisponibleDto.DiaSemana = bETurnoDisponible.DiaSemana.ToString();
             turnoDisponibleDto.HoraDesde = bETurnoDisponible.HoraDesde;
             turnoDisponibleDto.HoraHasta = bETurnoDisponible.HoraHasta;
 
@@ -368,7 +368,7 @@ namespace Cova.WebService
             turno.Profesional = bEProfesional;
 
             bEPaciente.PacienteId = turnoDto.Paciente.PacienteId;
-            bEPaciente.UsuarioID = turnoDto.Paciente.UsuarioID;
+            bEPaciente.UsuarioID = turnoDto.Paciente.UsuarioId;
             bEPaciente.Apellido = turnoDto.Paciente.Apellido;
             bEPaciente.Nombre = turnoDto.Paciente.Nombre;
             bEPaciente.DNI = turnoDto.Paciente.DNI;
@@ -389,7 +389,7 @@ namespace Cova.WebService
                 bEPaciente.CoberturaMedica.Plan.Nombre = turnoDto.Paciente.CoberturaMedica.Plan.Nombre;
             }
             bEPaciente.Usuario = turnoDto.Paciente.Usuario;
-            bEPaciente.UsuarioID = turnoDto.Paciente.UsuarioID;
+            bEPaciente.UsuarioID = turnoDto.Paciente.UsuarioId;
             turno.Paciente = bEPaciente;
 
             turno.TurnoId = turnoDto.TurnoId;
@@ -429,7 +429,7 @@ namespace Cova.WebService
 
             turnoDto.Paciente = new PacienteDto();
             turnoDto.Paciente.PacienteId = turno.Paciente.PacienteId;
-            turnoDto.Paciente.UsuarioID = turno.Paciente.UsuarioID;
+            turnoDto.Paciente.UsuarioId = turno.Paciente.UsuarioID;
             turnoDto.Paciente.Apellido = turno.Paciente.Apellido;
             turnoDto.Paciente.Nombre = turno.Paciente.Nombre;
             turnoDto.Paciente.DNI = turno.Paciente.DNI;
@@ -450,7 +450,7 @@ namespace Cova.WebService
                 turnoDto.Paciente.CoberturaMedica.Plan.Nombre = turno.Paciente.CoberturaMedica.Plan.Nombre;
             }
             turnoDto.Paciente.Usuario = turno.Paciente.Usuario;
-            turnoDto.Paciente.UsuarioID = turno.Paciente.UsuarioID;
+            turnoDto.Paciente.UsuarioId = turno.Paciente.UsuarioID;
 
             turnoDto.TurnoId = turno.TurnoId;
             turnoDto.FechaTurno = turno.FechaTurno;

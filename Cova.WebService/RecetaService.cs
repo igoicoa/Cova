@@ -129,7 +129,7 @@ namespace Cova.WebService
                 recetaDto.Paciente.CoberturaMedica.Plan.Nombre = receta.Paciente.CoberturaMedica.Plan.Nombre;
             }
             recetaDto.Paciente.Usuario = receta.Paciente.Usuario;
-            recetaDto.Paciente.UsuarioID = receta.Paciente.UsuarioID;
+            recetaDto.Paciente.UsuarioId = receta.Paciente.UsuarioID;
             recetaDto.Paciente.Password = receta.Paciente.Password;
             recetaDto.Paciente.UltimoLogin = receta.Paciente.UltimoLogin;
             recetaDto.Paciente.Activo = receta.Paciente.Activo;
@@ -191,7 +191,7 @@ namespace Cova.WebService
             receta.Paciente.CoberturaMedica.Plan.PlanId = recetaDto.Paciente.CoberturaMedica.Plan.PlanId;
             receta.Paciente.CoberturaMedica.Nombre = recetaDto.Paciente.CoberturaMedica.Plan.Nombre;
             receta.Paciente.Usuario = recetaDto.Paciente.Usuario;
-            receta.Paciente.UsuarioID = recetaDto.Paciente.UsuarioID;
+            receta.Paciente.UsuarioID = recetaDto.Paciente.UsuarioId;
             receta.Paciente.Password = recetaDto.Paciente.Password;
             receta.Paciente.UltimoLogin = recetaDto.Paciente.UltimoLogin;
             receta.Paciente.Activo = recetaDto.Paciente.Activo;

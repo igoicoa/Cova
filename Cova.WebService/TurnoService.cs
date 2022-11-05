@@ -27,7 +27,9 @@ namespace Cova.WebService
 
         public IList<TurnoDto> GetTurnosUsuario(int pacienteId)
         {
-            IList<BETurno> turnos = this.bLTurno.ObtenerTurnos();//TURNO POR PACIENTE???????
+            BEPaciente pacienteTurno = new BEPaciente();
+            pacienteTurno.PacienteId = pacienteId;
+            IList<BETurno> turnos = this.bLTurno.ObtenerTurnos(pacienteTurno);
             IList<TurnoDto> turnoDtos = new List<TurnoDto>();
 
             foreach (BETurno turno in turnos)
@@ -103,7 +105,7 @@ namespace Cova.WebService
             turnoDto.CentroMedico.Domicilio.Provincia = turno.CentroMedico.Domicilio.Provincia;
             turnoDto.CentroMedico.Domicilio.Pais = turno.CentroMedico.Domicilio.Pais;
             turnoDto.Paciente = pacienteDto;
-            turnoDto.Paciente.UsuarioID = turno.Paciente.UsuarioID;
+            turnoDto.Paciente.UsuarioId = turno.Paciente.UsuarioID;
             turnoDto.Paciente.Apellido = turno.Paciente.Apellido;
             turnoDto.Paciente.Nombre = turno.Paciente.Nombre;
             turnoDto.Paciente.DNI = turno.Paciente.DNI;
@@ -181,7 +183,7 @@ namespace Cova.WebService
             turno.CentroMedico.Domicilio.Provincia = turnoDto.CentroMedico.Domicilio.Provincia;
             turno.CentroMedico.Domicilio.Pais = turnoDto.CentroMedico.Domicilio.Pais;
             turno.Paciente = paciente;
-            turno.Paciente.UsuarioID = turnoDto.Paciente.UsuarioID;
+            turno.Paciente.UsuarioID = turnoDto.Paciente.UsuarioId;
             turno.Paciente.Apellido = turnoDto.Paciente.Apellido;
             turno.Paciente.Nombre = turnoDto.Paciente.Nombre;
             turno.Paciente.DNI = turnoDto.Paciente.DNI;

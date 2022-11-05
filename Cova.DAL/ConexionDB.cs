@@ -112,14 +112,7 @@ namespace Cova.DAL
 
                 int respuesta = cmd.ExecuteNonQuery();
                 transaccion.Commit();
-                if (respuesta == 0)
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
+                return true;
             }
             catch (SqlException ex)
             {
