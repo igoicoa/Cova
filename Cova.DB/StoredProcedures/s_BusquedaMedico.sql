@@ -22,8 +22,14 @@ BEGIN
 		,m.Especialidad
 		,m.MatriculaNacional
 		,m.MatriculaProvincial
+		,u.UsuarioID
+		,u.Usuario
+		,u.Activo
 	FROM Profesional p
 	INNER JOIN Medico m ON m.ProfesionalId = p.ProfesionalId
 	INNER JOIN Domicilio d ON d.DomicilioId = p.DomicilioId
+	INNER JOIN Usuario u ON u.UsuarioID = p.UsuarioID
 	WHERE p.Apellido LIKE '%' + @Apellido + '%' AND p.Nombre LIKE '%' + @Nombre + '%' AND m.Especialidad LIKE '%' + @Especialidad + '%'
 END
+
+

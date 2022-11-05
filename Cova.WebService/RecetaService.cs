@@ -14,9 +14,12 @@ namespace Cova.WebService
     {
         private BLReceta bLReceta = new BLReceta();
 
-        public IList<RecetaDto> GetRecetas()
+        public IList<RecetaDto> GetRecetas(int pacienteId)
         {
-            IList<BEReceta> recetas = this.bLReceta.BuscarRecetas(new BEPaciente());
+            BEPaciente paciente = new BEPaciente();
+            paciente.PacienteId = pacienteId;
+
+            IList<BEReceta> recetas = this.bLReceta.BuscarRecetas(paciente);
             IList<RecetaDto> recetaDtos = new List<RecetaDto>();
 
             foreach (BEReceta receta in recetas)
@@ -66,11 +69,17 @@ namespace Cova.WebService
 
         private static RecetaDto Mapear(BEReceta receta)
         {
-            RecetaDto recetaDto = new RecetaDto();
+            RecetaDto recetaDto = new RecetaDto 
+            { 
+                Medico = new MedicoDto { 
+                    Domicilio = new DomicilioDto()
+                }
+            };
             DomicilioDto domicilioDto = new DomicilioDto();
             PacienteDto pacienteDto = new PacienteDto();
             CoberturaMedicaPacienteDto coberturaMedicaPacienteDto = new CoberturaMedicaPacienteDto();
             CoberturaMedicaPlanDto coberturaMedicaPlanDto = new CoberturaMedicaPlanDto();
+            recetaDto.RecetaId = receta.RecetaId;
             recetaDto.Medico.ProfesionalId = receta.Medico.ProfesionalId; //SOLO MEDICO
             recetaDto.Medico.Apellido = receta.Medico.Apellido;
             recetaDto.Medico.Nombre = receta.Medico.Nombre;
@@ -92,7 +101,7 @@ namespace Cova.WebService
             recetaDto.Medico.Especialidad = receta.Medico.Especialidad.ToString();
             recetaDto.FechaPrescripcion = receta.FechaPrescripcion;
             recetaDto.Observacion = receta.Observacion;
-            //receta.Paciente = pacienteDto;
+            recetaDto.Paciente = pacienteDto;
             recetaDto.Paciente.PacienteId = receta.Paciente.PacienteId;
             recetaDto.Paciente.Nombre = receta.Paciente.Nombre;
             recetaDto.Paciente.Apellido = receta.Paciente.Apellido;

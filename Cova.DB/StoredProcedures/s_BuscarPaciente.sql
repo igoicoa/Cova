@@ -24,6 +24,8 @@ BEGIN
 		,cp.Nombre AS [Plan]
 		,cpa.NumeroAfiliado AS NumeroAfiliado
 		,cpa.FechaVencimiento AS FechaVencimiento
+		,cpa.CoberturaMedicaId AS CoberturaMedicaId
+		,cpa.CoberturaMedicaPlanId AS CoberturaMedicaPlanId
 		,u.Activo
 	FROM Paciente p
 	LEFT JOIN CoberturaMedicaPaciente cpa ON cpa.CoberturaMedicaPacienteId = p.CoberturaMedicaPacienteId

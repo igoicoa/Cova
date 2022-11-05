@@ -5,6 +5,7 @@ using Cova.BL;
 using Cova.BE;
 using Cova.WebService.Dtos;
 using Cova.BE.Enum;
+using Cova.Servicios.Encriptacion;
 
 namespace Cova.WebService
 {
@@ -81,7 +82,9 @@ namespace Cova.WebService
 
         public MedicoDto CrearProfesionalMedico(MedicoDto medico)
         {
-            if (this.blMedico.CrearProfesionalMedico(Mapear(medico)))
+            BEMedico bEMedico = Mapear(medico);
+            bEMedico.Password = HashHelper.HashMD5(medico.Apellido.Substring(0, 4) + medico.Nombre.Substring(0, 4));
+            if (this.blMedico.CrearProfesionalMedico(bEMedico))
             {
                 return medico;
             }
@@ -148,6 +151,7 @@ namespace Cova.WebService
             medicoDto.UltimoLogin = medico.UltimoLogin;
             medicoDto.Activo = medico.Activo;
             medicoDto.TipoUsuario = medico.TipoUsuario.ToString();
+
             return medicoDto;
         }
 
@@ -173,7 +177,8 @@ namespace Cova.WebService
             medico.Domicilio.Pais = medicoDto.Domicilio.Pais;
             medico.MatriculaNacional = medicoDto.MatriculaNacional;
             medico.MatriculaProvincial = medicoDto.MatriculaProvincial;
-            medico.Especialidad = (Especialidad)int.Parse(medicoDto.Especialidad);
+            //medico.Especialidad = (Especialidad)int.Parse(medicoDto.Especialidad);
+            medico.Especialidad = (Especialidad)Enum.Parse(typeof(Especialidad), medicoDto.Especialidad);
             medico.Usuario = medicoDto.Usuario;
             medico.UsuarioID = medicoDto.UsuarioID;
             medico.Password = medicoDto.Password;
@@ -207,6 +212,8 @@ namespace Cova.WebService
 
         public EnfermeroDto CrearProfesionalEnfermero(EnfermeroDto enfermero)
         {
+            BEEnfermero bEEnfermero = Mapear(enfermero);
+            bEEnfermero.Password = HashHelper.HashMD5(enfermero.Apellido.Substring(0, 4) + enfermero.Nombre.Substring(0, 4));
             if (this.bLEnfermero.CrearProfesionalEnfermero(Mapear(enfermero)))
             {
                 return enfermero;

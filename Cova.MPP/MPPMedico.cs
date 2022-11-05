@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using Cova.BE;
+using Cova.BE.Enum;
 using Cova.DAL;
 
 namespace Cova.MPP
@@ -51,6 +52,7 @@ namespace Cova.MPP
                         domicilio.Pais = Convert.ToString(fila["Pais"]);
 
                         medico.Domicilio = domicilio;
+
                         medico.MatriculaNacional = Convert.ToInt32(fila["MatriculaNacional"]);
                         medico.MatriculaProvincial = Convert.ToInt32(fila["MatriculaProvincial"]);
                         medico.Especialidad = (Especialidad)Enum.Parse(typeof(Especialidad), Convert.ToString(fila["Especialidad"]));
@@ -79,7 +81,7 @@ namespace Cova.MPP
                 string strSQL = @"s_BusquedaMedico";
                 datosMedico.Add("@Apellido", apellido);
                 datosMedico.Add("@Nombre", nombre);
-                if(especialidad != null)
+                if (especialidad != null)
                 {
                     datosMedico.Add("@Especialidad", especialidad.ToString());
                 }
@@ -95,6 +97,8 @@ namespace Cova.MPP
                     {
                         BEMedico medico = new BEMedico();
                         medico.ProfesionalId = Convert.ToInt64(fila["ProfesionalId"]);
+                        medico.UsuarioID = Convert.ToInt64(fila["UsuarioID"]);
+                        medico.Usuario = Convert.ToString(fila["Usuario"]);
                         medico.Nombre = Convert.ToString(fila["Nombre"]);
                         medico.Apellido = Convert.ToString(fila["Apellido"]);
                         medico.DNI = Convert.ToInt32(fila["DNI"]);
@@ -116,7 +120,7 @@ namespace Cova.MPP
                         medico.MatriculaNacional = Convert.ToInt32(fila["MatriculaNacional"]);
                         medico.MatriculaProvincial = Convert.ToInt32(fila["MatriculaProvincial"]);
                         medico.Especialidad = (Especialidad)Enum.Parse(typeof(Especialidad), Convert.ToString(fila["Especialidad"]));
-
+                        medico.TipoUsuario = TipoUsuario.Medico;
                         medicos.Add(medico);
                     }
                 }

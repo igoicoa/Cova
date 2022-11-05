@@ -60,6 +60,8 @@ namespace Cova.MPP
                             coberturaMedicaPaciente.Plan = plan;
                             coberturaMedicaPaciente.NumeroAfiliado = Convert.ToString(fila["NumeroAfiliado"]);
                             coberturaMedicaPaciente.FechaVencimiento = Convert.ToDateTime(fila["FechaVencimiento"]);
+                            coberturaMedicaPaciente.CoberturaMedicaId = Convert.ToInt64(fila["CoberturaMedicaId"]);
+                            coberturaMedicaPaciente.Plan.PlanId = (int)Convert.ToInt64(fila["CoberturaMedicaPlanId"]);
 
                             paciente.CoberturaMedica = coberturaMedicaPaciente;
                         }

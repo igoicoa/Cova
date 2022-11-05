@@ -8,28 +8,29 @@ using Cova.WebService.Dtos;
 
 namespace Cova.WebAPI.Controllers
 {
-    [RoutePrefix("api/receta")]
+    [RoutePrefix("api/Receta")]
     public class RecetaController : ApiController
     {
         public RecetaService recetaService = new RecetaService();
 
         [HttpGet]
-        //Route("")]
+        [Route("")]
         public IList<RecetaDto> GetRecetas()
         {
-            return this.recetaService.GetRecetas();
+            int pacienteId = 0;
+            return this.recetaService.GetRecetas(pacienteId);
         }
 
         [HttpGet]
-        [Route("Paciente/{usuarioId:int}")]
+        [Route("Receta/{pacienteId:int}")]
         public IList<RecetaDto> GetRecetasUsuario(int pacienteId)
         {
             return this.recetaService.GetRecetasUsuario(pacienteId);
         }
 
         [HttpPost]
-        //[Route("")]
-        public RecetaDto CrearReceta ([FromBody] RecetaDto receta)
+        [Route("")]
+        public RecetaDto CrearReceta([FromBody] RecetaDto receta)
         {
             return this.recetaService.CrearReceta(receta);
         }

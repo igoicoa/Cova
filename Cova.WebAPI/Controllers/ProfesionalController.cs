@@ -49,7 +49,7 @@ namespace Cova.WebAPI.Controllers
         }
 
         [HttpPost]
-        //[Route("")]
+        [Route("Medico/")]
         public MedicoDto CrearProfesionalMedico([FromBody] MedicoDto medico)
         {
             return this.profesionalService.CrearProfesionalMedico(medico);
@@ -63,7 +63,7 @@ namespace Cova.WebAPI.Controllers
         }
 
         [HttpDelete]
-        [Route("{usuarioId:int}")]
+        [Route("Medico/{usuarioId:int}")]
         public MedicoDto BorrarProfesionalMedico(int usuarioId)
         {
             return this.profesionalService.BorrarProfesionalMedico(usuarioId);

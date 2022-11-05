@@ -115,6 +115,8 @@ namespace Cova.MPP
                     {
                         BEReceta receta = new BEReceta();
                         receta.Paciente = paciente;
+                        receta.Paciente.Domicilio = new BEDomicilio();
+                        receta.Paciente.CoberturaMedica = new BECoberturaMedicaPaciente { Plan = new BECoberturaMedicaPlan()};
                         receta.RecetaId = Convert.ToInt32(fila["RecetaId"]);
 
                         BEMedico medico = new BEMedico();
@@ -125,6 +127,7 @@ namespace Cova.MPP
                         medico.MatriculaProvincial = Convert.ToInt32(fila["MatriculaProvincial"]);
 
                         receta.Medico = medico;
+                        receta.Medico.Domicilio = new BEDomicilio();
                         receta.FechaPrescripcion = Convert.ToDateTime(fila["FechaPrescripcion"]);
                         receta.Observacion = Convert.ToString(fila["Observacion"]);
 
