@@ -6,6 +6,7 @@ BEGIN
 	SELECT p.Nombre
 		,u.UsuarioID
 		,u.Usuario
+		,p.ProfesionalId
 		,p.Apellido
 		,p.DNI
 		,p.FechaNacimiento

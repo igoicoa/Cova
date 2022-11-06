@@ -73,6 +73,7 @@ namespace Cova.MPP
                         medico.MatriculaNacional = Convert.ToInt32(fila["ProfesionalMatriculaNacional"]);
                         medico.MatriculaProvincial = Convert.ToInt32(fila["ProfesionalMatriculaProvincial"]);
                         medico.Especialidad = (Especialidad)Enum.Parse(typeof(Especialidad), Convert.ToString(fila["ProfesionalEspecialidad"]));
+                        medico.Domicilio = new BEDomicilio();
 
                         turno.Profesional = medico;
 
@@ -98,10 +99,12 @@ namespace Cova.MPP
 
                             paciente.CoberturaMedica = coberturaMedicaPaciente;
                         }
-
+                        paciente.Domicilio = new BEDomicilio();
                         turno.Paciente = paciente;
 
                         BECentroMedico centroMedico = new BECentroMedico();
+                        centroMedico.Domicilio = new BEDomicilio();
+                        
                         centroMedico.CentroMedicoId = Convert.ToInt32(fila["CentroMedicoId"]);
                         centroMedico.Nombre = Convert.ToString(fila["CentroMedicoNombre"]);
                         centroMedico.Telefono = Convert.ToString(fila["CentroMedicoTelefono"]);
@@ -146,14 +149,14 @@ namespace Cova.MPP
             }
         }
 
-        public bool CancelarTurno(BETurno turno)
+        public bool CancelarTurno(int turnoId)
         {
             Hashtable datosTurno = new Hashtable();
             try
             {
                 ConexionDB conexionBDD = new ConexionDB();
                 string strSQL = @"s_CancelarTurno";
-                datosTurno.Add("@TurnoId", turno.TurnoId);
+                datosTurno.Add("@TurnoId", turnoId);
                 return conexionBDD.Escribir(strSQL, datosTurno);
             }
             catch (Exception ex)

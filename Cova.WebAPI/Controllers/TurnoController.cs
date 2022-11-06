@@ -31,6 +31,20 @@ namespace Cova.WebAPI.Controllers
         [Route("")]
         public TurnoDto CrearTurno([FromBody] TurnoDto turnoDto)
         {
+            turnoDto.Paciente = new PacienteDto();
+            turnoDto.Paciente.Domicilio = new DomicilioDto();
+            turnoDto.Paciente.PacienteId = turnoDto.PacienteId;
+            turnoDto.Paciente.CoberturaMedica = new CoberturaMedicaPacienteDto();
+            turnoDto.Paciente.CoberturaMedica.Plan = new CoberturaMedicaPlanDto();
+
+            turnoDto.Profesional = new ProfesionalDto();
+            turnoDto.Profesional.Domicilio = new DomicilioDto();
+            turnoDto.Profesional.ProfesionalId = turnoDto.ProfesionalId;
+
+            turnoDto.CentroMedico = new CentroMedicoDto();
+            turnoDto.CentroMedico.Domicilio = new DomicilioDto();
+            turnoDto.CentroMedico.CentroMedicoId = turnoDto.CentroMedicoId;
+
             return this.turnoService.CrearTurno(turnoDto);
         }
 
@@ -38,6 +52,20 @@ namespace Cova.WebAPI.Controllers
         [Route("{turnoId:int}")]
         public TurnoDto ActualizarTurno([FromBody] TurnoDto turnoDto)
         {
+            turnoDto.Paciente = new PacienteDto();
+            turnoDto.Paciente.Domicilio = new DomicilioDto();
+            turnoDto.Paciente.PacienteId = turnoDto.PacienteId;
+            turnoDto.Paciente.CoberturaMedica = new CoberturaMedicaPacienteDto();
+            turnoDto.Paciente.CoberturaMedica.Plan = new CoberturaMedicaPlanDto();
+
+            turnoDto.Profesional = new ProfesionalDto();
+            turnoDto.Profesional.Domicilio = new DomicilioDto();
+            turnoDto.Profesional.ProfesionalId = turnoDto.ProfesionalId;
+
+            turnoDto.CentroMedico = new CentroMedicoDto();
+            turnoDto.CentroMedico.Domicilio = new DomicilioDto();
+            turnoDto.CentroMedico.CentroMedicoId = turnoDto.CentroMedicoId;
+
             return this.turnoService.ActualizarTurno(turnoDto);
         }
 

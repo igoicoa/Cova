@@ -78,13 +78,13 @@ namespace Cova.BL
             return turnoDisponible;
         }
 
-        public bool CancelarTurno(BETurno turnoACancelar)
+        public bool CancelarTurno(int turnoId)
         {
             bool turnoCancelado = false;
             MPPTurno mPPTurno = new MPPTurno();
             try
             {
-                turnoCancelado = mPPTurno.CancelarTurno(turnoACancelar);
+                turnoCancelado = mPPTurno.CancelarTurno(turnoId);
                 //Bitacora.GetInstance.RegistrarBitacora(new BEBitacora(DateTime.Now, Sesion.GetInstance.Usuario, TipoCriticidad.Info, "Se cancelo con exito el turno para: " + turnoACancelar.Paciente.Apellido + " con el profesional: " + turnoACancelar.Profesional.Apellido, "Cancelar Turnos"));
             }
             catch (Exception ex)

@@ -66,7 +66,7 @@ namespace Cova.WebService
         public TurnoDto Borrarturno(int turnoId)
         {
             BETurno bETurno = new BETurno();
-            if (this.bLTurno.CancelarTurno(bETurno))
+            if (this.bLTurno.CancelarTurno(turnoId))
             {
                 TurnoDto turnoDto = new TurnoDto();
 
@@ -106,6 +106,7 @@ namespace Cova.WebService
             turnoDto.CentroMedico.Domicilio.Pais = turno.CentroMedico.Domicilio.Pais;
             turnoDto.Paciente = pacienteDto;
             turnoDto.Paciente.UsuarioId = turno.Paciente.UsuarioID;
+            turnoDto.Paciente.PacienteId = turno.Paciente.PacienteId;
             turnoDto.Paciente.Apellido = turno.Paciente.Apellido;
             turnoDto.Paciente.Nombre = turno.Paciente.Nombre;
             turnoDto.Paciente.DNI = turno.Paciente.DNI;
@@ -184,6 +185,7 @@ namespace Cova.WebService
             turno.CentroMedico.Domicilio.Pais = turnoDto.CentroMedico.Domicilio.Pais;
             turno.Paciente = paciente;
             turno.Paciente.UsuarioID = turnoDto.Paciente.UsuarioId;
+            turno.Paciente.PacienteId = turnoDto.Paciente.PacienteId;
             turno.Paciente.Apellido = turnoDto.Paciente.Apellido;
             turno.Paciente.Nombre = turnoDto.Paciente.Nombre;
             turno.Paciente.DNI = turnoDto.Paciente.DNI;

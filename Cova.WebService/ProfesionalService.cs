@@ -213,7 +213,7 @@ namespace Cova.WebService
         {
             BEEnfermero bEEnfermero = Mapear(enfermero);
             bEEnfermero.Password = HashHelper.HashMD5(enfermero.Apellido.Substring(0, 4) + enfermero.Nombre.Substring(0, 4));
-            if (this.bLEnfermero.CrearProfesionalEnfermero(Mapear(enfermero)))
+            if (this.bLEnfermero.CrearProfesionalEnfermero(bEEnfermero))
             {
                 return enfermero;
             }
@@ -296,12 +296,12 @@ namespace Cova.WebService
             enfermero.Telefono = enfermeroDto.Telefono;
             enfermero.Email = enfermeroDto.Email;
             enfermero.Domicilio = domicilio;
-            enfermero.Domicilio.Calle = enfermero.Domicilio.Calle;
-            enfermero.Domicilio.Numero = enfermero.Domicilio.Numero;
-            enfermero.Domicilio.Piso = enfermero.Domicilio.Piso;
-            enfermero.Domicilio.Localidad = enfermero.Domicilio.Localidad;
-            enfermero.Domicilio.Provincia = enfermero.Domicilio.Provincia;
-            enfermero.Domicilio.Pais = enfermero.Domicilio.Pais;
+            enfermero.Domicilio.Calle = enfermeroDto.Domicilio.Calle;
+            enfermero.Domicilio.Numero = enfermeroDto.Domicilio.Numero;
+            enfermero.Domicilio.Piso = enfermeroDto.Domicilio.Piso;
+            enfermero.Domicilio.Localidad = enfermeroDto.Domicilio.Localidad;
+            enfermero.Domicilio.Provincia = enfermeroDto.Domicilio.Provincia;
+            enfermero.Domicilio.Pais = enfermeroDto.Domicilio.Pais;
             enfermero.MatriculaEnfermero = enfermeroDto.MatriculaEnfermero;
             enfermero.Usuario = enfermeroDto.Usuario;
             enfermero.UsuarioID = enfermeroDto.UsuarioId;

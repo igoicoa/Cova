@@ -29,6 +29,7 @@ namespace Cova.BL
             return coberturamedica;
         }
 
+      
         public bool CrearCoberturaMedica(BECoberturaMedica coberturaMedica)
         {
             bool coberturaCreada = false;
@@ -130,6 +131,7 @@ namespace Cova.BL
             }
             return coberturaModificada;
         }
+
 
     }
     

@@ -40,6 +40,8 @@ namespace Cova.MPP
             return ObtenerCoberturasMedicasPlanes(coberturasMedicas);
         }
 
+   
+
         private IList<BECoberturaMedica> ObtenerCoberturasMedicasPlanes(IList<BECoberturaMedica> coberturasMedicas)
         {
             try

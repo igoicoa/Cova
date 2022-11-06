@@ -19,6 +19,7 @@ namespace Cova.WebService
 
             foreach (BECoberturaMedica cobertura in coberturas)
             {
+
                 coberturasDtos.Add(Mapear(cobertura));
             }
             return coberturasDtos;
@@ -29,6 +30,14 @@ namespace Cova.WebService
             List<BECoberturaMedica> coberturasMedica = bLCoberturaMedica.ObtenerCoberturasMedicas().ToList();
             BECoberturaMedica coberturaMedica = coberturasMedica.Where(x => x.CoberturaMedicaId == coberturaId).FirstOrDefault();
             CoberturaMedicaDto coberturaMedicaDto = Mapear(coberturaMedica);
+
+            coberturaMedicaDto.Plan =
+                coberturaMedica.Plan.Select(plan => new CoberturaMedicaPlanDto()
+                {
+                    PlanId = plan.PlanId,
+                    Nombre = plan.Nombre
+                }).ToList();
+
 
             return coberturaMedicaDto;
         }
@@ -75,21 +84,25 @@ namespace Cova.WebService
         private static CoberturaMedicaDto Mapear(BECoberturaMedica coberturaMedica)
         {
             CoberturaMedicaDto coberturaMedicaDto = new CoberturaMedicaDto();
-            List < CoberturaMedicaPlanDto> coberturaMedicaPlanDto = new List<CoberturaMedicaPlanDto>();
+            List<CoberturaMedicaPlanDto> coberturaMedicaPlanDto = new List<CoberturaMedicaPlanDto>();
             coberturaMedicaDto.CoberturaMedicaId = coberturaMedica.CoberturaMedicaId;
             coberturaMedicaDto.Nombre = coberturaMedica.Nombre;
-            coberturaMedicaDto.Plan = coberturaMedicaPlanDto;
+            coberturaMedicaDto.Plan = coberturaMedica.Plan.Select(plan => new CoberturaMedicaPlanDto()
+            {
+                PlanId = plan.PlanId,
+                Nombre = plan.Nombre
+            }).ToList();
 
             return coberturaMedicaDto;
         }
         private static BECoberturaMedica Mapear(CoberturaMedicaDto coberturaMedicaDto)
         {
             BECoberturaMedica coberturaMedica = new BECoberturaMedica();
-            List<BECoberturaMedicaPlan> coberturaMedicaPlan = new List <BECoberturaMedicaPlan>();
+            List<BECoberturaMedicaPlan> coberturaMedicaPlan = new List<BECoberturaMedicaPlan>();
             coberturaMedica.CoberturaMedicaId = coberturaMedicaDto.CoberturaMedicaId;
             coberturaMedica.Nombre = coberturaMedicaDto.Nombre;
-            coberturaMedica.Plan = (List < BECoberturaMedicaPlan >) coberturaMedicaDto.Plan;
-            
+            coberturaMedica.Plan = (List<BECoberturaMedicaPlan>)coberturaMedicaDto.Plan;
+
             return coberturaMedica;
         }
 
